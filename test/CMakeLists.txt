@@ -26,10 +26,10 @@ include(TestSuite)
 
 set(_TEST_TARGET_DEPENDS "")
 if(BUILD_BITCOIN_CLI)
-	list(APPEND _TEST_TARGET_DEPENDS doge-cli)
+	list(APPEND _TEST_TARGET_DEPENDS aus-cli)
 endif()
 if(BUILD_BITCOIN_WALLET)
-	list(APPEND _TEST_TARGET_DEPENDS doge-wallet)
+	list(APPEND _TEST_TARGET_DEPENDS aus-wallet)
 endif()
 if(BUILD_BITCOIN_CHRONIK)
 	find_package(Protobuf 3.0.0 REQUIRED)
@@ -61,14 +61,14 @@ function(add_functional_test_check TARGET DESCRIPTION)
 		TEST_COMMAND
 			"${Python_EXECUTABLE}"
 			./functional/test_runner.py
-			"--testsuitename=doged ${DESCRIPTION}"
+			"--testsuitename=ausd ${DESCRIPTION}"
 			${JUNIT_OUTPUT}
 			${EXTENDED_TIMEOUT}
 			${ARGN}
 		CUSTOM_TARGET_ARGS
 			COMMENT "Running ${DESCRIPTION}"
 			DEPENDS
-				doged
+				ausd
 				${_TEST_TARGET_DEPENDS}
 				${CMAKE_CURRENT_BINARY_DIR}/functional/test_runner.py
 			USES_TERMINAL
@@ -110,7 +110,7 @@ if(BUILD_BITCOIN_TX)
 		CUSTOM_TARGET_ARGS
 			COMMENT "Test Bitcoin utilities..."
 			DEPENDS
-				doge-tx
+				aus-tx
 				${CMAKE_CURRENT_BINARY_DIR}/util/bitcoin-util-test.py
 	)
 

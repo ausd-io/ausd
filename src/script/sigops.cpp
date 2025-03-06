@@ -26,7 +26,7 @@ uint32_t CountScriptSigOps(const CScript &script, SigOpCountMode mode) {
 
             case OP_CHECKDATASIG:
             case OP_CHECKDATASIGVERIFY:
-                // Dogecoin: These opcodes don't exist on Dogecoin and therefore
+                // Australiacash: These opcodes don't exist on Australiacash and therefore
                 // don't count as sigops.
                 // It's important to not count them as unexecuted sigops still
                 // would count and could lead to a fork.

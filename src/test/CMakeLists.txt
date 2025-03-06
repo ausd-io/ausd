@@ -171,11 +171,11 @@ add_boost_unit_tests_to_suite(bitcoin test_bitcoin
 		denialofservice_tests.cpp
 		descriptor_tests.cpp
 		dnsseeds_tests.cpp
-		dogecoin_block_version_tests.cpp
-		dogecoin_auxpow_check_tests.cpp
-		dogecoin_auxpow_methods_tests.cpp
-		dogecoin_auxpow_block_tests.cpp
-		dogecoin_auxpow_serialize_tests.cpp
+		auscash_block_version_tests.cpp
+		auscash_auxpow_check_tests.cpp
+		auscash_auxpow_methods_tests.cpp
+		auscash_auxpow_block_tests.cpp
+		auscash_auxpow_serialize_tests.cpp
 		dstencode_tests.cpp
 		feerate_tests.cpp
 		flatfile_tests.cpp
@@ -311,7 +311,7 @@ function(add_boost_test_runners_with_upgrade_activated SUITE EXECUTABLE)
 			"--catch_system_errors=no"
 			--
 			"-printtoconsole=1"
-			"-testsuitename=doged unit tests with next upgrade activated"
+			"-testsuitename=ausd unit tests with next upgrade activated"
 			# May. 16th, 2024 at 08:00:00
 			-augustoactivationtime=1715846400
 		)

@@ -35,7 +35,7 @@ templates:
 
   ibd:
     targets:
-      - - doged
+      - - ausd
     post_build: |
       "${TOPLEVEL}/contrib/teamcity/ibd.sh" -disablewallet -debug=net
     timeout: 28800
@@ -44,7 +44,7 @@ templates:
 
   ibd-no-assumevalid-checkpoint:
     targets:
-      - - doged
+      - - ausd
     post_build: |
       "${TOPLEVEL}/contrib/teamcity/ibd.sh" -disablewallet -assumevalid=0 -checkpoints=0 -debug=net
     timeout: 28800
@@ -325,7 +325,7 @@ builds:
       src/bench/BitcoinABC_Bench.json: bench/BitcoinABC_Bench.json
     post_build: |
       "${TOPLEVEL}/contrib/teamcity/nanobench_json_to_teamcity_messages.py" \
-        "doged Benchmark" \
+        "ausd Benchmark" \
         "${BUILD_DIR}/src/bench/BitcoinABC_Bench.json"
 
   build-chronik:
@@ -623,7 +623,7 @@ builds:
         # them on the native platform.
         #- install-tests
         - install-test-suite-bitcoin
-        - install-test-suite-doge-qt
+        - install-test-suite-aus-qt
         - install-test-suite-avalanche
         - install-test-suite-pow
       - - package
@@ -698,8 +698,8 @@ builds:
 
   check-seeds:
     targets:
-      - - doged
-        - doge-cli
+      - - ausd
+        - aus-cli
     post_build: |
       # Run on different ports to avoid a race where the rpc port used in the first run
       # may not be closed in time for the second to start.

@@ -284,7 +284,7 @@ void BitcoinABC::shutdown() {
 }
 
 static int qt_argc = 1;
-static const char *qt_argv = "doge-qt";
+static const char *qt_argv = "aus-qt";
 
 BitcoinApplication::BitcoinApplication()
     : QApplication(qt_argc, const_cast<char **>(&qt_argv)), coreThread(nullptr),
@@ -686,7 +686,7 @@ int GuiMain(int argc, char *argv[]) {
     }
 
     /// 6. Determine availability of data directory and parse
-    /// dogecoin.conf
+    /// auscash.conf
     /// - Do not call gArgs.GetDataDirNet() before this step finishes.
     if (!CheckDataDirOption(gArgs)) {
         InitError(strprintf(

@@ -1,11 +1,11 @@
-doged
+ausd
 =====================
 
 Setup
 ---------------------
-doged is a fork of Bitcoin Core, which is the original Bitcoin client and builds the backbone of the network. It downloads and, by default, stores the entire history of Bitcoin transactions, which requires a few hundred gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+ausd is a fork of Bitcoin Core, which is the original Bitcoin client and builds the backbone of the network. It downloads and, by default, stores the entire history of Bitcoin transactions, which requires a few hundred gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download doged, visit [bitcoinabc.org](https://download.doged.io/).
+To download ausd, visit [bitcoinabc.org](https://download.ausd.io/).
 
 Verify
 ---------------------
@@ -45,18 +45,18 @@ the presence of those warnings should be heeded with extreme caution.
 
 Running
 ---------------------
-The following are some helpful notes on how to run doged on your native platform.
+The following are some helpful notes on how to run ausd on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/doge-qt` (GUI) or
-- `bin/doged` (headless)
+- `bin/aus-qt` (GUI) or
+- `bin/ausd` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run doge-qt.exe.
+Unpack the files into a directory, and then run aus-qt.exe.
 
 ### macOS
 
@@ -66,11 +66,11 @@ Drag bitcoin-abc to your applications folder, and then run bitcoin-abc.
 
 * See the documentation at the [Bitcoin Wiki](https://en.bitcoin.it/wiki/Main_Page)
 for help and more information.
-* Ask for help on the [doged Subreddit](https://www.reddit.com/r/BitcoinABC/).
+* Ask for help on the [ausd Subreddit](https://www.reddit.com/r/BitcoinABC/).
 
 Building
 ---------------------
-The following are developer notes on how to build doged on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build ausd on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [Dependencies](dependencies.md)
 - [macOS Build Notes](build-osx.md)
@@ -80,7 +80,7 @@ The following are developer notes on how to build doged on your native platform.
 
 Development
 ---------------------
-The doged repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The ausd repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Productivity Notes](productivity.md)
@@ -99,7 +99,7 @@ The doged repo's [root README](/README.md) contains relevant information on the 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
 - [Assumeutxo design](assumeutxo.md)
-- [dogecoin.conf Configuration File](dogecoin.conf.md)
+- [auscash.conf Configuration File](auscash.conf.md)
 - [Files](files.md)
 - [Fuzz-testing](fuzzing.md)
 - [I2P Support](i2p.md)

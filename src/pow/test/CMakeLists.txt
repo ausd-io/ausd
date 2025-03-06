@@ -13,7 +13,7 @@ add_boost_unit_tests_to_suite(pow test-pow
 
 	TESTS
 		daa_tests.cpp
-		dogecoin_daa_tests.cpp
+		auscash_daa_tests.cpp
 )
 
 target_link_libraries(test-pow server testutil)

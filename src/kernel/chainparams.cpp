@@ -105,10 +105,10 @@ public:
         // Enforce strict chain ID on mainnet
         consensus.enforceStrictAuxPowChainId = true;
 
-        // The miner fund is disabled by default on Dogecoin mainnet.
+        // The miner fund is disabled by default on Australiacash mainnet.
         consensus.enableMinerFund = false;
 
-        // The staking rewards are disabled by default on Dogecoin mainnet.
+        // The staking rewards are disabled by default on Australiacash mainnet.
         consensus.enableStakingRewards = false;
 
         // The best chain should have at least this much work.
@@ -120,7 +120,7 @@ public:
         consensus.defaultAssumeValid =
             ChainParamsConstants::MAINNET_DEFAULT_ASSUME_VALID;
 
-        // BCH/XEC upgrades, disabled on Dogecoin
+        // BCH/XEC upgrades, disabled on Australiacash
         // Avoid using 0x7fffffff since some tests would overflow
         consensus.uahfHeight = 0x7ffffffe;
         consensus.daaHeight = 0x7ffffffe;
@@ -133,10 +133,10 @@ public:
         consensus.augustoActivationTime = 0x7ffffffe;
         consensus.schumpeterActivationTime = 0x7ffffffe;
 
-        // Dogecoin: Digishield activation height
+        // Australiacash: Digishield activation height
         consensus.digishieldHeight = 145000;
         consensus.initialCoinbaseMaturity = 30;
-        // Dogecoin: Enforce legacy script rules on mainnet
+        // Australiacash: Enforce legacy script rules on mainnet
         consensus.enforceLegacyScriptRules = true;
 
         /**
@@ -175,8 +175,8 @@ public:
         // the service bits we want, but we should get them updated to support
         // all service bits wanted by any release ASAP to avoid it where
         // possible.
-        vSeeds.emplace_back("seed.multidoge.org");
-        vSeeds.emplace_back("seed2.multidoge.org");
+        vSeeds.emplace_back("seed.multiaus.org");
+        vSeeds.emplace_back("seed2.multiaus.org");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<uint8_t>(1, 30);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<uint8_t>(1, 22);
@@ -263,7 +263,7 @@ public:
         consensus.defaultAssumeValid =
             ChainParamsConstants::TESTNET_DEFAULT_ASSUME_VALID;
 
-        // BCH/XEC upgrades, disabled on Dogecoin
+        // BCH/XEC upgrades, disabled on Australiacash
         consensus.uahfHeight = 0x7ffffffe;
         consensus.daaHeight = 0x7ffffffe;
         consensus.magneticAnomalyHeight = 0x7ffffffe;
@@ -275,10 +275,10 @@ public:
         consensus.augustoActivationTime = 0x7ffffffe;
         consensus.schumpeterActivationTime = 0x7ffffffe;
 
-        // Dogecoin: Digishield activation height
+        // Australiacash: Digishield activation height
         consensus.digishieldHeight = 145000;
         consensus.initialCoinbaseMaturity = 30;
-        // Dogecoin: Enforce legacy script rules on testnet
+        // Australiacash: Enforce legacy script rules on testnet
         consensus.enforceLegacyScriptRules = true;
 
         diskMagic[0] = 0xfb;

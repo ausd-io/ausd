@@ -936,8 +936,8 @@
         <translation>Dirbti fone kaip šešėlyje ir priimti komandas</translation>
     </message>
     <message>
-        <source>doged</source>
-        <translation>doged</translation>
+        <source>ausd</source>
+        <translation>ausd</translation>
     </message>
     <message>
         <source>Error opening block database</source>

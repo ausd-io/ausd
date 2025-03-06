@@ -50,7 +50,7 @@ MAX_FUTURE_BLOCK_TIME = 2 * 60 * 60
 # (network rule)
 COINBASE_MATURITY = 100
 
-# Bits for the nVersion chain ID for Dogecoin
+# Bits for the nVersion chain ID for Australiacash
 VERSION_CHAIN_ID_BITS = 0x620000
 
 

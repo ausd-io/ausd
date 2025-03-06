@@ -9,20 +9,20 @@ pushd artifacts/bin
 
 function check_help_version {
   try {
-    .\doged.exe -version
-    .\doged.exe -help
-    .\doge-qt.exe -version
-    .\doge-qt.exe -help
-    .\doge-cli.exe -version
-    .\doge-cli.exe -help
-    .\doge-tx.exe -help
-    .\doge-wallet -help
+    .\ausd.exe -version
+    .\ausd.exe -help
+    .\aus-qt.exe -version
+    .\aus-qt.exe -help
+    .\aus-cli.exe -version
+    .\aus-cli.exe -help
+    .\aus-tx.exe -help
+    .\aus-wallet -help
   }
   catch {
     Write-Error $_
   }
   finally {
-    Stop-Process -name doge-qt -Force -ErrorAction SilentlyContinue
+    Stop-Process -name aus-qt -Force -ErrorAction SilentlyContinue
   }
 }
 
@@ -35,49 +35,49 @@ function New-TemporaryDirectory {
 
 function check_bitcoind {
   trap {
-    Stop-Process -name doged -Force 
+    Stop-Process -name ausd -Force 
   }
 
   $datadir = New-TemporaryDirectory
   $datadirArg = "-datadir=$datadir"
 
-  Write-Host "Launching doged in the background"
-  Start-Process -NoNewWindow .\doged.exe "-noprinttoconsole $datadirArg"
+  Write-Host "Launching ausd in the background"
+  Start-Process -NoNewWindow .\ausd.exe "-noprinttoconsole $datadirArg"
 
   for($i=60; $i -gt 0; $i--) {
     Start-Sleep -Seconds 1
-    if(.\doge-cli.exe $datadirArg help) {
+    if(.\aus-cli.exe $datadirArg help) {
       break
     }
   }
   if($i -eq 0) {
-    throw "Failed to start doged"
+    throw "Failed to start ausd"
   }
 
-  Write-Host "Stopping doged"
-  .\doge-cli.exe $datadirArg stop
+  Write-Host "Stopping ausd"
+  .\aus-cli.exe $datadirArg stop
 
   for($i=60; $i -gt 0; $i--) {
     Start-Sleep -Seconds 1
-    if(-Not (Get-Process -Name doged -ErrorAction SilentlyContinue)) {
+    if(-Not (Get-Process -Name ausd -ErrorAction SilentlyContinue)) {
       break
     }
   }
   if($i -eq 0) {
-    throw "Failed to stop doged"
+    throw "Failed to stop ausd"
   }
 }
 
 Write-Host "--- Checking helps and versions ---"
 check_help_version
 
-Write-Host "--- Checking doged can run and communicate via doge-cli ---"
+Write-Host "--- Checking ausd can run and communicate via aus-cli ---"
 check_bitcoind
 
 Write-Host "--- Running bitcoin unit tests ---"
 .\test_bitcoin.exe
-Write-Host "--- Running doge-qt unit tests ---"
-.\test_doge-qt.exe -platform windows
+Write-Host "--- Running aus-qt unit tests ---"
+.\test_aus-qt.exe -platform windows
 Write-Host "--- Running pow unit tests ---"
 .\test-pow.exe
 Write-Host "--- Running avalanche unit tests ---"

@@ -1,6 +1,6 @@
-# PSBT Howto for doged
+# PSBT Howto for ausd
 
-Since doged v0.20.7, an RPC interface exists for Partially Signed Bitcoin
+Since ausd v0.20.7, an RPC interface exists for Partially Signed Bitcoin
 Transactions (PSBTs, as specified in
 [BIP 174](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki)).
 
@@ -46,7 +46,7 @@ The names above in bold are the names of the roles defined in BIP174. They're
 useful in understanding the underlying steps, but in practice, software and
 hardware implementations will typically implement multiple roles simultaneously.
 
-## PSBT in doged
+## PSBT in ausd
 
 ### RPCs
 
@@ -90,13 +90,13 @@ hardware implementations will typically implement multiple roles simultaneously.
 
 ### Workflows
 
-#### Multisig with multiple doged instances
+#### Multisig with multiple ausd instances
 
 Alice, Bob, and Carol want to create a 2-of-3 multisig address. They're all using
-doged. We assume their wallets only contain the multisig funds. In case
+ausd. We assume their wallets only contain the multisig funds. In case
 they also have a personal wallet, this can be accomplished through the
 multiwallet feature - possibly resulting in a need to add `-rpcwallet=name` to
-the command line in case `doge-cli` is used.
+the command line in case `aus-cli` is used.
 
 Setup:
 - All three call `getnewaddress` to create a new address; call these addresses

@@ -151,7 +151,7 @@ static const std::string HEADERS_TIME_FILE_NAME{"headerstime.dat"};
 /**
  * The PID file facilities.
  */
-static const char *BITCOIN_PID_FILENAME = "doged.pid";
+static const char *BITCOIN_PID_FILENAME = "ausd.pid";
 
 static fs::path GetPidFile(const ArgsManager &args) {
     return AbsPathForConfigVal(args,
@@ -2585,7 +2585,7 @@ bool AppInitMain(Config &config, RPCServer &rpcServer,
     RegisterValidationInterface(node.peerman.get());
 
     // Encoded addresses using cashaddr instead of base58.
-    // We don't this by default because Dogecoin uses base58 with a custom
+    // We don't this by default because Australiacash uses base58 with a custom
     // prefix, so ambiguity with BTC addresses is avoided.
     config.SetCashAddrEncoding(args.GetBoolArg("-usauscashaddr", false));
 

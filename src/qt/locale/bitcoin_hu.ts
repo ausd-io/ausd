@@ -1378,8 +1378,8 @@
 </translation>
     </message>
     <message>
-        <source>doged</source>
-        <translation>doged</translation>
+        <source>ausd</source>
+        <translation>ausd</translation>
     </message>
     <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>

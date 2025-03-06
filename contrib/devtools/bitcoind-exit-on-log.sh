@@ -8,23 +8,23 @@ set -euxo pipefail
 trap "kill 0" SIGINT
 
 TOPLEVEL=$(git rev-parse --show-toplevel)
-DEFAULT_BITCOIND="${TOPLEVEL}/build/src/doged"
-DEFAULT_LOG_FILE=~/".doge/debug.log"
+DEFAULT_BITCOIND="${TOPLEVEL}/build/src/ausd"
+DEFAULT_LOG_FILE=~/".aus/debug.log"
 
 help_message() {
   set +x
-  echo "Run doged until a given log message is encountered, then kill doged."
+  echo "Run ausd until a given log message is encountered, then kill ausd."
   echo ""
   echo "Example usages:"
-  echo "$0 --grep 'progress=1.000000' --params \"-datadir=~/.doge\" --callback mycallback"
+  echo "$0 --grep 'progress=1.000000' --params \"-datadir=~/.aus\" --callback mycallback"
   echo ""
   echo "Options:"
   echo "-h, --help            Display this help message."
   echo ""
   echo "-g, --grep            (required) The grep pattern to look for."
   echo ""
-  echo "-c, --callback        (optional) Bash command to execute as a callback. This is useful for interacting with doged before it is killed (to run tests, for example)."
-  echo "-p, --params          (optional) Parameters to provide to doged."
+  echo "-c, --callback        (optional) Bash command to execute as a callback. This is useful for interacting with ausd before it is killed (to run tests, for example)."
+  echo "-p, --params          (optional) Parameters to provide to ausd."
   echo ""
   echo "Environment Variables:"
   echo "BITCOIND              Default: ${DEFAULT_BITCOIND}"
@@ -100,7 +100,7 @@ PID_WAIT_COUNT=0
 while [ ! -e "${BITCOIND_PID_FILE}" ]; do
   ((PID_WAIT_COUNT+=1))
   if [ "${PID_WAIT_COUNT}" -gt 10 ]; then
-    echo "Timed out waiting for doged PID file"
+    echo "Timed out waiting for ausd PID file"
     exit 10
   fi
   sleep 0.5
@@ -143,7 +143,7 @@ set -x
 
 # If the log subshell is still running, then GREP_PATTERN was not found
 if [ -e /proc/${LOG_PID} ]; then
-  echo "doged exited unexpectedly. See '${LOG_FILE}' for details."
+  echo "ausd exited unexpectedly. See '${LOG_FILE}' for details."
   exit 20
 fi
 

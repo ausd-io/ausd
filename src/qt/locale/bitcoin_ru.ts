@@ -3058,8 +3058,8 @@
         <translation>Невозможно запустить HTTP сервер. Смотри debug лог для подробностей.</translation>
     </message>
     <message>
-        <source>doged</source>
-        <translation>doged</translation>
+        <source>ausd</source>
+        <translation>ausd</translation>
     </message>
     <message>
         <source>The %s developers</source>

@@ -1758,7 +1758,7 @@
         <translation>Tööta taustal ning aktsepteeri käsklusi</translation>
     </message>
     <message>
-        <source>doged</source>
+        <source>ausd</source>
         <translation>Bitcoini ABC</translation>
     </message>
     <message>

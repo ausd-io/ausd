@@ -1,7 +1,7 @@
 # Copyright (c) 2024 The Bitcoin developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test Dogecoin's old script rule enforcement via -legacyscriptrules."""
+"""Test Australiacash's old script rule enforcement via -legacyscriptrules."""
 
 from test_framework.address import (
     ADDRESS_ECREG_P2SH_OP_TRUE,

@@ -1,6 +1,6 @@
-# `dogecoin.conf` Configuration File
+# `auscash.conf` Configuration File
 
-The configuration file is used by `doged`, `doge-qt` and `doge-cli`.
+The configuration file is used by `ausd`, `aus-qt` and `aus-cli`.
 
 All command-line options (except for `-?`, `-help`, `-version` and `-conf`) may be specified in a configuration file, and all configuration file options (except for `includeconf`) may also be specified on the command line. Command-line options override values set in the configuration file and configuration file options override values set in the GUI.
 
@@ -47,16 +47,16 @@ rpcport=4000
 
 ## Configuration File Path
 
-The configuration file is not automatically created; you can create it using your favorite text editor. By default, the configuration file name is `dogecoin.conf` and it is located in the doged data directory, but both the doged data directory and the configuration file path may be changed using the `-datadir` and `-conf` command-line options.
+The configuration file is not automatically created; you can create it using your favorite text editor. By default, the configuration file name is `auscash.conf` and it is located in the ausd data directory, but both the ausd data directory and the configuration file path may be changed using the `-datadir` and `-conf` command-line options.
 
-The `includeconf=<file>` option in the `dogecoin.conf` file can be used to include additional configuration files.
+The `includeconf=<file>` option in the `auscash.conf` file can be used to include additional configuration files.
 
 ### Default configuration file locations
 
 Operating System | Data Directory | Example Path
 -- | -- | --
-Windows | `%APPDATA%\doged\` | `C:\Users\username\AppData\Roaming\doged\dogecoin.conf`
-Linux | `$HOME/.doge/` | `/home/username/.doge/dogecoin.conf`
-macOS | `$HOME/Library/Application Support/doged/` | `/Users/username/Library/Application Support/doged/dogecoin.conf`
+Windows | `%APPDATA%\ausd\` | `C:\Users\username\AppData\Roaming\ausd\auscash.conf`
+Linux | `$HOME/.aus/` | `/home/username/.aus/auscash.conf`
+macOS | `$HOME/Library/Application Support/ausd/` | `/Users/username/Library/Application Support/ausd/auscash.conf`
 
-You can find an example dogecoin.conf file in [contrib/debian/examples/dogecoin.conf](../contrib/debian/examples/dogecoin.conf).
+You can find an example auscash.conf file in [contrib/debian/examples/auscash.conf](../contrib/debian/examples/auscash.conf).

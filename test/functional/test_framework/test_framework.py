@@ -186,7 +186,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             dest="noshutdown",
             default=False,
             action="store_true",
-            help="Don't stop dogeds after the test execution",
+            help="Don't stop ausds after the test execution",
         )
         parser.add_argument(
             "--cachedir",
@@ -254,7 +254,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             dest="usecli",
             default=False,
             action="store_true",
-            help="use doge-cli instead of RPC for all commands",
+            help="use aus-cli instead of RPC for all commands",
         )
         parser.add_argument(
             "--perf",
@@ -322,12 +322,12 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         fname_bitcoind = os.path.join(
             config["environment"]["BUILDDIR"],
             "src",
-            f"doged{config['environment']['EXEEXT']}",
+            f"ausd{config['environment']['EXEEXT']}",
         )
         fname_bitcoincli = os.path.join(
             config["environment"]["BUILDDIR"],
             "src",
-            f"doge-cli{config['environment']['EXEEXT']}",
+            f"aus-cli{config['environment']['EXEEXT']}",
         )
         self.options.bitcoind = os.getenv("BITCOIND", default=fname_bitcoind)
         self.options.bitcoincli = os.getenv("BITCOINCLI", default=fname_bitcoincli)
@@ -399,7 +399,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         else:
             for node in self.nodes:
                 node.cleanup_on_exit = False
-            self.log.info("Note: dogeds were not stopped and may still be running")
+            self.log.info("Note: ausds were not stopped and may still be running")
 
         should_clean_up = (
             not self.options.nocleanup
@@ -982,7 +982,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             self.log.debug(f"Copy cache directory {cache_node_dir} to node {i}")
             to_dir = get_datadir_path(self.options.tmpdir, i)
             shutil.copytree(cache_node_dir, to_dir)
-            # Overwrite port/rpcport in dogecoin.conf
+            # Overwrite port/rpcport in auscash.conf
             initialize_datadir(
                 self.options.tmpdir,
                 i,
@@ -1047,14 +1047,14 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             raise SkipTest("wallet has not been compiled.")
 
     def skip_if_no_wallet_tool(self):
-        """Skip the running test if doge-wallet has not been compiled."""
+        """Skip the running test if aus-wallet has not been compiled."""
         if not self.is_wallet_tool_compiled():
-            raise SkipTest("doge-wallet has not been compiled")
+            raise SkipTest("aus-wallet has not been compiled")
 
     def skip_if_no_cli(self):
-        """Skip the running test if doge-cli has not been compiled."""
+        """Skip the running test if aus-cli has not been compiled."""
         if not self.is_cli_compiled():
-            raise SkipTest("doge-cli has not been compiled.")
+            raise SkipTest("aus-cli has not been compiled.")
 
     def skip_if_no_chronik(self):
         """Skip the running test if Chronik indexer has not been compiled."""
@@ -1067,7 +1067,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             raise SkipTest("Chronik indexer plugins have not been compiled.")
 
     def is_cli_compiled(self):
-        """Checks whether doge-cli was compiled."""
+        """Checks whether aus-cli was compiled."""
         return self.config["components"].getboolean("ENABLE_CLI")
 
     def is_wallet_compiled(self):
@@ -1075,7 +1075,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         return self.config["components"].getboolean("ENABLE_WALLET")
 
     def is_wallet_tool_compiled(self):
-        """Checks whether doge-wallet was compiled."""
+        """Checks whether aus-wallet was compiled."""
         return self.config["components"].getboolean("ENABLE_WALLET_TOOL")
 
     def is_chronik_compiled(self):

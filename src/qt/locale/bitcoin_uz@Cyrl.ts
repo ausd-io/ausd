@@ -1208,8 +1208,8 @@
         <translation>Демон сифатида орқа фонда ишга туширинг ва буйруқларга рози бўлинг</translation>
     </message>
     <message>
-        <source>doged</source>
-        <translation>doged</translation>
+        <source>ausd</source>
+        <translation>ausd</translation>
     </message>
     <message>
         <source>Connection options:</source>

@@ -1123,7 +1123,7 @@
 </translation>
     </message>
     <message>
-        <source>doged</source>
+        <source>ausd</source>
         <translation>ABC Bitcoin</translation>
     </message>
     <message>

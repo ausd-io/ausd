@@ -2870,8 +2870,8 @@
         <translation>Niet mogelijk ok HTTP-server te starten. Zie debuglogboek voor details.</translation>
     </message>
     <message>
-        <source>doged</source>
-        <translation>doged</translation>
+        <source>ausd</source>
+        <translation>ausd</translation>
     </message>
     <message>
         <source>The %s developers</source>

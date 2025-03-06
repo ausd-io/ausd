@@ -2,7 +2,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """
-Test default dogecoin fees.
+Test default auscash fees.
 """
 
 from decimal import Decimal
@@ -11,11 +11,11 @@ from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import assert_equal, remove_from_config
 
 
-class DogecoinFeesTest(BitcoinTestFramework):
+class AustraliacashFeesTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
-        self.extra_args = [["-usedogeunit=1"]]
+        self.extra_args = [["-useausunit=1"]]
         self.rpc_timeout = 240
 
     def skip_test_if_missing_module(self):
@@ -48,4 +48,4 @@ class DogecoinFeesTest(BitcoinTestFramework):
 
 
 if __name__ == "__main__":
-    DogecoinFeesTest().main()
+    AustraliacashFeesTest().main()

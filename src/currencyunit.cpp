@@ -13,8 +13,8 @@ void SetupCurrencyUnitOptions(ArgsManager &argsman) {
                    strprintf("Use the ausCash address prefix (default: %s)",
                              cashaddr::DEFAULT_AUSCASH ? "true" : "false"),
                    ArgsManager::ALLOW_BOOL, OptionsCategory::OPTIONS);
-    argsman.AddArg("-usedogeunit",
-                   strprintf("Use the DOGE unit (default: %s)",
-                             DEFAULT_USE_DOGE_UNIT ? "true" : "false"),
+    argsman.AddArg("-useausunit",
+                   strprintf("Use the AUS unit (default: %s)",
+                             DEFAULT_USE_AUS_UNIT ? "true" : "false"),
                    ArgsManager::ALLOW_BOOL, OptionsCategory::OPTIONS);
 }

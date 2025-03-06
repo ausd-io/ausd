@@ -1,7 +1,7 @@
 # Copyright (c) 2024 The Bitcoin developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test Dogecoin's old script flags via -legacyscriptrules."""
+"""Test Australiacash's old script flags via -legacyscriptrules."""
 
 from test_framework.address import (
     ADDRESS_ECREG_P2SH_OP_TRUE,
@@ -85,17 +85,17 @@ class LegacyScriptRulesTest(BitcoinTestFramework):
             block = make_block_with_txs(node, txs)
             peer.send_blocks_and_test([block], node)
 
-        # Flags on XEC that are not on Dogecoin:
+        # Flags on XEC that are not on Australiacash:
         # Mandatory flags:
         # - SCRIPT_ENABLE_SIGHASH_FORKID
         # - SCRIPT_ENABLE_SCHNORR_MULTISIG
         # - SCRIPT_ENFORCE_SIGCHECKS (not tested here)
         # - All other flags except SCRIPT_VERIFY_P2SH
-        #   (which the only mandatory flag on Dogecoin)
+        #   (which the only mandatory flag on Australiacash)
         # Standard flags:
         # - SCRIPT_VERIFY_SIGPUSHONLY
 
-        # Flags on Dogecoin that are not on XEC:
+        # Flags on Australiacash that are not on XEC:
         # Mandatory flags:
         # - SCRIPT_VERIFY_LEGACY_RULES (tested in feature_legacy_script_rules)
         # Standard flags:
@@ -119,7 +119,7 @@ class LegacyScriptRulesTest(BitcoinTestFramework):
         tx.rehash()
         txid = tx.hash
 
-        # Fork both nodes, CLEANSTACK not enforced on Dogecoin
+        # Fork both nodes, CLEANSTACK not enforced on Australiacash
         tx_noncleanstack = CTransaction()
         tx_noncleanstack.vin = [
             CTxIn(COutPoint(int(txid, 16), 8), CScript([b"jonny", CScript([OP_TRUE])]))
@@ -155,7 +155,7 @@ class LegacyScriptRulesTest(BitcoinTestFramework):
         tx_sighash_legacy = CTransaction(tx_sighash)
         tx_sighash_legacy.vin[0].scriptSig = CScript([txsig, public_key, script])
 
-        # SIGHASH_FORKID doesn't work on Dogecoin, OP_CHECKSIG uses legacy sighash
+        # SIGHASH_FORKID doesn't work on Australiacash, OP_CHECKSIG uses legacy sighash
         assert_raises_rpc_error(
             -26,
             "mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)",
@@ -183,7 +183,7 @@ class LegacyScriptRulesTest(BitcoinTestFramework):
             "blk-bad-inputs, parallel script check failed",
         )
 
-        # Legacy sighash ok on Dogecoin
+        # Legacy sighash ok on Australiacash
         node.sendrawtransaction(tx_sighash_legacy.serialize().hex())
         check_mined_txs_success(node, peer, [tx_sighash_legacy])
 
@@ -259,7 +259,7 @@ class LegacyScriptRulesTest(BitcoinTestFramework):
         )
 
         # Test borked SIGHASH_FORKID with legacy signatures
-        # On Dogecoin, signatures with SIGHASH_FORKID are valid if found in
+        # On Australiacash, signatures with SIGHASH_FORKID are valid if found in
         # blocks and if legacy signatures are used. Bork = fork + bug
         script = CScript([OP_CHECKSIG])
         tx_sighash_bork = CTransaction()
@@ -270,7 +270,7 @@ class LegacyScriptRulesTest(BitcoinTestFramework):
         txsig = private_key.sign_ecdsa(sighash) + b"\x41"
         tx_sighash_bork.vin[0].scriptSig = CScript([txsig, public_key, script])
 
-        # SIGHASH_FORKID not allowed in mempool on Dogecoin
+        # SIGHASH_FORKID not allowed in mempool on Australiacash
         assert_raises_rpc_error(
             -26,
             "non-mandatory-script-verify-flag (Illegal use of SIGHASH_FORKID)",
@@ -324,7 +324,7 @@ class LegacyScriptRulesTest(BitcoinTestFramework):
             "blk-bad-inputs, parallel script check failed",
         )
 
-        # Nulldummy enforced on Dogecoin, on XEC it's a bitfield
+        # Nulldummy enforced on Australiacash, on XEC it's a bitfield
         tx_nulldummy = CTransaction()
         tx_nulldummy.vin = [
             CTxIn(
@@ -354,7 +354,7 @@ class LegacyScriptRulesTest(BitcoinTestFramework):
             "blk-bad-inputs, parallel script check failed",
         )
 
-        # MINIMALIF enforced on Dogecoin, not on XEC
+        # MINIMALIF enforced on Australiacash, not on XEC
         tx_minimalif = CTransaction()
         tx_minimalif.vin = [
             CTxIn(
@@ -369,13 +369,13 @@ class LegacyScriptRulesTest(BitcoinTestFramework):
             node.sendrawtransaction,
             tx_minimalif.serialize().hex(),
         )
-        # Allowed in blocks in Dogecoin
+        # Allowed in blocks in Australiacash
         check_mined_txs_success(node, peer, [tx_minimalif])
         # Always allowed on XEC
         nonlegacy_node.sendrawtransaction(tx_minimalif.serialize().hex())
         check_mined_txs_success(nonlegacy_node, nonlegacy_peer, [tx_minimalif])
 
-        # Non-push opcodes allowed in scriptSigs on Dogecoin in blocks
+        # Non-push opcodes allowed in scriptSigs on Australiacash in blocks
         tx_signonpush = CTransaction()
         tx_signonpush.vin = [CTxIn(COutPoint(int(txid, 16), 7), CScript([OP_NOP]))]
         pad_tx(tx_signonpush)

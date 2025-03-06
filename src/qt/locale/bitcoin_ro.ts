@@ -748,8 +748,8 @@
 <context>
     <name>bitcoin-abc</name>
     <message>
-        <source>doged</source>
-        <translation>doged</translation>
+        <source>ausd</source>
+        <translation>ausd</translation>
     </message>
     <message>
         <source>Information</source>

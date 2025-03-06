@@ -1,12 +1,12 @@
 # Copyright (c) 2018 The Bitcoin developers
 
-project(test_doge-qt)
+project(test_aus-qt)
 
 include(TestSuite)
-create_test_suite(doge-qt)
-add_dependencies(check check-doge-qt)
+create_test_suite(aus-qt)
+add_dependencies(check check-aus-qt)
 
-add_test_to_suite(doge-qt test_doge-qt
+add_test_to_suite(aus-qt test_aus-qt
 	apptests.cpp
 	bitcoinaddressvalidatortests.cpp
 	compattests.cpp
@@ -18,12 +18,12 @@ add_test_to_suite(doge-qt test_doge-qt
 	util.cpp
 )
 
-target_link_libraries(test_doge-qt testutil bitcoin-qt-base Qt5::Test)
+target_link_libraries(test_aus-qt testutil bitcoin-qt-base Qt5::Test)
 
 # Wallet
 if(BUILD_BITCOIN_WALLET)
-	# Add wallet functionality to test_doge-qt
-	target_sources(test_doge-qt
+	# Add wallet functionality to test_aus-qt
+	target_sources(test_aus-qt
 		PRIVATE
 			addressbooktests.cpp
 			wallettests.cpp
@@ -31,11 +31,11 @@ if(BUILD_BITCOIN_WALLET)
 	)
 
 	if(ENABLE_BIP70)
-		target_sources(test_doge-qt
+		target_sources(test_aus-qt
 			PRIVATE
 				paymentservertests.cpp
 		)
 	endif()
 
-	target_link_libraries(test_doge-qt wallet)
+	target_link_libraries(test_aus-qt wallet)
 endif()

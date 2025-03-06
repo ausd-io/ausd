@@ -287,7 +287,7 @@ RPCHelpMan importaddress() {
         "\"importdescriptors\" for descriptor wallets.\n",
         {
             {"address", RPCArg::Type::STR, RPCArg::Optional::NO,
-             "The Dogecoin address (or hex-encoded script)"},
+             "The Australiacash address (or hex-encoded script)"},
             {"label", RPCArg::Type::STR, RPCArg::Default{""},
              "An optional label"},
             {"rescan", RPCArg::Type::BOOL, RPCArg::Default{true},
@@ -384,7 +384,7 @@ RPCHelpMan importaddress() {
                         true /* apply_label */, 1 /* timestamp */);
                 } else {
                     throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY,
-                                       "Invalid Dogecoin address or script");
+                                       "Invalid Australiacash address or script");
                 }
             }
             if (fRescan) {
@@ -894,7 +894,7 @@ RPCHelpMan dumpprivkey() {
                 DecodeDestination(strAddress, wallet->GetChainParams());
             if (!IsValidDestination(dest)) {
                 throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY,
-                                   "Invalid Dogecoin address");
+                                   "Invalid Australiacash address");
             }
             auto keyid = GetKeyForDestination(spk_man, dest);
             if (keyid.IsNull()) {
@@ -1672,7 +1672,7 @@ static std::string GetRescanErrorMessage(const std::string &object,
         "key creation, and could contain transactions pertaining to the %s. As "
         "a result, transactions and coins using this %s may not appear in "
         "the wallet. This error could be caused by pruning or data corruption "
-        "(see doged log for details) and could be dealt with by "
+        "(see ausd log for details) and could be dealt with by "
         "downloading "
         "and rescanning the relevant blocks (see -reindex and -rescan "
         "options).",

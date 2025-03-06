@@ -1,6 +1,6 @@
 # Copyright (c) 2018 The Bitcoin developers
 
-project(doge-qt)
+project(aus-qt)
 
 include(BrewHelper)
 find_brew_prefix(QT5_PREFIX qt5)
@@ -357,23 +357,23 @@ if(BUILD_BITCOIN_WALLET)
 endif()
 
 # The executable
-add_executable(doge-qt WIN32 main.cpp)
+add_executable(aus-qt WIN32 main.cpp)
 include(WindowsVersionInfo)
-generate_windows_version_info(doge-qt
-	DESCRIPTION "GUI node for Dogecoin"
+generate_windows_version_info(aus-qt
+	DESCRIPTION "GUI node for Australiacash"
 	ICONS
 		"res/icons/bitcoin.ico"
 		"res/icons/bitcoin_testnet.ico"
 )
-target_link_libraries(doge-qt bitcoin-qt-base)
+target_link_libraries(aus-qt bitcoin-qt-base)
 
 include(BinaryTest)
-add_to_symbols_check(doge-qt)
-add_to_security_check(doge-qt)
+add_to_symbols_check(aus-qt)
+add_to_security_check(aus-qt)
 
 include(InstallationHelper)
-install_target(doge-qt)
-install_manpages(doge-qt)
+install_target(aus-qt)
+install_manpages(aus-qt)
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 	set(BITCOINQT_BUNDLE_ICON "res/icons/bitcoin.icns")
@@ -392,7 +392,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 	set(EMPTY_LPROJ_FILE "${CMAKE_CURRENT_BINARY_DIR}/empty.lproj")
 	file(TOUCH "${EMPTY_LPROJ_FILE}")
 
-	target_sources(doge-qt PRIVATE
+	target_sources(aus-qt PRIVATE
 		"${BITCOINQT_BUNDLE_ICON}"
 		"${INFO_PLIST_STRINGS_PATH}"
 		"${EMPTY_LPROJ_FILE}"
@@ -403,8 +403,8 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 		"${EMPTY_LPROJ_FILE}"
 	)
 
-	set(BITCOIN_QT_OSX_BUNDLE_NAME "Doge-Qt")
-	set_target_properties(doge-qt PROPERTIES
+	set(BITCOIN_QT_OSX_BUNDLE_NAME "Aus-Qt")
+	set_target_properties(aus-qt PROPERTIES
 		MACOSX_BUNDLE ON
 		OUTPUT_NAME "${BITCOIN_QT_OSX_BUNDLE_NAME}"
 		MACOSX_BUNDLE_INFO_PLIST "${CMAKE_SOURCE_DIR}/share/qt/Info.plist.cmake.in"
@@ -443,11 +443,11 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 		OUTPUT
 			"${STRIPPED_BUNDLE}"
 		COMMAND
-			${CMAKE_COMMAND} -E copy_directory "$<TARGET_BUNDLE_DIR:doge-qt>" "${STRIPPED_BUNDLE}"
+			${CMAKE_COMMAND} -E copy_directory "$<TARGET_BUNDLE_DIR:aus-qt>" "${STRIPPED_BUNDLE}"
 		COMMAND
 			${CMAKE_STRIP} -u -r "${STRIPPED_BUNDLE}/Contents/MacOS/${BITCOIN_QT_OSX_BUNDLE_NAME}"
 		DEPENDS
-			doge-qt
+			aus-qt
 	)
 
 	include(DoOrFail)

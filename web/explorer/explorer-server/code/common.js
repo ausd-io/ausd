@@ -1,5 +1,5 @@
 const DEFAULT_ROWS_PER_PAGE = 100;
-const SATS_PER_DOGE = 100000000;
+const SATS_PER_AUS = 100000000;
 
 var tzOffset;
 
@@ -72,7 +72,7 @@ function renderAmount(baseAmount, decimals) {
 }
 
 function renderSats(sats) {
-    var coins = sats / SATS_PER_DOGE;
+    var coins = sats / SATS_PER_AUS;
     var fmt = coins.toFixed('8');
     var parts = fmt.split('.');
     var integerPart = parseInt(parts[0]);
@@ -92,7 +92,7 @@ const renderFee = (_value, _type, row) => {
     }
 
     const fee = renderInteger(
-        (row.stats.satsInput - row.stats.satsOutput) / SATS_PER_DOGE,
+        (row.stats.satsInput - row.stats.satsOutput) / SATS_PER_AUS,
     );
     let markup = '';
 
@@ -109,7 +109,7 @@ const renderFeePerByte = (_value, _type, row) => {
     if (row.isCoinbase) {
         return '';
     }
-    const fee = (row.stats.satsInput - row.stats.satsOutput) / SATS_PER_DOGE;
+    const fee = (row.stats.satsInput - row.stats.satsOutput) / SATS_PER_AUS;
     const feePerKByte = (fee / row.size) * 1000;
     // round to 3 decimal places
     const roundedFeePerKByte = Math.round(feePerKByte * 1000) / 1000; 

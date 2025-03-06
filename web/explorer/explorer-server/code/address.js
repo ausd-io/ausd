@@ -51,7 +51,7 @@ function renderRowsCoins(row, type, decimals, ticker) {
             '</div>' +
             '<div>' +
             renderSats(row.satsAmount) +
-            ' DOGE' +
+            ' AUS' +
             '</div>' +
             '</div>'
         );
@@ -250,16 +250,16 @@ const renderBlockHeight = (_value, _type, row) => {
 
 const renderSize = size => formatByteSize(size);
 
-const renderAmountDOGE = (_value, _type, row) => {
+const renderAmountAUS = (_value, _type, row) => {
     if (row.stats.deltaSats < 0) {
         return (
-            '<span class="num-col-suffix" data-suffix="DOGE">' +
+            '<span class="num-col-suffix" data-suffix="AUS">' +
             renderSats(row.stats.deltaSats) +
             '</span>'
         );
     } else
         return (
-            '<span style="color:#15ee3e" class="num-col-suffix" data-suffix="DOGE">+' +
+            '<span style="color:#15ee3e" class="num-col-suffix" data-suffix="AUS">+' +
             renderSats(row.stats.deltaSats) +
             '</span>'
         );
@@ -385,7 +385,7 @@ const datatable = () => {
                 name: 'deltaSats',
                 data: 'deltaSats',
                 title: 'Amount',
-                render: renderAmountDOGE,
+                render: renderAmountAUS,
                 orderSequence: ['desc', 'asc'],
                 className: 'text-right',
             },

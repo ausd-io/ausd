@@ -1,6 +1,6 @@
 # Copyright (c) 2017 The Bitcoin developers
 
-project(doged)
+project(ausd)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -11,12 +11,12 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
 option(BUILD_BITCOIN_WALLET "Activate the wallet functionality" ON)
 option(BUILD_BITCOIN_ZMQ "Activate the ZeroMQ functionalities" ON)
-option(BUILD_BITCOIN_CLI "Build doge-cli" ON)
-option(BUILD_BITCOIN_TX "Build doge-tx" ON)
-option(BUILD_BITCOIN_QT "Build doge-qt" ON)
-option(BUILD_BITCOIN_SEEDER "Build doge-seeder" ON)
+option(BUILD_BITCOIN_CLI "Build aus-cli" ON)
+option(BUILD_BITCOIN_TX "Build aus-tx" ON)
+option(BUILD_BITCOIN_QT "Build aus-qt" ON)
+option(BUILD_BITCOIN_SEEDER "Build aus-seeder" ON)
 option(BUILD_LIBBITCOINCONSENSUS "Build the bitcoinconsenus shared library" ON)
-option(BUILD_BITCOIN_CHAINSTATE "Build doge-chainstate" OFF)
+option(BUILD_BITCOIN_CHAINSTATE "Build aus-chainstate" OFF)
 option(BUILD_BITCOIN_IGUANA "Activate the Iguana debugger" ON)
 option(ENABLE_BIP70 "Enable BIP70 (payment protocol) support in GUI" ON)
 option(ENABLE_HARDENING "Harden the executables" ON)
@@ -28,7 +28,7 @@ option(ENABLE_UPNP "Enable UPnP support" ON)
 option(START_WITH_UPNP "Make UPnP the default to map ports" OFF)
 option(ENABLE_NATPMP "Enable NAT-PMP support" ON)
 option(START_WITH_NATPMP "Make NAT-PMP the default to map ports" OFF)
-option(ENABLE_CLANG_TIDY "Enable clang-tidy checks for doged" OFF)
+option(ENABLE_CLANG_TIDY "Enable clang-tidy checks for ausd" OFF)
 option(ENABLE_PROFILING "Select the profiling tool to use" OFF)
 option(ENABLE_TRACING "Enable eBPF user static defined tracepoints" OFF)
 
@@ -777,19 +777,19 @@ if(BUILD_BITCOIN_WALLET)
 	add_subdirectory(wallet)
 	target_link_libraries(server wallet)
 
-	# doge-wallet
-	add_executable(doge-wallet bitcoin-wallet.cpp)
-	generate_windows_version_info(doge-wallet
+	# aus-wallet
+	add_executable(aus-wallet bitcoin-wallet.cpp)
+	generate_windows_version_info(aus-wallet
 		DESCRIPTION "CLI tool for ${PACKAGE_NAME} wallets"
 	)
 
-	target_link_libraries(doge-wallet wallet-tool common util)
+	target_link_libraries(aus-wallet wallet-tool common util)
 
-	add_to_symbols_check(doge-wallet)
-	add_to_security_check(doge-wallet)
+	add_to_symbols_check(aus-wallet)
+	add_to_security_check(aus-wallet)
 
-	install_target(doge-wallet)
-	install_manpages(doge-wallet)
+	install_target(aus-wallet)
+	install_manpages(aus-wallet)
 else()
 	target_sources(server PRIVATE dummywallet.cpp)
 endif()
@@ -812,45 +812,45 @@ add_library(rpcclient
 
 target_link_libraries(rpcclient univalue util)
 
-# doge-seeder
+# aus-seeder
 if(BUILD_BITCOIN_SEEDER)
 	add_subdirectory(seeder)
 endif()
 
-# doge-cli
+# aus-cli
 if(BUILD_BITCOIN_CLI)
-	add_executable(doge-cli bitcoin-cli.cpp)
-	generate_windows_version_info(doge-cli
+	add_executable(aus-cli bitcoin-cli.cpp)
+	generate_windows_version_info(aus-cli
 		DESCRIPTION "JSON-RPC client for ${PACKAGE_NAME}"
 	)
 
-	target_link_libraries(doge-cli common rpcclient)
-	link_event(doge-cli event)
+	target_link_libraries(aus-cli common rpcclient)
+	link_event(aus-cli event)
 
-	add_to_symbols_check(doge-cli)
-	add_to_security_check(doge-cli)
+	add_to_symbols_check(aus-cli)
+	add_to_security_check(aus-cli)
 
-	install_target(doge-cli)
-	install_manpages(doge-cli)
+	install_target(aus-cli)
+	install_manpages(aus-cli)
 endif()
 
-# doge-tx
+# aus-tx
 if(BUILD_BITCOIN_TX)
-	add_executable(doge-tx bitcoin-tx.cpp)
-	generate_windows_version_info(doge-tx
+	add_executable(aus-tx bitcoin-tx.cpp)
+	generate_windows_version_info(aus-tx
 		DESCRIPTION "CLI Bitcoin transaction editor utility"
 	)
 
-	target_link_libraries(doge-tx bitcoinconsensus)
+	target_link_libraries(aus-tx bitcoinconsensus)
 
-	add_to_symbols_check(doge-tx)
-	add_to_security_check(doge-tx)
+	add_to_symbols_check(aus-tx)
+	add_to_security_check(aus-tx)
 
-	install_target(doge-tx)
-	install_manpages(doge-tx)
+	install_target(aus-tx)
+	install_manpages(aus-tx)
 endif()
 
-# doge-chainstate
+# aus-chainstate
 if(BUILD_BITCOIN_CHAINSTATE)
 	# TODO: libbitcoinkernel is a work in progress consensus engine library, as more
 	#       and more modules are decoupled from the consensus engine, this list will
@@ -953,7 +953,7 @@ if(BUILD_BITCOIN_CHAINSTATE)
 		versionbits.cpp
 		warnings.cpp
 
-		# doged specific dependencies that will not go away with Core backports
+		# ausd specific dependencies that will not go away with Core backports
 		addrdb.cpp   # via banman.cpp
 		addrman.cpp  # via net.cpp
 		banman.cpp   # via net.cpp
@@ -1003,29 +1003,29 @@ if(BUILD_BITCOIN_CHAINSTATE)
 		link_windows_dependencies(bitcoinkernel)
 	endif()
 
-	add_executable(doge-chainstate bitcoin-chainstate.cpp)
+	add_executable(aus-chainstate bitcoin-chainstate.cpp)
 
-	target_link_libraries(doge-chainstate bitcoinkernel)
+	target_link_libraries(aus-chainstate bitcoinkernel)
 
-	generate_windows_version_info(doge-chainstate
+	generate_windows_version_info(aus-chainstate
 		DESCRIPTION "CLI Datadir information utility (experimental)"
 	)
 
-	add_to_symbols_check(doge-chainstate)
-	add_to_security_check(doge-chainstate)
+	add_to_symbols_check(aus-chainstate)
+	add_to_security_check(aus-chainstate)
 endif()
 
-# doged
-add_executable(doged bitcoind.cpp)
-target_link_libraries(doged server)
-generate_windows_version_info(doged
+# ausd
+add_executable(ausd bitcoind.cpp)
+target_link_libraries(ausd server)
+generate_windows_version_info(ausd
 	DESCRIPTION "Bitcoin node with a JSON-RPC server"
 )
-add_to_symbols_check(doged)
-add_to_security_check(doged)
+add_to_symbols_check(ausd)
+add_to_security_check(ausd)
 
-install_target(doged)
-install_manpages(doged)
+install_target(ausd)
+install_manpages(ausd)
 
 # Bitcoin-qt
 if(BUILD_BITCOIN_QT)

@@ -1338,7 +1338,7 @@
         <translation>Ruli fone kiel demono kaj akcepti komandojn</translation>
     </message>
     <message>
-        <source>doged</source>
+        <source>ausd</source>
         <translation>ABC Bitmono</translation>
     </message>
     <message>

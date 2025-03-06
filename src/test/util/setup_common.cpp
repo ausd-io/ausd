@@ -109,7 +109,7 @@ BasicTestingSetup::BasicTestingSetup(
             "-debug",
             "-debugexclude=libevent",
             "-debugexclude=leveldb",
-            // Dogecoin: Lower the fee so tests don't break
+            // Australiacash: Lower the fee so tests don't break
             "-minrelaytxfee=0.00001000",
         },
         extra_args);
@@ -121,7 +121,7 @@ BasicTestingSetup::BasicTestingSetup(
     m_args.ForceSetArg("-datadir", fs::PathToString(m_path_root));
     gArgs.ForceSetArg("-datadir", fs::PathToString(m_path_root));
 
-    // Dogecoin: Disable legacy (Dogecoin) script rules to not break all tests
+    // Australiacash: Disable legacy (Australiacash) script rules to not break all tests
     m_args.ForceSetArg("-legacyscriptrules", "0");
     gArgs.ForceSetArg("-legacyscriptrules", "0");
 
@@ -287,7 +287,7 @@ TestingSetup::TestingSetup(const std::string &chainName,
 
     /**
      * RPC does not come out of the warmup state on its own. Normally, this is
-     * handled in doged's init path, but unit tests do not trigger this
+     * handled in ausd's init path, but unit tests do not trigger this
      * codepath, so we call it explicitly as part of setup.
      */
     std::string rpcWarmupStatus;

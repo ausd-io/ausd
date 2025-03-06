@@ -16,7 +16,7 @@ import Switch from 'components/Common/Switch';
 import OrderBook from './OrderBook';
 import { token as tokenConfig } from 'config/token';
 import CashtabCache, { CashtabCachedTokenInfo } from 'config/CashtabCache';
-import { DogeIcon } from 'components/Common/CustomIcons';
+import { AusIcon } from 'components/Common/CustomIcons';
 
 interface CashtabActiveOffers {
     offeredFungibleTokenIds: string[];
@@ -224,7 +224,7 @@ const Agora: React.FC = () => {
                     ) : (
                         <>
                             <PageHeader>
-                                Agora <DogeIcon />
+                                Agora <AusIcon />
                             </PageHeader>
                             <ActiveOffers title="Active Offers">
                                 <SwitchHolder>

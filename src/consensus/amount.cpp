@@ -12,12 +12,12 @@
 
 #include <tinyformat.h>
 
-static const Currency DOGE{COIN, SATOSHI, 8, "DOGE"};
-static const Currency uDOGE{100 * SATOSHI, SATOSHI, 2, "µDOGE"};
+static const Currency AUS{COIN, SATOSHI, 8, "AUS"};
+static const Currency uAUS{100 * SATOSHI, SATOSHI, 2, "µAUS"};
 
 const Currency &Currency::get() {
-    return gArgs.GetBoolArg("-usedogeunit", DEFAULT_USE_DOGE_UNIT) ? DOGE
-                                                                   : uDOGE;
+    return gArgs.GetBoolArg("-useausunit", DEFAULT_USE_AUS_UNIT) ? AUS
+                                                                   : uAUS;
 }
 
 std::string Amount::ToString() const {

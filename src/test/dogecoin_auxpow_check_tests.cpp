@@ -13,7 +13,7 @@
 
 #include <boost/test/unit_test.hpp>
 
-BOOST_AUTO_TEST_SUITE(dogecoin_auxpow_check_tests)
+BOOST_AUTO_TEST_SUITE(auscash_auxpow_check_tests)
 
 // Block eac853ae22d59a498386241a3de69a36739ccc9e0a6acfd617b64c5ea4a0f4b3
 // chainindex=56

@@ -4,15 +4,15 @@ abc-ci-builds
 
 *.exe
 src/bitcoin
-src/doged
-src/doge-cli
-src/doge-seeder
-src/doge-tx
-src/doge-chainstate
-src/doge-wallet
+src/ausd
+src/aus-cli
+src/aus-seeder
+src/aus-tx
+src/aus-chainstate
+src/aus-wallet
 src/test/test_bitcoin
 src/test/test_bitcoin_fuzzy
-src/qt/test/test_doge-qt
+src/qt/test/test_aus-qt
 
 src/obj
 
@@ -22,11 +22,11 @@ src/qt/forms/ui_*.h
 
 src/qt/test/moc*.cpp
 
-src/qt/doge-qt.config
-src/qt/doge-qt.creator
-src/qt/doge-qt.creator.user
-src/qt/doge-qt.files
-src/qt/doge-qt.includes
+src/qt/aus-qt.config
+src/qt/aus-qt.creator
+src/qt/aus-qt.creator.user
+src/qt/aus-qt.files
+src/qt/aus-qt.includes
 
 .deps
 .libs
@@ -57,8 +57,8 @@ src/qt/doge-qt.includes
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-doge-qt
-Doge-Qt.app
+aus-qt
+Aus-Qt.app
 
 # Resources cpp
 qrc_*.cpp

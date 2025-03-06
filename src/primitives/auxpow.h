@@ -22,7 +22,7 @@ static constexpr int32_t VERSION_AUXPOW_BIT = 1 << VERSION_AUXPOW_BIT_POS;
 /** Position of the bits reserved for the auxpow chain ID. */
 static constexpr int32_t VERSION_CHAIN_ID_BIT_POS = 16;
 
-/** Chain ID used by Dogecoin. */
+/** Chain ID used by Australiacash. */
 static constexpr uint32_t AUXPOW_CHAIN_ID = 0x62;
 
 /** Max allowed chain ID */
@@ -74,7 +74,7 @@ inline bool VersionHasAuxPow(int32_t nVersion) {
  */
 inline bool VersionIsLegacy(int32_t nVersion) {
     return nVersion == 1
-           // Dogecoin: We have a random v2 block with no AuxPoW, treat as
+           // Australiacash: We have a random v2 block with no AuxPoW, treat as
            // legacy
            || nVersion == 2;
 }
@@ -115,7 +115,7 @@ public:
      * - The root hash is encoded in big-endian
      * - The prefix can only occur at most once
      * - If there's no prefix, the root hash can have at most 20 bytes preceding
-     *   it (Note: The Dogecoin source claims the root hash "must start in the
+     *   it (Note: The Australiacash source claims the root hash "must start in the
      *   first 20 bytes", but this doesn't match the code).
      */
     static util::Result<ParsedAuxPowCoinbase>

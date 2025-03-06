@@ -831,7 +831,7 @@ static RPCHelpMan decodepsbt() {
                                     {RPCResult::Type::STR, "type",
                                      "The type, eg 'pubkeyhash'"},
                                     {RPCResult::Type::STR, "address",
-                                     " Dogecoin address if there is one"},
+                                     " Australiacash address if there is one"},
                                 }},
                            }},
                           {RPCResult::Type::OBJ_DYN,

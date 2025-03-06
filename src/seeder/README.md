@@ -1,9 +1,9 @@
-doge-seeder
+aus-seeder
 ==============
 
 Bitcoin-seeder is a crawler for the ausCash network, which exposes a list
 of reliable nodes via a built-in DNS server. It is derived from Pieter Wuille's
-doge-seeder, modified for use on the ausCash network.
+aus-seeder, modified for use on the ausCash network.
 
 Features:
 * regularly revisits known nodes to check their availability
@@ -31,9 +31,9 @@ to for example vps.example.com:
     ;; ANSWER SECTION
     dnsseed.example.com.   86400    IN      NS     vps.example.com.
 
-On the system vps.example.com, you can now run doge-seeder:
+On the system vps.example.com, you can now run aus-seeder:
 
-    ./doge-seeder -host=dnsseed.example.com -ns=vps.example.com
+    ./aus-seeder -host=dnsseed.example.com -ns=vps.example.com
 
 If you want the DNS server to report SOA records, please provide an
 e-mail address (with the `@` part replaced by `.`) using `-mbox`.
@@ -41,14 +41,14 @@ e-mail address (with the `@` part replaced by `.`) using `-mbox`.
 TESTING
 -------
 
-It's sometimes useful to test `doge-seeder` locally to ensure it's giving good
+It's sometimes useful to test `aus-seeder` locally to ensure it's giving good
 output (either as part of development or sanity checking). You can inspect
 `dnsseed.dump` to inspect all nodes being tracked for crawling, or you can
 issue DNS requests directly. Example:
 
 $ dig @:: -p 15353 dnsseed.example.com
        ^       ^    ^
-       |       |    |__ Should match the host (-h) argument supplied to doge-seeder
+       |       |    |__ Should match the host (-h) argument supplied to aus-seeder
        |       |
        |       |_______ Port number (example uses the user space port; see below)
        |
@@ -65,7 +65,7 @@ a non-privileged port:
 
     iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-port 15353
 
-If properly configured, this will allow you to run doge-seeder in userspace, using
+If properly configured, this will allow you to run aus-seeder in userspace, using
 the `-port=15353` option.
 
 Generate Seed Lists

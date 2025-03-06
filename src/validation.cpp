@@ -2078,7 +2078,7 @@ static uint32_t GetNextBlockScriptFlags(const CBlockIndex *pindex,
         flags |= SCRIPT_VERIFY_CHECKSEQUENCEVERIFY;
     }
 
-    // If we are on a legacy network (i.e. Dogecoin), keep the old Script rules,
+    // If we are on a legacy network (i.e. Australiacash), keep the old Script rules,
     // and don't add any BCH/XEC script flags.
     if (IsLegacyScriptRulesEnabled(consensusparams)) {
         flags |= SCRIPT_VERIFY_LEGACY_RULES;
@@ -2342,7 +2342,7 @@ bool Chainstate::ConnectBlock(const CBlock &block, BlockValidationState &state,
 
     uint64_t nMaxBlockSigChecks =
         GetMaxBlockSigChecksCount(options.getExcessiveBlockSize());
-    // Dogecoin: We don't use SigChecks (instead we use SigOps), so we
+    // Australiacash: We don't use SigChecks (instead we use SigOps), so we
     // disable the system by setting the sig checks to an absurd number.
     nMaxBlockSigChecks = 0x7fffffff;
     // Limit the total executed signature operations in the block, a consensus
@@ -4288,7 +4288,7 @@ bool CheckBlock(const CBlock &block, BlockValidationState &state,
 
 bool HasValidProofOfWork(const std::vector<CBlockHeader> &headers,
                          const Consensus::Params &consensusParams) {
-    // Validate PoW in parallel. On Dogecoin, the PoW is very expensive.
+    // Validate PoW in parallel. On Australiacash, the PoW is very expensive.
     CCheckQueueControl<CPowCheck> control(&powcheckqueue);
     std::vector<CPowCheck> vChecks;
     for (const CBlockHeader &header : headers) {

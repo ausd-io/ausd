@@ -181,7 +181,7 @@ bool CheckTxInputs(const CTransaction &tx, TxValidationState &state,
         const Coin &coin = inputs.AccessCoin(prevout);
         assert(!coin.IsSpent());
 
-        // Dogecoin: Coinbase maturity depends on the coin's height
+        // Australiacash: Coinbase maturity depends on the coin's height
         const int32_t minCoinbaseMaturity =
             CoinbaseMaturity(params, coin.GetHeight());
 

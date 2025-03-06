@@ -32,7 +32,7 @@
 #include <stdexcept>
 #include <string>
 
-const char *const BITCOIN_CONF_FILENAME = "dogecoin.conf";
+const char *const BITCOIN_CONF_FILENAME = "auscash.conf";
 const char *const BITCOIN_SETTINGS_FILENAME = "settings.json";
 
 ArgsManager gArgs;
@@ -217,7 +217,7 @@ bool ArgsManager::ParseParameters(int argc, const char *const argv[],
 #endif
 
         if (key == "-") {
-            // doge-tx using stdin
+            // aus-tx using stdin
             break;
         }
         std::string val;
@@ -757,12 +757,12 @@ std::string HelpMessageOpt(const std::string &option,
 }
 
 fs::path GetDefaultDataDir() {
-    // Windows: C:\Users\Username\AppData\Roaming\doge
-    // macOS: ~/Library/Application Support/doge
-    // Unix-like: ~/.doge
+    // Windows: C:\Users\Username\AppData\Roaming\aus
+    // macOS: ~/Library/Application Support/aus
+    // Unix-like: ~/.aus
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "doge";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "aus";
 #else
     fs::path pathRet;
     char *pszHome = getenv("HOME");
@@ -773,10 +773,10 @@ fs::path GetDefaultDataDir() {
     }
 #ifdef MAC_OSX
     // macOS
-    return pathRet / "Library/Application Support/doge";
+    return pathRet / "Library/Application Support/aus";
 #else
     // Unix-like
-    return pathRet / ".doge";
+    return pathRet / ".aus";
 #endif
 #endif
 }

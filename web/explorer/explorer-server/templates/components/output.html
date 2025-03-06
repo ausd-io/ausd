@@ -35,11 +35,11 @@
                             endif %}
                         {% endif %}
                         <div>
-                            <small>{{ output.value|render_sats|safe }} DOGE</small>
+                            <small>{{ output.value|render_sats|safe }} AUS</small>
                         </div>
-                        {% when None %} {{ output.value|render_sats|safe }} DOGE {%
+                        {% when None %} {{ output.value|render_sats|safe }} AUS {%
                         endmatch %} {% when None %} {{ output.value|render_sats|safe }}
-                        DOGE
+                        AUS
                     {% endmatch %}
                 </div>
             </div>

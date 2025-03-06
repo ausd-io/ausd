@@ -98,7 +98,7 @@ class TestNode:
         self.index = i
         self.p2p_conn_index = 1
         self.datadir = datadir
-        self.bitcoinconf = os.path.join(self.datadir, "dogecoin.conf")
+        self.bitcoinconf = os.path.join(self.datadir, "auscash.conf")
         self.stdout_dir = os.path.join(self.datadir, "stdout")
         self.stderr_dir = os.path.join(self.datadir, "stderr")
         self.chain = chain
@@ -112,7 +112,7 @@ class TestNode:
         if not os.path.isfile(self.binary):
             raise FileNotFoundError(
                 f"Binary '{self.binary}' could not be found.\nTry setting it"
-                f" manually:\n\tBITCOIND=<path/to/doged> {sys.argv[0]}"
+                f" manually:\n\tBITCOIND=<path/to/ausd> {sys.argv[0]}"
             )
         self.coverage_dir = coverage_dir
         self.cwd = cwd
@@ -126,7 +126,7 @@ class TestNode:
         # Note that common args are set in the config file (see
         # initialize_datadir)
         self.extra_args = extra_args
-        # Configuration for logging is set as command-line args rather than in the dogecoin.conf file.
+        # Configuration for logging is set as command-line args rather than in the auscash.conf file.
         # This means that starting a bitcoind using the temp dir to debug a failed test won't
         # spam debug.log.
         self.default_args = [
@@ -170,7 +170,7 @@ class TestNode:
         if use_cli and not os.path.isfile(bitcoin_cli):
             raise FileNotFoundError(
                 f"Binary '{bitcoin_cli}' could not be found.\nTry setting it"
-                f" manually:\n\tBITCOINCLI=<path/to/doge-cli> {sys.argv[0]}"
+                f" manually:\n\tBITCOINCLI=<path/to/aus-cli> {sys.argv[0]}"
             )
         self.cli = TestNodeCLI(bitcoin_cli, self.datadir, self.emulator)
         self.use_cli = use_cli
@@ -387,7 +387,7 @@ class TestNode:
         )
 
         self.running = True
-        self.log.debug("doged started, waiting for RPC to come up")
+        self.log.debug("ausd started, waiting for RPC to come up")
 
         if self.start_perf:
             self._start_perf()
@@ -401,7 +401,7 @@ class TestNode:
             if self.process.poll() is not None:
                 raise FailedToStartError(
                     self._node_msg(
-                        f"doged exited with status {self.process.returncode} during "
+                        f"ausd exited with status {self.process.returncode} during "
                         "initialization"
                     )
                 )
@@ -470,7 +470,7 @@ class TestNode:
                     raise
             time.sleep(1.0 / poll_per_s)
         self._raise_assertion_error(
-            f"Unable to connect to doged after {self.rpc_timeout}s"
+            f"Unable to connect to ausd after {self.rpc_timeout}s"
         )
 
     def wait_for_cookie_credentials(self):
@@ -767,7 +767,7 @@ class TestNode:
         if not test_success(f"readelf -S {shlex.quote(self.binary)} | grep .debug_str"):
             self.log.warning(
                 "perf output won't be very useful without debug symbols compiled into"
-                " doged"
+                " ausd"
             )
 
         output_path = tempfile.NamedTemporaryFile(
@@ -841,7 +841,7 @@ class TestNode:
                 ret = self.process.wait(timeout=self.rpc_timeout)
                 self.log.debug(
                     self._node_msg(
-                        f"doged exited with status {ret} during initialization"
+                        f"ausd exited with status {ret} during initialization"
                     )
                 )
                 self.running = False
@@ -872,7 +872,7 @@ class TestNode:
                 self.process.kill()
                 self.running = False
                 self.process = None
-                assert_msg = f"doged should have exited within {self.rpc_timeout}s "
+                assert_msg = f"ausd should have exited within {self.rpc_timeout}s "
                 if expected_msg is None:
                     assert_msg += "with an error"
                 else:
@@ -1087,7 +1087,7 @@ class TestNodeCLI:
         if command is not None:
             p_args += [command]
         p_args += pos_args + named_args
-        self.log.debug(f"Running doge-cli {p_args[2:]}")
+        self.log.debug(f"Running aus-cli {p_args[2:]}")
         if self.emulator is not None:
             p_args = [self.emulator] + p_args
         process = subprocess.Popen(

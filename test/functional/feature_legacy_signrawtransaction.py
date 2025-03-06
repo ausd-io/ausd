@@ -1,7 +1,7 @@
 # Copyright (c) 2024 The Bitcoin developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test we sign valid Dogecoin legacy signatures for transactions."""
+"""Test we sign valid Australiacash legacy signatures for transactions."""
 
 from test_framework.address import ADDRESS_ECREG_UNSPENDABLE
 from test_framework.hash import hash160

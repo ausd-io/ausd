@@ -12,7 +12,7 @@
 
 #include <boost/test/unit_test.hpp>
 
-BOOST_FIXTURE_TEST_SUITE(dogecoin_auxpow_block_tests, TestChain100Setup)
+BOOST_FIXTURE_TEST_SUITE(auscash_auxpow_block_tests, TestChain100Setup)
 
 BOOST_AUTO_TEST_CASE(mine_auxpow_blocks_test) {
     ChainstateManager &chainman = *Assert(m_node.chainman);

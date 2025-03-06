@@ -21,11 +21,11 @@ use crate::{
         block_txs_to_json, calc_tx_stats, tokens_to_json, tx_history_to_json,
     },
     blockchain::{
-        calculate_block_difficulty, doge_addr_to_script_type_payload,
+        calculate_block_difficulty, aus_addr_to_script_type_payload,
         from_be_hex, to_be_hex,
     },
     chain::Chain,
-    dogeaddress::DogeAddress,
+    ausaddress::AusAddress,
     server_http::{
         address, address_qr, block, block_height, blocks, data_address_txs,
         data_block_txs, data_blocks, search, serve_files, testnet_faucet, tx,
@@ -196,9 +196,9 @@ impl Server {
         address: &str,
         query: HashMap<String, String>,
     ) -> Result<JsonTxsResponse> {
-        let address = DogeAddress::parse_cow(address.into(), &self.chain)?;
+        let address = AusAddress::parse_cow(address.into(), &self.chain)?;
         let (script_type, script_payload) =
-            doge_addr_to_script_type_payload(&address);
+            aus_addr_to_script_type_payload(&address);
         let script_endpoint = self.chronik.script(script_type, &script_payload);
 
         let page: usize = query
@@ -306,7 +306,7 @@ impl Server {
                 (format!("{} Transaction", token_ticker).into(), true)
             }
             None => match &tx.token_failed_parsings.get(0) {
-                None => ("Dogecoin Transaction".into(), false),
+                None => ("Australiacash Transaction".into(), false),
                 Some(_) => ("Invalid eToken Transaction".into(), true),
             },
         };
@@ -465,10 +465,10 @@ impl Server {
 
 impl Server {
     pub async fn address<'a>(&'a self, address: &str) -> Result<String> {
-        let address = DogeAddress::parse_cow(address.into(), &self.chain)?;
+        let address = AusAddress::parse_cow(address.into(), &self.chain)?;
 
         let (script_type, script_payload) =
-            doge_addr_to_script_type_payload(&address);
+            aus_addr_to_script_type_payload(&address);
         let script_endpoint = self.chronik.script(script_type, &script_payload);
         let page_size = 1;
         let address_tx_history =
@@ -622,7 +622,7 @@ impl Server {
     }
 
     pub async fn search(&self, query: &str) -> Result<Redirect> {
-        if let Ok(address) = DogeAddress::parse_cow(query.into(), &self.chain) {
+        if let Ok(address) = AusAddress::parse_cow(query.into(), &self.chain) {
             return Ok(self.redirect(format!("/address/{}", address.as_str())));
         }
 

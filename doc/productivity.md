@@ -67,14 +67,14 @@ You can also set up [upstream refspecs](#reference-prs-easily-with-refspecs) to 
 Bash completion does not work out of the box for locally built binaries, but
 you can make it work for your environment for any binary that has a
 `.bash-completion` file in `/contrib`. In this example, binaries are built
-out-of-tree and we setup bash completion for doge-cli and doged. The
+out-of-tree and we setup bash completion for aus-cli and ausd. The
 completion function names can be determined by inspecting the
 `.bash-completion` file for each binary.
 ```
-source ./contrib/doged.bash-completion
-complete -F _doged ./doged
-source ./contrib/doge-cli.bash-completion
-complete -F _bitcoin_cli ./doge-cli
+source ./contrib/ausd.bash-completion
+complete -F _ausd ./ausd
+source ./contrib/aus-cli.bash-completion
+complete -F _bitcoin_cli ./aus-cli
 ```
 
 Rebasing/Merging code

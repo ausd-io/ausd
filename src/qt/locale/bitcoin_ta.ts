@@ -708,7 +708,7 @@
 <context>
     <name>bitcoin-abc</name>
     <message>
-        <source>doged</source>
+        <source>ausd</source>
         <translation>Bitcoin மையம்</translation>
     </message>
     <message>

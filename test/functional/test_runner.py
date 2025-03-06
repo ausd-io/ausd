@@ -500,12 +500,12 @@ def run_tests(
         # pgrep exits with code zero when one or more matching processes found
         if (
             subprocess.run(
-                ["pgrep", "-x", "doged"], stdout=subprocess.DEVNULL
+                ["pgrep", "-x", "ausd"], stdout=subprocess.DEVNULL
             ).returncode
             == 0
         ):
             print(
-                f"{bold('WARNING!')} There is already a doged process running on "
+                f"{bold('WARNING!')} There is already a ausd process running on "
                 "this system. Tests may fail unexpectedly due to resource contention!"
             )
     except OSError:
@@ -842,7 +842,7 @@ def check_script_prefixes(all_scripts):
     LEEWAY = 0
 
     good_prefixes_re = re.compile(
-        "(abc_)?(example|feature|interface|mempool|mining|p2p|rpc|wallet|tool|chronik|dogecoin)_"
+        "(abc_)?(example|feature|interface|mempool|mining|p2p|rpc|wallet|tool|chronik|auscash)_"
     )
     bad_script_names = [
         script for script in all_scripts if good_prefixes_re.match(script) is None

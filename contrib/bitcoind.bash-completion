@@ -1,15 +1,15 @@
-# bash programmable completion for doged(1) and doge-qt(1)
+# bash programmable completion for ausd(1) and aus-qt(1)
 # Copyright (c) 2012-2016 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-_doged() {
+_ausd() {
     local cur prev words=() cword
-    local doged
+    local ausd
 
-    # save and use original argument to invoke doged for -help
+    # save and use original argument to invoke ausd for -help
     # it might not be in $PATH
-    doged="$1"
+    ausd="$1"
 
     COMPREPLY=()
     _get_comp_words_by_ref -n = cur prev words cword
@@ -33,7 +33,7 @@ _doged() {
             # only parse -help if sensible
             if [[ -z "$cur" || "$cur" =~ ^- ]]; then
                 local helpopts
-                helpopts=$($doged -help 2>&1 | awk '$1 ~ /^-/ { sub(/=.*/, "="); print $1 }' )
+                helpopts=$($ausd -help 2>&1 | awk '$1 ~ /^-/ { sub(/=.*/, "="); print $1 }' )
                 COMPREPLY=( $( compgen -W "$helpopts" -- "$cur" ) )
             fi
 
@@ -45,7 +45,7 @@ _doged() {
             ;;
     esac
 } &&
-complete -F _doged doged doge-qt
+complete -F _ausd ausd aus-qt
 
 # Local variables:
 # mode: shell-script

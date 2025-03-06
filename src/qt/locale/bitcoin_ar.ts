@@ -1932,7 +1932,7 @@
         <translation>حدد مجلد المعلومات</translation>
     </message>
     <message>
-        <source>dogedce</source>
+        <source>ausdce</source>
         <translation>جوهر البيت كوين</translation>
     </message>
     <message>

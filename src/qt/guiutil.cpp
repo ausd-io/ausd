@@ -134,7 +134,7 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent) {
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
     widget->setPlaceholderText(
-        QObject::tr("Enter a Dogecoin address (e.g. %1)")
+        QObject::tr("Enter a Australiacash address (e.g. %1)")
             .arg(QString::fromStdString(DummyAddress(Params()))));
     widget->setValidator(
         new BitcoinAddressEntryValidator(Params().CashAddrPrefix(), parent));
@@ -431,7 +431,7 @@ bool openBitcoinConf() {
 
     configFile.close();
 
-    /* Open dogecoin.conf with the associated application */
+    /* Open auscash.conf with the associated application */
     bool res = QDesktopServices::openUrl(
         QUrl::fromLocalFile(boostPathToQString(pathConfig)));
 #ifdef Q_OS_MAC

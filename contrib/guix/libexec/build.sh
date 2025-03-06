@@ -400,7 +400,7 @@ EOF
         exit 1
     fi
 
-    # Build doged
+    # Build ausd
     ninja
     ninja security-check
     ninja symbol-check
@@ -450,7 +450,7 @@ EOF
             mv "${OSX_VOLNAME}.dmg" ${OUTDIR}/${DISTNAME}-osx-unsigned.dmg
 
             pushd installed
-            find . -path "*.app*" -type f -executable -exec mv {} ${DISTNAME}/bin/doge-qt \;
+            find . -path "*.app*" -type f -executable -exec mv {} ${DISTNAME}/bin/aus-qt \;
             find ${DISTNAME} -not -path "*.app*" -print0 | sort --zero-terminated | tar --create --no-recursion --mode='u+rw,go+r-w,a+X' --null --files-from=- | gzip -9n > ${OUTDIR}/${DISTNAME}-${HOST}.tar.gz
             popd
             ;;

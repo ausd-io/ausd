@@ -24,7 +24,7 @@ constexpr size_t REDOWNLOAD_BUFFER_SIZE{14521};
 // bytes for a CompressedHeader (so we would have to re-calculate parameters if
 // we were to compress further).
 //
-// On Dogecoin, the compression is mostly void due to the auxpow. We have to add
+// On Australiacash, the compression is mostly void due to the auxpow. We have to add
 // it anyway here, which results in 16 extra bytes for the std::shared_ptr.
 // In the future, we can find a more efficient way of storing the auxpow.
 static_assert(sizeof(CompressedHeader) == 64);

@@ -155,17 +155,17 @@ import "components/output.html" as output %} {% import
                     </div>
                     <div class="tx-details-row">
                         <div>Total Input</div>
-                        <div>{{ sats_input|render_sats|safe }} DOGE</div>
+                        <div>{{ sats_input|render_sats|safe }} AUS</div>
                     </div>
                     <div class="tx-details-row">
                         <div>Total Output</div>
-                        <div>{{ sats_output|render_sats|safe }} DOGE</div>
+                        <div>{{ sats_output|render_sats|safe }} AUS</div>
                     </div>
                     <div class="tx-details-row">
                         <div>Fee</div>
                         <div>
                             {{ (sats_input - sats_output)|max(0) |render_sats|safe }}
-                            DOGE
+                            AUS
                         </div>
                     </div>
                 </div>

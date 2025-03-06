@@ -52,7 +52,7 @@ const renderOutput = (satsOutput, _type, row) => {
         return renderAmount(row.stats.tokenOutput, row.token.decimals) + ticker;
     }
     return (
-        '<div class="num-col-suffix" data-suffix="DOGE">' +
+        '<div class="num-col-suffix" data-suffix="AUS">' +
         renderSats(row.stats.satsOutput) +
         '</div>'
     );

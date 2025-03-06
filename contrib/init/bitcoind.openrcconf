@@ -1,31 +1,31 @@
-# /etc/conf.d/doged: config file for /etc/init.d/doged
+# /etc/conf.d/ausd: config file for /etc/init.d/ausd
 
 # Config file location
-#BITCOIND_CONFIGFILE="/etc/bitcoin/dogecoin.conf"
+#BITCOIND_CONFIGFILE="/etc/bitcoin/auscash.conf"
 
 # What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
-#BITCOIND_PIDDIR="/var/run/doged"
+#BITCOIND_PIDDIR="/var/run/ausd"
 
 # What filename to give the pidfile
-#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/doged.pid"
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/ausd.pid"
 
-# Where to write doged data (be mindful that the blockchain is large)
-#BITCOIND_DATADIR="/var/lib/doged"
+# Where to write ausd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/ausd"
 
-# User and group to own doged process
+# User and group to own ausd process
 #BITCOIND_USER="bitcoin"
 #BITCOIND_GROUP="bitcoin"
 
-# Path to doged executable
-#BITCOIND_BIN="/usr/bin/doged"
+# Path to ausd executable
+#BITCOIND_BIN="/usr/bin/ausd"
 
-# Nice value to run doged under
+# Nice value to run ausd under
 #BITCOIND_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)
 #BITCOIND_OPTS=""
 
-# The timeout in seconds OpenRC will wait for doged to terminate
+# The timeout in seconds OpenRC will wait for ausd to terminate
 # after a SIGTERM has been raised.
 # Note that this will be mapped as argument to start-stop-daemon's
 # '--retry' option, which means you can specify a retry schedule

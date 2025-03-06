@@ -39,7 +39,7 @@ MAX_VERSIONS = {
         lief.ELF.ARCH.AARCH64: (2, 31),
     },
     "LIBATOMIC": (1, 0),
-    "V": (0, 5, 0),  # xkb (doge-qt only)
+    "V": (0, 5, 0),  # xkb (aus-qt only)
 }
 # See here for a description of _IO_stdin_used:
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=634261#109
@@ -89,7 +89,7 @@ ELF_INTERPRETER_NAMES = {
 
 # Allowed NEEDED libraries
 ELF_ALLOWED_LIBRARIES = {
-    # doged and doge-qt
+    # ausd and aus-qt
     "libgcc_s.so.1",  # GCC base support
     "libc.so.6",  # C library
     "libpthread.so.0",  # threading
@@ -101,7 +101,7 @@ ELF_ALLOWED_LIBRARIES = {
     "ld-linux.so.2",  # 32-bit dynamic linker
     "ld-linux-aarch64.so.1",  # 64-bit ARM dynamic linker
     "ld-linux-armhf.so.3",  # 32-bit ARM dynamic linker
-    # doge-qt only
+    # aus-qt only
     "libxcb.so.1",  # part of X11
     "libxkbcommon.so.0",  # keyboard keymapping
     "libxkbcommon-x11.so.0",  # keyboard keymapping
@@ -125,10 +125,10 @@ ELF_ALLOWED_LIBRARIES = {
 }
 
 MACHO_ALLOWED_LIBRARIES = {
-    # doged and doge-qt
+    # ausd and aus-qt
     "libc++.1.dylib",  # C++ Standard Library
     "libSystem.B.dylib",  # libc, libm, libpthread, libinfo
-    # doge-qt only
+    # aus-qt only
     "AppKit",  # user interface
     "ApplicationServices",  # common application tasks.
     "Carbon",  # deprecated c back-compat API
@@ -162,7 +162,7 @@ PE_ALLOWED_LIBRARIES = {
     "bcrypt.dll",  # password hashing
     "ntdll.dll",  # user-mode face of the Windows kernel
     "RPCRT4.dll",  # RPC API
-    # doge-qt only
+    # aus-qt only
     "dwmapi.dll",  # desktop window manager
     "CRYPT32.dll",  # openssl
     "GDI32.dll",  # graphics device interface

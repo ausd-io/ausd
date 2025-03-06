@@ -14,7 +14,7 @@
 #include <consensus/params.h>
 #include <primitives/blockhash.h>
 
-// Dogecoin: Normally minimum difficulty blocks can only occur in between
+// Australiacash: Normally minimum difficulty blocks can only occur in between
 // retarget blocks. However, once we introduce Digishield every block is
 // a retarget, so we need to handle minimum difficulty on all blocks.
 bool AllowDigishieldMinDifficultyForBlock(
@@ -49,7 +49,7 @@ uint32_t GetNextWorkRequired(const CBlockIndex *pindexPrev,
     const int32_t nHeight = pindexPrev->nHeight;
     const Consensus::DaaParams daaParams = params.DaaParamsAtHeight(nHeight);
 
-    // Dogecoin: Special rules for minimum difficulty blocks with Digishield
+    // Australiacash: Special rules for minimum difficulty blocks with Digishield
     if (AllowDigishieldMinDifficultyForBlock(pindexPrev, pblock, params,
                                              daaParams)) {
         // Special difficulty rule for testnet:

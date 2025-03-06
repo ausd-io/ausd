@@ -13,10 +13,10 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both doged and doge-qt, to make it harder for attackers to
+ * for both ausd and aus-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("doged");
+const std::string CLIENT_NAME("ausd");
 
 #ifdef HAVE_BUILD_INFO
 #include <obj/build.h>
@@ -92,8 +92,8 @@ std::string CopyrightHolders(const std::string &strPrefix) {
 
 std::string LicenseInfo() {
     const std::string URL_SOURCE_CODE =
-        "<https://github.com/doged-io/doged>";
-    const std::string URL_WEBSITE = "<https://www.doged.io>";
+        "<https://github.com/ausd-io/ausd>";
+    const std::string URL_WEBSITE = "<https://www.ausd.io>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i").translated, 2009,
                                       COPYRIGHT_YEAR) +

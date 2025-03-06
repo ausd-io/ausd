@@ -7,8 +7,8 @@ set -euxo pipefail
 ###
 # Initial Block Download script.
 #
-# Runs a doged process until initial block download is complete.
-# Forwards the exit code from doged onward.
+# Runs a ausd process until initial block download is complete.
+# Forwards the exit code from ausd onward.
 ###
 
 MYPID=$$
@@ -16,7 +16,7 @@ MYPID=$$
 # Setup
 : "${TOPLEVEL:=$(git rev-parse --show-toplevel)}"
 : "${BUILD_DIR:=${TOPLEVEL}/build}"
-: "${BITCOIND:=${BUILD_DIR}/src/doged}"
+: "${BITCOIND:=${BUILD_DIR}/src/ausd}"
 
 DATA_DIR="${BUILD_DIR}/ibd"
 mkdir -p "${DATA_DIR}"
@@ -43,7 +43,7 @@ export -f callback
 
 BITCOIND="${BITCOIND}" \
 LOG_FILE="${DEBUG_LOG}" \
-"${TOPLEVEL}/contrib/devtools/doged-exit-on-log.sh" \
+"${TOPLEVEL}/contrib/devtools/ausd-exit-on-log.sh" \
   --grep 'Leaving InitialBlockDownload (latching to false)' \
   --params "-datadir=${DATA_DIR} $*" \
   --callback callback

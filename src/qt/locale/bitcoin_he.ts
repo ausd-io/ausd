@@ -1660,7 +1660,7 @@
         <translation>ריצה כסוכן ברקע וקבלת פקודות</translation>
     </message>
     <message>
-        <source>doged</source>
+        <source>ausd</source>
         <translation>ליבת ביטקוין</translation>
     </message>
     <message>

@@ -5,7 +5,7 @@ connections, inter-process communication, and shared-memory,
 providing various message-oriented semantics such as publish/subscribe,
 request/reply, and push/pull.
 
-The doged daemon can be configured to act as a trusted "border
+The ausd daemon can be configured to act as a trusted "border
 router", implementing the bitcoin wire protocol and relay, making
 consensus decisions, maintaining the local blockchain database,
 broadcasting locally generated transactions into the network, and
@@ -33,7 +33,7 @@ buffering or reassembly.
 
 ## Prerequisites
 
-The ZeroMQ feature in doged requires the ZeroMQ API >= 4.1.5
+The ZeroMQ feature in ausd requires the ZeroMQ API >= 4.1.5
 [libzmq](https://github.com/zeromq/libzmq/releases).
 For version information, see [dependencies.md](dependencies.md).
 Typically, it is packaged by distributions as something like
@@ -47,7 +47,7 @@ operation.
 ## Enabling
 
 By default, the ZeroMQ feature is automatically compiled.
-To disable, use -DBUILD_BITCOIN_ZMQ=OFF to `cmake` when building doged:
+To disable, use -DBUILD_BITCOIN_ZMQ=OFF to `cmake` when building ausd:
 
     $ cmake -GNinja .. -DBUILD_BITCOIN_ZMQ=OFF [...]
 
@@ -81,9 +81,9 @@ The high water mark value must be an integer greater than or equal to 0.
 
 For instance:
 
-    $ doged -zmqpubhashtx=tcp://127.0.0.1:28332 \
+    $ ausd -zmqpubhashtx=tcp://127.0.0.1:28332 \
                -zmqpubhashtx=tcp://192.168.1.2:28332 \
-               -zmqpubrawtx=ipc:///tmp/doged.tx.raw \
+               -zmqpubrawtx=ipc:///tmp/ausd.tx.raw \
                -zmqpubhashtxhwm=10000
 
 Each PUB notification has a topic and body, where the header
@@ -100,7 +100,7 @@ is structured as the following based on the type of message:
 
 Where the 8-byte uints correspond to the mempool sequence number.
 
-These options can also be provided in dogecoin.conf.
+These options can also be provided in auscash.conf.
 
 ZeroMQ endpoint specifiers for TCP (and others) are documented in the
 [ZeroMQ API](http://api.zeromq.org/4-0:_start).
@@ -126,9 +126,9 @@ dropped by network middle boxes.
 
 ## Remarks
 
-From the perspective of doged, the ZeroMQ socket is write-only; PUB
+From the perspective of ausd, the ZeroMQ socket is write-only; PUB
 sockets don't even have a read function. Thus, there is no state
-introduced into doged directly. Furthermore, no information is
+introduced into ausd directly. Furthermore, no information is
 broadcast that wasn't already received from the public P2P network.
 
 No authentication or authorization is done on connecting clients; it

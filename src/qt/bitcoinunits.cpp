@@ -21,18 +21,18 @@ using unitNameMap =
             QString /* description */
         >
     >;
-static const unitNameMap dogeUnits = {
+static const unitNameMap ausUnits = {
     {BitcoinUnits::Unit::base,
-        {"DOGE",
-         "Dogecoin"}},
+        {"AUS",
+         "Australiacash"}},
     {BitcoinUnits::Unit::sub,
         {"Satoshi (sat)",
          "Satoshi (sat) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)"}},
 };
-static const unitNameMap udogeUnits = {
+static const unitNameMap uausUnits = {
     {BitcoinUnits::Unit::base,
-        {"µDOGE",
-         "Micro Dogecoin"}},
+        {"µAUS",
+         "Micro Australiacash"}},
     {BitcoinUnits::Unit::sub,
         {"Satoshi (sat)",
          "Satoshi (sat) (1 / 100)"}},
@@ -40,8 +40,8 @@ static const unitNameMap udogeUnits = {
 // clang-format on
 
 static const unitNameMap &getUnitsAtRuntime() {
-    return gArgs.GetBoolArg("-usedogeunit", DEFAULT_USE_DOGE_UNIT) ? dogeUnits
-                                                                   : udogeUnits;
+    return gArgs.GetBoolArg("-useausunit", DEFAULT_USE_AUS_UNIT) ? ausUnits
+                                                                   : uausUnits;
 }
 
 BitcoinUnits::BitcoinUnits(QObject *parent)

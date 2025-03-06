@@ -1,7 +1,7 @@
-doged BCH-relevant DNS seed information
+ausd BCH-relevant DNS seed information
 =============================================
 
-doged uses special seeds under the control of Bitcoin Cash (BCH)
+ausd uses special seeds under the control of Bitcoin Cash (BCH)
 network supporting operators to increase the chance of a node
 to find suitable peers on the BCH network.
 
@@ -65,4 +65,4 @@ situations but should be discussed in public in advance.
 
 See also
 ----------
-- [doge-seeder](../src/seeder/README.md) is a reference implementation of a DNS seeder.
+- [aus-seeder](../src/seeder/README.md) is a reference implementation of a DNS seeder.

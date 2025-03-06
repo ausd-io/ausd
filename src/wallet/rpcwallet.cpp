@@ -108,10 +108,10 @@ static RPCHelpMan getnewaddress() {
              "given name."},
             // Deprecated in v0.30.4
             {"address_type", RPCArg::Type::STR, RPCArg::Optional::OMITTED,
-             "DEPRECATED: The Dogecoin address type to use. Only available for "
+             "DEPRECATED: The Australiacash address type to use. Only available for "
              "compatibility with Bitcoin and will be removed in the future. "
              "The only valid value is \"legacy\". Note that this does not "
-             "change the output of this RPC; in order to get a Dogecoin "
+             "change the output of this RPC; in order to get a Australiacash "
              "address "
              "the -usauscashaddr option should be disabled."},
         },
@@ -164,7 +164,7 @@ static RPCHelpMan getnewaddress() {
 static RPCHelpMan getrawchangeaddress() {
     return RPCHelpMan{
         "getrawchangeaddress",
-        "Returns a new Dogecoin address, for receiving change.\n"
+        "Returns a new Australiacash address, for receiving change.\n"
         "This is for use with raw transactions, NOT normal use.\n",
         {},
         RPCResult{RPCResult::Type::STR, "address", "The address"},
@@ -239,7 +239,7 @@ static RPCHelpMan setlabel() {
                                                     wallet->GetChainParams());
             if (!IsValidDestination(dest)) {
                 throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY,
-                                   "Invalid Dogecoin address");
+                                   "Invalid Australiacash address");
             }
 
             std::string label = LabelFromValue(request.params[1]);
@@ -265,7 +265,7 @@ void ParseRecipients(const UniValue &address_amounts,
         CTxDestination dest = DecodeDestination(address, chainParams);
         if (!IsValidDestination(dest)) {
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY,
-                               std::string("Invalid Dogecoin address: ") +
+                               std::string("Invalid Australiacash address: ") +
                                    address);
         }
 
@@ -507,7 +507,7 @@ static Amount GetReceived(const CWallet &wallet, const UniValue &params,
             DecodeDestination(params[0].get_str(), wallet.GetChainParams());
         if (!IsValidDestination(dest)) {
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY,
-                               "Invalid Dogecoin address");
+                               "Invalid Australiacash address");
         }
         CScript script_pub_key = GetScriptForDestination(dest);
         if (!wallet.IsMine(script_pub_key)) {
@@ -877,7 +877,7 @@ static RPCHelpMan addmultisigaddress() {
         "addmultisigaddress",
         "Add an nrequired-to-sign multisignature address to the wallet. "
         "Requires a new wallet backup.\n"
-        "Each key is a Dogecoin address or hex-encoded public key.\n"
+        "Each key is a Australiacash address or hex-encoded public key.\n"
         "This functionality is only intended for use with non-watchonly "
         "addresses.\n"
         "See `importaddress` for watchonly p2sh address support.\n"
@@ -2681,7 +2681,7 @@ static RPCHelpMan loadwallet() {
         "loadwallet",
         "Loads a wallet from a wallet file or directory."
         "\nNote that all wallet command-line options used when starting "
-        "doged will be"
+        "ausd will be"
         "\napplied to the new wallet (eg -rescan, etc).\n",
         {
             {"filename", RPCArg::Type::STR, RPCArg::Optional::NO,
@@ -3139,7 +3139,7 @@ static RPCHelpMan listunspent() {
                     if (!IsValidDestination(dest)) {
                         throw JSONRPCError(
                             RPC_INVALID_ADDRESS_OR_KEY,
-                            std::string("Invalid Dogecoin address: ") +
+                            std::string("Invalid Australiacash address: ") +
                                 input.get_str());
                     }
                     if (!destinations.insert(dest).second) {

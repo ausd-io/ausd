@@ -3,22 +3,22 @@
 pkgname=bitcoin-abc
 pkgver=0.30.5
 pkgrel=0
-pkgdesc="Dogecoin node with doged, doge-tx, doge-seeder and doge-cli"
+pkgdesc="Australiacash node with ausd, aus-tx, aus-seeder and aus-cli"
 arch=('i686' 'x86_64')
 url="https://bitcoinabc.org"
 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'libnatpmp' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man')
 license=('MIT')
 source=(https://github.com/Bitcoin-ABC/bitcoin-abc/archive/v$pkgver.tar.gz
-        dogecoin.conf
+        auscash.conf
         bitcoin.logrotate
         bitcoin.service
         bitcoin-reindex.service
         bitcoin.install)
-backup=('etc/bitcoin/dogecoin.conf'
+backup=('etc/bitcoin/auscash.conf'
         'etc/logrotate.d/bitcoin')
-provides=('doge-cli' 'bitcoin-daemon' 'doge-tx' 'doge-seeder')
-conflicts=('doge-cli' 'bitcoin-daemon' 'doge-tx' 'doge-seeder')
+provides=('aus-cli' 'bitcoin-daemon' 'aus-tx' 'aus-seeder')
+conflicts=('aus-cli' 'bitcoin-daemon' 'aus-tx' 'aus-seeder')
 install=bitcoin.install
 
 build() {
@@ -57,7 +57,7 @@ package() {
   install -Dm 644 COPYING -t "$pkgdir/usr/share/licenses/${pkgname}"
 
   msg2 'Installing examples...'
-  install -Dm644 "contrib/debian/examples/dogecoin.conf" \
+  install -Dm644 "contrib/debian/examples/auscash.conf" \
     -t "$pkgdir/usr/share/doc/bitcoin/examples"
 
   msg2 'Installing documentation...'
@@ -82,8 +82,8 @@ package() {
   ninja install-manpages
   popd
 
-  msg2 'Installing dogecoin.conf...'
-  install -Dm 600 "$srcdir/dogecoin.conf" -t "$pkgdir/etc/bitcoin"
+  msg2 'Installing auscash.conf...'
+  install -Dm 600 "$srcdir/auscash.conf" -t "$pkgdir/etc/bitcoin"
 
   msg2 'Installing bitcoin.service...'
   install -Dm 644 "$srcdir/bitcoin.service" -t "$pkgdir/usr/lib/systemd/system"
@@ -94,7 +94,7 @@ package() {
   install -Dm 644 "$srcdir/bitcoin.logrotate" "$pkgdir/etc/logrotate.d/bitcoin"
 
   msg2 'Installing bash completion...'
-  for _compl in doge-cli doge-tx doged; do
+  for _compl in aus-cli aus-tx ausd; do
     install -Dm 644 "contrib/${_compl}.bash-completion" \
       "$pkgdir/usr/share/bash-completion/completions/$_compl"
   done

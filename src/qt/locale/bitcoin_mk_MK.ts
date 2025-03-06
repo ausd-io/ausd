@@ -578,7 +578,7 @@
         <translation>Опции:</translation>
     </message>
     <message>
-        <source>doged</source>
+        <source>ausd</source>
         <translation>Биткоин ABC</translation>
     </message>
     <message>

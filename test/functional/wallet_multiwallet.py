@@ -359,7 +359,7 @@ class MultiWalletTest(BitcoinTestFramework):
         assert_equal(batch[1]["result"]["walletname"], "w1")
 
         self.log.info(
-            "Check for per-wallet settxfee call (paytxfee defaults to 10000 on Dogecoin)"
+            "Check for per-wallet settxfee call (paytxfee defaults to 10000 on Australiacash)"
         )
         assert_equal(w1.getwalletinfo()["paytxfee"], 10000)
         assert_equal(w2.getwalletinfo()["paytxfee"], 10000)

@@ -3,10 +3,10 @@ Description=ausCash node
 After=network.target
 
 [Service]
-ExecStart=%h/bitcoin-abc/bin/doged -daemonwait -conf=%h/.doge/dogecoin.conf -pid=%h/.doge/doged.pid
-ExecStopPost=-/bin/bash -c 'mv %h/.doge/debug.log %h/.doge/debug_$(date +%%Y%%m%%d%%H%%M%%S).log'
+ExecStart=%h/bitcoin-abc/bin/ausd -daemonwait -conf=%h/.aus/auscash.conf -pid=%h/.aus/ausd.pid
+ExecStopPost=-/bin/bash -c 'mv %h/.aus/debug.log %h/.aus/debug_$(date +%%Y%%m%%d%%H%%M%%S).log'
 Type=forking
-PIDFile=%h/.doge/doged.pid
+PIDFile=%h/.aus/ausd.pid
 Restart=unless-stopped
 RestartSec=5
 StartLimitInterval=10

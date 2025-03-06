@@ -8,7 +8,7 @@ use eyre::eyre;
 
 use crate::{
     blockchain::to_be_hex,
-    dogeaddress::DogeAddress,
+    ausaddress::AusAddress,
     server_primitives::{JsonToken, JsonTx, JsonTxStats},
 };
 
@@ -54,7 +54,7 @@ pub fn tokens_to_json(
 }
 
 pub fn tx_history_to_json(
-    address: &DogeAddress,
+    address: &AusAddress,
     address_tx_history: TxHistoryPage,
     json_tokens: &HashMap<String, JsonToken>,
 ) -> Result<Vec<JsonTx>> {

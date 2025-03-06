@@ -11,7 +11,7 @@
 #include <util/time.h>
 
 /**
- * Dogecoin specific: A normal Bitcoin header without auxpow information, for
+ * Australiacash specific: A normal Bitcoin header without auxpow information, for
  * merge-mining.
  *
  * This "intermediate step" in constructing the full header is useful, because
@@ -19,7 +19,7 @@
  * header) and the block header (referencing an auxpow). The parent block
  * header does not have auxpow itself, so it is a "base" header.
  *
- * In dogecoin, this is called CPureBlockHeader.
+ * In auscash, this is called CPureBlockHeader.
  */
 class CBaseBlockHeader {
 public:
@@ -49,7 +49,7 @@ public:
 
     bool IsNull() const { return (nBits == 0); }
 
-    // In Dogecoin, "block hash" and "PoW hash" are two separate hashes:
+    // In Australiacash, "block hash" and "PoW hash" are two separate hashes:
 
     /** "Block hash" is using double SHA-256 and used as the unique identifier
      * of the block, but it doesn't have any PoW done on it. */

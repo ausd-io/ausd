@@ -10,7 +10,7 @@
 
 #include <boost/test/unit_test.hpp>
 
-BOOST_FIXTURE_TEST_SUITE(dogecoin_block_version_tests, BasicTestingSetup)
+BOOST_FIXTURE_TEST_SUITE(auscash_block_version_tests, BasicTestingSetup)
 
 BOOST_AUTO_TEST_CASE(MakeVersionWithChainId_test) {
     BOOST_CHECK_EQUAL(MakeVersionWithChainId(0, 0), 0);

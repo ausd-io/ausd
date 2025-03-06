@@ -26,7 +26,7 @@ class RejectLowDifficultyHeadersTest(BitcoinTestFramework):
 
     def run_test(self):
         # Temporarily skip the test to keep test suite green. Need to collect testnet headers before we can fix this.
-        raise SkipTest("Need Doge testnet headers")
+        raise SkipTest("Need Aus testnet headers")
 
         self.log.info("Read headers data")
         self.headers_file_path = os.path.join(

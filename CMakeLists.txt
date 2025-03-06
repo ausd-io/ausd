@@ -6,10 +6,10 @@ set(CMAKE_USER_MAKE_RULES_OVERRIDE
 	"${CMAKE_SOURCE_DIR}/cmake/modules/OverrideInitFlags.cmake"
 )
 
-project(doged-node
+project(ausd-node
 	VERSION 0.3.2
-	DESCRIPTION "doged is a full node implementation of the Dogecoin protocol."
-	HOMEPAGE_URL "https://www.doged.io"
+	DESCRIPTION "ausd is a full node implementation of the Australiacash protocol."
+	HOMEPAGE_URL "https://www.ausd.io"
 )
 
 add_custom_target(print-version
@@ -23,7 +23,7 @@ add_custom_target(print-project-name
 )
 
 # Package information
-set(PACKAGE_NAME "doged")
+set(PACKAGE_NAME "ausd")
 set(PACKAGE_BUGREPORT "https://github.com/dogauscash-io/dogauscash/issues")
 
 # Copyright

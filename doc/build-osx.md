@@ -30,19 +30,19 @@ If you want to build the disk image with `ninja osx-dmg` (.dmg / optional), you 
 
     brew install librsvg
 
-Build doged
+Build ausd
 -----------------
 
 Before you start building, please make sure that your compiler supports C++17.
 
-1. Clone the doged source code and cd into `bitcoin-abc`
+1. Clone the ausd source code and cd into `bitcoin-abc`
 
         git clone https://github.com/Bitcoin-ABC/bitcoin-abc.git
         cd bitcoin-abc
 
-2.  Build doged:
+2.  Build ausd:
 
-    Configure and build the headless doged binaries as well as the GUI.
+    Configure and build the headless ausd binaries as well as the GUI.
 
     You can disable the GUI build by passing `-DBUILD_BITCOIN_QT=OFF` to cmake.
 
@@ -63,7 +63,7 @@ Before you start building, please make sure that your compiler supports C++17.
 
 Disable-wallet mode
 --------------------
-When the intention is to run only a P2P node without a wallet, doged may be compiled in
+When the intention is to run only a P2P node without a wallet, ausd may be compiled in
 disable-wallet mode with:
 
     cmake -GNinja .. -DBUILD_BITCOIN_WALLET=OFF
@@ -73,15 +73,15 @@ Mining is also possible in disable-wallet mode using the `getblocktemplate` RPC 
 Running
 -------
 
-doged is now available at `./src/doged`
+ausd is now available at `./src/ausd`
 
 Before running, it's recommended that you create an RPC configuration file:
 
-    echo -e "rpcuser=bitcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Bitcoin/dogecoin.conf"
+    echo -e "rpcuser=bitcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Bitcoin/auscash.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/Bitcoin/dogecoin.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/Bitcoin/auscash.conf"
 
-The first time you run doged, it will start downloading the blockchain. This process could take many hours, or even days on slower than average systems.
+The first time you run ausd, it will start downloading the blockchain. This process could take many hours, or even days on slower than average systems.
 
 You can monitor the download process by looking at the debug.log file:
 
@@ -90,9 +90,9 @@ You can monitor the download process by looking at the debug.log file:
 Other commands:
 -------
 
-    ./src/doged -daemon # Starts the bitcoin daemon.
-    ./src/doge-cli --help # Outputs a list of command-line options.
-    ./src/doge-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/ausd -daemon # Starts the bitcoin daemon.
+    ./src/aus-cli --help # Outputs a list of command-line options.
+    ./src/aus-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Notes
 -----

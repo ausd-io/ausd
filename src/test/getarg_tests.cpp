@@ -304,60 +304,60 @@ BOOST_AUTO_TEST_CASE(patharg) {
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), win_root_path);
 #endif
 
-    const fs::path absolute_path{"/home/user/.doge"};
-    ResetArgs(local_args, "-dir=/home/user/.doge");
+    const fs::path absolute_path{"/home/user/.aus"};
+    ResetArgs(local_args, "-dir=/home/user/.aus");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), absolute_path);
 
-    ResetArgs(local_args, "-dir=/root/../home/user/.doge");
+    ResetArgs(local_args, "-dir=/root/../home/user/.aus");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), absolute_path);
 
-    ResetArgs(local_args, "-dir=/home/./user/.doge");
+    ResetArgs(local_args, "-dir=/home/./user/.aus");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), absolute_path);
 
-    ResetArgs(local_args, "-dir=/home/user/.doge/");
+    ResetArgs(local_args, "-dir=/home/user/.aus/");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), absolute_path);
 
-    ResetArgs(local_args, "-dir=/home/user/.doge//");
+    ResetArgs(local_args, "-dir=/home/user/.aus//");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), absolute_path);
 
-    ResetArgs(local_args, "-dir=/home/user/.doge/.");
+    ResetArgs(local_args, "-dir=/home/user/.aus/.");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), absolute_path);
 
-    ResetArgs(local_args, "-dir=/home/user/.doge/./");
+    ResetArgs(local_args, "-dir=/home/user/.aus/./");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), absolute_path);
 
-    ResetArgs(local_args, "-dir=/home/user/.doge/.//");
+    ResetArgs(local_args, "-dir=/home/user/.aus/.//");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), absolute_path);
 
-    const fs::path relative_path{"user/.doge"};
-    ResetArgs(local_args, "-dir=user/.doge");
+    const fs::path relative_path{"user/.aus"};
+    ResetArgs(local_args, "-dir=user/.aus");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), relative_path);
 
-    ResetArgs(local_args, "-dir=somewhere/../user/.doge");
+    ResetArgs(local_args, "-dir=somewhere/../user/.aus");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), relative_path);
 
-    ResetArgs(local_args, "-dir=user/./.doge");
+    ResetArgs(local_args, "-dir=user/./.aus");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), relative_path);
 
-    ResetArgs(local_args, "-dir=user/.doge/");
+    ResetArgs(local_args, "-dir=user/.aus/");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), relative_path);
 
-    ResetArgs(local_args, "-dir=user/.doge//");
+    ResetArgs(local_args, "-dir=user/.aus//");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), relative_path);
 
-    ResetArgs(local_args, "-dir=user/.doge/.");
+    ResetArgs(local_args, "-dir=user/.aus/.");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), relative_path);
 
-    ResetArgs(local_args, "-dir=user/.doge/./");
+    ResetArgs(local_args, "-dir=user/.aus/./");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), relative_path);
 
-    ResetArgs(local_args, "-dir=user/.doge/.//");
+    ResetArgs(local_args, "-dir=user/.aus/.//");
     BOOST_CHECK_EQUAL(local_args.GetPathArg("-dir"), relative_path);
 
     // Check negated and default argument handling. Specifying an empty argument
     // is the same as not specifying the argument. This is convenient for
     // scripting so later command line arguments can override earlier command
-    // line arguments or dogecoin.conf values. Currently the -dir= case cannot be
+    // line arguments or auscash.conf values. Currently the -dir= case cannot be
     // distinguished from -dir case with no assignment, but #16545 would add the
     // ability to distinguish these in the future (and treat the no-assign case
     // like an imperative command or an error).

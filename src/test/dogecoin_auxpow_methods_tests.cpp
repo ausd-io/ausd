@@ -14,7 +14,7 @@
 
 #include <boost/test/unit_test.hpp>
 
-BOOST_AUTO_TEST_SUITE(dogecoin_auxpow_methods_tests)
+BOOST_AUTO_TEST_SUITE(auscash_auxpow_methods_tests)
 
 constexpr size_t BASE_HEADER_SIZE = 80;
 constexpr size_t NULL_TX_SIZE = 4 + 1 + 1 + 4;

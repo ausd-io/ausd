@@ -6,12 +6,12 @@ After=network.target
 [Service]
 User=bitcoin
 Group=bitcoin
-ExecStart=/usr/bin/doged -daemon=0                       \
-                            -conf=/etc/bitcoin/dogecoin.conf \
+ExecStart=/usr/bin/ausd -daemon=0                       \
+                            -conf=/etc/bitcoin/auscash.conf \
                             -datadir=/srv/bitcoin           \
-                            -pid=/run/bitcoin/doged.pid
+                            -pid=/run/bitcoin/ausd.pid
 ExecReload=/usr/bin/kill -HUP $MAINPID
-ExecStop=/usr/bin/doged stop
+ExecStop=/usr/bin/ausd stop
 PrivateTmp=true
 
 [Install]

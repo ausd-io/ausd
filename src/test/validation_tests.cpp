@@ -29,9 +29,9 @@
 
 BOOST_FIXTURE_TEST_SUITE(validation_tests, TestingSetup)
 
-// First 20 blocks on the Dogecoin network, with their coinbase subsidy
-const std::vector<std::tuple<std::string, int64_t>> DOGECOIN_BLOCKS = {
-    // Genesis block has 88 DOGE blockreward, but not used in the tests here.
+// First 20 blocks on the Australiacash network, with their coinbase subsidy
+const std::vector<std::tuple<std::string, int64_t>> AUSCASH_BLOCKS = {
+    // Genesis block has 88 AUS blockreward, but not used in the tests here.
     {"1a91e3dace36e2be3bf030a65679fe821aa1d6ef92e7c9902eb318182c355691", 88},
     {"82bc68038f6034c0596b6e313729793a887fded6e92a31fbdf70863f89d9bea2", 68416},
     {"ea5380659e02a68c073369e502125c634b2fb0aaf351b9360c673368c4f20c96",
@@ -75,11 +75,11 @@ BOOST_AUTO_TEST_CASE(subsidy_mainnet_first_20_blocks) {
     const auto chainParams =
         CreateChainParams(*m_node.args, CBaseChainParams::MAIN);
     const Consensus::Params &params = chainParams->GetConsensus();
-    for (int32_t height = 1; height < (int32_t)DOGECOIN_BLOCKS.size();
+    for (int32_t height = 1; height < (int32_t)AUSCASH_BLOCKS.size();
          ++height) {
         Amount subsidy = GetBlockSubsidy(
-            height, params, uint256S(std::get<0>(DOGECOIN_BLOCKS[height - 1])));
-        BOOST_CHECK_EQUAL(subsidy, std::get<1>(DOGECOIN_BLOCKS[height]) * COIN);
+            height, params, uint256S(std::get<0>(AUSCASH_BLOCKS[height - 1])));
+        BOOST_CHECK_EQUAL(subsidy, std::get<1>(AUSCASH_BLOCKS[height]) * COIN);
     }
 }
 
@@ -151,11 +151,11 @@ BOOST_AUTO_TEST_CASE(subsidy_post_145k_test) {
     BOOST_CHECK_EQUAL(nConstantSubsidy, 10000 * COIN);
 }
 
-// This test is broken; it is copied from the original dogecoin test suite to
+// This test is broken; it is copied from the original auscash test suite to
 // prevent divergence. The test tweaks prevHash, but the bits determining the
 // seed are untouched, such that the seed is always 0, resulting in no test
 // coverage for the seed extraction code.
-BOOST_AUTO_TEST_CASE(broken_dogecoin_subsidy_first_100k_test) {
+BOOST_AUTO_TEST_CASE(broken_auscash_subsidy_first_100k_test) {
     const auto chainParams =
         CreateChainParams(*m_node.args, CBaseChainParams::MAIN);
     const Consensus::Params &params = chainParams->GetConsensus();
@@ -175,8 +175,8 @@ BOOST_AUTO_TEST_CASE(broken_dogecoin_subsidy_first_100k_test) {
     BOOST_CHECK_EQUAL(expected, nSum);
 }
 
-// This test is broken, see broken_dogecoin_subsidy_first_100k_test
-BOOST_AUTO_TEST_CASE(broken_dogecoin_subsidy_100k_145k_test) {
+// This test is broken, see broken_auscash_subsidy_first_100k_test
+BOOST_AUTO_TEST_CASE(broken_auscash_subsidy_100k_145k_test) {
     const auto chainParams =
         CreateChainParams(*m_node.args, CBaseChainParams::MAIN);
     const Consensus::Params &params = chainParams->GetConsensus();

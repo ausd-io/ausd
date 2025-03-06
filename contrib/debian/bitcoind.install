@@ -1,2 +1,2 @@
-bin/doged usr/bin
-bin/doge-cli usr/bin
+bin/ausd usr/bin
+bin/aus-cli usr/bin

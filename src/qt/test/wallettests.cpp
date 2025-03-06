@@ -107,9 +107,9 @@ QModelIndex FindTx(const QAbstractItemModel &model, const uint256 &txid) {
 //
 // This also requires overriding the default minimal Qt platform:
 //
-//     QT_QPA_PLATFORM=xcb     src/qt/test/test_doge-qt  # Linux
-//     QT_QPA_PLATFORM=windows src/qt/test/test_doge-qt  # Windows
-//     QT_QPA_PLATFORM=cocoa   src/qt/test/test_doge-qt  # macOS
+//     QT_QPA_PLATFORM=xcb     src/qt/test/test_aus-qt  # Linux
+//     QT_QPA_PLATFORM=windows src/qt/test/test_aus-qt  # Windows
+//     QT_QPA_PLATFORM=cocoa   src/qt/test/test_aus-qt  # macOS
 void TestGUI(interfaces::Node &node) {
     // Set up wallet and chain with 105 blocks (5 mature blocks for spending).
     TestChain100Setup test;
@@ -308,7 +308,7 @@ void WalletTests::walletTests() {
         QWARN(
             "Skipping WalletTests on mac build with 'minimal' platform set due "
             "to Qt bugs. To run AppTests, invoke with 'QT_QPA_PLATFORM=cocoa "
-            "test_doge-qt' on mac, or else use a linux or windows build.");
+            "test_aus-qt' on mac, or else use a linux or windows build.");
         return;
     }
 #endif

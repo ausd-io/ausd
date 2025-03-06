@@ -10,7 +10,7 @@ Construct a linear, no-fork, best version of the blockchain.
 
 ### [Qos](/contrib/qos) ###
 
-A Linux bash script that will set up traffic control (tc) to limit the outgoing bandwidth for connections to the Bitcoin network. This means one can have an always-on doged instance running, and another local doged/doge-qt instance which connects to this node and receives blocks from it.
+A Linux bash script that will set up traffic control (tc) to limit the outgoing bandwidth for connections to the Bitcoin network. This means one can have an always-on ausd instance running, and another local ausd/aus-qt instance which connects to this node and receives blocks from it.
 
 ### [Seeds](/contrib/seeds) ###
 Utility to generate the pnSeed[] array that is compiled into the client.
@@ -19,11 +19,11 @@ Build Tools and Keys
 ---------------------
 
 ### [Debian](/contrib/debian) ###
-Contains files used to package doged/doge-qt
-for Debian-based Linux systems. If you compile doged/doge-qt yourself, there are some useful files here.
+Contains files used to package ausd/aus-qt
+for Debian-based Linux systems. If you compile ausd/aus-qt yourself, there are some useful files here.
 
 ### [Signing](/contrib/signing)
-PGP keys used for signing doged [release](/doc/release-process.md) results.
+PGP keys used for signing ausd [release](/doc/release-process.md) results.
 
 ### [MacDeploy](/contrib/macdeploy) ###
 Scripts and notes for Mac builds.

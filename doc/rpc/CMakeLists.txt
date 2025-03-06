@@ -6,12 +6,12 @@ if(BUILD_BITCOIN_CLI)
 		COMMAND
 			"${CMAKE_CURRENT_SOURCE_DIR}/gen-rpc-docs.sh"
 			"${CMAKE_CURRENT_SOURCE_DIR}/generate.go"
-			"$<TARGET_FILE:doged>"
-			"$<TARGET_FILE:doge-cli>"
+			"$<TARGET_FILE:ausd>"
+			"$<TARGET_FILE:aus-cli>"
 		WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
 		DEPENDS
-			doged
-			doge-cli
+			ausd
+			aus-cli
 	)
 endif()
 

@@ -3,7 +3,7 @@ use bitcoinsuite_core::{AddressType, Hashed, Op, Script, ShaRmd160};
 use bitcoinsuite_error::Result;
 
 use crate::chain::Chain;
-use crate::dogeaddress::DogeAddress;
+use crate::ausaddress::AusAddress;
 
 pub fn to_be_hex(slice: &[u8]) -> String {
     let mut vec = slice.to_vec();
@@ -20,7 +20,7 @@ pub fn from_be_hex(string: &str) -> Result<Vec<u8>> {
 #[derive(Clone, Debug)]
 pub enum Destination<'a> {
     Nulldata(Vec<Op>),
-    Address(DogeAddress<'a>),
+    Address(AusAddress<'a>),
     P2PK(Vec<u8>),
     Unknown(Vec<u8>),
 }
@@ -38,7 +38,7 @@ pub fn destination_from_script<'a>(
 
     match script {
         [OP_DUP, OP_HASH160, 20, hash @ .., OP_EQUALVERIFY, OP_CHECKSIG] => {
-            DogeAddress::from_hash(
+            AusAddress::from_hash(
                 AddressType::P2PKH,
                 ShaRmd160::from_slice(hash).expect("Invalid hash"),
                 chain,
@@ -48,7 +48,7 @@ pub fn destination_from_script<'a>(
                 |addr| Destination::Address(addr),
             )
         }
-        [OP_HASH160, 20, hash @ .., OP_EQUAL] => DogeAddress::from_hash(
+        [OP_HASH160, 20, hash @ .., OP_EQUAL] => AusAddress::from_hash(
             AddressType::P2SH,
             ShaRmd160::from_slice(hash).expect("Invalid hash"),
             chain,
@@ -76,8 +76,8 @@ pub fn calculate_block_difficulty(n_bits: u32) -> f64 {
     max_target / (n_word * 2f64.powi(8 * (n_size as i32 - 3)))
 }
 
-pub fn doge_addr_to_script_type_payload(
-    addr: &DogeAddress,
+pub fn aus_addr_to_script_type_payload(
+    addr: &AusAddress,
 ) -> (ScriptType, [u8; 20]) {
     let script_type = match addr.addr_type() {
         AddressType::P2PKH => ScriptType::P2pkh,

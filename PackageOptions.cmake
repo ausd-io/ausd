@@ -4,7 +4,7 @@ set(CPACK_PACKAGE_DESCRIPTION "${PROJECT_DESCRIPTION}")
 set(CPACK_PACKAGE_HOMEPAGE_URL "${PROJECT_HOMEPAGE_URL}")
 set(CPACK_PACKAGE_CONTACT "tobias.ruck@be.cash")
 
-set(CPACK_PACKAGE_INSTALL_DIRECTORY "doged")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "ausd")
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/COPYING")
 set(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_SOURCE_DIR}/doc/README_windows.txt")
 
@@ -32,7 +32,7 @@ set(CPACK_SOURCE_GENERATOR "TGZ")
 # CPack NSIS installer options
 Include(InstallationHelper)
 set(CPACK_NSIS_EXECUTABLES_DIRECTORY "${CMAKE_INSTALL_BINDIR}")
-set(_nsis_bitcoin_qt "doge-qt.exe")
+set(_nsis_bitcoin_qt "aus-qt.exe")
 
 set(CPACK_NSIS_URL_INFO_ABOUT "${CPACK_PACKAGE_HOMEPAGE_URL}")
 set(CPACK_NSIS_CONTACT "${CPACK_PACKAGE_CONTACT}")
@@ -57,7 +57,7 @@ macro(add_start_menu_link LINK_NAME EXE PARAMETERS ICON_EXE ICON_INDEX)
 	)
 endmacro()
 
-set(CPACK_NSIS_MENU_LINKS "${CMAKE_INSTALL_BINDIR}/${_nsis_bitcoin_qt}" "doged")
+set(CPACK_NSIS_MENU_LINKS "${CMAKE_INSTALL_BINDIR}/${_nsis_bitcoin_qt}" "ausd")
 add_start_menu_link("${PACKAGE_NAME} (testnet)"
 	"${_nsis_bitcoin_qt}"
 	"-testnet"

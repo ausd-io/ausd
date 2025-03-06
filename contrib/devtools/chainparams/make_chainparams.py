@@ -73,7 +73,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description=(
-            "Make chainparams file.\nPrerequisites: RPC access to a doged node.\n\n"
+            "Make chainparams file.\nPrerequisites: RPC access to a ausd node.\n\n"
         ),
         formatter_class=argparse.RawTextHelpFormatter,
     )
@@ -99,10 +99,10 @@ if __name__ == "__main__":
     parser.add_argument(
         "--config",
         "-c",
-        default="~/.doge/dogecoin.conf",
+        default="~/.aus/auscash.conf",
         help=(
-            "Path to dogecoin.conf for RPC authentication arguments (rpcuser &"
-            " rpcpassword).\nDefault: ~/.doge/dogecoin.conf"
+            "Path to auscash.conf for RPC authentication arguments (rpcuser &"
+            " rpcpassword).\nDefault: ~/.aus/auscash.conf"
         ),
     )
     args = parser.parse_args()
@@ -123,7 +123,7 @@ if __name__ == "__main__":
                     assert password is None
                     password = line.split("=")[1].strip("\n")
     else:
-        raise FileNotFoundError("Missing dogecoin.conf")
+        raise FileNotFoundError("Missing auscash.conf")
     if user is None:
         raise ValueError("Config is missing rpcuser")
     if password is None:

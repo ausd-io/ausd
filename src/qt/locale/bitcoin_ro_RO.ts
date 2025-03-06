@@ -1606,7 +1606,7 @@
         <translation>Rulează în fundal ca un demon şi acceptă comenzi</translation>
     </message>
     <message>
-        <source>doged</source>
+        <source>ausd</source>
         <translation>ABC Bitcoin</translation>
     </message>
     <message>

@@ -40,16 +40,16 @@ class AusCashRPCTest(BitcoinTestFramework):
 
     def run_test(self):
         self.log.info(
-            "Test with -usedogeunit disabled (default setting in our test framework)"
+            "Test with -useausunit disabled (default setting in our test framework)"
         )
-        self.test_currency(ticker="µDOGE", satoshis_per_unit=100, decimals=2)
+        self.test_currency(ticker="µAUS", satoshis_per_unit=100, decimals=2)
 
-        self.log.info("Test with -usedogeunit enabled")
+        self.log.info("Test with -useausunit enabled")
         # Disable fallbackfee, because its default setting for tests
         # is adapted to XEC only.
-        # In DOGE mode, it triggers a "-fallbackfee is set very high!" error.
-        self.restart_node(0, ["-usedogeunit=1", "-fallbackfee=0"])
-        self.test_currency(ticker="DOGE", satoshis_per_unit=100_000_000, decimals=8)
+        # In AUS mode, it triggers a "-fallbackfee is set very high!" error.
+        self.restart_node(0, ["-useausunit=1", "-fallbackfee=0"])
+        self.test_currency(ticker="AUS", satoshis_per_unit=100_000_000, decimals=8)
 
 
 if __name__ == "__main__":

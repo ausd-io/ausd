@@ -25,7 +25,7 @@ class ChronikChronikInfoTest(BitcoinTestFramework):
 
         from test_framework.chronik.client import pb
 
-        self.log.info("Chronik version should be the same as the doged version")
+        self.log.info("Chronik version should be the same as the ausd version")
         assert_equal(
             chronik.chronik_info().ok(),
             pb.ChronikInfo(

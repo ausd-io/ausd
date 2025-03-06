@@ -1,36 +1,36 @@
 #!/usr/bin/env bash
 #
-#  doged The bitcoin core server.
+#  ausd The bitcoin core server.
 #
 #
 # chkconfig: 345 80 20
-# description: doged
-# processname: doged
+# description: ausd
+# processname: ausd
 #
 
 # Source function library.
 . /etc/init.d/functions
 
-# you can override defaults in /etc/sysconfig/doged, see below
-if [ -f /etc/sysconfig/doged ]; then
-        . /etc/sysconfig/doged
+# you can override defaults in /etc/sysconfig/ausd, see below
+if [ -f /etc/sysconfig/ausd ]; then
+        . /etc/sysconfig/ausd
 fi
 
 RETVAL=0
 
-prog=doged
-# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/doged
-lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/doged}
+prog=ausd
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/ausd
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/ausd}
 
-# doged defaults to /usr/bin/doged, override with BITCOIND_BIN
-doged=${BITCOIND_BIN-/usr/bin/doged}
+# ausd defaults to /usr/bin/ausd, override with BITCOIND_BIN
+ausd=${BITCOIND_BIN-/usr/bin/ausd}
 
-# doged opts default to -disablewallet, override with BITCOIND_OPTS
-doged_opts=${BITCOIND_OPTS--disablewallet}
+# ausd opts default to -disablewallet, override with BITCOIND_OPTS
+ausd_opts=${BITCOIND_OPTS--disablewallet}
 
 start() {
     echo -n $"Starting $prog: "
-    daemon $DAEMONOPTS $doged $doged_opts
+    daemon $DAEMONOPTS $ausd $ausd_opts
     RETVAL=$?
     echo
     [ $RETVAL -eq 0 ] && touch $lockfile

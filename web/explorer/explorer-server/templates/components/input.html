@@ -49,13 +49,13 @@
                                     endif %}
                                 {% endif %}
                                 <div>
-                                    <small>{{ input.value|render_sats|safe }} DOGE</small>
+                                    <small>{{ input.value|render_sats|safe }} AUS</small>
                                 </div>
-                                {% when None %} {{ input.value|render_sats|safe }} DOGE {% when
+                                {% when None %} {{ input.value|render_sats|safe }} AUS {% when
                                 None %}
                             {% endmatch %}
                             {% when None %} {{
-                            input.value|render_sats|safe }} DOGE
+                            input.value|render_sats|safe }} AUS
                         {% endmatch %}
                     </div>
                 </div>

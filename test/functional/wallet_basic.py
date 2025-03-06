@@ -464,16 +464,16 @@ class WalletTest(BitcoinTestFramework):
         )
 
         # This will raise an exception for attempting to get the private key of
-        # an invalid Dogecoin address
+        # an invalid Australiacash address
         assert_raises_rpc_error(
-            -5, "Invalid Dogecoin address", self.nodes[0].dumpprivkey, "invalid"
+            -5, "Invalid Australiacash address", self.nodes[0].dumpprivkey, "invalid"
         )
 
         # This will raise an exception for attempting to set a label for an
-        # invalid Dogecoin address
+        # invalid Australiacash address
         assert_raises_rpc_error(
             -5,
-            "Invalid Dogecoin address",
+            "Invalid Australiacash address",
             self.nodes[0].setlabel,
             "invalid address",
             "label",
@@ -482,7 +482,7 @@ class WalletTest(BitcoinTestFramework):
         # This will raise an exception for importing an invalid address
         assert_raises_rpc_error(
             -5,
-            "Invalid Dogecoin address or script",
+            "Invalid Australiacash address or script",
             self.nodes[0].importaddress,
             "invalid",
         )

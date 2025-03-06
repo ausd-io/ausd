@@ -1,14 +1,14 @@
-Contributing to doged
+Contributing to ausd
 ========================
 
-The doged project welcomes contributors!
+The ausd project welcomes contributors!
 
-This guide is intended to help developers contribute effectively to doged.
+This guide is intended to help developers contribute effectively to ausd.
 
 Communicating with Developers
 -----------------------------
 
-To get in contact with doged developers, you can join the
+To get in contact with ausd developers, you can join the
 [ausCash Development Telegram group](https://t.me/ausCashDevelopment).
 The intent of this group is to facilitate development of Bitcoin ABC and other
 ausCash node implementations. We welcome people who wish to participate.
@@ -24,10 +24,10 @@ It is not for:
 * Market discussion
 * Non-constructive criticism
 
-doged Development Philosophy
+ausd Development Philosophy
 -------------------------------
 
-doged aims for fast iteration and continuous integration.
+ausd aims for fast iteration and continuous integration.
 
 This means that there should be quick turnaround for patches to be proposed,
 reviewed, and committed. Changes should not sit in a queue for long.
@@ -59,7 +59,7 @@ quickly, it should be reverted, and re-applied later when it no longer breaks th
 top priority, more important than completing other tasks.
 - Automate as much as possible, and spend time on things only humans can do.
 
-Here are some handy links for development practices aligned with doged:
+Here are some handy links for development practices aligned with ausd:
 
 - [Developer Notes](doc/developer-notes.md)
 - [Statement of Bitcoin ABC Values and Visions](https://archive.md/ulgFI)
@@ -84,7 +84,7 @@ Contributing to the node software
 ---------------------------------
 
 During submission of patches, arcanist will automatically run `arc lint` to
-enforce doged code formatting standards, and often suggests changes.
+enforce ausd code formatting standards, and often suggests changes.
 If code formatting tools do not install automatically on your system, you
 will have to install the following:
 

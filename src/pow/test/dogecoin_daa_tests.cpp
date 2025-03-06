@@ -22,7 +22,7 @@ std::vector<CBlockIndex> MakeMockBlocks(size_t length, int32_t startHeight) {
     return blocks;
 }
 
-BOOST_FIXTURE_TEST_SUITE(dogecoin_daa_tests, BasicTestingSetup)
+BOOST_FIXTURE_TEST_SUITE(auscash_daa_tests, BasicTestingSetup)
 
 BOOST_AUTO_TEST_CASE(test_first_daa) {
     DummyConfig config(CBaseChainParams::MAIN);

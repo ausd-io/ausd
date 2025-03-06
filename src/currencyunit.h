@@ -7,7 +7,7 @@
 
 class ArgsManager;
 
-constexpr bool DEFAULT_USE_DOGE_UNIT = true;
+constexpr bool DEFAULT_USE_AUS_UNIT = true;
 
 void SetupCurrencyUnitOptions(ArgsManager &argsman);
 

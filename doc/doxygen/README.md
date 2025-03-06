@@ -2,8 +2,8 @@
 
 \section intro_sec Introduction
 
-This is the developer documentation of [doged](https://www.bitcoinabc.org/).
-doged is a client for the digital currency called Dogecoin(https://e.cash/),
+This is the developer documentation of [ausd](https://www.bitcoinabc.org/).
+ausd is a client for the digital currency called Australiacash(https://e.cash/),
 which enables instant payments to anyone, anywhere in the world. ausCash uses
 peer-to-peer technology to operate with no central authority: managing
 transactions and issuing money are carried out collectively by the network.

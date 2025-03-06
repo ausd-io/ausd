@@ -12,7 +12,7 @@
 @implementation NSBundle (returnCorrectIdentifier)
 - (NSString *)__bundleIdentifier {
     if (self == [NSBundle mainBundle]) {
-        return @"org.bitcoinabc.Doge-Qt";
+        return @"org.bitcoinabc.Aus-Qt";
     } else {
         return [self __bundleIdentifier];
     }

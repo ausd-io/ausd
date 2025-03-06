@@ -1,4 +1,4 @@
-doged Release Process
+ausd Release Process
 ===========================
 
 
@@ -18,8 +18,8 @@ doged Release Process
 
 3. Verify tests passed
     - Run `arc lint --everything` and check there is no linter error
-    - Ensure that doged and doge-qt run with no issue on all supported platforms.
-      Manually test doge-qt by sending some transactions and navigating through the menus.
+    - Ensure that ausd and aus-qt run with no issue on all supported platforms.
+      Manually test aus-qt by sending some transactions and navigating through the menus.
 
 4. Add git tag for release
     a. Create the tag: `git tag vM.m.r` (M = major version, m = minor version, r = revision)

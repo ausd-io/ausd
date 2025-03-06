@@ -13,10 +13,10 @@ const REGTEST_P2PKH_PREFIX: u8 = 111;
 const MAINNET_P2SH_PREFIX: u8 = 22;
 const TESTNET_P2SH_PREFIX: u8 = 196;
 
-pub const DOGE_ADDRESS_CHECKSUM_LEN: usize = 4;
+pub const AUS_ADDRESS_CHECKSUM_LEN: usize = 4;
 
 #[derive(Clone, Debug, Eq, PartialEq, Hash)]
-pub struct DogeAddress<'a> {
+pub struct AusAddress<'a> {
     addr_type: AddressType,
     hash: ShaRmd160,
     addr: Cow<'a, str>,
@@ -24,7 +24,7 @@ pub struct DogeAddress<'a> {
 }
 
 #[derive(Error, Clone, Debug, Eq, PartialEq)]
-pub enum DogeAddressError {
+pub enum AusAddressError {
     #[error("Invalid base58")]
     InvalidBase58(bs58::decode::Error),
     #[error("Prefix missing from address")]
@@ -43,23 +43,23 @@ pub enum DogeAddressError {
     InvalidChainOrAddressType,
 }
 
-impl<'a> DogeAddress<'a> {
+impl<'a> AusAddress<'a> {
     pub fn from_hash(
         addr_type: AddressType,
         hash: ShaRmd160,
         chain: &'a Chain,
-    ) -> Result<Self, DogeAddressError> {
+    ) -> Result<Self, AusAddressError> {
         let prefix = match (chain, addr_type) {
             (Chain::Mainnet, AddressType::P2PKH) => MAINNET_P2PKH_PREFIX,
             (Chain::Testnet, AddressType::P2PKH) => TESTNET_P2SH_PREFIX,
             (Chain::Regtest, AddressType::P2PKH) => REGTEST_P2PKH_PREFIX,
             (Chain::Mainnet, AddressType::P2SH) => MAINNET_P2SH_PREFIX,
             (Chain::Testnet, AddressType::P2SH) => TESTNET_P2SH_PREFIX,
-            _ => return Err(DogeAddressError::InvalidChainOrAddressType),
+            _ => return Err(AusAddressError::InvalidChainOrAddressType),
         };
 
-        Ok(DogeAddress {
-            addr: _to_doge_addr(prefix as u8, &hash.as_slice()).into(),
+        Ok(AusAddress {
+            addr: _to_aus_addr(prefix as u8, &hash.as_slice()).into(),
             addr_type,
             hash,
             chain,
@@ -69,13 +69,13 @@ impl<'a> DogeAddress<'a> {
     pub fn parse_cow(
         addr: Cow<'a, str>,
         curr_chain: &'a Chain,
-    ) -> Result<Self, DogeAddressError> {
+    ) -> Result<Self, AusAddressError> {
         let (hash, addr_type, chain) = _from_str(&addr)?;
 
         if chain != *curr_chain {
-            return Err(DogeAddressError::InvalidChain);
+            return Err(AusAddressError::InvalidChain);
         }
-        Ok(DogeAddress {
+        Ok(AusAddress {
             addr_type,
             hash: ShaRmd160::from_array(hash.into()),
             addr,
@@ -117,33 +117,33 @@ fn _calculate_checksum(prefix: u8, payload: &[u8]) -> [u8; 4] {
     checksum_preimage.put_slice(&[prefix]);
     checksum_preimage.put_slice(payload);
     let checksum_hash = Sha256d::digest(checksum_preimage.freeze());
-    checksum_hash.as_slice()[..DOGE_ADDRESS_CHECKSUM_LEN]
+    checksum_hash.as_slice()[..AUS_ADDRESS_CHECKSUM_LEN]
         .try_into()
         .unwrap()
 }
 
-fn _verify_checksum(data: &[u8]) -> Result<bool, DogeAddressError> {
-    let prefix = *data.first().ok_or(DogeAddressError::MissingPrefix)?;
+fn _verify_checksum(data: &[u8]) -> Result<bool, AusAddressError> {
+    let prefix = *data.first().ok_or(AusAddressError::MissingPrefix)?;
     let checksum_start_idx = data
         .len()
-        .checked_sub(DOGE_ADDRESS_CHECKSUM_LEN)
-        .ok_or(DogeAddressError::InvalidPayloadLength(data.len()))?;
+        .checked_sub(AUS_ADDRESS_CHECKSUM_LEN)
+        .ok_or(AusAddressError::InvalidPayloadLength(data.len()))?;
 
     let payload = data
         .get(1..checksum_start_idx)
-        .ok_or(DogeAddressError::InvalidPayload)?;
+        .ok_or(AusAddressError::InvalidPayload)?;
     let actual_checksum = data
         .get(checksum_start_idx..data.len())
-        .ok_or(DogeAddressError::InvalidChecksum)?;
+        .ok_or(AusAddressError::InvalidChecksum)?;
     let expected_checksum = _calculate_checksum(prefix, payload);
 
     if expected_checksum != actual_checksum {
-        return Err(DogeAddressError::InvalidChecksum);
+        return Err(AusAddressError::InvalidChecksum);
     }
     Ok(true)
 }
 
-fn _to_doge_addr(prefix: u8, hash_bytes: &[u8]) -> String {
+fn _to_aus_addr(prefix: u8, hash_bytes: &[u8]) -> String {
     let payload = [prefix]
         .iter()
         .chain(hash_bytes.iter())
@@ -158,13 +158,13 @@ fn _to_doge_addr(prefix: u8, hash_bytes: &[u8]) -> String {
 
 fn _from_str(
     addr_string: &str,
-) -> Result<([u8; 20], AddressType, Chain), DogeAddressError> {
+) -> Result<([u8; 20], AddressType, Chain), AusAddressError> {
     let data = bs58::decode(&addr_string)
         .into_vec()
-        .map_err(DogeAddressError::InvalidBase58)?;
+        .map_err(AusAddressError::InvalidBase58)?;
 
     if !_verify_checksum(&data)? {
-        return Err(DogeAddressError::InvalidChecksum);
+        return Err(AusAddressError::InvalidChecksum);
     }
 
     let prefix = data[0];
@@ -174,21 +174,21 @@ fn _from_str(
             AddressType::P2PKH
         }
         MAINNET_P2SH_PREFIX | TESTNET_P2SH_PREFIX => AddressType::P2SH,
-        x => return Err(DogeAddressError::InvalidAddressType(x)),
+        x => return Err(AusAddressError::InvalidAddressType(x)),
     };
 
     let chain = match prefix {
         MAINNET_P2PKH_PREFIX | MAINNET_P2SH_PREFIX => Chain::Mainnet,
         TESTNET_P2PKH_PREFIX | TESTNET_P2SH_PREFIX => Chain::Testnet,
         REGTEST_P2PKH_PREFIX => Chain::Regtest,
-        _ => return Err(DogeAddressError::InvalidChain),
+        _ => return Err(AusAddressError::InvalidChain),
     };
 
-    let hash = &data[1..data.len() - DOGE_ADDRESS_CHECKSUM_LEN];
+    let hash = &data[1..data.len() - AUS_ADDRESS_CHECKSUM_LEN];
     let hash: [u8; 20] = match hash.try_into() {
         Ok(hash) => hash,
         Err(_) => {
-            return Err(DogeAddressError::InvalidPayloadLength(hash.len()))
+            return Err(AusAddressError::InvalidPayloadLength(hash.len()))
         }
     };
     Ok((hash, address_type, chain))

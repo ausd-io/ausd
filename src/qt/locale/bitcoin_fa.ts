@@ -1598,7 +1598,7 @@
         <translation>اجرا در پشت زمینه به‌صورت یک سرویس و پذیرش دستورات</translation>
     </message>
     <message>
-        <source>doged</source>
+        <source>ausd</source>
         <translation> ABC Bitcoin </translation>
     </message>
     <message>

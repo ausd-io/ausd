@@ -13,7 +13,7 @@
 
 #include <boost/test/unit_test.hpp>
 
-BOOST_AUTO_TEST_SUITE(dogecoin_auxpow_serialize_tests)
+BOOST_AUTO_TEST_SUITE(auscash_auxpow_serialize_tests)
 
 BOOST_AUTO_TEST_CASE(auxpow_serialize_block_5462519_test) {
     // Merge-mined block at height 5462519

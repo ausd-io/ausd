@@ -271,7 +271,7 @@ that run in `-regtest` mode.
 
 ### DEBUG_LOCKORDER
 
-doged is a multi-threaded application, and deadlocks or other
+ausd is a multi-threaded application, and deadlocks or other
 multi-threading bugs can be very difficult to track down.
 The `-DCMAKE_BUILD_TYPE=Debug` cmake option adds `-DDEBUG_LOCKORDER` to the
 compiler flags. This inserts run-time checks to keep track of which locks are
@@ -283,11 +283,11 @@ Defining `DEBUG_LOCKCONTENTION` adds a "lock" logging category that, when enable
 logs the location and duration of each lock contention to the `debug.log` file.
 
 To enable it, run cmake with `-DDEBUG_LOCKCONTENTION` added to your CPPFLAGS,
-e.g. `-DCMAKE_CXX_FLAGS="-DDEBUG_LOCKCONTENTION"`, then build and run doged.
+e.g. `-DCMAKE_CXX_FLAGS="-DDEBUG_LOCKCONTENTION"`, then build and run ausd.
 
-You can then use the `-debug=lock` configuration option at doged startup or
-`doge-cli logging '["lock"]'` at runtime to turn on lock contention logging.
-It can be toggled off again with `doge-cli logging [] '["lock"]'`.
+You can then use the `-debug=lock` configuration option at ausd startup or
+`aus-cli logging '["lock"]'` at runtime to turn on lock contention logging.
+It can be toggled off again with `aus-cli logging [] '["lock"]'`.
 
 ### Assertions and Checks
 
@@ -328,7 +328,7 @@ in-tree. Example use:
 $ valgrind --suppressions=contrib/valgrind.supp src/test/test_bitcoin
 $ valgrind --suppressions=contrib/valgrind.supp --leak-check=full \
       --show-leak-kinds=all src/test/test_bitcoin --log_level=test_suite
-$ valgrind -v --leak-check=full src/doged -printtoconsole
+$ valgrind -v --leak-check=full src/ausd -printtoconsole
 ```
 
 ### Compiling for test coverage
@@ -380,13 +380,13 @@ Make sure you [understand the security
 trade-offs](https://lwn.net/Articles/420403/) of setting these kernel
 parameters.
 
-To profile a running doged process for 60 seconds, you could use an
+To profile a running ausd process for 60 seconds, you could use an
 invocation of `perf record` like this:
 
 ```sh
 $ perf record \
     -g --call-graph dwarf --per-thread -F 140 \
-    -p `pgrep doged` -- sleep 60
+    -p `pgrep ausd` -- sleep 60
 ```
 
 You could then analyze the results by running
@@ -401,7 +401,7 @@ See the functional test documentation for how to invoke perf within tests.
 
 ### Sanitizers
 
-doged can be compiled with various "sanitizers" enabled, which add
+ausd can be compiled with various "sanitizers" enabled, which add
 instrumentation for issues regarding things like memory safety, thread race
 conditions, or undefined behavior. This is controlled with the
 `-DENABLE_SANITIZERS` cmake flag, which should be a semicolon separated list of
@@ -521,7 +521,7 @@ and its `cs_KeyStore` lock for example).
 Threads
 -------
 
-- [Main thread (`doged`)](https://www.bitcoinabc.org/doc/dev/bitcoind_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97)
+- [Main thread (`ausd`)](https://www.bitcoinabc.org/doc/dev/bitcoind_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97)
   : Started from `main()` in `bitcoind.cpp`. Responsible for starting up and
   shutting down the application.
 
@@ -574,7 +574,7 @@ Ignoring IDE/editor files
 In closed-source environments in which everyone uses the same IDE it is common
 to add temporary files it produces to the project-wide `.gitignore` file.
 
-However, in open source software such as doged, where everyone uses
+However, in open source software such as ausd, where everyone uses
 their own editors/IDE/tools, it is less common. Only you know what files your
 editor produces and this may change from version to version. The canonical way
 to do this is thus to create your local gitignore. Add this to `~/.gitconfig`:
@@ -604,7 +604,7 @@ Development guidelines
 ============================
 
 A few non-style-related recommendations for developers, as well as points to
-pay attention to for reviewers of doged code.
+pay attention to for reviewers of ausd code.
 
 Wallet
 -------
@@ -962,7 +962,7 @@ Third party libraries
 Several parts of the repository are software maintained elsewhere.
 
 Changes to these should preferably be sent upstream but bugfixes may also be
-submitted to doged so that they can be integrated quickly.
+submitted to ausd so that they can be integrated quickly.
 Cosmetic changes should be purely taken upstream.
 
 Current third party libraries include:
@@ -970,13 +970,13 @@ Current third party libraries include:
 - src/leveldb
   - Upstream at <https://github.com/google/leveldb> ; Maintained by Google.
   - **Note**: Follow the instructions in [Upgrading LevelDB](#upgrading-leveldb)
-    when merging upstream changes to doged.
+    when merging upstream changes to ausd.
 
 - src/secp256k1
   - Upstream at <https://github.com/bitcoin-core/secp256k1/> ; actively maintained
     by Bitcoin Core contributors.
-    doged is using a modified version of libsecp256k1, some changes might
-    be directly submitted to doged.
+    ausd is using a modified version of libsecp256k1, some changes might
+    be directly submitted to ausd.
     See the [secp256k1 README](../src/secp256k1/README.md) for details.
 
 - src/crypto/ctaes
@@ -1004,7 +1004,7 @@ In addition to reviewing the upstream changes in `env_posix.cc`, you can use `ls
 check this. For example, on Linux this command will show open `.ldb` file counts:
 
 ```bash
-$ lsof -p $(pidof doged) |\
+$ lsof -p $(pidof ausd) |\
     awk 'BEGIN { fd=0; mem=0; } /ldb$/ { if ($4 == "mem") mem++; else fd++ } END { printf "mem = %s, fd = %s\n", mem, fd}'
 mem = 119, fd = 0
 ```
@@ -1026,7 +1026,7 @@ to check for issues affecting consensus compatibility.
 For example, if LevelDB had a bug that accidentally prevented a key from being
 returned in an edge case, and that bug was fixed upstream, the bug "fix" would
 be an incompatible consensus change. In this situation the correct behavior
-would be to revert the upstream fix before applying the updates to doged's
+would be to revert the upstream fix before applying the updates to ausd's
 copy of LevelDB. In general you should be wary of any upstream changes affecting
 what data is returned from LevelDB queries.
 
@@ -1095,7 +1095,7 @@ A few guidelines for introducing and reviewing new RPC interfaces:
 - Try not to overload methods on argument type. E.g. don't make `getblock(true)` and `getblock("hash")`
   do different things.
 
-  - *Rationale*: This is impossible to use with `doge-cli`, and can be surprising to users.
+  - *Rationale*: This is impossible to use with `aus-cli`, and can be surprising to users.
 
   - *Exception*: Some RPC calls can take both an `int` and `bool`, most notably when a bool was switched
     to a multi-value, or due to other historical reasons. **Always** have false map to 0 and
@@ -1114,7 +1114,7 @@ A few guidelines for introducing and reviewing new RPC interfaces:
 
 - Add every non-string RPC argument `(method, idx, name)` to the table `vRPCConvertParams` in `rpc/client.cpp`.
 
-  - *Rationale*: `doge-cli` and the GUI debug console use this table to determine how to
+  - *Rationale*: `aus-cli` and the GUI debug console use this table to determine how to
     convert a plaintext command line to JSON. If the types don't match, the method can be unusable
     from there.
 

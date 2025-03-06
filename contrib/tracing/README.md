@@ -2,8 +2,8 @@ Example scripts for User-space, Statically Defined Tracing (USDT)
 =================================================================
 
 This directory contains scripts showcasing User-space, Statically Defined
-Tracing (USDT) support for doged on Linux using. For more information on
-USDT support in doged see the [USDT documentation].
+Tracing (USDT) support for ausd on Linux using. For more information on
+USDT support in ausd see the [USDT documentation].
 
 [USDT documentation]: ../../doc/tracing.md
 
@@ -30,14 +30,14 @@ information. For development there exist a [bpftrace Reference Guide], a
 
 ## Examples
 
-The bpftrace examples contain a relative path to the `doged` binary. By
+The bpftrace examples contain a relative path to the `ausd` binary. By
 default, the scripts should be run from the repository-root and assume a
-self-compiled `doged` binary. The paths in the examples can be changed, for
+self-compiled `ausd` binary. The paths in the examples can be changed, for
 example, to point to release builds if needed. See the
-[doged USDT documentation] on how to list available tracepoints in your
-`doged` binary.
+[ausd USDT documentation] on how to list available tracepoints in your
+`ausd` binary.
 
-[doged USDT documentation]: ../../doc/tracing.md#listing-available-tracepoints
+[ausd USDT documentation]: ../../doc/tracing.md#listing-available-tracepoints
 
 **WARNING: eBPF programs require root privileges to be loaded into a Linux
 kernel VM. This means the bpftrace and BCC examples must be executed with root
@@ -82,7 +82,7 @@ about the connection. Peers can be selected individually to view recent P2P
 messages.
 
 ```
-$ python3 contrib/tracing/p2p_monitor.py ./src/doged
+$ python3 contrib/tracing/p2p_monitor.py ./src/ausd
 ```
 
 Lists selectable peers and traffic and connection information.
@@ -150,7 +150,7 @@ lost. BCC prints: `Possibly lost 2 samples` on lost messages.
 
 
 ```
-$ python3 contrib/tracing/log_raw_p2p_msgs.py ./src/doged
+$ python3 contrib/tracing/log_raw_p2p_msgs.py ./src/ausd
 ```
 
 ```
@@ -184,11 +184,11 @@ longer than 25ms to connect.
 $ bpftrace contrib/tracing/connectblock_benchmark.bt 20000 38000 25
 ```
 
-In a different terminal, starting doged in Testnet mode and with
+In a different terminal, starting ausd in Testnet mode and with
 re-indexing enabled.
 
 ```
-$ ./src/doged -testnet -reindex
+$ ./src/ausd -testnet -reindex
 ```
 
 This produces the following output.
@@ -241,7 +241,7 @@ A BCC Python script to log the UTXO cache flushes. Based on the
 `utxocache:flush` tracepoint.
 
 ```bash
-$ python3 contrib/tracing/log_utxocache_flush.py ./src/doged
+$ python3 contrib/tracing/log_utxocache_flush.py ./src/ausd
 ```
 
 ```

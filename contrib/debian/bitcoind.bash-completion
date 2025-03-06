@@ -1,2 +1,2 @@
-contrib/doged.bash-completion	doged
-contrib/doge-cli.bash-completion	doge-cli
+contrib/ausd.bash-completion	ausd
+contrib/aus-cli.bash-completion	aus-cli

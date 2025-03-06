@@ -18,7 +18,7 @@ import {
     TokensIcon,
     RewardIcon,
     NftIcon,
-    DogeIcon,
+    AusIcon,
 } from 'components/Common/CustomIcons';
 import Spinner from 'components/Common/Spinner';
 import { ThemeProvider } from 'styled-components';
@@ -397,7 +397,7 @@ const App = () => {
                                     >
                                         {' '}
                                         <p>Agora</p>
-                                        <DogeIcon />
+                                        <AusIcon />
                                     </NavItem>
                                     <NavItem
                                         active={

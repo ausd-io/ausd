@@ -1,8 +1,8 @@
-# doged 0.3.2 Release Notes
+# ausd 0.3.2 Release Notes
 
-doged version 0.3.2 is now available from:
+ausd version 0.3.2 is now available from:
 
-  <https://download.doged.io/0.3.2/>
+  <https://download.ausd.io/0.3.2/>
 
 This release includes the following features and fixes:
   - Additional logging when a header is first seen.

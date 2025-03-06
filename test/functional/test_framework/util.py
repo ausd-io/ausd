@@ -438,7 +438,7 @@ def initialize_datadir(dirname, n, chain, disable_autoconnect=True):
     if not os.path.isdir(datadir):
         os.makedirs(datadir)
     write_config(
-        os.path.join(datadir, "dogecoin.conf"),
+        os.path.join(datadir, "auscash.conf"),
         n=n,
         chain=chain,
         disable_autoconnect=disable_autoconnect,
@@ -480,7 +480,7 @@ def write_config(config_path, *, n, chain, extra_config="", disable_autoconnect=
         f.write("upnp=0\n")
         f.write("natpmp=0\n")
         f.write("usauscashaddr=1\n")
-        f.write("usedogeunit=0\n")
+        f.write("useausunit=0\n")
         f.write("legacyscriptrules=0\n")
         f.write("minrelaytxfee=10\n")
         f.write("blockmintxfee=10\n")
@@ -500,7 +500,7 @@ def get_datadir_path(dirname, n):
 
 
 def config_path(datadir):
-    return os.path.join(datadir, "dogecoin.conf")
+    return os.path.join(datadir, "auscash.conf")
 
 
 def append_config(datadir, options):
@@ -522,8 +522,8 @@ def remove_from_config(datadir, options):
 def get_auth_cookie(datadir, chain):
     user = None
     password = None
-    if os.path.isfile(os.path.join(datadir, "dogecoin.conf")):
-        with open(os.path.join(datadir, "dogecoin.conf"), "r", encoding="utf8") as f:
+    if os.path.isfile(os.path.join(datadir, "auscash.conf")):
+        with open(os.path.join(datadir, "auscash.conf"), "r", encoding="utf8") as f:
             for line in f:
                 if line.startswith("rpcuser="):
                     assert user is None  # Ensure that there is only one rpcuser line

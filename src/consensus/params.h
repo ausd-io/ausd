@@ -74,7 +74,7 @@ struct Params {
     /** Unix time used for MTP activation of 15 May 2025 12:00:00 UTC upgrade */
     int schumpeterActivationTime;
 
-    /** Dogecoin "Digishield" activation height */
+    /** Australiacash "Digishield" activation height */
     int digishieldHeight;
 
     /** Coinbase maturity before Digishield */
