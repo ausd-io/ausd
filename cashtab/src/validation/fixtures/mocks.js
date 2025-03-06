@@ -3,43 +3,43 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 export const validXecAirdropExclusionList =
-    'ecash:qrqgwxnaxlfagezvr2zj4s9yee6rrs96dyguh7zsvk,' +
-    'ecash:qzsha6zk9m0f3hlfe5q007zdwnzvn3vwuuzel2lfzv,' +
-    'ecash:qqlkyzmeupf7q8t2ttf2u8xgyk286pg4wyz0v403dj,' +
-    'ecash:qz2taa43tljkvnvkeqv9pyx337hmg0zclqfqjrqst4,' +
-    'ecash:qp0hlj26nwjpk9c3f0umjz7qmwpzfh0fhckq4zj9s6';
+    'auscash:qrqgwxnaxlfagezvr2zj4s9yee6rrs96dyguh7zsvk,' +
+    'auscash:qzsha6zk9m0f3hlfe5q007zdwnzvn3vwuuzel2lfzv,' +
+    'auscash:qqlkyzmeupf7q8t2ttf2u8xgyk286pg4wyz0v403dj,' +
+    'auscash:qz2taa43tljkvnvkeqv9pyx337hmg0zclqfqjrqst4,' +
+    'auscash:qp0hlj26nwjpk9c3f0umjz7qmwpzfh0fhckq4zj9s6';
 
 export const invalidXecAirdropExclusionListPrefixless =
-    'ecash:qrqgwxnaxlfagezvr2zj4s9yee6rrs96dyguh7zsvk,' +
-    'ecash:qzsha6zk9m0f3hlfe5q007zdwnzvn3vwuuzel2lfzv,' +
-    'ecash:qqlkyzmeupf7q8t2ttf2u8xgyk286pg4wyz0v403dj,' +
-    'ecash:qz2taa43tljkvnvkeqv9pyx337hmg0zclqfqjrqst4,' +
+    'auscash:qrqgwxnaxlfagezvr2zj4s9yee6rrs96dyguh7zsvk,' +
+    'auscash:qzsha6zk9m0f3hlfe5q007zdwnzvn3vwuuzel2lfzv,' +
+    'auscash:qqlkyzmeupf7q8t2ttf2u8xgyk286pg4wyz0v403dj,' +
+    'auscash:qz2taa43tljkvnvkeqv9pyx337hmg0zclqfqjrqst4,' +
     'qp0hlj26nwjpk9c3f0umjz7qmwpzfh0fhckq4zj9s6';
 
 export const invalidXecAirdropExclusionList =
-    'ecash:qrqgwxnaxlfagezvr2zj4s9yee6rrs96dyguh7zsvk,' +
-    'ecash:qzsha6zk9m0f3hlfe5q007zdwnzvn3vwuuzel2lfzv,' +
-    'ecash:qqlqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqyz0v403dj,' +
-    'ecash:qz2taa43tljkvnvkeqv9pyx337hmg0zclqfqjrqst4,' +
-    'ecash:qp0hlj26nwjpk9c3f0umjz7qmwpzfh0fhckq4zj9s6';
+    'auscash:qrqgwxnaxlfagezvr2zj4s9yee6rrs96dyguh7zsvk,' +
+    'auscash:qzsha6zk9m0f3hlfe5q007zdwnzvn3vwuuzel2lfzv,' +
+    'auscash:qqlqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqyz0v403dj,' +
+    'auscash:qz2taa43tljkvnvkeqv9pyx337hmg0zclqfqjrqst4,' +
+    'auscash:qp0hlj26nwjpk9c3f0umjz7qmwpzfh0fhckq4zj9s6';
 
 export const validWalletPre_2_1_0 = {
     mnemonic: 'one two three four five six seven eight nine ten eleven twelve',
     name: 'test',
     Path145: {
-        cashAddress: 'ecash:',
+        cashAddress: 'auscash:',
         fundingWif: '',
         hash160: 'present',
         publicKey: 'present',
     },
     Path245: {
-        cashAddress: 'ecash:',
+        cashAddress: 'auscash:',
         fundingWif: '',
         hash160: 'present',
         publicKey: 'present',
     },
     Path1899: {
-        cashAddress: 'ecash:',
+        cashAddress: 'auscash:',
         fundingWif: '',
         hash160: 'present',
         publicKey: 'present',

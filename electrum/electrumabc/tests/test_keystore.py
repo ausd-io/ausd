@@ -14,7 +14,7 @@ class TestImportedKeyStore(unittest.TestCase):
         )
         assert self.public_key.to_ui_string() == self.public_key_hex
         self.address = Address.from_string(
-            "ecash:qqkds7r95n0u7tehc0dtmyxfhjjr5jwp3yrhq4tw9r"
+            "auscash:qqkds7r95n0u7tehc0dtmyxfhjjr5jwp3yrhq4tw9r"
         )
         self.keystore = ImportedKeyStore(
             {

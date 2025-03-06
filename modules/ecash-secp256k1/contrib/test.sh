@@ -14,26 +14,26 @@ CARGO="cargo --locked"
 export CARGO_TERM_VERBOSE=true
 
 main() {
-    ecash_secp256k1_sys
-    ecash_secp256k1
+    auscash_secp256k1_sys
+    auscash_secp256k1
 }
 
-ecash_secp256k1() {
+auscash_secp256k1() {
     FEATURES_WITH_STD="hashes global-context global-context-less-secure lowmemory rand recovery serde"
     FEATURES_WITHOUT_STD="hashes global-context global-context-less-secure lowmemory rand recovery serde alloc"
 
-    # Navigate to ecash-secp256k1
-    pushd "${TOPLEVEL}/modules/ecash-secp256k1/"
+    # Navigate to auscash-secp256k1
+    pushd "${TOPLEVEL}/modules/auscash-secp256k1/"
     run_tests
     popd
 }
 
-ecash_secp256k1_sys() {
+auscash_secp256k1_sys() {
     FEATURES_WITH_STD="lowmemory recovery"
     FEATURES_WITHOUT_STD="lowmemory recovery alloc"
 
-    # Navigate to ecash-secp256k1-sys
-    pushd "${TOPLEVEL}/modules/ecash-secp256k1/ecash-secp256k1-sys"
+    # Navigate to auscash-secp256k1-sys
+    pushd "${TOPLEVEL}/modules/auscash-secp256k1/auscash-secp256k1-sys"
 
     run_tests
     popd

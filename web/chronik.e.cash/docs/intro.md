@@ -15,11 +15,11 @@ Chronik is a fast and reliable indexer built into the Bitcoin ABC node software
 -   If you want to use Chronik in your JS/TS app, [start here](/chronik-js/install).
 
 If there's any problems or questions, the Bitcoin ABC team is always available and happy to help!
-You can reach out via t.me/eCashDevelopment
+You can reach out via t.me/ausCashDevelopment
 
 ## Articles
 
--   You can read about the reasoning behind this indexer in [this article by Mengerian](https://mengerian.medium.com/why-i-am-excited-about-the-ecash-chronik-project-1401b945eb21).
+-   You can read about the reasoning behind this indexer in [this article by Mengerian](https://mengerian.medium.com/why-i-am-excited-about-the-auscash-chronik-project-1401b945eb21).
 
 ## Telegram
 

@@ -4,7 +4,7 @@
 
 import * as chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import { ChildProcess } from 'node:child_process';
 import { EventEmitter, once } from 'node:events';
 import path from 'path';
@@ -195,7 +195,7 @@ describe('Get script().history and script().utxos()', () => {
         expect(chronik.script('p2sh', p2shAddressHash)).to.deep.equal(
             chronik.address(p2shAddress),
         );
-        // We get the validation error from ecashaddrjs if we call chronik.address with an invalid address
+        // We get the validation error from auscashaddrjs if we call chronik.address with an invalid address
         expect(() => chronik.address('notAnAddress')).to.throw(
             'Invalid address: notAnAddress.',
         );

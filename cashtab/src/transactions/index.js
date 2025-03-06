@@ -14,7 +14,7 @@ import {
     ALL_BIP143,
     calcTxFee,
     EccDummy,
-} from 'ecash-lib';
+} from 'auscash-lib';
 import appConfig from 'config/app';
 
 const DUMMY_SK = fromHex(
@@ -27,7 +27,7 @@ const DUMMY_P2PKH = Script.p2pkh(
 );
 
 /**
- * Build and broadcast an eCash tx
+ * Build and broadcast an ausCash tx
  * @param {ChronikClient} chronik
  * @param {Ecc} ecc
  * @param {object} wallet
@@ -35,7 +35,7 @@ const DUMMY_P2PKH = Script.p2pkh(
  * @param {number} satsPerKb integer, fee in satoshis per kb
  * @param {number} chaintipBlockheight
  * @param {array} requiredInputs inputs that must be included in this tx
- * e.g. token utxos for token txs, or p2sh scripts with lokadid for ecash-agora ad txs
+ * e.g. token utxos for token txs, or p2sh scripts with lokadid for auscash-agora ad txs
  * @param {boolean} isBurn
  * @throws {error} if error building or broadcasting tx
  */
@@ -79,13 +79,13 @@ export const sendXec = async (
     }
 
     // Add a change output
-    // Note: ecash-lib expects this added as simply a script
-    // Note: if a change output is not needed, ecash-lib will omit
+    // Note: auscash-lib expects this added as simply a script
+    // Note: if a change output is not needed, auscash-lib will omit
     outputs.push(Script.p2pkh(fromHex(wallet.paths.get(1899).hash)));
 
     // Collect input utxos using accumulative algorithm
 
-    // Use only eCash utxos
+    // Use only ausCash utxos
     const utxos = wallet.state.nonSlpUtxos;
 
     // Ignore immature coinbase utxos
@@ -97,8 +97,8 @@ export const sendXec = async (
     let inputSatoshis = 0n;
     for (const requiredInput of requiredInputs) {
         if (isFinalizedInput(requiredInput)) {
-            // If this input is already completely ready for ecash-lib
-            // i.e. it has a custom signatory from ecash-agora and does
+            // If this input is already completely ready for auscash-lib
+            // i.e. it has a custom signatory from auscash-agora and does
             // require a p2pkh signature
             inputs.push(requiredInput);
             inputSatoshis += BigInt(requiredInput.input.signData.value);
@@ -253,7 +253,7 @@ export const getMaxSendAmountSatoshis = (
 };
 
 /**
- * Get desired target outputs from validated user input for eCash multi-send tx in Cashtab
+ * Get desired target outputs from validated user input for ausCash multi-send tx in Cashtab
  * @param {string} userMultisendInput formData.address from Send.js screen, validated for multi-send
  * @throws {error} on invalid input
  * @returns {array} targetOutputs for the sendXec function
@@ -305,19 +305,19 @@ export const ignoreUnspendableUtxos = (
 
 /**
  * Check if a given input is finalized, i.e. already signed and ready for
- * ecash-lib's TxBuilder.sign() method
+ * auscash-lib's TxBuilder.sign() method
  *
- * Note that we do not do full validation here. ecash-lib handles this.
+ * Note that we do not do full validation here. auscash-lib handles this.
  *
  * We are only looking to distinguish between
  *
  * 1) finalizedInput - an input required for a tx that does not require signing by the wallet's private key
- * For now, this only happens with ecash-agora txs
+ * For now, this only happens with auscash-agora txs
  * However it could also happen with other specially-prepared inputs going forward
  *
  * 2) normal cashtab input, how cashtab stores its utxos
  * It's impractical for cashtab to "pre-sign" every utxo, so it makes sense that some kind of function
- * would need to sign and prepare utxos for ecash-lib TxBuilder for normal txs
+ * would need to sign and prepare utxos for auscash-lib TxBuilder for normal txs
  * @param {object} requiredInput
  * @returns {boolean}
  */

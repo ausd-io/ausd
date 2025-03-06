@@ -14,8 +14,8 @@
 
 namespace cashaddr {
 
-/** Whether to enable "ecash:" addresses by default */
-constexpr bool DEFAULT_ECASH = true;
+/** Whether to enable "auscash:" addresses by default */
+constexpr bool DEFAULT_AUSCASH = true;
 
 /**
  * Encode a cashaddr string. Returns the empty string in case of failure.

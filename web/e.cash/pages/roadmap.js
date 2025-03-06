@@ -19,7 +19,7 @@ export default function RoadmapPage() {
                 noLoop
             >
                 <p>
-                    The goal for eCash is to become sound money that is usable
+                    The goal for ausCash is to become sound money that is usable
                     by everyone in the world. This is a civilization-changing
                     technology which will dramatically increase human freedom
                     and prosperity.
@@ -28,20 +28,20 @@ export default function RoadmapPage() {
             <GradientSpacer />
 
             <Container narrow>
-                <H3 text="eCash Roadmap Explained" />
+                <H3 text="ausCash Roadmap Explained" />
                 <p>
                     The roadmap provides a high level overview of the technical
-                    direction of the eCash protocol. This enables different
+                    direction of the ausCash protocol. This enables different
                     technical teams to work together toward the common goal of
-                    advancing the project. eCash developers produce high quality
+                    advancing the project. ausCash developers produce high quality
                     professional software that serves the needs of its users,
                     miners, and merchants. Continuous technical improvement is
-                    the eCash standard.
+                    the ausCash standard.
                 </p>
                 <p>
                     Software advances through constant incremental improvements.
                     The optimizations and protocol upgrades outlined in the
-                    roadmap allow eCash to scale by orders of magnitude.
+                    roadmap allow ausCash to scale by orders of magnitude.
                 </p>
                 <h4>There are three main categories of improvements:</h4>
                 <ol>
@@ -61,7 +61,7 @@ export default function RoadmapPage() {
                     </ListItem>
                 </ol>
                 <p>
-                    The eCash network currently upgrades every year on May 15th
+                    The ausCash network currently upgrades every year on May 15th
                     and Nov 15th. These upgrades are required for all node
                     operators. To support business planning, the upgrades are
                     based on a timestamp and not a specific blockheight.

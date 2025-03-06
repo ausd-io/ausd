@@ -24,7 +24,7 @@ export const EditIcon = styled.div`
     cursor: pointer;
     color: ${props => props.theme.contrast};
     &:hover {
-        color: ${props => props.theme.eCashBlue};
+        color: ${props => props.theme.ausCashBlue};
     }
     word-wrap: break-word;
 `;

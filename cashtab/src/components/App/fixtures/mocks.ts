@@ -12,7 +12,7 @@ import {
     CashtabWalletPaths,
 } from 'wallet';
 import { XecTxType } from 'chronik';
-import { fromHex } from 'ecash-lib';
+import { fromHex } from 'auscash-lib';
 import * as wif from 'wif';
 
 interface LegacyPathInfo_Pre_2_1_0 {
@@ -65,21 +65,21 @@ export const walletWithXecAndTokens_pre_2_1_0: LegacyCashtabWallet_Pre_2_1_0 = {
         publicKey:
             '03f73fe2631da9732f2480debbc7ff8d99c5c06764e0f5095b789ff190788bee72',
         hash160: '600efb12a6f813eccf13171a8bc62055212d8d6c',
-        cashAddress: 'ecash:qpsqa7cj5mup8mx0zvt34z7xyp2jztvdds67wajntk',
+        cashAddress: 'auscash:qpsqa7cj5mup8mx0zvt34z7xyp2jztvdds67wajntk',
         fundingWif: 'L3ndnMkn4574McqhPujguusu48NrmeLUgWYMkRpYQGLXDGAwGmPq',
     },
     Path145: {
         publicKey:
             '03939a29fd67fa602926637a82f53e1826696353613cac03e34160f040ae2dfcb5',
         hash160: 'a28f8852f868f88e71ec666c632d6f86e978f046',
-        cashAddress: 'ecash:qz3glzzjlp503rn3a3nxccedd7rwj78sgczljhvzv3',
+        cashAddress: 'auscash:qz3glzzjlp503rn3a3nxccedd7rwj78sgczljhvzv3',
         fundingWif: 'L2HnC8ZT5JuwVFjrAjJUBs2tmmBoxdVa1MVCJccqV8S9YPoR1NuZ',
     },
     Path1899: {
         publicKey:
             '031d4603bdc23aca9432f903e3cf5975a3f655cc3fa5057c61d00dfc1ca5dfd02d',
         hash160: '3a5fb236934ec078b4507c303d3afd82067f8fc1',
-        cashAddress: 'ecash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
+        cashAddress: 'auscash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
         fundingWif: 'KywWPgaLDwvW1tWUtUvs13jgqaaWMoNANLVYoKcK9Ddbpnch7Cmw',
     },
     state: {
@@ -96,7 +96,7 @@ export const walletWithXecAndTokens_pre_2_1_0: LegacyCashtabWallet_Pre_2_1_0 = {
                 blockHeight: -1,
                 isCoinbase: false,
                 value: 546,
-                address: 'ecash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
+                address: 'auscash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
                 tokenId:
                     '3fee3384150b030490b7bee095a63900f66a45f2d8e3002ae2cf17ce3ef4d109',
                 isFinal: true,
@@ -122,7 +122,7 @@ export const walletWithXecAndTokens_pre_2_1_0: LegacyCashtabWallet_Pre_2_1_0 = {
                 blockHeight: 815549,
                 isCoinbase: false,
                 value: 951312,
-                address: 'ecash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
+                address: 'auscash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
                 isFinal: true,
             },
         ],
@@ -286,7 +286,7 @@ export const walletWithXecAndTokens_pre_2_1_0: LegacyCashtabWallet_Pre_2_1_0 = {
                         '0000000000000377',
                     ],
                     recipients: [
-                        'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                        'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     ],
                 },
             },
@@ -355,7 +355,7 @@ export const walletWithXecAndTokens_pre_2_1_0: LegacyCashtabWallet_Pre_2_1_0 = {
                         '003a5fb236934ec078b4507c303d3afd82067f8fc1',
                     ],
                     recipients: [
-                        'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+                        'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
                     ],
                 },
             },
@@ -424,7 +424,7 @@ export const walletWithXecAndTokens_pre_2_1_0: LegacyCashtabWallet_Pre_2_1_0 = {
                         '003a5fb236934ec078b4507c303d3afd82067f8fc1',
                     ],
                     recipients: [
-                        'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+                        'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
                     ],
                 },
             },
@@ -493,7 +493,7 @@ export const walletWithXecAndTokens_pre_2_1_0: LegacyCashtabWallet_Pre_2_1_0 = {
                         '003a5fb236934ec078b4507c303d3afd82067f8fc1',
                     ],
                     recipients: [
-                        'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+                        'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
                     ],
                 },
             },
@@ -562,7 +562,7 @@ export const walletWithXecAndTokens_pre_2_1_0: LegacyCashtabWallet_Pre_2_1_0 = {
                         '003a5fb236934ec078b4507c303d3afd82067f8fc1',
                     ],
                     recipients: [
-                        'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+                        'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
                     ],
                 },
             },
@@ -631,7 +631,7 @@ export const walletWithXecAndTokens_pre_2_1_0: LegacyCashtabWallet_Pre_2_1_0 = {
                         '003a5fb236934ec078b4507c303d3afd82067f8fc1',
                     ],
                     recipients: [
-                        'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+                        'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
                     ],
                 },
             },
@@ -700,7 +700,7 @@ export const walletWithXecAndTokens_pre_2_1_0: LegacyCashtabWallet_Pre_2_1_0 = {
                         '003a5fb236934ec078b4507c303d3afd82067f8fc1',
                     ],
                     recipients: [
-                        'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+                        'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
                     ],
                 },
             },
@@ -769,7 +769,7 @@ export const walletWithXecAndTokens_pre_2_1_0: LegacyCashtabWallet_Pre_2_1_0 = {
                         '003a5fb236934ec078b4507c303d3afd82067f8fc1',
                     ],
                     recipients: [
-                        'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+                        'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
                     ],
                 },
             },
@@ -838,7 +838,7 @@ export const walletWithXecAndTokens_pre_2_1_0: LegacyCashtabWallet_Pre_2_1_0 = {
                         '003a5fb236934ec078b4507c303d3afd82067f8fc1',
                     ],
                     recipients: [
-                        'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+                        'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
                     ],
                 },
             },
@@ -901,7 +901,7 @@ export const walletWithXecAndTokens_pre_2_1_0: LegacyCashtabWallet_Pre_2_1_0 = {
                     satoshisSent: 2200,
                     stackArray: ['00746162', '7374696c6c20776f726b73'],
                     recipients: [
-                        'ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
+                        'auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
                     ],
                 },
             },
@@ -937,19 +937,19 @@ export const walletWithXecAndTokens_pre_2_9_0: LegacyCashtabWallet_Pre_2_9_0 = {
         {
             // New shape of path info
             path: 1899,
-            address: 'ecash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
+            address: 'auscash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
             hash: '3a5fb236934ec078b4507c303d3afd82067f8fc1',
             wif: 'KywWPgaLDwvW1tWUtUvs13jgqaaWMoNANLVYoKcK9Ddbpnch7Cmw',
         },
         {
             path: 145,
-            address: 'ecash:qz3glzzjlp503rn3a3nxccedd7rwj78sgczljhvzv3',
+            address: 'auscash:qz3glzzjlp503rn3a3nxccedd7rwj78sgczljhvzv3',
             hash: 'a28f8852f868f88e71ec666c632d6f86e978f046',
             wif: 'L2HnC8ZT5JuwVFjrAjJUBs2tmmBoxdVa1MVCJccqV8S9YPoR1NuZ',
         },
         {
             path: 245,
-            address: 'ecash:qpsqa7cj5mup8mx0zvt34z7xyp2jztvdds67wajntk',
+            address: 'auscash:qpsqa7cj5mup8mx0zvt34z7xyp2jztvdds67wajntk',
             hash: '600efb12a6f813eccf13171a8bc62055212d8d6c',
             wif: 'L3ndnMkn4574McqhPujguusu48NrmeLUgWYMkRpYQGLXDGAwGmPq',
         },
@@ -986,7 +986,7 @@ export const walletWithXecAndTokens_pre_2_55_0: LegacyCashtabWallet_Pre_2_55_0 =
             [
                 1899,
                 {
-                    address: 'ecash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
+                    address: 'auscash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
                     hash: '3a5fb236934ec078b4507c303d3afd82067f8fc1',
                     wif: 'KywWPgaLDwvW1tWUtUvs13jgqaaWMoNANLVYoKcK9Ddbpnch7Cmw',
                 },
@@ -994,7 +994,7 @@ export const walletWithXecAndTokens_pre_2_55_0: LegacyCashtabWallet_Pre_2_55_0 =
             [
                 145,
                 {
-                    address: 'ecash:qz3glzzjlp503rn3a3nxccedd7rwj78sgczljhvzv3',
+                    address: 'auscash:qz3glzzjlp503rn3a3nxccedd7rwj78sgczljhvzv3',
                     hash: 'a28f8852f868f88e71ec666c632d6f86e978f046',
                     wif: 'L2HnC8ZT5JuwVFjrAjJUBs2tmmBoxdVa1MVCJccqV8S9YPoR1NuZ',
                 },
@@ -1002,7 +1002,7 @@ export const walletWithXecAndTokens_pre_2_55_0: LegacyCashtabWallet_Pre_2_55_0 =
             [
                 245,
                 {
-                    address: 'ecash:qpsqa7cj5mup8mx0zvt34z7xyp2jztvdds67wajntk',
+                    address: 'auscash:qpsqa7cj5mup8mx0zvt34z7xyp2jztvdds67wajntk',
                     hash: '600efb12a6f813eccf13171a8bc62055212d8d6c',
                     wif: 'L3ndnMkn4574McqhPujguusu48NrmeLUgWYMkRpYQGLXDGAwGmPq',
                 },
@@ -1024,7 +1024,7 @@ export const walletWithXecAndTokens: CashtabWallet = {
         [
             1899,
             {
-                address: 'ecash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
+                address: 'auscash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
                 hash: '3a5fb236934ec078b4507c303d3afd82067f8fc1',
                 wif: 'KywWPgaLDwvW1tWUtUvs13jgqaaWMoNANLVYoKcK9Ddbpnch7Cmw',
                 sk: fromHex(
@@ -1038,7 +1038,7 @@ export const walletWithXecAndTokens: CashtabWallet = {
         [
             145,
             {
-                address: 'ecash:qz3glzzjlp503rn3a3nxccedd7rwj78sgczljhvzv3',
+                address: 'auscash:qz3glzzjlp503rn3a3nxccedd7rwj78sgczljhvzv3',
                 hash: 'a28f8852f868f88e71ec666c632d6f86e978f046',
                 wif: 'L2HnC8ZT5JuwVFjrAjJUBs2tmmBoxdVa1MVCJccqV8S9YPoR1NuZ',
                 sk: fromHex(
@@ -1052,7 +1052,7 @@ export const walletWithXecAndTokens: CashtabWallet = {
         [
             245,
             {
-                address: 'ecash:qpsqa7cj5mup8mx0zvt34z7xyp2jztvdds67wajntk',
+                address: 'auscash:qpsqa7cj5mup8mx0zvt34z7xyp2jztvdds67wajntk',
                 hash: '600efb12a6f813eccf13171a8bc62055212d8d6c',
                 wif: 'L3ndnMkn4574McqhPujguusu48NrmeLUgWYMkRpYQGLXDGAwGmPq',
                 sk: fromHex(
@@ -1473,7 +1473,7 @@ export const freshWalletWithOneIncomingCashtabMsgTxs: CashtabTx[] = [
                 '00746162',
                 '6865726520697320612043617368746162204d736720666f722075736520696e204361736874616220696e746567726174696f6e207465737473',
             ],
-            recipients: ['ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y'],
+            recipients: ['auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y'],
         },
     },
 ];
@@ -1485,7 +1485,7 @@ export const freshWalletWithOneIncomingCashtabMsg: CashtabWallet = {
         [
             1899,
             {
-                address: 'ecash:qrfjv9kglpyazkdsyf0nd9nvewzagf0xsvv84u226e',
+                address: 'auscash:qrfjv9kglpyazkdsyf0nd9nvewzagf0xsvv84u226e',
                 hash: 'd32616c8f849d159b0225f36966ccb85d425e683',
                 wif: 'nope',
                 sk: fromHex('deadbeef'),
@@ -1495,7 +1495,7 @@ export const freshWalletWithOneIncomingCashtabMsg: CashtabWallet = {
         [
             145,
             {
-                address: 'ecash:qqdukdf3cdgn0nes83x4ln87hd0mpqvh7uky87rj0a',
+                address: 'auscash:qqdukdf3cdgn0nes83x4ln87hd0mpqvh7uky87rj0a',
                 hash: '1bcb3531c35137cf303c4d5fccfebb5fb08197f7',
                 wif: 'nope',
                 sk: fromHex('deadbeef'),
@@ -1505,7 +1505,7 @@ export const freshWalletWithOneIncomingCashtabMsg: CashtabWallet = {
         [
             245,
             {
-                address: 'ecash:qqqtqscqym24ps40v5n2wl88n9zlgu3hqyjzt84eay',
+                address: 'auscash:qqqtqscqym24ps40v5n2wl88n9zlgu3hqyjzt84eay',
                 hash: '00b0430026d550c2af6526a77ce79945f4723701',
                 wif: 'nope',
                 sk: fromHex('deadbeef'),
@@ -1923,21 +1923,21 @@ export const validSavedWallets_pre_2_1_0 = [
             publicKey:
                 '03ed5126bf336af98c614167168de75076cfc566177876a8f638d90135eb6758c8',
             hash160: 'e4a99c3b667511399056be4a90993a0ebb77b5b7',
-            cashAddress: 'ecash:qrj2n8pmve63zwvs26ly4yye8g8tkaa4ku3umdavhp',
+            cashAddress: 'auscash:qrj2n8pmve63zwvs26ly4yye8g8tkaa4ku3umdavhp',
             fundingWif: 'L16kPC4749KuGpmzNAg1gUJLbB6Q9DeL6XNJZRzZEPApRYvCwcBH',
         },
         Path145: {
             publicKey:
                 '02503651ff13c1aa8bbb77e7ee2ed6a5e412f4088c344c8fde3c2d929df1832e3e',
             hash160: 'b69091895b2e25e902a676456ec051b86a2d8983',
-            cashAddress: 'ecash:qzmfpyvftvhzt6gz5emy2mkq2xux5tvfsvz5798p70',
+            cashAddress: 'auscash:qzmfpyvftvhzt6gz5emy2mkq2xux5tvfsvz5798p70',
             fundingWif: 'L2ZprxokgYLCaHGLpbJptKueQZRTHVjTurn4kb6PkDRZeHytjQy6',
         },
         Path1899: {
             publicKey:
                 '03504b4c2eb4f41b554dbbc7c734a9c59849a346b7d8d1cc0e98666ad71538d5eb',
             hash160: 'a15108d07a1891e35953817b6d92ab77bbc62ac3',
-            cashAddress: 'ecash:qzs4zzxs0gvfrc6e2wqhkmvj4dmmh332cvfpd7yjep',
+            cashAddress: 'auscash:qzs4zzxs0gvfrc6e2wqhkmvj4dmmh332cvfpd7yjep',
             fundingWif: 'L4PMeJxHDWMJurbU4yhWtEn4qy3kYcPJKpG9f5yrqJcJzCY8cKnU',
         },
         state: {
@@ -1956,21 +1956,21 @@ export const validSavedWallets_pre_2_1_0 = [
             publicKey:
                 '0397c403805267f9e5d0e3ae0e0fd09151edda9c256539996250ea2d07f0e49d2b',
             hash160: 'af657c9aa1eb6a573eced4bbfdc8ebb756e2a9fd',
-            cashAddress: 'ecash:qzhk2ly6584k54e7em2thlwgawm4dc4fl5eslkgm7u',
+            cashAddress: 'auscash:qzhk2ly6584k54e7em2thlwgawm4dc4fl5eslkgm7u',
             fundingWif: 'KxBCkRKGiYxHVQyGFaQJMM1Y1ApJtupR82JWik317gPRC58FLmEV',
         },
         Path145: {
             publicKey:
                 '0266058962ae3e68199c8352f55e028e7740b2b39a6e01e4fdac6f787332c2c90e',
             hash160: '063f8dba9f543f694bc2c045e3a6d62e430c8158',
-            cashAddress: 'ecash:qqrrlrd6na2r762tctqytcax6chyxryptqjx7wfpun',
+            cashAddress: 'auscash:qqrrlrd6na2r762tctqytcax6chyxryptqjx7wfpun',
             fundingWif: 'L1wHwQr5sFgC6zr86NPRqUTccjscLr9N4rwfXjWdgszqmNBSPfEs',
         },
         Path1899: {
             publicKey:
                 '03a63f0a273fb25370866bc4554a4d0e6b63fb4df7e11ddbd0885d194a474d8ee7',
             hash160: 'a55e283f54d91b77616ce72c2b117a4bf77e8fe3',
-            cashAddress: 'ecash:qzj4u2pl2nv3kampdnnjc2c30f9lwl50uvvg4nfkfz',
+            cashAddress: 'auscash:qzj4u2pl2nv3kampdnnjc2c30f9lwl50uvvg4nfkfz',
             fundingWif: 'KwyN1LbHeWS2XfP7E7V4kEJmgwhB13VUfDidtpkwzSD77KBKaRpi',
         },
         state: {
@@ -1989,21 +1989,21 @@ export const validSavedWallets_pre_2_1_0 = [
             publicKey:
                 '0242993d73596e744e8d51840ed77a012c07d30b47be42cb1584f882114be0b136',
             hash160: '68946da96b143de027be006deac4cf7f1012bbf8',
-            cashAddress: 'ecash:qp5fgmdfdv2rmcp8hcqxm6kyeal3qy4mlqc8s2tme8',
+            cashAddress: 'auscash:qp5fgmdfdv2rmcp8hcqxm6kyeal3qy4mlqc8s2tme8',
             fundingWif: 'L4H4BBgfNK4S9LrZaDg5XDPzZmmevxA6qSH1AfRGVf6meDERVnet',
         },
         Path145: {
             publicKey:
                 '0223f160df25af9c4eeec492372b27f43548b2b305059d0d0d4ab2c828afbe9cc4',
             hash160: '4cb5f392830a8515591dde5c970603cb8747743d',
-            cashAddress: 'ecash:qpxttuujsv9g292erh09e9cxq09cw3m585h96jn4wu',
+            cashAddress: 'auscash:qpxttuujsv9g292erh09e9cxq09cw3m585h96jn4wu',
             fundingWif: 'Kz7CZqAckHkPSJ15bcPKqzMwBAArhUquFAmfq9UBqKNkgyZz4dxz',
         },
         Path1899: {
             publicKey:
                 '03be84e190407f1549da4863ebcc4a9f2ae27d8484d404d1286034d94677ce3d12',
             hash160: 'fb85cd3ca04fb8579983624451413f5fdfd1bebb',
-            cashAddress: 'ecash:qractnfu5p8ms4uesd3yg52p8a0al5d7hvpnus5vsy',
+            cashAddress: 'auscash:qractnfu5p8ms4uesd3yg52p8a0al5d7hvpnus5vsy',
             fundingWif: 'Kwjipw1HNsv5o7xcGPL6oBpYudCgFfKt44fC49r87n924acnoytj',
         },
         state: {
@@ -2022,21 +2022,21 @@ export const validSavedWallets_pre_2_1_0 = [
             publicKey:
                 '028eb5f461f40d4d59388973787a8d354a8a0651f19014b8b01fe628394525fa27',
             hash160: '184d10e2817e25b21a7e9edcd0a6684365a6ed7b',
-            cashAddress: 'ecash:qqvy6y8zs9lztvs6060de59xdppktfhd0vqd9270d2',
+            cashAddress: 'auscash:qqvy6y8zs9lztvs6060de59xdppktfhd0vqd9270d2',
             fundingWif: 'KxVVuyb4VZsT9EKCJ84s8fLkAoPwqoUDZTG3i7gENFiBkLrYN2J4',
         },
         Path145: {
             publicKey:
                 '0375ffef70063f2f90db5e3392c780d8afc3d34882935d731ecd026f5438fa1c85',
             hash160: 'e2e04af76098d4237f055de9eaa159e2de808f92',
-            cashAddress: 'ecash:qr3wqjhhvzvdggmlq4w7n64pt83daqy0jg8me2q8fp',
+            cashAddress: 'auscash:qr3wqjhhvzvdggmlq4w7n64pt83daqy0jg8me2q8fp',
             fundingWif: 'L1hhvHyRvbGgCJa4ncRktWbdsJiANRca9mR9Yp4x11vVxQ89a36S',
         },
         Path1899: {
             publicKey:
                 '02d54b79e41b60e8c0e4e2315843e4707e9905486e5b8df4fe45dd5331a4e5c80c',
             hash160: '52a54e9ca3ed7f3afa163df948b6c2a1e340c7a4',
-            cashAddress: 'ecash:qpf22n5u50kh7wh6zc7ljj9kc2s7xsx85sdsjvxeyf',
+            cashAddress: 'auscash:qpf22n5u50kh7wh6zc7ljj9kc2s7xsx85sdsjvxeyf',
             fundingWif: 'L5eyTTvwEsJPHCr6hmNt2c1PRwjiyu7wLkdKw5X2prduRdzSQhTV',
         },
         state: {
@@ -2055,21 +2055,21 @@ export const validSavedWallets_pre_2_1_0 = [
             publicKey:
                 '03b3f3d7a8da74742956c4f45566eb5692cc887e3121027be6ba6e771b8bef4801',
             hash160: 'fe1666692e5ee9aaefe847fc010bc2c61d7ab363',
-            cashAddress: 'ecash:qrlpvenf9e0wn2h0aprlcqgtctrp674nvvg92cn35t',
+            cashAddress: 'auscash:qrlpvenf9e0wn2h0aprlcqgtctrp674nvvg92cn35t',
             fundingWif: 'L5bVvbc1gLhxCxvZ2FapBpAfs5JX1EB7KaRkHFq8yejzPpBEq1sN',
         },
         Path145: {
             publicKey:
                 '028e7b40e388c683dbabbe237970fcbdb42e796ed81b937a6e6163f0bd4e20bdea',
             hash160: 'e9e04e7a62212ebc5eb2958d9998455247862a8b',
-            cashAddress: 'ecash:qr57qnn6vgsja0z7k22cmxvcg4fy0p323vzjk7wt73',
+            cashAddress: 'auscash:qr57qnn6vgsja0z7k22cmxvcg4fy0p323vzjk7wt73',
             fundingWif: 'L1LWFja6VTsaiGvHamFTPE1CxPdnR3dYxCPTnjdBhsr9rQcjzmGe',
         },
         Path1899: {
             publicKey:
                 '02e1323cc997925c0dd119700e37c12f2a8c608724b814216ee1d30d911a298c91',
             hash160: '60194f10f15d9a8ffd20618e418d6ab47a46fa3c',
-            cashAddress: 'ecash:qpspjncs79we4rlaypscusvdd26853h68s2ach6ket',
+            cashAddress: 'auscash:qpspjncs79we4rlaypscusvdd26853h68s2ach6ket',
             fundingWif: 'KwVChvBpEjmY1Yqt7fkeb5ZqzWW6QDn7CWDCkcnNizVi3CVCPTKK',
         },
         state: {
@@ -2318,15 +2318,15 @@ export const mockCachedInfoCashtabDark = {
 
 export const populatedContactList = [
     {
-        address: 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+        address: 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
         name: 'alpha',
     },
     {
-        address: 'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+        address: 'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
         name: 'beta',
     },
     {
-        address: 'ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
+        address: 'auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
         name: 'gamma',
     },
 ];

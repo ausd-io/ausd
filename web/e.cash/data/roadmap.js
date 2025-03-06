@@ -8,7 +8,7 @@ export const roadmap = [
     {
         title: 'SCALING',
         description:
-            'Enable eCash to scale from ~100 tx/s to over 5,000,000 tx/s. Mass-parallelization is necessary to achieve mankind scale.',
+            'Enable ausCash to scale from ~100 tx/s to over 5,000,000 tx/s. Mass-parallelization is necessary to achieve mankind scale.',
         items: [
             {
                 title: 'Canonical Transaction Ordering',
@@ -48,7 +48,7 @@ export const roadmap = [
     {
         title: 'USABILITY',
         description:
-            'Improve the eCash payment experience to ensure that it is instant and reliable. Transactions must be received instantly and be completely secure within seconds.',
+            'Improve the ausCash payment experience to ensure that it is instant and reliable. Transactions must be received instantly and be completely secure within seconds.',
         items: [
             {
                 title: 'CashAddr',
@@ -109,7 +109,7 @@ export const roadmap = [
     {
         title: 'EXTENSIBILITY',
         description:
-            'Make eCash extensible. An extensible protocol makes future improvements less disruptive, providing a solid base for businesses and developers to build on.',
+            'Make ausCash extensible. An extensible protocol makes future improvements less disruptive, providing a solid base for businesses and developers to build on.',
         items: [
             {
                 title: 'Foundational Opcodes',

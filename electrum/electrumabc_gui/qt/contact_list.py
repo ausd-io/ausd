@@ -1,5 +1,5 @@
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2020 The Electrum ABC developers
 # Copyright (C) 2015 Thomas Voegtlin
 #
@@ -103,7 +103,7 @@ class ContactList(PrintError, MessageBoxMixin, MyTreeWidget):
         self.monospace_font = QFont(MONOSPACE_FONT)
         self.cleaned_up = False
         self.icon_openalias = QIcon(":icons/openalias-logo.svg")
-        self.icon_ecash = QIcon(":icons/ecash-logo.svg")
+        self.icon_auscash = QIcon(":icons/auscash-logo.svg")
         self.icon_contacts = QIcon(":icons/tab_contacts.png")
         self.icon_unverif = QIcon(":/icons/unconfirmed.svg")
 
@@ -283,8 +283,8 @@ class ContactList(PrintError, MessageBoxMixin, MyTreeWidget):
 
         if self.config.get("enable_aliases", alias.DEFAULT_ENABLE_ALIASES):
             menu.addAction(
-                self.icon_ecash,
-                _("Add eCash Alias"),
+                self.icon_auscash,
+                _("Add ausCash Alias"),
                 self.fetch_alias_dialog,
             )
         menu.addSeparator()
@@ -339,11 +339,11 @@ class ContactList(PrintError, MessageBoxMixin, MyTreeWidget):
             {
                 "openalias": _("OpenAlias"),
                 "address": _("Address"),
-                "ecash": _("eCash Alias"),
+                "auscash": _("ausCash Alias"),
             }
         )
         type_icons = {
-            "ecash": self.icon_ecash,
+            "auscash": self.icon_auscash,
             "openalias": self.icon_openalias,
             "address": self.icon_contacts,
         }
@@ -407,7 +407,7 @@ class ContactList(PrintError, MessageBoxMixin, MyTreeWidget):
     def fetch_alias_dialog(self):
         d = FetchAliasDialog(self.top_level_window())
         if d.exec_():
-            self.set_contact(d.get_alias(), d.get_address(), typ="ecash")
+            self.set_contact(d.get_alias(), d.get_address(), typ="auscash")
 
     def set_contact(
         self, label, address, typ="address", replace: Optional[Contact] = None
@@ -522,7 +522,7 @@ class FetchAliasWorker(QObject):
 
 class FetchAliasDialog(WindowModalDialog):
     def __init__(self, parent: QtWidgets.QWidget):
-        super().__init__(parent, title=_("Add eCash Alias to contacts"))
+        super().__init__(parent, title=_("Add ausCash Alias to contacts"))
 
         self.alias: Optional[str] = None
         self.address: Optional[str] = None
@@ -532,7 +532,7 @@ class FetchAliasDialog(WindowModalDialog):
         hbox = QtWidgets.QHBoxLayout(self)
         icon_label = QtWidgets.QLabel()
         icon_label.setPixmap(
-            QPixmap(":icons/ecash-logo.svg").scaledToHeight(
+            QPixmap(":icons/auscash-logo.svg").scaledToHeight(
                 200, Qt.SmoothTransformation
             )
         )
@@ -540,7 +540,7 @@ class FetchAliasDialog(WindowModalDialog):
 
         vbox = QtWidgets.QVBoxLayout()
         alias_edit_layout = QtWidgets.QHBoxLayout()
-        alias_edit_layout.addWidget(QtWidgets.QLabel(_("eCash Alias") + ":"))
+        alias_edit_layout.addWidget(QtWidgets.QLabel(_("ausCash Alias") + ":"))
         self.alias_edit = QtWidgets.QLineEdit()
         self.alias_edit.setFixedWidth(38 * char_width_in_lineedit())
         self.alias_edit.textChanged.connect(self.on_alias_changed)

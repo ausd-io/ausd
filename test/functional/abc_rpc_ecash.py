@@ -3,7 +3,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """
 Test the getcurrencyinfo RPC.
-Test the effect of the -ecash command line parameter on amounts in RPC
+Test the effect of the -auscash command line parameter on amounts in RPC
 commands.
 """
 
@@ -11,7 +11,7 @@ from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import assert_equal
 
 
-class ECashRPCTest(BitcoinTestFramework):
+class AusCashRPCTest(BitcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
 
@@ -53,4 +53,4 @@ class ECashRPCTest(BitcoinTestFramework):
 
 
 if __name__ == "__main__":
-    ECashRPCTest().main()
+    AusCashRPCTest().main()

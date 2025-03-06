@@ -6,7 +6,7 @@ import { SlpDecimals, CashtabUtxo, TokenUtxo } from 'wallet';
 import { getMaxDecimalizedAlpQty } from 'token-protocols/alp';
 import { getMaxDecimalizedSlpQty } from 'token-protocols/slpv1';
 import { decimalizeTokenAmount, undecimalizeTokenAmount } from 'wallet';
-import { Script } from 'ecash-lib';
+import { Script } from 'auscash-lib';
 import appConfig from 'config/app';
 
 // Cashtab spec

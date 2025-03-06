@@ -2,14 +2,14 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import { opReturn } from 'config/opreturn';
 import {
     isValidTokenId,
     meetsAliasSpec,
     getOpReturnRawError,
 } from 'validation';
-import { getStackArray } from 'ecash-script';
+import { getStackArray } from 'auscash-script';
 import {
     Script,
     pushBytesOp,
@@ -17,8 +17,8 @@ import {
     OP_0,
     fromHex,
     TxOutput,
-} from 'ecash-lib';
-import { AddressType } from 'ecashaddrjs/dist/types';
+} from 'auscash-lib';
+import { AddressType } from 'auscashaddrjs/dist/types';
 
 /**
  * Get targetOutput for a Cashtab Msg from user input string
@@ -85,7 +85,7 @@ export interface ParsedOpReturnRaw {
 export const parseOpReturnRaw = (opReturnRaw: string): ParsedOpReturnRaw => {
     // Intialize return data
     const parsed = { protocol: 'Unknown Protocol', data: opReturnRaw };
-    // See if we can parse it with ecash-script
+    // See if we can parse it with auscash-script
     let stackArray;
     try {
         stackArray = getStackArray(
@@ -137,7 +137,7 @@ export const parseOpReturnRaw = (opReturnRaw: string): ParsedOpReturnRaw => {
         }
         case opReturn.appPrefixesHex.aliasRegistration: {
             // Magic numbers per spec
-            // https://github.com/Bitcoin-ABC/bitcoin-abc/blob/master/doc/standards/ecash-alias.md
+            // https://github.com/Bitcoin-ABC/bitcoin-abc/blob/master/doc/standards/auscash-alias.md
             if (
                 stackArray[1] === '00' &&
                 typeof stackArray[2] !== 'undefined' &&
@@ -159,7 +159,7 @@ export const parseOpReturnRaw = (opReturnRaw: string): ParsedOpReturnRaw => {
                 parsed.data = `${Buffer.from(stackArray[2], 'hex').toString(
                     'utf8',
                 )} to ${cashaddr.encode(
-                    'ecash',
+                    'auscash',
                     addressType as AddressType,
                     stackArray[3].slice(1),
                 )}`;
@@ -192,15 +192,15 @@ export const parseOpReturnRaw = (opReturnRaw: string): ParsedOpReturnRaw => {
             parsed.data = opReturnRaw;
             return parsed;
         }
-        case opReturn.appPrefixesHex.eCashChat: {
+        case opReturn.appPrefixesHex.ausCashChat: {
             // Same spec as a Cashtab msg, different prefix
             if (typeof stackArray[1] !== 'undefined') {
-                parsed.protocol = 'eCash Chat';
+                parsed.protocol = 'ausCash Chat';
                 parsed.data = Buffer.from(stackArray[1], 'hex').toString(
                     'utf8',
                 );
             } else {
-                parsed.protocol = 'Invalid eCash Chat';
+                parsed.protocol = 'Invalid ausCash Chat';
             }
             return parsed;
         }
@@ -355,7 +355,7 @@ export const getOpreturnParamTargetOutput = (
 
     // Note this is a "weird" function that translates op_return_raw input per bip21 spec
     // We are adding the expected OP_RETURN code to the beginning of our param
-    // And we are converting the whole thing to ecash-lib "Script" type
+    // And we are converting the whole thing to auscash-lib "Script" type
     // Unlike other functions we are not building an output from multiple pushes
     const script = new Script(
         fromHex(opReturn.opReturnPrefixHex + opreturnParam),

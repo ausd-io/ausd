@@ -79,15 +79,15 @@ class AvalancheProofTest(BitcoinTestFramework):
 
         # FIXME Remove after the hardcoded addresses have been converted in the
         # LUT from test_node.py
-        def legacy_to_ecash_p2pkh(legacy):
+        def legacy_to_auscash_p2pkh(legacy):
             payload, _ = base58_to_byte(legacy)
             return encode_full("ecregtest", PUBKEY_TYPE, payload)
 
         addrkey0 = node.get_deterministic_priv_key()
-        node_ecash_addr = legacy_to_ecash_p2pkh(addrkey0.address)
+        node_auscash_addr = legacy_to_auscash_p2pkh(addrkey0.address)
 
         blockhashes = self.generatetoaddress(
-            node, COINBASE_MATURITY, node_ecash_addr, sync_fun=self.no_op
+            node, COINBASE_MATURITY, node_auscash_addr, sync_fun=self.no_op
         )
 
         self.log.info("Make build a valid proof and restart the node to use it")
@@ -164,7 +164,7 @@ class AvalancheProofTest(BitcoinTestFramework):
         assert_equal(decoded_proof["stakes"][0]["vout"], stakes[0]["vout"])
         assert_equal(decoded_proof["stakes"][0]["height"], stakes[0]["height"])
         assert_equal(decoded_proof["stakes"][0]["iscoinbase"], stakes[0]["iscoinbase"])
-        assert_equal(decoded_proof["stakes"][0]["address"], node_ecash_addr)
+        assert_equal(decoded_proof["stakes"][0]["address"], node_auscash_addr)
         assert_equal(
             decoded_proof["stakes"][0]["signature"],
             base64.b64encode(proofobj.stakes[0].sig).decode("ascii"),

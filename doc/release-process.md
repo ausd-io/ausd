@@ -56,4 +56,4 @@ doged Release Process
 14. Announce Release:
     - [Reddit](https://www.reddit.com/r/BitcoinABC/)
     - Twitter @Bitcoin_ABC
-    - Telegram groups (like https://t.me/ecash)
+    - Telegram groups (like https://t.me/auscash)

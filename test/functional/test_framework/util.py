@@ -479,7 +479,7 @@ def write_config(config_path, *, n, chain, extra_config="", disable_autoconnect=
         f.write("printtoconsole=0\n")
         f.write("upnp=0\n")
         f.write("natpmp=0\n")
-        f.write("usecashaddr=1\n")
+        f.write("usauscashaddr=1\n")
         f.write("usedogeunit=0\n")
         f.write("legacyscriptrules=0\n")
         f.write("minrelaytxfee=10\n")

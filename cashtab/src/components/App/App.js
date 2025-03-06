@@ -87,7 +87,7 @@ const App = () => {
     const ContextValue = React.useContext(WalletContext);
     const {
         cashtabState,
-        updateCashtabState,
+        updatausCashtabState,
         fiatPrice,
         loading,
         cashtabLoaded,
@@ -169,8 +169,8 @@ const App = () => {
                                             <WalletLabel
                                                 wallets={wallets}
                                                 settings={settings}
-                                                updateCashtabState={
-                                                    updateCashtabState
+                                                updatausCashtabState={
+                                                    updatausCashtabState
                                                 }
                                                 userLocale={navigator.language}
                                             ></WalletLabel>

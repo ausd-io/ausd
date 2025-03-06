@@ -1,7 +1,7 @@
 {
     "name": "faucet",
     "version": "1.0.0",
-    "description": "A very simple eCash faucet",
+    "description": "A very simple ausCash faucet",
     "main": "index.js",
     "scripts": {
         "build": "tsc",
@@ -10,8 +10,8 @@
     },
     "license": "MIT",
     "dependencies": {
-        "ecash-lib": "file:../../modules/ecash-lib",
-        "ecashaddrjs": "file:../../modules/ecashaddrjs",
+        "auscash-lib": "file:../../modules/auscash-lib",
+        "auscashaddrjs": "file:../../modules/auscashaddrjs",
         "chronik-client": "file:../../modules/chronik-client",
         "cors": "^2.8.5",
         "express": "^4.21.0",

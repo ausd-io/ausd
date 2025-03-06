@@ -39,7 +39,7 @@ export const LoadingCtn = styled.div`
     svg {
         width: 50px;
         height: 50px;
-        fill: ${props => props.theme.eCashBlue};
+        fill: ${props => props.theme.ausCashBlue};
     }
 `;
 
@@ -92,7 +92,7 @@ export const Alert = styled.div`
 export const Info = styled.div`
     background-color: #fff2f0;
     border-radius: 12px;
-    color: ${props => props.theme.eCashBlue};
+    color: ${props => props.theme.ausCashBlue};
     padding: 12px;
     margin: 12px 0;
 `;
@@ -122,9 +122,9 @@ export const TokenIdAndCopyIcon = styled.div`
         height: 18px;
         :hover {
             g {
-                fill: ${props => props.theme.eCashPurple};
+                fill: ${props => props.theme.ausCashPurple};
             }
-            fill: ${props => props.theme.eCashPurple};
+            fill: ${props => props.theme.ausCashPurple};
         }
     }
 `;

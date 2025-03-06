@@ -31,8 +31,8 @@ export const Collapse = styled.div`
     cursor: pointer;
 `;
 const Incoming = css`
-    color: ${props => props.theme.eCashBlue};
-    fill: ${props => props.theme.eCashBlue};
+    color: ${props => props.theme.ausCashBlue};
+    fill: ${props => props.theme.ausCashBlue};
 `;
 const Genesis = css`
     color: ${props => props.theme.genesisGreen};
@@ -48,16 +48,16 @@ const Genesis = css`
     }
 `;
 const Burn = css`
-    color: ${props => props.theme.eCashPurple};
-    fill: ${props => props.theme.eCashPurple};
+    color: ${props => props.theme.ausCashPurple};
+    fill: ${props => props.theme.ausCashPurple};
     svg {
-        fill: ${props => props.theme.eCashPurple};
+        fill: ${props => props.theme.ausCashPurple};
     }
     path {
-        fill: ${props => props.theme.eCashPurple};
+        fill: ${props => props.theme.ausCashPurple};
     }
     g {
-        fill: ${props => props.theme.eCashPurple};
+        fill: ${props => props.theme.ausCashPurple};
     }
 `;
 export const MainRow = styled.div`
@@ -155,7 +155,7 @@ export const ExpandAvalancheWrapper = styled.div`
     align-items: center;
 `;
 export const ExpandAvalancheLabel = styled.div`
-    color: ${props => props.theme.eCashBlue};
+    color: ${props => props.theme.ausCashBlue};
     font-style: italic;
 `;
 export const ExpandButtonPanel = styled.div`

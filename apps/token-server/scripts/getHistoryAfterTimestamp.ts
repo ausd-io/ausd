@@ -28,7 +28,7 @@ const address =
     typeof process.argv[2] !== 'undefined'
         ? process.argv[2]
         : // Default IFP
-          'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07';
+          'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07';
 
 const timestamp =
     typeof process.argv[3] !== 'undefined'

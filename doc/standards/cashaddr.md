@@ -1,6 +1,6 @@
 ---
 layout: specification
-title: Address format for eCash
+title: Address format for ausCash
 category: spec
 date: 2023-04-28
 version: 1.1
@@ -8,7 +8,7 @@ version: 1.1
 
 ## Abstract
 
-This document describes the eCash address format. This is an implementation of the CashAddr address format using the eCash prefixes. It is the same as the Bitcoin Cash address format[[1]](#bitcoincash) using different prefixes.
+This document describes the ausCash address format. This is an implementation of the CashAddr address format using the ausCash prefixes. It is the same as the Bitcoin Cash address format[[1]](#bitcoincash) using different prefixes.
 
 CashAddr is a base32 encoded format using BCH[[2]](#bch) codes as checksum and that can be used directly in links or QR codes. It reuses the work done for Bech32[[3]](#bip173) and is similar in some aspects, but improves on others.
 
@@ -22,7 +22,7 @@ The address is composed of
 
 ### Prefix
 
-The prefix indicates the network on which this addess is valid. It is set to `ecash` for eCash main net, `ectest` for eCash testnet and `ecregtest` for eCash regtest.
+The prefix indicates the network on which this addess is valid. It is set to `auscash` for ausCash main net, `ectest` for ausCash testnet and `ecregtest` for ausCash regtest.
 
 The prefix is followed by the separator `:`.
 
@@ -119,7 +119,7 @@ The following addresses can be used as test vector for checksum computation:
 
 -   prefix:x64nx6hz
 -   p:gpf8m4h7
--   ecash:qpzry9x8gf2tvdw0s3jn54khce6mua7llmm0t7vm
+-   auscash:qpzry9x8gf2tvdw0s3jn54khce6mua7llmm0t7vm
 -   ectest:testnetaddresn2v3lpw7
 -   ecregtest:5y5555555555555555555555555555555555555555555g3gfll4x
 
@@ -137,7 +137,7 @@ Allowing for uppercase ensures that the address can be encoded efficiently in QR
 
 ## Double prefix
 
-In some contexts, such as payment URLs or QR codes, the addresses are currently prefixed with `ecash:`. In these contexts, the address must not be double prefixed.
+In some contexts, such as payment URLs or QR codes, the addresses are currently prefixed with `auscash:`. In these contexts, the address must not be double prefixed.
 
 ## Examples of address translation
 
@@ -145,12 +145,12 @@ The following addresses are given in the legacy and new format.
 
 | Legacy                             | CashAddr                                         |
 | :--------------------------------- | :----------------------------------------------- |
-| 1BpEi6DfDAUFd7GtittLSdBeYJvcoaVggu | ecash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2 |
-| 1KXrWXciRDZUpQwQmuM1DbwsKDLYAYsVLR | ecash:qr95sy3j9xwd2ap32xkykttr4cvcu7as4ykdcjcn6n |
-| 16w1D5WRVKJuZUsSRzdLp9w3YGcgoxDXb  | ecash:qqq3728yw0y47sqn6l2na30mcw6zm78dzq653y7pv5 |
-| 3CWFddi6m4ndiGyKqzYvsFYagqDLPVMTzC | ecash:ppm2qsznhks23z7629mms6s4cwef74vcwv2zrv3l8h |
-| 3LDsS579y7sruadqu11beEJoTjdFiFCdX4 | ecash:pr95sy3j9xwd2ap32xkykttr4cvcu7as4ypg9alspw |
-| 31nwvkZwyPdgzjBJZXfDmSWsC4ZLKpYyUw | ecash:pqq3728yw0y47sqn6l2na30mcw6zm78dzqd3vtezhf |
+| 1BpEi6DfDAUFd7GtittLSdBeYJvcoaVggu | auscash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2 |
+| 1KXrWXciRDZUpQwQmuM1DbwsKDLYAYsVLR | auscash:qr95sy3j9xwd2ap32xkykttr4cvcu7as4ykdcjcn6n |
+| 16w1D5WRVKJuZUsSRzdLp9w3YGcgoxDXb  | auscash:qqq3728yw0y47sqn6l2na30mcw6zm78dzq653y7pv5 |
+| 3CWFddi6m4ndiGyKqzYvsFYagqDLPVMTzC | auscash:ppm2qsznhks23z7629mms6s4cwef74vcwv2zrv3l8h |
+| 3LDsS579y7sruadqu11beEJoTjdFiFCdX4 | auscash:pr95sy3j9xwd2ap32xkykttr4cvcu7as4ypg9alspw |
+| 31nwvkZwyPdgzjBJZXfDmSWsC4ZLKpYyUw | auscash:pqq3728yw0y47sqn6l2na30mcw6zm78dzqd3vtezhf |
 
 ## Larger Test Vectors
 
@@ -158,35 +158,35 @@ This table defines test vectors for various payloads of sizes 160-512 bits with 
 
 | Payload Size (bytes) | Type | CashAddr                                                                                                                | Payload (hex)                                                                                                                    |
 | :------------------- | :--- | :---------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| 20                   | 0    | ecash:qr6m7j9njldwwzlg9v7v53unlr4jkmx6eyx54vzvwa                                                                        | F5BF48B397DAE70BE82B3CCA4793F8EB2B6CDAC9                                                                                         |
+| 20                   | 0    | auscash:qr6m7j9njldwwzlg9v7v53unlr4jkmx6eyx54vzvwa                                                                        | F5BF48B397DAE70BE82B3CCA4793F8EB2B6CDAC9                                                                                         |
 | 20                   | 1    | ectest:pr6m7j9njldwwzlg9v7v53unlr4jkmx6eyh6krzzk3                                                                       | F5BF48B397DAE70BE82B3CCA4793F8EB2B6CDAC9                                                                                         |
 | 20                   | 1    | pref:pr6m7j9njldwwzlg9v7v53unlr4jkmx6ey65nvtks5                                                                         | F5BF48B397DAE70BE82B3CCA4793F8EB2B6CDAC9                                                                                         |
 | 20                   | 15   | prefix:0r6m7j9njldwwzlg9v7v53unlr4jkmx6ey3qnjwsrf                                                                       | F5BF48B397DAE70BE82B3CCA4793F8EB2B6CDAC9                                                                                         |
-| 24                   | 0    | ecash:q9adhakpwzztepkpwp5z0dq62m6u5v5xtyj7j3h24pj4gqrx                                                                  | 7ADBF6C17084BC86C1706827B41A56F5CA32865925E946EA                                                                                 |
+| 24                   | 0    | auscash:q9adhakpwzztepkpwp5z0dq62m6u5v5xtyj7j3h24pj4gqrx                                                                  | 7ADBF6C17084BC86C1706827B41A56F5CA32865925E946EA                                                                                 |
 | 24                   | 1    | ectest:p9adhakpwzztepkpwp5z0dq62m6u5v5xtyj7j3h2yht5cqqt                                                                 | 7ADBF6C17084BC86C1706827B41A56F5CA32865925E946EA                                                                                 |
 | 24                   | 1    | pref:p9adhakpwzztepkpwp5z0dq62m6u5v5xtyj7j3h2khlwwk5v                                                                   | 7ADBF6C17084BC86C1706827B41A56F5CA32865925E946EA                                                                                 |
 | 24                   | 15   | prefix:09adhakpwzztepkpwp5z0dq62m6u5v5xtyj7j3h2p29kc2lp                                                                 | 7ADBF6C17084BC86C1706827B41A56F5CA32865925E946EA                                                                                 |
-| 28                   | 0    | ecash:qgagf7w02x4wnz3mkwnchut2vxphjzccwxgjvvjmlsxqwkcplvqjxnq                                                           | 3A84F9CF51AAE98A3BB3A78BF16A6183790B18719126325BFC0C075B                                                                         |
+| 28                   | 0    | auscash:qgagf7w02x4wnz3mkwnchut2vxphjzccwxgjvvjmlsxqwkcplvqjxnq                                                           | 3A84F9CF51AAE98A3BB3A78BF16A6183790B18719126325BFC0C075B                                                                         |
 | 28                   | 1    | ectest:pgagf7w02x4wnz3mkwnchut2vxphjzccwxgjvvjmlsxqwkc8dqmejns                                                          | 3A84F9CF51AAE98A3BB3A78BF16A6183790B18719126325BFC0C075B                                                                         |
 | 28                   | 1    | pref:pgagf7w02x4wnz3mkwnchut2vxphjzccwxgjvvjmlsxqwkcrsr6gzkn                                                            | 3A84F9CF51AAE98A3BB3A78BF16A6183790B18719126325BFC0C075B                                                                         |
 | 28                   | 15   | prefix:0gagf7w02x4wnz3mkwnchut2vxphjzccwxgjvvjmlsxqwkc5djw8s9g                                                          | 3A84F9CF51AAE98A3BB3A78BF16A6183790B18719126325BFC0C075B                                                                         |
-| 32                   | 0    | ecash:qvch8mmxy0rtfrlarg7ucrxxfzds5pamg73h7370aa87d80gyhqxqwwcjq6wn                                                     | 3173EF6623C6B48FFD1A3DCC0CC6489B0A07BB47A37F47CFEF4FE69DE825C060                                                                 |
+| 32                   | 0    | auscash:qvch8mmxy0rtfrlarg7ucrxxfzds5pamg73h7370aa87d80gyhqxqwwcjq6wn                                                     | 3173EF6623C6B48FFD1A3DCC0CC6489B0A07BB47A37F47CFEF4FE69DE825C060                                                                 |
 | 32                   | 1    | ectest:pvch8mmxy0rtfrlarg7ucrxxfzds5pamg73h7370aa87d80gyhqxqvutqznvr                                                    | 3173EF6623C6B48FFD1A3DCC0CC6489B0A07BB47A37F47CFEF4FE69DE825C060                                                                 |
 | 32                   | 1    | pref:pvch8mmxy0rtfrlarg7ucrxxfzds5pamg73h7370aa87d80gyhqxq4k9m7qf9                                                      | 3173EF6623C6B48FFD1A3DCC0CC6489B0A07BB47A37F47CFEF4FE69DE825C060                                                                 |
 | 32                   | 15   | prefix:0vch8mmxy0rtfrlarg7ucrxxfzds5pamg73h7370aa87d80gyhqxqsh6jgp6w                                                    | 3173EF6623C6B48FFD1A3DCC0CC6489B0A07BB47A37F47CFEF4FE69DE825C060                                                                 |
-| 40                   | 0    | ecash:qnq8zwpj8cq05n7pytfmskuk9r4gzzel8qtsvwz79zdskftrzxtar994cgutavfklvv46vrney                                        | C07138323E00FA4FC122D3B85B9628EA810B3F381706385E289B0B25631197D194B5C238BEB136FB                                                 |
+| 40                   | 0    | auscash:qnq8zwpj8cq05n7pytfmskuk9r4gzzel8qtsvwz79zdskftrzxtar994cgutavfklvv46vrney                                        | C07138323E00FA4FC122D3B85B9628EA810B3F381706385E289B0B25631197D194B5C238BEB136FB                                                 |
 | 40                   | 1    | ectest:pnq8zwpj8cq05n7pytfmskuk9r4gzzel8qtsvwz79zdskftrzxtar994cgutavfklvxysxrq4s                                       | C07138323E00FA4FC122D3B85B9628EA810B3F381706385E289B0B25631197D194B5C238BEB136FB                                                 |
 | 40                   | 1    | pref:pnq8zwpj8cq05n7pytfmskuk9r4gzzel8qtsvwz79zdskftrzxtar994cgutavfklv0vx5z0w3                                         | C07138323E00FA4FC122D3B85B9628EA810B3F381706385E289B0B25631197D194B5C238BEB136FB                                                 |
 | 40                   | 15   | prefix:0nq8zwpj8cq05n7pytfmskuk9r4gzzel8qtsvwz79zdskftrzxtar994cgutavfklvwsvctzqy                                       | C07138323E00FA4FC122D3B85B9628EA810B3F381706385E289B0B25631197D194B5C238BEB136FB                                                 |
-| 48                   | 0    | ecash:qh3krj5607v3qlqh5c3wq3lrw3wnuxw0sp8dv0zugrrt5a3kj6ucysfz8kxwv2k53krr7n933jfsunqmqjjtpwr                           | E361CA9A7F99107C17A622E047E3745D3E19CF804ED63C5C40C6BA763696B98241223D8CE62AD48D863F4CB18C930E4C                                 |
+| 48                   | 0    | auscash:qh3krj5607v3qlqh5c3wq3lrw3wnuxw0sp8dv0zugrrt5a3kj6ucysfz8kxwv2k53krr7n933jfsunqmqjjtpwr                           | E361CA9A7F99107C17A622E047E3745D3E19CF804ED63C5C40C6BA763696B98241223D8CE62AD48D863F4CB18C930E4C                                 |
 | 48                   | 1    | ectest:ph3krj5607v3qlqh5c3wq3lrw3wnuxw0sp8dv0zugrrt5a3kj6ucysfz8kxwv2k53krr7n933jfsunqy7wvdl6p                          | E361CA9A7F99107C17A622E047E3745D3E19CF804ED63C5C40C6BA763696B98241223D8CE62AD48D863F4CB18C930E4C                                 |
 | 48                   | 1    | pref:ph3krj5607v3qlqh5c3wq3lrw3wnuxw0sp8dv0zugrrt5a3kj6ucysfz8kxwv2k53krr7n933jfsunqjntdfcwg                            | E361CA9A7F99107C17A622E047E3745D3E19CF804ED63C5C40C6BA763696B98241223D8CE62AD48D863F4CB18C930E4C                                 |
 | 48                   | 15   | prefix:0h3krj5607v3qlqh5c3wq3lrw3wnuxw0sp8dv0zugrrt5a3kj6ucysfz8kxwv2k53krr7n933jfsunqakcssnmn                          | E361CA9A7F99107C17A622E047E3745D3E19CF804ED63C5C40C6BA763696B98241223D8CE62AD48D863F4CB18C930E4C                                 |
-| 56                   | 0    | ecash:qmvl5lzvdm6km38lgga64ek5jhdl7e3aqd9895wu04fvhlnare5937w4ywkq57juxsrhvw8ym5d8qx7sz7zz0zvcypqsexktekqd              | D9FA7C4C6EF56DC4FF423BAAE6D495DBFF663D034A72D1DC7D52CBFE7D1E6858F9D523AC0A7A5C34077638E4DD1A701BD017842789982041                 |
+| 56                   | 0    | auscash:qmvl5lzvdm6km38lgga64ek5jhdl7e3aqd9895wu04fvhlnare5937w4ywkq57juxsrhvw8ym5d8qx7sz7zz0zvcypqsexktekqd              | D9FA7C4C6EF56DC4FF423BAAE6D495DBFF663D034A72D1DC7D52CBFE7D1E6858F9D523AC0A7A5C34077638E4DD1A701BD017842789982041                 |
 | 56                   | 1    | ectest:pmvl5lzvdm6km38lgga64ek5jhdl7e3aqd9895wu04fvhlnare5937w4ywkq57juxsrhvw8ym5d8qx7sz7zz0zvcypqsd03rgsn0             | D9FA7C4C6EF56DC4FF423BAAE6D495DBFF663D034A72D1DC7D52CBFE7D1E6858F9D523AC0A7A5C34077638E4DD1A701BD017842789982041                 |
 | 56                   | 1    | pref:pmvl5lzvdm6km38lgga64ek5jhdl7e3aqd9895wu04fvhlnare5937w4ywkq57juxsrhvw8ym5d8qx7sz7zz0zvcypqsammyqffl               | D9FA7C4C6EF56DC4FF423BAAE6D495DBFF663D034A72D1DC7D52CBFE7D1E6858F9D523AC0A7A5C34077638E4DD1A701BD017842789982041                 |
 | 56                   | 15   | prefix:0mvl5lzvdm6km38lgga64ek5jhdl7e3aqd9895wu04fvhlnare5937w4ywkq57juxsrhvw8ym5d8qx7sz7zz0zvcypqsgjrqpnw8             | D9FA7C4C6EF56DC4FF423BAAE6D495DBFF663D034A72D1DC7D52CBFE7D1E6858F9D523AC0A7A5C34077638E4DD1A701BD017842789982041                 |
-| 64                   | 0    | ecash:qlg0x333p4238k0qrc5ej7rzfw5g8e4a4r6vvzyrcy8j3s5k0en7calvclhw46hudk5flttj6ydvjc0pv3nchp52amk97tqa5zygg96m37thkp20  | D0F346310D5513D9E01E299978624BA883E6BDA8F4C60883C10F28C2967E67EC77ECC7EEEAEAFC6DA89FAD72D11AC961E164678B868AEEEC5F2C1DA08884175B |
+| 64                   | 0    | auscash:qlg0x333p4238k0qrc5ej7rzfw5g8e4a4r6vvzyrcy8j3s5k0en7calvclhw46hudk5flttj6ydvjc0pv3nchp52amk97tqa5zygg96m37thkp20  | D0F346310D5513D9E01E299978624BA883E6BDA8F4C60883C10F28C2967E67EC77ECC7EEEAEAFC6DA89FAD72D11AC961E164678B868AEEEC5F2C1DA08884175B |
 | 64                   | 1    | ectest:plg0x333p4238k0qrc5ej7rzfw5g8e4a4r6vvzyrcy8j3s5k0en7calvclhw46hudk5flttj6ydvjc0pv3nchp52amk97tqa5zygg96mjjad5wtw | D0F346310D5513D9E01E299978624BA883E6BDA8F4C60883C10F28C2967E67EC77ECC7EEEAEAFC6DA89FAD72D11AC961E164678B868AEEEC5F2C1DA08884175B |
 | 64                   | 1    | pref:plg0x333p4238k0qrc5ej7rzfw5g8e4a4r6vvzyrcy8j3s5k0en7calvclhw46hudk5flttj6ydvjc0pv3nchp52amk97tqa5zygg96mg7pj3lh8   | D0F346310D5513D9E01E299978624BA883E6BDA8F4C60883C10F28C2967E67EC77ECC7EEEAEAFC6DA89FAD72D11AC961E164678B868AEEEC5F2C1DA08884175B |
 | 64                   | 15   | prefix:0lg0x333p4238k0qrc5ej7rzfw5g8e4a4r6vvzyrcy8j3s5k0en7calvclhw46hudk5flttj6ydvjc0pv3nchp52amk97tqa5zygg96ms92w6845 | D0F346310D5513D9E01E299978624BA883E6BDA8F4C60883C10F28C2967E67EC77ECC7EEEAEAFC6DA89FAD72D11AC961E164678B868AEEEC5F2C1DA08884175B |

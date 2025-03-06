@@ -9,13 +9,13 @@ Communicating with Developers
 -----------------------------
 
 To get in contact with doged developers, you can join the
-[eCash Development Telegram group](https://t.me/eCashDevelopment).
+[ausCash Development Telegram group](https://t.me/ausCashDevelopment).
 The intent of this group is to facilitate development of Bitcoin ABC and other
-eCash node implementations. We welcome people who wish to participate.
+ausCash node implementations. We welcome people who wish to participate.
 
 Acceptable use of this group includes the following:
 
-* Introducing yourself to other eCash developers.
+* Introducing yourself to other ausCash developers.
 * Getting help with your development environment.
 * Discussing how to complete a patch.
 
@@ -140,7 +140,7 @@ to install `nodejs` with node version manager.
 Then:
 
 ```
-cd dogecash
+cd dogauscash
 [sudo] nvm install 20
 [sudo] npm install -g npm@latest
 [sudo] npm install -g prettier@2.6.0
@@ -151,7 +151,7 @@ Some repositories have a `.nvmrc` file which specifies the version of node expec
 For example, to work in Cashtab,
 
 ```
-cd dogecash/cashtab
+cd dogauscash/cashtab
 nvm use
 ```
 

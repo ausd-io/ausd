@@ -21,8 +21,8 @@ const SHARED_SECRET_SIZE: usize = constants::SECRET_KEY_SIZE;
 ///
 /// ```
 /// # #[cfg(all(feature = "rand", feature = "std"))] {
-/// # use ecash_secp256k1::{rand, Secp256k1};
-/// # use ecash_secp256k1::ecdh::SharedSecret;
+/// # use auscash_secp256k1::{rand, Secp256k1};
+/// # use auscash_secp256k1::ecdh::SharedSecret;
 /// let s = Secp256k1::new();
 /// let (sk1, pk1) = s.generate_keypair(&mut rand::thread_rng());
 /// let (sk2, pk2) = s.generate_keypair(&mut rand::thread_rng());
@@ -123,8 +123,8 @@ impl AsRef<[u8]> for SharedSecret {
 /// # Examples
 /// ```
 /// # #[cfg(all(feature = "hashes", feature = "rand", feature = "std"))] {
-/// # use ecash_secp256k1::{ecdh, rand, Secp256k1, PublicKey, SecretKey};
-/// # use ecash_secp256k1::hashes::{Hash, sha512};
+/// # use auscash_secp256k1::{ecdh, rand, Secp256k1, PublicKey, SecretKey};
+/// # use auscash_secp256k1::hashes::{Hash, sha512};
 ///
 /// let s = Secp256k1::new();
 /// let (sk1, pk1) = s.generate_keypair(&mut rand::thread_rng());

@@ -12,7 +12,7 @@ import localforage from 'localforage';
 import { when } from 'jest-when';
 import appConfig from 'config/app';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
@@ -39,7 +39,7 @@ describe('<Home />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -56,7 +56,7 @@ describe('<Home />', () => {
     });
     it('Renders the loading component while loading, then the Home screen', async () => {
         // localforage defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -90,7 +90,7 @@ describe('<Home />', () => {
     });
     it('Renders the Home screen with API error', async () => {
         // localforage defaults and API error set
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
             true, // apiError bool
@@ -111,7 +111,7 @@ describe('<Home />', () => {
     });
     it('Renders backup warning, token rewards button, and QR Code if user loads with a new wallet that is not the only wallet', async () => {
         // localforage defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             [
                 walletWithZeroBalanceZeroHistory,
                 { ...walletWithZeroBalanceZeroHistory, name: 'something else' },
@@ -186,7 +186,7 @@ describe('<Home />', () => {
     });
     it('Renders backup warning, Airdrop button, and QR Code if user loads with a new wallet that is the only created wallet', async () => {
         // localforage defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithZeroBalanceZeroHistory,
             localforage,
         );
@@ -230,7 +230,7 @@ describe('<Home />', () => {
 
         // isNewishWallet info is NOT displayed (no tx history)
         expect(
-            screen.queryByText(/Nice, you have some eCash. What can you do?/),
+            screen.queryByText(/Nice, you have some ausCash. What can you do?/),
         ).not.toBeInTheDocument();
 
         // Airdrop button is present
@@ -261,16 +261,16 @@ describe('<Home />', () => {
 
         // We see a toast for the successful rewards claim
         expect(
-            await screen.findByText('Free eCash claimed!'),
+            await screen.findByText('Free ausCash claimed!'),
         ).toBeInTheDocument();
 
         // Note we cannot test that these options go away after the tx is received without
         // regtest-integrated integration testing
         // This test cannot see an incoming tx
     });
-    it('Home screen suggests some ideas for using eCash if user has a non-zero balance and 3 or less txs in history', async () => {
+    it('Home screen suggests some ideas for using ausCash if user has a non-zero balance and 3 or less txs in history', async () => {
         // localforage defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             {
                 ...walletWithZeroBalanceZeroHistory,
                 state: {
@@ -336,7 +336,7 @@ describe('<Home />', () => {
                                 satoshisSent: 3000,
                                 stackArray: [],
                                 recipients: [
-                                    'ecash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l',
+                                    'auscash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l',
                                 ],
                             },
                         },
@@ -358,7 +358,7 @@ describe('<Home />', () => {
         // isNewishWallet info is displayed
         expect(
             await screen.findByText(
-                /Nice, you have some eCash. What can you do?/,
+                /Nice, you have some ausCash. What can you do?/,
             ),
         ).toBeInTheDocument();
     });

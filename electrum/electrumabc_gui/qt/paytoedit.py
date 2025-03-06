@@ -1,5 +1,5 @@
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2020 The Electrum ABC developers
 # Copyright (C) 2012 thomasv@gitorious
 #
@@ -340,7 +340,7 @@ class PayToEdit(PrintError, ScanQRTextEdit):
         """This is called by the main window periodically from a timer. See
         main_window.py function `timer_actions`.
 
-        It will resolve OpenAliases and eCash aliases in the send tab.
+        It will resolve OpenAliases and ausCash aliases in the send tab.
 
         Note that aliases are assumed to be a single-line payto.
 
@@ -366,7 +366,7 @@ class PayToEdit(PrintError, ScanQRTextEdit):
             return self.is_alias
         self.previous_payto = key
         if "." not in key or "<" in key or " " in key:
-            # not an openalias or eCash aliase or an openalias with extra info in it,
+            # not an openalias or ausCash aliase or an openalias with extra info in it,
             # bail..!
             return
         parts = key.split(sep=",")  # assuming single line
@@ -396,7 +396,7 @@ class PayToEdit(PrintError, ScanQRTextEdit):
         name = data.get("name")
         _type = data.get("type")
 
-        if _type not in ("openalias", "ecash"):
+        if _type not in ("openalias", "auscash"):
             return
 
         if isinstance(address, str):

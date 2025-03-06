@@ -715,14 +715,14 @@ class TestTransaction(unittest.TestCase):
                 (
                     TYPE_ADDRESS,
                     Address.from_string(
-                        "ecash:qp87sghevftavmhtfxpefn56r772zv3m5qv9pkqu8y"
+                        "auscash:qp87sghevftavmhtfxpefn56r772zv3m5qv9pkqu8y"
                     ),
                     111109,
                 ),
                 (
                     TYPE_ADDRESS,
                     Address.from_string(
-                        "ecash:qzuhkals5tstx9sn2n08ywnk6k9fwnrqry5c2hu7mn"
+                        "auscash:qzuhkals5tstx9sn2n08ywnk6k9fwnrqry5c2hu7mn"
                     ),
                     10000,
                 ),
@@ -759,7 +759,7 @@ class TestTransaction(unittest.TestCase):
         }
         output0 = transaction.TxOutput(
             TYPE_ADDRESS,
-            Address.from_string("ecash:qz4lnx9ad6ay4nz3hnujgtayhm0gmf4mr5jgamh830"),
+            Address.from_string("auscash:qz4lnx9ad6ay4nz3hnujgtayhm0gmf4mr5jgamh830"),
             value=25872015,
         )
 
@@ -960,7 +960,7 @@ class TestTxInput(unittest.TestCase):
                 "03752669b75eb4dc0cca209af77a59d2c761cbb47acc4cf4b316ded35080d92e82",
             ],
             expected_address=Address.from_string(
-                "ecash:ppnk6mj995mdfz22mczsrq9sc4573kh32gpjgeunjw"
+                "auscash:ppnk6mj995mdfz22mczsrq9sc4573kh32gpjgeunjw"
             ),
         )
 
@@ -976,7 +976,7 @@ class TestTxInput(unittest.TestCase):
                 "02a42cd220e6099d5d678066b81813ae4fdd14b290479962ae5c0af1448113bcb4"
             ],
             expected_address=Address.from_string(
-                "ecash:qpqelnd6xqu2kn8vdm6c2qvwgsh7g50fdqt40qx9jg"
+                "auscash:qpqelnd6xqu2kn8vdm6c2qvwgsh7g50fdqt40qx9jg"
             ),
         )
 
@@ -1020,7 +1020,7 @@ class TestTxInput(unittest.TestCase):
             num_required_sigs=2,
             expected_pubkeys=expected_pubkeys,
             expected_address=Address.from_string(
-                "ecash:ppfhzqryfq5u9y3ccqw3j9qaa9rsyz746sar20zk99"
+                "auscash:ppfhzqryfq5u9y3ccqw3j9qaa9rsyz746sar20zk99"
             ),
             expected_value=100_900,
             expected_preimage_script=expected_preimage_script,
@@ -1050,7 +1050,7 @@ class TestTxInput(unittest.TestCase):
             num_required_sigs=2,
             expected_pubkeys=expected_pubkeys,
             expected_address=Address.from_string(
-                "ecash:pql2m9sh88h86lk8cvsf3ngvhcduyvmd0qx05dqrrw"
+                "auscash:pql2m9sh88h86lk8cvsf3ngvhcduyvmd0qx05dqrrw"
             ),
             expected_value=122_017,
             expected_preimage_script=expected_preimage_script,
@@ -1061,7 +1061,7 @@ class TestTxInput(unittest.TestCase):
         # It comes with a xpubkey and derivation path
         coin_no_pubkeys = {
             "address": Address.from_string(
-                "ecash:qz3gjxc8pj5dy9j2zq2uvfmwkwa83d6exv8q2zkrd9"
+                "auscash:qz3gjxc8pj5dy9j2zq2uvfmwkwa83d6exv8q2zkrd9"
             ),
             "value": 99397,
             "prevout_n": 0,
@@ -1274,7 +1274,7 @@ class TestUnsupportedP2sh(unittest.TestCase):
                 self.assertEqual(coin["type"], "unknown")
                 self.assertIsInstance(coin["address"], UnknownAddress)
 
-        # ecash-agora NFT buy
+        # auscash-agora NFT buy
         # txid: cc0481f5661a51433c42887c45e6a32bf83017f55054422884d4522bdab5cd25
         tx = transaction.Transaction(
             bytes.fromhex(

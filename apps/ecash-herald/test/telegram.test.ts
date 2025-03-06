@@ -24,7 +24,7 @@ const {
 
 const { telegramHtmlStrings } = templates;
 
-describe('ecash-herald telegram.js functions', function () {
+describe('auscash-herald telegram.js functions', function () {
     it(`prepareStringForTelegramHTML replaces '<', '>', and '&' per specifications`, function () {
         const { safe, dangerous } = telegramHtmlStrings;
         assert.strictEqual(prepareStringForTelegramHTML(dangerous), safe);

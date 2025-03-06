@@ -52,13 +52,13 @@ export const TabLabel = styled.button`
         active &&
         `    
         color: ${props.theme.contrast};
-        border-bottom: 2px solid ${props.theme.eCashBlue}   
+        border-bottom: 2px solid ${props.theme.ausCashBlue}   
        
   `}
     ${({ token, ...props }) =>
         token &&
         `
-        border-color:${props.theme.eCashPurple} 
+        border-color:${props.theme.ausCashPurple} 
   `}
 `;
 
@@ -97,10 +97,10 @@ export const ExternalLink = styled.a`
         transition: all 200ms ease-in-out;
     }
     :hover {
-        color: ${props => props.theme.eCashBlue};
-        border-color: ${props => props.theme.eCashBlue};
+        color: ${props => props.theme.ausCashBlue};
+        border-color: ${props => props.theme.ausCashBlue};
         svg {
-            fill: ${props => props.theme.eCashBlue};
+            fill: ${props => props.theme.ausCashBlue};
         }
     }
     @media (max-width: 768px) {
@@ -133,7 +133,7 @@ const Home = () => {
         fiatPrice,
         apiError,
         cashtabState,
-        updateCashtabState,
+        updatausCashtabState,
         chaintipBlockheight,
     } = ContextValue;
     const { settings, wallets } = cashtabState;
@@ -186,7 +186,7 @@ const Home = () => {
             if ('error' in claimResponse) {
                 throw new Error(`${claimResponse.error}:${claimResponse.msg}`);
             }
-            toast.success('Free eCash claimed!');
+            toast.success('Free ausCash claimed!');
             // Note we do not setAirdropPending(false) on a successful claim
             // The button will disappear when the tx is seen by the wallet
             // We do not want the button to be enabled before this
@@ -244,14 +244,14 @@ const Home = () => {
                             : 'usd'
                     }
                     cashtabState={cashtabState}
-                    updateCashtabState={updateCashtabState}
+                    updatausCashtabState={updatausCashtabState}
                     userLocale={userLocale}
                     chaintipBlockheight={chaintipBlockheight}
                 />
                 {isNewishWallet && (
                     <>
                         <Info style={{ marginBottom: '20px' }}>
-                            ℹ️ Nice, you have some eCash. What can you do?
+                            ℹ️ Nice, you have some ausCash. What can you do?
                         </Info>
                         <PrimaryLink to="/create-token">
                             Create a token
@@ -263,11 +263,11 @@ const Home = () => {
                             💰 You could also earn more by monetizing your
                             content at{' '}
                             <a
-                                href="https://ecashchat.com/"
+                                href="https://auscashchat.com/"
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                eCashChat.
+                                ausCashChat.
                             </a>
                         </Info>
                     </>

@@ -44,9 +44,9 @@ class KeepKeyKeyStore(HardwareKeyStore):
         )
 
     def sign_message(self, sequence, message, password, sigtype=SignatureType.BITCOIN):
-        if sigtype == SignatureType.ECASH:
+        if sigtype == SignatureType.AUSCASH:
             raise RuntimeError(
-                _("eCash message signing is not available for {}").format(self.device)
+                _("ausCash message signing is not available for {}").format(self.device)
             )
         client = self.get_client()
         address_path = self.get_derivation() + "/%d/%d" % sequence

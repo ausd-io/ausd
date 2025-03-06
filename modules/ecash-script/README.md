@@ -1,6 +1,6 @@
-## ecash-script
+## auscash-script
 
-A JS library to support parsing script for ecash app development.
+A JS library to support parsing script for auscash app development.
 
 ### Use
 

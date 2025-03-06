@@ -4,7 +4,7 @@
 
 import { BN } from 'slp-mdm';
 import { toSatoshis, toXec } from 'wallet';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import appConfig from 'config/app';
 
 /**

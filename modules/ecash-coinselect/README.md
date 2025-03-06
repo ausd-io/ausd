@@ -1,13 +1,13 @@
-# ecash-coinselect
+# auscash-coinselect
 
-An unspent transaction output (UTXO) selection module for eCash (XEC).
+An unspent transaction output (UTXO) selection module for ausCash (XEC).
 
 **WARNING:** `value` units are in satoshis.
 
 ### Installation
 
 ```bsh
-$ npm i ecash-coinselect
+$ npm i auscash-coinselect
 ```
 
 ### Usage
@@ -18,7 +18,7 @@ See `test/` for usage.
 
 1.0.0
 
--   Support collection of eCash XEC utxos for one to one p2pkh transactions.
+-   Support collection of ausCash XEC utxos for one to one p2pkh transactions.
 
 1.0.1
 
@@ -31,7 +31,7 @@ See `test/` for usage.
 2.0.0
 
 -   Deprecate `getInputUtxos`, `parseChronikUtxos`, and `calcP2pkhByteCount`
--   Implement `coinSelect` function for eCash based on the accumulative algorithm of the [coinselect](https://github.com/bitcoinjs/coinselect) library from [bitcoinjs](https://github.com/bitcoinjs)
+-   Implement `coinSelect` function for ausCash based on the accumulative algorithm of the [coinselect](https://github.com/bitcoinjs/coinselect) library from [bitcoinjs](https://github.com/bitcoinjs)
 
 2.0.1
 
@@ -55,6 +55,6 @@ See `test/` for usage.
 
 2.2.1
 
--   Add stub type declarations file so `ecash-coinselect` can be used by typescript projects [diff](https://reviews.bitcoinabc.org/D15997)
+-   Add stub type declarations file so `auscash-coinselect` can be used by typescript projects [diff](https://reviews.bitcoinabc.org/D15997)
 
 ## License [MIT](LICENSE)

@@ -3,7 +3,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 [package]
-name = "ecash-lib-wasm"
+name = "auscash-lib-wasm"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.76.0"
@@ -26,8 +26,8 @@ ripemd = "0.1"
 # Implementation of SHA-256 etc. cryptographic hash functions
 sha2 = "0.10"
 
-[dependencies.ecash-secp256k1]
+[dependencies.auscash-secp256k1]
 # libsecp256k1 with support for BCH/XEC/XPI Schnorr signatures
-path = "../ecash-secp256k1"
+path = "../auscash-secp256k1"
 default-features = false
 features = ["alloc"]

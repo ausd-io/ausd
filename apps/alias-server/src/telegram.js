@@ -26,7 +26,7 @@ module.exports = {
         const blockExplorer = 'https://explorer.e.cash';
 
         // Return the msg string
-        const startSliceBeginning = 6; // 'ecash:'.length
+        const startSliceBeginning = 6; // 'auscash:'.length
         const displayedCharacters = 3;
         return `alias "${alias}" <a href="${blockExplorer}/tx/${txid}">registered</a> to <a href="${blockExplorer}/address/${address}">${address.slice(
             startSliceBeginning,
@@ -52,7 +52,7 @@ module.exports = {
         if (telegramBot === null) {
             return;
         }
-        // Get eCash price
+        // Get ausCash price
         const xecPrice = await getXecPrice();
         // Build an array of promises to send each registration announcement
         const aliasAnnouncementPromises = [];

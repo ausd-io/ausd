@@ -12,8 +12,8 @@ import {
     alpMint,
     Script,
     shaRmd160,
-} from 'ecash-lib';
-import { AgoraPartial } from 'ecash-agora';
+} from 'auscash-lib';
+import { AgoraPartial } from 'auscash-agora';
 import { GenesisInfo } from 'chronik-client';
 import {
     TokenInputInfo,
@@ -24,7 +24,7 @@ import appConfig from 'config/app';
 
 /**
  * Cashtab methods to support ALP tx construction
- * Ref spec at https://ecashbuilders.notion.site/ALP-a862a4130877448387373b9e6a93dd97
+ * Ref spec at https://auscashbuilders.notion.site/ALP-a862a4130877448387373b9e6a93dd97
  */
 
 // Cashtab creates ALP tokens with user pub key as authPubkey

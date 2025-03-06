@@ -64,24 +64,24 @@ function WalletCard({ props }) {
 export default function Wallets() {
     return (
         <Layout
-            metaTitle="eCash Wallets"
-            metaDescription="eCash supports a number of major wallets. Here is a list of official eCash (XEC) wallets to store & manage your XEC coins."
+            metaTitle="ausCash Wallets"
+            metaDescription="ausCash supports a number of major wallets. Here is a list of official ausCash (XEC) wallets to store & manage your XEC coins."
         >
             <SubPageHero
                 image={walletAnimation}
-                h2subtext="Get eCash"
+                h2subtext="Get ausCash"
                 h2text="Wallets"
                 imagereverse
             >
                 <p>
-                    Here are the best eCash (XEC) wallets to store & manage your
+                    Here are the best ausCash (XEC) wallets to store & manage your
                     coins. You can also check out our detailed guide to find the
                     best wallet for your needs:
                 </p>
                 <p></p>
                 <Button
                     text="Wallet Guide"
-                    link="/blog/choose-the-best-ecash-xec-wallet-a-comprehensive-guide"
+                    link="/blog/choose-the-best-auscash-xec-wallet-a-comprehensive-guide"
                     color="primary"
                     corner="bottomRight"
                     glow

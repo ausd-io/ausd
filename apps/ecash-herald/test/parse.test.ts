@@ -11,7 +11,7 @@ import stakerTestFixtures from './fixtures/stakers';
 import invalidatedBlocksTestFixtures from './fixtures/invalidatedBlocks';
 import { jsonReviver } from '../src/utils';
 import memoFixtures from './mocks/memo';
-import { consumeNextPush } from 'ecash-script';
+import { consumeNextPush } from 'auscash-script';
 import { MockChronikClient } from '../../../modules/mock-chronik-client';
 import { TxOutput } from 'chronik-client';
 import { caching } from 'cache-manager';
@@ -390,9 +390,9 @@ describe('parse.js functions', function () {
                     '<b><i>💰3 stakers earned $33</i></b>\n' +
                     '<b><i>🧮 71 nodes staking <code>251,280,511,703.14</code> XEC ($8.76M)</i></b>\n' +
                     '<u>Top 3</u>\n' +
-                    '1. <a href="https://explorer.e.cash/address/ecash:qzs8hq2pj4hu5j09fdr5uhha3986h2mthvfp7362nu">qzs...2nu</a>, 1 <i>(0% won, 1% expected)</i>\n' +
-                    '2. <a href="https://explorer.e.cash/address/ecash:qr42c8c04tqndscfrdnl0rzterg0qdaegyjzt8egyg">qr4...gyg</a>, 1 <i>(0% won, 9% expected)</i>\n' +
-                    '3. <a href="https://explorer.e.cash/address/ecash:qqvhatumna957qu0je78dnc9pc7c7hu89crkq6k0cd">qqv...0cd</a>, 1 <i>(0%)</i>\n' +
+                    '1. <a href="https://explorer.e.cash/address/auscash:qzs8hq2pj4hu5j09fdr5uhha3986h2mthvfp7362nu">qzs...2nu</a>, 1 <i>(0% won, 1% expected)</i>\n' +
+                    '2. <a href="https://explorer.e.cash/address/auscash:qr42c8c04tqndscfrdnl0rzterg0qdaegyjzt8egyg">qr4...gyg</a>, 1 <i>(0% won, 9% expected)</i>\n' +
+                    '3. <a href="https://explorer.e.cash/address/auscash:qqvhatumna957qu0je78dnc9pc7c7hu89crkq6k0cd">qqv...0cd</a>, 1 <i>(0%)</i>\n' +
                     '\n' +
                     '<a href="https://cashtab.com/">Cashtab</a>\n' +
                     '🎁 <b>1</b> new user received <b>42 XEC</b>\n' +
@@ -425,13 +425,13 @@ describe('parse.js functions', function () {
                     '🧩 <b><i>1 Mint Vault tx</i></b>\n' +
                     '\n' +
                     '📱 <b><i>8 app txs</i></b>\n' +
-                    '🖋 <b>1</b> <a href="https://www.ecashchat.com/">Article/Reply tx</a>\n' +
+                    '🖋 <b>1</b> <a href="https://www.auscashchat.com/">Article/Reply tx</a>\n' +
                     '⚛️ <b>1</b> CashFusion\n' +
                     '🛒 <b>1</b> PayButton tx\n' +
                     '🪂 <b>1</b> Airdrop\n' +
                     '✏️ <b>1</b> Cashtab Msg\n' +
-                    '💬 <b>1</b> <a href="https://www.ecashchat.com/">eCashChat tx</a>\n' +
-                    '🔓 <b>1</b> eCashChat Auth\n' +
+                    '💬 <b>1</b> <a href="https://www.auscashchat.com/">ausCashChat tx</a>\n' +
+                    '🔓 <b>1</b> ausCashChat Auth\n' +
                     '💸 <b>1</b> Paywall tx\n' +
                     '\n' +
                     '🏦 <b><i>Binance</i></b>\n' +
@@ -473,9 +473,9 @@ describe('parse.js functions', function () {
                     '<b><i>💰3 stakers earned $33</i></b>\n' +
                     '<b><i>🧮 71 nodes staking <code>251,280,511,703.14</code> XEC ($8.76M)</i></b>\n' +
                     '<u>Top 3</u>\n' +
-                    '1. <a href="https://explorer.e.cash/address/ecash:qzs8hq2pj4hu5j09fdr5uhha3986h2mthvfp7362nu">qzs...2nu</a>, 1 <i>(0% won, 1% expected)</i>\n' +
-                    '2. <a href="https://explorer.e.cash/address/ecash:qr42c8c04tqndscfrdnl0rzterg0qdaegyjzt8egyg">qr4...gyg</a>, 1 <i>(0% won, 9% expected)</i>\n' +
-                    '3. <a href="https://explorer.e.cash/address/ecash:qqvhatumna957qu0je78dnc9pc7c7hu89crkq6k0cd">qqv...0cd</a>, 1 <i>(0%)</i>\n' +
+                    '1. <a href="https://explorer.e.cash/address/auscash:qzs8hq2pj4hu5j09fdr5uhha3986h2mthvfp7362nu">qzs...2nu</a>, 1 <i>(0% won, 1% expected)</i>\n' +
+                    '2. <a href="https://explorer.e.cash/address/auscash:qr42c8c04tqndscfrdnl0rzterg0qdaegyjzt8egyg">qr4...gyg</a>, 1 <i>(0% won, 9% expected)</i>\n' +
+                    '3. <a href="https://explorer.e.cash/address/auscash:qqvhatumna957qu0je78dnc9pc7c7hu89crkq6k0cd">qqv...0cd</a>, 1 <i>(0%)</i>\n' +
                     '\n' +
                     '<a href="https://cashtab.com/">Cashtab</a>\n' +
                     '🎁 <b>1</b> new user received <b>42 XEC</b>\n' +
@@ -508,13 +508,13 @@ describe('parse.js functions', function () {
                     '🧩 <b><i>1 Mint Vault tx</i></b>\n' +
                     '\n' +
                     '📱 <b><i>8 app txs</i></b>\n' +
-                    '🖋 <b>1</b> <a href="https://www.ecashchat.com/">Article/Reply tx</a>\n' +
+                    '🖋 <b>1</b> <a href="https://www.auscashchat.com/">Article/Reply tx</a>\n' +
                     '⚛️ <b>1</b> CashFusion\n' +
                     '🛒 <b>1</b> PayButton tx\n' +
                     '🪂 <b>1</b> Airdrop\n' +
                     '✏️ <b>1</b> Cashtab Msg\n' +
-                    '💬 <b>1</b> <a href="https://www.ecashchat.com/">eCashChat tx</a>\n' +
-                    '🔓 <b>1</b> eCashChat Auth\n' +
+                    '💬 <b>1</b> <a href="https://www.auscashchat.com/">ausCashChat tx</a>\n' +
+                    '🔓 <b>1</b> ausCashChat Auth\n' +
                     '💸 <b>1</b> Paywall tx\n' +
                     '\n' +
                     '🏦 <b><i>Binance</i></b>\n' +
@@ -543,9 +543,9 @@ describe('parse.js functions', function () {
                     '\n' +
                     '<b><i>💰3 stakers earned 938k XEC</i></b>\n' +
                     '<u>Top 3</u>\n' +
-                    '1. <a href="https://explorer.e.cash/address/ecash:qzs8hq2pj4hu5j09fdr5uhha3986h2mthvfp7362nu">qzs...2nu</a>, 1 <i>(0%)</i>\n' +
-                    '2. <a href="https://explorer.e.cash/address/ecash:qr42c8c04tqndscfrdnl0rzterg0qdaegyjzt8egyg">qr4...gyg</a>, 1 <i>(0%)</i>\n' +
-                    '3. <a href="https://explorer.e.cash/address/ecash:qqvhatumna957qu0je78dnc9pc7c7hu89crkq6k0cd">qqv...0cd</a>, 1 <i>(0%)</i>\n' +
+                    '1. <a href="https://explorer.e.cash/address/auscash:qzs8hq2pj4hu5j09fdr5uhha3986h2mthvfp7362nu">qzs...2nu</a>, 1 <i>(0%)</i>\n' +
+                    '2. <a href="https://explorer.e.cash/address/auscash:qr42c8c04tqndscfrdnl0rzterg0qdaegyjzt8egyg">qr4...gyg</a>, 1 <i>(0%)</i>\n' +
+                    '3. <a href="https://explorer.e.cash/address/auscash:qqvhatumna957qu0je78dnc9pc7c7hu89crkq6k0cd">qqv...0cd</a>, 1 <i>(0%)</i>\n' +
                     '\n' +
                     '<a href="https://cashtab.com/">Cashtab</a>\n' +
                     '🎁 <b>1</b> new user received <b>42 XEC</b>\n' +
@@ -578,13 +578,13 @@ describe('parse.js functions', function () {
                     '🧩 <b><i>1 Mint Vault tx</i></b>\n' +
                     '\n' +
                     '📱 <b><i>8 app txs</i></b>\n' +
-                    '🖋 <b>1</b> <a href="https://www.ecashchat.com/">Article/Reply tx</a>\n' +
+                    '🖋 <b>1</b> <a href="https://www.auscashchat.com/">Article/Reply tx</a>\n' +
                     '⚛️ <b>1</b> CashFusion\n' +
                     '🛒 <b>1</b> PayButton tx\n' +
                     '🪂 <b>1</b> Airdrop\n' +
                     '✏️ <b>1</b> Cashtab Msg\n' +
-                    '💬 <b>1</b> <a href="https://www.ecashchat.com/">eCashChat tx</a>\n' +
-                    '🔓 <b>1</b> eCashChat Auth\n' +
+                    '💬 <b>1</b> <a href="https://www.auscashchat.com/">ausCashChat tx</a>\n' +
+                    '🔓 <b>1</b> ausCashChat Auth\n' +
                     '💸 <b>1</b> Paywall tx\n' +
                     '\n' +
                     '🏦 <b><i>Binance</i></b>\n' +

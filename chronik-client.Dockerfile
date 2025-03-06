@@ -11,8 +11,8 @@ WORKDIR /app/modules/chronik-client
 
 # Copy all project files as they are required for building
 COPY modules/chronik-client .
-# Install ecashaddrjs from npm, so that module users install it automatically
-RUN npm install ecashaddrjs@latest
+# Install auscashaddrjs from npm, so that module users install it automatically
+RUN npm install auscashaddrjs@latest
 RUN npm ci
 
 # Publish the module

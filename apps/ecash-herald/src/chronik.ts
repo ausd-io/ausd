@@ -10,7 +10,7 @@ import {
     Utxo,
 } from 'chronik-client';
 import { getEmojiFromBalanceSats } from './utils';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 
 // Max txs we can get in one request
 const CHRONIK_MAX_PAGESIZE = 200;

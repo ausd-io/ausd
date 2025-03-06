@@ -7,7 +7,7 @@ import { WalletContext } from 'wallet/context';
 import { SwitchLabel, Alert, PageHeader } from 'components/Common/Atoms';
 import Spinner from 'components/Common/Spinner';
 import { getTokenGenesisInfo } from 'chronik';
-import { toHex } from 'ecash-lib';
+import { toHex } from 'auscash-lib';
 import { ActiveOffers, OfferTitle, OfferTable } from './styled';
 import { SwitchHolder } from 'components/Etokens/Token/styled';
 import { getUserLocale } from 'helpers';
@@ -37,7 +37,7 @@ const Agora: React.FC = () => {
         chronik,
         agora,
         cashtabState,
-        updateCashtabState,
+        updatausCashtabState,
         chaintipBlockheight,
     } = ContextValue;
     const { wallets, settings, cashtabCache } = cashtabState;
@@ -190,7 +190,7 @@ const Agora: React.FC = () => {
             // If we had new tokens to cache, update the cache
             // This will replace the inline spinners with tokenIds
             // and also update cashtabCache in local storage
-            updateCashtabState('cashtabCache', {
+            updatausCashtabState('cashtabCache', {
                 ...cashtabState.cashtabCache,
                 tokens: cashtabCache.tokens,
             });

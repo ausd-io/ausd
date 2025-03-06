@@ -230,7 +230,7 @@ class CoinGecko(ExchangeBase):
     def get_rates(self, ccy):
         json_data = self.get_json(
             "api.coingecko.com",
-            "/api/v3/coins/ecash?localization=False&sparkline=false",
+            "/api/v3/coins/auscash?localization=False&sparkline=false",
         )
         prices = json_data["market_data"]["current_price"]
         return {a[0].upper(): PyDecimal(a[1]) for a in prices.items()}
@@ -291,7 +291,7 @@ class CoinGecko(ExchangeBase):
     def request_history(self, ccy):
         history = self.get_json(
             "api.coingecko.com",
-            f"/api/v3/coins/ecash/market_chart?vs_currency={ccy}&days=365",
+            f"/api/v3/coins/auscash/market_chart?vs_currency={ccy}&days=365",
         )
 
         return {

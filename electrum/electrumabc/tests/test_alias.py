@@ -23,7 +23,7 @@ mock_records = [
     ),
     MockDNSRecord(
         b"oa1:xec "
-        b"recipient_address=ecash:qr98e3qdhegz5k79gkfmp0xl27phv63uuqjtz8uutp; "
+        b"recipient_address=auscash:qr98e3qdhegz5k79gkfmp0xl27phv63uuqjtz8uutp; "
         b"recipient_name=Monero Development (XEC); "
         b"tx_description=Donation to Monero Core Team;"
     ),
@@ -55,7 +55,7 @@ class TestOpenAlias(unittest.TestCase):
         address, name, _validated = result
         self.assertEqual(
             address,
-            Address.from_string("ecash:qr98e3qdhegz5k79gkfmp0xl27phv63uuqjtz8uutp"),
+            Address.from_string("auscash:qr98e3qdhegz5k79gkfmp0xl27phv63uuqjtz8uutp"),
         )
         self.assertEqual(
             name,

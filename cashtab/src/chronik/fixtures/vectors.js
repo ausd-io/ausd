@@ -29,7 +29,7 @@ import {
     PayButtonEmpty,
     PayButtonYesDataNoNonce,
     MsgFromElectrum,
-    MsgFromEcashChat,
+    MsgFromAuscashChat,
     unknownAppTx,
     mockFlatTxHistoryNoUnconfirmed,
     mockSortedTxHistoryNoUnconfirmed,
@@ -221,10 +221,10 @@ export default {
                 parsed: SlpParentGenesisTxMock.parsed,
             },
             {
-                description: 'External msg received from eCash Chat',
-                tx: MsgFromEcashChat.tx,
+                description: 'External msg received from ausCash Chat',
+                tx: MsgFromAuscashChat.tx,
                 hashes: ['0b7d35fda03544a08e65464d54cfae4257eb6db7'],
-                parsed: MsgFromEcashChat.parsed,
+                parsed: MsgFromAuscashChat.parsed,
             },
             {
                 description: 'slp v1 mint tx',
@@ -258,7 +258,7 @@ export default {
                 parsed: {
                     ...agoraOneshotSaleTx.parsed,
                     recipients: [
-                        'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+                        'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
                     ],
                     xecTxType: 'Received',
                 },

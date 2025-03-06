@@ -1,5 +1,5 @@
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2020 The Electrum ABC developers
 # Copyright (C) 2012 thomasv@gitorious
 #
@@ -835,7 +835,7 @@ class ElectrumWindow(QtWidgets.QMainWindow, MessageBoxMixin, PrintError):
         contacts_menu.addAction(_("&New") + "...", self.contact_list.new_contact_dialog)
         if self.config.get("enable_aliases", DEFAULT_ENABLE_ALIASES):
             contacts_menu.addAction(
-                _("Add eCash Alias") + "...", self.contact_list.fetch_alias_dialog
+                _("Add ausCash Alias") + "...", self.contact_list.fetch_alias_dialog
             )
 
         contacts_menu.addAction(
@@ -984,8 +984,8 @@ class ElectrumWindow(QtWidgets.QMainWindow, MessageBoxMixin, PrintError):
             # configuration file broadcast the fulcrum donation address
             spv_prefix = "Fulcrum developers"
             host = "https://github.com/cculianu/Fulcrum"
-            # convert to an ecash: address
-            spv_address = "ecash:qplw0d304x9fshz420lkvys2jxup38m9syzms3d4vs"
+            # convert to an auscash: address
+            spv_address = "auscash:qplw0d304x9fshz420lkvys2jxup38m9syzms3d4vs"
         else:
             spv_prefix = _("Blockchain Server")
             host = self.network.get_parameters()[0]
@@ -1783,7 +1783,7 @@ class ElectrumWindow(QtWidgets.QMainWindow, MessageBoxMixin, PrintError):
             if opret:
                 kwargs[arg] = opret
 
-        # Special case hack -- see #1473. Omit ecash: prefix from
+        # Special case hack -- see #1473. Omit auscash: prefix from
         # legacy address if no other params present in receive request.
         if (
             Address.FMT_UI == Address.FMT_LEGACY
@@ -1793,7 +1793,7 @@ class ElectrumWindow(QtWidgets.QMainWindow, MessageBoxMixin, PrintError):
         ):
             uri = self.receive_address.to_ui_string_without_prefix()
         else:
-            # Otherwise proceed as normal, prepending ecash: to URI
+            # Otherwise proceed as normal, prepending auscash: to URI
             uri = web.create_URI(self.receive_address, amount, message, **kwargs)
 
         self.receive_qr.setData(uri)
@@ -2446,7 +2446,7 @@ class ElectrumWindow(QtWidgets.QMainWindow, MessageBoxMixin, PrintError):
             if ":" in line and line.lower().startswith(
                 networks.net.CASHADDR_PREFIX + ":"
             ):
-                # strip ecash: prefix
+                # strip auscash: prefix
                 line = line.split(":", 1)[1]
             if "," in line:
                 line = line.split(",", 1)[
@@ -2483,7 +2483,7 @@ class ElectrumWindow(QtWidgets.QMainWindow, MessageBoxMixin, PrintError):
         for line in self.payto_e.lines():
             line = line.strip()
             if line.lower().startswith(networks.net.CASHADDR_PREFIX + ":"):
-                # strip "ecash:" prefix
+                # strip "auscash:" prefix
                 line = line.split(":", 1)[1]
             if "," in line:
                 # if address, amount line, strip address out and ignore rest
@@ -2919,7 +2919,7 @@ class ElectrumWindow(QtWidgets.QMainWindow, MessageBoxMixin, PrintError):
         except Exception as e:
             ShowPopupLabel(
                 name="`Pay to` error",
-                text=_("Invalid ecash URI:") + "\n\n" + str(e),
+                text=_("Invalid auscash URI:") + "\n\n" + str(e),
                 target=self.payto_e,
                 timeout=5000,
             )
@@ -2936,7 +2936,7 @@ class ElectrumWindow(QtWidgets.QMainWindow, MessageBoxMixin, PrintError):
         ):
             ShowPopupLabel(
                 name="`Pay to` error",
-                text=_("Inconsistent number of addresses and amounts in ecash URI:")
+                text=_("Inconsistent number of addresses and amounts in auscash URI:")
                 + f" {len(addresses)} addresses and {len(amounts)} amounts",
                 target=self.payto_e,
                 timeout=5000,
@@ -2962,7 +2962,7 @@ class ElectrumWindow(QtWidgets.QMainWindow, MessageBoxMixin, PrintError):
             and URI.strip().lower().split(":", 1)[0] in web.parseable_schemes()
         ):
             # if *not* address, then we set the payto field to the empty string
-            # only IFF it was ecash:, see issue Electron-Cash#1131.
+            # only IFF it was auscash:, see issue Electron-Cash#1131.
             self.payto_e.setText("")
         elif len(addresses) > 1:
             # For multiple outputs, we fill the payto field with the expected CSV
@@ -3776,7 +3776,7 @@ class ElectrumWindow(QtWidgets.QMainWindow, MessageBoxMixin, PrintError):
                     return
                 if not result:
                     return
-                # if the user scanned an ecash URI
+                # if the user scanned an auscash URI
                 if result.lower().startswith(networks.net.CASHADDR_PREFIX + ":"):
                     self.pay_to_URI(result)
                     return

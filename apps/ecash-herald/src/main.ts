@@ -33,10 +33,10 @@ export const main = async (
         );
     } catch (err) {
         console.log(
-            `Error initializing ecash-herald websocket connection`,
+            `Error initializing auscash-herald websocket connection`,
             err,
         );
-        console.log(`Failed to start ecash-herald.`);
+        console.log(`Failed to start auscash-herald.`);
         return err;
     }
 };

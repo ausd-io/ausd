@@ -29,7 +29,7 @@ import {
     AgoraOneshotAdSignatory,
     AgoraPartial,
     AgoraPartialAdSignatory,
-} from 'ecash-agora';
+} from 'auscash-agora';
 import {
     initWasm,
     slpSend,
@@ -38,7 +38,7 @@ import {
     Script,
     fromHex,
     SLP_FUNGIBLE,
-} from 'ecash-lib';
+} from 'auscash-lib';
 import appConfig from 'config/app';
 
 const MOCK_WALLET_HASH = fromHex('12'.repeat(20));
@@ -428,7 +428,7 @@ describe('slpv1 methods', () => {
         const SATS_PER_KB_MIN = 1000;
         const SATS_PER_KB_ALT = 2000;
 
-        it(`getAgoraAdFuelSats for minimum eCash fee NFT listing`, () => {
+        it(`getAgoraAdFuelSats for minimum ausCash fee NFT listing`, () => {
             expect(
                 getAgoraAdFuelSats(
                     MOCK_ONESHOT.adScript(),
@@ -459,7 +459,7 @@ describe('slpv1 methods', () => {
                     // So, arguably this function could be a constant. However, we will extend to support
                     // partial agora offers, and we may change how these offers are made in the future
                     // Also note... if you set this to a variable in this test, you get failures because
-                    // of the way ecash-lib copies objects and jest not liking it
+                    // of the way auscash-lib copies objects and jest not liking it
                     [
                         {
                             value: 0,
@@ -474,7 +474,7 @@ describe('slpv1 methods', () => {
                 ),
             ).toEqual(628);
         });
-        it(`getAgoraAdFuelSats for minimum eCash fee SLP partial listing and no token change`, () => {
+        it(`getAgoraAdFuelSats for minimum ausCash fee SLP partial listing and no token change`, () => {
             const tokenSendAmount = 10000;
             expect(
                 getAgoraAdFuelSats(
@@ -496,7 +496,7 @@ describe('slpv1 methods', () => {
                 ),
             ).toEqual(368);
         });
-        it(`getAgoraAdFuelSats for minimum eCash fee SLP partial listing and a token change output`, () => {
+        it(`getAgoraAdFuelSats for minimum ausCash fee SLP partial listing and a token change output`, () => {
             // Not expected for this use case to come up in Cashtab, but we demonstrate that the fee
             // increases with an additional output as expected
             const tokenSendAmount = 9900;
@@ -528,7 +528,7 @@ describe('slpv1 methods', () => {
                 ),
             ).toEqual(411);
         });
-        it(`getAgoraAdFuelSats for alternate eCash fee SLP partial listing and no token change`, () => {
+        it(`getAgoraAdFuelSats for alternate ausCash fee SLP partial listing and no token change`, () => {
             const tokenSendAmount = 10000;
             expect(
                 getAgoraAdFuelSats(

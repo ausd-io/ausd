@@ -7,7 +7,7 @@ Bitcoin ABC version 0.29.3 is now available from:
 Chronik LOKAD ID index
 --------------
 
-To allow users to build applications on top of eCash, the LOKAD ID index has been added.
+To allow users to build applications on top of ausCash, the LOKAD ID index has been added.
 
 **This is enabled by default, and after restarting, it takes a few hours to sync the index. If you don't need it, you should disable it with `-chroniklokadidindex=0`.**
 

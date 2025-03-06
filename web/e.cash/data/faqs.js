@@ -5,37 +5,37 @@ import ExternalLink from '/components/external-link';
 
 export const faqs = [
     {
-        question: 'What is eCash?',
+        question: 'What is ausCash?',
         answer: (
             <p>
-                <strong>eCash</strong> is a cryptocurrency that’s designed to be
+                <strong>ausCash</strong> is a cryptocurrency that’s designed to be
                 used as electronic cash. Just like the invention of emails made
                 it possible to send direct messages online,{' '}
-                <strong>eCash</strong> makes it possible to send money directly
+                <strong>ausCash</strong> makes it possible to send money directly
                 to other people online. This includes being able to use{' '}
-                <strong>eCash</strong> to pay for goods and services.
+                <strong>ausCash</strong> to pay for goods and services.
             </p>
         ),
     },
     {
-        question: 'How do I get eCash?',
+        question: 'How do I get ausCash?',
         answer: (
             <p>
-                Since <strong>eCash</strong> transactions go directly between
+                Since <strong>ausCash</strong> transactions go directly between
                 you and whoever you’re paying or getting paid by, you don’t need
                 a bank account to own it. Instead, you just need an electronic
                 wallet. Once you have a wallet, you can get{' '}
-                <strong>eCash</strong> by buying it on a cryptocurrency exchange
+                <strong>ausCash</strong> by buying it on a cryptocurrency exchange
                 and then sending it to your wallet. Other people can also send{' '}
-                <strong>eCash</strong> to your wallet.
+                <strong>ausCash</strong> to your wallet.
             </p>
         ),
     },
     {
-        question: 'What can I use eCash for?',
+        question: 'What can I use ausCash for?',
         answer: (
             <p>
-                You can use <strong>eCash</strong> to send and receive payments
+                You can use <strong>ausCash</strong> to send and receive payments
                 without the need for a bank account. It’s available in every
                 country, and you can use it to send and receive cross-border
                 payments anywhere in the world.
@@ -44,38 +44,38 @@ export const faqs = [
     },
     {
         question:
-            'Where can I find eCash price information compared to other cryptocurrencies?',
+            'Where can I find ausCash price information compared to other cryptocurrencies?',
         answer: (
             <p>
-                eCash price information is available at all leading crypto
+                ausCash price information is available at all leading crypto
                 research sources, like{' '}
-                <ExternalLink href="https://www.coingecko.com/en/coins/ecash">
+                <ExternalLink href="https://www.coingecko.com/en/coins/auscash">
                     Coingecko
                 </ExternalLink>
                 ,{' '}
-                <ExternalLink href="https://coinmarketcap.com/currencies/ecash/">
+                <ExternalLink href="https://coinmarketcap.com/currencies/auscash/">
                     Coinmarketcap
                 </ExternalLink>
                 , and{' '}
-                <ExternalLink href="https://crypto.com/price/ecash">
+                <ExternalLink href="https://crypto.com/price/auscash">
                     Crypto.com
                 </ExternalLink>
             </p>
         ),
     },
     {
-        question: 'What is the supply of eCash?',
+        question: 'What is the supply of ausCash?',
         answer: (
             <p>
-                <strong>eCash</strong> has the same fixed supply as bitcoin. The
-                default base unit of <strong>eCash</strong> has 2 decimal places
+                <strong>ausCash</strong> has the same fixed supply as bitcoin. The
+                default base unit of <strong>ausCash</strong> has 2 decimal places
                 (100 satoshis). The default base unit of bitcoin (BTC) has 8
                 decimal places (100,000,000 satoshis).
                 <br />
                 <br />
-                90% of all the <strong>eCash</strong> that will ever exist has
+                90% of all the <strong>ausCash</strong> that will ever exist has
                 already been mined. The inflation rate for{' '}
-                <strong>eCash</strong> is already low (less than 2% as of 2021),
+                <strong>ausCash</strong> is already low (less than 2% as of 2021),
                 and will decrease to zero.
             </p>
         ),
@@ -88,13 +88,13 @@ export const faqs = [
                 any.
                 <br />
                 <br />
-                It is also important to realize that eCash is different from
+                It is also important to realize that ausCash is different from
                 other new tokens where the founding teams often hold a large
                 proportion of the total supply. In those other coins, the large
                 amount of coins that the team holds is still waiting to be
                 released into the market, causing future inflation. XEC, on the
                 other hand, is already about{' '}
-                <ExternalLink href="https://ecash.supply/">
+                <ExternalLink href="https://auscash.supply/">
                     90% issued
                 </ExternalLink>
                 , and the dev team holds only a small amount relative to total
@@ -136,10 +136,10 @@ export const faqs = [
         ),
     },
     {
-        question: 'What is the base unit of eCash?',
+        question: 'What is the base unit of ausCash?',
         answer: (
             <p>
-                <strong>eCash</strong> (XEC) uses a base unit of 100 satoshis,
+                <strong>ausCash</strong> (XEC) uses a base unit of 100 satoshis,
                 which makes it easy to send small payments because you no longer
                 have to handle unwieldy decimal places. For instance, instead of
                 sending 0.00001000 bitcoins (which was the base unit used by
@@ -185,46 +185,46 @@ export const faqs = [
         ),
     },
     {
-        question: 'Is eCash using the Avalanche blockchain?',
+        question: 'Is ausCash using the Avalanche blockchain?',
         answer: (
             <p>
-                No, <strong>eCash </strong>is its own blockchain. <br />
+                No, <strong>ausCash </strong>is its own blockchain. <br />
                 It is important to differentiate the Avalanche protocol, from
                 the cyptocurrency project known as &ldquo;Avalanche&rdquo; or
                 &ldquo;AVAX&rdquo;.
                 <br />
-                <strong>eCash</strong>&#x27;s Avalanche implementation is
+                <strong>ausCash</strong>&#x27;s Avalanche implementation is
                 completely separate and distinct from the Avalanche (AVAX)
                 project. They have no connection, other than both using the
                 protocol described in the{' '}
                 <ExternalLink href="https://ipfs.io/ipfs/QmUy4jh5mGNZvLkjies1RWM4YuvJh5o2FYopNPVYwrRVGV">
                     Avalanche whitepaper
                 </ExternalLink>
-                . Avalanche on eCash is an entirely new implementation which was
+                . Avalanche on ausCash is an entirely new implementation which was
                 developed from scratch by the Bitcoin ABC team. This is
-                important as it puts <strong>eCash</strong> in a technology
+                important as it puts <strong>ausCash</strong> in a technology
                 leadership role, rather than having to rely on the innovation of
                 others.
             </p>
         ),
     },
     {
-        question: 'Where did eCash come from?',
+        question: 'Where did ausCash come from?',
         answer: (
             <p>
                 On November 15, 2020, the Bitcoin Cash (BCH) blockchain split
                 into two chains. One of those chains was called BCHA for a time.
-                This chain was what eventually became <strong>eCash</strong>.
+                This chain was what eventually became <strong>ausCash</strong>.
             </p>
         ),
     },
     {
-        question: "What's the difference between eCash and Bitcoin ABC?",
+        question: "What's the difference between ausCash and Bitcoin ABC?",
         answer: (
             <p>
-                <strong>eCash</strong> is a cryptocurrency, whereas Bitcoin ABC
+                <strong>ausCash</strong> is a cryptocurrency, whereas Bitcoin ABC
                 is the software businesses use to interact with and maintain the{' '}
-                <strong>eCash </strong>network. The team behind the Bitcoin ABC
+                <strong>ausCash </strong>network. The team behind the Bitcoin ABC
                 software also operates under the same name.
                 <br />
                 <br />
@@ -237,30 +237,30 @@ export const faqs = [
         ),
     },
     {
-        question: 'Why is eCash listed as BCHA on some exchanges?',
+        question: 'Why is ausCash listed as BCHA on some exchanges?',
         answer: (
             <p>
-                <strong>eCash</strong> was briefly known as Bitcoin Cash ABC
-                (BCHA). The <strong>eCash</strong> branding came into effect on
+                <strong>ausCash</strong> was briefly known as Bitcoin Cash ABC
+                (BCHA). The <strong>ausCash</strong> branding came into effect on
                 July 1, 2021. Exchanges are strongly encouraged to update their
                 older listings accordingly. You may still see{' '}
-                <strong>eCash</strong> listed as BCHA on some exchanges if they
+                <strong>ausCash</strong> listed as BCHA on some exchanges if they
                 haven&#x27;t yet made the switch.
             </p>
         ),
     },
     {
         question:
-            'I have coins on the Bitcoin Cash (BCH) network. How do I retrieve my eCash?',
+            'I have coins on the Bitcoin Cash (BCH) network. How do I retrieve my ausCash?',
         answer: (
             <p>
                 If you have Bitcoin Cash from before November 15th 2020, it is
-                possible that you also have corresponding eCash (XEC). This is
-                because eCash and Bitcoin Cash share a common history, and
+                possible that you also have corresponding ausCash (XEC). This is
+                because ausCash and Bitcoin Cash share a common history, and
                 became separate currencies via a blockchain split. You can split
-                the coins and retrieve your eCash by following the instructions
+                the coins and retrieve your ausCash by following the instructions
                 in{' '}
-                <ExternalLink href="/blog/splitting-ecash-and-bch-coins-using-electrum-abc-and-electron-cash">
+                <ExternalLink href="/blog/splitting-auscash-and-bch-coins-using-electrum-abc-and-electron-cash">
                     this article
                 </ExternalLink>
                 .
@@ -271,10 +271,10 @@ export const faqs = [
         question: "What's the best way to get technical support?",
         answer: (
             <p>
-                You can reach out to us directly via the official eCash{' '}
-                <ExternalLink href="https://t.me/eCash">Telegram</ExternalLink>{' '}
+                You can reach out to us directly via the official ausCash{' '}
+                <ExternalLink href="https://t.me/ausCash">Telegram</ExternalLink>{' '}
                 or{' '}
-                <ExternalLink href="https://discord.gg/ecash-official-852595915159896114">
+                <ExternalLink href="https://discord.gg/auscash-official-852595915159896114">
                     Discord
                 </ExternalLink>
                 . You can also email us at{' '}

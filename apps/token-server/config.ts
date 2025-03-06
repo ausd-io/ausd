@@ -85,7 +85,7 @@ const config: TokenServerConfig = {
             console.log(`${req.url} from ip="${ip}" blocked by rate limit`);
             return res.status(429).json({
                 error: 'Too many requests',
-                msg: 'To earn more eCash, set up a staking node, or submit a diff to reviews.bitcoinabc.org.',
+                msg: 'To earn more ausCash, set up a staking node, or submit a diff to reviews.bitcoinabc.org.',
             });
         },
     },
@@ -103,7 +103,7 @@ const config: TokenServerConfig = {
             console.log(`${req.url} from ip="${ip}" blocked by rate limit`);
             return res.status(429).json({
                 error: 'Too many requests',
-                msg: 'To earn more eCash, set up a staking node, or submit a diff to reviews.bitcoinabc.org.',
+                msg: 'To earn more ausCash, set up a staking node, or submit a diff to reviews.bitcoinabc.org.',
             });
         },
     },

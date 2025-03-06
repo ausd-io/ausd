@@ -1,6 +1,6 @@
 # e.Cash Website
 
-Main website for eCash
+Main website for ausCash
 
 ## Building the site
 

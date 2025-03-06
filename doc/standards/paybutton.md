@@ -87,11 +87,11 @@ Breaking this down:
 
 ### Encoding and broadcasting txs
 
-Valid PayButton transactions may be created and decoded using the `ecash-script` library published on npm. The `utxolib.script` object is also useful to create OP_RETURN txs with javascript apps. See `cashtab/src/opreturn/index` for an implementation of alias txs and Cashtab Message txs.
+Valid PayButton transactions may be created and decoded using the `auscash-script` library published on npm. The `utxolib.script` object is also useful to create OP_RETURN txs with javascript apps. See `cashtab/src/opreturn/index` for an implementation of alias txs and Cashtab Message txs.
 
 ### Decoding txs
 
-The `getStackArray` function in `ecash-script` is the easiest way to decode `OP_RETURN` txs.
+The `getStackArray` function in `auscash-script` is the easiest way to decode `OP_RETURN` txs.
 
 ```
 const getStackArray('6a0450415900000c0102030405060708090a0b0c080102030405060708)

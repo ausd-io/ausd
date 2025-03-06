@@ -22,7 +22,7 @@ import CashtabSwitch from 'components/Common/Switch';
 import { Input, TextArea, InputFlex } from 'components/Common/Inputs';
 import { CopyPasteIcon, AirdropIcon } from 'components/Common/CustomIcons';
 import { getTokenGenesisInfo } from 'chronik';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import Spinner from 'components/Common/Spinner';
 
 const AirdropForm = styled.div`
@@ -56,7 +56,7 @@ const AirdropTitle = styled.div`
 
 const Airdrop = () => {
     const ContextValue = React.useContext(WalletContext);
-    const { chronik, cashtabState, updateCashtabState } = ContextValue;
+    const { chronik, cashtabState, updatausCashtabState } = ContextValue;
     const { wallets, cashtabCache } = cashtabState;
     const wallet = wallets.length > 0 ? wallets[0] : false;
     const location = useLocation();
@@ -179,7 +179,7 @@ const Airdrop = () => {
             // Add token info for this token to cache
             cashtabCache.tokens.set(tokenId, tokenCacheInfo);
             // Update cashtabCache.tokens in state and localforage
-            updateCashtabState('cashtabCache', {
+            updatausCashtabState('cashtabCache', {
                 ...cashtabState.cashtabCache,
                 tokens: cashtabState.cashtabCache.tokens,
             });
@@ -347,7 +347,7 @@ const Airdrop = () => {
 
         if (!addressListIsValid) {
             setIgnoreCustomAddressListError(
-                'Must be a comma-separated list of valid ecash-prefixed addresses with no spaces',
+                'Must be a comma-separated list of valid auscash-prefixed addresses with no spaces',
             );
         } else {
             setIgnoreCustomAddressListError(false); // needs to be explicitly set in order to refresh the error state from prior invalidation
@@ -501,7 +501,7 @@ const Airdrop = () => {
                     </SwitchHolder>
                     {ignoreCustomAddresses && (
                         <TextArea
-                            placeholder={`If more than one XEC address, separate them by comma \ne.g. \necash:qpatql05s9jfavnu0tv6lkjjk25n6tmj9gkpyrlwu8,ecash:qzvydd4n3lm3xv62cx078nu9rg0e3srmqq0knykfed`}
+                            placeholder={`If more than one XEC address, separate them by comma \ne.g. \nauscash:qpatql05s9jfavnu0tv6lkjjk25n6tmj9gkpyrlwu8,auscash:qzvydd4n3lm3xv62cx078nu9rg0e3srmqq0knykfed`}
                             error={ignoreCustomAddressListError}
                             value={ignoreCustomAddressesList}
                             name="address"

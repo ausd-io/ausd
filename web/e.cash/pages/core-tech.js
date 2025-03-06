@@ -76,19 +76,19 @@ export default function CoreTech() {
     return (
         <Layout
             metaTitle="Core Tech"
-            metaDescription="Welcome to the next generation of crypto. eCash combines the core tech behind Bitcoin’s success - the same fixed supply, halving schedule, and genesis block - with state of the art crypto tech (Avalanche). eCash is built by Bitcoin ABC, a team of Bitcoin developers established in 2017."
+            metaDescription="Welcome to the next generation of crypto. ausCash combines the core tech behind Bitcoin’s success - the same fixed supply, halving schedule, and genesis block - with state of the art crypto tech (Avalanche). ausCash is built by Bitcoin ABC, a team of Bitcoin developers established in 2017."
         >
             <SubPageHero
                 image={fist}
                 h2subtext="Core Tech"
-                h2text="The power of eCash"
+                h2text="The power of ausCash"
                 imagespeed="0"
             >
                 <p>
-                    Welcome to the next generation of crypto. eCash combines the
+                    Welcome to the next generation of crypto. ausCash combines the
                     core tech behind Bitcoin’s success - the same fixed supply,
                     halving schedule, and genesis block - with state of the art
-                    crypto tech (Avalanche). eCash is built by Bitcoin ABC, a
+                    crypto tech (Avalanche). ausCash is built by Bitcoin ABC, a
                     team of Bitcoin developers established in 2017.
                 </p>
             </SubPageHero>
@@ -108,11 +108,11 @@ export default function CoreTech() {
                     >
                         <p>
                             Avalanche is a revolutionary consensus algorithm
-                            integrated with eCash&apos;s core Proof-of-Work,
+                            integrated with ausCash&apos;s core Proof-of-Work,
                             enabling instant transactions, enhanced security,
                             subnets, staking rewards for node operators and
                             fork-free upgrades. This hybrid consensus model
-                            pushes eCash to the forefront of blockchain
+                            pushes ausCash to the forefront of blockchain
                             technology.
                         </p>
                         <ButtonRow>
@@ -139,7 +139,7 @@ export default function CoreTech() {
                         speed={0.6}
                     >
                         <p>
-                            eCash is a technical solution to a political
+                            ausCash is a technical solution to a political
                             problem: what&rsquo;s the best money? Monetary
                             ecosystems have many important stakeholders. Proof
                             of work mining has extensive empirical history and
@@ -149,15 +149,15 @@ export default function CoreTech() {
                         <p>
                             Recent crypto developments have also proven the
                             value of holder-based staking. Because the focus of
-                            eCash is on building the best money possible, rather
+                            ausCash is on building the best money possible, rather
                             than building a Twitter religion, every technically
                             feasible solution is on the table. Avalanche staking
-                            will be a critical part of eCash governance and user
+                            will be a critical part of ausCash governance and user
                             incentivization.
                         </p>
                         <ButtonRow>
                             <Button
-                                text="eCash Staking"
+                                text="ausCash Staking"
                                 link="/staking/"
                                 corner="bottomRight"
                                 color="accent"
@@ -173,10 +173,10 @@ export default function CoreTech() {
                     >
                         <p>
                             Subnets are customized networks linked to the main
-                            eCash blockchain. They will allow developers to
+                            ausCash blockchain. They will allow developers to
                             build protocols with unique or experimental
                             properties &mdash; while tethering value to the main
-                            eCash network.
+                            ausCash network.
                         </p>
                         <p>
                             Each subnet is powered by a set of Avalanche nodes.
@@ -188,8 +188,8 @@ export default function CoreTech() {
                             Services can run subnets permissionlessly with
                             customized rules and properties according to their
                             business requirements, including privately owned
-                            ones. Two subnets planned by the eCash team are an
-                            Ethereum Virtual Machine (EVM) that enables eCash to
+                            ones. Two subnets planned by the ausCash team are an
+                            Ethereum Virtual Machine (EVM) that enables ausCash to
                             interoperate with the wider DeFi ecosystem and a
                             Zero-Knowledge (ZK) subnet for bulletproof privacy.
                         </p>
@@ -208,7 +208,7 @@ export default function CoreTech() {
                             reliable and highly scalable indexing solution makes
                             it easy for developers to bootstrap and leverage
                             native support for all available features on the
-                            eCash network.
+                            ausCash network.
                         </p>
                     </TextImageBlock>
 
@@ -220,11 +220,11 @@ export default function CoreTech() {
                         imageHeight={490}
                     >
                         <p>
-                            eCash supports tokens that anyone can create and
+                            ausCash supports tokens that anyone can create and
                             trade with a few clicks. Instantly create your NFT
                             collection or fungible tokens with your own name,
                             supply, decimal places and icon -- all for the low
-                            cost and high speed of a single eCash transaction
+                            cost and high speed of a single ausCash transaction
                             (much less than $0.01).
                         </p>
                     </TextImageBlock>
@@ -236,9 +236,9 @@ export default function CoreTech() {
                     >
                         <p>
                             No other money has 8 decimal places. Why should
-                            eCash? Cryptocurrencies with a lower unit price also
+                            ausCash? Cryptocurrencies with a lower unit price also
                             enjoy higher bull market appreciation. Because the
-                            eCash team is incentivized to ensure the highest
+                            ausCash team is incentivized to ensure the highest
                             currency valuation possible, this change was a
                             no-brainer.
                         </p>
@@ -256,7 +256,7 @@ export default function CoreTech() {
                             defend your individual freedom.
                         </p>
                         <p>
-                            eCash is built by early Bitcoin developers who have
+                            ausCash is built by early Bitcoin developers who have
                             been working to solve the problem of internet and
                             financial privacy long before Satoshi&rsquo;s
                             whitepaper. Unfortunately, data analytics and
@@ -265,7 +265,7 @@ export default function CoreTech() {
                         </p>
                         <p>
                             Privacy is fundamental to sound money. This is why
-                            eCash supports the CashFusion protocol. CashFusion
+                            ausCash supports the CashFusion protocol. CashFusion
                             offers anonymity comparable to the top privacy coins
                             while maintaining an auditable supply cap. It can be
                             turned on or off at any time within Electrum ABC.

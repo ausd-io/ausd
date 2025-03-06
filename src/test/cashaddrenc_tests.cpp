@@ -72,7 +72,7 @@ BOOST_FIXTURE_TEST_SUITE(cashaddrenc_tests, BasicTestingSetup)
 
 BOOST_AUTO_TEST_CASE(encode_decode_all_sizes) {
     FastRandomContext rand(true);
-    const std::string CASHADDR_PREFIX = "ecash";
+    const std::string CASHADDR_PREFIX = "auscash";
 
     for (auto ps : valid_sizes) {
         std::vector<uint8_t> data =
@@ -86,7 +86,7 @@ BOOST_AUTO_TEST_CASE(encode_decode_all_sizes) {
 
         // Check that the address decodes properly
         CashAddrContent decoded =
-            DecodeCashAddrContent(address, CASHADDR_PREFIX);
+            DecodausCashAddrContent(address, CASHADDR_PREFIX);
         BOOST_CHECK_EQUAL_COLLECTIONS(
             std::begin(content.hash), std::end(content.hash),
             std::begin(decoded.hash), std::end(decoded.hash));
@@ -112,8 +112,8 @@ BOOST_AUTO_TEST_CASE(encode_decode) {
     for (auto dst : toTest) {
         for (auto net : GetNetworks()) {
             const auto netParams = CreateChainParams(*m_node.args, net);
-            std::string encoded = EncodeCashAddr(dst, *netParams);
-            CTxDestination decoded = DecodeCashAddr(encoded, *netParams);
+            std::string encoded = EncodausCashAddr(dst, *netParams);
+            CTxDestination decoded = DecodausCashAddr(encoded, *netParams);
             BOOST_CHECK(dst == decoded);
         }
     }
@@ -131,11 +131,11 @@ BOOST_AUTO_TEST_CASE(invalid_on_wrong_network) {
             }
 
             const auto netParams = CreateChainParams(*m_node.args, net);
-            std::string encoded = EncodeCashAddr(dst, *netParams);
+            std::string encoded = EncodausCashAddr(dst, *netParams);
 
             const auto otherNetParams =
                 CreateChainParams(*m_node.args, otherNet);
-            CTxDestination decoded = DecodeCashAddr(encoded, *otherNetParams);
+            CTxDestination decoded = DecodausCashAddr(encoded, *otherNetParams);
             BOOST_CHECK(!std::holds_alternative<PKHash>(decoded));
             BOOST_CHECK(decoded == invalidDst);
         }
@@ -151,11 +151,11 @@ BOOST_AUTO_TEST_CASE(random_dst) {
         const CTxDestination dst_key = PKHash(hash);
         const CTxDestination dst_scr = ScriptHash(hash);
 
-        const std::string encoded_key = EncodeCashAddr(dst_key, *params);
-        const CTxDestination decoded_key = DecodeCashAddr(encoded_key, *params);
+        const std::string encoded_key = EncodausCashAddr(dst_key, *params);
+        const CTxDestination decoded_key = DecodausCashAddr(encoded_key, *params);
 
-        const std::string encoded_scr = EncodeCashAddr(dst_scr, *params);
-        const CTxDestination decoded_scr = DecodeCashAddr(encoded_scr, *params);
+        const std::string encoded_scr = EncodausCashAddr(dst_scr, *params);
+        const CTxDestination decoded_scr = DecodausCashAddr(encoded_scr, *params);
 
         std::string err("cashaddr failed for hash: ");
         err += hash.ToString();
@@ -188,7 +188,7 @@ BOOST_AUTO_TEST_CASE(check_padding) {
     for (uint8_t i = 0; i < 32; i++) {
         data[data.size() - 1] = i;
         std::string fake = cashaddr::Encode(params->CashAddrPrefix(), data);
-        CTxDestination dst = DecodeCashAddr(fake, *params);
+        CTxDestination dst = DecodausCashAddr(fake, *params);
 
         // We have 168 bits of payload encoded as 170 bits in 5 bits nimbles. As
         // a result, we must have 2 zeros.
@@ -213,13 +213,13 @@ BOOST_AUTO_TEST_CASE(check_type) {
         std::fill(begin(data), end(data), 0);
         data[0] = v;
         auto content =
-            DecodeCashAddrContent(cashaddr::Encode(prefix, data), prefix);
+            DecodausCashAddrContent(cashaddr::Encode(prefix, data), prefix);
         BOOST_CHECK_EQUAL(content.type, v);
         BOOST_CHECK_EQUAL(content.hash.size(), 20UL);
 
         // Check that using the reserved bit result in a failure.
         data[0] |= 0x10;
-        content = DecodeCashAddrContent(cashaddr::Encode(prefix, data), prefix);
+        content = DecodausCashAddrContent(cashaddr::Encode(prefix, data), prefix);
         BOOST_CHECK_EQUAL(content.type, 0);
         BOOST_CHECK_EQUAL(content.hash.size(), 0UL);
     }
@@ -229,7 +229,7 @@ BOOST_AUTO_TEST_CASE(check_type) {
  * We ensure size is extracted and checked properly.
  */
 BOOST_AUTO_TEST_CASE(check_size) {
-    const std::string prefix = "ecash";
+    const std::string prefix = "auscash";
 
     std::vector<uint8_t> data;
 
@@ -245,20 +245,20 @@ BOOST_AUTO_TEST_CASE(check_size) {
         data[1] = ps.first << 2;
 
         auto content =
-            DecodeCashAddrContent(cashaddr::Encode(prefix, data), prefix);
+            DecodausCashAddrContent(cashaddr::Encode(prefix, data), prefix);
 
         BOOST_CHECK_EQUAL(content.type, 0);
         BOOST_CHECK_EQUAL(content.hash.size(), ps.second);
 
         data.push_back(0);
-        content = DecodeCashAddrContent(cashaddr::Encode(prefix, data), prefix);
+        content = DecodausCashAddrContent(cashaddr::Encode(prefix, data), prefix);
 
         BOOST_CHECK_EQUAL(content.type, 0);
         BOOST_CHECK_EQUAL(content.hash.size(), 0UL);
 
         data.pop_back();
         data.pop_back();
-        content = DecodeCashAddrContent(cashaddr::Encode(prefix, data), prefix);
+        content = DecodausCashAddrContent(cashaddr::Encode(prefix, data), prefix);
 
         BOOST_CHECK_EQUAL(content.type, 0);
         BOOST_CHECK_EQUAL(content.hash.size(), 0UL);
@@ -277,26 +277,26 @@ BOOST_AUTO_TEST_CASE(test_encode_address) {
          213, 62, 197, 251, 195, 180, 45, 248, 237, 16}};
 
     std::vector<std::string> pubkey = {
-        "ecash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2",
-        "ecash:qr95sy3j9xwd2ap32xkykttr4cvcu7as4ykdcjcn6n",
-        "ecash:qqq3728yw0y47sqn6l2na30mcw6zm78dzq653y7pv5"};
+        "auscash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2",
+        "auscash:qr95sy3j9xwd2ap32xkykttr4cvcu7as4ykdcjcn6n",
+        "auscash:qqq3728yw0y47sqn6l2na30mcw6zm78dzq653y7pv5"};
     std::vector<std::string> script = {
-        "ecash:ppm2qsznhks23z7629mms6s4cwef74vcwv2zrv3l8h",
-        "ecash:pr95sy3j9xwd2ap32xkykttr4cvcu7as4ypg9alspw",
-        "ecash:pqq3728yw0y47sqn6l2na30mcw6zm78dzqd3vtezhf"};
+        "auscash:ppm2qsznhks23z7629mms6s4cwef74vcwv2zrv3l8h",
+        "auscash:pr95sy3j9xwd2ap32xkykttr4cvcu7as4ypg9alspw",
+        "auscash:pqq3728yw0y47sqn6l2na30mcw6zm78dzqd3vtezhf"};
 
     for (size_t i = 0; i < hash.size(); ++i) {
         const CTxDestination dstKey = PKHash(uint160(hash[i]));
-        BOOST_CHECK_EQUAL(pubkey[i], EncodeCashAddr(dstKey, *params));
+        BOOST_CHECK_EQUAL(pubkey[i], EncodausCashAddr(dstKey, *params));
 
         CashAddrContent keyContent{PUBKEY_TYPE, hash[i]};
-        BOOST_CHECK_EQUAL(pubkey[i], EncodeCashAddr("ecash", keyContent));
+        BOOST_CHECK_EQUAL(pubkey[i], EncodausCashAddr("auscash", keyContent));
 
         const CTxDestination dstScript = ScriptHash(uint160(hash[i]));
-        BOOST_CHECK_EQUAL(script[i], EncodeCashAddr(dstScript, *params));
+        BOOST_CHECK_EQUAL(script[i], EncodausCashAddr(dstScript, *params));
 
         CashAddrContent scriptContent{SCRIPT_TYPE, hash[i]};
-        BOOST_CHECK_EQUAL(script[i], EncodeCashAddr("ecash", scriptContent));
+        BOOST_CHECK_EQUAL(script[i], EncodausCashAddr("auscash", scriptContent));
     }
 }
 
@@ -444,12 +444,12 @@ BOOST_AUTO_TEST_CASE(test_vectors) {
 
     for (const auto &t : cases) {
         CashAddrContent content{t.type, t.hash};
-        BOOST_CHECK_EQUAL(t.addr, EncodeCashAddr(t.prefix, content));
+        BOOST_CHECK_EQUAL(t.addr, EncodausCashAddr(t.prefix, content));
 
         std::string err("hash mistmatch for address: ");
         err += t.addr;
 
-        content = DecodeCashAddrContent(t.addr, t.prefix);
+        content = DecodausCashAddrContent(t.addr, t.prefix);
         BOOST_CHECK_EQUAL(t.type, content.type);
         BOOST_CHECK_MESSAGE(t.hash == content.hash, err);
     }

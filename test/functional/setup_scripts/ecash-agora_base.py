@@ -2,7 +2,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """
-Setup script to test the ecash-agora js library
+Setup script to test the auscash-agora js library
 """
 
 import os
@@ -14,7 +14,7 @@ from test_framework.address import ADDRESS_ECREG_P2SH_OP_TRUE, ADDRESS_ECREG_UNS
 from test_framework.blocktools import COINBASE_MATURITY
 
 
-class EcashAgoraSetup(SetupFramework):
+class AuscashAgoraSetup(SetupFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True
@@ -39,7 +39,7 @@ class EcashAgoraSetup(SetupFramework):
             "..",
             "..",
             "modules",
-            "ecash-agora",
+            "auscash-agora",
             "agora.py",
         )
         shutil.copyfile(agora_script_path, os.path.join(plugins_dir, "agora.py"))
@@ -62,4 +62,4 @@ class EcashAgoraSetup(SetupFramework):
 
 
 if __name__ == "__main__":
-    EcashAgoraSetup().main()
+    AuscashAgoraSetup().main()

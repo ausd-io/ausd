@@ -5,7 +5,7 @@
 import * as http from 'http';
 import request from 'supertest';
 import config from '../config';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import { startExpressServer } from '../src/routes';
 import { MockChronikClient } from '../../../modules/mock-chronik-client';
 import TelegramBot from 'node-telegram-bot-api';
@@ -18,7 +18,7 @@ import {
     MOCK_OUTPOINT,
     MOCK_UTXO_TOKEN,
 } from '../test/vectors';
-import { Ecc, initWasm } from 'ecash-lib';
+import { Ecc, initWasm } from 'auscash-lib';
 import { rateLimit } from 'express-rate-limit';
 import { MongoClient, Db } from 'mongodb';
 import { MongoMemoryServer } from 'mongodb-memory-server';
@@ -56,16 +56,16 @@ describe('routes.js', async function () {
     const SERVER_WALLET_OUTPUTSCRIPT = cashaddr.getOutputScriptFromAddress(
         SERVER_WALLET_ADDRESS,
     );
-    const ELIGIBLE_ADDRESS = 'ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y';
+    const ELIGIBLE_ADDRESS = 'auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y';
     const ELIGIBLE_OUTPUTSCRIPT =
         cashaddr.getOutputScriptFromAddress(ELIGIBLE_ADDRESS);
     const INELIGIBLE_ADDRESS =
-        'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6';
+        'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6';
     const INELIGIBLE_OUTPUTSCRIPT =
         cashaddr.getOutputScriptFromAddress(INELIGIBLE_ADDRESS);
-    const INVALID_ADDRESS = 'ecash:erroraddress';
+    const INVALID_ADDRESS = 'auscash:erroraddress';
     const ERROR_ADDRESS = cashaddr.encode(
-        'ecash',
+        'auscash',
         'p2pkh',
         '0000000000000000000000000000000000000000',
     );
@@ -139,13 +139,13 @@ describe('routes.js', async function () {
 
     // Address with no tx history
     // i.e. eligible for an XEC airdrop
-    const NEW_ADDRESS = 'ecash:qrfkcnzdm0dvkrc20dhcf7qv23vt736ynuujzxnzs6';
+    const NEW_ADDRESS = 'auscash:qrfkcnzdm0dvkrc20dhcf7qv23vt736ynuujzxnzs6';
     mockedChronikClient.setAddress(NEW_ADDRESS);
     mockedChronikClient.setTxHistoryByAddress(NEW_ADDRESS, []);
 
     // Address with tx history
     // i.e. not eligible for an XEC airdrop
-    const USED_ADDRESS = 'ecash:qrplfw9x5hrdnra3t42s3543gh3vtg8xgyr4t4lrun';
+    const USED_ADDRESS = 'auscash:qrplfw9x5hrdnra3t42s3543gh3vtg8xgyr4t4lrun';
     mockedChronikClient.setAddress(USED_ADDRESS);
     mockedChronikClient.setTxHistoryByAddress(USED_ADDRESS, [{ isTx: true }]);
 
@@ -268,7 +268,7 @@ describe('routes.js', async function () {
             .expect('Content-Type', /json/)
             .expect({
                 address: INVALID_ADDRESS,
-                error: 'Invalid eCash address',
+                error: 'Invalid ausCash address',
             });
     });
     it('/is-eligible/:address returns expected error status on chronik error determining eligibility', function () {
@@ -402,7 +402,7 @@ describe('routes.js', async function () {
             .expect('Content-Type', /json/)
             .expect({
                 address: INVALID_ADDRESS,
-                error: 'Invalid eCash address',
+                error: 'Invalid ausCash address',
             });
     });
     it('/claim/:address returns expected error status on chronik error', function () {
@@ -629,7 +629,7 @@ describe('routes.js', async function () {
             .expect('Content-Type', /json/)
             .expect({
                 address: INVALID_ADDRESS,
-                error: 'Invalid eCash address',
+                error: 'Invalid ausCash address',
             });
     });
     it('We get a rendered blockie for a valid token image request', function () {

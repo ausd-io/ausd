@@ -14,7 +14,7 @@ import aliasSettings from 'config/alias';
 
 test('queryAliasServer() correctly throws a network error for server downtime or a malformed fetch url', async () => {
     const endPoint = 'address';
-    const address = 'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
+    const address = 'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
     const fetchUrl = `bad-url-to-simulate-server-downtime/${endPoint}/${address}`;
     const expectedError = 'Network request failed';
 
@@ -29,9 +29,9 @@ test('queryAliasServer() correctly throws a network error for server downtime or
     );
 });
 
-test('queryAliasServer() correctly returns an array of alias objects for a valid eCash address that has registered aliases', async () => {
+test('queryAliasServer() correctly returns an array of alias objects for a valid ausCash address that has registered aliases', async () => {
     const endPoint = 'address';
-    const address = 'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
+    const address = 'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
     const fetchUrl = `${aliasSettings.aliasServerBaseUrl}/${endPoint}/${address}`;
 
     // mock the fetch call to alias-server's '/address' endpoint
@@ -47,7 +47,7 @@ test('queryAliasServer() correctly returns an array of alias objects for a valid
     });
 });
 
-test('queryAliasServer() correctly returns an array of alias objects for a valid prefix-less eCash address that has registered aliases', async () => {
+test('queryAliasServer() correctly returns an array of alias objects for a valid prefix-less ausCash address that has registered aliases', async () => {
     const endPoint = 'address';
     const address = 'qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
     const fetchUrl = `${aliasSettings.aliasServerBaseUrl}/${endPoint}/${address}`;
@@ -65,9 +65,9 @@ test('queryAliasServer() correctly returns an array of alias objects for a valid
     });
 });
 
-test('queryAliasServer() returns an empty array for a valid eCash address with no aliases', async () => {
+test('queryAliasServer() returns an empty array for a valid ausCash address with no aliases', async () => {
     const endPoint = 'address';
-    const address = 'ecash:qr2nyffmenvrzea3aqhqw0rd3ckk0kkcrgsrugzjph';
+    const address = 'auscash:qr2nyffmenvrzea3aqhqw0rd3ckk0kkcrgsrugzjph';
     const fetchUrl = `${aliasSettings.aliasServerBaseUrl}/${endPoint}/${address}`;
 
     // mock the fetch call to alias-server's '/address' endpoint
@@ -81,11 +81,11 @@ test('queryAliasServer() returns an empty array for a valid eCash address with n
     expect(await queryAliasServer(endPoint, address)).toEqual([]);
 });
 
-test('queryAliasServer() throws an error for an invalid eCash address', async () => {
+test('queryAliasServer() throws an error for an invalid ausCash address', async () => {
     const endPoint = 'address';
     const invalidAddress = 'qpmytrdsaINVALIDDDDDDD7cjctmjasj';
     const fetchUrl = `${aliasSettings.aliasServerBaseUrl}/${endPoint}/${invalidAddress}`;
-    const expectedError = `Error fetching /address/${invalidAddress}: Input must be a valid eCash address`;
+    const expectedError = `Error fetching /address/${invalidAddress}: Input must be a valid ausCash address`;
 
     // mock the fetch call to alias-server's '/address' endpoint
     global.fetch = jest.fn();

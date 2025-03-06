@@ -1,7 +1,7 @@
 {
-    "name": "ecash-lib",
+    "name": "auscash-lib",
     "version": "1.0.1",
-    "description": "Library for eCash transaction building",
+    "description": "Library for ausCash transaction building",
     "main": "./dist/indexNodeJs.js",
     "browser": "./dist/indexBrowser.js",
     "scripts": {
@@ -14,10 +14,10 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Bitcoin-ABC/bitcoin-abc.git",
-        "directory": "modules/ecash-lib"
+        "directory": "modules/auscash-lib"
     },
     "keywords": [
-        "ecash",
+        "auscash",
         "xec",
         "bitcoin"
     ],
@@ -45,6 +45,6 @@
         "typescript-eslint": "^7.6.0"
     },
     "dependencies": {
-        "ecashaddrjs": "file:../ecashaddrjs"
+        "auscashaddrjs": "file:../auscashaddrjs"
     }
 }

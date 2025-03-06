@@ -24,7 +24,7 @@ other things are saved when running the portable .exe file.
 This directory is saved in the local directory containing the exe.
 """
 
-CURRENCY = "eCash"
+CURRENCY = "ausCash"
 
 
 class Unit:
@@ -63,7 +63,7 @@ BASE_UNITS_BY_DECIMALS: Mapping[int, str] = {
 }
 """Dict of units indexed by number of decimals"""
 
-CASHADDR_PREFIX: str = "ecash"
+CASHADDR_PREFIX: str = "auscash"
 CASHADDR_PREFIX_BCH: str = "bitcoincash"
 CASHADDR_TESTNET_PREFIX = "ectest"
 CASHADDR_TESTNET_PREFIX_BCH = "bchtest"

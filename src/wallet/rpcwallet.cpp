@@ -95,7 +95,7 @@ static void WalletTxToJSON(const CWallet &wallet, const CWalletTx &wtx,
 static RPCHelpMan getnewaddress() {
     return RPCHelpMan{
         "getnewaddress",
-        "Returns a new eCash address for receiving payments.\n"
+        "Returns a new ausCash address for receiving payments.\n"
         "If 'label' is specified, it is added to the address book \n"
         "so payments received with the address will be associated with "
         "'label'.\n",
@@ -113,9 +113,9 @@ static RPCHelpMan getnewaddress() {
              "The only valid value is \"legacy\". Note that this does not "
              "change the output of this RPC; in order to get a Dogecoin "
              "address "
-             "the -usecashaddr option should be disabled."},
+             "the -usauscashaddr option should be disabled."},
         },
-        RPCResult{RPCResult::Type::STR, "address", "The new eCash address"},
+        RPCResult{RPCResult::Type::STR, "address", "The new ausCash address"},
         RPCExamples{HelpExampleCli("getnewaddress", "") +
                     HelpExampleRpc("getnewaddress", "")},
         [&](const RPCHelpMan &self, const Config &config,

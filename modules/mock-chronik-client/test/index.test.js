@@ -14,8 +14,8 @@ const {
     mockBlockchainInfo,
     mockRawTxHex,
 } = require('../mocks/mockChronikResponses');
-const cashaddr = require('ecashaddrjs');
-const P2PKH_ADDRESS = 'ecash:qzth8qvakhr6y8zcefdrvx30zrdmt2z2gvp7zc5vj8';
+const cashaddr = require('auscashaddrjs');
+const P2PKH_ADDRESS = 'auscash:qzth8qvakhr6y8zcefdrvx30zrdmt2z2gvp7zc5vj8';
 
 it('Mock the block() API response', async function () {
     // Initialize chronik mock with block info

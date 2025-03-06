@@ -1,13 +1,13 @@
-# ecash-lib
+# auscash-lib
 
-Library for [eCash](https://e.cash) transaction building.
+Library for [ausCash](https://e.cash) transaction building.
 
 -   Compatible: Works on the browser using webpack, on NodeJS, jest etc.
 -   Fast: Accelerated using the highly optimized secp256k1 library compiled to WebAssembly
 -   Simple to use: Describe the tx to build in one TxBuilder object, and build the tx with just one `sign` call
 -   SLP/ALP enabled: Functions to build the SLP/ALP eMPP scripts
--   Flexible: The "Signatory" mechanism can accommodate anything from simple wallet transfers to complex Script covenants, e.g. eCash Agora
--   Schnorr: eCash lib supports Schnorr and ECDSA signatures
+-   Flexible: The "Signatory" mechanism can accommodate anything from simple wallet transfers to complex Script covenants, e.g. ausCash Agora
+-   Schnorr: ausCash lib supports Schnorr and ECDSA signatures
 -   Precise leftover ("change") computation: The tx size estimator will be exact for Schnorr signatures and very close for ECDSA signatures, even for complex scripts
 
 ## Usage
@@ -16,21 +16,21 @@ This library works for both browser and NodeJS.
 
 ### Installation
 
-`npm install --save ecash-lib`
+`npm install --save auscash-lib`
 
 ### Setup
 
 To use this library, you first have to initialize the WebAssembly module:
 
 ```ts
-import { initWasm } from 'ecash-lib';
+import { initWasm } from 'auscash-lib';
 await initWasm();
 ```
 
 After that, to sign signatures, you need an "Ecc" instance:
 
 ```ts
-import { Ecc } from 'ecash-lib';
+import { Ecc } from 'auscash-lib';
 const ecc = new Ecc();
 ```
 
@@ -51,7 +51,7 @@ import {
     shaRmd160,
     toHex,
     ALL_BIP143,
-} from 'ecash-lib';
+} from 'auscash-lib';
 
 // Download and compile WebAssembly
 await initWasm();
@@ -103,4 +103,4 @@ console.log(toHex(rawTx));
 -   0.2.0 - Add `Script.fromAddress` method to convert cashaddr addresses to `Script`
 -   0.2.1 - Fix fee estimation for signatories that depend on tx outputs [D16673](https://reviews.bitcoinabc.org/D16673)
 -   1.0.0 - **(Breaking change)** Modify `GenesisInfo` so that `auth` and `data` types match [D17194](https://reviews.bitcoinabc.org/D17194)
--   1.0.1 - Include `ecashaddrjs` and `chronik-client` installations from `npmjs` instead of local, to prevent need for peer dependencies [D17215](https://reviews.bitcoinabc.org/D17215)
+-   1.0.1 - Include `auscashaddrjs` and `chronik-client` installations from `npmjs` instead of local, to prevent need for peer dependencies [D17215](https://reviews.bitcoinabc.org/D17215)

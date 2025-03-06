@@ -17,7 +17,7 @@ class TestInvoice(unittest.TestCase):
         invoice = Invoice.from_dict(
             {
                 "invoice": {
-                    "address": "ecash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
+                    "address": "auscash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
                     "id": "foo#123",
                     "currency": "XEC",
                     "amount": "1337.42",
@@ -33,7 +33,7 @@ class TestInvoice(unittest.TestCase):
         self.assertEqual(invoice.amount, Decimal("1337.42"))
         self.assertEqual(
             invoice.address.to_ui_string(),
-            "ecash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
+            "auscash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
         )
         self.assertEqual(invoice.get_xec_amount(), Decimal("1337.42"))
         self.assertIsNone(invoice.exchange_rate)
@@ -44,7 +44,7 @@ class TestInvoice(unittest.TestCase):
         invoice = Invoice.from_dict(
             {
                 "invoice": {
-                    "address": "ecash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
+                    "address": "auscash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
                     "currency": "CHF",
                     "id": "foo#123",
                     "amount": "42.1",
@@ -59,7 +59,7 @@ class TestInvoice(unittest.TestCase):
         self.assertEqual(invoice.amount, Decimal("42.1"))
         self.assertEqual(
             invoice.address.to_ui_string(),
-            "ecash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
+            "auscash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
         )
         self.assertEqual(invoice.exchange_rate.get_exchange_rate(), Decimal("0.5"))
         self.assertEqual(invoice.exchange_rate.to_string(), "0.5")
@@ -70,7 +70,7 @@ class TestInvoice(unittest.TestCase):
         invoice = Invoice.from_dict(
             {
                 "invoice": {
-                    "address": "ecash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
+                    "address": "auscash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
                     "currency": "NOK",
                     "amount": "42.1",
                     "id": "foo#123",
@@ -88,7 +88,7 @@ class TestInvoice(unittest.TestCase):
         self.assertEqual(invoice.amount, Decimal("42.1"))
         self.assertEqual(
             invoice.address.to_ui_string(),
-            "ecash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
+            "auscash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
         )
         self.assertEqual(invoice.exchange_rate.url, "foo")
         self.assertEqual(invoice.exchange_rate.keys, ["bar"])
@@ -98,7 +98,7 @@ class TestInvoice(unittest.TestCase):
         vector = [
             # Missing top-level "invoice" node
             {
-                "address": "ecash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
+                "address": "auscash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
                 "currency": "XEC",
                 "amount": "1337.42",
                 "label": "spam",
@@ -115,7 +115,7 @@ class TestInvoice(unittest.TestCase):
             # XEC amount with exchange rate
             {
                 "invoice": {
-                    "address": "ecash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
+                    "address": "auscash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
                     "currency": "XEC",
                     "amount": "1337.42",
                     "label": "spam",
@@ -125,7 +125,7 @@ class TestInvoice(unittest.TestCase):
             # XEC amount with exchange rate API
             {
                 "invoice": {
-                    "address": "ecash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
+                    "address": "auscash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4",
                     "currency": "XEC",
                     "amount": "1337.42",
                     "label": "spam",

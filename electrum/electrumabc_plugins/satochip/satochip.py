@@ -343,7 +343,7 @@ class SatochipKeyStore(HardwareKeyStore):
             )
         )
 
-    def sign_message(self, sequence, message, password, sigtype=SignatureType.ECASH):
+    def sign_message(self, sequence, message, password, sigtype=SignatureType.AUSCASH):
         message_byte = message.encode("utf8")
         message_hash = hashlib.sha256(message_byte).hexdigest().upper()
         client = self.get_client()
@@ -406,7 +406,7 @@ class SatochipKeyStore(HardwareKeyStore):
             # self.handler.show_error(_("Wrong signature!\nThe 2FA device may have rejected the action."))
             # else:
             # compsig=client.parser.parse_message_signature(response2, message_byte, pubkey)
-            altcoin = "eCash" if sigtype == SignatureType.ECASH else None
+            altcoin = "ausCash" if sigtype == SignatureType.AUSCASH else None
             (response2, sw1, sw2, compsig) = client.cc.card_sign_message(
                 keynbr, pubkey, message_byte, hmac, altcoin=altcoin
             )

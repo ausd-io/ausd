@@ -21,14 +21,14 @@ export const WalletHideBalanceCopyAddress = styled.div`
 const WalletHeaderActions = ({
     address = '',
     settings,
-    updateCashtabState,
+    updatausCashtabState,
 }) => {
     return (
         <WalletHideBalanceCopyAddress>
             <CopyIconButton name={`Copy ${address}`} data={address} showToast />
             <HideBalanceSwitch
                 settings={settings}
-                updateCashtabState={updateCashtabState}
+                updatausCashtabState={updatausCashtabState}
             />
         </WalletHideBalanceCopyAddress>
     );
@@ -46,7 +46,7 @@ WalletHeaderActions.propTypes = {
         }),
         PropTypes.bool,
     ]),
-    updateCashtabState: PropTypes.func,
+    updatausCashtabState: PropTypes.func,
 };
 
 export default WalletHeaderActions;

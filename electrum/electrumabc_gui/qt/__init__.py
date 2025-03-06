@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2020 The Electrum ABC developers
 # Copyright (C) 2012 thomasv@gitorious
 #
@@ -552,7 +552,7 @@ class ElectrumGui(QtCore.QObject, PrintError):
             )  # this works even if app is not exec_() yet.
 
     def eventFilter(self, obj, event):
-        """This event filter allows us to open ecash: URIs on macOS"""
+        """This event filter allows us to open auscash: URIs on macOS"""
         if event.type() == QtCore.QEvent.FileOpen:
             if len(self.windows) >= 1:
                 self.windows[0].pay_to_URI(event.url().toString())

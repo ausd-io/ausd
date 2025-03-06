@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 'use strict';
-const cashaddr = require('ecashaddrjs');
+const cashaddr = require('auscashaddrjs');
 const config = require('../config');
 const {
     getAliasFromHex,
@@ -16,7 +16,7 @@ const {
     getAliasInfoFromAlias,
     getServerState,
 } = require('./db');
-const { consumeNextPush } = require('ecash-script');
+const { consumeNextPush } = require('auscash-script');
 
 module.exports = {
     getAliasTxs: function (aliasTxHistory, aliasConstants) {
@@ -179,7 +179,7 @@ module.exports = {
                 let address;
                 try {
                     address = cashaddr.encode(
-                        'ecash',
+                        'auscash',
                         addressType,
                         addressTypeAndHash.data.slice(2),
                     );

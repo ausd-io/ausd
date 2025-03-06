@@ -2,9 +2,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-import { Script, slpSend, fromHex } from 'ecash-lib';
-import { AgoraOneshot, AgoraOffer } from 'ecash-agora';
-import cashaddr from 'ecashaddrjs';
+import { Script, slpSend, fromHex } from 'auscash-lib';
+import { AgoraOneshot, AgoraOffer } from 'auscash-agora';
+import cashaddr from 'auscashaddrjs';
 import { CashtabWallet, CashtabWalletPaths } from 'wallet';
 import { XecTxType } from 'chronik';
 import { Token } from 'chronik-client';
@@ -410,7 +410,7 @@ export const nftMarketWallet: CashtabWallet = {
                         '0000000000000001',
                     ],
                     recipients: [
-                        'ecash:pz3dhqpgk02fq3sv3hurf5j5kvw49ql0ks2eyjpcy0',
+                        'auscash:pz3dhqpgk02fq3sv3hurf5j5kvw49ql0ks2eyjpcy0',
                     ],
                 },
             },
@@ -531,7 +531,7 @@ export const nftMarketWallet: CashtabWallet = {
                         '0000000000000001',
                     ],
                     recipients: [
-                        'ecash:pq5ghfhus093wpfj95887hnjh4cfj3ue9uz40ydh0e',
+                        'auscash:pq5ghfhus093wpfj95887hnjh4cfj3ue9uz40ydh0e',
                     ],
                 },
             },
@@ -1180,7 +1180,7 @@ export const nftMarketWallet: CashtabWallet = {
                     satoshisSent: 1000000,
                     stackArray: [],
                     recipients: [
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ],
                 },
             },
@@ -1192,7 +1192,7 @@ export const nftMarketWallet: CashtabWallet = {
         [
             1899,
             {
-                address: 'ecash:qplvc8a5eyfehtwjyu539xwsck9dw0clpqah3r8al9',
+                address: 'auscash:qplvc8a5eyfehtwjyu539xwsck9dw0clpqah3r8al9',
                 hash: '7ecc1fb4c9139badd227291299d0c58ad73f1f08',
                 wif: 'KwtGQrgQV63tr8zHSLSYZ5Ckfdi6K8VbagnfuaaJMDF41sPocxFU',
                 sk: fromHex(
@@ -1232,7 +1232,7 @@ export const saturnFive = {
         '631fd95d1c3016526f098f46fe8613b216cd1bdb4f8b8859b3ff8e9d7cadd2cc',
     tokenId: 'e2db39ade16e971afba2087bf6e29a83d7579137900eb73e5d955bdb769204bb',
     listPriceSatoshis: 100000,
-    sellerAddress: 'ecash:qplvc8a5eyfehtwjyu539xwsck9dw0clpqah3r8al9',
+    sellerAddress: 'auscash:qplvc8a5eyfehtwjyu539xwsck9dw0clpqah3r8al9',
     cancelPk: nftMarketWalletPublicKey,
     outpoint: {
         outIdx: 1,
@@ -1326,7 +1326,7 @@ export const transvaal = {
         '0fb781a98fffb980b1c9c609f62b29783c348e74aa7ea3908dcf7f46388ab316',
     tokenId: 'c08d91411b4f76e55c35afa893420314ab156acb689b75b40c254eb10f580d3b',
     listPriceSatoshis: 6487200,
-    sellerAddress: 'ecash:pqwc89dgxj293aqzh8k30dd2t8stckhzmqklh8l2zp',
+    sellerAddress: 'auscash:pqwc89dgxj293aqzh8k30dd2t8stckhzmqklh8l2zp',
     cancelPk: new Uint8Array(33),
     outpoint: {
         outIdx: 1,
@@ -1418,7 +1418,7 @@ export const argentina = {
         '0fb781a98fffb980b1c9c609f62b29783c348e74aa7ea3908dcf7f46388ab316',
     tokenId: 'c64ff2282ccb00ee21e1c02a4801e53c246250459d03b7c824305538ebab73d3',
     listPriceSatoshis: 30000,
-    sellerAddress: 'ecash:pzq3s6ghhvxxn9a4m0vartygt2ukxqrm5g8u0uwt9m',
+    sellerAddress: 'auscash:pzq3s6ghhvxxn9a4m0vartygt2ukxqrm5g8u0uwt9m',
     cancelPk: new Uint8Array(33),
     outpoint: {
         outIdx: 1,
@@ -1514,7 +1514,7 @@ export const mockPartial = {
         '0123456789012345678901234567890123456789012345678901234567890123',
     tokenId: '0023456789012345678901234567890123456789012345678901234567890123',
     listPriceSatoshis: 50000,
-    sellerAddress: 'ecash:pzq3s6ghhvxxn9a4m0vartygt2ukxqrm5g8u0uwt9m',
+    sellerAddress: 'auscash:pzq3s6ghhvxxn9a4m0vartygt2ukxqrm5g8u0uwt9m',
     cancelPk: new Uint8Array(33),
     outpoint: {
         outIdx: 1,

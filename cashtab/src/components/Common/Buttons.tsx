@@ -43,7 +43,7 @@ const PrimaryButtonOrLinkCss = css<{ disabled?: boolean }>`
             ? props.theme.buttons.disabled.color
             : props.theme.buttons.primary.color};
     border: 1px solid
-        ${props => (props.disabled ? 'none' : props.theme.eCashBlue)};
+        ${props => (props.disabled ? 'none' : props.theme.ausCashBlue)};
     ${props =>
         props.disabled
             ? `background: ${props.theme.buttons.disabled.background};`
@@ -75,7 +75,7 @@ const SecondaryButtonOrLinkCss = css<{ disabled?: boolean }>`
             ? props.theme.buttons.disabled.color
             : props.theme.buttons.primary.color};
     border: 1px solid
-        ${props => (props.disabled ? 'none' : props.theme.eCashPurple)};
+        ${props => (props.disabled ? 'none' : props.theme.ausCashPurple)};
     ${props =>
         props.disabled
             ? `background: ${props.theme.buttons.disabled.background};`
@@ -107,14 +107,14 @@ const SvgButtonOrLinkCss = css`
     svg {
         height: 24px;
         width: 24px;
-        fill: ${props => props.theme.eCashBlue};
+        fill: ${props => props.theme.ausCashBlue};
     }
     &:hover {
         svg {
-            fill: ${props => props.theme.eCashPurple};
-            stroke: ${props => props.theme.eCashPurple};
+            fill: ${props => props.theme.ausCashPurple};
+            stroke: ${props => props.theme.ausCashPurple};
             path {
-                fill: ${props => props.theme.eCashPurple};
+                fill: ${props => props.theme.ausCashPurple};
             }
         }
     }

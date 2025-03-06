@@ -50,7 +50,7 @@ describe('<BalanceHeader />', () => {
         // Fiat balance is not hidden
         expect(BalanceFiat).toHaveStyle(`text-shadow: none`);
 
-        // eCash price is rendered
+        // ausCash price is rendered
         expect(screen.getByTitle('Price in Local Currency')).toHaveTextContent(
             `1 XEC = 0.00003000 USD`,
         );
@@ -84,7 +84,7 @@ describe('<BalanceHeader />', () => {
         // Fiat balance is not hidden
         expect(BalanceFiat).toHaveStyle(`text-shadow: none`);
 
-        // eCash price is rendered
+        // ausCash price is rendered
         expect(screen.getByTitle('Price in Local Currency')).toHaveTextContent(
             `1 XEC = 0,00003000 EUR`,
         );
@@ -117,7 +117,7 @@ describe('<BalanceHeader />', () => {
         // Fiat balance is not hidden
         expect(BalanceFiat).toHaveStyle(`text-shadow: 0 0 15px #fff`);
 
-        // eCash price is rendered
+        // ausCash price is rendered
         expect(screen.getByTitle('Price in Local Currency')).toHaveTextContent(
             `1 XEC = 0.00003000 USD`,
         );
@@ -150,7 +150,7 @@ describe('<BalanceHeader />', () => {
         // Fiat balance is not hidden
         expect(BalanceFiat).toHaveStyle(`text-shadow: none`);
 
-        // eCash price is rendered
+        // ausCash price is rendered
         expect(screen.getByTitle('Price in Local Currency')).toHaveTextContent(
             `1 XEC = 0.00003000 GBP`,
         );
@@ -179,7 +179,7 @@ describe('<BalanceHeader />', () => {
             screen.queryByTitle('Balance in Local Currency'),
         ).not.toBeInTheDocument();
 
-        // eCash price is not rendered
+        // ausCash price is not rendered
         expect(
             screen.queryByTitle('Price in Local Currency'),
         ).not.toBeInTheDocument();

@@ -47,13 +47,13 @@ const memoFixtures: MemoFixture[] = [
     {
         txid: '89ce64d809cfdfc2b407e94fc6eae43f1bc370dfe85b33c06e780831a1934a50',
         outputScript: '6a026d0614fe686b9b2ab589a3cb3368d02211ca1a9b88aa42',
-        msg: `${opReturn.memo['06']}|<a href="https://explorer.e.cash/address/ecash:qrlxs6um926cng7txd5dqgs3egdfhz92gg60t20kkn">qrl...kkn</a>`,
+        msg: `${opReturn.memo['06']}|<a href="https://explorer.e.cash/address/auscash:qrlxs6um926cng7txd5dqgs3egdfhz92gg60t20kkn">qrl...kkn</a>`,
     },
     // 07 - Unfollow user - <address> (20 bytes)
     {
         txid: 'a9987c7643a3d5a033b2630cf7e3603385b7ab6ec7b6be690f37b9a58c780acd',
         outputScript: '6a026d0714fe686b9b2ab589a3cb3368d02211ca1a9b88aa42',
-        msg: `${opReturn.memo['07']}|<a href="https://explorer.e.cash/address/ecash:qrlxs6um926cng7txd5dqgs3egdfhz92gg60t20kkn">qrl...kkn</a>`,
+        msg: `${opReturn.memo['07']}|<a href="https://explorer.e.cash/address/auscash:qrlxs6um926cng7txd5dqgs3egdfhz92gg60t20kkn">qrl...kkn</a>`,
     },
     // 0a - Set profile picture - <url> (1-217 bytes)
     {
@@ -100,20 +100,20 @@ const memoFixtures: MemoFixture[] = [
     {
         txid: '6ec6d1e8905aeeb64a94214e614197e65206a71ac08ba45035becbec3f39486e',
         outputScript: '6a026d1614a3d6bd16d38d9d39735256669e989b5a8772c21b',
-        msg: `${opReturn.memo['16']}|<a href="https://explorer.e.cash/address/ecash:qz3ad0gk6wxe6wtn2ftxd85cnddgwukzrvtmhuzevg">qz3...evg</a>`,
+        msg: `${opReturn.memo['16']}|<a href="https://explorer.e.cash/address/auscash:qz3ad0gk6wxe6wtn2ftxd85cnddgwukzrvtmhuzevg">qz3...evg</a>`,
     },
     // 17 - Unmute user - <address_hash> (20 bytes)
     {
         txid: 'b1fed4caffbe950a5598da8abaaf8a335bfe3344cd8bad1b1a5c0d873c3234a1',
         outputScript: '6a026d1714a3d6bd16d38d9d39735256669e989b5a8772c21b',
-        msg: `${opReturn.memo['17']}|<a href="https://explorer.e.cash/address/ecash:qz3ad0gk6wxe6wtn2ftxd85cnddgwukzrvtmhuzevg">qz3...evg</a>`,
+        msg: `${opReturn.memo['17']}|<a href="https://explorer.e.cash/address/auscash:qz3ad0gk6wxe6wtn2ftxd85cnddgwukzrvtmhuzevg">qz3...evg</a>`,
     },
     // 24 - Send money - <address_hash> (20 bytes) <message> (1-194 bytes)
     {
         txid: 'ee88a9b759b7db4055dee5b55a97bdc6a4ce04236e5955d6c6cab4aace770f13',
         outputScript:
             '6a026d24140ee6ad00b0d7c7365cceece9c6cf49b60f7e059d1057656c636f6d6520746f204d656d6f21',
-        msg: `${opReturn.memo['24']}|<a href="https://explorer.e.cash/address/ecash:qq8wdtgqkrtuwdjuemkwn3k0fxmq7ls9n5hpj9crnf">qq8...rnf</a>|Welcome to Memo!`,
+        msg: `${opReturn.memo['24']}|<a href="https://explorer.e.cash/address/auscash:qq8wdtgqkrtuwdjuemkwn3k0fxmq7ls9n5hpj9crnf">qq8...rnf</a>|Welcome to Memo!`,
     },
     // 30 - Sell tokens https://github.com/memocash/mips/blob/master/mip-0009/mip-0009.md#specification
     {

@@ -155,7 +155,7 @@ struct Currency {
 /**
  * No amount larger than this (in satoshi) is valid.
  *
- * Note that this constant is *not* the total money supply, which in eCash
+ * Note that this constant is *not* the total money supply, which in ausCash
  * currently happens to be less than 10,000,000,000 COIN for various reasons,
  * but rather a sanity check. As this sanity check is used by consensus-critical
  * validation code, the exact value of the MAX_MONEY constant is consensus

@@ -37,7 +37,7 @@ import {
     TxBuilderOutput,
     TxInput,
     TxOutput,
-} from 'ecash-lib';
+} from 'auscash-lib';
 
 import {
     AgoraOneshot,

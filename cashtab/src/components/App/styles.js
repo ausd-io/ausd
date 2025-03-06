@@ -18,9 +18,9 @@ export const GlobalStyle = createGlobalStyle`
         color: ${props => props.theme.forms.placeholder} !important;
     }
     a {
-        color: ${props => props.theme.eCashBlue};
+        color: ${props => props.theme.ausCashBlue};
         &:hover {
-            color: ${props => props.theme.eCashPurple};
+            color: ${props => props.theme.ausCashPurple};
             text-decoration: none;
         }
     }
@@ -212,11 +212,11 @@ const NavButtonDesktop = css`
     font-family: 'Poppins';
 
     :hover {
-        color: ${props => props.theme.eCashPurple};
+        color: ${props => props.theme.ausCashPurple};
         svg,
         g,
         path {
-            fill: ${props => props.theme.eCashPurple};
+            fill: ${props => props.theme.ausCashPurple};
         }
     }
 

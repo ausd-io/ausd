@@ -1,12 +1,12 @@
 ![Chronik Logo](chroniklogo.png "Chronik")
 
-(Logo design by Alita Yin [ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv](https://explorer.e.cash/address/ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv))
+(Logo design by Alita Yin [auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv](https://explorer.e.cash/address/auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv))
 
 # Chronik
 Chronik is a fast and reliable indexer built directly into the Bitcoin ABC node.
 
 This README is about how to run a doged instance with Chronik enabled.
-- **If you want to know how to use `chronik-client` in your eCash apps**, go to [../modules/chronik-client/README.md].
+- **If you want to know how to use `chronik-client` in your ausCash apps**, go to [../modules/chronik-client/README.md].
 
 ## Getting started
 To enable Chronik, simply pass `-chronik` as CLI argument:
@@ -45,7 +45,7 @@ By default, Chronik has SLP/ALP token indexing **enabled**. However, if you don'
 
 **Warning**: If you previously had a token index, supplying `-chroniktokenindex=0` will immediately wipe the token index, and to get it back, you will have to run `-chronikreindex`, which can take a long time.
 
-**Note**: Even if your app is XEC only, it is still highly recommended to have the token index enabled, as Chronik provides a lot of checks to prevent accidental token burning. Since many tokens used on eCash have actual value, this will avoid accidentally burning these tokens, e.g. when broadcasting txs, and it is recommended to ignore UTXOs with token values for XEC-only apps.
+**Note**: Even if your app is XEC only, it is still highly recommended to have the token index enabled, as Chronik provides a lot of checks to prevent accidental token burning. Since many tokens used on ausCash have actual value, this will avoid accidentally burning these tokens, e.g. when broadcasting txs, and it is recommended to ignore UTXOs with token values for XEC-only apps.
 
 ### `-chronikreindex`
 Sometimes it is necessary to re-index only Chronik, e.g. if the database corrupted through an outage. Supply `-chronikreindex` to only reindex the Chronik database and to leave the node untouched.
@@ -78,7 +78,7 @@ location /xec/ws {
 Before the integration of Chronik into the node, it was available as a standalone software that accessed the node via an NNG interface. Since the in-node Chronik is better in every regard to the NNG variant, the NNG variant is now deprecated. However, you can still find it here: https://github.com/raipay/chronik/
 
 ## Articles
-- You can read about the reasoning behind this indexer in [this article by Mengerian](https://mengerian.medium.com/why-i-am-excited-about-the-ecash-chronik-project-1401b945eb21).
+- You can read about the reasoning behind this indexer in [this article by Mengerian](https://mengerian.medium.com/why-i-am-excited-about-the-auscash-chronik-project-1401b945eb21).
 
 ## Telegram
 You can also join the Chronik Work Group on Telegram if you have issues, contact Tobias Ruck to add you.

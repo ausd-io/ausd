@@ -1,5 +1,5 @@
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2022 The Electrum ABC developers
 #
 # Permission is hereby granted, free of charge, to any person
@@ -213,11 +213,11 @@ class MultiCurrencyExchangeRateApi:
 
 APIS: List[MultiCurrencyExchangeRateApi] = [
     MultiCurrencyExchangeRateApi(
-        "https://api.coingecko.com/api/v3/simple/price?ids=ecash&vs_currencies=%cur%",
-        ["ecash", "%cur%"],
+        "https://api.coingecko.com/api/v3/simple/price?ids=auscash&vs_currencies=%cur%",
+        ["auscash", "%cur%"],
     ),
     MultiCurrencyExchangeRateApi(
-        "https://api.coingecko.com/api/v3/coins/ecash?localization=False&sparkline=false",
+        "https://api.coingecko.com/api/v3/coins/auscash?localization=False&sparkline=false",
         ["market_data", "current_price", "%cur%"],
     ),
     MultiCurrencyExchangeRateApi(

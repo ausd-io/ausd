@@ -27,7 +27,7 @@ import {
     FontLink,
 } from '/styles/pages/brand.js';
 
-export default function EcashBrand() {
+export default function AuscashBrand() {
     const logos = [
         {
             type: 'logo-primary-horizontal',
@@ -121,14 +121,14 @@ export default function EcashBrand() {
 
     return (
         <Layout
-            metaTitle="eCash Brand"
+            metaTitle="ausCash Brand"
             metaDescription="We’ve created this guide to help you use some of our core brand elements and our logo. Definitely check it out before you get started."
         >
             <SubPageHero
                 image={robothand}
                 imagereverse
                 imagespeed={0.7}
-                h2subtext="eCash Brand"
+                h2subtext="ausCash Brand"
                 h2text="Introduction"
             >
                 <p>
@@ -140,7 +140,7 @@ export default function EcashBrand() {
             <GradientSpacer />
             <Container narrow>
                 <TextBlock>
-                    <H3 text="eCash Logo" />
+                    <H3 text="ausCash Logo" />
                     <p>
                         Our logo identifies, expresses, and distinguishes us.
                         It’s one of the first things people see and one of the
@@ -149,7 +149,7 @@ export default function EcashBrand() {
                     </p>
                     <p>
                         When we introduced the new logo, we wanted to make sure
-                        it accurately represents the essence of eCash, showing
+                        it accurately represents the essence of ausCash, showing
                         the world our boldness and dynamism.
                     </p>
                     <p>
@@ -160,28 +160,28 @@ export default function EcashBrand() {
                         never before.
                     </p>
                     <CenterImage height="500px">
-                        <Image src={logodiagram} alt="eCash" fill />
+                        <Image src={logodiagram} alt="ausCash" fill />
                     </CenterImage>
                 </TextBlock>
 
                 <TextBlock>
-                    <H3 text="eCash Logo Construction" />
+                    <H3 text="ausCash Logo Construction" />
                     <p>
-                        The eCash logo should always be afforded a predetermined
+                        The ausCash logo should always be afforded a predetermined
                         area of breathing space, referred to as clear space.
                         This ensures that the identity maintains its hierarchy
                         and is not overwhelmed by other visual elements.
                     </p>
                     <CenterImage height="400px">
-                        <Image src={logodiagram2} alt="eCash logo" fill />
+                        <Image src={logodiagram2} alt="ausCash logo" fill />
                     </CenterImage>
                     <CenterImage height="400px">
-                        <Image src={logodiagram3} alt="eCash logo" fill />
+                        <Image src={logodiagram3} alt="ausCash logo" fill />
                     </CenterImage>
                 </TextBlock>
 
                 <TextBlock>
-                    <H3 text="eCash Logo Assets" id="logos" />
+                    <H3 text="ausCash Logo Assets" id="logos" />
                     <p>
                         There are several variations of the logo: primary,
                         secondary, and icon.
@@ -199,23 +199,23 @@ export default function EcashBrand() {
                                         >
                                             <ImageCtn>
                                                 <Image
-                                                    src={`/images/logos/ecash-${logo.type}-${variation}.png`}
-                                                    alt="eCash logo"
+                                                    src={`/images/logos/auscash-${logo.type}-${variation}.png`}
+                                                    alt="ausCash logo"
                                                     fill
                                                 />
                                             </ImageCtn>
                                             <LinkCtn>
                                                 <Link
-                                                    href={`/images/logos/ecash-${logo.type}-${variation}.png`}
-                                                    alt="eCash Logo"
+                                                    href={`/images/logos/auscash-${logo.type}-${variation}.png`}
+                                                    alt="ausCash Logo"
                                                     target="_blank"
                                                     rel="noreferrer"
                                                 >
                                                     [PNG]
                                                 </Link>
                                                 <Link
-                                                    href={`/images/logos/ecash-${logo.type}-${variation}.svg`}
-                                                    alt="eCash Logo"
+                                                    href={`/images/logos/auscash-${logo.type}-${variation}.svg`}
+                                                    alt="ausCash Logo"
                                                     target="_blank"
                                                     rel="noreferrer"
                                                 >
@@ -231,7 +231,7 @@ export default function EcashBrand() {
                 </TextBlock>
 
                 <TextBlock>
-                    <H3 text="eCash Brand Colors" id="colors" />
+                    <H3 text="ausCash Brand Colors" id="colors" />
                     <h4>PRIMARY COLORS</h4>
                     <p>
                         The primary colors are the major identity color which
@@ -277,7 +277,7 @@ export default function EcashBrand() {
                 </TextBlock>
 
                 <TextBlock>
-                    <H3 text="eCash Official Fonts" id="fonts" />
+                    <H3 text="ausCash Official Fonts" id="fonts" />
                     <p>
                         For logotype, subtitle and heading materials, the
                         primary font Montserrat should be used. For the logotype
@@ -305,7 +305,7 @@ export default function EcashBrand() {
                     <p>
                         For more information, please download the{' '}
                         <Link
-                            href="/images/eCash-visual-identity-kit.pdf"
+                            href="/images/ausCash-visual-identity-kit.pdf"
                             target="_blank"
                             rel="noreferrer"
                         >

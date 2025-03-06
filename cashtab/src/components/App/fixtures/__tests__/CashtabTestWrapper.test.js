@@ -11,7 +11,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import { walletWithXecAndTokens } from 'components/App/fixtures/mocks';
@@ -53,7 +53,7 @@ describe('<CashtabTestWrapper />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -69,7 +69,7 @@ describe('<CashtabTestWrapper />', () => {
         await clearLocalForage(localforage);
     });
     it('With default props, renders App component', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -96,7 +96,7 @@ describe('<CashtabTestWrapper />', () => {
         expect(await screen.findByTestId('tx-history')).toBeInTheDocument();
     });
     it('We can render other pages by passing the route', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );

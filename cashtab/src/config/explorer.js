@@ -9,5 +9,5 @@ export const explorer = {
         process.env.REACT_APP_TESTNET === 'true'
             ? 'https://texplorer.e.cash'
             : 'https://explorer.e.cash',
-    pdfReceiptUrl: 'https://blockchair.com/ecash/transaction',
+    pdfReceiptUrl: 'https://blockchair.com/auscash/transaction',
 };

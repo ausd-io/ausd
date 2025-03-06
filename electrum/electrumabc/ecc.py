@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2018 The Electrum developers
 # Copyright (C) 2024 The Electrum ABC developers
 #
@@ -53,18 +53,18 @@ def be_bytes_to_number(b: bytes) -> int:
 
 
 class SignatureType(Enum):
-    ECASH = 1
+    AUSCASH = 1
     BITCOIN = 2
 
 
-ECASH_MSG_MAGIC = b"eCash Signed Message:\n"
+AUSCASH_MSG_MAGIC = b"ausCash Signed Message:\n"
 BITCOIN_MSG_MAGIC = b"Bitcoin Signed Message:\n"
 
 
-def msg_magic(message: bytes, sigtype: SignatureType = SignatureType.ECASH) -> bytes:
+def msg_magic(message: bytes, sigtype: SignatureType = SignatureType.AUSCASH) -> bytes:
     """Prepare the preimage of the message before signing it or verifying
     its signature."""
-    magic = ECASH_MSG_MAGIC if sigtype == SignatureType.ECASH else BITCOIN_MSG_MAGIC
+    magic = AUSCASH_MSG_MAGIC if sigtype == SignatureType.AUSCASH else BITCOIN_MSG_MAGIC
     return serialize_blob(magic) + serialize_blob(message)
 
 
@@ -338,7 +338,7 @@ class ECPubkey(object):
         sig65: bytes,
         message: bytes,
         *,
-        sigtype: SignatureType = SignatureType.ECASH,
+        sigtype: SignatureType = SignatureType.AUSCASH,
     ) -> bool:
         assert_bytes(message)
         h = Hash(msg_magic(message, sigtype))
@@ -422,7 +422,7 @@ def verify_message_with_address(
     sig65: bytes,
     message: bytes,
     *,
-    sigtype: SignatureType = SignatureType.ECASH,
+    sigtype: SignatureType = SignatureType.AUSCASH,
     net: Optional[networks.AbstractNet] = None,
 ) -> bool:
     # Fixme: circular import address -> ecc -> address
@@ -555,7 +555,7 @@ class ECPrivkey(ECPubkey):
         message: bytes,
         is_compressed,
         *,
-        sigtype: SignatureType = SignatureType.ECASH,
+        sigtype: SignatureType = SignatureType.AUSCASH,
     ) -> bytes:
 
         def bruteforce_recid(sig_string):

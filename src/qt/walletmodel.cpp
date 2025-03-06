@@ -380,7 +380,7 @@ static void NotifyAddressBookChanged(WalletModel *walletmodel,
                                      const std::string &purpose,
                                      ChangeType status) {
     QString strAddress = QString::fromStdString(
-        EncodeCashAddr(address, walletmodel->getChainParams()));
+        EncodausCashAddr(address, walletmodel->getChainParams()));
     QString strLabel = QString::fromStdString(label);
     QString strPurpose = QString::fromStdString(purpose);
 

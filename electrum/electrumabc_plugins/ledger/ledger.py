@@ -406,9 +406,9 @@ class LedgerKeyStore(HardwareKeyStore):
     @test_pin_unlocked
     @set_and_unset_signing
     def sign_message(self, sequence, message, password, sigtype=SignatureType.BITCOIN):
-        if sigtype == SignatureType.ECASH:
+        if sigtype == SignatureType.AUSCASH:
             raise RuntimeError(
-                _("eCash message signing is not available for {}").format(self.device)
+                _("ausCash message signing is not available for {}").format(self.device)
             )
         message = message.encode("utf8")
         message_hash = hashlib.sha256(message).hexdigest().upper()

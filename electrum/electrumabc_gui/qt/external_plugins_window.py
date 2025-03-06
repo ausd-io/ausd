@@ -1,5 +1,5 @@
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2020 The Electrum ABC Developers
 # Copyright (C) 2018-2020 Electron Cash developers
 #

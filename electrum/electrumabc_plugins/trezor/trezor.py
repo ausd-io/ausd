@@ -73,9 +73,9 @@ class TrezorKeyStore(HardwareKeyStore):
         )
 
     def sign_message(self, sequence, message, password, sigtype=SignatureType.BITCOIN):
-        if sigtype == SignatureType.ECASH:
+        if sigtype == SignatureType.AUSCASH:
             raise RuntimeError(
-                _("eCash message signing is not available for {}").format(self.device)
+                _("ausCash message signing is not available for {}").format(self.device)
             )
         client = self.get_client()
         address_path = self.get_derivation() + "/%d/%d" % sequence
@@ -108,7 +108,7 @@ class TrezorKeyStore(HardwareKeyStore):
         self.plugin.sign_transaction(self, tx, prev_tx, xpub_path)
 
     def needs_prevtx(self):
-        # Trezor does need previous transactions for eCash
+        # Trezor does need previous transactions for ausCash
         return True
 
 
@@ -527,7 +527,7 @@ class TrezorPlugin(HWPluginBase):
                 else:
                     raise Exception(_("Unsupported output script."))
             elif _type == TYPE_ADDRESS:
-                # ecash: addresses are not supported yet by trezor
+                # auscash: addresses are not supported yet by trezor
                 ui_addr_fmt = address.FMT_UI
                 if ui_addr_fmt == address.FMT_CASHADDR:
                     ui_addr_fmt = address.FMT_CASHADDR_BCH

@@ -8,10 +8,10 @@ import EyeInvisible from 'assets/eye-invisible.png';
 import PropTypes from 'prop-types';
 import CashtabSwitch from 'components/Common/Switch';
 
-const HideBalanceSwitch = ({ settings, updateCashtabState }) => {
+const HideBalanceSwitch = ({ settings, updatausCashtabState }) => {
     const handleShowHideBalance = e => {
         // Update settings in state and localforage
-        updateCashtabState('settings', {
+        updatausCashtabState('settings', {
             ...settings,
             balanceVisible: e.target.checked,
         });
@@ -41,7 +41,7 @@ HideBalanceSwitch.propTypes = {
         }),
         PropTypes.bool,
     ]),
-    updateCashtabState: PropTypes.func,
+    updatausCashtabState: PropTypes.func,
 };
 
 export default HideBalanceSwitch;

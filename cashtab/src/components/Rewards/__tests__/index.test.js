@@ -12,7 +12,7 @@ import localforage from 'localforage';
 import { when } from 'jest-when';
 import appConfig from 'config/app';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
@@ -38,7 +38,7 @@ describe('<Rewards />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -55,7 +55,7 @@ describe('<Rewards />', () => {
     });
     it('Renders the loading component while loading, then the Rewards screen', async () => {
         // localforage defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -73,7 +73,7 @@ describe('<Rewards />', () => {
     });
     it('An eligible cashtab wallet can claim a token reward', async () => {
         // localforage defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -137,7 +137,7 @@ describe('<Rewards />', () => {
     it('An ineligible cashtab wallet sees a countdown to eligibility', async () => {
         jest.useFakeTimers();
         // localforage defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -215,7 +215,7 @@ describe('<Rewards />', () => {
     });
     it('We see expected error if token server is out of money', async () => {
         // localforage defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );

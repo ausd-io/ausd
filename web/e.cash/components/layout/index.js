@@ -6,8 +6,8 @@ import Nav from '/components/navbar';
 import Footer from '/components/footer';
 
 const Layout = ({
-    metaTitle = 'eCash | Cash for the Internet',
-    metaDescription = 'eCash is a fast, secure, and scalable cryptocurrency designed for the internet. Offering staking, non-custodial solutions, fixed supply, and support for NFTs and etokens, eCash is the future of decentralized digital cash. Look for the ticker symbol XEC, and take your first step towards true financial freedom.',
+    metaTitle = 'ausCash | Cash for the Internet',
+    metaDescription = 'ausCash is a fast, secure, and scalable cryptocurrency designed for the internet. Offering staking, non-custodial solutions, fixed supply, and support for NFTs and etokens, ausCash is the future of decentralized digital cash. Look for the ticker symbol XEC, and take your first step towards true financial freedom.',
     children,
 }) => {
     return (
@@ -30,11 +30,11 @@ const Layout = ({
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta
                     name="twitter:image"
-                    content="https://e.cash/images/ecash-twitter-card.jpg"
+                    content="https://e.cash/images/auscash-twitter-card.jpg"
                 ></meta>
                 <meta
                     property="og:image"
-                    content="https://e.cash/images/ecash-twitter-card.jpg"
+                    content="https://e.cash/images/auscash-twitter-card.jpg"
                 ></meta>
                 <meta property="og:type" content="website" />
             </Head>

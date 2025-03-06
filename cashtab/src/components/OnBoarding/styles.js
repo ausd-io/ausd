@@ -22,9 +22,9 @@ export const WelcomeText = styled.p`
 
 export const WelcomeLink = styled.a`
     text-decoration: underline;
-    color: ${props => props.theme.eCashBlue};
+    color: ${props => props.theme.ausCashBlue};
     :hover {
-        color: ${props => props.theme.eCashPurple} !important;
+        color: ${props => props.theme.ausCashPurple} !important;
         text-decoration: underline !important;
     }
 `;

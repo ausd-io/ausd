@@ -19,7 +19,7 @@ import {
     CachedCachet,
     SettingsUsd,
 } from 'components/Agora/fixtures/mocks';
-import { Ecc, initWasm } from 'ecash-lib';
+import { Ecc, initWasm } from 'auscash-lib';
 import {
     MockAgora,
     MockChronikClient,

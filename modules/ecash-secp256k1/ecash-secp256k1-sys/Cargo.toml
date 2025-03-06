@@ -1,5 +1,5 @@
 [package]
-name = "ecash-secp256k1-sys"
+name = "auscash-secp256k1-sys"
 version = "0.10.0"
 authors = [
     "Dawid Ciężarkiewicz <dpc@ucore.info>",

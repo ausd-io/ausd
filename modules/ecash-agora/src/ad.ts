@@ -14,7 +14,7 @@ import {
     shaRmd160,
     slpSend,
     toHex,
-} from 'ecash-lib';
+} from 'auscash-lib';
 import { AGORA_LOKAD_ID_STR } from './consts.js';
 import { AgoraOneshot } from './oneshot.js';
 

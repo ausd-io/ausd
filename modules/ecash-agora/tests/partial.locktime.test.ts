@@ -19,8 +19,8 @@ import {
     fromHex,
     initWasm,
     shaRmd160,
-} from 'ecash-lib';
-import { TestRunner } from 'ecash-lib/dist/test/testRunner.js';
+} from 'auscash-lib';
+import { TestRunner } from 'auscash-lib/dist/test/testRunner.js';
 
 import { AgoraPartial, AgoraPartialSignatory } from '../src/partial.js';
 import { Agora, AgoraOffer } from '../src/agora.js';
@@ -74,7 +74,7 @@ describe('AgoraPartial enforcedLockTime', () => {
 
     before(async () => {
         await initWasm();
-        runner = await TestRunner.setup('setup_scripts/ecash-agora_base');
+        runner = await TestRunner.setup('setup_scripts/auscash-agora_base');
         chronik = runner.chronik;
         ecc = runner.ecc;
         await runner.setupCoins(NUM_COINS, COIN_VALUE);

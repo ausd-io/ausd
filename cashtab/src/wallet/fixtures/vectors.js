@@ -7,7 +7,7 @@ import {
     agoraOfferCachetAlphaOne,
     heismanNftOneOffer,
 } from 'components/Agora/fixtures/mocks';
-import { fromHex } from 'ecash-lib';
+import { fromHex } from 'auscash-lib';
 
 export const UNSAFE_INTEGER_STRING = '10000000000000000';
 export default {
@@ -187,7 +187,7 @@ export default {
             },
         ],
     },
-    createCashtabWallet: {
+    creatausCashtabWallet: {
         expectedReturns: [
             {
                 description:
@@ -209,7 +209,7 @@ export default {
                             1899,
                             {
                                 address:
-                                    'ecash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
+                                    'auscash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
                                 hash: '3a5fb236934ec078b4507c303d3afd82067f8fc1',
                                 wif: 'KywWPgaLDwvW1tWUtUvs13jgqaaWMoNANLVYoKcK9Ddbpnch7Cmw',
                                 sk: fromHex(

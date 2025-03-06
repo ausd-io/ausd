@@ -23,7 +23,7 @@ const VersionModalContainer = styled.div`
 const VersionTitle = styled.h4`
     padding: 4px;
     margin: 8px;
-    color: ${props => props.theme.eCashBlue};
+    color: ${props => props.theme.ausCashBlue};
 `;
 const ButtonHolder = styled.div`
     display: flex;
@@ -49,11 +49,11 @@ const ModalConfirm = styled(ModalBaseButton)`
     color: ${props => props.theme.buttons.primary.color};
     background-image: ${props => props.theme.buttons.primary.backgroundImage};
     border: 1px solid
-        ${props => (props.disabled ? 'none' : props.theme.eCashBlue)};
+        ${props => (props.disabled ? 'none' : props.theme.ausCashBlue)};
 `;
 const ModalCancel = styled(ModalBaseButton)`
     color: ${props => props.theme.buttons.primary.color};
-    border: 1px solid ${props => props.theme.eCashPurple};
+    border: 1px solid ${props => props.theme.ausCashPurple};
     background: transparent;
     :hover {
         color: ${props => props.theme.buttons.primary.color};
@@ -70,7 +70,7 @@ const ModalExit = styled.button`
     font-weight: bold;
     cursor: pointer;
     :hover {
-        color: ${props => props.theme.eCashPurple};
+        color: ${props => props.theme.ausCashPurple};
     }
 `;
 

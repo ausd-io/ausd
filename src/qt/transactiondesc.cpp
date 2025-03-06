@@ -237,7 +237,7 @@ QString TransactionDesc::toHTML(interfaces::Node &node,
                             strHTML += GUIUtil::HtmlEscape(name) + " ";
                         }
                         strHTML += GUIUtil::HtmlEscape(
-                            EncodeCashAddr(address, wallet.getChainParams()));
+                            EncodausCashAddr(address, wallet.getChainParams()));
                         if (toSelf == ISMINE_SPENDABLE) {
                             strHTML += " (own address)";
                         } else if (toSelf & ISMINE_WATCH_ONLY) {
@@ -418,7 +418,7 @@ QString TransactionDesc::toHTML(interfaces::Node &node,
                         strHTML += GUIUtil::HtmlEscape(name) + " ";
                     }
                     strHTML += QString::fromStdString(
-                        EncodeCashAddr(address, wallet.getChainParams()));
+                        EncodausCashAddr(address, wallet.getChainParams()));
                 }
                 strHTML = strHTML + " " + tr("Amount") + "=" +
                           BitcoinUnits::formatHtmlWithUnit(unit, vout.nValue);

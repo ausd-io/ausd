@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2024 The Electrum ABC developers
 # Copyright (C) 2011 thomasv@gitorious
 #

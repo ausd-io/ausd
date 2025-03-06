@@ -12,7 +12,7 @@ import 'fake-indexeddb/auto';
 import localforage from 'localforage';
 import appConfig from 'config/app';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
@@ -30,7 +30,7 @@ describe('<Receive />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -56,7 +56,7 @@ describe('<Receive />', () => {
     });
     it('Renders as expected on desktop, including copy paste functionality of clicking on the QR code', async () => {
         // Mock the app with context at the Receive screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -92,7 +92,7 @@ describe('<Receive />', () => {
         expect(
             screen.queryByText('Address Copied to Clipboard'),
         ).toHaveTextContent(
-            'Address Copied to Clipboardecash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
+            'Address Copied to Clipboardauscash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
         );
 
         // We have the expected width for a desktop device
@@ -110,7 +110,7 @@ describe('<Receive />', () => {
             writable: true, // possibility to overwrite
         });
         // Mock the app with context at the Receive screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -157,7 +157,7 @@ describe('<Receive />', () => {
             writable: true, // possibility to overwrite
         });
         // Mock the app with context at the Receive screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );

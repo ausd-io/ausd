@@ -1,6 +1,6 @@
-# ecash-herald
+# auscash-herald
 
-A telegram bot to broadcast eCash chain activity
+A telegram bot to broadcast ausCash chain activity
 
 ## development
 

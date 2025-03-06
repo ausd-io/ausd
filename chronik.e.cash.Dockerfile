@@ -5,9 +5,9 @@
 # Stage 1
 FROM node:20-bookworm-slim AS builder
 
-# Build ecashaddrjs, local dependency of chronik-client
-WORKDIR /app/modules/ecashaddrjs
-COPY modules/ecashaddrjs/ .
+# Build auscashaddrjs, local dependency of chronik-client
+WORKDIR /app/modules/auscashaddrjs
+COPY modules/auscashaddrjs/ .
 RUN npm ci
 RUN npm run build
 

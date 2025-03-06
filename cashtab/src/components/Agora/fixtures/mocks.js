@@ -3,14 +3,14 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 import appConfig from 'config/app';
-import { fromHex, Script } from 'ecash-lib';
-import { AgoraPartial, AgoraOffer, AgoraOneshot } from 'ecash-agora';
+import { fromHex, Script } from 'auscash-lib';
+import { AgoraPartial, AgoraOffer, AgoraOneshot } from 'auscash-agora';
 import CashtabCache from 'config/CashtabCache';
 
 /**
  * Mocks for the Agora screen
  * Note that these mocks must be properly typed AgoraOffer<s>
- * to accurately mock the ecash-agora lib use of the screen
+ * to accurately mock the auscash-agora lib use of the screen
  */
 
 // Real wallet with a (trace) balance on 20241017 if anyone wants it 👀
@@ -210,8 +210,8 @@ export const agoraPartialAlphaWallet = {
                         '0000000001403c77',
                     ],
                     recipients: [
-                        'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ],
                 },
             },
@@ -446,7 +446,7 @@ export const agoraPartialAlphaWallet = {
                         '00000000000053e2',
                     ],
                     recipients: [
-                        'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+                        'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
                     ],
                 },
             },
@@ -491,7 +491,7 @@ export const agoraPartialAlphaWallet = {
                     satoshisSent: 4200,
                     stackArray: [],
                     recipients: [
-                        'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+                        'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
                     ],
                 },
             },
@@ -505,7 +505,7 @@ export const agoraPartialAlphaWallet = {
 
             {
                 hash: '03b830e4b9dce347f3495431e1f9d1005f4b4204',
-                address: 'ecash:qqpmsv8yh8wwx3lnf92rrc0e6yq97j6zqs8av8vx8h',
+                address: 'auscash:qqpmsv8yh8wwx3lnf92rrc0e6yq97j6zqs8av8vx8h',
                 wif: 'KwdT9LwmWEWgSvon9BTABY3SMmCNCDptKio9kY8CYUA6oB9sWcRP',
                 sk: fromHex(
                     '0c368e6f3df4990da1a6a36435fa2f83ad399c8b2e45ff59676989c43578f431',
@@ -689,7 +689,7 @@ export const agoraPartialBetaWallet = {
                         '0000000000009c40',
                     ],
                     recipients: [
-                        'ecash:qqpmsv8yh8wwx3lnf92rrc0e6yq97j6zqs8av8vx8h',
+                        'auscash:qqpmsv8yh8wwx3lnf92rrc0e6yq97j6zqs8av8vx8h',
                     ],
                 },
             },
@@ -746,7 +746,7 @@ export const agoraPartialBetaWallet = {
                     satoshisSent: 4200,
                     stackArray: [],
                     recipients: [
-                        'ecash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0',
+                        'auscash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0',
                     ],
                 },
             },
@@ -759,7 +759,7 @@ export const agoraPartialBetaWallet = {
             1899,
             {
                 hash: 'f208ef75eb0dd778ea4540cbd966a830c7b94bb0',
-                address: 'ecash:qreq3mm4avxaw782g4qvhktx4qcv0w2tkqj3j5jaad',
+                address: 'auscash:qreq3mm4avxaw782g4qvhktx4qcv0w2tkqj3j5jaad',
                 wif: 'L1pjs2zuVGMx4jzegPaSHauNmDrchm8vS1m1T263z5Wzw6ehHwLD',
                 sk: fromHex(
                     '895eab6d2f84b8d534907f209173ad9404fc796b9f5c1651dd4501acda3e1cc5',

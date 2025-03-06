@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 import { opReturn } from 'config/opreturn';
-import { Script, fromHex } from 'ecash-lib';
+import { Script, fromHex } from 'auscash-lib';
 
 // Test vectors for opreturn output generating functions
 
@@ -179,7 +179,7 @@ export const opReturnVectors = {
             {
                 description: 'Valid alias to p2pkh address',
                 alias: 'test',
-                address: 'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                address: 'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                 returned: {
                     value: 0,
                     script: new Script(
@@ -192,7 +192,7 @@ export const opReturnVectors = {
             {
                 description: 'Valid alias to p2sh address',
                 alias: 'testtwo',
-                address: 'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+                address: 'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
                 returned: {
                     value: 0,
                     script: new Script(
@@ -207,7 +207,7 @@ export const opReturnVectors = {
             {
                 description: 'Invalid alias',
                 alias: 'test_WITH_badchars',
-                address: 'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                address: 'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                 errorMsg:
                     'Invalid alias "test_WITH_badchars": Alias may only contain lowercase characters a-z and 0-9',
             },
@@ -371,7 +371,7 @@ export const opReturnVectors = {
                     '0400746162356c6574277320676f6f6f6f6f6f6f206543617368203d20656c656374726f6e696320436173680a58e3858ce384b7757272656e6379',
                 returned: {
                     protocol: 'Cashtab Msg',
-                    data: `let's gooooooo eCash = electronic Cash\nXㅌㄷurrency`,
+                    data: `let's gooooooo ausCash = electronic Cash\nXㅌㄷurrency`,
                 },
             },
             {
@@ -428,7 +428,7 @@ export const opReturnVectors = {
                     '042e786563000c746573747465737474657374150095e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d',
                 returned: {
                     protocol: 'Alias Registration',
-                    data: `testtesttest to ecash:qqy4u704r4pxp0qdcwa8ldmu005j6raa6ys060u0ns`,
+                    data: `testtesttest to auscash:qqy4u704r4pxp0qdcwa8ldmu005j6raa6ys060u0ns`,
                 },
             },
             {
@@ -483,18 +483,18 @@ export const opReturnVectors = {
                 },
             },
             {
-                description: 'Valid eCash chat',
+                description: 'Valid ausCash chat',
                 opReturnRaw: '046368617409746573742063686174',
                 returned: {
-                    protocol: 'eCash Chat',
+                    protocol: 'ausCash Chat',
                     data: 'test chat',
                 },
             },
             {
-                description: 'Invalid eCash chat',
+                description: 'Invalid ausCash chat',
                 opReturnRaw: '0463686174',
                 returned: {
-                    protocol: 'Invalid eCash Chat',
+                    protocol: 'Invalid ausCash Chat',
                     data: '0463686174',
                 },
             },

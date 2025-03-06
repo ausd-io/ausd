@@ -56,7 +56,7 @@ const ModalInputField = styled(CashtabInput)<{ invalid?: boolean }>`
     border: ${props =>
         props.invalid
             ? `1px solid ${props.theme.forms.error}`
-            : `1px solid ${props.theme.eCashBlue} !important`};
+            : `1px solid ${props.theme.ausCashBlue} !important`};
 `;
 
 const CashtabTextArea = styled.textarea<{ height: number }>`
@@ -77,13 +77,13 @@ const CashtabTextArea = styled.textarea<{ height: number }>`
     }
     &::-webkit-scrollbar-track {
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        background-color: ${props => props.theme.eCashBlue};
+        background-color: ${props => props.theme.ausCashBlue};
         border-radius: 10px;
         height: 80%;
     }
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
-        color: ${props => props.theme.eCashBlue};
+        color: ${props => props.theme.ausCashBlue};
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
     }
 `;
@@ -222,7 +222,7 @@ export const ModalInput: React.FC<ModalInputProps> = ({
 
 const Count = styled.span<{ invalid?: boolean }>`
     color: ${props =>
-        props.invalid ? props.theme.eCashPurple : props.theme.contrast};
+        props.invalid ? props.theme.ausCashPurple : props.theme.contrast};
 `;
 const CountHolder = styled.div`
     color: ${props => props.theme.contrast};
@@ -536,7 +536,7 @@ const CashtabSlider = styled.input<{
 }>`
     width: ${props => (props.fixedWidth ? '256px' : '100%')};
     accent-color: ${props =>
-        props.isInvalid ? props.theme.encryptionRed : props.theme.eCashBlue};
+        props.isInvalid ? props.theme.encryptionRed : props.theme.ausCashBlue};
 `;
 const SliderInput = styled.input<{ invalid?: boolean }>`
     ${props => props.disabled && `cursor: not-allowed`};

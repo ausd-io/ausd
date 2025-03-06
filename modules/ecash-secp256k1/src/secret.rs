@@ -98,7 +98,7 @@ impl SecretKey {
     /// ```
     /// # #[cfg(feature = "std")] {
     /// # use std::str::FromStr;
-    /// use ecash_secp256k1::SecretKey;
+    /// use auscash_secp256k1::SecretKey;
     /// let key = SecretKey::from_str(
     ///     "0000000000000000000000000000000000000000000000000000000000000001",
     /// )
@@ -139,7 +139,7 @@ impl Keypair {
     /// ```
     /// # #[cfg(feature = "std")] {
     /// # use std::str::FromStr;
-    /// use ecash_secp256k1::{Keypair, Secp256k1, SecretKey};
+    /// use auscash_secp256k1::{Keypair, Secp256k1, SecretKey};
     ///
     /// let secp = Secp256k1::new();
     /// let key = SecretKey::from_str(
@@ -181,8 +181,8 @@ impl SharedSecret {
     /// # #[cfg(not(secp256k1_fuzz))]
     /// # #[cfg(feature = "std")] {
     /// # use std::str::FromStr;
-    /// use ecash_secp256k1::{SecretKey, PublicKey};
-    /// use ecash_secp256k1::ecdh::SharedSecret;
+    /// use auscash_secp256k1::{SecretKey, PublicKey};
+    /// use auscash_secp256k1::ecdh::SharedSecret;
     ///
     /// # let pk = PublicKey::from_slice(
     /// #     &[3, 23, 183, 225, 206, 31, 159, 148, 195, 42, 67, 115, 146, 41,

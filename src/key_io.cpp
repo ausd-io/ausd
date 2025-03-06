@@ -167,13 +167,13 @@ std::string EncodeExtKey(const CExtKey &key) {
 std::string EncodeDestination(const CTxDestination &dest,
                               const Config &config) {
     const CChainParams &params = config.GetChainParams();
-    return config.UseCashAddrEncoding() ? EncodeCashAddr(dest, params)
+    return config.UsausCashAddrEncoding() ? EncodausCashAddr(dest, params)
                                         : EncodeLegacyAddr(dest, params);
 }
 
 CTxDestination DecodeDestination(const std::string &addr,
                                  const CChainParams &params) {
-    CTxDestination dst = DecodeCashAddr(addr, params);
+    CTxDestination dst = DecodausCashAddr(addr, params);
     if (IsValidDestination(dst)) {
         return dst;
     }

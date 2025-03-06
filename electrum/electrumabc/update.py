@@ -73,11 +73,11 @@ def update_config():
     # Change default block explorer to e.cash
     if tuple(config_version) <= (5, 1, 4) and "block_explorer" in config:
         _logger.info("Updating the block explorer to the new default explorer.e.cash")
-        config["block_explorer"] = "eCash"
+        config["block_explorer"] = "ausCash"
 
     # We no longer support the BCH Cash Address format in the GUI as of 5.1.7
     if config.get("address_format") == "CashAddr BCH":
-        _logger.info("Updating the Cash Addr format from bitcoincash: to ecash:")
+        _logger.info("Updating the Cash Addr format from bitcoincash: to auscash:")
         config["address_format"] = "CashAddr"
 
     # The bitcoin-cash-abc-2 CoingGecko API no longer exists

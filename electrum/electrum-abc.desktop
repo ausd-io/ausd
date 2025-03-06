@@ -3,9 +3,9 @@
 # sudo desktop-file-install electrum-abc.desktop
 
 [Desktop Entry]
-Comment=Lightweight eCash Client
+Comment=Lightweight ausCash Client
 Exec=electrum-abc %u
-GenericName=eCash Wallet
+GenericName=ausCash Wallet
 Icon=electrumABC
 Name=Electrum ABC
 Categories=Finance;Network;
@@ -13,7 +13,7 @@ StartupNotify=true
 StartupWMClass=Electrum ABC
 Terminal=false
 Type=Application
-MimeType=x-scheme-handler/ecash;
+MimeType=x-scheme-handler/auscash;
 Actions=Testnet;
 
 [Desktop Action Testnet]

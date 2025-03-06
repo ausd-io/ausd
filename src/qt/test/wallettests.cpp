@@ -67,7 +67,7 @@ TxId SendCoins(CWallet &wallet, SendCoinsDialog &sendCoinsDialog,
     SendCoinsEntry *entry =
         qobject_cast<SendCoinsEntry *>(entries->itemAt(0)->widget());
     entry->findChild<QValidatedLineEdit *>("payTo")->setText(
-        QString::fromStdString(EncodeCashAddr(address, Params())));
+        QString::fromStdString(EncodausCashAddr(address, Params())));
     entry->findChild<BitcoinAmountField *>("payAmount")->setValue(amount);
     TxId txid;
     boost::signals2::scoped_connection c =

@@ -71,7 +71,7 @@ import {
     WriterBytes,
     WriterLength,
     writeTxOutput,
-} from 'ecash-lib';
+} from 'auscash-lib';
 import { AGORA_LOKAD_ID } from './consts.js';
 
 /**
@@ -176,7 +176,7 @@ export interface AgoraPartialParams {
  *
  * Offers can also be cancelled by the maker of the offer.
  *
- * One complication is the price calculation, due to eCash's limited precision
+ * One complication is the price calculation, due to ausCash's limited precision
  * and range (31-bits plus 1 sign bit) of its Script integers.
  * We employ two strategies to increase precision and range:
  * - "Scaling": We scale up values to the maximum representable, such that we
@@ -196,7 +196,7 @@ export interface AgoraPartialParams {
  * Together, they give us a very large range of representable values, while
  * keeping a decent precision.
  *
- * Ideally, eCash can eventually raise the maximum integer size to e.g. 64-bits,
+ * Ideally, ausCash can eventually raise the maximum integer size to e.g. 64-bits,
  * which would greatly increase the precision. The strategies employed are
  * useful there too, we simply get a much more accurate price calculation.
  **/
@@ -761,7 +761,7 @@ export class AgoraPartial {
             OP_OVER,
 
             // hasLeftover = OP_0NOTEQUAL(leftoverScaledTruncTokens)
-            // # (SCRIPT_VERIFY_MINIMALIF is not on eCash, but better be safe)
+            // # (SCRIPT_VERIFY_MINIMALIF is not on ausCash, but better be safe)
             OP_0NOTEQUAL,
 
             // Insert (sub)script that builds the OP_RETURN for SLP/ALP

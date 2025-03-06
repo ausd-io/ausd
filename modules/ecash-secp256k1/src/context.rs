@@ -33,7 +33,7 @@ pub mod global {
     /// ```
     /// # #[cfg(all(feature = "global-context", feature = "rand",
     /// #           feature = "std"))] {
-    /// use ecash_secp256k1::{PublicKey, SECP256K1};
+    /// use auscash_secp256k1::{PublicKey, SECP256K1};
     /// let _ = SECP256K1.generate_keypair(&mut rand::thread_rng());
     /// # }
     /// ```
@@ -198,8 +198,8 @@ mod alloc_only {
         /// randomizing the context as follows:
         /// ```
         /// # #[cfg(all(feature = "rand", feature = "std"))] {
-        /// # use ecash_secp256k1::Secp256k1;
-        /// # use ecash_secp256k1::rand::{thread_rng, RngCore};
+        /// # use auscash_secp256k1::Secp256k1;
+        /// # use auscash_secp256k1::rand::{thread_rng, RngCore};
         /// let mut ctx = Secp256k1::new();
         /// # let mut rng = thread_rng();
         /// # let mut seed = [0u8; 32];

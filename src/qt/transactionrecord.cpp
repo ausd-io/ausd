@@ -54,7 +54,7 @@ TransactionRecord::decomposeTransaction(const interfaces::WalletTx &wtx) {
                     // Received by Bitcoin Address
                     sub.type = TransactionRecord::RecvWithAddress;
                     sub.address =
-                        EncodeCashAddr(wtx.txout_address[i], Params());
+                        EncodausCashAddr(wtx.txout_address[i], Params());
                 } else {
                     // Received by IP connection (deprecated features), or a
                     // multisignature or other non-simple transaction
@@ -99,7 +99,7 @@ TransactionRecord::decomposeTransaction(const interfaces::WalletTx &wtx) {
                 if (it != wtx.txout_address.begin()) {
                     address += ", ";
                 }
-                address += EncodeCashAddr(*it, Params());
+                address += EncodausCashAddr(*it, Params());
             }
             Amount nChange = wtx.change;
             parts.append(TransactionRecord(
@@ -130,7 +130,7 @@ TransactionRecord::decomposeTransaction(const interfaces::WalletTx &wtx) {
                     // Sent to Bitcoin Address
                     sub.type = TransactionRecord::SendToAddress;
                     sub.address =
-                        EncodeCashAddr(wtx.txout_address[nOut], Params());
+                        EncodausCashAddr(wtx.txout_address[nOut], Params());
                 } else {
                     // Sent to IP, or other non-address transaction like OP_EVAL
                     sub.type = TransactionRecord::SendToOther;

@@ -23,7 +23,7 @@ import {
     ImageTextCtn,
     SectionImg,
     SwapZoneCtn,
-} from '/styles/pages/get-ecash.js';
+} from '/styles/pages/get-auscash.js';
 import AnimateImage from '/components/animate-image';
 import { getScoreCardData } from '/data/scores.js';
 import Button from '/components/button';
@@ -69,16 +69,16 @@ function TileSection({ title, items, children }) {
     );
 }
 
-function GetEcash(props) {
+function GetAuscash(props) {
     return (
         <Layout>
             <SubPageHero
                 image={coinupdown}
-                h2subtext="Get eCash"
+                h2subtext="Get ausCash"
                 h2text="Start Today"
             >
                 <p>
-                    Get started today by getting your first eCash. It&rsquo;s
+                    Get started today by getting your first ausCash. It&rsquo;s
                     simple and there are several ways to do it. You can find out
                     how below.
                 </p>
@@ -89,7 +89,7 @@ function GetEcash(props) {
                     <div>
                         <H3 text="Exchanges" id="exchanges" />
                         <p>
-                            eCash is currently listed on most major exchanges
+                            ausCash is currently listed on most major exchanges
                             under the XEC ticker.
                         </p>
                     </div>
@@ -122,11 +122,11 @@ function GetEcash(props) {
                     <div>
                         <H3 text="Mining" id="mining" />
                         <p>
-                            eCash is also available through mining, to learn
+                            ausCash is also available through mining, to learn
                             more join our ever expanding community of miners.
                         </p>
                         <Button
-                            text="Mine eCash"
+                            text="Mine ausCash"
                             link="/mining"
                             corner="bottomRight"
                             color="accent"
@@ -140,11 +140,11 @@ function GetEcash(props) {
                     <div>
                         <H3 text="Staking" id="staking" />
                         <p>
-                            Stakers power eCash&apos;s Avalanche consensus
+                            Stakers power ausCash&apos;s Avalanche consensus
                             system, and earn staking rewards in return.
                         </p>
                         <Button
-                            text="Stake eCash"
+                            text="Stake ausCash"
                             link="/staking"
                             corner="bottomRight"
                             color="accent"
@@ -177,4 +177,4 @@ export async function getStaticProps() {
     };
 }
 
-export default GetEcash;
+export default GetAuscash;

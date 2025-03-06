@@ -32,7 +32,7 @@ import { explorer } from 'config/explorer';
 import { token as tokenConfig } from 'config/token';
 import { queryAliasServer, Alias } from 'alias';
 import aliasSettings from 'config/alias';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import appConfig from 'config/app';
 import { isMobile, getUserLocale } from 'helpers';
 import {
@@ -136,14 +136,14 @@ import {
     shaRmd160,
     P2PKHSignatory,
     ALL_BIP143,
-} from 'ecash-lib';
+} from 'auscash-lib';
 import { InlineLoader } from 'components/Common/Spinner';
 import {
     AgoraOneshot,
     AgoraOneshotAdSignatory,
     AgoraPartialAdSignatory,
     AgoraPartial,
-} from 'ecash-agora';
+} from 'auscash-agora';
 import OrderBook from 'components/Agora/OrderBook';
 import Collection, {
     OneshotSwiper,
@@ -155,7 +155,7 @@ const Token: React.FC = () => {
     const {
         apiError,
         cashtabState,
-        updateCashtabState,
+        updatausCashtabState,
         chronik,
         agora,
         ecc,
@@ -240,7 +240,7 @@ const Token: React.FC = () => {
                 case 'SLP_TOKEN_TYPE_NFT1_CHILD': {
                     renderedTokenType = 'NFT';
                     renderedTokenDescription =
-                        'eCash NFT. NFT supply is always 1. This NFT may belong to an NFT collection.';
+                        'ausCash NFT. NFT supply is always 1. This NFT may belong to an NFT collection.';
                     isSupportedToken = true;
                     isNftChild = true;
                     break;
@@ -573,7 +573,7 @@ const Token: React.FC = () => {
                 tokenId,
             );
             cashtabCache.tokens.set(tokenId, cachedInfoWithGroupTokenId);
-            updateCashtabState('cashtabCache', cashtabCache);
+            updatausCashtabState('cashtabCache', cashtabCache);
         } catch (err) {
             console.error(`Error getting token details for ${tokenId}`, err);
             setChronikQueryError(true);
@@ -760,7 +760,7 @@ const Token: React.FC = () => {
         const { address, amount } = formData;
 
         let cleanAddress: string;
-        // check state on whether this is an alias or ecash address
+        // check state on whether this is an alias or auscash address
         if (aliasInputAddress) {
             cleanAddress = aliasInputAddress;
         } else {
@@ -1009,7 +1009,7 @@ const Token: React.FC = () => {
                 )) as Alias;
                 if (!aliasDetails.address) {
                     renderedError =
-                        'eCash Alias does not exist or yet to receive 1 confirmation';
+                        'ausCash Alias does not exist or yet to receive 1 confirmation';
                 } else {
                     // Valid address response returned
                     setAliasInputAddress(aliasDetails.address);
@@ -1419,7 +1419,7 @@ const Token: React.FC = () => {
         // Input needs to be the child NFT utxo with appropriate signData
         // Get the NFT utxo from Cashtab wallet
         const [thisNftUtxo] = getNft(tokenId as string, wallet.state.slpUtxos);
-        // Prepare it for an ecash-lib tx
+        // Prepare it for an auscash-lib tx
         const adSetupInputs = [
             {
                 input: {

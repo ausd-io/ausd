@@ -35,7 +35,7 @@ const ModalTitle = styled.div`
     font-size: 20px;
     text-align: center;
     width: 100%;
-    color: ${props => props.theme.eCashBlue};
+    color: ${props => props.theme.ausCashBlue};
 `;
 
 const MODAL_HEIGHT_DELTA = 68;
@@ -91,7 +91,7 @@ const ModalConfirm = styled(ModalBaseButton)`
             ? props.theme.buttons.disabled.color
             : props.theme.buttons.primary.color};
     border: 1px solid
-        ${props => (props.disabled ? 'none' : props.theme.eCashBlue)};
+        ${props => (props.disabled ? 'none' : props.theme.ausCashBlue)};
     ${props =>
         props.disabled
             ? `background: ${props.theme.buttons.disabled.background};`
@@ -100,7 +100,7 @@ const ModalConfirm = styled(ModalBaseButton)`
 `;
 const ModalCancel = styled(ModalBaseButton)`
     color: ${props => props.theme.buttons.primary.color};
-    border: 1px solid ${props => props.theme.eCashPurple};
+    border: 1px solid ${props => props.theme.ausCashPurple};
     background-image: ${props => props.theme.buttons.secondary.backgroundImage};
     background-size: 200% auto;
     :hover {
@@ -120,7 +120,7 @@ const ModalExit = styled.button`
     font-weight: bold;
     cursor: pointer;
     :hover {
-        color: ${props => props.theme.eCashPurple};
+        color: ${props => props.theme.ausCashPurple};
     }
 `;
 

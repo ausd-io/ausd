@@ -4,7 +4,7 @@
 
 import config from '../config';
 import opReturn from '../constants/op_return';
-import { consume, consumeNextPush, swapEndianness } from 'ecash-script';
+import { consume, consumeNextPush, swapEndianness } from 'auscash-script';
 import knownMinersJson, { KnownMiners, MinerInfo } from '../constants/miners';
 import cachedTokenInfoMap from '../constants/tokens';
 import {
@@ -13,7 +13,7 @@ import {
     CoinGeckoPrice,
     toXec,
 } from '../src/utils';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import BigNumber from 'bignumber.js';
 import {
     TOKEN_SERVER_OUTPUTSCRIPT,
@@ -29,8 +29,8 @@ import {
 } from './utils';
 import { CoinDanceStaker } from './events';
 import lokadMap from '../constants/lokad';
-import { scriptOps } from 'ecash-agora';
-import { Script, fromHex, OP_0 } from 'ecash-lib';
+import { scriptOps } from 'auscash-agora';
+import { Script, fromHex, OP_0 } from 'auscash-lib';
 import {
     ChronikClient,
     CoinbaseData,
@@ -214,7 +214,7 @@ export const getMinerFromCoinbaseTx = (
             return `unknown, ...${minerAddress.slice(-4)}`;
         } catch (err) {
             console.log(
-                `Error converting miner payout script (${minerPayoutSript}) to eCash address`,
+                `Error converting miner payout script (${minerPayoutSript}) to ausCash address`,
                 err,
             );
             // Give up
@@ -288,13 +288,13 @@ export const getMinerFromCoinbaseTx = (
  */
 export const parseSlpTwo = (slpTwoPush: string): string => {
     // Parse an empp push hex string with the SLP protocol identifier removed per SLP v2 spec
-    // https://ecashbuilders.notion.site/SLPv2-a862a4130877448387373b9e6a93dd97
+    // https://auscashbuilders.notion.site/SLPv2-a862a4130877448387373b9e6a93dd97
 
     let msg = '';
 
-    // Create a stack to use ecash-script consume function
+    // Create a stack to use auscash-script consume function
     // Note: slp2 parsing is not standard op_return parsing, varchar bytes just use a one-byte push
-    // So, you can use the 'consume' function of ecash-script, but not consumeNextPush
+    // So, you can use the 'consume' function of auscash-script, but not consumeNextPush
     const stack = { remainingHex: slpTwoPush };
 
     // 1.3: Read token type
@@ -309,7 +309,7 @@ export const parseSlpTwo = (slpTwoPush: string): string => {
     // These are custom varchar per slp2 spec
     // <varchar byte hex> <section type>
     const sectionBytes = parseInt(consume(stack, 1), 16);
-    // Note: these are encoded with push data, so you can use ecash-script
+    // Note: these are encoded with push data, so you can use auscash-script
 
     const sectionType = Buffer.from(
         consume(stack, sectionBytes),
@@ -503,7 +503,7 @@ export const parseMemoOutputScript = (
 
             // The address is a hex-encoded hash160
             // all memo addresses are p2pkh
-            const address = cashaddr.encode('ecash', 'P2PKH', stackArray[1]);
+            const address = cashaddr.encode('auscash', 'P2PKH', stackArray[1]);
 
             // Link to the address in the msg
             msg += `<a href="${
@@ -598,7 +598,7 @@ export const parseMemoOutputScript = (
 
             // The address is a hex-encoded hash160
             // all memo addresses are p2pkh
-            const address = cashaddr.encode('ecash', 'P2PKH', stackArray[1]);
+            const address = cashaddr.encode('auscash', 'P2PKH', stackArray[1]);
 
             // Link to the address in the msg
             msg += `<a href="${
@@ -687,7 +687,7 @@ export const parseOpReturn = (opReturnHex: string): HeraldOpReturnInfo => {
     ) {
         // If the protocol identifier is two bytes long (4 characters), parse for memo tx
         // For now, send the same info to this function that it currently parses
-        // TODO parseMemoOutputScript needs to be refactored to use ecash-script
+        // TODO parseMemoOutputScript needs to be refactored to use auscash-script
         return parseMemoOutputScript(stackArray);
     }
 
@@ -843,12 +843,12 @@ export const parseOpReturn = (opReturnHex: string): HeraldOpReturnInfo => {
             if (stackArray.length === 2) {
                 const authenticationHex = stackArray[1];
                 if (authenticationHex === '00') {
-                    msg = `Invalid eCashChat authentication identifier`;
+                    msg = `Invalid ausCashChat authentication identifier`;
                 } else {
-                    msg = 'eCashChat authentication via dust tx';
+                    msg = 'ausCashChat authentication via dust tx';
                 }
             } else {
-                msg = '[off spec eCashChat authentication]';
+                msg = '[off spec ausCashChat authentication]';
             }
             break;
         }
@@ -885,7 +885,7 @@ export const parseOpReturn = (opReturnHex: string): HeraldOpReturnInfo => {
 };
 
 /**
- * Parse an eCash tx as returned by chronik for newsworthy information
+ * Parse an ausCash tx as returned by chronik for newsworthy information
  */
 export const parseTx = (tx: Tx): HeraldParsedTx => {
     const { txid, inputs, outputs } = tx;
@@ -1000,7 +1000,7 @@ export const parseTx = (tx: Tx): HeraldParsedTx => {
             }
             // TODO handle MINT
             default: {
-                // For now, if we can't parse as above, this will be parsed as an eCash tx (or EMPP)
+                // For now, if we can't parse as above, this will be parsed as an ausCash tx (or EMPP)
                 break;
             }
         }
@@ -1923,11 +1923,11 @@ export const getBlockTgMessage = (
         tgMsg.push(
             `⏰ ${blocksLeft.toLocaleString('en-US')} block${
                 blocksLeft !== 1 ? 's' : ''
-            } until eCash halving`,
+            } until ausCash halving`,
         );
     }
     if (height === HALVING_HEIGHT) {
-        tgMsg.push(`🎉🎉🎉 eCash block reward reduced by 50% 🎉🎉🎉`);
+        tgMsg.push(`🎉🎉🎉 ausCash block reward reduced by 50% 🎉🎉🎉`);
     }
 
     // Staker
@@ -2102,11 +2102,11 @@ export const getBlockTgMessage = (
                 } more</a>`,
             );
         }
-        // 1 eCash tx
+        // 1 ausCash tx
         // or
-        // n eCash txs
+        // n ausCash txs
         tgMsg.push(
-            `<b>${totalXecSendCount} eCash tx${
+            `<b>${totalXecSendCount} ausCash tx${
                 totalXecSendCount > 1 ? `s` : ''
             }</b>`,
         );
@@ -2185,7 +2185,7 @@ export const guessRejectReason = async (
             );
 
             if (wrongWinner !== false) {
-                // Try to show the eCash address and fallback to script hex
+                // Try to show the ausCash address and fallback to script hex
                 // if it is not possible.
                 if (typeof address !== 'undefined') {
                     try {
@@ -2573,7 +2573,7 @@ export const summarizeTxHistory = (
 
                             // For now, we assume that any p2sh token input is agora buy/cancel
                             // and any p2sh token output is an ad setup tx
-                            // No other known cases of p2sh for token txs on ecash today
+                            // No other known cases of p2sh for token txs on auscash today
                             // tho multisig is possible, no supporting wallets
 
                             let isAgoraBuySellList = false;
@@ -2608,8 +2608,8 @@ export const summarizeTxHistory = (
                                                 break;
                                             }
                                             // Check if this is a cancellation
-                                            // See agora.ts from ecash-agora lib
-                                            // For now, I don't think it makes sense to have an 'isCanceled' method from ecash-agora
+                                            // See agora.ts from auscash-agora lib
+                                            // For now, I don't think it makes sense to have an 'isCanceled' method from auscash-agora
                                             // This is a pretty specific application
                                             const ops = scriptOps(
                                                 new Script(
@@ -2870,7 +2870,7 @@ export const summarizeTxHistory = (
 
                             // For now, we assume that any p2sh token input is agora buy/cancel
                             // and any p2sh token output is an ad setup tx
-                            // No other known cases of p2sh for token txs on ecash today
+                            // No other known cases of p2sh for token txs on auscash today
                             // tho multisig is possible, no supporting wallets
 
                             // mb parse for ad setup first, which is p2sh output?
@@ -2913,8 +2913,8 @@ export const summarizeTxHistory = (
                                                     break;
                                                 }
                                                 // Check if this is a cancellation
-                                                // See agora.ts from ecash-agora lib
-                                                // For now, I don't think it makes sense to have an 'isCanceled' method from ecash-agora
+                                                // See agora.ts from auscash-agora lib
+                                                // For now, I don't think it makes sense to have an 'isCanceled' method from auscash-agora
                                                 // This is a pretty specific application
                                                 const ops = scriptOps(
                                                     new Script(

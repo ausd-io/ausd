@@ -5,7 +5,7 @@
 import assert from 'assert';
 import config from '../config';
 import secrets from '../secrets';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import unrevivedBlock from './mocks/block';
 import { jsonReviver, getCoingeckoApiUrl } from '../src/utils';
 import { blockInvalidedTgMsg } from './mocks/blockInvalidated';
@@ -25,7 +25,7 @@ const block: StoredMock = JSON.parse(
     jsonReviver,
 );
 
-describe('ecash-herald chronikWsHandler.js', async function () {
+describe('auscash-herald chronikWsHandler.js', async function () {
     let memoryCache: MemoryCache;
     before(async () => {
         const CACHE_TTL = config.cacheTtlMsecs;

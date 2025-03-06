@@ -6,8 +6,8 @@ export const navitems = [
         nav_item: 'About',
         dropdown_items: [
             {
-                title: "What's eCash?",
-                link: '/what-is-ecash',
+                title: "What's ausCash?",
+                link: '/what-is-auscash',
                 icon: '/images/hand-diamond-icon.svg',
             },
             {
@@ -26,18 +26,18 @@ export const navitems = [
                 icon: '/images/roadmap-icon.svg',
             },
             {
-                title: 'eCash Brand',
+                title: 'ausCash Brand',
                 link: '/brand',
                 icon: '/images/dna-icon.svg',
             },
         ],
     },
     {
-        nav_item: 'Get eCash',
+        nav_item: 'Get ausCash',
         dropdown_items: [
             {
                 title: 'Exchanges',
-                link: '/get-ecash#exchanges',
+                link: '/get-auscash#exchanges',
                 icon: '/images/refresh-logo-icon.svg',
             },
             {
@@ -58,11 +58,11 @@ export const navitems = [
         ],
     },
     {
-        nav_item: 'Use eCash',
-        link: '/use-ecash',
+        nav_item: 'Use ausCash',
+        link: '/use-auscash',
     },
     {
-        nav_item: 'Build on eCash',
+        nav_item: 'Build on ausCash',
         link: '/build',
     },
     {
@@ -78,28 +78,28 @@ export const navitems = [
                 icon: '/images/hands-logo-icon.svg',
             },
             {
-                title: 'Avalanche on eCash',
+                title: 'Avalanche on ausCash',
                 link: 'https://avalanche.cash/',
                 icon: '/images/mountain-icon.svg',
             },
             {
-                title: 'eCash Scorecard',
+                title: 'ausCash Scorecard',
                 link: 'https://scorecard.cash/',
                 icon: '/images/hand-stars-icon.svg',
             },
             {
-                title: 'eCash Supply',
-                link: 'https://ecash.supply/',
+                title: 'ausCash Supply',
+                link: 'https://auscash.supply/',
                 icon: '/images/hand-cube-icon.svg',
             },
             {
-                title: 'eCash Explorer',
+                title: 'ausCash Explorer',
                 link: 'https://explorer.e.cash/',
                 icon: '/images/cube-icon.svg',
             },
             {
-                title: 'eCash Community',
-                link: 'https://ecash.community',
+                title: 'ausCash Community',
+                link: 'https://auscash.community',
                 icon: '/images/hands-icon.svg',
             },
             {

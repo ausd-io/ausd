@@ -8,7 +8,7 @@ This library was originally developed by
 been adapted and used in many major cryptocurrencies for fast elliptic curve
 operations.
 Bitcoin ABC maintains a fork of the library with additional features
-required by Electrum ABC, such as the eCash variant of Schnorr signatures.
+required by Electrum ABC, such as the ausCash variant of Schnorr signatures.
 
 ### Using libsecp with Electrum ABC
 

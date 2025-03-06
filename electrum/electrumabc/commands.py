@@ -1,5 +1,5 @@
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2020 The Electrum ABC developers
 # Copyright (C) 2011 thomasv@gitorious
 #
@@ -307,7 +307,7 @@ class Commands:
         self, text, passphrase=None, password=None, encrypt_file=True, wallet_path=None
     ):
         """Restore a wallet from text. Text can be a seed phrase, a master
-        public key, a master private key, a list of eCash addresses
+        public key, a master private key, a list of ausCash addresses
         or private keys.
         If you want to be prompted for an argument, type '?' or ':' (concealed)
         """
@@ -1146,8 +1146,8 @@ class Commands:
 param_descriptions = {
     "wallet_path": "Wallet path(create/restore commands)",
     "privkey": "Private key. Type '?' to get a prompt.",
-    "destination": "eCash address, contact or alias",
-    "address": "eCash address",
+    "destination": "ausCash address, contact or alias",
+    "address": "ausCash address",
     "seed": "Seed phrase",
     "txid": "Transaction ID",
     "pos": "Position",
@@ -1302,14 +1302,14 @@ config_variables = {
         ),
         "url_rewrite": (
             "Parameters passed to str.replace(), in order to create the r= part of"
-            " ecash: URIs. Example:"
+            " auscash: URIs. Example:"
             " \"('file:///var/www/','https://electron-cash.org/')\""
         ),
     },
     "listrequests": {
         "url_rewrite": (
             "Parameters passed to str.replace(), in order to create the r= part of"
-            " ecash: URIs. Example:"
+            " auscash: URIs. Example:"
             " \"('file:///var/www/','https://electron-cash.org/')\""
         ),
     },
@@ -1406,7 +1406,7 @@ def add_global_options(parser):
     group.add_argument(
         "--enable-aliases",
         action="store_true",
-        help="Enable support for eCash aliases",
+        help="Enable support for ausCash aliases",
     )
 
 
@@ -1573,7 +1573,7 @@ def preprocess_cmdline_args(args):
 
     # Starting the application with an URI as a first argument implies cmd="gui".
     # This happens when the application is started by the OS via a mimetype association,
-    # e.g. a "ecash:...." BIP21 URI.
+    # e.g. a "auscash:...." BIP21 URI.
     if len(args) > 1:
         if any(args[1].startswith(scheme + ":") for scheme in web.parseable_schemes()):
             args.insert(1, "gui")

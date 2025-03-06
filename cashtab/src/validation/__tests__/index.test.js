@@ -514,7 +514,7 @@ describe('Cashtab validation functions', () => {
             });
         });
     });
-    describe('Validates OP_RETURN raw for eCash node broadcast', () => {
+    describe('Validates OP_RETURN raw for ausCash node broadcast', () => {
         const { expectedReturns } = vectors.nodeWillAcceptOpReturnRaw;
         expectedReturns.forEach(expectedReturn => {
             const { description, opReturnRaw, returned } = expectedReturn;

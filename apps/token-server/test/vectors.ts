@@ -18,13 +18,13 @@ import {
     RewardBroadcastSuccess,
 } from '../src/transactions';
 import { Request } from 'express';
-import { Script } from 'ecash-lib';
+import { Script } from 'auscash-lib';
 
-const IFP_ADDRESS = 'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07';
+const IFP_ADDRESS = 'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07';
 const IFP_OUTPUTSCRIPT = 'a914d37c4c809fe9840e7bfa77b86bd47163f6fb6c6087';
-const MOCK_CHECKED_ADDRESS = 'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035';
+const MOCK_CHECKED_ADDRESS = 'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035';
 const MOCK_DESTINATION_ADDRESS =
-    'ecash:qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqs7ratqfx';
+    'auscash:qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqs7ratqfx';
 const MOCK_CHECKED_OUTPUTSCRIPT =
     '76a91495e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d88ac';
 const MOCK_OTHER_CHECKED_OUTPUTSCRIPT =
@@ -39,7 +39,7 @@ const MOCK_OTHER_TOKENID =
     'b132878bfa81cf1b9e19192045ed4c797b10944cc17ae07da06aed3d7b566cb7';
 
 const MOCK_WALLET = {
-    address: 'ecash:qzj6laqtj74j59dd6qv9hhx5e5868htmrqrttcqzxn',
+    address: 'auscash:qzj6laqtj74j59dd6qv9hhx5e5868htmrqrttcqzxn',
     sk: Uint8Array.from(
         Buffer.from(
             'd8b9d9868e5e55f98e241a48f905dce1fc6ae5d0d7be69109ccac8c7d09ce57a',
@@ -823,11 +823,11 @@ const vectors: TestVectors = {
         returns: [
             {
                 description:
-                    'We can get an ecash address and a wif from a valid 12-word bip39 seed',
+                    'We can get an auscash address and a wif from a valid 12-word bip39 seed',
                 mnemonic:
                     'prevent history faith square peace prevent year frame curtain excite issue vicious',
                 returned: {
-                    address: 'ecash:qrha2rrjwcqq7q384f5ndq4mnsg28dx23cqs9c397r',
+                    address: 'auscash:qrha2rrjwcqq7q384f5ndq4mnsg28dx23cqs9c397r',
                     sk: Uint8Array.from(
                         Buffer.from(
                             'f7f7c12f3857082e9a4ecec79fded199bf78040de0b4ac8f0a7d5f9552b28031',
@@ -855,7 +855,7 @@ const vectors: TestVectors = {
             {
                 description: 'We can update the utxo set of a wallet',
                 wallet: {
-                    address: 'ecash:qpm0kyq9x2clugajdycwwqqalaucn5km25zv644uxe',
+                    address: 'auscash:qpm0kyq9x2clugajdycwwqqalaucn5km25zv644uxe',
                     sk: Uint8Array.from(
                         Buffer.from(
                             '78c6bfffd52b70404de0719962966adb34b61cf20414feebed7435b96dca479a',
@@ -870,7 +870,7 @@ const vectors: TestVectors = {
                     MOCK_SCRIPT_UTXO,
                 ],
                 returned: {
-                    address: 'ecash:qpm0kyq9x2clugajdycwwqqalaucn5km25zv644uxe',
+                    address: 'auscash:qpm0kyq9x2clugajdycwwqqalaucn5km25zv644uxe',
                     sk: Uint8Array.from(
                         Buffer.from(
                             '78c6bfffd52b70404de0719962966adb34b61cf20414feebed7435b96dca479a',
@@ -889,7 +889,7 @@ const vectors: TestVectors = {
             {
                 description: 'We throw expected error if chronik call fails',
                 wallet: {
-                    address: 'ecash:qpm0kyq9x2clugajdycwwqqalaucn5km25zv644uxe',
+                    address: 'auscash:qpm0kyq9x2clugajdycwwqqalaucn5km25zv644uxe',
                     sk: Uint8Array.from(
                         Buffer.from(
                             '78c6bfffd52b70404de0719962966adb34b61cf20414feebed7435b96dca479a',
@@ -937,7 +937,7 @@ const vectors: TestVectors = {
                         },
                         {
                             script: Script.fromAddress(
-                                'ecash:qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqs7ratqfx',
+                                'auscash:qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqs7ratqfx',
                             ),
                             value: 546,
                         },
@@ -986,7 +986,7 @@ const vectors: TestVectors = {
                         },
                         {
                             script: Script.fromAddress(
-                                'ecash:qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqs7ratqfx',
+                                'auscash:qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqs7ratqfx',
                             ),
                             value: 546,
                         },
@@ -1020,7 +1020,7 @@ const vectors: TestVectors = {
             },
             {
                 description:
-                    'We have insufficient utxos if we have mint batons, eCash utxos, and spendable token utxos of other tokenIds, but not enough spendable utxos for the right token',
+                    'We have insufficient utxos if we have mint batons, ausCash utxos, and spendable token utxos of other tokenIds, but not enough spendable utxos for the right token',
                 rewardAmountTokenSats: 5n,
                 destinationAddress: MOCK_DESTINATION_ADDRESS,
                 tokenId: MOCK_TOKENID_ONES,

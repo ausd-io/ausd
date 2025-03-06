@@ -5,7 +5,7 @@
 //! Modules for the Augmented Ledger Protocol
 //!
 //! See here for a specification:
-//! https://ecashbuilders.notion.site/ALP-a862a4130877448387373b9e6a93dd97
+//! https://auscashbuilders.notion.site/ALP-a862a4130877448387373b9e6a93dd97
 
 mod build;
 pub mod consts;

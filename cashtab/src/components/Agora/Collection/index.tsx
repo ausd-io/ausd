@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 import React, { useState, useEffect } from 'react';
-import { Agora, AgoraOffer, AgoraOneshot } from 'ecash-agora';
+import { Agora, AgoraOffer, AgoraOneshot } from 'auscash-agora';
 import wif from 'wif';
 import CashtabCache, { CashtabCachedTokenInfo } from 'config/CashtabCache';
 import CashtabSettings from 'config/CashtabSettings';
@@ -45,7 +45,7 @@ import {
     P2PKHSignatory,
     ALL_BIP143,
     Ecc,
-} from 'ecash-lib';
+} from 'auscash-lib';
 import {
     CashtabWallet,
     toXec,
@@ -219,7 +219,7 @@ export const OneshotSwiper: React.FC<OneshotSwiperProps> = ({
                 // Should never happen
                 return toast.error(`No path info for ${fuelUtxo.path}`);
             }
-            // Sign and prep utxos for ecash-lib inputs
+            // Sign and prep utxos for auscash-lib inputs
             const recipientScript = Script.p2pkh(fromHex(pathInfo.hash));
             const sk = wif.decode(pathInfo.wif).privateKey;
             signedFuelInputs.push({
@@ -345,7 +345,7 @@ export const OneshotSwiper: React.FC<OneshotSwiperProps> = ({
             // sk for the tx is the sk for this utxo
             const sk = wif.decode(pathInfo.wif).privateKey;
 
-            // Convert from Cashtab utxo to signed ecash-lib input
+            // Convert from Cashtab utxo to signed auscash-lib input
             fuelInputs.push({
                 input: {
                     prevOut: {

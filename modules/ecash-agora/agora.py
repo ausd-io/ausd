@@ -2,7 +2,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """
-eCash Agora Plugin
+ausCash Agora Plugin
 
 Allows users to create UTXOs that can be accepted by anyone if the spending tx
 has outputs enforced by the Script of the UTXO.
@@ -441,7 +441,7 @@ class AgoraPartial:
         ]
 
     def script(self) -> CScript:
-        # See partial.ts in ecash-agora for a commented version of this Script
+        # See partial.ts in auscash-agora for a commented version of this Script
         scaled_trunc_tokens_8le = (
             self.trunc_tokens * self.token_scale_factor
         ).to_bytes(8, "little")

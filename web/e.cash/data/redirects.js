@@ -11,7 +11,7 @@ const redirects = [
         permanent: true,
     },
     {
-        source: '/ecash-brand',
+        source: '/auscash-brand',
         destination: '/brand',
         permanent: true,
     },
@@ -22,7 +22,7 @@ const redirects = [
     },
     {
         source: '/wealth-redefined',
-        destination: '/what-is-ecash',
+        destination: '/what-is-auscash',
         permanent: true,
     },
 ];

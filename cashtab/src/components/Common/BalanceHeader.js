@@ -34,7 +34,7 @@ export const BalanceFiat = styled.div`
     text-shadow: ${props => (props.balanceVisible ? '0 0 15px #fff' : 'none')};
 `;
 
-const EcashPrice = styled.p`
+const AuscashPrice = styled.p`
     padding: 0;
     margin: 0;
     font-size: 16px;
@@ -109,10 +109,10 @@ const BalanceHeader = ({
                             settings.fiatCurrency
                         ].slug.toUpperCase()}
                     </BalanceFiat>
-                    <EcashPrice title="Price in Local Currency">
+                    <AuscashPrice title="Price in Local Currency">
                         1 {appConfig.ticker} = {formattedExchangeRate}{' '}
                         {settings.fiatCurrency.toUpperCase()}
-                    </EcashPrice>
+                    </AuscashPrice>
                 </>
             )}
         </>

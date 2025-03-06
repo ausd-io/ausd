@@ -8,7 +8,7 @@ import Button from '/components/button';
 
 export default function PageNotFound() {
     return (
-        <Layout metaTitle="Page Not Found | eCash">
+        <Layout metaTitle="Page Not Found | ausCash">
             <SubPageHero
                 image={faqhand}
                 imagespeed={0.5}

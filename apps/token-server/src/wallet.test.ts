@@ -8,7 +8,7 @@ import vectors from '../test/vectors';
 import { MockChronikClient } from '../../../modules/mock-chronik-client';
 
 describe('wallet.ts', function () {
-    describe('We can generate an ecash address and its wif from a valid bip39 mnemonic', function () {
+    describe('We can generate an auscash address and its wif from a valid bip39 mnemonic', function () {
         const { returns, errors } = vectors.getWalletFromSeed;
         returns.forEach(vector => {
             const { description, mnemonic, returned } = vector;

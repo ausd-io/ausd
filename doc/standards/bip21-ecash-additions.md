@@ -1,10 +1,10 @@
-# eCash-specific additions to BIP 21
+# ausCash-specific additions to BIP 21
 
 ## Abstract
 
-[BIP 21](https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki) proposed a URI scheme for making payments. This system is used by bitcoin forks, including XEC. eCash-specific variations from the original BIP21 spec are listed here.
+[BIP 21](https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki) proposed a URI scheme for making payments. This system is used by bitcoin forks, including XEC. ausCash-specific variations from the original BIP21 spec are listed here.
 
-### eCash URI parameters
+### ausCash URI parameters
 
 Original spec for BIP21 parameters:
 
@@ -20,29 +20,29 @@ otherparam     = qchar *qchar [ "=" *qchar ]
 reqparam       = "req-" qchar *qchar [ "=" *qchar ]
 ```
 
-eCash modifications
+ausCash modifications
 
-1.  `bitcoin` prefix is replaced by the standard `ecash` prefix of the leading ecash address. The URI must begin with a valid `ecash:`-prefixed cash address.
+1.  `bitcoin` prefix is replaced by the standard `auscash` prefix of the leading auscash address. The URI must begin with a valid `auscash:`-prefixed cash address.
 
 ```
 // BTC
 bitcoinurn     = "bitcoin:" bitcoinaddress [ "?" bitcoinparams ]
 
 // XEC
-ecashurn       = ecashaddress [" ?" ecashparams ]
+auscashurn       = auscashaddress [" ?" auscashparams ]
 ```
 
-2. `addressparam` is a valid ecash address (which could be base 58, commonly referred to as `legacy` format)
+2. `addressparam` is a valid auscash address (which could be base 58, commonly referred to as `legacy` format)
 
 ```
 // BTC
 bitcoinaddress = *base58
 
 // XEC
-ecashaddress = cashaddr OR *base58
+auscashaddress = cashaddr OR *base58
 ```
 
-3. eCash params use descriptor `ecash` instead of `bitcoin`
+3. ausCash params use descriptor `auscash` instead of `bitcoin`
 
 ```
 // BTC
@@ -50,13 +50,13 @@ bitcoinparams  = bitcoinparam [ "&" bitcoinparams ]
 bitcoinparam   = [ amountparam / labelparam / messageparam / otherparam / reqparam ]
 
 // XEC
-ecashparams  = ecashparam [ "&" ecashparams ]
-ecashparam   = [ amountparam / labelparam / messageparam / otherparam / reqparam ]
+auscashparams  = auscashparam [ "&" auscashparams ]
+auscashparam   = [ amountparam / labelparam / messageparam / otherparam / reqparam ]
 ```
 
-4. eCash uses units of eCash (XEC), and not BTC, in the `amount` param
+4. ausCash uses units of ausCash (XEC), and not BTC, in the `amount` param
 
-5. eCash supports the `op_return_raw` param
+5. ausCash supports the `op_return_raw` param
 
 ```
 opreturnparam       = "op_return_raw=" *hex
@@ -68,10 +68,10 @@ opreturnparam       = "op_return_raw=" *hex
 -   The `OP_RETURN` output will be the 0-index output
 -   In a multi-address URI, the `op_return_raw` param must appear in first position
 
-6. eCash supports multiple outputs
+6. ausCash supports multiple outputs
 
 -   Each additional output must include both a valid `addr` and valid `amount` for the URI to be valid.
--   `addr` values must be valid cashaddresses that pass checksum validation for the `ecash` prefix. The prefix itself is not required.
+-   `addr` values must be valid cashaddresses that pass checksum validation for the `auscash` prefix. The prefix itself is not required.
 -   There is no spec limitation on the number of additional outputs a BIP21 URI may request. However, there are practical limitations. The node will not broadcast a transaction greater than 100KB, and QR codes cannot store more than 4,296 alphanumeric characters.
 -   Addresses may be repeated. You may send more than one output to the same address.
 -   If `op_return_raw` is specified, the output index of each specified output will be determined by its order in the URI. If no `op_return_raw` is specified, the output index of each specified output may not necessarily correspond to its order in the URI.
@@ -80,7 +80,7 @@ Because BIP21 was originally designed for single-address transactions and a vali
 
 Additional outputs will be sent at the `nth` output index, where `n` is the order of appearance of the `addr` param.
 
-7. eCash supports simple token sends
+7. ausCash supports simple token sends
 
 -   bip21 token send txs are limited to one recipient and one specified token qty recipient output
 -   Token output value is dust (546 satoshis)
@@ -101,23 +101,23 @@ Note that more complicated token txs (or this type of simple token tx) may be ma
 
 #### Bip-21 URI with no `op_return_raw` and 2 additional outputs
 
-`ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07?amount=100&addr=prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07&amount=200&addr=prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07&amount=300`
+`auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07?amount=100&addr=prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07&amount=200&addr=prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07&amount=300`
 
-An amount of `100` XEC will be sent to `ecash:prf...z07` at the index 0, 1, or 2 output
-An amount of `200` XEC will be sent to `ecash:prf...z07` at the index 0, 1, or 2 output
-An amount of `300` XEC will be sent to `ecash:prf...z07` at the index 0, 1, or 2 output
+An amount of `100` XEC will be sent to `auscash:prf...z07` at the index 0, 1, or 2 output
+An amount of `200` XEC will be sent to `auscash:prf...z07` at the index 0, 1, or 2 output
+An amount of `300` XEC will be sent to `auscash:prf...z07` at the index 0, 1, or 2 output
 
 #### Bip-21 URI with `op_return_raw` and 2 additional outputs
 
-`ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07?amount=100&op_return_raw=0401020304&addr=prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07&amount=200&addr=prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07&amount=300`
+`auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07?amount=100&op_return_raw=0401020304&addr=prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07&amount=200&addr=prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07&amount=300`
 
 An `OP_RETURN` output of `6a0401020304` at the index 0 output
-An amount of `100` XEC will be sent to `ecash:prf...z07` at the index 1 output
-An amount of `200` XEC will be sent to `ecash:prf...z07` at the index 2 output
-An amount of `300` XEC will be sent to `ecash:prf...z07` at the index 3 output
+An amount of `100` XEC will be sent to `auscash:prf...z07` at the index 1 output
+An amount of `200` XEC will be sent to `auscash:prf...z07` at the index 2 output
+An amount of `300` XEC will be sent to `auscash:prf...z07` at the index 3 output
 
 #### Bip-21 URI for an SLP or ALP Send tx
 
-`ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07?tokenId=aed861a31b96934b88c0252ede135cb9700d7649f69191235087a3030e553cb1&token_decimalized_qty=100.12`
+`auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07?tokenId=aed861a31b96934b88c0252ede135cb9700d7649f69191235087a3030e553cb1&token_decimalized_qty=100.12`
 
-100.12 CACHET tokens will be sent to `ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07` in an output containing 546 satoshis. It is up to the implementing wallet to handle validation and change.
+100.12 CACHET tokens will be sent to `auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07` in an output containing 546 satoshis. It is up to the implementing wallet to handle validation and change.

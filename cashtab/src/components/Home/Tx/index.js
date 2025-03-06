@@ -78,7 +78,7 @@ import {
 } from 'utils/formatting';
 import { toXec, decimalizeTokenAmount } from 'wallet';
 import { opReturn } from 'config/opreturn';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import TokenIcon from 'components/Etokens/TokenIcon';
 import Modal from 'components/Common/Modal';
 import { ModalInput } from 'components/Common/Inputs';
@@ -93,8 +93,8 @@ import {
 } from 'token-protocols/slpv1';
 import { CopyIconButton } from 'components/Common/Buttons';
 import appConfig from 'config/app';
-import { scriptOps } from 'ecash-agora';
-import { Script, fromHex, OP_0 } from 'ecash-lib';
+import { scriptOps } from 'auscash-agora';
+import { Script, fromHex, OP_0 } from 'auscash-lib';
 
 const Tx = ({
     tx,
@@ -102,7 +102,7 @@ const Tx = ({
     fiatPrice,
     fiatCurrency,
     cashtabState,
-    updateCashtabState,
+    updatausCashtabState,
     chaintipBlockheight,
     userLocale = 'en-US',
 }) => {
@@ -187,7 +187,7 @@ const Tx = ({
             }
             case opReturn.appPrefixesHex.aliasRegistration: {
                 // Magic numbers per spec
-                // https://github.com/Bitcoin-ABC/bitcoin-abc/blob/master/doc/standards/ecash-alias.md
+                // https://github.com/Bitcoin-ABC/bitcoin-abc/blob/master/doc/standards/auscash-alias.md
                 if (
                     stackArray[1] === '00' &&
                     typeof stackArray[2] !== 'undefined' &&
@@ -212,7 +212,7 @@ const Tx = ({
                         break;
                     }
                     const aliasAddress = cashaddr.encode(
-                        'ecash',
+                        'auscash',
                         addressType,
                         stackArray[3].slice(1),
                     );
@@ -402,13 +402,13 @@ const Tx = ({
                 }
                 break;
             }
-            case opReturn.appPrefixesHex.eCashChat: {
+            case opReturn.appPrefixesHex.ausCashChat: {
                 if (typeof stackArray[1] !== 'undefined') {
                     appActions.push(
                         <>
                             <IconAndLabel>
                                 <ChatIcon />
-                                <AppDescLabel>eCash Chat</AppDescLabel>
+                                <AppDescLabel>ausCash Chat</AppDescLabel>
                             </IconAndLabel>
                             <AppDescMsg>
                                 {Buffer.from(stackArray[1], 'hex').toString(
@@ -421,7 +421,7 @@ const Tx = ({
                     appActions.push(
                         <IconAndLabel>
                             <ChatIcon />
-                            <AppDescLabel>Invalid eCash Chat</AppDescLabel>
+                            <AppDescLabel>Invalid ausCash Chat</AppDescLabel>
                         </IconAndLabel>,
                     );
                 }
@@ -437,7 +437,7 @@ const Tx = ({
                             </IconAndLabel>
                             <AppDescMsg>
                                 <a
-                                    href={`https://www.ecashchat.com/?sharedArticleTxid=${stackArray[1]}`}
+                                    href={`https://www.auscashchat.com/?sharedArticleTxid=${stackArray[1]}`}
                                     target="_blank"
                                     rel="noreferrer"
                                 >
@@ -456,7 +456,7 @@ const Tx = ({
                 }
                 break;
             }
-            // eCashChat authentication txs consists of authPrefixHex + a random string
+            // ausCashChat authentication txs consists of authPrefixHex + a random string
             // Other apps can use this same prefix followed by an authentication identifier of their choosing
             case opReturn.appPrefixesHex.authPrefixHex: {
                 appActions.push(
@@ -464,19 +464,19 @@ const Tx = ({
                         <IconAndLabel>
                             <ChatIcon />
                             <AppDescLabel>
-                                eCash Chat Authentication
+                                ausCash Chat Authentication
                             </AppDescLabel>
                         </IconAndLabel>
                     </>,
                 );
                 break;
             }
-            case opReturn.appPrefixesHex.eCashChatArticle: {
+            case opReturn.appPrefixesHex.ausCashChatArticle: {
                 if (typeof stackArray[1] !== 'undefined') {
                     // If this is a reply to a blog post then index 2 is txid of article and index 3 is the reply
                     if (
                         stackArray[1] ===
-                        opReturn.appPrefixesHex.eCashChatArticleReply
+                        opReturn.appPrefixesHex.ausCashChatArticleReply
                     ) {
                         if (stackArray.length === 4) {
                             appActions.push(
@@ -484,9 +484,9 @@ const Tx = ({
                                     <IconAndLabel>
                                         <ChatIcon />
                                         <AppDescLabel>
-                                            eCash Chat - Reply to
+                                            ausCash Chat - Reply to
                                             <a
-                                                href={`https://www.ecashchat.com/?sharedArticleTxid=${stackArray[2]}`}
+                                                href={`https://www.auscashchat.com/?sharedArticleTxid=${stackArray[2]}`}
                                                 target="_blank"
                                                 rel="noreferrer"
                                             >
@@ -507,7 +507,7 @@ const Tx = ({
                                 <IconAndLabel>
                                     <ChatIcon />
                                     <AppDescLabel>
-                                        Invalid eCashChat Article Reply
+                                        Invalid ausCashChat Article Reply
                                     </AppDescLabel>
                                 </IconAndLabel>,
                             );
@@ -518,7 +518,7 @@ const Tx = ({
                                 <IconAndLabel>
                                     <ChatIcon />
                                     <AppDescLabel>
-                                        eCash Chat article created
+                                        ausCash Chat article created
                                     </AppDescLabel>
                                 </IconAndLabel>
                             </>,
@@ -529,7 +529,7 @@ const Tx = ({
                         <IconAndLabel>
                             <ChatIcon />
                             <AppDescLabel>
-                                Invalid eCashChat Article
+                                Invalid ausCashChat Article
                             </AppDescLabel>
                         </IconAndLabel>,
                     );
@@ -690,8 +690,8 @@ const Tx = ({
                     );
                     if (type === 'p2sh') {
                         // Check if this is a cancellation
-                        // See agora.ts from ecash-agora lib
-                        // For now, I don't think it makes sense to have an 'isCanceled' method from ecash-agora
+                        // See agora.ts from auscash-agora lib
+                        // For now, I don't think it makes sense to have an 'isCanceled' method from auscash-agora
                         // This is a pretty specific application
                         const ops = scriptOps(
                             new Script(fromHex(input.inputScript)),
@@ -981,7 +981,7 @@ const Tx = ({
                 address: addressToAdd,
             });
             // update localforage and state
-            await updateCashtabState('contactList', contactList);
+            await updatausCashtabState('contactList', contactList);
             toast.success(
                 `${formData.newContactName} (${addressToAdd}) added to Contact List`,
             );
@@ -1319,7 +1319,7 @@ Tx.propTypes = {
             tokens: PropTypes.object.isRequired,
         }),
     }),
-    updateCashtabState: PropTypes.func,
+    updatausCashtabState: PropTypes.func,
     chaintipBlockheight: PropTypes.number,
     userLocale: PropTypes.string,
 };

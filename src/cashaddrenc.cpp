@@ -87,29 +87,29 @@ private:
 
 } // namespace
 
-std::string EncodeCashAddr(const CTxDestination &dst,
+std::string EncodausCashAddr(const CTxDestination &dst,
                            const CChainParams &params) {
     return std::visit(CashAddrEncoder(params), dst);
 }
 
-std::string EncodeCashAddr(const std::string &prefix,
+std::string EncodausCashAddr(const std::string &prefix,
                            const CashAddrContent &content) {
     std::vector<uint8_t> data = PackAddrData(content.hash, content.type);
     return cashaddr::Encode(prefix, data);
 }
 
-CTxDestination DecodeCashAddr(const std::string &addr,
+CTxDestination DecodausCashAddr(const std::string &addr,
                               const CChainParams &params) {
     CashAddrContent content =
-        DecodeCashAddrContent(addr, params.CashAddrPrefix());
+        DecodausCashAddrContent(addr, params.CashAddrPrefix());
     if (content.hash.size() == 0) {
         return CNoDestination{};
     }
 
-    return DecodeCashAddrDestination(content);
+    return DecodausCashAddrDestination(content);
 }
 
-CashAddrContent DecodeCashAddrContent(const std::string &addr,
+CashAddrContent DecodausCashAddrContent(const std::string &addr,
                                       const std::string &expectedPrefix) {
     auto [prefix, payload] = cashaddr::Decode(addr, expectedPrefix);
 
@@ -151,7 +151,7 @@ CashAddrContent DecodeCashAddrContent(const std::string &addr,
     return {type, std::move(data)};
 }
 
-CTxDestination DecodeCashAddrDestination(const CashAddrContent &content) {
+CTxDestination DecodausCashAddrDestination(const CashAddrContent &content) {
     if (content.hash.size() != 20) {
         // Only 20 bytes hash are supported now.
         return CNoDestination{};

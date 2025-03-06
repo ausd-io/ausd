@@ -5,7 +5,7 @@
 'use strict';
 const { handleBlockFinalized, handleAddedToMempool } = require('./events');
 const { deletePendingAliases } = require('./db');
-const cashaddr = require('ecashaddrjs');
+const cashaddr = require('auscashaddrjs');
 const AsyncLock = require('async-lock');
 const blockFinalizedLock = new AsyncLock();
 

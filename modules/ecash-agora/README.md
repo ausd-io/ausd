@@ -1,8 +1,8 @@
-# ecash-agora: Non-interactive XEC -> token swaps using Script
+# auscash-agora: Non-interactive XEC -> token swaps using Script
 
 ## What's an "Agora"?
 
-The agora (ἀγορά) was a central public space in ancient Greek city-states, and means "market" in modern Greek. The eCash Agora is similar in that sense, it's a protocol on eCash that allows anyone to offer their tokens in exchange for XEC.
+The agora (ἀγορά) was a central public space in ancient Greek city-states, and means "market" in modern Greek. The ausCash Agora is similar in that sense, it's a protocol on ausCash that allows anyone to offer their tokens in exchange for XEC.
 
 ## Is Agora a DEX?
 
@@ -14,7 +14,7 @@ In that sense, "exchange" might even be a misnomer, as there's no special server
 
 ## How can it be used?
 
-eCash Agora allows users to lock their SLP/ALP tokens in a special UTXO, which behaves similar to to a "virtual vending machine", where other's can "insert" XEC and get tokens out.
+ausCash Agora allows users to lock their SLP/ALP tokens in a special UTXO, which behaves similar to to a "virtual vending machine", where other's can "insert" XEC and get tokens out.
 
 For example, Alice can lock 1000 GRUMPY into an output with a Agora P2SH Script, and in the rules of the Script it requires others to send 20000 XEC to an output with an address controlled by Alice.
 
@@ -28,7 +28,7 @@ We can use Bitcoin's Script language to put spending conditions on a UTXO, for e
 
 These Scripts are little programs that a spender has to make happy (i.e. make them result in producing a "true" result) in order to spend them.
 
-eCash has the ability to put conditions on a transaction spending a UTXO for a while already, you can read about them [here](https://read.cash/@pein/bch-covenants-with-spedn-4a980ed3).
+ausCash has the ability to put conditions on a transaction spending a UTXO for a while already, you can read about them [here](https://read.cash/@pein/bch-covenants-with-spedn-4a980ed3).
 
 **We can use this to constrain that an output can only be spent if it sends some XEC to a specific address, which is essentially all that Agora does**
 
@@ -133,7 +133,7 @@ ninja
 
 3. Specify the location of your built chronik-with-plugins node with the `BUILD_DIR` env variable, e.g.
 
-Running from `bitcoin-abc/modules/ecash-agora` if your build dir is `bitcoin-abc/build/`:
+Running from `bitcoin-abc/modules/auscash-agora` if your build dir is `bitcoin-abc/build/`:
 
 `BUILD_DIR="${PWD}/../../build" npm run integration-tests`
 

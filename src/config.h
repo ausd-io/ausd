@@ -23,7 +23,7 @@ public:
     virtual void SetChainParams(const CChainParams chainParamsIn) = 0;
     virtual const CChainParams &GetChainParams() const = 0;
     virtual void SetCashAddrEncoding(bool) = 0;
-    virtual bool UseCashAddrEncoding() const = 0;
+    virtual bool UsausCashAddrEncoding() const = 0;
 
     Config() = default;
     Config(const Config &) = delete;
@@ -38,10 +38,10 @@ public:
     void SetChainParams(const CChainParams chainParamsIn) override;
     const CChainParams &GetChainParams() const override;
     void SetCashAddrEncoding(bool) override;
-    bool UseCashAddrEncoding() const override;
+    bool UsausCashAddrEncoding() const override;
 
 private:
-    bool useCashAddr;
+    bool usausCashAddr;
 
     /** The largest block size this node will accept. */
     uint64_t nMaxBlockSize;

@@ -4,7 +4,7 @@
 
 /**
  * getWallet.ts
- * Generate a 12-word seed for an eCash wallet
+ * Generate a 12-word seed for an ausCash wallet
  *
  * Generate a new 12-word seed and wallet
  * ts-node scripts/getWallet.ts

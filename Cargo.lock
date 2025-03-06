@@ -623,11 +623,11 @@ dependencies = [
 ]
 
 [[package]]
-name = "ecash-lib-wasm"
+name = "auscash-lib-wasm"
 version = "0.1.0"
 dependencies = [
  "abc-rust-lint",
- "ecash-secp256k1",
+ "auscash-secp256k1",
  "ripemd",
  "sha2",
  "thiserror",
@@ -635,12 +635,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "ecash-secp256k1"
+name = "auscash-secp256k1"
 version = "0.30.0"
 dependencies = [
  "bincode",
  "bitcoin_hashes",
- "ecash-secp256k1-sys",
+ "auscash-secp256k1-sys",
  "getrandom",
  "hex_lit",
  "rand 0.8.5",
@@ -652,7 +652,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "ecash-secp256k1-sys"
+name = "auscash-secp256k1-sys"
 version = "0.10.0"
 dependencies = [
  "cc",

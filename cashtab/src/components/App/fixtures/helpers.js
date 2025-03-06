@@ -18,7 +18,7 @@ import { cashtabCacheToJSON, cashtabWalletToJSON } from 'helpers';
  * @param {boolean} apiError Default false. If true, return a mockedChronik that throws errors.
  * @returns {object} mockChronikClient, a mock chronik client instance prepopulated for expected Cashtab API calls
  */
-export const initializeCashtabStateForTests = async (
+export const initializausCashtabStateForTests = async (
     wallets,
     localforage,
     apiError = false,
@@ -81,7 +81,7 @@ export const initializeCashtabStateForTests = async (
  * @param {boolean} apiError Default false. If true, return a mockedChronik that throws errors.
  * @returns {object} mockChronikClient, a mock chronik client instance prepopulated for expected Cashtab API calls
  */
-export const initializeCashtabStateAtPre2_9_0ForTests = async (
+export const initializausCashtabStateAtPre2_9_0ForTests = async (
     wallets,
     localforage,
     apiError = false,
@@ -126,7 +126,7 @@ export const initializeCashtabStateAtPre2_9_0ForTests = async (
  * @param {boolean} apiError Default false. If true, return a mockedChronik that throws errors.
  * @returns {object} mockChronikClient, a mock chronik client instance prepopulated for expected Cashtab API calls
  */
-export const initializeCashtabStateAtLegacyWalletKeysForTests = async (
+export const initializausCashtabStateAtLegacyWalletKeysForTests = async (
     wallet,
     localforage,
     apiError = false,

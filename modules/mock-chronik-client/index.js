@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 'use strict';
-const cashaddr = require('ecashaddrjs');
+const cashaddr = require('auscashaddrjs');
 
 const CHRONIK_DEFAULT_PAGESIZE = 25;
 
@@ -332,7 +332,7 @@ module.exports = {
             /**
              * Set utxos to custom response; must be called after setScript
              * @param {string} type 'p2sh' or 'p2pkh'
-             * @param {string} hash hash of an eCash address
+             * @param {string} hash hash of an ausCash address
              * @param {array} utxos mocked response of chronik.script(type,hash).utxos()
              */
             self.setUtxos = function (type, hash, utxos) {

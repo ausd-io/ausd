@@ -1,7 +1,7 @@
 {
-    "name": "ecash-agora",
+    "name": "auscash-agora",
     "version": "0.1.1",
-    "description": "Library for interacting with the eCash Agora protocol",
+    "description": "Library for interacting with the ausCash Agora protocol",
     "main": "./dist/index.js",
     "scripts": {
         "build": "tsc && tsc -p ./tsconfig.build.json",
@@ -13,10 +13,10 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Bitcoin-ABC/bitcoin-abc.git",
-        "directory": "modules/ecash-agora"
+        "directory": "modules/auscash-agora"
     },
     "keywords": [
-        "ecash",
+        "auscash",
         "xec",
         "bitcoin"
     ],
@@ -47,6 +47,6 @@
     },
     "dependencies": {
         "chronik-client": "file:../chronik-client",
-        "ecash-lib": "file:../ecash-lib"
+        "auscash-lib": "file:../auscash-lib"
     }
 }

@@ -19,7 +19,7 @@ const TX_OUTPUT_PUBKEYHASH = 25;
 const OP_RETURN_MAX_SIZE =
     '6a04007461624cd75f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f5f5f5f5f5f5f31305f5f323135';
 
-describe('ecash-coinselect byteCount.js functions', async function () {
+describe('auscash-coinselect byteCount.js functions', async function () {
     it('inputBytes() returns expected estimate for a utxo without script defined', function () {
         const utxo = { value: 1000 };
         assert.strictEqual(

@@ -68,7 +68,7 @@ import {
     toHex,
     fromHex,
     Ecc,
-} from 'ecash-lib';
+} from 'auscash-lib';
 import appConfig from 'config/app';
 import { toast } from 'react-toastify';
 import TokenIcon from 'components/Etokens/TokenIcon';
@@ -76,7 +76,7 @@ import { getAgoraPartialAcceptTokenQtyError } from 'validation';
 import { Alert, Info } from 'components/Common/Atoms';
 import { CashtabCachedTokenInfo } from 'config/CashtabCache';
 import CashtabSettings from 'config/CashtabSettings';
-import { Agora, AgoraOffer, AgoraPartial } from 'ecash-agora';
+import { Agora, AgoraOffer, AgoraPartial } from 'auscash-agora';
 import { ChronikClient } from 'chronik-client';
 
 export interface PartialOffer extends AgoraOffer {
@@ -165,7 +165,7 @@ const OrderBook: React.FC<OrderBookProps> = ({
             }
             const { sk, hash } = pathInfo;
 
-            // Convert from Cashtab utxo to signed ecash-lib input
+            // Convert from Cashtab utxo to signed auscash-lib input
             fuelInputs.push({
                 input: {
                     prevOut: {
@@ -287,7 +287,7 @@ const OrderBook: React.FC<OrderBookProps> = ({
             }
             const { sk, hash } = pathInfo;
 
-            // Sign and prep utxos for ecash-lib inputs
+            // Sign and prep utxos for auscash-lib inputs
             signedFuelInputs.push({
                 input: {
                     prevOut: {

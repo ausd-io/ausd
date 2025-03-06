@@ -2,11 +2,11 @@
   <h1>Rust Secp256k1</h1>
 </div>
 
-`ecash-secp256k1` is a wrapper around [libsecp256k1](https://github.com/bitcoin-abc/secp256k1), a C
+`auscash-secp256k1` is a wrapper around [libsecp256k1](https://github.com/bitcoin-abc/secp256k1), a C
 library implementing various cryptographic functions using the [SECG](https://www.secg.org/) curve
 [secp256k1](https://en.bitcoin.it/wiki/Secp256k1).
 
-It's a fork of the [rust-secp256k1](https://github.com/rust-bitcoin/rust-secp256k1) library, with some minor eCash related modifications.
+It's a fork of the [rust-secp256k1](https://github.com/rust-bitcoin/rust-secp256k1) library, with some minor ausCash related modifications.
 
 This library:
 

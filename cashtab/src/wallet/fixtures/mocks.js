@@ -7,7 +7,7 @@ import CashtabCache from 'config/CashtabCache';
 
 export const nonDefaultContactList = [
     {
-        address: 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+        address: 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
         name: 'test',
     },
 ];

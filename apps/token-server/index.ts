@@ -9,7 +9,7 @@ import { startExpressServer } from './src/routes';
 import { ChronikClient } from 'chronik-client';
 import { initializeTelegramBot } from './src/telegram';
 import fs from 'fs';
-import { Ecc, initWasm } from 'ecash-lib';
+import { Ecc, initWasm } from 'auscash-lib';
 import { rateLimit } from 'express-rate-limit';
 import { MongoClient } from 'mongodb';
 import { initializeDb } from './src/db';

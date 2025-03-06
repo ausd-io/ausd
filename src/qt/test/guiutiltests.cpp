@@ -16,12 +16,12 @@ namespace {
 class GUIUtilTestConfig : public DummyConfig {
 public:
     GUIUtilTestConfig()
-        : DummyConfig(CBaseChainParams::MAIN), useCashAddr(true) {}
-    void SetCashAddrEncoding(bool b) override { useCashAddr = b; }
-    bool UseCashAddrEncoding() const override { return useCashAddr; }
+        : DummyConfig(CBaseChainParams::MAIN), usausCashAddr(true) {}
+    void SetCashAddrEncoding(bool b) override { usausCashAddr = b; }
+    bool UsausCashAddrEncoding() const override { return usausCashAddr; }
 
 private:
-    bool useCashAddr;
+    bool usausCashAddr;
 };
 
 } // namespace
@@ -45,7 +45,7 @@ void GUIUtilTests::toCurrentEncodingTest() {
     QVERIFY(GUIUtil::convertToCashAddr(params, "garbage") == "garbage");
 
     QString cashaddr_pubkey =
-        "ecash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2";
+        "auscash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2";
 
     QString base58_pubkey = "DFxLFMAJWaNYA7TVTUstzPMFRSevAwTSLq";
 

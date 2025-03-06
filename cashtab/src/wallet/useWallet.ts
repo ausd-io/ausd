@@ -35,7 +35,7 @@ import {
     StoredCashtabWallet,
 } from 'helpers';
 import {
-    createCashtabWallet,
+    creatausCashtabWallet,
     getLegacyPaths,
     getBalanceSats,
     getHashes,
@@ -56,8 +56,8 @@ import {
     WsMsgClient,
     MsgTxClient,
 } from 'chronik-client';
-import { Agora } from 'ecash-agora';
-import { Ecc } from 'ecash-lib';
+import { Agora } from 'auscash-agora';
+import { Ecc } from 'auscash-lib';
 import CashtabCache from 'config/CashtabCache';
 import { ToastIcon } from 'react-toastify/dist/types';
 
@@ -128,7 +128,7 @@ const useWallet = (chronik: ChronikClient, agora: Agora, ecc: Ecc) => {
             );
 
             // Update cashtabCache.tokens in state and localforage
-            updateCashtabState('cashtabCache', {
+            updatausCashtabState('cashtabCache', {
                 ...cashtabState.cashtabCache,
                 tokens: cashtabState.cashtabCache.tokens,
             });
@@ -145,7 +145,7 @@ const useWallet = (chronik: ChronikClient, agora: Agora, ecc: Ecc) => {
             activeWallet.state = newState;
 
             // Update only the active wallet, wallets[0], in state
-            updateCashtabState('wallets', [
+            updatausCashtabState('wallets', [
                 activeWallet,
                 ...cashtabState.wallets.slice(1),
             ]);
@@ -170,7 +170,7 @@ const useWallet = (chronik: ChronikClient, agora: Agora, ecc: Ecc) => {
      * @param string
      * @param value what is being stored at this key
      */
-    const updateCashtabState = async (
+    const updatausCashtabState = async (
         key: string,
         value:
             | CashtabWallet[]
@@ -220,7 +220,7 @@ const useWallet = (chronik: ChronikClient, agora: Agora, ecc: Ecc) => {
      *
      * While the app is running, we use cashtabState as the source of truth
      *
-     * We save to localforage on state changes in updateCashtabState
+     * We save to localforage on state changes in updatausCashtabState
      * so that these persist if the user navigates away from Cashtab     *
      */
     const loadCashtabState = async () => {
@@ -239,7 +239,7 @@ const useWallet = (chronik: ChronikClient, agora: Agora, ecc: Ecc) => {
                 // We do not call a function to migrate contactList as no other migration is expected
                 contactList = [];
                 // Update localforage on app load only if existing values are in an obsolete format
-                updateCashtabState(
+                updatausCashtabState(
                     'contactList',
                     contactList as CashtabContact[],
                 );
@@ -260,7 +260,7 @@ const useWallet = (chronik: ChronikClient, agora: Agora, ecc: Ecc) => {
                     settings as unknown as CashtabSettings,
                 );
                 // Update localforage on app load only if existing values are in an obsolete format
-                updateCashtabState(
+                updatausCashtabState(
                     'settings',
                     settings as unknown as CashtabSettings,
                 );
@@ -286,7 +286,7 @@ const useWallet = (chronik: ChronikClient, agora: Agora, ecc: Ecc) => {
                 // If a cashtabCache object is present but invalid, nuke it and start again
                 cashtabCache = cashtabState.cashtabCache;
                 // Update localforage on app load only if existing values are in an obsolete format
-                updateCashtabState('cashtabCache', cashtabCache);
+                updatausCashtabState('cashtabCache', cashtabCache);
             }
 
             // Set cashtabState cashtabCache to valid localforage or migrated settings
@@ -346,7 +346,7 @@ const useWallet = (chronik: ChronikClient, agora: Agora, ecc: Ecc) => {
             const extraPathsToMigrate = getLegacyPaths(storedWallet);
 
             // If wallet is invalid, rebuild to latest Cashtab schema
-            let newWallet = await createCashtabWallet(
+            let newWallet = await creatausCashtabWallet(
                 ecc,
                 storedWallet.mnemonic,
                 extraPathsToMigrate,
@@ -378,7 +378,7 @@ const useWallet = (chronik: ChronikClient, agora: Agora, ecc: Ecc) => {
                                 getLegacyPaths(savedWallet);
                             // Recreate this wallet at latest format from mnemonic
 
-                            const newSavedWallet = await createCashtabWallet(
+                            const newSavedWallet = await creatausCashtabWallet(
                                 ecc,
                                 savedWallet.mnemonic,
                                 extraPathsToMigrate,
@@ -416,7 +416,7 @@ const useWallet = (chronik: ChronikClient, agora: Agora, ecc: Ecc) => {
                 // Set cashtabState wallets to migrated wallet + savedWallets
                 cashtabState.wallets = wallets;
 
-                // We do not updateCashtabState('wallets', wallets) here
+                // We do not updatausCashtabState('wallets', wallets) here
                 // because it will happen in the update routine as soon as
                 // the active wallet is populated
             }
@@ -450,7 +450,7 @@ const useWallet = (chronik: ChronikClient, agora: Agora, ecc: Ecc) => {
                     cashtabState.wallets =
                         loadedPossiblyLegacyWallets as CashtabWallet[];
 
-                    // We do not updateCashtabState('wallets', wallets) here
+                    // We do not updatausCashtabState('wallets', wallets) here
                     // because it will happen in the update routine as soon as
                     // the active wallet is populated
                 } else {
@@ -467,7 +467,7 @@ const useWallet = (chronik: ChronikClient, agora: Agora, ecc: Ecc) => {
 
                         // Recreate this wallet at latest format from mnemonic
                         const migratedUnnamedActiveWallet =
-                            await createCashtabWallet(
+                            await creatausCashtabWallet(
                                 ecc,
                                 activeWallet.mnemonic,
                                 extraPathsToMigrate,
@@ -499,7 +499,7 @@ const useWallet = (chronik: ChronikClient, agora: Agora, ecc: Ecc) => {
                                     // Recreate this wallet at latest format from mnemonic
 
                                     const migratedWallet =
-                                        await createCashtabWallet(
+                                        await creatausCashtabWallet(
                                             ecc,
                                             loadedPossiblyLegacyWallet.mnemonic,
                                             extraPathsToMigrate,
@@ -1142,7 +1142,7 @@ const useWallet = (chronik: ChronikClient, agora: Agora, ecc: Ecc) => {
         setAliasServerError,
         aliasPrices,
         setAliasPrices,
-        updateCashtabState,
+        updatausCashtabState,
         processChronikWsMsg,
         cashtabState,
     };

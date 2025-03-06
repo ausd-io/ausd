@@ -117,7 +117,7 @@ describe('alias-server app.js', async function () {
         // Set pending registrations for test
         const testPendingAlias = {
             alias: 'test',
-            address: 'ecash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
+            address: 'auscash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
             txid: '218a1e058ed0fda76573eabf43ad3ded7e7192e42621893a60aaa152ba7f66fe',
         };
         // Add a clone so you can still check against pendingAliases
@@ -136,7 +136,7 @@ describe('alias-server app.js', async function () {
                 pending: [
                     {
                         address:
-                            'ecash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
+                            'auscash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
                         txid: '218a1e058ed0fda76573eabf43ad3ded7e7192e42621893a60aaa152ba7f66fe',
                     },
                 ],
@@ -169,7 +169,7 @@ describe('alias-server app.js', async function () {
             });
     });
     it('/address/:address returns an empty object of expected shape if there are no registered aliases for the given address', function () {
-        const validAddress = 'ecash:qphpmfj0qn7znklqhrfn5dq7qh36l3vxav9up3h67g';
+        const validAddress = 'auscash:qphpmfj0qn7znklqhrfn5dq7qh36l3vxav9up3h67g';
         return request(app)
             .get(`/address/${validAddress}`)
             .expect(200)
@@ -210,7 +210,7 @@ describe('alias-server app.js', async function () {
         await addOneAliasToDb(testDb, newValidAliases[0]);
         const { address } = newValidAliases[0];
         return request(app)
-            .get(`/address/${address.slice('ecash:'.length)}`)
+            .get(`/address/${address.slice('auscash:'.length)}`)
             .expect(200)
             .expect('Content-Type', /json/)
             .expect({
@@ -267,7 +267,7 @@ describe('alias-server app.js', async function () {
         );
         const expectedResult = { registered, pending: [] };
         return request(app)
-            .get(`/address/${address.slice('ecash:'.length)}`)
+            .get(`/address/${address.slice('auscash:'.length)}`)
             .expect(200)
             .expect('Content-Type', /json/)
             .expect(expectedResult);
@@ -310,12 +310,12 @@ describe('alias-server app.js', async function () {
         const pending = [pendingAlias];
         const expectedResult = { registered, pending };
         return request(app)
-            .get(`/address/${address.slice('ecash:'.length)}`)
+            .get(`/address/${address.slice('auscash:'.length)}`)
             .expect(200)
             .expect('Content-Type', /json/)
             .expect(expectedResult);
     });
-    it('/address/:address returns an error on valid address that is not ecash: prefixed', function () {
+    it('/address/:address returns an error on valid address that is not auscash: prefixed', function () {
         const etokenAddress =
             'etoken:qphpmfj0qn7znklqhrfn5dq7qh36l3vxavtzgnpa6l';
         return request(app)
@@ -323,21 +323,21 @@ describe('alias-server app.js', async function () {
             .expect(500)
             .expect('Content-Type', /json/)
             .expect({
-                error: `Error fetching /address/${etokenAddress}: Input must be a valid eCash address`,
+                error: `Error fetching /address/${etokenAddress}: Input must be a valid ausCash address`,
             });
     });
-    it('/address/:address returns an error on a string that is not a valid ecash address', function () {
+    it('/address/:address returns an error on a string that is not a valid auscash address', function () {
         const invalidAddress = 'justSomeString';
         return request(app)
             .get(`/address/${invalidAddress}`)
             .expect(500)
             .expect('Content-Type', /json/)
             .expect({
-                error: `Error fetching /address/${invalidAddress}: Input must be a valid eCash address`,
+                error: `Error fetching /address/${invalidAddress}: Input must be a valid ausCash address`,
             });
     });
     it('/address/:address returns an error on database error', function () {
-        const validAddress = 'ecash:qphpmfj0qn7znklqhrfn5dq7qh36l3vxav9up3h67g';
+        const validAddress = 'auscash:qphpmfj0qn7znklqhrfn5dq7qh36l3vxav9up3h67g';
         return request(dbErrorApp)
             .get(`/address/${validAddress}`)
             .expect(500)

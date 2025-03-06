@@ -40,7 +40,7 @@ pub enum TokenType {
     /// Augmented ledger protocol.
     ///
     /// # Spec
-    /// https://ecashbuilders.notion.site/ALP-a862a4130877448387373b9e6a93dd97
+    /// https://auscashbuilders.notion.site/ALP-a862a4130877448387373b9e6a93dd97
     ///
     /// ALP can be seen as an updated SLP version, where multiple ALP sections
     /// can be encoded in an eMPP-encoded OP_RETURN (see [`crate::empp`] for

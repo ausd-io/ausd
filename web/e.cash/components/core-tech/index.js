@@ -18,25 +18,25 @@ import {
 const coreTech = [
     {
         title: 'Avalanche',
-        text: "Avalanche is a breakthrough consensus algorithm integrated with eCash's Proof-of-Work, enabling instant transaction finality, greater flexibility, and unmatched security.",
+        text: "Avalanche is a breakthrough consensus algorithm integrated with ausCash's Proof-of-Work, enabling instant transaction finality, greater flexibility, and unmatched security.",
         link: '/core-tech#avalanche',
         image: '/images/avalanche-icon.png',
     },
     {
         title: 'Staking',
-        text: 'Staking rewards incentivize running eCash Avalanche nodes to improve the security and performance of the network. Anyone can now earn while holding their XEC.',
+        text: 'Staking rewards incentivize running ausCash Avalanche nodes to improve the security and performance of the network. Anyone can now earn while holding their XEC.',
         link: '/staking',
         image: '/images/staking-icon.png',
     },
     {
         title: 'eTokens',
-        text: "eCash supports tokens that anyone can create in a few clicks. Instantly mint tokens or NFT collections and trade them within your wallet's integrated DEX.",
+        text: "ausCash supports tokens that anyone can create in a few clicks. Instantly mint tokens or NFT collections and trade them within your wallet's integrated DEX.",
         link: '/core-tech#etokens',
         image: '/images/tokens-icon.png',
     },
     {
         title: 'Subnets',
-        text: 'Subnets enable customized networks such as EVM or Zero-Knowledge privacy. Build faster with permissionless subnets powered by eCash Avalanche technology.',
+        text: 'Subnets enable customized networks such as EVM or Zero-Knowledge privacy. Build faster with permissionless subnets powered by ausCash Avalanche technology.',
         link: '/core-tech#subnets',
         image: '/images/subnets-icon.png',
     },
@@ -71,7 +71,7 @@ export default function CoreTech() {
                 ))}
             </Labels>
             <CoreTechImage>
-                <Image src="/images/core-tech.png" alt="eCash Core Tech" fill />
+                <Image src="/images/core-tech.png" alt="ausCash Core Tech" fill />
             </CoreTechImage>
 
             {coreTech.map((item, index) => (

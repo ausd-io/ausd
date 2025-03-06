@@ -12,7 +12,7 @@ const TxHistory = ({
     fiatPrice,
     fiatCurrency,
     cashtabState,
-    updateCashtabState,
+    updatausCashtabState,
     chaintipBlockheight,
     userLocale = 'en-US',
 }) => {
@@ -26,7 +26,7 @@ const TxHistory = ({
                     fiatPrice={fiatPrice}
                     fiatCurrency={fiatCurrency}
                     cashtabState={cashtabState}
-                    updateCashtabState={updateCashtabState}
+                    updatausCashtabState={updatausCashtabState}
                     chaintipBlockheight={chaintipBlockheight}
                     userLocale={userLocale}
                 />
@@ -59,7 +59,7 @@ TxHistory.propTypes = {
             tokens: PropTypes.object.isRequired,
         }),
     }),
-    updateCashtabState: PropTypes.func,
+    updatausCashtabState: PropTypes.func,
     userLocale: PropTypes.string,
     chaintipBlockheight: PropTypes.number,
 };

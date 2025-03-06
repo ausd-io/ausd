@@ -1,9 +1,9 @@
 # Multi-stage
-# 1) rust image for ecash-lib
+# 1) rust image for auscash-lib
 # 2) Node image for building frontend assets
 # 3) nginx stage to serve frontend assets
 
-# Stage 1 - rust machine for building ecash-lib-wasm
+# Stage 1 - rust machine for building auscash-lib-wasm
 FROM rust:1.76.0 AS WasmBuilder
 
 RUN apt-get update \
@@ -24,29 +24,29 @@ COPY chronik/ .
 WORKDIR /app/src/secp256k1
 COPY src/secp256k1/ .
 
-# Copy ecash-secp256k1, ecash-lib and ecash-lib-wasm files to same directory structure as monorepo
-WORKDIR /app/modules/ecash-secp256k1
-COPY modules/ecash-secp256k1 .
-WORKDIR /app/modules/ecash-lib
-COPY modules/ecash-lib .
-WORKDIR /app/modules/ecash-lib-wasm
-COPY modules/ecash-lib-wasm .
+# Copy auscash-secp256k1, auscash-lib and auscash-lib-wasm files to same directory structure as monorepo
+WORKDIR /app/modules/auscash-secp256k1
+COPY modules/auscash-secp256k1 .
+WORKDIR /app/modules/auscash-lib
+COPY modules/auscash-lib .
+WORKDIR /app/modules/auscash-lib-wasm
+COPY modules/auscash-lib-wasm .
 
-# Build web assembly for ecash-lib
+# Build web assembly for auscash-lib
 RUN CC=clang ./build-wasm.sh
 
 # Stage 2
 FROM node:20-bookworm-slim AS builder
 
-# Copy static assets from WasmBuilder stage (ecash-lib-wasm and ecash-lib, with wasm built in place)
+# Copy static assets from WasmBuilder stage (auscash-lib-wasm and auscash-lib, with wasm built in place)
 WORKDIR /app/modules
 COPY --from=WasmBuilder /app/modules .
 
 # Build all local Cashtab dependencies
 
-# ecashaddrjs
-WORKDIR /app/modules/ecashaddrjs
-COPY modules/ecashaddrjs/ .
+# auscashaddrjs
+WORKDIR /app/modules/auscashaddrjs
+COPY modules/auscashaddrjs/ .
 RUN npm ci
 RUN npm run build
 
@@ -56,20 +56,20 @@ COPY modules/chronik-client/ .
 RUN npm ci
 RUN npm run build
 
-# ecash-lib
-WORKDIR /app/modules/ecash-lib
+# auscash-lib
+WORKDIR /app/modules/auscash-lib
 RUN npm ci
 RUN npm run build
 
-# ecash-agora
-WORKDIR /app/modules/ecash-agora
-COPY modules/ecash-agora/ .
+# auscash-agora
+WORKDIR /app/modules/auscash-agora
+COPY modules/auscash-agora/ .
 RUN npm ci
 RUN npm run build
 
-# ecash-script
-WORKDIR /app/modules/ecash-script
-COPY modules/ecash-script/ .
+# auscash-script
+WORKDIR /app/modules/auscash-script
+COPY modules/auscash-script/ .
 RUN npm ci
 
 # Now that local dependencies are ready, build cashtab

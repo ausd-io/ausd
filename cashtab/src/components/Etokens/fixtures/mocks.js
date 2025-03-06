@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-import { fromHex } from 'ecash-lib';
+import { fromHex } from 'auscash-lib';
 
 /**
  * Etokens/fixtures/mocks.js
@@ -505,7 +505,7 @@ export const tokenTestWallet = {
                         '00038d45d53df800',
                     ],
                     recipients: [
-                        'ecash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0',
+                        'auscash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0',
                     ],
                 },
             },
@@ -898,8 +898,8 @@ export const tokenTestWallet = {
                         '534c5032000453454e4449884c726ebb974b9b8345ee12b44cc48445562b970f776e307d16547ccdd77c0340420f000000dcadeb020000640000000000',
                     ],
                     recipients: [
-                        'ecash:qqnzycgzwzfa7yq97ag3wnv867q2m74mhufqefypm0',
-                        'ecash:qr0w2r6hvd3rwlwj7qc520qtkzgqnt90sypk26yd2u',
+                        'auscash:qqnzycgzwzfa7yq97ag3wnv867q2m74mhufqefypm0',
+                        'auscash:qr0w2r6hvd3rwlwj7qc520qtkzgqnt90sypk26yd2u',
                     ],
                 },
             },
@@ -1113,7 +1113,7 @@ export const tokenTestWallet = {
                     satoshisSent: 1000000,
                     stackArray: [],
                     recipients: [
-                        'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                        'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     ],
                 },
             },
@@ -1124,7 +1124,7 @@ export const tokenTestWallet = {
         [
             1899,
             {
-                address: 'ecash:qqq9f9z3uhpzkxrgdjkd7dxuuey7tmpmugpmnw0kue',
+                address: 'auscash:qqq9f9z3uhpzkxrgdjkd7dxuuey7tmpmugpmnw0kue',
                 hash: '00549451e5c22b18686cacdf34dce649e5ec3be2',
                 // Same as Transaction Fixtures in App/fixtures/mocks
                 wif: 'KywWPgaLDwvW1tWUtUvs13jgqaaWMoNANLVYoKcK9Ddbpnch7Cmw',
@@ -4392,7 +4392,7 @@ export const EtokensWalletMock = {
                         '000000000098bd90',
                     ],
                     recipients: [
-                        'ecash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l',
+                        'auscash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l',
                     ],
                 },
             },
@@ -4600,7 +4600,7 @@ export const EtokensWalletMock = {
                     satoshisSent: 14900876,
                     stackArray: [],
                     recipients: [
-                        'ecash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l',
+                        'auscash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l',
                     ],
                 },
             },
@@ -4768,7 +4768,7 @@ export const EtokensWalletMock = {
                         '0000000000000064',
                     ],
                     recipients: [
-                        'ecash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l',
+                        'auscash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l',
                     ],
                 },
             },
@@ -4890,7 +4890,7 @@ export const EtokensWalletMock = {
                         '0000000000002710',
                     ],
                     recipients: [
-                        'ecash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l',
+                        'auscash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l',
                     ],
                 },
             },
@@ -5032,7 +5032,7 @@ export const EtokensWalletMock = {
                     satoshisSent: 100000,
                     stackArray: [],
                     recipients: [
-                        'ecash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l',
+                        'auscash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l',
                     ],
                 },
             },
@@ -5176,7 +5176,7 @@ export const EtokensWalletMock = {
                         '0000000000986f70',
                     ],
                     recipients: [
-                        'ecash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l',
+                        'auscash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l',
                     ],
                 },
             },
@@ -5230,7 +5230,7 @@ export const EtokensWalletMock = {
                     satoshisSent: 3500,
                     stackArray: [],
                     recipients: [
-                        'ecash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0',
+                        'auscash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0',
                     ],
                 },
             },
@@ -5284,7 +5284,7 @@ export const EtokensWalletMock = {
                     satoshisSent: 2200,
                     stackArray: [],
                     recipients: [
-                        'ecash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0',
+                        'auscash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0',
                     ],
                 },
             },
@@ -5338,7 +5338,7 @@ export const EtokensWalletMock = {
                     satoshisSent: 3300,
                     stackArray: [],
                     recipients: [
-                        'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                        'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     ],
                 },
             },
@@ -5400,7 +5400,7 @@ export const EtokensWalletMock = {
                     satoshisSent: 546,
                     stackArray: ['00746162', '66696e616c697a696e67'],
                     recipients: [
-                        'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                        'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     ],
                 },
             },
@@ -5458,7 +5458,7 @@ export const EtokensWalletMock = {
                     satoshisSent: 3300,
                     stackArray: [],
                     recipients: [
-                        'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                        'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     ],
                 },
             },
@@ -5524,7 +5524,7 @@ export const EtokensWalletMock = {
                         '74657374696e67206176616c616e6368652066696e616c697a656420747820686973746f7279',
                     ],
                     recipients: [
-                        'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                        'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     ],
                 },
             },
@@ -5606,7 +5606,7 @@ export const EtokensWalletMock = {
                     satoshisSent: 3300,
                     stackArray: [],
                     recipients: [
-                        'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                        'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     ],
                 },
             },
@@ -5664,7 +5664,7 @@ export const EtokensWalletMock = {
                     satoshisSent: 2200,
                     stackArray: [],
                     recipients: [
-                        'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                        'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     ],
                 },
             },
@@ -5734,7 +5734,7 @@ export const EtokensWalletMock = {
                     satoshisSent: 546,
                     stackArray: [],
                     recipients: [
-                        'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                        'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     ],
                 },
             },
@@ -5885,11 +5885,11 @@ export const EtokensWalletMock = {
                         '50d8292c6255cda7afc6c8566fed3cf42a2794e9619740fe8f4c95431271410e',
                     ],
                     recipients: [
-                        'ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr',
-                        'ecash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6',
-                        'ecash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly',
-                        'ecash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m',
-                        'ecash:qrhgew49vsk3chg679grahdx54gyf6qsdcurky8xms',
+                        'auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr',
+                        'auscash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6',
+                        'auscash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly',
+                        'auscash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m',
+                        'auscash:qrhgew49vsk3chg679grahdx54gyf6qsdcurky8xms',
                     ],
                 },
             },
@@ -6055,7 +6055,7 @@ export const EtokensWalletMock = {
                         '0000000000000003',
                     ],
                     recipients: [
-                        'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                        'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     ],
                 },
             },
@@ -6214,7 +6214,7 @@ export const EtokensWalletMock = {
         [
             1899,
             {
-                address: 'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                address: 'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                 hash: '95e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d',
                 wif: '',
                 sk: new Uint8Array(),
@@ -7367,7 +7367,7 @@ export const EtokensStoredCashtabCache = {
                 },
                 genesisInfo: {
                     tokenTicker: 'TRIB',
-                    tokenName: 'eCash Herald',
+                    tokenName: 'ausCash Herald',
                     url: 'https://cashtab.com/',
                     decimals: 0,
                     hash: '',

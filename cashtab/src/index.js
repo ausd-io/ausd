@@ -10,10 +10,10 @@ import { HashRouter as Router } from 'react-router-dom';
 import GA from 'components/Common/GoogleAnalytics';
 import { ChronikClient } from 'chronik-client';
 import { chronik as chronikConfig } from 'config/chronik';
-import { Ecc, initWasm } from 'ecash-lib';
-import { Agora } from 'ecash-agora';
+import { Ecc, initWasm } from 'auscash-lib';
+import { Agora } from 'auscash-agora';
 
-// Initialize wasm (activate ecash-lib) at app startup
+// Initialize wasm (activate auscash-lib) at app startup
 initWasm()
     .then(() => {
         // Initialize Ecc (used for signing txs) at app startup

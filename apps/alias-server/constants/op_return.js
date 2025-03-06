@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 /**
- * Selection of OP codes for ecash
+ * Selection of OP codes for auscash
  * Limited to those used by the consume function in script.js
  * in parsing OP_RETURN msgs
  *

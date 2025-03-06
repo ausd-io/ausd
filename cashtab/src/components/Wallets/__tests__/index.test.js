@@ -15,7 +15,7 @@ import localforage from 'localforage';
 import { when } from 'jest-when';
 import appConfig from 'config/app';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     prepareMockedChronikCallsForWallet,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
@@ -23,7 +23,7 @@ import { validSavedWallets } from 'components/App/fixtures/mocks';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
 import * as bip39 from 'bip39';
 import { cashtabWalletsFromJSON } from 'helpers';
-import { initWasm, Ecc } from 'ecash-lib';
+import { initWasm, Ecc } from 'auscash-lib';
 
 describe('<Wallets />', () => {
     let ecc;
@@ -43,7 +43,7 @@ describe('<Wallets />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -60,7 +60,7 @@ describe('<Wallets />', () => {
     });
     it('We can add a savedWallet as a contact', async () => {
         // localforage defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -116,7 +116,7 @@ describe('<Wallets />', () => {
     });
     it('We can copy the address of a savedWallet to the clipboard', async () => {
         // localforage defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -151,7 +151,7 @@ describe('<Wallets />', () => {
         await waitFor(() => {
             expect(
                 screen.getByText(
-                    `"ecash:qzs4zzxs0gvfrc6e2wqhkmvj4dmmh332cvfpd7yjep" copied to clipboard`,
+                    `"auscash:qzs4zzxs0gvfrc6e2wqhkmvj4dmmh332cvfpd7yjep" copied to clipboard`,
                 ),
             ).toBeInTheDocument();
         });
@@ -163,7 +163,7 @@ describe('<Wallets />', () => {
     });
     it('We can rename the active wallet or a saved wallet, we can add a wallet, we can import a wallet, we can delete a wallet', async () => {
         // localforage defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );

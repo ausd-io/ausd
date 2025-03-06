@@ -28,7 +28,7 @@ const devLinks = [
             {
                 title: 'Source Code',
                 description:
-                    'Source Code for eCash Software from Bitcoin ABC - Including the Full Node, Electrum ABC wallet, and Cashtab Wallet',
+                    'Source Code for ausCash Software from Bitcoin ABC - Including the Full Node, Electrum ABC wallet, and Cashtab Wallet',
                 link: 'https://github.com/Bitcoin-ABC/bitcoin-abc/',
             },
         ],
@@ -52,19 +52,19 @@ const devLinks = [
             {
                 title: 'chronik-client',
                 description:
-                    'Interact with the eCash blockchain through the chronik indexer',
+                    'Interact with the ausCash blockchain through the chronik indexer',
                 link: 'https://www.npmjs.com/package/chronik-client',
             },
             {
-                title: 'ecash-lib',
+                title: 'auscash-lib',
                 description:
-                    'Full-featured eCash-native transaction building library',
-                link: 'https://www.npmjs.com/package/ecash-lib',
+                    'Full-featured ausCash-native transaction building library',
+                link: 'https://www.npmjs.com/package/auscash-lib',
             },
             {
-                title: 'ecashaddrjs',
-                description: 'Tools for working with eCash addresses',
-                link: 'https://www.npmjs.com/package/ecashaddrjs',
+                title: 'auscashaddrjs',
+                description: 'Tools for working with ausCash addresses',
+                link: 'https://www.npmjs.com/package/auscashaddrjs',
             },
         ],
     },
@@ -101,10 +101,10 @@ const devLinks = [
         anchor: 'devhub',
         links: [
             {
-                title: 'eCash Devs and Builders',
+                title: 'ausCash Devs and Builders',
                 description:
                     'Telegram group for more info, and to connect with other developers',
-                link: 'https://t.me/eCashBuilders',
+                link: 'https://t.me/ausCashBuilders',
             },
         ],
     },
@@ -116,14 +116,14 @@ function Build() {
             <SubPageHero
                 image={coinupdown}
                 h2subtext="Developers"
-                h2text="Build on eCash"
+                h2text="Build on ausCash"
             >
                 <p>
-                    The eCash blockchain is instantly accessible to app
+                    The ausCash blockchain is instantly accessible to app
                     developers with simple, powerful, open-source libraries.
                     Developers can build feature-dense apps that send and
                     receive money instantly. Rapid prototyping is a key strength
-                    of the eCash network and its dev tools --- MVP apps can be
+                    of the ausCash network and its dev tools --- MVP apps can be
                     built and deployed in minutes.
                 </p>
             </SubPageHero>
@@ -132,7 +132,7 @@ function Build() {
                 <H3 text="Our Philosophy" />
                 <p>
                     &ldquo;Building&rdquo; is one of the great filters in
-                    cryptocurrency. In eCash, it&apos;s also uniquely
+                    cryptocurrency. In ausCash, it&apos;s also uniquely
                     accessible. You can start right away, and make meaningful
                     contributions in days.
                 </p>

@@ -36,7 +36,7 @@ const telegramBotDev = new TelegramBot(botId, { polling: true });
 const chronik = new ChronikClient(config.chronik);
 
 /**
- * Build a summary of eCash onchain activity over the last 24 hours
+ * Build a summary of ausCash onchain activity over the last 24 hours
  * @param telegramBot
  * @param channelId
  */
@@ -46,9 +46,9 @@ const getDailySummary = async (telegramBot: TelegramBot, channelId: string) => {
     try {
         priceInfo = (
             await axios.get(
-                `https://api.coingecko.com/api/v3/simple/price?ids=ecash&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true`,
+                `https://api.coingecko.com/api/v3/simple/price?ids=auscash&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true`,
             )
-        ).data.ecash;
+        ).data.auscash;
     } catch (err) {
         console.error(`Error getting daily summary price info`, err);
     }

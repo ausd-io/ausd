@@ -3,8 +3,8 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 export const theme = {
-    eCashBlue: '#00ABE7',
-    eCashPurple: '#ff21d0',
+    ausCashBlue: '#00ABE7',
+    ausCashPurple: '#ff21d0',
     darkBlue: '#273498',
     contrast: '#fff',
     panel: '#26415a',
@@ -60,7 +60,7 @@ export const theme = {
             color: '#fff',
         },
         modal: {
-            // Some transparency added to ecashPurple for modal 'later'
+            // Some transparency added to auscashPurple for modal 'later'
             background: '#ff21d080',
         },
         disabled: {

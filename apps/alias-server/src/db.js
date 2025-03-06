@@ -220,7 +220,7 @@ module.exports = {
      * Lookup a list of registered alias objects in the validAliasTxs database by querying an address
      * Useful for checking the aliases registered to an address
      * @param {object} db initialized mongodb instance
-     * @param {string} address a valid ecash address
+     * @param {string} address a valid auscash address
      * @returns {array} [{ address, alias, blockheight, txid}...] or [] if no registered aliases at address
      * @throws {error} if there is an error performing the database lookup
      */

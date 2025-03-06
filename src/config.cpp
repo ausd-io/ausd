@@ -7,7 +7,7 @@
 #include <consensus/consensus.h> // DEFAULT_MAX_BLOCK_SIZE
 
 GlobalConfig::GlobalConfig()
-    : useCashAddr(false), nMaxBlockSize(DEFAULT_MAX_BLOCK_SIZE) {}
+    : usausCashAddr(false), nMaxBlockSize(DEFAULT_MAX_BLOCK_SIZE) {}
 
 bool GlobalConfig::SetMaxBlockSize(uint64_t maxBlockSize) {
     // Do not allow maxBlockSize to be set below historic 1MB limit
@@ -41,8 +41,8 @@ const Config &GetConfig() {
 }
 
 void GlobalConfig::SetCashAddrEncoding(bool c) {
-    useCashAddr = c;
+    usausCashAddr = c;
 }
-bool GlobalConfig::UseCashAddrEncoding() const {
-    return useCashAddr;
+bool GlobalConfig::UsausCashAddrEncoding() const {
+    return usausCashAddr;
 }

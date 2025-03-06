@@ -43,7 +43,7 @@ export class TestRunner {
     }
 
     public static async setup(
-        setupScript: string = 'setup_scripts/ecash-lib_base',
+        setupScript: string = 'setup_scripts/auscash-lib_base',
     ): Promise<TestRunner> {
         const { ChronikClient } = await import('chronik-client');
         const { spawn } = await import('node:child_process');

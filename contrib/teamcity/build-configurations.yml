@@ -56,11 +56,11 @@ templates:
   #    relative to the repository top level (no trailing /).
   #  - DEPENDS_MOCK_CHRONIK_CLIENT: "true" if these tests require
   #    the mock-chronik-client library, otherwise unset
-  #  - DEPENDS_ECASH_LIB_WASM: "true" if these tests require ecash-lib-wasm
+  #  - DEPENDS_AUSCASH_LIB_WASM: "true" if these tests require auscash-lib-wasm
   #    to be built, otherwise unset
-  #  - DEPENDS_ECASH_LIB: "true" if these tests require ecash-lib to be
+  #  - DEPENDS_AUSCASH_LIB: "true" if these tests require auscash-lib to be
   #    built, otherwise unset
-  #  - DEPENDS_ECASH_AGORA: "true" if these tests require ecash-agora to be built,
+  #  - DEPENDS_AUSCASH_AGORA: "true" if these tests require auscash-agora to be built,
   #    otherwise unset
   #  - DEPENDS_CHRONIK_CLIENT: "true" if these tests require chronik-client
   #    to be build, otherwise unset
@@ -78,12 +78,12 @@ templates:
       PROJECT_NAME="$(basename ${JS_PROJECT_ROOT})"
       TEST_SUITE_NAME="$(project_to_suite ${PROJECT_NAME})"
 
-      # Install ecashaddrjs dependencies if this test uses them
-      if [ -z "${DEPENDS_ECASHADDRJS+x}" ] ; then
-        echo "Test does not depend on ecashaddrjs, skipping ecashaddrjs dependencies..."
+      # Install auscashaddrjs dependencies if this test uses them
+      if [ -z "${DEPENDS_AUSCASHADDRJS+x}" ] ; then
+        echo "Test does not depend on auscashaddrjs, skipping auscashaddrjs dependencies..."
       else
-        echo "Test depends on ecashaddrjs. Installing ecashaddrjs dependencies..."
-        pushd "${TOPLEVEL}/modules/ecashaddrjs"
+        echo "Test depends on auscashaddrjs. Installing auscashaddrjs dependencies..."
+        pushd "${TOPLEVEL}/modules/auscashaddrjs"
         npm ci
         npm run build
       fi
@@ -97,12 +97,12 @@ templates:
         npm ci
       fi
 
-      # Build ecash-lib-wasm for ecash-lib's WebAssembly part
-      if [ -z "${DEPENDS_ECASH_LIB_WASM+x}" ] ; then
-        echo "Test does not depend on ecash-lib-wasm, skipping"
+      # Build auscash-lib-wasm for auscash-lib's WebAssembly part
+      if [ -z "${DEPENDS_AUSCASH_LIB_WASM+x}" ] ; then
+        echo "Test does not depend on auscash-lib-wasm, skipping"
       else
-        echo "Test depends on ecash-lib-wasm. Building WebAssembly..."
-        pushd "${TOPLEVEL}/modules/ecash-lib-wasm"
+        echo "Test depends on auscash-lib-wasm. Building WebAssembly..."
+        pushd "${TOPLEVEL}/modules/auscash-lib-wasm"
         ./build-wasm.sh
       fi
 
@@ -114,39 +114,39 @@ templates:
         npm ci
       fi
 
-      if [ -z "${DEPENDS_ECASH_LIB+x}" ] ; then
-        echo "Test does not depend on ecash-lib"
+      if [ -z "${DEPENDS_AUSCASH_LIB+x}" ] ; then
+        echo "Test does not depend on auscash-lib"
       else
-        echo "Test depends on ecash-lib. Building TypeScript..."
-        pushd "${TOPLEVEL}/modules/ecash-lib"
+        echo "Test depends on auscash-lib. Building TypeScript..."
+        pushd "${TOPLEVEL}/modules/auscash-lib"
         npm ci
         npm run build
       fi
 
-      if [ -z "${DEPENDS_ECASH_AGORA+x}" ] ; then
-        echo "Test does not depend on ecash-agora"
+      if [ -z "${DEPENDS_AUSCASH_AGORA+x}" ] ; then
+        echo "Test does not depend on auscash-agora"
       else
-        echo "Test depends on ecash-agora. Building TypeScript..."
-        pushd "${TOPLEVEL}/modules/ecash-agora"
+        echo "Test depends on auscash-agora. Building TypeScript..."
+        pushd "${TOPLEVEL}/modules/auscash-agora"
         npm ci
         npm run build
       fi
 
-      # Install ecash-script dependencies if this test uses them
-      if [ -z "${DEPENDS_ECASH_SCRIPT+x}" ] ; then
-        echo "Test does not depend on ecash-script, skipping ecash-script dependencies..."
+      # Install auscash-script dependencies if this test uses them
+      if [ -z "${DEPENDS_AUSCASH_SCRIPT+x}" ] ; then
+        echo "Test does not depend on auscash-script, skipping auscash-script dependencies..."
       else
-        echo "Test depends on ecash-script. Installing ecash-script dependencies..."
-        pushd "${TOPLEVEL}/modules/ecash-script"
+        echo "Test depends on auscash-script. Installing auscash-script dependencies..."
+        pushd "${TOPLEVEL}/modules/auscash-script"
         npm ci
       fi
 
-      # Install ecash-coinselect dependencies if this test uses them
-      if [ -z "${DEPENDS_ECASH_COINSELECT+x}" ] ; then
-        echo "Test does not depend on ecash-coinselect, skipping ecash-coinselect dependencies..."
+      # Install auscash-coinselect dependencies if this test uses them
+      if [ -z "${DEPENDS_AUSCASH_COINSELECT+x}" ] ; then
+        echo "Test does not depend on auscash-coinselect, skipping auscash-coinselect dependencies..."
       else
-        echo "Test depends on ecash-coinselect. Installing ecash-coinselect dependencies..."
-        pushd "${TOPLEVEL}/modules/ecash-coinselect"
+        echo "Test depends on auscash-coinselect. Installing auscash-coinselect dependencies..."
+        pushd "${TOPLEVEL}/modules/auscash-coinselect"
         npm ci
       fi
 
@@ -211,22 +211,22 @@ templates:
       PROJECT_NAME="$(basename ${JS_PROJECT_ROOT})"
       TEST_SUITE_NAME="$(project_to_suite ${PROJECT_NAME})"
 
-      # Install ecashaddrjs dependencies if this test uses them
-      if [ -z "${DEPENDS_ECASHADDRJS+x}" ] ; then
-        echo "Test does not depend on ecashaddrjs, skipping ecashaddrjs dependencies..."
+      # Install auscashaddrjs dependencies if this test uses them
+      if [ -z "${DEPENDS_AUSCASHADDRJS+x}" ] ; then
+        echo "Test does not depend on auscashaddrjs, skipping auscashaddrjs dependencies..."
       else
-        echo "Test depends on ecashaddrjs. Installing ecashaddrjs dependencies..."
-        pushd "${TOPLEVEL}/modules/ecashaddrjs"
+        echo "Test depends on auscashaddrjs. Installing auscashaddrjs dependencies..."
+        pushd "${TOPLEVEL}/modules/auscashaddrjs"
         npm ci
         npm run build
       fi
 
-      # Build ecash-lib-wasm for ecash-lib's WebAssembly part
-      if [ -z "${DEPENDS_ECASH_LIB_WASM+x}" ] ; then
-        echo "Test does not depend on ecash-lib-wasm, skipping"
+      # Build auscash-lib-wasm for auscash-lib's WebAssembly part
+      if [ -z "${DEPENDS_AUSCASH_LIB_WASM+x}" ] ; then
+        echo "Test does not depend on auscash-lib-wasm, skipping"
       else
-        echo "Test depends on ecash-lib-wasm. Building WebAssembly..."
-        pushd "${TOPLEVEL}/modules/ecash-lib-wasm"
+        echo "Test depends on auscash-lib-wasm. Building WebAssembly..."
+        pushd "${TOPLEVEL}/modules/auscash-lib-wasm"
         ./build-wasm.sh
       fi
 
@@ -238,11 +238,11 @@ templates:
         npm ci
       fi
 
-      if [ -z "${DEPENDS_ECASH_LIB+x}" ] ; then
-        echo "Test does not depend on ecash-lib"
+      if [ -z "${DEPENDS_AUSCASH_LIB+x}" ] ; then
+        echo "Test does not depend on auscash-lib"
       else
-        echo "Test depends on ecash-lib. Building TypeScript..."
-        pushd "${TOPLEVEL}/modules/ecash-lib"
+        echo "Test depends on auscash-lib. Building TypeScript..."
+        pushd "${TOPLEVEL}/modules/auscash-lib"
         npm ci
         npm run build
       fi
@@ -567,12 +567,12 @@ builds:
       - - bench-secp256k1
     timeout: 1200
 
-  build-ecash-secp256k1:
+  build-auscash-secp256k1:
     runOnDiffRegex:
       - src/secp256k1/
-      - modules/ecash-secp256k1/
+      - modules/auscash-secp256k1/
     script: |
-      "${TOPLEVEL}/modules/ecash-secp256k1/contrib/test.sh"
+      "${TOPLEVEL}/modules/auscash-secp256k1/contrib/test.sh"
     timeout: 1200
 
   build-tsan:
@@ -744,10 +744,10 @@ builds:
     runOnDiffRegex:
       - cashtab/
       - modules/mock-chronik-client/
-      - modules/ecashaddrjs/
-      - modules/ecash-agora/
-      - modules/ecash-lib/
-      - modules/ecash-lib-wasm/
+      - modules/auscashaddrjs/
+      - modules/auscash-agora/
+      - modules/auscash-lib/
+      - modules/auscash-lib-wasm/
       - src/secp256k1/
     artifacts:
       coverage.tar.gz: coverage.tar.gz
@@ -761,9 +761,9 @@ builds:
     script: |
       # Cashtab tests depend on libraries hosted in the monorepo
       # Install their dependencies (and build them, if necessary) before tests
-      # ecashaddrjs
-      echo "Installing ecashaddrjs dependencies..."
-      pushd "${TOPLEVEL}/modules/ecashaddrjs"
+      # auscashaddrjs
+      echo "Installing auscashaddrjs dependencies..."
+      pushd "${TOPLEVEL}/modules/auscashaddrjs"
       npm ci
       npm run build
 
@@ -778,23 +778,23 @@ builds:
       npm ci
       npm run build
 
-      # ecash-script
-      echo "Installing ecash-script dependencies..."
-      pushd "${TOPLEVEL}/modules/ecash-script"
+      # auscash-script
+      echo "Installing auscash-script dependencies..."
+      pushd "${TOPLEVEL}/modules/auscash-script"
       npm ci
 
-      # ecash-lib-wasm
-      pushd "${TOPLEVEL}/modules/ecash-lib-wasm"
+      # auscash-lib-wasm
+      pushd "${TOPLEVEL}/modules/auscash-lib-wasm"
       ./build-wasm.sh
 
-      # ecash-lib
-      pushd "${TOPLEVEL}/modules/ecash-lib"
+      # auscash-lib
+      pushd "${TOPLEVEL}/modules/auscash-lib"
       npm ci
       npm run build
 
-      # ecash-agora
-      echo "Installing ecash-agora dependencies..."
-      pushd "${TOPLEVEL}/modules/ecash-agora"
+      # auscash-agora
+      echo "Installing auscash-agora dependencies..."
+      pushd "${TOPLEVEL}/modules/auscash-agora"
       npm ci
       npm run build
 
@@ -830,31 +830,31 @@ builds:
     runOnDiffRegex:
       - apps/alias-server/
       - modules/mock-chronik-client/
-      - modules/ecashaddrjs/
+      - modules/auscashaddrjs/
     env:
       JS_PROJECT_ROOT: apps/alias-server
-      DEPENDS_ECASHADDRJS: "true"
-      DEPENDS_ECASH_SCRIPT: "true"
+      DEPENDS_AUSCASHADDRJS: "true"
+      DEPENDS_AUSCASH_SCRIPT: "true"
       DEPENDS_CHRONIK_CLIENT: "true"
       DEPENDS_MOCK_CHRONIK_CLIENT: "true"
     templates:
       - js-mocha
 
-  ecash-herald-tests:
+  auscash-herald-tests:
     runOnDiffRegex:
-      - apps/ecash-herald/
+      - apps/auscash-herald/
       - modules/mock-chronik-client/
-      - modules/ecashaddrjs/
+      - modules/auscashaddrjs/
       - modules/chronik-client/
     env:
-      JS_PROJECT_ROOT: apps/ecash-herald
+      JS_PROJECT_ROOT: apps/auscash-herald
       DEPENDS_MOCK_CHRONIK_CLIENT: "true"
       DEPENDS_CHRONIK_CLIENT: "true"
-      DEPENDS_ECASH_SCRIPT: "true"
-      DEPENDS_ECASHADDRJS: "true"
-      DEPENDS_ECASH_LIB_WASM: "true"
-      DEPENDS_ECASH_LIB: "true"
-      DEPENDS_ECASH_AGORA: "true"
+      DEPENDS_AUSCASH_SCRIPT: "true"
+      DEPENDS_AUSCASHADDRJS: "true"
+      DEPENDS_AUSCASH_LIB_WASM: "true"
+      DEPENDS_AUSCASH_LIB: "true"
+      DEPENDS_AUSCASH_AGORA: "true"
     templates:
       - js-mocha
 
@@ -862,15 +862,15 @@ builds:
     runOnDiffRegex:
       - apps/token-server/
       - modules/mock-chronik-client/
-      - modules/ecashaddrjs/
+      - modules/auscashaddrjs/
       - modules/chronik-client/
     env:
       JS_PROJECT_ROOT: apps/token-server
       DEPENDS_MOCK_CHRONIK_CLIENT: "true"
-      DEPENDS_ECASHADDRJS: "true"
+      DEPENDS_AUSCASHADDRJS: "true"
       DEPENDS_CHRONIK_CLIENT: "true"
-      DEPENDS_ECASH_LIB_WASM: "true"
-      DEPENDS_ECASH_LIB: "true"
+      DEPENDS_AUSCASH_LIB_WASM: "true"
+      DEPENDS_AUSCASH_LIB: "true"
       RUN_NPM_BUILD: "true"
     templates:
       - js-mocha
@@ -878,54 +878,54 @@ builds:
   mock-chronik-client-tests:
     runOnDiffRegex:
       - modules/mock-chronik-client/
-      - modules/ecashaddrjs/
+      - modules/auscashaddrjs/
     env:
       JS_PROJECT_ROOT: modules/mock-chronik-client
-      DEPENDS_ECASHADDRJS: "true"
+      DEPENDS_AUSCASHADDRJS: "true"
     templates:
       - js-mocha
 
   chronik-client-tests:
     runOnDiffRegex:
       - modules/chronik-client/
-      - modules/ecashaddrjs/
+      - modules/auscashaddrjs/
     env:
       JS_PROJECT_ROOT: modules/chronik-client
-      DEPENDS_ECASHADDRJS: "true"
+      DEPENDS_AUSCASHADDRJS: "true"
     templates:
       - js-mocha
 
-  ecash-lib-tests:
+  auscash-lib-tests:
     runOnDiffRegex:
-      - modules/ecash-lib/
-      - modules/ecash-lib-wasm/
-      - modules/ecashaddrjs/
+      - modules/auscash-lib/
+      - modules/auscash-lib-wasm/
+      - modules/auscashaddrjs/
       - src/secp256k1/
     env:
-      JS_PROJECT_ROOT: modules/ecash-lib
+      JS_PROJECT_ROOT: modules/auscash-lib
       RUN_NPM_BUILD: "true"
-      DEPENDS_ECASHADDRJS: "true"
-      DEPENDS_ECASH_LIB_WASM: "true"
+      DEPENDS_AUSCASHADDRJS: "true"
+      DEPENDS_AUSCASH_LIB_WASM: "true"
       DEPENDS_CHRONIK_CLIENT: "true"
     templates:
       - js-mocha
 
-  ecash-agora-tests:
+  auscash-agora-tests:
     runOnDiffRegex:
-      - modules/ecash-agora/
-      - modules/ecash-lib/
-      - modules/ecash-lib-wasm/
+      - modules/auscash-agora/
+      - modules/auscash-lib/
+      - modules/auscash-lib-wasm/
       - src/secp256k1/
     env:
-      JS_PROJECT_ROOT: modules/ecash-agora
-      DEPENDS_ECASHADDRJS: "true"
-      DEPENDS_ECASH_LIB_WASM: "true"
+      JS_PROJECT_ROOT: modules/auscash-agora
+      DEPENDS_AUSCASHADDRJS: "true"
+      DEPENDS_AUSCASH_LIB_WASM: "true"
       DEPENDS_CHRONIK_CLIENT: "true"
-      DEPENDS_ECASH_LIB: "true"
+      DEPENDS_AUSCASH_LIB: "true"
     templates:
       - js-mocha
 
-  ecash-agora-integration-tests:
+  auscash-agora-integration-tests:
     cmake_flags:
       - '-DBUILD_BITCOIN_CHRONIK=ON'
       - '-DBUILD_BITCOIN_CHRONIK_PLUGINS=ON'
@@ -934,23 +934,23 @@ builds:
     runOnDiffRegex:
       - chronik/
       - modules/chronik-client/
-      - modules/ecash-agora/
-      - modules/ecash-lib/
-      - modules/ecash-lib-wasm/
-      - modules/ecashaddrjs/
+      - modules/auscash-agora/
+      - modules/auscash-lib/
+      - modules/auscash-lib-wasm/
+      - modules/auscashaddrjs/
       - src/secp256k1/
       - Cargo.toml
       - Cargo.lock
     env:
-      JS_PROJECT_ROOT: modules/ecash-agora
-      DEPENDS_ECASHADDRJS: "true"
-      DEPENDS_ECASH_LIB_WASM: "true"
+      JS_PROJECT_ROOT: modules/auscash-agora
+      DEPENDS_AUSCASHADDRJS: "true"
+      DEPENDS_AUSCASH_LIB_WASM: "true"
       DEPENDS_CHRONIK_CLIENT: "true"
-      DEPENDS_ECASH_LIB: "true"
+      DEPENDS_AUSCASH_LIB: "true"
     templates:
       - js-mocha-integration-tests
 
-  ecash-lib-integration-tests:
+  auscash-lib-integration-tests:
     cmake_flags:
       - '-DBUILD_BITCOIN_CHRONIK=ON'
     targets:
@@ -958,16 +958,16 @@ builds:
     runOnDiffRegex:
       - chronik/
       - modules/chronik-client/
-      - modules/ecash-lib/
-      - modules/ecash-lib-wasm/
-      - modules/ecashaddrjs/
+      - modules/auscash-lib/
+      - modules/auscash-lib-wasm/
+      - modules/auscashaddrjs/
       - src/secp256k1/
       - Cargo.toml
       - Cargo.lock
     env:
-      JS_PROJECT_ROOT: modules/ecash-lib
-      DEPENDS_ECASHADDRJS: "true"
-      DEPENDS_ECASH_LIB_WASM: "true"
+      JS_PROJECT_ROOT: modules/auscash-lib
+      DEPENDS_AUSCASHADDRJS: "true"
+      DEPENDS_AUSCASH_LIB_WASM: "true"
       DEPENDS_CHRONIK_CLIENT: "true"
     templates:
       - js-mocha-integration-tests
@@ -981,36 +981,36 @@ builds:
     runOnDiffRegex:
       - chronik/
       - modules/chronik-client/
-      - modules/ecashaddrjs/
+      - modules/auscashaddrjs/
       - Cargo.toml
       - Cargo.lock
     env:
       JS_PROJECT_ROOT: modules/chronik-client
-      DEPENDS_ECASHADDRJS: "true"
+      DEPENDS_AUSCASHADDRJS: "true"
     templates:
       - js-mocha-integration-tests
 
-  ecashaddrjs-tests:
+  auscashaddrjs-tests:
     runOnDiffRegex:
-      - modules/ecashaddrjs/
+      - modules/auscashaddrjs/
     env:
-      JS_PROJECT_ROOT: modules/ecashaddrjs
+      JS_PROJECT_ROOT: modules/auscashaddrjs
     templates:
       - js-mocha
 
-  ecash-script-tests:
+  auscash-script-tests:
     runOnDiffRegex:
-      - modules/ecash-script/
+      - modules/auscash-script/
     env:
-      JS_PROJECT_ROOT: modules/ecash-script
+      JS_PROJECT_ROOT: modules/auscash-script
     templates:
       - js-mocha
 
-  ecash-coinselect-tests:
+  auscash-coinselect-tests:
     runOnDiffRegex:
-      - modules/ecash-coinselect/
+      - modules/auscash-coinselect/
     env:
-      JS_PROJECT_ROOT: modules/ecash-coinselect
+      JS_PROJECT_ROOT: modules/auscash-coinselect
     templates:
       - js-mocha
 

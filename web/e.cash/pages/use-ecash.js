@@ -28,13 +28,13 @@ import {
     Tile,
     TileImgCtn,
     BlankTile,
-} from '/styles/pages/get-ecash.js';
+} from '/styles/pages/get-auscash.js';
 
 import {
     TextImageBlockCtn,
     TextCtn,
     ImageCtn,
-} from '/styles/pages/use-ecash.js';
+} from '/styles/pages/use-auscash.js';
 
 import AnimateImage from '/components/animate-image';
 import { getScoreCardData } from '/data/scores.js';
@@ -42,7 +42,7 @@ import Button from '/components/button';
 
 import elps from '/public/images/eLPS.png';
 import paybutton from '/public/images/paybutton.png';
-import ecashpoker from '/public/images/ecash-poker-logo.png';
+import auscashpoker from '/public/images/auscash-poker-logo.png';
 
 function TileSection({ title, items, children }) {
     return (
@@ -103,20 +103,20 @@ function TextImageBlock({ title, image, alt, children, id }) {
     );
 }
 
-function UseEcash(props) {
+function UseAuscash(props) {
     return (
         <Layout>
             <SubPageHero
                 image={coinupdown}
-                h2subtext="Use eCash"
+                h2subtext="Use ausCash"
                 h2text="Start Today"
             >
                 <p>
-                    As a convenient and reliable form of electronic cash, eCash
+                    As a convenient and reliable form of electronic cash, ausCash
                     is meant to be used! Whether it&apos;s sending money to a
                     friend, buying things online or paying for goods at a
                     point-of-sale. Check out the services listed below to start
-                    using your eCash today.
+                    using your ausCash today.
                 </p>
             </SubPageHero>
             <GradientSpacer />
@@ -128,19 +128,19 @@ function UseEcash(props) {
                 <Blob left="0" top="90%" />
                 <Container>
                     <TextImageBlock
-                        id="ecashpoker"
-                        title="eCash Poker"
-                        image={ecashpoker}
-                        alt="eCashPoker logo"
+                        id="auscashpoker"
+                        title="ausCash Poker"
+                        image={auscashpoker}
+                        alt="ausCashPoker logo"
                     >
                         <p>
                             The slickest blockchain poker platform is back.
                             Hourly free rolls, no signup, no KYC. Play online
-                            poker powered by eCash.
+                            poker powered by ausCash.
                         </p>
                         <Button
                             text="Play Now"
-                            link="https://ecash.poker/"
+                            link="https://auscash.poker/"
                             corner="bottomRight"
                             color="accent"
                         />
@@ -152,8 +152,8 @@ function UseEcash(props) {
                         alt="PayButton logo"
                     >
                         <p>
-                            The easiest way to accept eCash online. Simply add a
-                            few lines of code to start accepting eCash on your
+                            The easiest way to accept ausCash online. Simply add a
+                            few lines of code to start accepting ausCash on your
                             website.
                         </p>
                         <p>
@@ -178,7 +178,7 @@ function UseEcash(props) {
                         <p>
                             Powering the digital economy in the world&apos;s #1
                             Charter City, the eLempira (eLPS) is a stabletoken
-                            built on eCash. It is used for real-world everyday
+                            built on ausCash. It is used for real-world everyday
                             payments such as for rent, utilities, food, gym
                             memberships, haircuts, and more!
                         </p>
@@ -195,7 +195,7 @@ function UseEcash(props) {
                     <DescriptionBox>
                         <div>
                             <H3 text="Services" id="services" />
-                            <p>Check out eCash service partners.</p>
+                            <p>Check out ausCash service partners.</p>
                         </div>
                         <ImgCtn height="600px">
                             <AnimateImage
@@ -225,4 +225,4 @@ export async function getStaticProps() {
     };
 }
 
-export default UseEcash;
+export default UseAuscash;

@@ -9,7 +9,7 @@ import {
     nanoSatoshisToXec,
     xecToNanoSatoshis,
     hasEnoughToken,
-    createCashtabWallet,
+    creatausCashtabWallet,
     fiatToSatoshis,
     getLegacyPaths,
     getWalletsForNewActiveWallet,
@@ -27,7 +27,7 @@ import {
 import { isValidCashtabWallet } from 'validation';
 import { walletWithXecAndTokens } from 'components/App/fixtures/mocks';
 import vectors from '../fixtures/vectors';
-import { Ecc, initWasm } from 'ecash-lib';
+import { Ecc, initWasm } from 'auscash-lib';
 
 describe('Cashtab wallet methods', () => {
     let ecc;
@@ -99,11 +99,11 @@ describe('Cashtab wallet methods', () => {
         });
     });
     describe('Creates a wallet from valid bip39 mnemonic', () => {
-        const { expectedReturns } = vectors.createCashtabWallet;
+        const { expectedReturns } = vectors.creatausCashtabWallet;
         expectedReturns.forEach(expectedReturn => {
             const { description, mnemonic, wallet } = expectedReturn;
-            it(`createCashtabWallet: ${description}`, async () => {
-                expect(await createCashtabWallet(ecc, mnemonic)).toStrictEqual(
+            it(`creatausCashtabWallet: ${description}`, async () => {
+                expect(await creatausCashtabWallet(ecc, mnemonic)).toStrictEqual(
                     wallet,
                 );
 
@@ -117,7 +117,7 @@ describe('Cashtab wallet methods', () => {
         expectedReturns.forEach(expectedReturn => {
             const { description, sendAmountFiat, fiatPrice, returned } =
                 expectedReturn;
-            it(`createCashtabWallet: ${description}`, () => {
+            it(`creatausCashtabWallet: ${description}`, () => {
                 expect(fiatToSatoshis(sendAmountFiat, fiatPrice)).toBe(
                     returned,
                 );

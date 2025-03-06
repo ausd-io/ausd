@@ -49,7 +49,7 @@ describe('alias-server db.js', async function () {
     });
     it('initializeDb returns a mongo db instance of the expected schema', async function () {
         const { namespace } = testDb;
-        assert.strictEqual(namespace, 'ecashAliases');
+        assert.strictEqual(namespace, 'auscashAliases');
     });
     it('getServerState returns expected initial server state on initialized database', async function () {
         // Check that serverState was initialized properly
@@ -148,7 +148,7 @@ describe('alias-server db.js', async function () {
         await addAliasesToDb(testDb, newValidAliases);
 
         const newMockAlias = {
-            address: 'ecash:qrmz0egsqxj35x5jmzf8szrszdeu72fx0uxgwk3r48',
+            address: 'auscash:qrmz0egsqxj35x5jmzf8szrszdeu72fx0uxgwk3r48',
             alias: 'rico',
             txid: '3ff9c28fa07cb88c87000ef0f5ee61953d874ffade154cd3f88fd60b88ea2879',
             blockheight: 1787674, // Note, blockheight is purposefully set to be higher than mocks
@@ -228,7 +228,7 @@ describe('alias-server db.js', async function () {
     });
     it('getAliasInfoFromAlias returns expected alias object if alias does exist in the database', async function () {
         const newMockAlias = {
-            address: 'ecash:qrmz0egsqxj35x5jmzf8szrszdeu72fx0uxgwk3r48',
+            address: 'auscash:qrmz0egsqxj35x5jmzf8szrszdeu72fx0uxgwk3r48',
             alias: 'rico',
             txid: '3ff9c28fa07cb88c87000ef0f5ee61953d874ffade154cd3f88fd60b88ea2879',
             blockheight: 1787674, // Note, blockheight is purposefully set to be higher than mocks
@@ -293,14 +293,14 @@ describe('alias-server db.js', async function () {
         );
     });
     it('getAliasInfoFromAddress returns an empty array if no aliases are registered to the given address', async function () {
-        const testAddress = 'ecash:qphpmfj0qn7znklqhrfn5dq7qh36l3vxav9up3h67g';
+        const testAddress = 'auscash:qphpmfj0qn7znklqhrfn5dq7qh36l3vxav9up3h67g';
         assert.deepEqual(
             await getAliasInfoFromAddress(testDb, testAddress),
             [],
         );
     });
     it('getAliasInfoFromAddress returns expected alias array if multiple aliases are registered to the queried address', async function () {
-        const testAddress = 'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
+        const testAddress = 'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
 
         // Add aliases
         // newValidAliases needs to be a clone of the mock because
@@ -327,10 +327,10 @@ describe('alias-server db.js', async function () {
         );
     });
     it('getAliasInfoFromAddress returns expected alias array if a single alias is registered to the queried address', async function () {
-        const testAddress = 'ecash:qrmz0egsqxj35x5jmzf8szrszdeu72fx0uxgwk3r48';
+        const testAddress = 'auscash:qrmz0egsqxj35x5jmzf8szrszdeu72fx0uxgwk3r48';
 
         const newMockAlias = {
-            address: 'ecash:qrmz0egsqxj35x5jmzf8szrszdeu72fx0uxgwk3r48',
+            address: 'auscash:qrmz0egsqxj35x5jmzf8szrszdeu72fx0uxgwk3r48',
             alias: 'rico',
             txid: '3ff9c28fa07cb88c87000ef0f5ee61953d874ffade154cd3f88fd60b88ea2879',
             blockheight: 1787674, // Note, blockheight is purposefully set to be higher than mocks
@@ -345,7 +345,7 @@ describe('alias-server db.js', async function () {
     });
     it('addOneAliasToPending successfully adds a new pending alias to an empty collection, and getPendingAliases reads one alias', async function () {
         const newPendingAliasTx = {
-            address: 'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+            address: 'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
             alias: 'pending',
             txid: 'ec92610fc41df2387e7febbb358b138a802ac26023f30b2442aa01ca733fff7d',
             tipHeight: config.initialServerState.processedBlockheight,
@@ -366,7 +366,7 @@ describe('alias-server db.js', async function () {
     });
     it('addOneAliasToPending returns false if the same alias + address + txid combo is added a second time', async function () {
         const newPendingAliasTx = {
-            address: 'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+            address: 'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
             alias: 'pending',
             txid: 'ec92610fc41df2387e7febbb358b138a802ac26023f30b2442aa01ca733fff7d',
             tipHeight: config.initialServerState.processedBlockheight,
@@ -399,7 +399,7 @@ describe('alias-server db.js', async function () {
     it('addOneAliasToPending successfully adds a new pending alias to a collection with existing entry of the same alias, and getPendingAliases fetches both', async function () {
         const duplicatedPendingAlias = 'pending';
         const firstPendingAliasTx = {
-            address: 'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+            address: 'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
             alias: duplicatedPendingAlias,
             txid: 'ec92610fc41df2387e7febbb358b138a802ac26023f30b2442aa01ca733fff7d',
             tipHeight: config.initialServerState.processedBlockheight,
@@ -413,7 +413,7 @@ describe('alias-server db.js', async function () {
 
         // Second pending tx has identical alias as first but different address
         const secondPendingAliasTx = {
-            address: 'ecash:ppmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+            address: 'auscash:ppmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
             alias: duplicatedPendingAlias,
             txid: '0c77e4f7e0ff4f1028372042cbeb97eaddb64d505efe960b5a1ca4fce65598e2',
             tipHeight: config.initialServerState.processedBlockheight,
@@ -439,7 +439,7 @@ describe('alias-server db.js', async function () {
         const duplicatedPendingTxid =
             'ec92610fc41df2387e7febbb358b138a802ac26023f30b2442aa01ca733fff7d';
         const firstPendingAliasTx = {
-            address: 'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+            address: 'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
             alias: duplicatedPendingAlias,
             txid: duplicatedPendingTxid,
             tipHeight: config.initialServerState.processedBlockheight,
@@ -454,7 +454,7 @@ describe('alias-server db.js', async function () {
 
         // Second pending tx has identical txid as first
         const secondPendingAliasTx = {
-            address: 'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+            address: 'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
             alias: duplicatedPendingAlias + '2',
             txid: duplicatedPendingTxid,
             tipHeight: config.initialServerState.processedBlockheight,
@@ -478,7 +478,7 @@ describe('alias-server db.js', async function () {
     });
     it('addOneAliasToPending will add a new pending alias if the alias and address are already in the collection (only txid changed)', async function () {
         const duplicatedAddress =
-            'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
+            'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
         const duplicatedPendingAlias = 'pending';
         const firstPendingTxid =
             'ec92610fc41df2387e7febbb358b138a802ac26023f30b2442aa01ca733fff7d';
@@ -526,7 +526,7 @@ describe('alias-server db.js', async function () {
         const thisTxid =
             'ec92610fc41df2387e7febbb358b138a802ac26023f30b2442aa01ca733fff7d';
         const newPendingAliasTx = {
-            address: 'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+            address: 'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
             alias: 'pending',
             txid: thisTxid,
             tipHeight: config.initialServerState.processedBlockheight,
@@ -682,7 +682,7 @@ describe('alias-server db.js', async function () {
 
         // Call with address filter
         const testAddressOne =
-            'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
+            'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
         // Determine how many you expect to have this address
         const pendingAliasesWithAddressOne = pendingAliases.filter(
             pendingAlias => pendingAlias.address === testAddressOne,
@@ -693,7 +693,7 @@ describe('alias-server db.js', async function () {
         );
 
         const testAddressTwo =
-            'ecash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr';
+            'auscash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr';
         // Determine how many you expect to have this address
         const pendingAliasesWithAddressTwo = pendingAliases.filter(
             pendingAlias => pendingAlias.address === testAddressTwo,
@@ -733,7 +733,7 @@ describe('alias-server db.js', async function () {
 
         // Call with address filter
         const testAddressOne =
-            'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
+            'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
         // Determine how many you expect to have this address
         const pendingAliasesWithAddressOne = pendingAliases.filter(
             pendingAlias => pendingAlias.address === testAddressOne,
@@ -748,7 +748,7 @@ describe('alias-server db.js', async function () {
         );
 
         const testAddressTwo =
-            'ecash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr';
+            'auscash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr';
         // Determine how many you expect to have this address
         const pendingAliasesWithAddressTwo = pendingAliases.filter(
             pendingAlias => pendingAlias.address === testAddressTwo,

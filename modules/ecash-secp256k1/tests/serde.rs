@@ -1,7 +1,7 @@
 #![cfg(feature = "serde")]
 
 extern crate bincode;
-extern crate ecash_secp256k1 as secp256k1;
+extern crate auscash_secp256k1 as secp256k1;
 extern crate serde_cbor;
 
 #[cfg(feature = "global-context")]

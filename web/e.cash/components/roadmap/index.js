@@ -32,7 +32,7 @@ export default function Roadmap() {
                 <div>
                     <WhiteIcon
                         src={check}
-                        alt="eCash Roadmap"
+                        alt="ausCash Roadmap"
                         width={20}
                         height={20}
                     />
@@ -41,7 +41,7 @@ export default function Roadmap() {
                 <div>
                     <PinkIcon
                         src={fork}
-                        alt="eCash Roadmap"
+                        alt="ausCash Roadmap"
                         width={20}
                         height={20}
                     />
@@ -50,7 +50,7 @@ export default function Roadmap() {
                 <div>
                     <BlueIcon
                         src={brain}
-                        alt="eCash Roadmap"
+                        alt="ausCash Roadmap"
                         width={20}
                         height={20}
                     />
@@ -93,7 +93,7 @@ export default function Roadmap() {
                                                         allStatuses:
                                                             allStatuses,
                                                     })}
-                                                    alt="eCash Roadmap"
+                                                    alt="ausCash Roadmap"
                                                     width={30}
                                                     height={30}
                                                 />
@@ -110,7 +110,7 @@ export default function Roadmap() {
                                 <div>
                                     <WhiteIcon
                                         src={roadmap.tagline_icon}
-                                        alt="eCash Roadmap"
+                                        alt="ausCash Roadmap"
                                         width={30}
                                         height={30}
                                     />

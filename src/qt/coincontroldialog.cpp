@@ -675,7 +675,7 @@ void CoinControlDialog::updateView() {
     for (const auto &coins : model->wallet().listCoins()) {
         CCoinControlWidgetItem *itemWalletAddress{nullptr};
         QString sWalletAddress = QString::fromStdString(
-            EncodeCashAddr(coins.first, model->getChainParams()));
+            EncodausCashAddr(coins.first, model->getChainParams()));
         QString sWalletLabel =
             model->getAddressTableModel()->labelForAddress(sWalletAddress);
         if (sWalletLabel.isEmpty()) {
@@ -718,7 +718,7 @@ void CoinControlDialog::updateView() {
             QString sAddress = "";
             if (ExtractDestination(out.txout.scriptPubKey, outputAddress)) {
                 sAddress = QString::fromStdString(
-                    EncodeCashAddr(outputAddress, model->getChainParams()));
+                    EncodausCashAddr(outputAddress, model->getChainParams()));
 
                 // if listMode or change => show bitcoin address. In tree mode,
                 // address is not shown again for direct wallet address outputs

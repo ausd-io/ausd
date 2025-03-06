@@ -14,13 +14,13 @@ import aliasSettings from 'config/alias';
  *
  * Example `/address/<address>` response
  *   [
- *       {alias: 'foo', address: 'ecash:qpmyt....', txid: 'ec927447...', blockheight: '792417'},
- *       {alias: 'foo2', address: 'ecash:qpmyt....', txid: 'ec927447...', blockheight: '792417'},
+ *       {alias: 'foo', address: 'auscash:qpmyt....', txid: 'ec927447...', blockheight: '792417'},
+ *       {alias: 'foo2', address: 'auscash:qpmyt....', txid: 'ec927447...', blockheight: '792417'},
  *   ]
  * Example `/alias/<alias>` response for a registered alias:
  *   {
  *        alias: 'twelvechar12',
- *        address:'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+ *        address:'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
  *        txid:'166b21d4631e2a6ec6110061f351c9c3bfb3a8d4e6919684df7e2824b42b0ffe',
  *        blockheight:792419,
  *   }

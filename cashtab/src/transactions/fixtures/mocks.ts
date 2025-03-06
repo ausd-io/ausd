@@ -4,7 +4,7 @@
 
 import { cashtabWalletToJSON, cashtabWalletFromJSON } from 'helpers';
 import { CashtabWallet, CashtabWalletPaths } from 'wallet';
-import { fromHex } from 'ecash-lib';
+import { fromHex } from 'auscash-lib';
 import { XecTxType } from 'chronik';
 
 const wallet: CashtabWallet = {
@@ -16,7 +16,7 @@ const wallet: CashtabWallet = {
             1899,
             {
                 hash: '3a5fb236934ec078b4507c303d3afd82067f8fc1',
-                address: 'ecash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
+                address: 'auscash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
                 wif: 'KywWPgaLDwvW1tWUtUvs13jgqaaWMoNANLVYoKcK9Ddbpnch7Cmw',
                 sk: fromHex(
                     '512d34d3b8f4d269219fd087c80e22b0212769227226dd6b23966cf0aa2f167f',
@@ -30,7 +30,7 @@ const wallet: CashtabWallet = {
             145,
             {
                 hash: 'a28f8852f868f88e71ec666c632d6f86e978f046',
-                address: 'ecash:qz3glzzjlp503rn3a3nxccedd7rwj78sgczljhvzv3',
+                address: 'auscash:qz3glzzjlp503rn3a3nxccedd7rwj78sgczljhvzv3',
                 wif: 'L2HnC8ZT5JuwVFjrAjJUBs2tmmBoxdVa1MVCJccqV8S9YPoR1NuZ',
                 sk: fromHex(
                     '9747c0c6a6b4a1025b222a79ccad3df7330cbf3e6731de58500f865d0370b861',
@@ -44,7 +44,7 @@ const wallet: CashtabWallet = {
             245,
             {
                 hash: '600efb12a6f813eccf13171a8bc62055212d8d6c',
-                address: 'ecash:qpsqa7cj5mup8mx0zvt34z7xyp2jztvdds67wajntk',
+                address: 'auscash:qpsqa7cj5mup8mx0zvt34z7xyp2jztvdds67wajntk',
                 wif: 'L3ndnMkn4574McqhPujguusu48NrmeLUgWYMkRpYQGLXDGAwGmPq',
                 sk: fromHex(
                     'c3f637ba1e3cdd10cace41350058a3698c5bd413b69a358a2a2b955843ea043c',
@@ -186,7 +186,7 @@ const wallet: CashtabWallet = {
                     satoshisSent: 25000,
                     stackArray: [],
                     recipients: [
-                        'ecash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr',
+                        'auscash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr',
                     ],
                 },
             },
@@ -293,7 +293,7 @@ const wallet: CashtabWallet = {
                     satoshisSent: 10000,
                     stackArray: [],
                     recipients: [
-                        'ecash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr',
+                        'auscash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr',
                     ],
                 },
             },
@@ -352,7 +352,7 @@ const wallet: CashtabWallet = {
                     satoshisSent: 100000,
                     stackArray: [],
                     recipients: [
-                        'ecash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr',
+                        'auscash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr',
                     ],
                 },
             },
@@ -369,7 +369,7 @@ const walletWithCoinbaseUtxos: CashtabWallet = {
             1899,
             {
                 hash: '3a5fb236934ec078b4507c303d3afd82067f8fc1',
-                address: 'ecash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
+                address: 'auscash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
                 wif: 'KywWPgaLDwvW1tWUtUvs13jgqaaWMoNANLVYoKcK9Ddbpnch7Cmw',
                 sk: fromHex(
                     '512d34d3b8f4d269219fd087c80e22b0212769227226dd6b23966cf0aa2f167f',
@@ -383,7 +383,7 @@ const walletWithCoinbaseUtxos: CashtabWallet = {
             145,
             {
                 hash: 'a28f8852f868f88e71ec666c632d6f86e978f046',
-                address: 'ecash:qz3glzzjlp503rn3a3nxccedd7rwj78sgczljhvzv3',
+                address: 'auscash:qz3glzzjlp503rn3a3nxccedd7rwj78sgczljhvzv3',
                 wif: 'L2HnC8ZT5JuwVFjrAjJUBs2tmmBoxdVa1MVCJccqV8S9YPoR1NuZ',
                 sk: fromHex(
                     '9747c0c6a6b4a1025b222a79ccad3df7330cbf3e6731de58500f865d0370b861',
@@ -397,7 +397,7 @@ const walletWithCoinbaseUtxos: CashtabWallet = {
             245,
             {
                 hash: '600efb12a6f813eccf13171a8bc62055212d8d6c',
-                address: 'ecash:qpsqa7cj5mup8mx0zvt34z7xyp2jztvdds67wajntk',
+                address: 'auscash:qpsqa7cj5mup8mx0zvt34z7xyp2jztvdds67wajntk',
                 wif: 'L3ndnMkn4574McqhPujguusu48NrmeLUgWYMkRpYQGLXDGAwGmPq',
                 sk: fromHex(
                     'c3f637ba1e3cdd10cace41350058a3698c5bd413b69a358a2a2b955843ea043c',
@@ -539,7 +539,7 @@ const walletWithCoinbaseUtxos: CashtabWallet = {
                     satoshisSent: 25000,
                     stackArray: [],
                     recipients: [
-                        'ecash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr',
+                        'auscash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr',
                     ],
                 },
             },
@@ -646,7 +646,7 @@ const walletWithCoinbaseUtxos: CashtabWallet = {
                     satoshisSent: 10000,
                     stackArray: [],
                     recipients: [
-                        'ecash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr',
+                        'auscash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr',
                     ],
                 },
             },
@@ -705,7 +705,7 @@ const walletWithCoinbaseUtxos: CashtabWallet = {
                     satoshisSent: 100000,
                     stackArray: [],
                     recipients: [
-                        'ecash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr',
+                        'auscash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr',
                     ],
                 },
             },
@@ -755,7 +755,7 @@ const multiAddressUtxos = [
 utxosAtManyAddressesWallet.state.nonSlpUtxos = multiAddressUtxos;
 
 // Create a wallet with very large utxos
-const TOTAL_ECASH_SUPPLY_SATS = 2100000000000000;
+const TOTAL_AUSCASH_SUPPLY_SATS = 2100000000000000;
 const allTheXecWallet = cashtabWalletFromJSON(
     JSON.parse(JSON.stringify(cashtabWalletToJSON(wallet))),
 );
@@ -767,7 +767,7 @@ const largeUtxo = {
     blockHeight: -1,
     isCoinbase: false,
     isFinal: true,
-    value: TOTAL_ECASH_SUPPLY_SATS,
+    value: TOTAL_AUSCASH_SUPPLY_SATS,
     path: 1899,
 };
 
@@ -783,7 +783,7 @@ const walletWithTokensInNode: CashtabWallet = {
             1899,
             {
                 hash: 'c38232a045a85c84e5733d60e867dcee9ad4b18d',
-                address: 'ecash:qrpcyv4qgk59ep89wv7kp6r8mnhf449335wt7lud8u',
+                address: 'auscash:qrpcyv4qgk59ep89wv7kp6r8mnhf449335wt7lud8u',
                 wif: 'KyEQdr8GzqtwzHHB8kiaWLiUCWYGgz76t7gF2z9aSjWnsVikJZUX',
                 sk: fromHex(
                     '3c0898e4d10337cb51a651fe3ff6653a5683cbe9ce1698094463e48372e9bbfb',
@@ -797,7 +797,7 @@ const walletWithTokensInNode: CashtabWallet = {
             245,
             {
                 hash: '3d97ee01c3d021c3efcf529c3136f7b8b86c1ed0',
-                address: 'ecash:qq7e0mspc0gzrsl0eaffcvfk77utsmq76qnat0vlkj',
+                address: 'auscash:qq7e0mspc0gzrsl0eaffcvfk77utsmq76qnat0vlkj',
                 wif: 'L4GFvCRSz8fbS64W7teTjnGbV5A8iPdz1GyPqHvAj8vxzqZjwZbw',
                 sk: fromHex(
                     'd22c0fc1ca98add975c4574878c8b9e3a979af0d40b93f7f5dc3e03cf94f856d',
@@ -811,7 +811,7 @@ const walletWithTokensInNode: CashtabWallet = {
             145,
             {
                 hash: '33a070d3931a4993207771ae1aa92aa05491e8b2',
-                address: 'ecash:qqe6quxnjvdynyeqwac6ux4f92s9fy0gkg6ek2jtfh',
+                address: 'auscash:qqe6quxnjvdynyeqwac6ux4f92s9fy0gkg6ek2jtfh',
                 wif: 'L5GHzdq3qfTmUKLxZ3fuvfu9yvgsQH3wWcXU2BfD3qp88RTXF88M',
                 sk: fromHex(
                     'f007266ad2f28d93601e0cdaf32ce765b4c7c1f4d4a30bd4988435b510fa18ba',

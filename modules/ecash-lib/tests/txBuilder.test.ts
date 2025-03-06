@@ -41,7 +41,7 @@ import {
     signSigHash,
 } from '../src/txBuilder.js';
 import { UnsignedTxInput } from '../src/unsignedTx.js';
-import * as cashaddr from 'ecashaddrjs';
+import * as cashaddr from 'auscashaddrjs';
 
 const NUM_COINS = 500;
 const COIN_VALUE = 100000;
@@ -79,7 +79,7 @@ describe('TxBuilder', () => {
     before(async () => {
         await initWasm();
         runner = await TestRunner.setup(
-            IS_LEGACY_MODE ? 'setup_scripts/ecash-lib_legacy' : undefined,
+            IS_LEGACY_MODE ? 'setup_scripts/auscash-lib_legacy' : undefined,
         );
         chronik = runner.chronik;
         ecc = runner.ecc;
@@ -107,14 +107,14 @@ describe('TxBuilder', () => {
 
         // Add another p2pkh recipient using an address
         const otherRecipientAddressP2pkh = cashaddr.encode(
-            'ecash',
+            'auscash',
             'p2pkh',
             '9876543210987654321098765432109876543210',
         );
 
         // Add a p2sh recipient using an address
         const otherRecipientAddressP2sh = cashaddr.encode(
-            'ecash',
+            'auscash',
             'p2sh',
             '9876543210987654321098765432109876543210',
         );
@@ -561,7 +561,7 @@ describe('TxBuilder', () => {
         const sk2 = fromHex('22'.repeat(32));
         const pk2 = ecc.derivePubkey(sk2);
         const leftoverAddress = cashaddr.encode(
-            'ecash',
+            'auscash',
             'p2pkh',
             fromHex('33'.repeat(20)),
         );

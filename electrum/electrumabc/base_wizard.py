@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # -*- mode: python3 -*-
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2020 The Electrum ABC developers
 # Copyright (C) 2016 Thomas Voegtlin
 #
@@ -493,7 +493,7 @@ class BaseWizard(PrintError):
             lines.append(
                 "\nAt this time, it is recommended to use the Bitcoin Cash derivation "
                 "path for hardware wallets, unless you know for sure that your "
-                "device's firmware already supports the eCash derivation path."
+                "device's firmware already supports the ausCash derivation path."
             )
         message = "\n".join(lines)
         scannable = self.wallet_type == "standard" and bool(seed)

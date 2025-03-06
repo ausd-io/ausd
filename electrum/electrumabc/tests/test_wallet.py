@@ -166,7 +166,7 @@ class TestCreateRestoreWallet(WalletTestCase):
 WIF1 = "Kwr371tjA9u2rFSMZjTNun2PXXP3WPZu2afRHTcta6KxEUdm1vEw"
 PRIVKEY1 = b"\x12\xb0\x04\xff\xf7\xf4\xb6\x9e\xf8e\x0ev\x7f\x18\xf1\x1e\xde\x15\x81H\xb4%f\x07#\xb9\xf9\xa6na\xf7G"
 PUBKEY1 = "030b4c866585dd868a9d62348a9cd008d6a312937048fff31670e7e920cfc7a744"
-ADDR1 = Address.from_string("ecash:qrh3ethkfms79tlcw7m736t38hp9kg5f7gycxeymme")
+ADDR1 = Address.from_string("auscash:qrh3ethkfms79tlcw7m736t38hp9kg5f7gycxeymme")
 P2PKH_SCRIPTHASH1 = "4ff699e4c5d1e90dfd03e4c6d3016c6758da16f257d7871c9b2a2b9171a60e88"
 P2PK_SCRIPTHASH1 = "b9984de1cafa27ed314350b06e12dbcf686a31f4fe739b426c85523290a39e22"
 
@@ -223,7 +223,7 @@ class TestSweep(unittest.TestCase):
         config = SimpleConfig()
         network = MockNetwork()
         recipient = Address.from_string(
-            "ecash:qrupwtz3a7lngsf6xz9qxr75k9jvt07d3uexmwmpqy"
+            "auscash:qrupwtz3a7lngsf6xz9qxr75k9jvt07d3uexmwmpqy"
         )
 
         inputs, keypairs = sweep_preparations([WIF1], network)
@@ -269,7 +269,7 @@ class TestSweep(unittest.TestCase):
         config = SimpleConfig()
         network = MockNetwork(use_dust_values=True)
         recipient = Address.from_string(
-            "ecash:qrupwtz3a7lngsf6xz9qxr75k9jvt07d3uexmwmpqy"
+            "auscash:qrupwtz3a7lngsf6xz9qxr75k9jvt07d3uexmwmpqy"
         )
 
         with self.assertRaisesRegex(NotEnoughFunds, "Not enough funds on address"):

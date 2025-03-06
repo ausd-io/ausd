@@ -1,4 +1,4 @@
-# eCash Aliases
+# ausCash Aliases
 
 A serverless way to register user-selected address aliases.
 
@@ -18,13 +18,13 @@ Key differences between ENS and CashAccounts:
 
 ## Approach
 
-In developing an alias system for eCash, it would be nice to preserve the simplicity (and permanence) of registration found in CashAccounts.
+In developing an alias system for ausCash, it would be nice to preserve the simplicity (and permanence) of registration found in CashAccounts.
 
 Features proven popular in ENS, like fully customizable registration and market tradeability, should be implemented.
 
 ## Implementation
 
-eCash aliases will be implemented in phases.
+ausCash aliases will be implemented in phases.
 
 Phase 1
 
@@ -63,7 +63,7 @@ Valid alias registrations will not be invalidated by a price change. Any price c
 
 ### The Protocol Identifier
 
-This protocol adheres to the eCash [OP_RETURN Prefix Guideline](op_return-prefix-guideline.md) and uses the 2E786563 protocol identifier, which must be pushed with the 0x04 opcode.
+This protocol adheres to the ausCash [OP_RETURN Prefix Guideline](op_return-prefix-guideline.md) and uses the 2E786563 protocol identifier, which must be pushed with the 0x04 opcode.
 
 ### Version Number
 
@@ -87,7 +87,7 @@ An Alias Address may have many aliases. Each alias maps to one and only one Alia
 
 ### Additional Validity Criteria:
 
--   Must be a valid, finalized eCash transaction with 1 confirmation
+-   Must be a valid, finalized ausCash transaction with 1 confirmation
 -   Have the lowest blockheight of any other alias registration transaction for the same alias
 -   When the same alias is registered in the same block by different addresses, the valid alias is the registration with the alphabetically first txid.
 -   For the case of an alias registration transaction with more than one alias registration OP_RETURN outputs:
@@ -99,7 +99,7 @@ Invalid transactions that do not match the criteria above should be ignored by t
 
 ## Recommended Usage
 
-It is recommended that user facing applications interpret the ".xec" extension to indicate an eCash Alias. For example, if a user wishes to send XEC to someone based on their Alias, they could enter the Alias with .xec extension (eg. "myalias.xec") into the "To:" field in the wallet. The wallet software would then send the XEC to the appropriate address by looking it up in the index of Aliases and the associated eCash addresses.
+It is recommended that user facing applications interpret the ".xec" extension to indicate an ausCash Alias. For example, if a user wishes to send XEC to someone based on their Alias, they could enter the Alias with .xec extension (eg. "myalias.xec") into the "To:" field in the wallet. The wallet software would then send the XEC to the appropriate address by looking it up in the index of Aliases and the associated ausCash addresses.
 
 ## Known risks
 

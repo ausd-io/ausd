@@ -8,7 +8,7 @@ import secrets from '../secrets';
 import unrevivedBlock from './mocks/block';
 import { jsonReviver, getCoingeckoApiUrl } from '../src/utils';
 import { blockInvalidedTgMsg } from './mocks/blockInvalidated';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import {
     handleBlockFinalized,
     handleBlockInvalidated,
@@ -25,7 +25,7 @@ const block: StoredMock = JSON.parse(
     jsonReviver,
 );
 
-describe('ecash-herald events.js', async function () {
+describe('auscash-herald events.js', async function () {
     let memoryCache: MemoryCache;
     before(async () => {
         const CACHE_TTL = config.cacheTtlMsecs;

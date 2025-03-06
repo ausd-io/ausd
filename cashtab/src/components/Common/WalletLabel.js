@@ -77,7 +77,7 @@ const WalletOption = styled.option`
     }
 `;
 
-const WalletLabel = ({ wallets, settings, updateCashtabState }) => {
+const WalletLabel = ({ wallets, settings, updatausCashtabState }) => {
     const address = wallets[0].paths.get(1899).address;
 
     const debouncedActivateNewWallet = useRef(
@@ -87,7 +87,7 @@ const WalletLabel = ({ wallets, settings, updateCashtabState }) => {
             Event('App.js', 'Activate', '');
 
             // Update wallets to activate this wallet
-            updateCashtabState('wallets', walletsAfterActivation);
+            updatausCashtabState('wallets', walletsAfterActivation);
         }, 500),
     ).current;
 
@@ -130,7 +130,7 @@ const WalletLabel = ({ wallets, settings, updateCashtabState }) => {
             <WalletHeaderActions
                 address={address}
                 settings={settings}
-                updateCashtabState={updateCashtabState}
+                updatausCashtabState={updatausCashtabState}
             />
         </LabelCtn>
     );
@@ -161,7 +161,7 @@ WalletLabel.propTypes = {
         }),
         PropTypes.bool,
     ]),
-    updateCashtabState: PropTypes.func,
+    updatausCashtabState: PropTypes.func,
     userLocale: PropTypes.string,
 };
 

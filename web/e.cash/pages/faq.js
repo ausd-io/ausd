@@ -13,7 +13,7 @@ export default function FAQ() {
     return (
         <Layout
             metaTitle="FAQ"
-            metaDescription="Excited about eCash? So are we! Below, you will find answers to the most frequently asked eCash questions."
+            metaDescription="Excited about ausCash? So are we! Below, you will find answers to the most frequently asked ausCash questions."
         >
             <SubPageHero
                 image={faqhand}
@@ -22,8 +22,8 @@ export default function FAQ() {
                 h2text="Frequently Asked Questions"
             >
                 <p>
-                    Excited about eCash? So are we! Below, you will find answers
-                    to the most frequently asked eCash questions.
+                    Excited about ausCash? So are we! Below, you will find answers
+                    to the most frequently asked ausCash questions.
                 </p>
             </SubPageHero>
             <GradientSpacer />

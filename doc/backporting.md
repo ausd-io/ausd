@@ -4,7 +4,7 @@ BACKPORTING
 The official doged guide to backporting code from Bitcoin Core. When searching
 for items to backport, especially be on the lookout for bug fixes, code cleanup, and
 important refactors, as these help improve doged despite consensus-level differences
-between eCash and Bitcoin Core.
+between ausCash and Bitcoin Core.
 
 Identifying commits
 -------------------

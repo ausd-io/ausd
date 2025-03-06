@@ -8,7 +8,7 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import { when } from 'jest-when';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
@@ -29,7 +29,7 @@ import {
     agoraPartialAlphaKeypair,
     agoraPartialBetaKeypair,
 } from 'components/Agora/fixtures/mocks';
-import { Ecc, initWasm, toHex } from 'ecash-lib';
+import { Ecc, initWasm, toHex } from 'auscash-lib';
 import { MockAgora } from '../../../../../modules/mock-chronik-client';
 import { token as tokenConfig } from 'config/token';
 
@@ -48,7 +48,7 @@ describe('<Agora />', () => {
         const mockedDate = new Date('2022-01-01T12:00:00.000Z');
         jest.spyOn(global, 'Date').mockImplementation(() => mockedDate);
         // Mock the app with context at the Token Action screen
-        mockedChronik = await initializeCashtabStateForTests(
+        mockedChronik = await initializausCashtabStateForTests(
             [agoraPartialAlphaWallet, agoraPartialBetaWallet],
             localforage,
         );
@@ -82,7 +82,7 @@ describe('<Agora />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -861,7 +861,7 @@ describe('<Agora />', () => {
             agoraOfferCachetBetaOne,
         ]);
 
-        const emptyWalletMockedChronik = await initializeCashtabStateForTests(
+        const emptyWalletMockedChronik = await initializausCashtabStateForTests(
             [
                 {
                     ...agoraPartialAlphaWallet,

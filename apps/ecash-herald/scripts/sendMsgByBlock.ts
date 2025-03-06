@@ -5,7 +5,7 @@
 /**
  * sendMsgByBlockheight.ts
  *
- * A script to allow developer to generate and broadcast an ecash-herald message
+ * A script to allow developer to generate and broadcast an auscash-herald message
  * by blockheight
  *
  * Use cases
@@ -76,7 +76,7 @@ async function sendMsgByBlock(
         const mock = new MockAdapter(axios, { onNoMatch: 'throwException' });
         const mockResult = {
             bitcoin: { usd: 25000.0 },
-            ecash: { usd: 0.00003333 },
+            auscash: { usd: 0.00003333 },
             ethereum: { usd: 1900.0 },
         };
         // coingecko prices

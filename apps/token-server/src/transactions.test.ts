@@ -10,7 +10,7 @@ import {
 } from '../src/transactions';
 import { MockChronikClient } from '../../../modules/mock-chronik-client';
 import vectors from '../test/vectors';
-import { Ecc, initWasm } from 'ecash-lib';
+import { Ecc, initWasm } from 'auscash-lib';
 
 describe('transactions.ts', function () {
     let ecc: Ecc;

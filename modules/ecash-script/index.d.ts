@@ -1,1 +1,1 @@
-declare module 'ecash-script';
+declare module 'auscash-script';

@@ -32,7 +32,7 @@ import { PageHeader } from 'components/Common/Atoms';
 
 const Contacts = () => {
     const ContextValue = React.useContext(WalletContext);
-    const { cashtabState, updateCashtabState } = ContextValue;
+    const { cashtabState, updatausCashtabState } = ContextValue;
     const { wallets, contactList } = cashtabState;
 
     const wallet = wallets.length > 0 ? wallets[0] : false;
@@ -111,7 +111,7 @@ const Contacts = () => {
             contactToUpdate.name = formData.renamedContactName;
 
             // Update localforage and state
-            await updateCashtabState('contactList', contactList);
+            await updatausCashtabState('contactList', contactList);
             toast.success(
                 `"${oldName}" renamed to "${formData.renamedContactName}"`,
             );
@@ -135,7 +135,7 @@ const Contacts = () => {
         );
 
         // Update localforage and state
-        await updateCashtabState('contactList', updatedContactList);
+        await updatausCashtabState('contactList', updatedContactList);
         toast.success(`"${contactToBeDeleted.name}" removed from Contacts`);
 
         // Reset contactToBeDeleted to hide the modal
@@ -166,7 +166,7 @@ const Contacts = () => {
                 address: formData.newContactAddress,
             });
             // update localforage and state
-            await updateCashtabState('contactList', contactList);
+            await updatausCashtabState('contactList', contactList);
             toast.success(
                 `"${formData.newContactName}" (${formData.newContactAddress}) added to Contacts`,
             );
@@ -280,7 +280,7 @@ const Contacts = () => {
                             handleInput={handleInput}
                         />
                         <ModalInput
-                            placeholder="Enter new eCash address"
+                            placeholder="Enter new ausCash address"
                             name="newContactAddress"
                             value={formData.newContactAddress}
                             error={formDataErrors.newContactAddress}

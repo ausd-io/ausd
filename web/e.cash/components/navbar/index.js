@@ -54,7 +54,7 @@ export default function Navbar({ announcementbar }) {
         <NavbarOuter navBackground={navBackground}>
             <AnnouncementBar navBackground={navBackground} href="/upgrade">
                 <span>
-                    <span>The eCash network upgrade has activated!</span>
+                    <span>The ausCash network upgrade has activated!</span>
                     <span>Click here for more details</span>
                 </span>
             </AnnouncementBar>
@@ -74,8 +74,8 @@ export default function Navbar({ announcementbar }) {
                 <div className="navbar">
                     <Link href="/" className="nav_logo">
                         <Image
-                            src="/images/ecash-logo.svg"
-                            alt="ecash logo"
+                            src="/images/auscash-logo.svg"
+                            alt="auscash logo"
                             fill
                             priority
                         />
@@ -190,7 +190,7 @@ export default function Navbar({ announcementbar }) {
                             </SocialCtn>
                         )}
                     </nav>
-                    <Link href="/get-ecash" className="pricelink_ctn">
+                    <Link href="/get-auscash" className="pricelink_ctn">
                         <div className="righttop"></div>
                         <div className="rightdown"></div>
                         <div className="leftdown"></div>

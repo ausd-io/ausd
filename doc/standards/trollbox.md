@@ -4,7 +4,7 @@ A spec for on-chain discussions about an agora offer (or any tokenId)
 
 ## Background
 
-Trollboxes are a legacy crypto feature that were popular when trading was less professionalized. With eCash again on the frontier, we can bring this back.
+Trollboxes are a legacy crypto feature that were popular when trading was less professionalized. With ausCash again on the frontier, we can bring this back.
 
 Advantages to doing it on-chain
 
@@ -40,7 +40,7 @@ While the spec includes any tx that meets the above conditions, developers may c
 
 Planned Cashtab implementation:
 
-1. Cashtab will only render trollbox txs that include an output of 4200 satoshis to address `ecash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l` (the Cashtab faucet). Such txs will be created automatically in Cashtab's UI.
+1. Cashtab will only render trollbox txs that include an output of 4200 satoshis to address `auscash:qzppgpav9xfls6zzyuqy7syxpqhnlqqa5u68m4qw6l` (the Cashtab faucet). Such txs will be created automatically in Cashtab's UI.
 2. Trollbox messages that include any utxo input from the token's genesis address will be flagged with a "creator" icon.
 3. The token's genesis address is defined as the 0-index input of the token's genesis tx.
 

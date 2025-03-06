@@ -193,7 +193,7 @@ class TestAvalancheProofBuilder(unittest.TestCase):
         # buildavalancheproof RPC to get the same signatures, as the test proof was
         # generated with a random nonce.
         # RPC command used (Bitcoin ABC commit bdee6e2):
-        #  src/bitcoin-cli buildavalancheproof 6296457553413371353 -4129334692075929194 "L4J6gEE4wL9ji2EQbzS5dPMTTsw8LRvcMst1Utij4e3X5ccUSdqW"  '[{"txid":"915d9cc742b46b77c52f69eb6be16739e5ff1cd82ad4fa4ac6581d3ef29fa769","vout":567214302,"amount":4446386380000.00,"height":1370779804,"iscoinbase":false,"privatekey":"KydYrKDNsVnY5uhpLyC4UmazuJvUjNoKJhEEv9f1mdK1D5zcnMSM"}]'  "ecash:qrupwtz3a7lngsf6xz9qxr75k9jvt07d3uexmwmpqy"
+        #  src/bitcoin-cli buildavalancheproof 6296457553413371353 -4129334692075929194 "L4J6gEE4wL9ji2EQbzS5dPMTTsw8LRvcMst1Utij4e3X5ccUSdqW"  '[{"txid":"915d9cc742b46b77c52f69eb6be16739e5ff1cd82ad4fa4ac6581d3ef29fa769","vout":567214302,"amount":4446386380000.00,"height":1370779804,"iscoinbase":false,"privatekey":"KydYrKDNsVnY5uhpLyC4UmazuJvUjNoKJhEEv9f1mdK1D5zcnMSM"}]'  "auscash:qrupwtz3a7lngsf6xz9qxr75k9jvt07d3uexmwmpqy"
         # Proof ID and limited ID verified with node RPC decodeavalancheproof.
         self._test(
             master2,
@@ -213,7 +213,7 @@ class TestAvalancheProofBuilder(unittest.TestCase):
                     ),
                 },
             ],
-            Address.from_string("ecash:qrupwtz3a7lngsf6xz9qxr75k9jvt07d3uexmwmpqy"),
+            Address.from_string("auscash:qrupwtz3a7lngsf6xz9qxr75k9jvt07d3uexmwmpqy"),
             "d97587e6c882615796011ec8f9a7b1c621023beefdde700a6bc02036335b4df141c8b"
             "c67bb05a971f5ac2745fd683797dde30169a79ff23e1d58c64afad42ad81cffe53967"
             "e16beb692fc5776bb442c79c5d91de00cf21804712806594010038e168a32102449fb"
@@ -261,7 +261,7 @@ class TestAvalancheProofBuilder(unittest.TestCase):
             sequence=0,
             expiration_time=1670827913,
             payout_address=Address.from_string(
-                "ecash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4"
+                "auscash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4"
             ),
             master=masterkey,
         )
@@ -317,7 +317,7 @@ class TestAvalancheProofBuilder(unittest.TestCase):
             sequence=0,
             expiration_time=1670827913,
             payout_address=Address.from_string(
-                "ecash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4"
+                "auscash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4"
             ),
             master_pub=master_pub,
         )
@@ -365,7 +365,7 @@ class TestAvalancheProofBuilder(unittest.TestCase):
         # Sanity check
         _txout_type, addr = get_address_from_output_script(payout_script_pubkey)
         self.assertEqual(
-            addr.to_ui_string(), "ecash:qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqs7ratqfx"
+            addr.to_ui_string(), "auscash:qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqs7ratqfx"
         )
 
         pb = ProofBuilder(

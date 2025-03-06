@@ -1,7 +1,7 @@
 {
-    "name": "ecash-script",
+    "name": "auscash-script",
     "version": "2.1.3",
-    "description": "Parse script for eCash (XEC)",
+    "description": "Parse script for ausCash (XEC)",
     "main": "index.js",
     "scripts": {
         "test": "mocha",
@@ -11,10 +11,10 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Bitcoin-ABC/bitcoin-abc.git",
-        "directory": "modules/ecash-script"
+        "directory": "modules/auscash-script"
     },
     "keywords": [
-        "ecash",
+        "auscash",
         "xec",
         "OP_RETURN",
         "script",

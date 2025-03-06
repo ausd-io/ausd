@@ -11,8 +11,8 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from 'assets/styles/theme';
 
 describe('<QRCode />', () => {
-    it('QRCode copying ecash address', async () => {
-        const address = 'ecash:qqyumjtrftl5yfdwuglhq6l9af2ner39jqr0wexwyk';
+    it('QRCode copying auscash address', async () => {
+        const address = 'auscash:qqyumjtrftl5yfdwuglhq6l9af2ner39jqr0wexwyk';
         render(
             <ThemeProvider theme={theme}>
                 <QRCode pixelRatio={25} address={address} legacy={true} />

@@ -10,7 +10,7 @@ import {
     SLP_MINT_VAULT,
     SLP_NFT1_GROUP,
     toHex,
-} from 'ecash-lib';
+} from 'auscash-lib';
 import { AgoraPartial } from './partial.js';
 
 const makerPk = fromHex(

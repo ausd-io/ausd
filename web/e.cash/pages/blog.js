@@ -105,11 +105,11 @@ function Blog(props) {
  */
 async function generateRssFeed(posts) {
     const feedOptions = {
-        title: 'eCash Blog',
-        description: 'Latest eCash news and information',
+        title: 'ausCash Blog',
+        description: 'Latest ausCash news and information',
         site_url: process.env.NEXT_PUBLIC_SITE_URL,
         feed_url: `${process.env.NEXT_PUBLIC_SITE_URL}/rss.xml`,
-        image_url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/logos/ecash-logo-primary-horizontal-dark-text.png`,
+        image_url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/logos/auscash-logo-primary-horizontal-dark-text.png`,
         pubDate: new Date(),
         copyright: `©${new Date().getFullYear()}, Bitcoin ABC. All Rights Reserved.`,
     };

@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 import { expect } from 'chai';
-import { ALP_STANDARD, DEFAULT_DUST_LIMIT, fromHex, toHex } from 'ecash-lib';
+import { ALP_STANDARD, DEFAULT_DUST_LIMIT, fromHex, toHex } from 'auscash-lib';
 
 import { AgoraPartial } from './partial.js';
 

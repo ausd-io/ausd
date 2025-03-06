@@ -43,7 +43,7 @@ import {
     sha256d,
     strToBytes,
     writeTxOutput,
-} from 'ecash-lib';
+} from 'auscash-lib';
 import { AGORA_LOKAD_ID } from './consts.js';
 
 /**

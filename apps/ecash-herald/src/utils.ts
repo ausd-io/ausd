@@ -6,7 +6,7 @@ import axios from 'axios';
 import config, { HeraldConfig, HeraldPriceApi, FiatCode } from '../config';
 import BigNumber from 'bignumber.js';
 import addressDirectory from '../constants/addresses';
-import { consume } from 'ecash-script';
+import { consume } from 'auscash-script';
 import { MemoryCache } from 'cache-manager';
 
 export const returnAddressPreview = (
@@ -28,7 +28,7 @@ export const returnAddressPreview = (
 
 /**
  * Get the price API url herald would use for specified config
- * @param config ecash-herald config object
+ * @param config auscash-herald config object
  * @returns expected URL of price API call
  */
 export const getCoingeckoApiUrl = (config: HeraldConfig): string => {
@@ -47,7 +47,7 @@ export interface CoinGeckoPrice {
 export interface CoinGeckoResponse {
     bitcoin: { usd: number };
     ethereum: { usd: number };
-    ecash: { usd: number };
+    auscash: { usd: number };
 }
 interface GetCoingeckPricesResponse {
     coingeckoResponse: CoinGeckoResponse;
@@ -61,7 +61,7 @@ export const getCoingeckoPrices = async (
     const apiUrl = `${apiBase}?ids=${coingeckoSlugs.join(
         ',',
     )}&vs_currencies=${fiat}&precision=${precision.toString()}`;
-    // https://api.coingecko.com/api/v3/simple/price?ids=ecash,bitcoin,ethereum&vs_currencies=usd&precision=8
+    // https://api.coingecko.com/api/v3/simple/price?ids=auscash,bitcoin,ethereum&vs_currencies=usd&precision=8
     let coingeckoApiResponse;
     try {
         coingeckoApiResponse = await axios.get(apiUrl);
@@ -489,7 +489,7 @@ export const getNextStakingReward = async (
     return false;
 };
 
-const ECASH_DECIMALS = 2;
+const AUSCASH_DECIMALS = 2;
 /**
  * Divide satoshis by 100 using string methods and no bn lib
  * @param satoshis
@@ -507,8 +507,8 @@ export const toXec = (satoshis: bigint): number => {
     }
 
     // Add decimal place
-    const beforeDecimal = satsStr.slice(0, -1 * ECASH_DECIMALS);
-    const afterDecimal = satsStr.slice(-1 * ECASH_DECIMALS);
+    const beforeDecimal = satsStr.slice(0, -1 * AUSCASH_DECIMALS);
+    const afterDecimal = satsStr.slice(-1 * AUSCASH_DECIMALS);
 
     return parseFloat(`${beforeDecimal}.${afterDecimal}`);
 };

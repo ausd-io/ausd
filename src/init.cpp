@@ -728,7 +728,7 @@ void SetupServerArgs(NodeContext &node) {
             "all known types are enabled.",
         ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
     argsman.AddArg(
-        "-usecashaddr",
+        "-usauscashaddr",
         "Use Cash Address for destination encoding instead of base58 "
         "(activate by default on Jan, 14)",
         ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
@@ -2587,7 +2587,7 @@ bool AppInitMain(Config &config, RPCServer &rpcServer,
     // Encoded addresses using cashaddr instead of base58.
     // We don't this by default because Dogecoin uses base58 with a custom
     // prefix, so ambiguity with BTC addresses is avoided.
-    config.SetCashAddrEncoding(args.GetBoolArg("-usecashaddr", false));
+    config.SetCashAddrEncoding(args.GetBoolArg("-usauscashaddr", false));
 
     // Step 8: load indexers
     if (args.GetBoolArg("-txindex", DEFAULT_TXINDEX)) {

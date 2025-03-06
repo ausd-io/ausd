@@ -18,13 +18,13 @@ import localforage from 'localforage';
 import { when } from 'jest-when';
 import appConfig from 'config/app';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
 import { explorer } from 'config/explorer';
 import { undecimalizeTokenAmount } from 'wallet';
-import { Ecc, initWasm } from 'ecash-lib';
+import { Ecc, initWasm } from 'auscash-lib';
 
 describe('<Configure />', () => {
     let ecc;
@@ -44,7 +44,7 @@ describe('<Configure />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -59,7 +59,7 @@ describe('<Configure />', () => {
         const altFiatPriceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${altFiat}&include_last_updated_at=true`;
         const xecPriceAltFiat = 0.00002;
         const altFiatPriceResponse = {
-            ecash: {
+            auscash: {
                 [altFiat]: xecPriceAltFiat,
                 last_updated_at: 1706644626,
             },
@@ -75,7 +75,7 @@ describe('<Configure />', () => {
         await clearLocalForage(localforage);
     });
     it('We do not see the camera auto-open setting in the config screen on a desktop device', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             freshWalletWithOneIncomingCashtabMsg,
             localforage,
         );
@@ -105,7 +105,7 @@ describe('<Configure />', () => {
         });
 
         // Get mocked chronik client with expected API results for this wallet
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             freshWalletWithOneIncomingCashtabMsg,
             localforage,
         );
@@ -135,7 +135,7 @@ describe('<Configure />', () => {
         });
     });
     it('Setting "Send Confirmations" settings will show send confirmations', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -185,7 +185,7 @@ describe('<Configure />', () => {
         // Fill out to and amount
         await user.type(
             screen.getByPlaceholderText('Address'),
-            'ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
+            'auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
         );
         await user.type(screen.getByPlaceholderText('Amount'), '55');
         // click send
@@ -193,7 +193,7 @@ describe('<Configure />', () => {
         // we see a modal
         expect(
             await screen.findByText(
-                `Send 55 XEC to ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y`,
+                `Send 55 XEC to auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y`,
             ),
         ).toBeInTheDocument();
 
@@ -201,7 +201,7 @@ describe('<Configure />', () => {
         await user.click(screen.getByText('OK'));
 
         // Notification is rendered with expected txid?;
-        const txSuccessNotification = await screen.findByText('eCash sent');
+        const txSuccessNotification = await screen.findByText('ausCash sent');
         await waitFor(() =>
             expect(txSuccessNotification).toHaveAttribute(
                 'href',
@@ -233,7 +233,7 @@ describe('<Configure />', () => {
             },
         };
 
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithVipToken,
             localforage,
         );
@@ -299,7 +299,7 @@ describe('<Configure />', () => {
             },
         };
 
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithVipToken,
             localforage,
         );
@@ -368,7 +368,7 @@ describe('<Configure />', () => {
         // Fill out to and amount
         await user.type(
             screen.getByPlaceholderText('Address'),
-            'ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
+            'auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
         );
         await user.type(screen.getByPlaceholderText('Amount'), '55');
 
@@ -376,7 +376,7 @@ describe('<Configure />', () => {
         await user.click(screen.getByRole('button', { name: 'Send' }));
 
         // Notification is rendered with expected txid
-        const txSuccessNotification = await screen.findByText('eCash sent');
+        const txSuccessNotification = await screen.findByText('ausCash sent');
         await waitFor(() =>
             expect(txSuccessNotification).toHaveAttribute(
                 'href',
@@ -397,7 +397,7 @@ describe('<Configure />', () => {
             },
         };
 
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithVipToken,
             localforage,
         );
@@ -468,7 +468,7 @@ describe('<Configure />', () => {
         // Fill out to and amount
         await user.type(
             screen.getByPlaceholderText('Address'),
-            'ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
+            'auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
         );
         await user.type(screen.getByPlaceholderText('Amount'), '55');
 
@@ -476,7 +476,7 @@ describe('<Configure />', () => {
         await user.click(screen.getByRole('button', { name: 'Send' }));
 
         // Notification is rendered with expected txid
-        const txSuccessNotification = await screen.findByText('eCash sent');
+        const txSuccessNotification = await screen.findByText('ausCash sent');
         await waitFor(() =>
             expect(txSuccessNotification).toHaveAttribute(
                 'href',
@@ -508,7 +508,7 @@ describe('<Configure />', () => {
         // We send enough GRP to be under the min
         await user.type(
             screen.getByPlaceholderText('Address'),
-            'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+            'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
         );
         await user.type(screen.getByPlaceholderText('Amount'), '99000001');
 
@@ -533,7 +533,7 @@ describe('<Configure />', () => {
         // See SendXec test, "If the user has minFeeSends set to true but no longer has the right token amount, the feature is disabled"
     });
     it('We can choose a new fiat currency', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );

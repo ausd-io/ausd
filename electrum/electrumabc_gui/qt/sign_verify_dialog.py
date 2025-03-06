@@ -113,20 +113,20 @@ class SignVerifyDialog(QDialog, MessageBoxMixin):
         sigtype_widget = QWidget()
         sigtype_layout = QHBoxLayout()
         sigtype_widget.setLayout(sigtype_layout)
-        self.ecash_magic_rb = QRadioButton("eCash signature")
-        self.ecash_magic_rb.setToolTip(
+        self.auscash_magic_rb = QRadioButton("ausCash signature")
+        self.auscash_magic_rb.setToolTip(
             "New signature scheme introduced in v5.0.2 (incompatible with signatures\n"
-            "produced with earlier versions). The message is prefixed with 'eCash \n"
+            "produced with earlier versions). The message is prefixed with 'ausCash \n"
             "Signed Message:\\n' prior to signing."
         )
-        self.ecash_magic_rb.setChecked(True)
+        self.auscash_magic_rb.setChecked(True)
         self.bicoin_magic_rb = QRadioButton("Bitcoin signature")
         self.bicoin_magic_rb.setToolTip(
             "Legacy signature scheme used before v5.0.2. The message is prefixed with\n"
             "'Bitcoin Signed Message:\\n' prior to signing."
         )
         sigtype_layout.addWidget(QLabel("Signature type:"))
-        sigtype_layout.addWidget(self.ecash_magic_rb)
+        sigtype_layout.addWidget(self.auscash_magic_rb)
         sigtype_layout.addWidget(self.bicoin_magic_rb)
 
         collapsible_section = CollapsibleSection("Advanced settings", sigtype_widget)
@@ -225,7 +225,7 @@ class SignVerifyDialog(QDialog, MessageBoxMixin):
 
     def get_sigtype(self) -> SignatureType:
         return (
-            SignatureType.ECASH
-            if self.ecash_magic_rb.isChecked()
+            SignatureType.AUSCASH
+            if self.auscash_magic_rb.isChecked()
             else SignatureType.BITCOIN
         )

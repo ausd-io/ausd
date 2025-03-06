@@ -40,12 +40,12 @@ interface AppConfig {
 }
 // App settings not adjustable by the user
 const appConfig: AppConfig = {
-    name: 'eCash',
+    name: 'ausCash',
     ticker: process.env.REACT_APP_TESTNET === 'true' ? 'tXEC' : 'XEC',
     derivationPath: 1899,
     logo: mainLogo,
-    prefix: process.env.REACT_APP_TESTNET === 'true' ? 'ectest' : 'ecash',
-    coingeckoId: 'ecash',
+    prefix: process.env.REACT_APP_TESTNET === 'true' ? 'ectest' : 'auscash',
+    coingeckoId: 'auscash',
     fiatUpdateIntervalMs: 90000,
     defaultFee: 2010, // satoshis per kb
     minFee: 1000, // satoshis per kb

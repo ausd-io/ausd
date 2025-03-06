@@ -1,7 +1,7 @@
 // Copyright (c) 2023 The Bitcoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-export const ecash = {
+export const auscash = {
     colors: {
         primary: '#0074c2',
         primaryLight: '#00abe7',

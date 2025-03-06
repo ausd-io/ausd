@@ -28,13 +28,13 @@ extension.runtime.onMessage.addListener(function (request) {
             },
             err => {
                 console.log(
-                    'Error in getCurrentActiveTab() triggered by ecash address request',
+                    'Error in getCurrentActiveTab() triggered by auscash address request',
                     err,
                 );
             },
         );
     }
-    // Handle user approval / rejection of an ecash address sharing request
+    // Handle user approval / rejection of an auscash address sharing request
     if (
         request.text === `Cashtab` &&
         Object.keys(request).includes('addressRequestApproved')

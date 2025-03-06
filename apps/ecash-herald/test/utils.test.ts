@@ -24,8 +24,8 @@ import {
 import templates from './mocks/templates';
 const { addressPreviews, mockCoingeckoPrices } = templates;
 
-describe('ecash-telegram-bot utils.js functions', function () {
-    it('returnAddressPreview converts a valid ecash: address into an abbreviated preview at various slice sizes', function () {
+describe('auscash-telegram-bot utils.js functions', function () {
+    it('returnAddressPreview converts a valid auscash: address into an abbreviated preview at various slice sizes', function () {
         for (let i = 0; i < addressPreviews.length; i += 1) {
             const { address, preview, sliceSize } = addressPreviews[i];
             assert.strictEqual(
@@ -40,7 +40,7 @@ describe('ecash-telegram-bot utils.js functions', function () {
 
         const mockResult = {
             bitcoin: { usd: 28044.64857505 },
-            ecash: { usd: 0.00003113 },
+            auscash: { usd: 0.00003113 },
             ethereum: { usd: 1900.73166438 },
         };
 
@@ -74,7 +74,7 @@ describe('ecash-telegram-bot utils.js functions', function () {
         const apiConfig: HeraldPriceApi = {
             apiBase: 'https://api.coingecko.com/api/v3/simple/price',
             cryptos: [
-                { coingeckoSlug: 'ecash', ticker: 'XEC' },
+                { coingeckoSlug: 'auscash', ticker: 'XEC' },
                 { coingeckoSlug: 'monero', ticker: 'XMR' },
                 { coingeckoSlug: 'solana', ticker: 'SOL' },
             ],
@@ -86,7 +86,7 @@ describe('ecash-telegram-bot utils.js functions', function () {
         const mock = new MockAdapter(axios, { onNoMatch: 'throwException' });
 
         const mockResult = {
-            ecash: { eur: 0.00003113 },
+            auscash: { eur: 0.00003113 },
             monero: { eur: 107.64857505 },
             solana: { eur: 22.73166438 },
         };
@@ -134,7 +134,7 @@ describe('ecash-telegram-bot utils.js functions', function () {
 
         const mockResult = {
             bitcoin: { usd: 28044.64857505 },
-            ecash: { usd: 0.00003113 },
+            auscash: { usd: 0.00003113 },
             monero: { usd: 153.21055216 },
         };
 

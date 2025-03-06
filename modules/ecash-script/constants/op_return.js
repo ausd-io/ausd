@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 /**
- * Selection of OP codes for ecash currently supported by ecash-script
+ * Selection of OP codes for auscash currently supported by auscash-script
  * Ref https://en.bitcoin.it/wiki/Script
  */
 'use strict';

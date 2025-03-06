@@ -31,7 +31,7 @@ const ConfigIconWrapper = styled.div`
     svg {
         height: 42px;
         width: 42px;
-        fill: ${props => props.theme.eCashBlue};
+        fill: ${props => props.theme.ausCashBlue};
     }
 `;
 const StyledConfigure = styled.div`
@@ -90,7 +90,7 @@ const GeneralSettingsItem = styled.div`
 
 const Configure = () => {
     const ContextValue = React.useContext(WalletContext);
-    const { updateCashtabState, cashtabState } = ContextValue;
+    const { updatausCashtabState, cashtabState } = ContextValue;
     const { settings, wallets } = cashtabState;
 
     const wallet = wallets.length > 0 ? wallets[0] : false;
@@ -101,21 +101,21 @@ const Configure = () => {
     const { tokens } = walletState;
 
     const handleSendModalToggle = e => {
-        updateCashtabState('settings', {
+        updatausCashtabState('settings', {
             ...settings,
             sendModal: e.target.checked,
         });
     };
 
     const handleMinFeesToggle = e => {
-        updateCashtabState('settings', {
+        updatausCashtabState('settings', {
             ...settings,
             minFeeSends: e.target.checked,
         });
     };
 
     const handleCameraOverride = e => {
-        updateCashtabState('settings', {
+        updatausCashtabState('settings', {
             ...settings,
             autoCameraOn: e.target.checked,
         });
@@ -136,7 +136,7 @@ const Configure = () => {
                 name="configure-fiat-select"
                 value={cashtabState.settings.fiatCurrency}
                 handleSelect={e => {
-                    updateCashtabState('settings', {
+                    updatausCashtabState('settings', {
                         ...settings,
                         fiatCurrency: e.target.value,
                     });

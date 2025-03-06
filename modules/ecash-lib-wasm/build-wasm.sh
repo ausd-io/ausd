@@ -13,14 +13,14 @@ RUSTFLAGS="-C strip=debuginfo" \
     --target=wasm32-unknown-unknown
 
 # cargo builds our wasm file here
-WASM_FILE=./target/wasm32-unknown-unknown/release-wasm/ecash_lib_wasm.wasm
+WASM_FILE=./target/wasm32-unknown-unknown/release-wasm/auscash_lib_wasm.wasm
 
 # Optimize wasm for compact size
 wasm-opt -Oz $WASM_FILE -o $WASM_FILE
 
 # Generate JS/TS bindings for the wasm file
 # Generated WebAssembly files differ in both cases
-FFI_OUTDIR=../ecash-lib/src/ffi
+FFI_OUTDIR=../auscash-lib/src/ffi
 
 # Generate web bindings, and suffix files with "_browser"
 # We build this separately, as this is incompatible with NodeJS:
@@ -28,11 +28,11 @@ FFI_OUTDIR=../ecash-lib/src/ffi
 # - On jest it just refuses to compile as it uses import.meta.url, which we
 #   weren't able to get to work
 wasm-bindgen $WASM_FILE --out-dir $FFI_OUTDIR --target web
-mv $FFI_OUTDIR/ecash_lib_wasm_bg.wasm $FFI_OUTDIR/ecash_lib_wasm_bg_browser.wasm
-mv $FFI_OUTDIR/ecash_lib_wasm_bg.wasm.d.ts $FFI_OUTDIR/ecash_lib_wasm_bg_browser.wasm.d.ts
-mv $FFI_OUTDIR/ecash_lib_wasm.d.ts $FFI_OUTDIR/ecash_lib_wasm_browser.d.ts
-mv $FFI_OUTDIR/ecash_lib_wasm.js $FFI_OUTDIR/ecash_lib_wasm_browser.js
-sed -i'' -e 's/ecash_lib_wasm_bg/ecash_lib_wasm_bg_browser/g' $FFI_OUTDIR/ecash_lib_wasm_browser.js
+mv $FFI_OUTDIR/auscash_lib_wasm_bg.wasm $FFI_OUTDIR/auscash_lib_wasm_bg_browser.wasm
+mv $FFI_OUTDIR/auscash_lib_wasm_bg.wasm.d.ts $FFI_OUTDIR/auscash_lib_wasm_bg_browser.wasm.d.ts
+mv $FFI_OUTDIR/auscash_lib_wasm.d.ts $FFI_OUTDIR/auscash_lib_wasm_browser.d.ts
+mv $FFI_OUTDIR/auscash_lib_wasm.js $FFI_OUTDIR/auscash_lib_wasm_browser.js
+sed -i'' -e 's/auscash_lib_wasm_bg/auscash_lib_wasm_bg_browser/g' $FFI_OUTDIR/auscash_lib_wasm_browser.js
 
 # Generate nodejs bindings, and suffix files with "_nodejs"
 # We build this separately from NodeJS as it's incompatible with the browser:
@@ -40,8 +40,8 @@ sed -i'' -e 's/ecash_lib_wasm_bg/ecash_lib_wasm_bg_browser/g' $FFI_OUTDIR/ecash_
 # - It uses `readFileSync` at *import* time, and there's no synchronous fetch on
 #   browsers to polyfill this with
 wasm-bindgen $WASM_FILE --out-dir $FFI_OUTDIR --target nodejs
-mv $FFI_OUTDIR/ecash_lib_wasm_bg.wasm $FFI_OUTDIR/ecash_lib_wasm_bg_nodejs.wasm
-mv $FFI_OUTDIR/ecash_lib_wasm_bg.wasm.d.ts $FFI_OUTDIR/ecash_lib_wasm_bg_nodejs.wasm.d.ts
-mv $FFI_OUTDIR/ecash_lib_wasm.d.ts $FFI_OUTDIR/ecash_lib_wasm_nodejs.d.ts
-mv $FFI_OUTDIR/ecash_lib_wasm.js $FFI_OUTDIR/ecash_lib_wasm_nodejs.js
-sed -i'' -e 's/ecash_lib_wasm_bg/ecash_lib_wasm_bg_nodejs/g' $FFI_OUTDIR/ecash_lib_wasm_nodejs.js
+mv $FFI_OUTDIR/auscash_lib_wasm_bg.wasm $FFI_OUTDIR/auscash_lib_wasm_bg_nodejs.wasm
+mv $FFI_OUTDIR/auscash_lib_wasm_bg.wasm.d.ts $FFI_OUTDIR/auscash_lib_wasm_bg_nodejs.wasm.d.ts
+mv $FFI_OUTDIR/auscash_lib_wasm.d.ts $FFI_OUTDIR/auscash_lib_wasm_nodejs.d.ts
+mv $FFI_OUTDIR/auscash_lib_wasm.js $FFI_OUTDIR/auscash_lib_wasm_nodejs.js
+sed -i'' -e 's/auscash_lib_wasm_bg/auscash_lib_wasm_bg_nodejs/g' $FFI_OUTDIR/auscash_lib_wasm_nodejs.js

@@ -15,7 +15,7 @@ import validation from '../src/validation';
 const { ValidationError } = validation;
 
 describe('cashaddr', () => {
-    const NETWORKS = ['ecash', 'ectest', 'etoken'];
+    const NETWORKS = ['auscash', 'ectest', 'etoken'];
 
     const ADDRESS_TYPES: AddressType[] = ['P2PKH', 'P2SH'];
 
@@ -49,9 +49,9 @@ describe('cashaddr', () => {
     ];
 
     const EXPECTED_P2PKH_OUTPUTS = [
-        'ecash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2',
-        'ecash:qr95sy3j9xwd2ap32xkykttr4cvcu7as4ykdcjcn6n',
-        'ecash:qqq3728yw0y47sqn6l2na30mcw6zm78dzq653y7pv5',
+        'auscash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2',
+        'auscash:qr95sy3j9xwd2ap32xkykttr4cvcu7as4ykdcjcn6n',
+        'auscash:qqq3728yw0y47sqn6l2na30mcw6zm78dzq653y7pv5',
     ];
 
     const EXPECTED_P2PKH_OUTPUTS_LEGACY = [
@@ -67,9 +67,9 @@ describe('cashaddr', () => {
     ];
 
     const EXPECTED_P2SH_OUTPUTS = [
-        'ecash:ppm2qsznhks23z7629mms6s4cwef74vcwv2zrv3l8h',
-        'ecash:pr95sy3j9xwd2ap32xkykttr4cvcu7as4ypg9alspw',
-        'ecash:pqq3728yw0y47sqn6l2na30mcw6zm78dzqd3vtezhf',
+        'auscash:ppm2qsznhks23z7629mms6s4cwef74vcwv2zrv3l8h',
+        'auscash:pr95sy3j9xwd2ap32xkykttr4cvcu7as4ypg9alspw',
+        'auscash:pqq3728yw0y47sqn6l2na30mcw6zm78dzqd3vtezhf',
     ];
 
     const EXPECTED_P2SH_OUTPUTS_LEGACY = [
@@ -137,7 +137,7 @@ describe('cashaddr', () => {
 
         it('should fail on a prefix with mixed letter case', () => {
             assert.throws(() => {
-                cashaddr.encode('EcAsH', ADDRESS_TYPES[0], new Uint8Array([]));
+                cashaddr.encode('AuScAsH', ADDRESS_TYPES[0], new Uint8Array([]));
             }, ValidationError);
         });
 
@@ -163,11 +163,11 @@ describe('cashaddr', () => {
         it('should encode test hashes on mainnet correctly with uint8Array hash input', () => {
             for (const index in TEST_HASHES) {
                 assert.equal(
-                    cashaddr.encode('ecash', 'P2PKH', TEST_HASHES[index]),
+                    cashaddr.encode('auscash', 'P2PKH', TEST_HASHES[index]),
                     EXPECTED_P2PKH_OUTPUTS[index],
                 );
                 assert.equal(
-                    cashaddr.encode('ecash', 'P2SH', TEST_HASHES[index]),
+                    cashaddr.encode('auscash', 'P2SH', TEST_HASHES[index]),
                     EXPECTED_P2SH_OUTPUTS[index],
                 );
             }
@@ -177,7 +177,7 @@ describe('cashaddr', () => {
             for (const index in TEST_HASHES) {
                 assert.equal(
                     cashaddr.encode(
-                        'ecash',
+                        'auscash',
                         'P2PKH',
                         TEST_HASHES_STRINGS[index],
                     ),
@@ -185,7 +185,7 @@ describe('cashaddr', () => {
                 );
                 assert.equal(
                     cashaddr.encode(
-                        'ecash',
+                        'auscash',
                         'P2SH',
                         TEST_HASHES_STRINGS[index],
                     ),
@@ -197,11 +197,11 @@ describe('cashaddr', () => {
         it('should encode test hashes on mainnet correctly with lower case for type', () => {
             for (const index in TEST_HASHES) {
                 assert.equal(
-                    cashaddr.encode('ecash', 'p2pkh', TEST_HASHES[index]),
+                    cashaddr.encode('auscash', 'p2pkh', TEST_HASHES[index]),
                     EXPECTED_P2PKH_OUTPUTS[index],
                 );
                 assert.equal(
-                    cashaddr.encode('ecash', 'p2sh', TEST_HASHES[index]),
+                    cashaddr.encode('auscash', 'p2sh', TEST_HASHES[index]),
                     EXPECTED_P2SH_OUTPUTS[index],
                 );
             }
@@ -329,7 +329,7 @@ describe('cashaddr', () => {
         it('should fail when the version byte is invalid', () => {
             assert.throws(() => {
                 cashaddr.decode(
-                    'ecash:zpm2qsznhks23z7629mms6s4cwef74vcwv6ddac6re',
+                    'auscash:zpm2qsznhks23z7629mms6s4cwef74vcwv6ddac6re',
                 );
             }, ValidationError);
         });
@@ -337,17 +337,17 @@ describe('cashaddr', () => {
         it('should fail when given an address with mixed letter case', () => {
             assert.throws(() => {
                 cashaddr.decode(
-                    'ecash:QPM2QSZNHKS23Z7629MMS6s4cwef74vcwvA87RKUU2',
+                    'auscash:QPM2QSZNHKS23Z7629MMS6s4cwef74vcwvA87RKUU2',
                 );
             }, ValidationError);
             assert.throws(() => {
                 cashaddr.decode(
-                    'eCASH:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2',
+                    'ausCASH:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2',
                 );
             }, ValidationError);
             assert.throws(() => {
                 cashaddr.decode(
-                    'Ecash:QPM2QSZNHKS23Z7629MMS6s4cwef74vcwvA87RKUU2',
+                    'Auscash:QPM2QSZNHKS23Z7629MMS6s4cwef74vcwvA87RKUU2',
                 );
             }, ValidationError);
         });
@@ -355,10 +355,10 @@ describe('cashaddr', () => {
         it('should decode a valid address regardless of letter case', () => {
             assert.deepEqual(
                 cashaddr.decode(
-                    'ecash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2',
+                    'auscash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2',
                 ).hash,
                 cashaddr.decode(
-                    'ECASH:QPM2QSZNHKS23Z7629MMS6S4CWEF74VCWVA87RKUU2',
+                    'AUSCASH:QPM2QSZNHKS23Z7629MMS6S4CWEF74VCWVA87RKUU2',
                 ).hash,
             );
         });
@@ -386,7 +386,7 @@ describe('cashaddr', () => {
                 cashaddr.decode('qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2')
                     .hash,
                 cashaddr.decode(
-                    'ecash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2',
+                    'auscash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2',
                 ).hash,
             );
         });
@@ -402,7 +402,7 @@ describe('cashaddr', () => {
         it('should reject any input that has two prefixes for some reason', () => {
             assert.throws(() => {
                 cashaddr.decode(
-                    'ecash:bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2',
+                    'auscash:bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2',
                 );
             }, ValidationError);
         });
@@ -535,7 +535,7 @@ describe('cashaddr', () => {
         it('should fail when the version byte is invalid and cashaddr.decode throws an error', () => {
             assert.throws(() => {
                 cashaddr.toLegacy(
-                    'ecash:zpm2qsznhks23z7629mms6s4cwef74vcwv6ddac6re',
+                    'auscash:zpm2qsznhks23z7629mms6s4cwef74vcwv6ddac6re',
                 );
             }, ValidationError);
         });
@@ -544,7 +544,7 @@ describe('cashaddr', () => {
                 cashaddr.toLegacy('1BpEi6DfDAUFd7GtittLSdBeYJvcoaVggu');
             }, ValidationError);
         });
-        it('should convert mainnet p2pkh ecash addresses to expected legacy format', () => {
+        it('should convert mainnet p2pkh auscash addresses to expected legacy format', () => {
             for (const index in EXPECTED_P2PKH_OUTPUTS) {
                 assert.equal(
                     cashaddr.toLegacy(EXPECTED_P2PKH_OUTPUTS[index]),
@@ -552,7 +552,7 @@ describe('cashaddr', () => {
                 );
             }
         });
-        it('should convert testnet p2pkh ecash addresses to expected legacy format', () => {
+        it('should convert testnet p2pkh auscash addresses to expected legacy format', () => {
             for (const index in EXPECTED_P2PKH_OUTPUTS_TESTNET) {
                 assert.equal(
                     cashaddr.toLegacy(EXPECTED_P2PKH_OUTPUTS_TESTNET[index]),
@@ -560,7 +560,7 @@ describe('cashaddr', () => {
                 );
             }
         });
-        it('should convert mainnet p2sh ecash addresses to expected legacy format', () => {
+        it('should convert mainnet p2sh auscash addresses to expected legacy format', () => {
             for (const index in EXPECTED_P2SH_OUTPUTS) {
                 assert.equal(
                     cashaddr.toLegacy(EXPECTED_P2SH_OUTPUTS[index]),
@@ -568,7 +568,7 @@ describe('cashaddr', () => {
                 );
             }
         });
-        it('should convert testnet p2sh ecash addresses to expected legacy format', () => {
+        it('should convert testnet p2sh auscash addresses to expected legacy format', () => {
             for (const index in EXPECTED_P2SH_OUTPUTS_TESTNET) {
                 assert.equal(
                     cashaddr.toLegacy(EXPECTED_P2SH_OUTPUTS_TESTNET[index]),
@@ -582,7 +582,7 @@ describe('cashaddr', () => {
         it('returns false for address with invalid version byte', () => {
             assert.equal(
                 cashaddr.isValidCashAddress(
-                    'ecash:zpm2qsznhks23z7629mms6s4cwef74vcwv6ddac6re',
+                    'auscash:zpm2qsznhks23z7629mms6s4cwef74vcwv6ddac6re',
                 ),
                 false,
             );
@@ -615,7 +615,7 @@ describe('cashaddr', () => {
                 );
             }
         });
-        it('returns true for prefixless ecash: checksummed addresses against specified ecash: prefix type', () => {
+        it('returns true for prefixless auscash: checksummed addresses against specified auscash: prefix type', () => {
             for (const index in ALL_VALID_MAINNET_ADDRESSES) {
                 const thisPrefixedAddress = ALL_VALID_MAINNET_ADDRESSES[index];
                 const thisPrefixlessAddrress = thisPrefixedAddress.slice(
@@ -624,18 +624,18 @@ describe('cashaddr', () => {
                 assert.equal(
                     cashaddr.isValidCashAddress(
                         thisPrefixlessAddrress,
-                        'ecash',
+                        'auscash',
                     ),
                     true,
                 );
             }
         });
-        it('returns true for mainnet p2pkh and p2sh cashaddresses if ecash prefix is specified', () => {
+        it('returns true for mainnet p2pkh and p2sh cashaddresses if auscash prefix is specified', () => {
             for (const index in ALL_VALID_MAINNET_ADDRESSES) {
                 assert.equal(
                     cashaddr.isValidCashAddress(
                         ALL_VALID_MAINNET_ADDRESSES[index],
-                        'ecash',
+                        'auscash',
                     ),
                     true,
                 );
@@ -657,7 +657,7 @@ describe('cashaddr', () => {
                 assert.equal(
                     cashaddr.isValidCashAddress(
                         ALL_VALID_TESTNET_ADDRESSES[index],
-                        'ecash',
+                        'auscash',
                     ),
                     false,
                 );
@@ -669,27 +669,27 @@ describe('cashaddr', () => {
             assert.equal(
                 cashaddr.isValidCashAddress(
                     { address: 'some invalid address' } as unknown as string,
-                    'ecash',
+                    'auscash',
                 ),
                 false,
             );
             assert.equal(
                 cashaddr.isValidCashAddress(
                     false as unknown as string,
-                    'ecash',
+                    'auscash',
                 ),
                 false,
             );
             assert.equal(
-                cashaddr.isValidCashAddress(null as unknown as string, 'ecash'),
+                cashaddr.isValidCashAddress(null as unknown as string, 'auscash'),
                 false,
             );
             assert.equal(
                 cashaddr.isValidCashAddress(
                     [
-                        'ecash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2',
+                        'auscash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2',
                     ] as unknown as string,
-                    'ecash',
+                    'auscash',
                 ),
                 false,
             );

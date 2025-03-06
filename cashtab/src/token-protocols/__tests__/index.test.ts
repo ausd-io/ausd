@@ -8,7 +8,7 @@ import {
     getMaxDecimalizedQty,
 } from 'token-protocols';
 import vectors from '../fixtures/vectors';
-import { initWasm } from 'ecash-lib';
+import { initWasm } from 'auscash-lib';
 
 describe('Cashtab supported token protocol methods', () => {
     beforeAll(async () => {

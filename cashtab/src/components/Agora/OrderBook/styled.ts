@@ -50,7 +50,7 @@ export const OfferTitleCtn = styled.div`
         font-weight: 600;
         text-decoration: none;
         :hover {
-            color: ${props => props.theme.eCashBlue};
+            color: ${props => props.theme.ausCashBlue};
         }
     }
 `;
@@ -125,7 +125,7 @@ export const DepthBar = styled.div<{ depthPercent: number }>`
     position: absolute;
     top: 0;
     right: 0;
-    background-color: ${props => props.theme.eCashBlue};
+    background-color: ${props => props.theme.ausCashBlue};
     background-color: ${props => props.theme.agoraDepthBar};
     height: 100%;
     width: ${props => props.depthPercent}%;

@@ -1,4 +1,4 @@
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2020 The Electrum ABC developers
 # Copyright (C) 2011 Thomas Voegtlin
 #
@@ -67,7 +67,7 @@ class BlockchainExplorer:
 
 class Blockchair(BlockchainExplorer):
     name = "Blockchair"
-    url_base = "https://blockchair.com/ecash"
+    url_base = "https://blockchair.com/auscash"
     tx_part = "transaction"
     addr_uses_prefix = False
 
@@ -78,29 +78,29 @@ class CoinexExplorer(BlockchainExplorer):
     addr_uses_prefix: bool = False
 
 
-class BeCash(BlockchainExplorer):
+class BausCash(BlockchainExplorer):
     name = "be.cash"
     url_base = "https://explorer.be.cash"
 
 
-class ECash(BlockchainExplorer):
-    name = "eCash"
+class AusCash(BlockchainExplorer):
+    name = "ausCash"
     url_base = "https://explorer.e.cash"
 
 
-class ECashTestnet(ECash):
+class AusCashTestnet(AusCash):
     url_base = "https://texplorer.e.cash"
 
 
-DEFAULT_EXPLORER = ECash
+DEFAULT_EXPLORER = AusCash
 
 mainnet_block_explorers = {
-    explorer.name: explorer for explorer in [ECash, Blockchair, CoinexExplorer, BeCash]
+    explorer.name: explorer for explorer in [AusCash, Blockchair, CoinexExplorer, BausCash]
 }
 
-DEFAULT_EXPLORER_TESTNET = ECashTestnet
+DEFAULT_EXPLORER_TESTNET = AusCashTestnet
 
-testnet_block_explorers = {ECashTestnet.name: ECashTestnet}
+testnet_block_explorers = {AusCashTestnet.name: AusCashTestnet}
 
 
 def BE_info() -> Dict[str, BlockchainExplorer]:

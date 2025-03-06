@@ -29,9 +29,9 @@
 //!
 //! ```rust
 //! # #[cfg(all(feature = "rand", feature = "hashes", feature = "std"))] {
-//! use ecash_secp256k1::rand::rngs::OsRng;
-//! use ecash_secp256k1::{Secp256k1, Message};
-//! use ecash_secp256k1::hashes::{sha256, Hash};
+//! use auscash_secp256k1::rand::rngs::OsRng;
+//! use auscash_secp256k1::{Secp256k1, Message};
+//! use auscash_secp256k1::hashes::{sha256, Hash};
 //!
 //! let secp = Secp256k1::new();
 //! let (secret_key, public_key) = secp.generate_keypair(&mut OsRng);
@@ -51,8 +51,8 @@
 //! #           feature = "hashes",
 //! #           feature = "rand",
 //! #           feature = "std"))] {
-//! use ecash_secp256k1::hashes::{sha256, Hash};
-//! use ecash_secp256k1::{generate_keypair, Message};
+//! use auscash_secp256k1::hashes::{sha256, Hash};
+//! use auscash_secp256k1::{generate_keypair, Message};
 //!
 //! let (secret_key, public_key) = generate_keypair(&mut rand::thread_rng());
 //! let digest = sha256::Hash::hash("Hello World!".as_bytes());
@@ -70,7 +70,7 @@
 //!
 //! ```rust
 //! # #[cfg(feature = "alloc")] {
-//! use ecash_secp256k1::{Message, PublicKey, Secp256k1, SecretKey};
+//! use auscash_secp256k1::{Message, PublicKey, Secp256k1, SecretKey};
 //! # fn compute_hash(_: &[u8]) -> [u8; 32] { [0xab; 32] }
 //!
 //! let secp = Secp256k1::new();
@@ -91,7 +91,7 @@
 //!
 //! ```rust
 //! # #[cfg(feature = "alloc")] {
-//! use ecash_secp256k1::{ecdsa, Message, PublicKey, Secp256k1};
+//! use auscash_secp256k1::{ecdsa, Message, PublicKey, Secp256k1};
 //!
 //! let secp = Secp256k1::verification_only();
 //!

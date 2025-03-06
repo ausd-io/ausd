@@ -18,7 +18,7 @@ export const CustomQRCode = styled(QRCodeSVG)`
         fill: ${props => props.theme.qr.background};
     }
     :hover {
-        border-color: ${props => props.theme.qr.eCashBlue};
+        border-color: ${props => props.theme.qr.ausCashBlue};
     }
     @media (max-width: 768px) {
         border-radius: 18px;
@@ -31,9 +31,9 @@ const Copied = styled.div`
     font-weight: bold;
     width: 100%;
     text-align: center;
-    background-color: ${props => props.theme.eCashBlue};
+    background-color: ${props => props.theme.ausCashBlue};
     border: 1px solid;
-    border-color: ${props => props.theme.eCashBlue};
+    border-color: ${props => props.theme.ausCashBlue};
     color: ${props => props.theme.contrast};
     position: absolute;
     top: 65px;
@@ -41,7 +41,7 @@ const Copied = styled.div`
 `;
 const PrefixLabel = styled.span`
     text-align: right;
-    color: ${props => props.theme.eCashBlue};
+    color: ${props => props.theme.ausCashBlue};
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

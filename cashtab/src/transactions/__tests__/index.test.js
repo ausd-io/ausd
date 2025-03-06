@@ -23,7 +23,7 @@ import vectors, {
 } from '../fixtures/vectors';
 import slpv1Vectors from 'token-protocols/slpv1/fixtures/vectors';
 import { wallet, walletWithTokensInNode } from 'transactions/fixtures/mocks';
-import { Ecc, initWasm, Script, fromHex } from 'ecash-lib';
+import { Ecc, initWasm, Script, fromHex } from 'auscash-lib';
 
 describe('Cashtab functions that build and broadcast rawtxs', () => {
     let ecc;
@@ -78,7 +78,7 @@ describe('Cashtab functions that build and broadcast rawtxs', () => {
                 // e.g. ('block', {input: '', output: ''})
                 if (typeof hex !== 'undefined') {
                     // For error cases that are not thrown until after the tx is successfully built,
-                    // set a tx broadcast error that can be thrown by the broadcasting eCash node
+                    // set a tx broadcast error that can be thrown by the broadcasting ausCash node
                     chronik.setMock('broadcastTx', {
                         input: hex,
                         output: new Error(msg),
@@ -160,7 +160,7 @@ describe('Cashtab functions that build and broadcast rawtxs', () => {
                 [
                     {
                         script: Script.fromAddress(
-                            'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                            'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                         ),
 
                         value: 2000,
@@ -221,7 +221,7 @@ describe('Cashtab functions that build and broadcast rawtxs', () => {
                 [
                     {
                         script: Script.fromAddress(
-                            'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                            'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                         ),
 
                         value: 2000,

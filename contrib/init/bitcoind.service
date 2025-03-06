@@ -1,5 +1,5 @@
 [Unit]
-Description=eCash node
+Description=ausCash node
 After=network.target
 
 [Service]

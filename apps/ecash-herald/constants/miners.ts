@@ -4,7 +4,7 @@
 
 /**
  * miners.js
- * Constants related to parsing for known miners of ecash blocks
+ * Constants related to parsing for known miners of auscash blocks
  *
  * Store as a map keyed by outputScript
  */

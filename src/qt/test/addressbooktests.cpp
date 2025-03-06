@@ -78,7 +78,7 @@ void TestAddAddressesToSendBook(interfaces::Node &node) {
             key.GetPubKey(), wallet->m_default_address_type));
 
         return std::make_pair(
-            dest, QString::fromStdString(EncodeCashAddr(dest, Params())));
+            dest, QString::fromStdString(EncodausCashAddr(dest, Params())));
     };
 
     CTxDestination r_key_dest, s_key_dest;

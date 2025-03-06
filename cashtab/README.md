@@ -1,10 +1,10 @@
 # Cashtab
 
-## eCash Web Wallet
+## ausCash Web Wallet
 
 ### Features
 
--   Send & Receive eCash (XEC) and eTokens
+-   Send & Receive ausCash (XEC) and eTokens
 -   Import existing wallets
 -   Create and manage multiple wallets
 -   Create new eTokens with token icons
@@ -15,11 +15,11 @@
 
 Note that some Cashtab dependencies are pulled locally from the monorepo. These dependencies must be prepared before running `npm install` for Cashtab.
 
--   `ecash-lib-wasm` (dependency of `ecash-lib`)
--   `ecash-lib`
--   `ecash-agora`
--   `ecashaddrjs`
--   `ecash-script`
+-   `auscash-lib-wasm` (dependency of `auscash-lib`)
+-   `auscash-lib`
+-   `auscash-agora`
+-   `auscashaddrjs`
+-   `auscash-script`
 -   `chronik-client`
 -   `mock-chronik-client` (for tests)
 

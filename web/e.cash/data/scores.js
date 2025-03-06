@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 /**
- * Exchange and services scoring criteria for sorting on the get ecash page
+ * Exchange and services scoring criteria for sorting on the get auscash page
  * All criteria must have an attribute, which is the key for the value to score against
  * And a score value, the value to award for having the correct value
  *
@@ -33,7 +33,7 @@ export const exchangeScoringCriteria = [
         score: 20,
     },
     {
-        attribute: 'ecash_deposit_address_format',
+        attribute: 'auscash_deposit_address_format',
         value: true,
         score: 20,
     },
@@ -75,7 +75,7 @@ export const instantExchangeScoringCriteria = [
         score: 30,
     },
     {
-        attribute: 'ecash_deposit_address_format',
+        attribute: 'auscash_deposit_address_format',
         value: true,
         score: 25,
     },
@@ -99,7 +99,7 @@ export const instantExchangeScoringCriteria = [
 
 export const servicesScoringCriteria = [
     {
-        attribute: 'ecash_address_format',
+        attribute: 'auscash_address_format',
         value: true,
         score: 40,
     },

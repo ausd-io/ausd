@@ -53,7 +53,7 @@ import {
 } from 'components/Common/Inputs';
 import Switch from 'components/Common/Switch';
 import { opReturn } from 'config/opreturn';
-import { Script } from 'ecash-lib';
+import { Script } from 'auscash-lib';
 
 const OuterCtn = styled.div`
     background: ${props => props.theme.primaryBackground};
@@ -117,7 +117,7 @@ const ParsedBip21InfoLabel = styled.div`
 const ParsedBip21Info = styled.div`
     background-color: #fff2f0;
     border-radius: 12px;
-    color: ${props => props.theme.eCashBlue};
+    color: ${props => props.theme.ausCashBlue};
     padding: 12px;
     text-align: left;
 `;
@@ -550,7 +550,7 @@ const SendXec: React.FC = () => {
         } else {
             // Handle XEC send to one address
             let cleanAddress;
-            // check state on whether this is an alias or ecash address
+            // check state on whether this is an alias or auscash address
             if (aliasInputAddress) {
                 cleanAddress = aliasInputAddress;
             } else {
@@ -611,7 +611,7 @@ const SendXec: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    eCash sent
+                    ausCash sent
                 </SentLink>,
                 {
                     icon: CashReceivedNotificationIcon,
@@ -670,7 +670,7 @@ const SendXec: React.FC = () => {
                 )) as Alias;
                 if (!aliasDetails.address) {
                     renderedSendToError =
-                        'eCash Alias does not exist or yet to receive 1 confirmation';
+                        'ausCash Alias does not exist or yet to receive 1 confirmation';
                     setAliasInputAddress(false);
                 } else {
                     // Valid address response returned
@@ -822,7 +822,7 @@ const SendXec: React.FC = () => {
         }
     };
 
-    const handleCashtabMsgChange = (
+    const handlausCashtabMsgChange = (
         e: React.ChangeEvent<HTMLTextAreaElement>,
     ) => {
         const { name, value } = e.target;
@@ -1105,7 +1105,7 @@ const SendXec: React.FC = () => {
                 )}
                 <SendToManyHolder>
                     <TextArea
-                        placeholder={`One address & amount per line, separated by comma \ne.g. \necash:qpatql05s9jfavnu0tv6lkjjk25n6tmj9gkpyrlwu8,500 \necash:qzvydd4n3lm3xv62cx078nu9rg0e3srmqq0knykfed,700`}
+                        placeholder={`One address & amount per line, separated by comma \ne.g. \nauscash:qpatql05s9jfavnu0tv6lkjjk25n6tmj9gkpyrlwu8,500 \nauscash:qzvydd4n3lm3xv62cx078nu9rg0e3srmqq0knykfed,700`}
                         name="multiAddressInput"
                         handleInput={e => handleMultiAddressChange(e)}
                         value={formData.multiAddressInput}
@@ -1168,7 +1168,7 @@ const SendXec: React.FC = () => {
                                       localAirdropTxAddedBytes
                                     : opreturnConfig.cashtabMsgByteLimit
                             }
-                            handleInput={e => handleCashtabMsgChange(e)}
+                            handleInput={e => handlausCashtabMsgChange(e)}
                         />
                     </SendXecRow>
                 )}

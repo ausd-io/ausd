@@ -1,6 +1,6 @@
 # -*- mode: python3 -*-
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2020 The Electrum ABC developers
 # Copyright (C) 2016  The Electrum developers
 #
@@ -130,7 +130,7 @@ class SoftwareKeyStore(KeyStore):
     def may_have_password(self):
         return not self.is_watching_only()
 
-    def sign_message(self, sequence, message, password, sigtype=SignatureType.ECASH):
+    def sign_message(self, sequence, message, password, sigtype=SignatureType.AUSCASH):
         privkey, compressed = self.get_private_key(sequence, password)
         key = ECPrivkey(privkey)
         return key.sign_message(message, compressed, sigtype=sigtype)

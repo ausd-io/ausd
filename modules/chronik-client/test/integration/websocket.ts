@@ -4,7 +4,7 @@
 
 import * as chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import { ChildProcess } from 'node:child_process';
 import { EventEmitter, once } from 'node:events';
 import path from 'path';
@@ -308,7 +308,7 @@ describe('Test expected websocket behavior of chronik-client', () => {
         // The ws object is updated with expected subscriptions
         expect(ws.subs.scripts).to.deep.equal([]);
 
-        // We get the validation error from ecashaddrjs if we attempt to subscribe or unsubscribe
+        // We get the validation error from auscashaddrjs if we attempt to subscribe or unsubscribe
         // from anything that is not a valid p2pkh or p2sh address
         expect(() => ws.subscribeToAddress('notAnAddress')).to.throw(
             'Invalid address: notAnAddress.',

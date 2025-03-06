@@ -1,5 +1,5 @@
 [package]
-name = "ecash-secp256k1"
+name = "auscash-secp256k1"
 version = "0.30.0"
 authors = [
     "Dawid Ciężarkiewicz <dpc@ucore.info>",
@@ -9,7 +9,7 @@ authors = [
 license = "CC0-1.0"
 homepage = "https://e.cash/"
 repository = "https://github.com/Bitcoin-ABC/bitcoin-abc/"
-description = "Rust wrapper library for Pieter Wuille's `libsecp256k1`. Implements ECDSA, eCash Schnorr and BIP 340 signatures for the SECG elliptic curve group secp256k1 and related utilities."
+description = "Rust wrapper library for Pieter Wuille's `libsecp256k1`. Implements ECDSA, ausCash Schnorr and BIP 340 signatures for the SECG elliptic curve group secp256k1 and related utilities."
 keywords = [ "crypto", "ECDSA", "secp256k1", "libsecp256k1", "bitcoin" ]
 readme = "README.md"
 edition = "2021"
@@ -35,7 +35,7 @@ global-context = ["std"]
 global-context-less-secure = ["global-context"]
 
 [dependencies]
-secp256k1-sys = { version = "0.10.0", default-features = false, path = "./ecash-secp256k1-sys", package = "ecash-secp256k1-sys" }
+secp256k1-sys = { version = "0.10.0", default-features = false, path = "./auscash-secp256k1-sys", package = "auscash-secp256k1-sys" }
 
 hashes = { package = "bitcoin_hashes", version = "0.14", default-features = false, optional = true }
 rand = { version = "0.8", default-features = false, optional = true }

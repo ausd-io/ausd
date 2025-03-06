@@ -11,7 +11,7 @@ export const mockBurnOpReturnTokenUtxos = [
         blockHeight: -1,
         isCoinbase: false,
         value: 546,
-        address: 'ecash:qzvydd4n3lm3xv62cx078nu9rg0e3srmqq0knykfed',
+        address: 'auscash:qzvydd4n3lm3xv62cx078nu9rg0e3srmqq0knykfed',
         isFinal: true,
         token: {
             tokenId:
@@ -36,7 +36,7 @@ export const mockBurnAllTokenUtxos = [
         blockHeight: 757204,
         isCoinbase: false,
         value: 546,
-        address: 'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+        address: 'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
         isFinal: true,
         token: {
             tokenId:

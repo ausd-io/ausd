@@ -12,7 +12,7 @@ import 'fake-indexeddb/auto';
 import localforage from 'localforage';
 import appConfig from 'config/app';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
@@ -30,7 +30,7 @@ describe('<SignVerifyMsg />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -47,7 +47,7 @@ describe('<SignVerifyMsg />', () => {
     });
     it('Notification is rendered upon successfully signing a message', async () => {
         // Mock the app with context at the SignVerifyMsg screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -84,7 +84,7 @@ describe('<SignVerifyMsg />', () => {
     });
     it('Notification is rendered upon successfully verifying a message', async () => {
         // Mock the app with context at the SignVerifyMsg screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -114,7 +114,7 @@ describe('<SignVerifyMsg />', () => {
         // Input the address
         await user.type(
             screen.getByPlaceholderText('Enter address of signature to verify'),
-            'ecash:qq3spmxfh9ct0v3vkxncwk4sr2ld9vkhgvlu32e43c',
+            'auscash:qq3spmxfh9ct0v3vkxncwk4sr2ld9vkhgvlu32e43c',
         );
 
         // Insert signature in Signature textarea of Verify collapse
@@ -129,13 +129,13 @@ describe('<SignVerifyMsg />', () => {
 
         expect(
             screen.getByText(
-                'Signature verified. Message "test message" was signed by ecash:qq3spmxfh9ct0v3vkxncwk4sr2ld9vkhgvlu32e43c',
+                'Signature verified. Message "test message" was signed by auscash:qq3spmxfh9ct0v3vkxncwk4sr2ld9vkhgvlu32e43c',
             ),
         ).toBeInTheDocument();
     });
     it('Notification is rendered upon signature verification error', async () => {
         // Mock the app with context at the SignVerifyMsg screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -165,7 +165,7 @@ describe('<SignVerifyMsg />', () => {
         // Input the address
         await user.type(
             screen.getByPlaceholderText('Enter address of signature to verify'),
-            'ecash:qq3spmxfh9ct0v3vkxncwk4sr2ld9vkhgvlu32e43c',
+            'auscash:qq3spmxfh9ct0v3vkxncwk4sr2ld9vkhgvlu32e43c',
         );
 
         // Insert signature in Signature textarea of Verify collapse

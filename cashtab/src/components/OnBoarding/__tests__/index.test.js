@@ -11,11 +11,11 @@ import localforage from 'localforage';
 import { when } from 'jest-when';
 import appConfig from 'config/app';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
-import { Ecc, initWasm } from 'ecash-lib';
+import { Ecc, initWasm } from 'auscash-lib';
 
 describe('<OnBoarding />', () => {
     let ecc;
@@ -32,7 +32,7 @@ describe('<OnBoarding />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -50,7 +50,7 @@ describe('<OnBoarding />', () => {
 
     it('We can create a new wallet', async () => {
         // localforage defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             false,
             localforage,
         );
@@ -85,7 +85,7 @@ describe('<OnBoarding />', () => {
     });
     it('We can import a wallet', async () => {
         // localforage defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             false,
             localforage,
         );

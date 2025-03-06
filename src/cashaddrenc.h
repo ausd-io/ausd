@@ -18,15 +18,15 @@ struct CashAddrContent {
     std::vector<uint8_t> hash;
 };
 
-std::string EncodeCashAddr(const CTxDestination &, const CChainParams &);
-std::string EncodeCashAddr(const std::string &prefix,
+std::string EncodausCashAddr(const CTxDestination &, const CChainParams &);
+std::string EncodausCashAddr(const std::string &prefix,
                            const CashAddrContent &content);
 
-CTxDestination DecodeCashAddr(const std::string &addr,
+CTxDestination DecodausCashAddr(const std::string &addr,
                               const CChainParams &params);
-CashAddrContent DecodeCashAddrContent(const std::string &addr,
+CashAddrContent DecodausCashAddrContent(const std::string &addr,
                                       const std::string &prefix);
-CTxDestination DecodeCashAddrDestination(const CashAddrContent &content);
+CTxDestination DecodausCashAddrDestination(const CashAddrContent &content);
 
 std::vector<uint8_t> PackCashAddrContent(const CashAddrContent &content);
 #endif // BITCOIN_CASHADDRENC_H

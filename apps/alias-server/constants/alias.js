@@ -4,10 +4,10 @@
 'use strict';
 
 module.exports = {
-    // Per spec at https://github.com/Bitcoin-ABC/bitcoin-abc/blob/master/doc/standards/ecash-alias.md
+    // Per spec at https://github.com/Bitcoin-ABC/bitcoin-abc/blob/master/doc/standards/auscash-alias.md
     // A valid alias registration outputScript must have protocol identifier pushed by '04'
     outputScriptStartsWith: '6a042e786563',
-    registrationAddress: 'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+    registrationAddress: 'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
     minLength: 1,
     maxLength: 21,
     minPriceChangeNotificationBlocks: 1000,

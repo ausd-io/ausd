@@ -2103,7 +2103,7 @@ export const dailyTxs: Tx[] = [
         },
     },
     // App txs
-    // eCashChat
+    // ausCashChat
     // e40fec30e3e9854553b3c9e5b68cd431722e45ff00366136e77c8f457ebd7d90
     {
         txid: 'e40fec30e3e9854553b3c9e5b68cd431722e45ff00366136e77c8f457ebd7d90',
@@ -2165,7 +2165,7 @@ export const dailyTxs: Tx[] = [
             timestamp: 1729618823,
         },
     },
-    // Articles and Replies (eCashChat)
+    // Articles and Replies (ausCashChat)
     // cff787e0134a39f79378fcdd67b6b0145a630a432ee70758fc74b10fdffe5b39
     {
         txid: 'cff787e0134a39f79378fcdd67b6b0145a630a432ee70758fc74b10fdffe5b39',
@@ -2323,7 +2323,7 @@ export const dailyTxs: Tx[] = [
             timestamp: 1729587484,
         },
     },
-    // eCashChat Auth
+    // ausCashChat Auth
     // 27517286f1b7f159da4db93ed96e6be9bb01dad94179ea889211ef32ebb1a3b4
     {
         txid: '27517286f1b7f159da4db93ed96e6be9bb01dad94179ea889211ef32ebb1a3b4',

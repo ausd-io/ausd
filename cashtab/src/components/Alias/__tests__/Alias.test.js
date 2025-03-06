@@ -17,7 +17,7 @@ import localforage from 'localforage';
 import { when } from 'jest-when';
 import aliasSettings from 'config/alias';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
@@ -36,7 +36,7 @@ describe('<Alias />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -52,7 +52,7 @@ describe('<Alias />', () => {
         await clearLocalForage(localforage);
     });
     it('Registered and Pending Aliases are correctly rendered', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -93,7 +93,7 @@ describe('<Alias />', () => {
         expect(await screen.findByText('chicken444.xec')).toBeInTheDocument();
     });
     it('Registered and Pending Aliases are correctly rendered when pending list is empty', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -134,7 +134,7 @@ describe('<Alias />', () => {
         ).toBeInTheDocument();
     });
     it('Registered and Pending Aliases are correctly rendered when registered list is empty', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -175,7 +175,7 @@ describe('<Alias />', () => {
         expect(await screen.findByText('chicken444.xec')).toBeInTheDocument();
     });
     it('Registered and Pending lists still renders when aliasValidationError is populated and aliasServerError is false', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -211,7 +211,7 @@ describe('<Alias />', () => {
         expect(await screen.findByText('chicken444.xec')).toBeInTheDocument();
     });
     it('Registered and Pending lists do not render when aliasValidationError is false and aliasServerError is populated', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );

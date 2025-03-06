@@ -26,8 +26,8 @@ import { when } from 'jest-when';
 import appConfig from 'config/app';
 import {
     clearLocalForage,
-    initializeCashtabStateForTests,
-    initializeCashtabStateAtLegacyWalletKeysForTests,
+    initializausCashtabStateForTests,
+    initializausCashtabStateAtLegacyWalletKeysForTests,
     prepareMockedChronikCallsForWallet,
 } from 'components/App/fixtures/helpers';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
@@ -38,11 +38,11 @@ import {
     cashtabWalletFromJSON,
     cashtabWalletsFromJSON,
 } from 'helpers';
-import { createCashtabWallet } from 'wallet';
+import { creatausCashtabWallet } from 'wallet';
 import { isValidCashtabWallet } from 'validation';
 import CashtabCache from 'config/CashtabCache';
 import CashtabSettings from 'config/CashtabSettings';
-import { Ecc, initWasm, toHex } from 'ecash-lib';
+import { Ecc, initWasm, toHex } from 'auscash-lib';
 import { MockAgora } from '../../../../../modules/mock-chronik-client';
 
 describe('<App />', () => {
@@ -65,7 +65,7 @@ describe('<App />', () => {
         const nextXecPrice = 0.000042;
         const zeroKillingXecPrice = 0.000111;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -81,7 +81,7 @@ describe('<App />', () => {
                 json: () =>
                     Promise.resolve({
                         ...priceResponse,
-                        ecash: { ...priceResponse.ecash, usd: nextXecPrice },
+                        auscash: { ...priceResponse.auscash, usd: nextXecPrice },
                     }),
             });
         when(fetch)
@@ -90,8 +90,8 @@ describe('<App />', () => {
                 json: () =>
                     Promise.resolve({
                         ...priceResponse,
-                        ecash: {
-                            ...priceResponse.ecash,
+                        auscash: {
+                            ...priceResponse.auscash,
                             usd: zeroKillingXecPrice,
                         },
                     }),
@@ -103,7 +103,7 @@ describe('<App />', () => {
     });
     it('Renders onboarding screen at home route if user has no wallet', async () => {
         // This is the experience of a user visiting cashtab.com for the first time
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             false,
             localforage,
         );
@@ -125,7 +125,7 @@ describe('<App />', () => {
     });
     it('Renders onboarding screen at Receive route if user has no wallet', async () => {
         // This is the experience of a user visiting cashtab.com for the first time
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             false,
             localforage,
         );
@@ -151,7 +151,7 @@ describe('<App />', () => {
     });
     it('Renders onboarding screen even on a bad route if user has no wallet', async () => {
         // This is the experience of a user visiting cashtab.com for the first time
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             false,
             localforage,
         );
@@ -173,7 +173,7 @@ describe('<App />', () => {
     });
     it('Renders 404 at bad route if user has a wallet', async () => {
         // This is the experience of a user visiting cashtab.com for the first time
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -193,7 +193,7 @@ describe('<App />', () => {
     });
 
     it('Navigation menu routes to expected components', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -370,7 +370,7 @@ describe('<App />', () => {
         expect(screen.getAllByTitle('Meme Agora')[1]).toBeInTheDocument();
     });
     it('Adding a contact to to a new contactList by clicking on tx history adds it to localforage and wallet context', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             freshWalletWithOneIncomingCashtabMsg,
             localforage,
         );
@@ -414,7 +414,7 @@ describe('<App />', () => {
 
         const newContactList = [
             {
-                address: 'ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
+                address: 'auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
                 name: 'contact from tx history',
             },
         ];
@@ -425,14 +425,14 @@ describe('<App />', () => {
         expect(storedContactListNow).toEqual(newContactList);
     });
     it('Adding a contact to an existing contactList by clicking on tx history adds it to localforage and wallet context', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             freshWalletWithOneIncomingCashtabMsg,
             localforage,
         );
         // Populate the contactList
         const initialContactList = [
             {
-                address: 'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+                address: 'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
                 name: 'echo',
             },
         ];
@@ -479,18 +479,18 @@ describe('<App />', () => {
         await waitFor(async () =>
             expect(await localforage.getItem('contactList')).toEqual([
                 {
-                    address: 'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+                    address: 'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
                     name: 'echo',
                 },
                 {
-                    address: 'ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
+                    address: 'auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
                     name: 'contact from tx history',
                 },
             ]),
         );
     });
     it('A user with legacy blank contactList in localstorage is migrated on startup', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             freshWalletWithOneIncomingCashtabMsg,
             localforage,
         );
@@ -510,7 +510,7 @@ describe('<App />', () => {
     });
     it('Clicking "reply" on a Cashtab Msg correctly populates the SendXec to address and amount fields', async () => {
         // Get mocked chronik client with expected API results for this wallet
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             freshWalletWithOneIncomingCashtabMsg,
             localforage,
         );
@@ -542,14 +542,14 @@ describe('<App />', () => {
 
         // The SendXec send address input is rendered and has expected value
         expect(screen.getByPlaceholderText('Address')).toHaveValue(
-            'ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
+            'auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
         );
         // The value field is populated with dust
         expect(screen.getByPlaceholderText('Amount')).toHaveValue(5.46);
     });
     it('If Cashtab starts up with some settings keys missing, the missing keys are migrated to default values', async () => {
         // Note: this is what happens to existing users when we add a new key to cashtabState.settings
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -602,7 +602,7 @@ describe('<App />', () => {
             },
         };
 
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithEasterEggToken,
             localforage,
         );
@@ -621,7 +621,7 @@ describe('<App />', () => {
     it('If Cashtab starts with 1.5.* cashtabCache, it is wiped and migrated to 2.9.0 cashtabCache', async () => {
         // Note: this is what will happen for all Cashtab users when this diff lands
         const mockedChronik =
-            await initializeCashtabStateAtLegacyWalletKeysForTests(
+            await initializausCashtabStateAtLegacyWalletKeysForTests(
                 walletWithXecAndTokens,
                 localforage,
             );
@@ -649,7 +649,7 @@ describe('<App />', () => {
     });
     it('A new user can import a mnemonic of a wallet with a balance', async () => {
         // Initialize for new user with wallet = false, so localstorage gets defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             false,
             localforage,
         );
@@ -725,9 +725,9 @@ describe('<App />', () => {
 
         expect(importedWallet).toEqual(expectedWallet);
 
-        // Apart from state, which is blank from createCashtabWallet,
-        // the imported wallet matches what we get from createCashtabWallet
-        const createdWallet = await createCashtabWallet(ecc, VALID_MNEMONIC);
+        // Apart from state, which is blank from creatausCashtabWallet,
+        // the imported wallet matches what we get from creatausCashtabWallet
+        const createdWallet = await creatausCashtabWallet(ecc, VALID_MNEMONIC);
         expect(importedWallet).toEqual({
             ...createdWallet,
             state: importedWallet.state,
@@ -735,7 +735,7 @@ describe('<App />', () => {
     });
     it('Migrating from wallet/savedWallet keys (version < 1.6.0): A user with an invalid Cashtab wallet as the active wallet is migrated on startup', async () => {
         const mockedChronik =
-            await initializeCashtabStateAtLegacyWalletKeysForTests(
+            await initializausCashtabStateAtLegacyWalletKeysForTests(
                 // Any wallet stored in legacy key structures will have pre_2_1_0 format (or earlier)
                 // i.e.balances key and Path1899, Path145, Path245 hard coded
                 walletWithXecAndTokens_pre_2_1_0,
@@ -765,7 +765,7 @@ describe('<App />', () => {
     });
     it('Migrating from wallet/savedWallet keys (version < 1.6.0): A user with pre-2.1.0 valid wallets in savedWallets has them all migrated to new storage keys and new shape', async () => {
         const mockedChronik =
-            await initializeCashtabStateAtLegacyWalletKeysForTests(
+            await initializausCashtabStateAtLegacyWalletKeysForTests(
                 // Any wallet stored in legacy key structures will have pre_2_1_0 format (or earlier)
                 // i.e.balances key and Path1899, Path145, Path245 hard coded
                 walletWithXecAndTokens_pre_2_1_0,
@@ -815,7 +815,7 @@ describe('<App />', () => {
         // The wallet at index one is invalid
         expect(isValidCashtabWallet(mixedValidWallets[1])).toBe(false);
 
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             mixedValidWallets,
             localforage,
         );
@@ -859,7 +859,7 @@ describe('<App />', () => {
         expect(isValidCashtabWallet(mixedValidWallets[2])).toBe(false);
         expect(isValidCashtabWallet(mixedValidWallets[3])).toBe(false);
 
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             mixedValidWallets,
             localforage,
         );
@@ -891,7 +891,7 @@ describe('<App />', () => {
         });
     });
     it('Cashtab version >= 1.6.0 and < 2.1.0: A user with an invalid Cashtab wallet as the active wallet is migrated on startup', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens_pre_2_1_0,
             localforage,
         );
@@ -918,7 +918,7 @@ describe('<App />', () => {
         expect(migratedWallet).toEqual(walletWithXecAndTokens);
     });
     it('A user with all valid wallets stored at wallets key does not have any wallets migrated', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             [walletWithXecAndTokens, ...validSavedWallets],
             localforage,
         );
@@ -960,7 +960,7 @@ describe('<App />', () => {
         expect(isValidCashtabWallet(mixedValidWallets[2])).toBe(false);
         expect(isValidCashtabWallet(mixedValidWallets[3])).toBe(false);
 
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             mixedValidWallets,
             localforage,
         );
@@ -992,7 +992,7 @@ describe('<App />', () => {
         });
     });
     it('Migrating (version < 2.9.0): A user with an invalid Cashtab wallet as the active wallet is migrated on startup', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens_pre_2_9_0,
             localforage,
         );
@@ -1031,7 +1031,7 @@ describe('<App />', () => {
         expect(isValidCashtabWallet(mixedValidWallets[2])).toBe(false);
         expect(isValidCashtabWallet(mixedValidWallets[3])).toBe(false);
 
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             mixedValidWallets,
             localforage,
         );
@@ -1065,7 +1065,7 @@ describe('<App />', () => {
         });
     });
     it('Migrating (2.9.0 <= version < 2.55.0): A user with an invalid Cashtab wallet as the active wallet is migrated on startup', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens_pre_2_55_0,
             localforage,
         );
@@ -1093,7 +1093,7 @@ describe('<App />', () => {
     });
     it('If Cashtab starts with < 2.9.0 cashtabCache, it is wiped and migrated to 2.9.0 cashtabCache', async () => {
         // Note: this is what will happen for all Cashtab users when this diff lands
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -1166,7 +1166,7 @@ describe('<App />', () => {
     it('We see a price notification if new price is at a new tens level in USD per 1,000,000 XEC, and a special notification if a zero is killed', async () => {
         jest.useFakeTimers();
 
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -1213,7 +1213,7 @@ describe('<App />', () => {
     it('We do not see price notifications if new price is at a new tens level in JPY per 1,000,000 XEC, because user fiat currency does not support zero killed notifications for JPY', async () => {
         jest.useFakeTimers();
 
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );

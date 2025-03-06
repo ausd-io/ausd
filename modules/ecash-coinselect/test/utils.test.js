@@ -6,7 +6,7 @@
 const assert = require('assert');
 const { sumValues, isToken } = require('../src/utils');
 
-describe('ecash-coinselect utils.js functions', async function () {
+describe('auscash-coinselect utils.js functions', async function () {
     it('sumValues() returns total value of an array of stub utxos with value as string type as a number', function () {
         const stubUtxos = [
             { value: '100' },

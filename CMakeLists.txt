@@ -24,7 +24,7 @@ add_custom_target(print-project-name
 
 # Package information
 set(PACKAGE_NAME "doged")
-set(PACKAGE_BUGREPORT "https://github.com/dogecash-io/dogecash/issues")
+set(PACKAGE_BUGREPORT "https://github.com/dogauscash-io/dogauscash/issues")
 
 # Copyright
 set(COPYRIGHT_YEAR 2024)

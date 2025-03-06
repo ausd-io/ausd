@@ -6,7 +6,7 @@ import { CashtabUtxo, TokenUtxo, SlpDecimals } from 'wallet';
 import { TokenTargetOutput } from 'token-protocols';
 import { OutPoint, Token, TokenType } from 'chronik-client';
 import appConfig from 'config/app';
-import { Script, fromHex } from 'ecash-lib';
+import { Script, fromHex } from 'auscash-lib';
 
 interface GetAllSendUtxosReturn {
     description: string;
@@ -52,7 +52,7 @@ interface TokenProtocolsVectors {
 const MOCK_TOKEN_ID =
     '1111111111111111111111111111111111111111111111111111111111111111';
 const SEND_DESTINATION_ADDRESS =
-    'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx';
+    'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx';
 const DUMMY_OUTPOINT: OutPoint = {
     txid: '0000000000000000000000000000000000000000000000000000000000000000',
     outIdx: 0,

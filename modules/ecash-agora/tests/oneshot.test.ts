@@ -22,8 +22,8 @@ import {
     slpGenesis,
     slpSend,
     toHex,
-} from 'ecash-lib';
-import { TestRunner } from 'ecash-lib/dist/test/testRunner.js';
+} from 'auscash-lib';
+import { TestRunner } from 'auscash-lib/dist/test/testRunner.js';
 import { parseAgoraTx } from '../src/ad.js';
 import { AGORA_LOKAD_ID } from '../src/consts.js';
 import {
@@ -58,7 +58,7 @@ describe('SLP', () => {
 
     before(async () => {
         await initWasm();
-        runner = await TestRunner.setup('setup_scripts/ecash-agora_base');
+        runner = await TestRunner.setup('setup_scripts/auscash-agora_base');
         chronik = runner.chronik;
         ecc = runner.ecc;
         await runner.setupCoins(NUM_COINS, COIN_VALUE);

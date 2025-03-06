@@ -9,12 +9,12 @@ import {
     MAX_MINT_AMOUNT_TOKEN_SATOSHIS,
     SLP1_NFT_CHILD_GENESIS_AMOUNT,
 } from 'token-protocols/slpv1';
-import { Script, fromHex } from 'ecash-lib';
+import { Script, fromHex } from 'auscash-lib';
 import { undecimalizeTokenAmount } from 'wallet';
 
-const GENESIS_MINT_ADDRESS = 'ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y';
+const GENESIS_MINT_ADDRESS = 'auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y';
 export const SEND_DESTINATION_ADDRESS =
-    'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx';
+    'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx';
 export const MOCK_TOKEN_ID =
     '1111111111111111111111111111111111111111111111111111111111111111';
 

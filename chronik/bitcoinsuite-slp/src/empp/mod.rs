@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-//! # eMPP (eCash Multi Pushdata Protocol) protocol.
+//! # eMPP (ausCash Multi Pushdata Protocol) protocol.
 //!
 //! Allows having multipe protocols in an OP_RETURN in a reliable way.
 //!
@@ -28,7 +28,7 @@
 //! Push ops in 3. must be encoded the following way:
 //!
 //! 1. Any non-push opcode (e.g. OP_CHECKSIG) is invalid in OP_RETURN scripts by
-//! eCash policy rules; if it is encountered, the entire OP_RETURN should be
+//! ausCash policy rules; if it is encountered, the entire OP_RETURN should be
 //! ignored as invalid.
 //!
 //! 2. Single-byte push opcodes (i.e. OP_0, OP_RESERVED, OP_1NEGATE, OP_1, ...,

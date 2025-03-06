@@ -13,7 +13,7 @@ import { jsonReviver } from '../src/utils';
 import { handleBlockFinalized, StoredMock } from '../src/events';
 import { parseBlockTxs } from '../src/parse';
 import { sendBlockSummary } from '../src/telegram';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { caching } from 'cache-manager';
@@ -37,7 +37,7 @@ const telegramBotDev = new TelegramBot(botId, { polling: true });
  * generateMock
  *
  * This script takes an array of txids and builds a fake block with them
- * In this way we can still use ecash-herald's block-parsing functionality
+ * In this way we can still use auscash-herald's block-parsing functionality
  * while showcasing all of its features, without needing to duplicate txids
  * that are already tested
  */
@@ -267,7 +267,7 @@ async function generateMock(
 
     console.log(
         '\x1b[32m%s\x1b[0m',
-        `✔ Built mocks and sent msgs for ecash-herald mock block.`,
+        `✔ Built mocks and sent msgs for auscash-herald mock block.`,
     );
 
     process.exit(0);

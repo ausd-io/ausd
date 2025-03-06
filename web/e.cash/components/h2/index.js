@@ -19,7 +19,7 @@ export default function H2({ subtext, text, center }) {
             <StyledH3>{subtext}</StyledH3>
             <StyledH2>
                 <H2Image center={center === true}>
-                    <Image src={h2graphic} alt="eCash" fill />
+                    <Image src={h2graphic} alt="ausCash" fill />
                 </H2Image>
                 <GlitchText text={text} />
             </StyledH2>

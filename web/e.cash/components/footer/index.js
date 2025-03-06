@@ -32,8 +32,8 @@ export default function Footer() {
                     <LogoCtn>
                         <div>
                             <Image
-                                src="/images/ecash-logo.svg"
-                                alt="ecash logo"
+                                src="/images/auscash-logo.svg"
+                                alt="auscash logo"
                                 fill
                             />
                         </div>

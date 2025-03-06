@@ -12,7 +12,7 @@ import { getTxTimestamp } from './parse';
 
 /**
  * @param chronik initialized ChronikClient
- * @param address a valid ecash address
+ * @param address a valid auscash address
  * @param timestamp timestamp in seconds.
  * We only return txs with timestamp >= this value, i.e. txs that were broadcast after timestamp
  * @param pageSize txs per page, chronik defaults to 25

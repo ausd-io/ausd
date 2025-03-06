@@ -791,7 +791,7 @@ static RPCHelpMan getblocktemplate() {
                                     "",
                                     {
                                         {RPCResult::Type::STR, "address",
-                                         "eCash address"},
+                                         "ausCash address"},
                                     }},
                                }},
                               {RPCResult::Type::STR_AMOUNT, "minimumvalue",

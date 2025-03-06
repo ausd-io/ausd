@@ -13,7 +13,7 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { explorer } from 'config/explorer';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import 'fake-indexeddb/auto';
@@ -21,7 +21,7 @@ import localforage from 'localforage';
 import { when } from 'jest-when';
 import appConfig from 'config/app';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
-import { Ecc, initWasm } from 'ecash-lib';
+import { Ecc, initWasm } from 'auscash-lib';
 
 describe('<CreateTokenForm />', () => {
     let ecc;
@@ -41,7 +41,7 @@ describe('<CreateTokenForm />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -57,7 +57,7 @@ describe('<CreateTokenForm />', () => {
         await clearLocalForage(localforage);
     });
     it('User can create an SLP1 token with no mint baton', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -146,7 +146,7 @@ describe('<CreateTokenForm />', () => {
                 amount: '10',
             },
         };
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             {
                 ...walletWithXecAndTokens,
                 state: {
@@ -262,7 +262,7 @@ describe('<CreateTokenForm />', () => {
         expect(await screen.findByTitle('Token Stats')).toBeInTheDocument();
     });
     it('User can create an NFT collection', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -358,7 +358,7 @@ describe('<CreateTokenForm />', () => {
                 amount: '10',
             },
         };
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             {
                 ...walletWithXecAndTokens,
                 state: {

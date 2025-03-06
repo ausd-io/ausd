@@ -17,7 +17,7 @@
         "directory": "apps/token-server"
     },
     "keywords": [
-        "ecash",
+        "auscash",
         "etokens",
         "XEC",
         "cashtab"
@@ -60,8 +60,8 @@
         "chronik-client": "file:../../modules/chronik-client",
         "cors": "^2.8.5",
         "dotenv": "^16.4.5",
-        "ecash-lib": "file:../../modules/ecash-lib",
-        "ecashaddrjs": "file:../../modules/ecashaddrjs",
+        "auscash-lib": "file:../../modules/auscash-lib",
+        "auscashaddrjs": "file:../../modules/auscashaddrjs",
         "ecpair": "^2.1.0",
         "ethereum-blockies-base64": "^1.0.2",
         "express": "^4.18.3",

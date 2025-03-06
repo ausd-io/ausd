@@ -13,8 +13,8 @@ import {
     fromHex,
     initWasm,
     shaRmd160,
-} from 'ecash-lib';
-import { decode, encode } from 'ecashaddrjs';
+} from 'auscash-lib';
+import { decode, encode } from 'auscashaddrjs';
 import express, { Express, Request, Response } from 'express';
 import { rateLimit } from 'express-rate-limit';
 
@@ -40,7 +40,7 @@ function tooManyRequests(res: Response) {
 function invalidAddress(res: Response, address: string, reason: string) {
     res.status(406).json({
         address,
-        error: `Invalid eCash address (${reason})`,
+        error: `Invalid ausCash address (${reason})`,
     });
 }
 
@@ -56,7 +56,7 @@ initWasm().then(async () => {
 
     // The IP address => request time map used to rate limit the requests
     const ipMap = new Map();
-    // The eCash address => request time map used to rate limit the requests
+    // The ausCash address => request time map used to rate limit the requests
     const addressMap = new Map();
 
     // The wallet private key that will be used to sign the faucet

@@ -13,7 +13,7 @@ import {
     EccDummy,
     Signatory,
     TxBuilderOutput,
-} from 'ecash-lib';
+} from 'auscash-lib';
 import { GenesisInfo } from 'chronik-client';
 import { TokenUtxo, CashtabUtxo, SlpDecimals } from 'wallet';
 import {
@@ -144,7 +144,7 @@ export const getSlpSendTargetOutputs = (
 /**
  * Get targetOutput(s) for a SLP v1 BURN tx
  * Note: a burn tx is a special case of a send tx where you have no destination output
- * You always have a change output as an eCash tx must have at least dust output
+ * You always have a change output as an ausCash tx must have at least dust output
  *
  * @param tokenInputInfo
  * @throws if invalid input params are passed to TokenType1.send
@@ -171,7 +171,7 @@ export const getSlpBurnTargetOutputs = (
     // We need a token utxo even if change is 0
     // We will probably always have an XEC change output, but always including a token output
     // that is either change or a "send" qty of 0 is a simple standard that allows us to keep
-    // burn tx logic separate from ecash tx creation logic
+    // burn tx logic separate from auscash tx creation logic
     // But lets just add the min output
 
     return [{ value: 0, script }, TOKEN_DUST_CHANGE_OUTPUT];
@@ -572,7 +572,7 @@ export const isTokenDustChangeOutput = (
 };
 
 /**
- * For ecash-agora SLP1 listings txs, an "ad setup tx" is required before
+ * For auscash-agora SLP1 listings txs, an "ad setup tx" is required before
  * we can actually broadcast the offer
  *
  * We want to minimize the amount of XEC we need to make these two required txs

@@ -11,7 +11,7 @@ import {
     getAlpAgoraListTargetOutputs,
 } from 'token-protocols/alp';
 import vectors from '../fixtures/vectors';
-import { initWasm } from 'ecash-lib';
+import { initWasm } from 'auscash-lib';
 
 describe('ALP token methods', () => {
     beforeAll(async () => {

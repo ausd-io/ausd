@@ -6,7 +6,7 @@
 const config = require('../config');
 const aliasConstants = require('../constants/alias');
 const assert = require('assert');
-const cashaddr = require('ecashaddrjs');
+const cashaddr = require('auscashaddrjs');
 const {
     handleAppStartup,
     handleBlockFinalized,

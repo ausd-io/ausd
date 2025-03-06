@@ -11,9 +11,9 @@ module.exports = {
         let coingeckoApiResponse;
         try {
             coingeckoApiResponse = await axios.get(
-                'https://api.coingecko.com/api/v3/simple/price?ids=ecash&vs_currencies=usd',
+                'https://api.coingecko.com/api/v3/simple/price?ids=auscash&vs_currencies=usd',
             );
-            return coingeckoApiResponse.data.ecash.usd;
+            return coingeckoApiResponse.data.auscash.usd;
         } catch (err) {
             console.log(err);
             // If API error or error getting price, return false

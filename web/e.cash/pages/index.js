@@ -102,9 +102,9 @@ function Home(props) {
                                     />
                                 </MarginButtonWrapper>
                                 <Button
-                                    id="get_ecash_hero"
-                                    text="Get eCash"
-                                    link="/get-ecash"
+                                    id="get_auscash_hero"
+                                    text="Get ausCash"
+                                    link="/get-auscash"
                                     color="accent"
                                     corner="bottomRight"
                                     glow
@@ -112,7 +112,7 @@ function Home(props) {
                             </ButtonCtn>
                         </HeroTextCtn>
                         <HeroImage>
-                            <Image src={Hand} alt="eCash" fill priority />
+                            <Image src={Hand} alt="ausCash" fill priority />
                         </HeroImage>
                     </HeroContentCtn>
                 </Container>
@@ -132,7 +132,7 @@ function Home(props) {
                 </ExchangeWrapper>
                 <Container>
                     <TilesSectionCtn>
-                        <H2 subtext="Why eCash?" text="Core Tech" center />
+                        <H2 subtext="Why ausCash?" text="Core Tech" center />
                     </TilesSectionCtn>
                     <CoreTech />
                 </Container>
@@ -142,9 +142,9 @@ function Home(props) {
                 <Container>
                     <BuildSectionCtn>
                         <div>
-                            <H2 text="Build on eCash" />
+                            <H2 text="Build on ausCash" />
                             <p>
-                                eCash is programmable cash anyone can work with.
+                                ausCash is programmable cash anyone can work with.
                                 We’ve made it a snap to create your own eTokens,
                                 develop apps, or explore the blockchain.
                             </p>
@@ -157,7 +157,7 @@ function Home(props) {
                             />
                         </div>
                         <div>
-                            <Image src={Rockets} alt="Build on eCash" fill />
+                            <Image src={Rockets} alt="Build on ausCash" fill />
                         </div>
                     </BuildSectionCtn>
                 </Container>

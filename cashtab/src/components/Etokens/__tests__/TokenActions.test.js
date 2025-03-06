@@ -8,7 +8,7 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import { when } from 'jest-when';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
@@ -33,9 +33,9 @@ import {
 } from 'components/Agora/fixtures/mocks';
 import CashtabCache from 'config/CashtabCache';
 import { cashtabCacheToJSON } from 'helpers';
-import { Ecc, initWasm } from 'ecash-lib';
+import { Ecc, initWasm } from 'auscash-lib';
 import { MockAgora } from '../../../../../modules/mock-chronik-client';
-import { Agora } from 'ecash-agora';
+import { Agora } from 'auscash-agora';
 import { token as tokenConfig } from 'config/token';
 import { explorer } from 'config/explorer';
 
@@ -50,7 +50,7 @@ describe('<Token /> available actions rendered', () => {
         const mockedDate = new Date('2022-01-01T12:00:00.000Z');
         jest.spyOn(global, 'Date').mockImplementation(() => mockedDate);
         // Mock the app with context at the Token Action screen
-        mockedChronik = await initializeCashtabStateForTests(
+        mockedChronik = await initializausCashtabStateForTests(
             tokenTestWallet,
             localforage,
         );
@@ -82,7 +82,7 @@ describe('<Token /> available actions rendered', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -250,7 +250,7 @@ describe('<Token /> available actions rendered', () => {
         // Note
         // We obtain EXPECTED_OFFER_P2SH by adding
         // console.log(toHex(shaRmd160(agoraScript.bytecode)));
-        // to ecash-agora lib and running this test
+        // to auscash-agora lib and running this test
         // Note that Date() and Math.random() must be mocked to keep this deterministic
         const EXPECTED_OFFER_P2SH = '72df09389a835adb0e13e32bf1c91144ed107eef';
 
@@ -501,7 +501,7 @@ describe('<Token /> available actions rendered', () => {
     it('We can correctly render an SLP1 NFT Parent token with NFT Mint inputs, then mint an NFT', async () => {
         // We need to use a unique mockedChronik for this test, with at least one nft mint input utxo
         // Mock the app with context at the Token Action screen
-        const mintNftMockedChronik = await initializeCashtabStateForTests(
+        const mintNftMockedChronik = await initializausCashtabStateForTests(
             {
                 ...tokenTestWallet,
                 state: {
@@ -686,7 +686,7 @@ describe('<Token /> available actions rendered', () => {
         // not based on whether or not they are in the user's wallet
         // The user actions available for the child NFTs depend on whether or not the NFTs exist in the user's wallet
         const renderChildNftsMockedChronik =
-            await initializeCashtabStateForTests(
+            await initializausCashtabStateForTests(
                 {
                     ...tokenTestWallet,
                     state: {
@@ -898,7 +898,7 @@ describe('<Token /> available actions rendered', () => {
 
         expect(
             screen.getByText(
-                `eCash NFT. NFT supply is always 1. This NFT may belong to an NFT collection.`,
+                `ausCash NFT. NFT supply is always 1. This NFT may belong to an NFT collection.`,
             ),
         ).toBeInTheDocument();
 
@@ -1062,7 +1062,7 @@ describe('<Token /> available actions rendered', () => {
         // We can enter an address
         await userEvent.type(
             addrInput,
-            'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+            'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
         );
 
         // Now the button is enabled
@@ -1082,7 +1082,7 @@ describe('<Token /> available actions rendered', () => {
 
         // The user actions available for the child NFTs depend on whether or not the NFTs exist in the user's wallet
         const renderChildNftsMockedChronik =
-            await initializeCashtabStateForTests(
+            await initializausCashtabStateForTests(
                 {
                     ...tokenTestWallet,
                     state: {
@@ -1178,7 +1178,7 @@ describe('<Token /> available actions rendered', () => {
 
         expect(
             screen.getByText(
-                `eCash NFT. NFT supply is always 1. This NFT may belong to an NFT collection.`,
+                `ausCash NFT. NFT supply is always 1. This NFT may belong to an NFT collection.`,
             ),
         ).toBeInTheDocument();
 
@@ -1432,7 +1432,7 @@ describe('<Token /> available actions rendered', () => {
         // We can enter an address
         await userEvent.type(
             addrInput,
-            'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+            'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
         );
         const amountInputEl = screen.getByPlaceholderText('Amount');
         const amountInput = '1';
@@ -1667,7 +1667,7 @@ describe('<Token /> available actions rendered', () => {
                 ],
             },
         };
-        const mintAlpMockedChronik = await initializeCashtabStateForTests(
+        const mintAlpMockedChronik = await initializausCashtabStateForTests(
             walletWithAlpMintBaton,
             localforage,
         );
@@ -1786,7 +1786,7 @@ describe('<Token /> available actions rendered', () => {
         // Note
         // We obtain EXPECTED_OFFER_P2SH by adding
         // console.log(toHex(shaRmd160(agoraScript.bytecode)));
-        // to ecash-agora lib and running this test
+        // to auscash-agora lib and running this test
         // Note that Date() and Math.random() must be mocked to keep this deterministic
         const EXPECTED_OFFER_P2SH = '50eb4978c85ec89b63e37e6b87409c9f5815c705';
 

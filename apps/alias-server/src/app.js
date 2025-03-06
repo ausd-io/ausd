@@ -14,7 +14,7 @@ const {
 } = require('./db');
 const { getAliasPrice } = require('./utils');
 const aliasConstants = require('../constants/alias');
-const cashaddr = require('ecashaddrjs');
+const cashaddr = require('auscashaddrjs');
 const helmet = require('helmet');
 
 module.exports = {
@@ -135,22 +135,22 @@ module.exports = {
             // Get the requested alias
             let address = req.params.address;
 
-            // Validate input is an ecash: address
+            // Validate input is an auscash: address
             const isValidAddress = cashaddr.isValidCashAddress(
                 address,
-                'ecash',
+                'auscash',
             );
             if (!isValidAddress) {
                 return res.status(500).json({
-                    error: `Error fetching /address/${address}: Input must be a valid eCash address`,
+                    error: `Error fetching /address/${address}: Input must be a valid ausCash address`,
                 });
             }
 
-            // Note: prefixless address is valid if checksum matches 'ecash'
+            // Note: prefixless address is valid if checksum matches 'auscash'
             // But database stores all addresses with a prefix
-            if (!address.startsWith('ecash:')) {
+            if (!address.startsWith('auscash:')) {
                 //  If query comes from a prefixless valid address, give it a prefix for your db query
-                address = `ecash:${address}`;
+                address = `auscash:${address}`;
             }
 
             // Log the request

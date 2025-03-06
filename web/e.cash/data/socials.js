@@ -4,23 +4,23 @@
 export const socials = [
     {
         name: 'facebook',
-        link: 'https://www.facebook.com/ecashofficial',
+        link: 'https://www.facebook.com/auscashofficial',
     },
     {
         name: 'x',
-        link: 'https://twitter.com/ecashofficial',
+        link: 'https://twitter.com/auscashofficial',
     },
     {
         name: 'linkedin',
-        link: 'https://www.linkedin.com/company/ecashofficial/',
+        link: 'https://www.linkedin.com/company/auscashofficial/',
     },
     {
         name: 'youtube',
-        link: 'https://www.youtube.com/eCashOfficial',
+        link: 'https://www.youtube.com/ausCashOfficial',
     },
     {
         name: 'instagram',
-        link: 'https://www.instagram.com/ecashnetwork/',
+        link: 'https://www.instagram.com/auscashnetwork/',
     },
     {
         name: 'github',
@@ -28,14 +28,14 @@ export const socials = [
     },
     {
         name: 'reddit',
-        link: 'https://reddit.com/r/ecash',
+        link: 'https://reddit.com/r/auscash',
     },
     {
         name: 'telegram',
-        link: 'https://t.me/ecash',
+        link: 'https://t.me/auscash',
     },
     {
         name: 'discord',
-        link: 'https://discord.gg/ecash-official-852595915159896114',
+        link: 'https://discord.gg/auscash-official-852595915159896114',
     },
 ];

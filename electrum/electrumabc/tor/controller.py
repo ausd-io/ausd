@@ -1,4 +1,4 @@
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2019-2020 Axel Gembe <derago@gmail.com>
 #
 # Permission is hereby granted, free of charge, to any person

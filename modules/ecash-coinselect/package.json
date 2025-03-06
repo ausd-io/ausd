@@ -1,7 +1,7 @@
 {
-    "name": "ecash-coinselect",
+    "name": "auscash-coinselect",
     "version": "2.2.1",
-    "description": "An unspent transaction output (UTXO) selection module for eCash.",
+    "description": "An unspent transaction output (UTXO) selection module for ausCash.",
     "main": "src/utxo.js",
     "scripts": {
         "test": "mocha",
@@ -9,7 +9,7 @@
         "junit": "mocha test --reporter mocha-junit-reporter"
     },
     "keywords": [
-        "ecash",
+        "auscash",
         "bitcoin",
         "utxo",
         "unspent",
@@ -21,7 +21,7 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Bitcoin-ABC/bitcoin-abc.git",
-        "directory": "modules/ecash-coinselect"
+        "directory": "modules/auscash-coinselect"
     },
     "bugs": {
         "url": "https://github.com/Bitcoin-ABC/bitcoin-abc/issues"

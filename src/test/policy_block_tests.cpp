@@ -38,7 +38,7 @@ static CBlock BlockWithoutMinerFund(const Amount &amount) {
 static CBlock BlockWithMinerFund(const CChainParams &chainparams,
                                  const Amount &minerFundAmount) {
     const auto minerFund = DecodeDestination(
-        "ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07", chainparams);
+        "auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07", chainparams);
     return Block(minerFundAmount, GetScriptForDestination(minerFund));
 }
 

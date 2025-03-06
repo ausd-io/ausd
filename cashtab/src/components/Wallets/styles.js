@@ -53,7 +53,7 @@ export const WalletName = styled.div`
 
 export const ActiveWalletName = styled(WalletName)`
     font-weight: bold;
-    color: ${props => props.theme.eCashBlue};
+    color: ${props => props.theme.ausCashBlue};
 `;
 
 export const SvgButtonPanel = styled.div`
@@ -77,12 +77,12 @@ export const WalletBalance = styled.div`
 
 export const ActivateButton = styled.button`
     cursor: pointer;
-    color: ${props => props.theme.eCashBlue};
+    color: ${props => props.theme.ausCashBlue};
     border-radius: 9px;
-    border: 2px solid ${props => props.theme.eCashBlue};
+    border: 2px solid ${props => props.theme.ausCashBlue};
     background: transparent;
     :hover {
-        background-color: ${props => props.theme.eCashBlue};
+        background-color: ${props => props.theme.ausCashBlue};
         color: ${props => props.theme.contrast};
     }
 `;

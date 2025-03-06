@@ -377,7 +377,7 @@ impl Server {
                     }
                     token_type::TokenType::Alp(_) => (
                         "ALP",
-                        "https://ecashbuilders.notion.site/\
+                        "https://auscashbuilders.notion.site/\
                             ALP-a862a4130877448387373b9e6a93dd97",
                     ),
                 };

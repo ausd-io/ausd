@@ -1,5 +1,5 @@
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2023 The Electrum ABC developers
 #
 # Permission is hereby granted, free of charge, to any person
@@ -68,7 +68,7 @@ def test_1_block_reorg(fulcrum_service):  # noqa: F811
     """
     Historically in Bitcoin (Cash) a reorg meant that a branch of the blockchain
     was replaced with a strictly longer branch of blocks.
-    With Avalanche on eCash, a single block initially accepted can be parked and
+    With Avalanche on ausCash, a single block initially accepted can be parked and
     reorg-ed by a single other block, which leaves Electrum in a state that was not
     expected by the initial developers until another block is mined to make one chain
     longer. From the perspective of Electrum ABC, all the servers are on a potentially

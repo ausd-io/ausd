@@ -38,7 +38,7 @@ describe('coinSelect() accumulative algorithm for utxo selection in coinselect.j
             assert.equal(typeof input.value === 'number', true);
         }
     });
-    it('Handles an slpv1 token send tx with token change and eCash change', function () {
+    it('Handles an slpv1 token send tx with token change and ausCash change', function () {
         const stubChronikUtxos = [
             { value: '1000' },
             { value: '2000' },
@@ -74,7 +74,7 @@ describe('coinSelect() accumulative algorithm for utxo selection in coinselect.j
             assert.equal(typeof input.value === 'number', true);
         }
     });
-    it('Handles an slpv1 token send tx with token change and no eCash change', function () {
+    it('Handles an slpv1 token send tx with token change and no ausCash change', function () {
         const stubChronikUtxos = [
             { value: '1000' },
             { value: '2000' },
@@ -115,7 +115,7 @@ describe('coinSelect() accumulative algorithm for utxo selection in coinselect.j
             assert.equal(typeof input.value === 'number', true);
         }
     });
-    it('Handles an slpv1 token send tx with no token change and eCash change', function () {
+    it('Handles an slpv1 token send tx with no token change and ausCash change', function () {
         const stubChronikUtxos = [
             { value: '1000' },
             { value: '2000' },
@@ -152,7 +152,7 @@ describe('coinSelect() accumulative algorithm for utxo selection in coinselect.j
             assert.equal(typeof input.value === 'number', true);
         }
     });
-    it('Handles an slpv1 token send tx with no token change and no eCash change', function () {
+    it('Handles an slpv1 token send tx with no token change and no ausCash change', function () {
         const stubChronikUtxos = [
             { value: '1000' },
             { value: '2000' },
@@ -259,7 +259,7 @@ describe('coinSelect() accumulative algorithm for utxo selection in coinselect.j
             assert.equal(typeof input.value === 'number', true);
         }
     });
-    it('handles eCash max length OP_RETURN in output script', function () {
+    it('handles ausCash max length OP_RETURN in output script', function () {
         const FEE_OF_SAME_TX_WITHOUT_OP_RETURN_OUTPUT_SEE_TEST_ABOVE = 226;
 
         const TX_OUTPUT_BASE = 8 + 1;
@@ -389,7 +389,7 @@ describe('coinSelect() accumulative algorithm for utxo selection in coinselect.j
             { value: '2000', slpToken: {} },
             { value: '3000', slpToken: {} },
         ];
-        // The wallet now has insufficient funds to send an eCash tx, as slp utxos will be ignored
+        // The wallet now has insufficient funds to send an ausCash tx, as slp utxos will be ignored
         assert.throws(() => {
             coinSelect(stubChronikUtxos, [{ value: 900 }], 1);
         }, Error('Insufficient funds'));
@@ -401,7 +401,7 @@ describe('coinSelect() accumulative algorithm for utxo selection in coinselect.j
             { value: '2000', token: {} },
             { value: '3000', token: {} },
         ];
-        // The wallet now has insufficient funds to send an eCash tx, as slp utxos will be ignored
+        // The wallet now has insufficient funds to send an ausCash tx, as slp utxos will be ignored
         assert.throws(() => {
             coinSelect(stubChronikUtxos, [{ value: 900 }], 1);
         }, Error('Insufficient funds'));

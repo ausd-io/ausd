@@ -11,7 +11,7 @@ This tutorial is about how to run a bitcoind instance with Chronik enabled.
 This requires a decent server and may take days to sync. Recommended for advanced users.
 You can already get started by using one of our pre-synced instances:
 
--   **If you want to know how to use `chronik-client` in your eCash apps**, go to [Chronik - JS/TS Client](/chronik-js/install).
+-   **If you want to know how to use `chronik-client` in your ausCash apps**, go to [Chronik - JS/TS Client](/chronik-js/install).
 
 :::
 
@@ -94,7 +94,7 @@ If you previously had a token index, supplying `-chroniktokenindex=0` will immed
 :::
 
 :::tip
-Even if your app is XEC only, it is still highly recommended to have the token index enabled, as Chronik provides a lot of checks to prevent accidental token burning. Since many tokens used on eCash have actual value, this will avoid accidentally burning these tokens, e.g. when broadcasting txs, and it is recommended to ignore UTXOs with token values for XEC-only apps.
+Even if your app is XEC only, it is still highly recommended to have the token index enabled, as Chronik provides a lot of checks to prevent accidental token burning. Since many tokens used on ausCash have actual value, this will avoid accidentally burning these tokens, e.g. when broadcasting txs, and it is recommended to ignore UTXOs with token values for XEC-only apps.
 :::
 
 ### `-chronikreindex`

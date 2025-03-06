@@ -7,7 +7,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import 'fake-indexeddb/auto';
@@ -25,7 +25,7 @@ import {
     argentinaAgoraOffer,
 } from 'components/Nfts/fixtures/mocks';
 import { walletWithXecAndTokens } from 'components/App/fixtures/mocks';
-import { Ecc, initWasm, toHex } from 'ecash-lib';
+import { Ecc, initWasm, toHex } from 'auscash-lib';
 import CashtabCache from 'config/CashtabCache';
 import { cashtabCacheToJSON } from 'helpers';
 import { MockAgora } from '../../../../../modules/mock-chronik-client';
@@ -45,7 +45,7 @@ describe('<Nfts />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -66,7 +66,7 @@ describe('<Nfts />', () => {
 
         mockedAgora.setOfferedGroupTokenIds(new Error('some chronik error'));
 
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             nftMarketWallet,
             localforage,
         );
@@ -98,7 +98,7 @@ describe('<Nfts />', () => {
             [],
         );
 
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             nftMarketWallet,
             localforage,
         );
@@ -165,7 +165,7 @@ describe('<Nfts />', () => {
             argentinaAgoraOffer,
         ]);
 
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             [nftMarketWallet, walletWithXecAndTokens],
             localforage,
         );

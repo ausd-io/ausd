@@ -7,7 +7,7 @@ export const careers = [
         title: 'App Developer',
         location: 'Remote',
         description:
-            "We are always expanding the wallet and app ecosystem of eCash. Do you have an app idea you'd like to build as a full time job? Are you looking to build with the latest in front end tech? Are you a fan of the impressive explosion of Web3 since the last bull market? React and Node preferred, but anything goes.",
+            "We are always expanding the wallet and app ecosystem of ausCash. Do you have an app idea you'd like to build as a full time job? Are you looking to build with the latest in front end tech? Are you a fan of the impressive explosion of Web3 since the last bull market? React and Node preferred, but anything goes.",
     },
     {
         title: 'C++ Developer',
@@ -19,6 +19,6 @@ export const careers = [
         title: 'Smart Contracts Engineer',
         location: 'Remote',
         description:
-            "Development of an EVM subnet is a key milestone for the eCash extensibility roadmap. 2017 proved the crypto future would be multi-chain, and the EVM is rapidly becoming industry standard. Are you passionate about fixed supply and money-first crypto but also excited about the tech potential of Ethereum? Have you contributed to open source full node software and built smart contracts in Solidity? We'd love to hear from you.",
+            "Development of an EVM subnet is a key milestone for the ausCash extensibility roadmap. 2017 proved the crypto future would be multi-chain, and the EVM is rapidly becoming industry standard. Are you passionate about fixed supply and money-first crypto but also excited about the tech potential of Ethereum? Have you contributed to open source full node software and built smart contracts in Solidity? We'd love to hear from you.",
     },
 ];

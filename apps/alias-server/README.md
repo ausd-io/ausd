@@ -1,6 +1,6 @@
 # alias-server
 
-A node backend for validating eCash alias registrations
+A node backend for validating ausCash alias registrations
 
 ## API Endpoints
 
@@ -13,7 +13,7 @@ Start the server following the deployment instructions below to expose the follo
 e.g. `localhost:5000/aliases`
 
 ```
-[{"alias":"1","address":"ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj"},{"alias":"333","address":"ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj"}]
+[{"alias":"1","address":"auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj"},{"alias":"333","address":"auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj"}]
 ```
 
 `/alias/<alias>`

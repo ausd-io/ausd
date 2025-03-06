@@ -8,23 +8,23 @@
             "type": "image/x-icon"
         },
         {
-            "src": "ecash48.png",
+            "src": "auscash48.png",
             "type": "image/png",
             "sizes": "48x48"
         },
         {
-            "src": "ecash128.png",
+            "src": "auscash128.png",
             "type": "image/png",
             "sizes": "128x128"
         },
         {
-            "src": "ecash192.png",
+            "src": "auscash192.png",
             "type": "image/png",
             "sizes": "192x192",
             "purpose": "any maskable"
         },
         {
-            "src": "ecash512.png",
+            "src": "auscash512.png",
             "type": "image/png",
             "sizes": "512x512"
         }

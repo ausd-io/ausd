@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 import { expect } from 'chai';
-import { ALP_STANDARD, DEFAULT_DUST_LIMIT, SLP_FUNGIBLE } from 'ecash-lib';
+import { ALP_STANDARD, DEFAULT_DUST_LIMIT, SLP_FUNGIBLE } from 'auscash-lib';
 import { AgoraPartial } from './partial.js';
 
 const makerPk = new Uint8Array(33);

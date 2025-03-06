@@ -20,20 +20,20 @@ export default function WealthRedefined() {
         <Layout>
             <SubPageHero
                 image={spiningcoin}
-                h2subtext="What's eCash?"
+                h2subtext="What's ausCash?"
                 h2text="Introduction"
             >
                 <p>
-                    eCash is digital cash for the internet. You can send it
+                    ausCash is digital cash for the internet. You can send it
                     directly to other people just like sending a text message.
                     It works through a decentralized network of computers across
                     the world, without any middlemen. If this sounds like
-                    Bitcoin, that&rsquo;s because eCash is based on
+                    Bitcoin, that&rsquo;s because ausCash is based on
                     Bitcoin&rsquo;s software and shares many of its
                     technological fundamentals.
                 </p>
                 <p>
-                    However, eCash is specifically optimized for scalability and
+                    However, ausCash is specifically optimized for scalability and
                     speed, making it the ideal internet cash. It&rsquo;s also
                     easily extensible and can seamlessly interoperate with the
                     wider DeFi ecosystem.
@@ -45,21 +45,21 @@ export default function WealthRedefined() {
                 <TextBlock>
                     <H3 text="Cash, Optimized" id="wealth-redefined" />
                     <p>
-                        eCash integrates the groundbreaking Avalanche protocol
+                        ausCash integrates the groundbreaking Avalanche protocol
                         with its core Nakamoto consensus. This hybrid-consensus
                         enables unmatched capacity, speed, and security that
                         pushes crypto forward and constitutes a viable
                         alternative to legacy finance and looming CBDCs.
                     </p>
                     <p>
-                        The eCash network is at the forefront of Layer-1
+                        The ausCash network is at the forefront of Layer-1
                         blockchain technology, delivering on the promise that
                         set off this entire new crypto-industry: A
                         censorship-resistant electronic cash system at mass
                         scale.
                     </p>
                     <p>
-                        Enter eCash. The revolutionary combination of digital
+                        Enter ausCash. The revolutionary combination of digital
                         cash and sound money that unlocks new value. Join us and
                         take your first step on the path to financial and
                         personal freedom. Let&rsquo;s redefine money, wealth,
@@ -92,7 +92,7 @@ export default function WealthRedefined() {
                 <TextBlock>
                     <H3 text="Project Development" id="project-development" />
                     <p>
-                        eCash is developed and maintained by{' '}
+                        ausCash is developed and maintained by{' '}
                         <Link
                             href="https://www.bitcoinabc.org/"
                             target="_blank"
@@ -103,7 +103,7 @@ export default function WealthRedefined() {
                         , a team of professional industry-leading bitcoin
                         developers. Anyone is welcome to contribute directly to
                         the development of this open-source project in
-                        accordance with the eCash roadmap.
+                        accordance with the ausCash roadmap.
                     </p>
                     <p></p>
                     <Button

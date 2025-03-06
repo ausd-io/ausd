@@ -111,7 +111,7 @@ std::string DummyAddress(const CChainParams &params) {
         0xb6, 0x7d, 0x06, 0x52, 0x99, 0x92, 0x59, 0x15, 0xae, 0xb1};
 
     const CTxDestination dstKey = PKHash(uint160(dummydata));
-    return MakeAddrInvalid(EncodeCashAddr(dstKey, params), params);
+    return MakeAddrInvalid(EncodausCashAddr(dstKey, params), params);
 }
 
 // Addresses are stored in the database with the encoding that the client was
@@ -124,7 +124,7 @@ QString convertToCashAddr(const CChainParams &params, const QString &addr) {
         return addr;
     }
     CTxDestination dst = DecodeDestination(addr.toStdString(), params);
-    return QString::fromStdString(EncodeCashAddr(dst, params));
+    return QString::fromStdString(EncodausCashAddr(dst, params));
 }
 
 void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent) {

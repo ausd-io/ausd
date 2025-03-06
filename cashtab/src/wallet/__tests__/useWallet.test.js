@@ -16,7 +16,7 @@ import appConfig from 'config/app';
 import { when } from 'jest-when';
 import {
     clearLocalForage,
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
 } from 'components/App/fixtures/helpers';
 import aliasSettings from 'config/alias';
 import { cashtabCacheToJSON, storedCashtabCacheToMap } from 'helpers';
@@ -30,7 +30,7 @@ import {
 describe('useWallet hook rendering in different localforage states', () => {
     const xecPrice = 0.00003;
     const priceResponse = {
-        ecash: {
+        auscash: {
             usd: xecPrice,
             last_updated_at: 1706644626,
         },
@@ -80,7 +80,7 @@ describe('useWallet hook rendering in different localforage states', () => {
         expect(mockCashtabCache).toStrictEqual(revivedCashtabCache);
     });
     it('XEC price is set in state on successful API fetch', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -90,7 +90,7 @@ describe('useWallet hook rendering in different localforage states', () => {
         });
     });
     it('XEC price remains null in state on API error', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -121,7 +121,7 @@ describe('useWallet hook rendering in different localforage states', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPriceGbp = 0.00003132;
         const priceResponseGbp = {
-            ecash: {
+            auscash: {
                 gbp: xecPriceGbp,
                 last_updated_at: 1706644626,
             },
@@ -132,7 +132,7 @@ describe('useWallet hook rendering in different localforage states', () => {
                 json: () => Promise.resolve(priceResponseGbp),
             });
 
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -146,7 +146,7 @@ describe('useWallet hook rendering in different localforage states', () => {
         });
     });
     it('Cashtab loads wallet, settings, cache, and contactlist from localforage to context if they are present', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -197,7 +197,7 @@ describe('useWallet hook rendering in different localforage states', () => {
         );
     });
     it('processChronikWsMsg() refreshes alias prices when aliasPrices is null', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -272,7 +272,7 @@ describe('useWallet hook rendering in different localforage states', () => {
     });
 
     it('processChronikWsMsg() refreshes alias prices when aliasPrices exists, server and cashtab prices array length do not match', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -405,7 +405,7 @@ describe('useWallet hook rendering in different localforage states', () => {
     });
 
     it('processChronikWsMsg() does not refresh alias prices when aliasPrices exists, server and cashtab array length do match', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -571,7 +571,7 @@ describe('useWallet hook rendering in different localforage states', () => {
     });
 
     it('Verify a processChronikWsMsg() new block event updates the `aliasServerError` state var upon a /prices/ endpoint error', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -617,25 +617,25 @@ describe('useWallet hook rendering in different localforage states', () => {
     });
 
     it('Verify refreshAliases() updates the `aliases` state variable on a successful /address/ endpoint response', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
         const { result } = renderHook(() => useWallet(mockedChronik));
-        const address = 'ecash:qzth8qvakhr6y8zcefdrvx30zrdmt2z2gvp7zc5vj8';
+        const address = 'auscash:qzth8qvakhr6y8zcefdrvx30zrdmt2z2gvp7zc5vj8';
         const endPoint = 'address';
         const fetchUrl = `${aliasSettings.aliasServerBaseUrl}/${endPoint}/${address}`;
         const mockAliasServerResponse = {
             registered: [
                 {
                     alias: 'john',
-                    address: 'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+                    address: 'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
                     txid: 'ec92610fc41df2387e7febbb358b138a802ac26023f30b2442aa01ca733fff7d',
                     blockheight: 792417,
                 },
                 {
                     alias: 'jane',
-                    address: 'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+                    address: 'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
                     txid: '0c77e4f7e0ff4f1028372042cbeb97eaddb64d505efe960b5a1ca4fce65598e2',
                     blockheight: 792418,
                 },
@@ -668,12 +668,12 @@ describe('useWallet hook rendering in different localforage states', () => {
     });
 
     it('Verify refreshAliases() updates the `aliasServerError` state variable upon an /address/ endpoint error', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
         const { result } = renderHook(() => useWallet(mockedChronik));
-        const address = 'ecash:qzth8qvakhr6y8zcefdrvx30zrdmt2z2gvp7zc5vj8';
+        const address = 'auscash:qzth8qvakhr6y8zcefdrvx30zrdmt2z2gvp7zc5vj8';
         const endPoint = 'address';
         const fetchUrl = `${aliasSettings.aliasServerBaseUrl}/${endPoint}/${address}`;
         const expectedError = {
@@ -706,7 +706,7 @@ describe('useWallet hook rendering in different localforage states', () => {
         );
     });
     it('An incoming tx message from the websocket causes the wallet to update', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );

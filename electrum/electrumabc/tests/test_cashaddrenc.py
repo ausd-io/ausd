@@ -26,19 +26,19 @@ import unittest
 
 from .. import cashaddr
 
-ABC_PREFIX = "ecash"
+ABC_PREFIX = "auscash"
 ABC_TESTNET_PREFIX = "ectest"
 
 VALID_PUBKEY_ADDRESSES = [
-    "ecash:qzedhq7ktcsvqmgc2q58t97n3c28k762ky5ryvphuu",
-    "ecash:qzluqar3nlanmq0ek4uwfp8grustexx9n5l5gfmh8l",
-    "ecash:qrygycuha6k0jlyaysrd6ts8t2m43e9x8glxjcwn9l",
+    "auscash:qzedhq7ktcsvqmgc2q58t97n3c28k762ky5ryvphuu",
+    "auscash:qzluqar3nlanmq0ek4uwfp8grustexx9n5l5gfmh8l",
+    "auscash:qrygycuha6k0jlyaysrd6ts8t2m43e9x8glxjcwn9l",
 ]
 
 VALID_SCRIPT_ADDRESSES = [
-    "ecash:pzedhq7ktcsvqmgc2q58t97n3c28k762kyrxerx58p",
-    "ecash:pzluqar3nlanmq0ek4uwfp8grustexx9n5g34xu5uz",
-    "ecash:prygycuha6k0jlyaysrd6ts8t2m43e9x8ggr0hfs7z",
+    "auscash:pzedhq7ktcsvqmgc2q58t97n3c28k762kyrxerx58p",
+    "auscash:pzluqar3nlanmq0ek4uwfp8grustexx9n5g34xu5uz",
+    "auscash:prygycuha6k0jlyaysrd6ts8t2m43e9x8ggr0hfs7z",
 ]
 
 
@@ -202,17 +202,17 @@ class TestCashAddrAddress(unittest.TestCase):
 
     def test_address_case(self):
         prefix, kind, hash160 = cashaddr.decode(
-            "ecash:qzedhq7ktcsvqmgc2q58t97n3c28k762ky5ryvphuu"
+            "auscash:qzedhq7ktcsvqmgc2q58t97n3c28k762ky5ryvphuu"
         )
-        assert prefix == "ecash"
+        assert prefix == "auscash"
         prefix, kind, hash160 = cashaddr.decode(
-            "ECASH:QZEDHQ7KTCSVQMGC2Q58T97N3C28K762KY5RYVPHUU"
+            "AUSCASH:QZEDHQ7KTCSVQMGC2Q58T97N3C28K762KY5RYVPHUU"
         )
-        assert prefix == "ECASH"
+        assert prefix == "AUSCASH"
         with self.assertRaises(ValueError):
-            cashaddr.decode("ECASH:qzedhq7ktcsvqmgc2q58t97n3c28k762ky5ryvphuu")
+            cashaddr.decode("AUSCASH:qzedhq7ktcsvqmgc2q58t97n3c28k762ky5ryvphuu")
         with self.assertRaises(ValueError):
-            cashaddr.decode("ecash:QZEDHQ7KTCSVQMGC2Q58T97N3C28K762KY5RYVPHUU")
+            cashaddr.decode("auscash:QZEDHQ7KTCSVQMGC2Q58T97N3C28K762KY5RYVPHUU")
 
     def test_prefix(self):
         with self.assertRaises(ValueError):

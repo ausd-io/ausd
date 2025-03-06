@@ -11,7 +11,7 @@ import { getWalletState } from 'utils/cashMethods';
 import { toXec } from 'wallet';
 import { meetsAliasSpec } from 'validation';
 import { queryAliasServer } from 'alias';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import CopyToClipboard from 'components/Common/CopyToClipboard';
 import appConfig from 'config/app';
 import aliasSettings from 'config/alias';
@@ -72,7 +72,7 @@ const AliasTag = styled.div`
     color: ${props => props.theme.contrast};
     background-color: #0074c2;
     &:hover {
-        background-color: ${props => props.theme.eCashPurple};
+        background-color: ${props => props.theme.ausCashPurple};
     }
     gap: 12px;
     border-radius: 3px;
@@ -90,7 +90,7 @@ const AliasRegisteredLink = styled.a`
 `;
 
 export const AliasAvailable = styled.span`
-    color: ${props => props.theme.eCashBlue};
+    color: ${props => props.theme.ausCashBlue};
 `;
 
 export const AliasPending = styled.span`
@@ -502,7 +502,7 @@ const Alias = () => {
                 </Modal>
             )}
             <AliasWrapper>
-                <h2>eCash Namespace Alias</h2>
+                <h2>ausCash Namespace Alias</h2>
 
                 <AliasInput
                     name="aliasName"

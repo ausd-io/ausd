@@ -7,7 +7,7 @@ import { walletWithXecAndTokens } from 'components/App/fixtures/mocks';
 import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import 'fake-indexeddb/auto';
@@ -26,7 +26,7 @@ describe('<CreateToken />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -42,7 +42,7 @@ describe('<CreateToken />', () => {
         await clearLocalForage(localforage);
     });
     it('If wallet has sufficient XEC, renders CreateTokenForm', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -71,7 +71,7 @@ describe('<CreateToken />', () => {
         ).not.toBeInTheDocument();
     });
     it('If wallet has insufficient XEC, renders component but does not render CreateTokenForm', async () => {
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             {
                 ...walletWithXecAndTokens,
                 state: {

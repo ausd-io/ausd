@@ -19,7 +19,7 @@ function DemoAddress() {
             fn={async () => {
                 // Some address with little history
                 return await chronik
-                    .address('ecash:qr3ax9kpca8qkgtwk0cdqdhnprsgfsq3xu2dx56fmw')
+                    .address('auscash:qr3ax9kpca8qkgtwk0cdqdhnprsgfsq3xu2dx56fmw')
                     .history(0);
             }}
         />
@@ -61,7 +61,7 @@ function DemoAddressHistory() {
             fn={async () => {
                 // IFP address
                 return await chronik
-                    .address('ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07')
+                    .address('auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07')
                     .history(300, 2);
             }}
         />

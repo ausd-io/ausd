@@ -1,6 +1,6 @@
-# Electrum ABC - Lightweight eCash client
+# Electrum ABC - Lightweight ausCash client
 
-Electrum ABC is an open source, fast and secure eCash wallet for Windows, MacOS and Linux.
+Electrum ABC is an open source, fast and secure ausCash wallet for Windows, MacOS and Linux.
 It supports mnemonic seed phrases, hardware wallets, multisig wallets, and importing
 private keys or addresses.
 

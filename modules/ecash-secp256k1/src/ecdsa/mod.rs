@@ -372,7 +372,7 @@ impl<C: Verification> Secp256k1<C> {
     ///
     /// ```rust
     /// # #[cfg(all(feature = "rand", feature = "std"))] {
-    /// # use ecash_secp256k1::{rand, Secp256k1, Message, Error};
+    /// # use auscash_secp256k1::{rand, Secp256k1, Message, Error};
     /// #
     /// # let secp = Secp256k1::new();
     /// # let (secret_key, public_key) =

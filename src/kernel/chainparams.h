@@ -140,7 +140,7 @@ public:
     const ChainTxData &TxData() const { return chainTxData; }
 
     struct ChainOptions {
-        bool ecash{true};
+        bool auscash{true};
         bool fastprune{false};
     };
 

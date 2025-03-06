@@ -15,7 +15,7 @@ import 'fake-indexeddb/auto';
 import localforage from 'localforage';
 import appConfig from 'config/app';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
@@ -30,7 +30,7 @@ describe('<SendXec /> rendered with params in URL', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -54,10 +54,10 @@ describe('<SendXec /> rendered with params in URL', () => {
     });
     it('Legacy params. Address and value keys are set and valid.', async () => {
         const destinationAddress =
-            'ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
+            'auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
         const value = 500;
         const hash = `#/send?address=${destinationAddress}&value=${value}`;
-        // ?address=ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm&value=500
+        // ?address=auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm&value=500
         Object.defineProperty(window, 'location', {
             value: {
                 hash,
@@ -65,7 +65,7 @@ describe('<SendXec /> rendered with params in URL', () => {
             writable: true, // possibility to override
         });
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -121,10 +121,10 @@ describe('<SendXec /> rendered with params in URL', () => {
     });
     it('Legacy params. Address and value keys are set and valid. Invalid bip21 string is ignored.', async () => {
         const destinationAddress =
-            'ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
+            'auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
         const legacyPassedAmount = 500;
         const hash = `#/send?address=${destinationAddress}&value=${legacyPassedAmount}&bip21=isthisgoingtodosomething&someotherparam=false&anotherstill=true`;
-        // ?address=ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm&value=500&bip21=isthisgoingtodosomething&someotherparam=false&anotherstill=true
+        // ?address=auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm&value=500&bip21=isthisgoingtodosomething&someotherparam=false&anotherstill=true
         Object.defineProperty(window, 'location', {
             value: {
                 hash,
@@ -133,7 +133,7 @@ describe('<SendXec /> rendered with params in URL', () => {
         });
 
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -186,9 +186,9 @@ describe('<SendXec /> rendered with params in URL', () => {
     });
     it('Legacy params. Address field is populated + disabled while value field is empty + enabled if legacy url params have address defined and value present as undefined', async () => {
         const destinationAddress =
-            'ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
+            'auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
         const hash = `#/send?address=${destinationAddress}&value=undefined`;
-        // ?address=ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm&value=undefined
+        // ?address=auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm&value=undefined
         Object.defineProperty(window, 'location', {
             value: {
                 hash,
@@ -196,7 +196,7 @@ describe('<SendXec /> rendered with params in URL', () => {
             writable: true,
         });
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -249,9 +249,9 @@ describe('<SendXec /> rendered with params in URL', () => {
     });
     it('Legacy params. Address field is populated + disabled while value field is empty + enabled if legacy url params have address defined and no value key present', async () => {
         const destinationAddress =
-            'ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
+            'auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
         const hash = `#/send?address=${destinationAddress}`;
-        // ?address=ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm
+        // ?address=auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm
         Object.defineProperty(window, 'location', {
             value: {
                 hash,
@@ -259,7 +259,7 @@ describe('<SendXec /> rendered with params in URL', () => {
             writable: true,
         });
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -320,7 +320,7 @@ describe('<SendXec /> rendered with params in URL', () => {
             writable: true,
         });
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -368,9 +368,9 @@ describe('<SendXec /> rendered with params in URL', () => {
     });
     it('Legacy params. Params are ignored if param is duplicated', async () => {
         const destinationAddress =
-            'ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
+            'auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
         const hash = `#/send?address=${destinationAddress}&amount=500&amount=1000`;
-        // ?address=ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm&amount=500&amount=1000
+        // ?address=auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm&amount=500&amount=1000
         Object.defineProperty(window, 'location', {
             value: {
                 hash,
@@ -378,7 +378,7 @@ describe('<SendXec /> rendered with params in URL', () => {
             writable: true,
         });
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -426,10 +426,10 @@ describe('<SendXec /> rendered with params in URL', () => {
     });
     it('Legacy params are not parsed as bip21 even if the bip21 param appears in the string', async () => {
         const destinationAddress =
-            'ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
+            'auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
         const legacyPassedAmount = 500;
-        const hash = `#/send?address=${destinationAddress}&value=${legacyPassedAmount}&bip21=ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=17&op_return_raw=04007461622263617368746162206D6573736167652077697468206F705F72657475726E5F726177`;
-        // ?address=ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm&value=500&bip21=ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=17&op_return_raw=04007461622263617368746162206D6573736167652077697468206F705F72657475726E5F726177
+        const hash = `#/send?address=${destinationAddress}&value=${legacyPassedAmount}&bip21=auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=17&op_return_raw=04007461622263617368746162206D6573736167652077697468206F705F72657475726E5F726177`;
+        // ?address=auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm&value=500&bip21=auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=17&op_return_raw=04007461622263617368746162206D6573736167652077697468206F705F72657475726E5F726177
         Object.defineProperty(window, 'location', {
             value: {
                 hash,
@@ -437,7 +437,7 @@ describe('<SendXec /> rendered with params in URL', () => {
             writable: true,
         });
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -490,13 +490,13 @@ describe('<SendXec /> rendered with params in URL', () => {
     });
     it('bip21 param - valid bip21 param with amount and op_return_raw is parsed as expected', async () => {
         const destinationAddress =
-            'ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
+            'auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
         const amount = 17;
         const op_return_raw =
             '04007461622263617368746162206d6573736167652077697468206f705f72657475726e5f726177';
         const bip21Str = `${destinationAddress}?amount=${amount}&op_return_raw=${op_return_raw}`;
         const hash = `#/send?bip21=${bip21Str}`;
-        // ?bip21=ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm?amount=17&op_return_raw=04007461622263617368746162206D6573736167652077697468206F705F72657475726E5F726177
+        // ?bip21=auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm?amount=17&op_return_raw=04007461622263617368746162206D6573736167652077697468206F705F72657475726E5F726177
         Object.defineProperty(window, 'location', {
             value: {
                 hash,
@@ -504,7 +504,7 @@ describe('<SendXec /> rendered with params in URL', () => {
             writable: true,
         });
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -598,14 +598,14 @@ describe('<SendXec /> rendered with params in URL', () => {
     });
     it('bip21 param - an invalid bip21 param shows validation errors but cannot be changed', async () => {
         const destinationAddress =
-            'ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
+            'auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm';
         const amount = 17;
         const op_return_raw =
             '04007461622263617368746162206d6573736167652077697468206f705f72657475726e5f726177';
         // Repeat the op_return_raw param
         const bip21Str = `${destinationAddress}?amount=${amount}&op_return_raw=${op_return_raw}&op_return_raw=${op_return_raw}`;
         const hash = `#/send?bip21=${bip21Str}`;
-        // ?bip21=ecash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm?amount=17&op_return_raw=04007461622263617368746162206D6573736167652077697468206F705F72657475726E5F726177&op_return_raw=04007461622263617368746162206D6573736167652077697468206F705F72657475726E5F726177
+        // ?bip21=auscash:qp33mh3a7qq7p8yulhnvwty2uq5ynukqcvuxmvzfhm?amount=17&op_return_raw=04007461622263617368746162206D6573736167652077697468206F705F72657475726E5F726177&op_return_raw=04007461622263617368746162206D6573736167652077697468206F705F72657475726E5F726177
         Object.defineProperty(window, 'location', {
             value: {
                 hash,
@@ -613,7 +613,7 @@ describe('<SendXec /> rendered with params in URL', () => {
             writable: true,
         });
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -685,7 +685,7 @@ describe('<SendXec /> rendered with params in URL', () => {
             writable: true, // possibility to override
         });
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -733,16 +733,16 @@ describe('<SendXec /> rendered with params in URL', () => {
     });
     it('bip21 param - valid bip21 param with amount, op_return_raw, and additional output with amount is parsed as expected', async () => {
         const destinationAddress =
-            'ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv';
+            'auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv';
         const amount = 110;
         const secondOutputAddr =
-            'ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5';
+            'auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5';
         const secondOutputAmount = 5.5;
         const op_return_raw =
             '0470617977202562dd05deda1c101b10562527bcd6bec20268fb94eed01843ba049cd774bec1';
         const bip21Str = `${destinationAddress}?amount=${amount}&op_return_raw=${op_return_raw}&addr=${secondOutputAddr}&amount=${secondOutputAmount}`;
         const hash = `#/send?bip21=${bip21Str}`;
-        // ?bip21=ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv?amount=110&op_return_raw=0470617977202562dd05deda1c101b10562527bcd6bec20268fb94eed01843ba049cd774bec1&addr=ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&amount=5.50
+        // ?bip21=auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv?amount=110&op_return_raw=0470617977202562dd05deda1c101b10562527bcd6bec20268fb94eed01843ba049cd774bec1&addr=auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&amount=5.50
         Object.defineProperty(window, 'location', {
             value: {
                 hash,
@@ -750,7 +750,7 @@ describe('<SendXec /> rendered with params in URL', () => {
             writable: true,
         });
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );

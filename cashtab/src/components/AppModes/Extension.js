@@ -126,7 +126,7 @@ const Extension = ({ wallet }) => {
                 <Modal
                     title={`Share your address?`}
                     description={`The web page ${addressRequestTabUrl} is requesting your
-                        eCash address.`}
+                        ausCash address.`}
                     handleOk={() => handleApprovedAddressShare()}
                     handleCancel={() => handleRejectedAddressShare()}
                     showCancelButton

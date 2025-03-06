@@ -46,7 +46,7 @@ use crate::{
 ///
 /// ```
 /// # #[cfg(all(feature = "rand", feature = "std"))] {
-/// use ecash_secp256k1::{rand, Secp256k1, SecretKey};
+/// use auscash_secp256k1::{rand, Secp256k1, SecretKey};
 ///
 /// let secp = Secp256k1::new();
 /// let secret_key = SecretKey::new(&mut rand::thread_rng());
@@ -148,7 +148,7 @@ impl str::FromStr for SecretKey {
 ///
 /// ```
 /// # #[cfg(feature =  "alloc")] {
-/// use ecash_secp256k1::{PublicKey, Secp256k1, SecretKey};
+/// use auscash_secp256k1::{PublicKey, Secp256k1, SecretKey};
 ///
 /// let secp = Secp256k1::new();
 /// let secret_key = SecretKey::from_byte_array(&[0xcd; 32])
@@ -211,7 +211,7 @@ impl SecretKey {
     ///
     /// ```
     /// # #[cfg(all(feature = "std", feature =  "rand"))] {
-    /// use ecash_secp256k1::{rand, SecretKey};
+    /// use auscash_secp256k1::{rand, SecretKey};
     /// let secret_key = SecretKey::new(&mut rand::thread_rng());
     /// # }
     /// ```
@@ -236,7 +236,7 @@ impl SecretKey {
     /// # Examples
     ///
     /// ```
-    /// use ecash_secp256k1::SecretKey;
+    /// use auscash_secp256k1::SecretKey;
     /// let sk = SecretKey::from_slice(&[0xcd; 32])
     ///     .expect("32 bytes, within curve order");
     /// ```
@@ -253,7 +253,7 @@ impl SecretKey {
     /// # Examples
     ///
     /// ```
-    /// use ecash_secp256k1::SecretKey;
+    /// use auscash_secp256k1::SecretKey;
     /// let sk = SecretKey::from_byte_array(&[0xcd; 32])
     ///     .expect("32 bytes, within curve order");
     /// ```
@@ -279,7 +279,7 @@ impl SecretKey {
     ///
     /// ```
     /// # #[cfg(all(feature = "rand", feature = "std"))] {
-    /// use ecash_secp256k1::{rand, Keypair, Secp256k1, SecretKey};
+    /// use auscash_secp256k1::{rand, Keypair, Secp256k1, SecretKey};
     ///
     /// let secp = Secp256k1::new();
     /// let keypair = Keypair::new(&secp, &mut rand::thread_rng());
@@ -446,7 +446,7 @@ impl PublicKey {
     ///
     /// ```
     /// # #[cfg(all(feature = "rand", feature = "std"))] {
-    /// use ecash_secp256k1::{rand, PublicKey, Secp256k1, SecretKey};
+    /// use auscash_secp256k1::{rand, PublicKey, Secp256k1, SecretKey};
     ///
     /// let secp = Secp256k1::new();
     /// let secret_key = SecretKey::new(&mut rand::thread_rng());
@@ -551,7 +551,7 @@ impl PublicKey {
     ///
     /// ```
     /// # #[cfg(all(feature = "rand", feature = "std"))] {
-    /// use ecash_secp256k1::{rand, Keypair, PublicKey, Secp256k1};
+    /// use auscash_secp256k1::{rand, Keypair, PublicKey, Secp256k1};
     ///
     /// let secp = Secp256k1::new();
     /// let keypair = Keypair::new(&secp, &mut rand::thread_rng());
@@ -701,7 +701,7 @@ impl PublicKey {
     ///
     /// ```
     /// # #[cfg(all(feature = "rand", feature = "std"))] {
-    /// use ecash_secp256k1::{rand, Secp256k1};
+    /// use auscash_secp256k1::{rand, Secp256k1};
     ///
     /// let secp = Secp256k1::new();
     /// let mut rng = rand::thread_rng();
@@ -731,7 +731,7 @@ impl PublicKey {
     ///
     /// ```
     /// # #[cfg(all(feature = "rand", feature = "std"))] {
-    /// use ecash_secp256k1::{rand, PublicKey, Secp256k1};
+    /// use auscash_secp256k1::{rand, PublicKey, Secp256k1};
     ///
     /// let secp = Secp256k1::new();
     /// let mut rng = rand::thread_rng();
@@ -880,7 +880,7 @@ impl<'de> serde::Deserialize<'de> for PublicKey {
 ///
 /// ```
 /// # #[cfg(all(feature = "rand", feature = "std"))] {
-/// use ecash_secp256k1::{rand, Keypair, Secp256k1};
+/// use auscash_secp256k1::{rand, Keypair, Secp256k1};
 ///
 /// let secp = Secp256k1::new();
 /// let (secret_key, public_key) =
@@ -989,7 +989,7 @@ impl Keypair {
     ///
     /// ```
     /// # #[cfg(all(feature = "rand", feature = "std"))] {
-    /// use ecash_secp256k1::{rand, Keypair, Secp256k1, SecretKey};
+    /// use auscash_secp256k1::{rand, Keypair, Secp256k1, SecretKey};
     ///
     /// let secp = Secp256k1::new();
     /// let keypair = Keypair::new(&secp, &mut rand::thread_rng());
@@ -1044,7 +1044,7 @@ impl Keypair {
     ///
     /// ```
     /// # #[cfg(all(feature = "rand", feature = "std"))] {
-    /// use ecash_secp256k1::{Keypair, Scalar, Secp256k1};
+    /// use auscash_secp256k1::{Keypair, Scalar, Secp256k1};
     ///
     /// let secp = Secp256k1::new();
     /// let tweak = Scalar::random();
@@ -1260,7 +1260,7 @@ impl CPtr for Keypair {
 ///
 /// ```
 /// # #[cfg(all(feature = "rand", feature = "std"))] {
-/// use ecash_secp256k1::{rand, Keypair, Secp256k1, XOnlyPublicKey};
+/// use auscash_secp256k1::{rand, Keypair, Secp256k1, XOnlyPublicKey};
 ///
 /// let secp = Secp256k1::new();
 /// let keypair = Keypair::new(&secp, &mut rand::thread_rng());
@@ -1404,7 +1404,7 @@ impl XOnlyPublicKey {
     ///
     /// ```
     /// # #[cfg(all(feature = "rand", feature = "std"))] {
-    /// use ecash_secp256k1::{Keypair, Scalar, Secp256k1, XOnlyPublicKey};
+    /// use auscash_secp256k1::{Keypair, Scalar, Secp256k1, XOnlyPublicKey};
     ///
     /// let secp = Secp256k1::new();
     /// let tweak = Scalar::random();
@@ -1468,7 +1468,7 @@ impl XOnlyPublicKey {
     ///
     /// ```
     /// # #[cfg(all(feature = "rand", feature = "std"))] {
-    /// use ecash_secp256k1::{Keypair, Scalar, Secp256k1};
+    /// use auscash_secp256k1::{Keypair, Scalar, Secp256k1};
     ///
     /// let secp = Secp256k1::new();
     /// let tweak = Scalar::random();

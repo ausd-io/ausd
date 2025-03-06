@@ -11,7 +11,7 @@ import {
     LegacyCashtabWallet,
     SlpDecimals,
 } from 'wallet';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import * as bip39 from 'bip39';
 import CashtabSettings, {
     cashtabSettingsValidation,
@@ -20,7 +20,7 @@ import CashtabSettings, {
 import tokenBlacklist from 'config/tokenBlacklist';
 import appConfig from 'config/app';
 import { opReturn } from 'config/opreturn';
-import { getStackArray } from 'ecash-script';
+import { getStackArray } from 'auscash-script';
 import aliasSettings from 'config/alias';
 import { getAliasByteCount } from 'opreturn';
 import { CashtabWallet, fiatToSatoshis } from 'wallet';
@@ -65,8 +65,8 @@ export const getContactAddressError = (
         appConfig.prefix,
     );
     // We do not accept prefixless input
-    if (!address.startsWith('ecash:')) {
-        return `Addresses in Contacts must start with "ecash:" prefix`;
+    if (!address.startsWith('auscash:')) {
+        return `Addresses in Contacts must start with "auscash:" prefix`;
     }
     if (!isValidCashAddress) {
         return `Invalid address`;
@@ -81,8 +81,8 @@ export const getContactAddressError = (
     return false;
 };
 /**
- * Does a given string meet the spec of a valid ecash alias
- * See spec a doc/standards/ecash-alias.md
+ * Does a given string meet the spec of a valid auscash alias
+ * See spec a doc/standards/auscash-alias.md
  * Note that an alias is only "valid" if it has been registered
  * So here, we are only testing spec compliance
  * @param  inputStr
@@ -105,7 +105,7 @@ export const meetsAliasSpec = (inputStr: string): true | string => {
 /**
  * Validate user input of an alias for cases that require the .xec suffix
  * Note this only validates the format according to spec and requirements
- * Must validate with indexer for associated ecash address before a tx is broadcast
+ * Must validate with indexer for associated auscash address before a tx is broadcast
  * @param sendToAliasInput
  */
 export const isValidAliasSendInput = (
@@ -120,7 +120,7 @@ export const isValidAliasSendInput = (
         return aliasMeetsSpec;
     }
     if (aliasParts.length !== 2 || aliasParts[1] !== 'xec') {
-        return `Must include '.xec' suffix when sending to an eCash alias`;
+        return `Must include '.xec' suffix when sending to an ausCash alias`;
     }
     return true;
 };
@@ -602,17 +602,17 @@ export const getOpReturnRawError = (opReturnRaw: string): false | string => {
 };
 
 /**
- * Test a bip21 op_return_raw param to see if an eCash node will accept it
+ * Test a bip21 op_return_raw param to see if an ausCash node will accept it
  * @param opReturnRaw
  */
 export const nodeWillAcceptOpReturnRaw = (opReturnRaw: string): boolean => {
     try {
         if (opReturnRaw === '') {
-            // No empty OP_RETURN for this param per ecash bip21 spec
+            // No empty OP_RETURN for this param per auscash bip21 spec
             return false;
         }
 
-        // Use validation from ecash-script library
+        // Use validation from auscash-script library
         // Apply .toLowerCase() to support uppercase, lowercase, or mixed case input
         getStackArray(
             `${opReturn.opReturnPrefixHex}${opReturnRaw.toLowerCase()}`,
@@ -1265,13 +1265,13 @@ export const getAgoraPartialAcceptTokenQtyError = (
      *     such a tx would be impossible to accept
      *
      * 2 - the minimum amount left may be less than the minAcceptedTokens of this offer
-     *     In this case, ecash-agora will create a partial with a total amount of less
+     *     In this case, auscash-agora will create a partial with a total amount of less
      *     than the min accepted offer, which would itself be unacceptable
      *
-     * ecash-agora has validation preventing both cases. But the agora protocol does not
+     * auscash-agora has validation preventing both cases. But the agora protocol does not
      * necessarily prevent this from happening.
      *
-     * Even if the case were handled by ecash-agora, it is still a good practice to validate this input
+     * Even if the case were handled by auscash-agora, it is still a good practice to validate this input
      * in the frontend, so the user knows why such a qty cannot be accepted
      *
      * For now, Cashtab already handles 1 -- as the minAcceptedToken amount is validated such that

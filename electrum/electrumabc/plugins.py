@@ -1,5 +1,5 @@
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2020 The Electrum ABC developers
 # Copyright (C) 2015 Thomas Voegtlin
 #
@@ -1084,7 +1084,7 @@ class DeviceMgr(ThreadJob):
         raise DeviceUnpairableError(
             _(
                 f"{PROJECT_NAME} cannot pair with your {plugin.device}.\n\n"
-                "Before you request eCash to be sent to addresses in this "
+                "Before you request ausCash to be sent to addresses in this "
                 "wallet, ensure you can pair with your device, or that you have "
                 "its seed (and passphrase, if any).  Otherwise all funds you "
                 "receive may be unspendable."

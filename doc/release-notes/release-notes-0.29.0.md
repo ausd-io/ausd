@@ -9,7 +9,7 @@ Chronik
 
 The Chronik indexer is now available as an opt-in option to the Bitcoin ABC
 node software for Linux and Windows. Chronik gives you access to a brand new API
-to get notified of finalized blocks, retrieve transaction history by eCash
+to get notified of finalized blocks, retrieve transaction history by ausCash
 address, gather eToken transaction data, and much more. To enable Chronik,
 simply turn it on with the `-chronik` option.
 

@@ -22,7 +22,7 @@ import 'fake-indexeddb/auto';
 import localforage from 'localforage';
 import appConfig from 'config/app';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
@@ -40,7 +40,7 @@ describe('<Airdrop />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -57,7 +57,7 @@ describe('<Airdrop />', () => {
     });
     it('We can send a pro-rata airdrop and equal tx to a tokenId not in our cache using custom settings', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -110,7 +110,7 @@ describe('<Airdrop />', () => {
         expect(
             screen.getByPlaceholderText('Please input parameters above.'),
         ).toHaveValue(
-            `ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr, 150\necash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035, 50\necash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6, 150\necash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly, 50\necash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m, 200\necash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj, 4400`,
+            `auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr, 150\nauscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035, 50\nauscash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6, 150\nauscash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly, 50\nauscash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m, 200\nauscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj, 4400`,
         );
 
         // We can ignore the mint address
@@ -123,14 +123,14 @@ describe('<Airdrop />', () => {
         expect(
             screen.getByPlaceholderText('Please input parameters above.'),
         ).toHaveValue(
-            `ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr, 150\necash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035, 50\necash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6, 150\necash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly, 50\necash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m, 200\necash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj, 4400`,
+            `auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr, 150\nauscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035, 50\nauscash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6, 150\nauscash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly, 50\nauscash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m, 200\nauscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj, 4400`,
         );
 
         // We can ignore other addresses
         await user.click(screen.getByTitle('Toggle Ignore Custom Addresses'));
         await user.type(
             await screen.findByPlaceholderText(/If more than one XEC address/),
-            'ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+            'auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
         );
 
         await user.click(
@@ -141,7 +141,7 @@ describe('<Airdrop />', () => {
         expect(
             screen.getByPlaceholderText('Please input parameters above.'),
         ).toHaveValue(
-            `ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035, 555.55\necash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6, 1666.66\necash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly, 555.55\necash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m, 2222.22`,
+            `auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035, 555.55\nauscash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6, 1666.66\nauscash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly, 555.55\nauscash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m, 2222.22`,
         );
 
         // We can airdrop people with less of a token the same amount of XEC as other users in case we happen to think in this way
@@ -156,12 +156,12 @@ describe('<Airdrop />', () => {
         expect(
             screen.getByPlaceholderText('Please input parameters above.'),
         ).toHaveValue(
-            `ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035, 1250\necash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6, 1250\necash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly, 1250\necash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m, 1250`,
+            `auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035, 1250\nauscash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6, 1250\nauscash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly, 1250\nauscash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m, 1250`,
         );
     });
     it('We can ignore addresses with less than a token balance for a token with decimals', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -214,7 +214,7 @@ describe('<Airdrop />', () => {
         expect(
             screen.getByPlaceholderText('Please input parameters above.'),
         ).toHaveValue(
-            `ecash:qp6qkpeg5xmpcqtu6uc5qkhzexg4sq009sfeekcfk2, 499894.34\necash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj, 94.15\necash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 11.49`,
+            `auscash:qp6qkpeg5xmpcqtu6uc5qkhzexg4sq009sfeekcfk2, 499894.34\nauscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj, 94.15\nauscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 11.49`,
         );
 
         // We can ignore the mint address
@@ -227,7 +227,7 @@ describe('<Airdrop />', () => {
         expect(
             screen.getByPlaceholderText('Please input parameters above.'),
         ).toHaveValue(
-            `ecash:qp6qkpeg5xmpcqtu6uc5qkhzexg4sq009sfeekcfk2, 499894.34\necash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj, 94.15\necash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 11.49`,
+            `auscash:qp6qkpeg5xmpcqtu6uc5qkhzexg4sq009sfeekcfk2, 499894.34\nauscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj, 94.15\nauscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 11.49`,
         );
 
         // We can ignore addresses based on having too little of the token
@@ -245,14 +245,14 @@ describe('<Airdrop />', () => {
         expect(
             screen.getByPlaceholderText('Please input parameters above.'),
         ).toHaveValue(
-            `ecash:qp6qkpeg5xmpcqtu6uc5qkhzexg4sq009sfeekcfk2, 499905.84\necash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj, 94.15`,
+            `auscash:qp6qkpeg5xmpcqtu6uc5qkhzexg4sq009sfeekcfk2, 499905.84\nauscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj, 94.15`,
         );
 
         // We can ignore another address
         await user.click(screen.getByTitle('Toggle Ignore Custom Addresses'));
         await user.type(
             await screen.findByPlaceholderText(/If more than one XEC address/),
-            'ecash:qp6qkpeg5xmpcqtu6uc5qkhzexg4sq009sfeekcfk2',
+            'auscash:qp6qkpeg5xmpcqtu6uc5qkhzexg4sq009sfeekcfk2',
         );
 
         await user.click(
@@ -263,7 +263,7 @@ describe('<Airdrop />', () => {
         expect(
             screen.getByPlaceholderText('Please input parameters above.'),
         ).toHaveValue(
-            `ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj, 500000`,
+            `auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj, 500000`,
         );
     });
 });

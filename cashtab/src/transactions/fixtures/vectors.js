@@ -11,7 +11,7 @@ import {
     allTheXecWallet,
     walletWithTokensInNode,
 } from './mocks';
-import { Script } from 'ecash-lib';
+import { Script } from 'auscash-lib';
 import { getCashtabMsgTargetOutput } from 'opreturn';
 const OP_RETURN_CASHTAB_MSG_TEST = getCashtabMsgTargetOutput('test');
 
@@ -25,7 +25,7 @@ export const sendXecVectors = {
                 {
                     value: 1000,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
             ],
@@ -42,7 +42,7 @@ export const sendXecVectors = {
                 {
                     value: 1000,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
             ],
@@ -59,7 +59,7 @@ export const sendXecVectors = {
                 {
                     value: 1000,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
                 OP_RETURN_CASHTAB_MSG_TEST,
@@ -78,7 +78,7 @@ export const sendXecVectors = {
                 {
                     value: 1000,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
             ],
@@ -95,7 +95,7 @@ export const sendXecVectors = {
                 {
                     value: 1000,
                     script: Script.fromAddress(
-                        'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+                        'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
                     ),
                 },
             ],
@@ -111,7 +111,7 @@ export const sendXecVectors = {
                 {
                     value: 1000,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
             ],
@@ -127,7 +127,7 @@ export const sendXecVectors = {
                 {
                     value: 24808,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
             ],
@@ -144,7 +144,7 @@ export const sendXecVectors = {
                 {
                     value: 24808,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
             ],
@@ -161,7 +161,7 @@ export const sendXecVectors = {
                 {
                     value: 88800,
                     script: Script.fromAddress(
-                        'ecash:qzr03ye2jhrxmw97g9hv4s05364qgsdqzsjre4krry',
+                        'auscash:qzr03ye2jhrxmw97g9hv4s05364qgsdqzsjre4krry',
                     ),
                 },
             ],
@@ -178,7 +178,7 @@ export const sendXecVectors = {
                 {
                     value: 1000,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
             ],
@@ -195,31 +195,31 @@ export const sendXecVectors = {
                 {
                     value: 1000,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
                 {
                     value: 2000,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
                 {
                     value: 3000,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
                 {
                     value: 4000,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
                 {
                     value: 5000,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
             ],
@@ -236,31 +236,31 @@ export const sendXecVectors = {
                 {
                     value: 1000,
                     script: Script.fromAddress(
-                        'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+                        'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
                     ),
                 },
                 {
                     value: 2000,
                     script: Script.fromAddress(
-                        'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+                        'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
                     ),
                 },
                 {
                     value: 3000,
                     script: Script.fromAddress(
-                        'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+                        'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
                     ),
                 },
                 {
                     value: 4000,
                     script: Script.fromAddress(
-                        'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+                        'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
                     ),
                 },
                 {
                     value: 5000,
                     script: Script.fromAddress(
-                        'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+                        'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
                     ),
                 },
             ],
@@ -278,7 +278,7 @@ export const sendXecVectors = {
                 {
                     value: 545,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
             ],
@@ -294,7 +294,7 @@ export const sendXecVectors = {
                 {
                     value: wallet.state.balanceSats + 1,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
             ],
@@ -311,7 +311,7 @@ export const sendXecVectors = {
                 {
                     value: wallet.state.balanceSats - 50,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
             ],
@@ -327,7 +327,7 @@ export const sendXecVectors = {
                 {
                     value: 1000,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
             ],
@@ -343,7 +343,7 @@ export const sendXecVectors = {
                 {
                     value: 1000,
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                 },
             ],
@@ -359,41 +359,41 @@ export const getMultisendTargetOutputsVectors = {
     formedOutputs: [
         {
             description: 'Airdrop',
-            userMultisendInput: `ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,150\necash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035,50\necash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6,150\necash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj,4400\necash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly,50\necash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m,200`,
+            userMultisendInput: `auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,150\nauscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035,50\nauscash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6,150\nauscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj,4400\nauscash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly,50\nauscash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m,200`,
             targetOutputs: [
                 {
                     script: Script.fromAddress(
-                        'ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr',
+                        'auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr',
                     ),
                     value: 15000,
                 },
                 {
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                     value: 5000,
                 },
                 {
                     script: Script.fromAddress(
-                        'ecash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6',
+                        'auscash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6',
                     ),
                     value: 15000,
                 },
                 {
                     script: Script.fromAddress(
-                        'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+                        'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
                     ),
                     value: 440000,
                 },
                 {
                     script: Script.fromAddress(
-                        'ecash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly',
+                        'auscash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly',
                     ),
                     value: 5000,
                 },
                 {
                     script: Script.fromAddress(
-                        'ecash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m',
+                        'auscash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m',
                     ),
                     value: 20000,
                 },
@@ -402,17 +402,17 @@ export const getMultisendTargetOutputsVectors = {
         {
             description:
                 'Multisend format with extra space around address and value',
-            userMultisendInput: `   ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr   ,   150\n   ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035 ,     50       `,
+            userMultisendInput: `   auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr   ,   150\n   auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035 ,     50       `,
             targetOutputs: [
                 {
                     script: Script.fromAddress(
-                        'ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr',
+                        'auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr',
                     ),
                     value: 15000,
                 },
                 {
                     script: Script.fromAddress(
-                        'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                        'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                     ),
                     value: 5000,
                 },
@@ -420,11 +420,11 @@ export const getMultisendTargetOutputsVectors = {
         },
         {
             description: 'One address in multi format',
-            userMultisendInput: `ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,150`,
+            userMultisendInput: `auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,150`,
             targetOutputs: [
                 {
                     script: Script.fromAddress(
-                        'ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr',
+                        'auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr',
                     ),
                     value: 15000,
                 },
@@ -432,35 +432,35 @@ export const getMultisendTargetOutputsVectors = {
         },
         {
             description: 'Multisend including a non-integer JS result',
-            userMultisendInput: `ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,151.52\necash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6,151.52\necash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj,4444.44\necash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly,50.51\necash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m,202.02`,
+            userMultisendInput: `auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,151.52\nauscash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6,151.52\nauscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj,4444.44\nauscash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly,50.51\nauscash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m,202.02`,
             targetOutputs: [
                 {
                     script: Script.fromAddress(
-                        'ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr',
+                        'auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr',
                     ),
                     value: 15152,
                 },
                 {
                     script: Script.fromAddress(
-                        'ecash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6',
+                        'auscash:qr204yfphngxthvnukyrz45u7500tf60vyqspva5a6',
                     ),
                     value: 15152,
                 },
                 {
                     script: Script.fromAddress(
-                        'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+                        'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
                     ),
                     value: 444444,
                 },
                 {
                     script: Script.fromAddress(
-                        'ecash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly',
+                        'auscash:qrq64hyel9hulnl9vsk29xjnuuqlpwqpcv6mk9pqly',
                     ),
                     value: 5051,
                 },
                 {
                     script: Script.fromAddress(
-                        'ecash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m',
+                        'auscash:qzn3gqf7vvm2qdu2rac6m6r4kgfcsyaras7jfqja3m',
                     ),
                     value: 20202,
                 },
@@ -470,22 +470,22 @@ export const getMultisendTargetOutputsVectors = {
     errors: [
         {
             description: 'Invalid multisend input (dust)',
-            userMultisendInput: `ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,3`,
+            userMultisendInput: `auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,3`,
             msg: 'Invalid input for Cashtab multisend tx',
         },
         {
             description: 'Too many decimal places',
-            userMultisendInput: `ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,200.123`,
+            userMultisendInput: `auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,200.123`,
             msg: 'Invalid input for Cashtab multisend tx',
         },
         {
             description: 'Use of comma as decimal place marker',
-            userMultisendInput: `ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,200,12`,
+            userMultisendInput: `auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,200,12`,
             msg: 'Invalid input for Cashtab multisend tx',
         },
         {
             description: 'Too many commas on one line',
-            userMultisendInput: `ecash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,200.12,foobar`,
+            userMultisendInput: `auscash:qzj5zu6fgg8v2we82gh76xnrk9njcreglum9ffspnr,200.12,foobar`,
             msg: 'Invalid input for Cashtab multisend tx',
         },
     ],
@@ -570,7 +570,7 @@ export const sendSlp = {
             sendQty: '10',
             decimals: 9,
             destinationAddress:
-                'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
             satsPerKb: 1000,
             chaintipBlockheight: 800000,
             tokenInputs: [
@@ -635,7 +635,7 @@ export const sendSlp = {
             sendQty: '1',
             decimals: 9,
             destinationAddress:
-                'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
             satsPerKb: 1000,
             chaintipBlockheight: 800000,
             tokenInputs: [
@@ -678,7 +678,7 @@ export const sendSlp = {
             sendQty: '10000000000',
             decimals: 9,
             destinationAddress:
-                'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
             satsPerKb: 1000,
             chaintipBlockheight: 800000,
             tokenInputs: walletWithTokensInNode.state.slpUtxos,

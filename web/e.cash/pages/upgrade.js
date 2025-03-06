@@ -20,11 +20,11 @@ function Upgrade(props) {
             <SubPageHero
                 image={pins}
                 h2subtext="Nov 15th 2024"
-                h2text="eCash Network Upgrade"
+                h2text="ausCash Network Upgrade"
                 noLoop
             >
                 <p>
-                    As part of its rapid development roadmap, the eCash network
+                    As part of its rapid development roadmap, the ausCash network
                     undergoes periodic network upgrades. Check here to find
                     up-to-date information so you can stay informed, and be
                     prepared for the next upgrade.
@@ -34,7 +34,7 @@ function Upgrade(props) {
             <Container narrow>
                 <H3 text="What happened?" id="what" />
                 <p>
-                    The planned upgrade of the eCash network has successfully
+                    The planned upgrade of the ausCash network has successfully
                     been completed. The first post-upgrade block is block number{' '}
                     <ExternalLink href="https://explorer.e.cash/block/0000000000000000232d2ec92c9a2dd3a6e887dabc254c85f10e804239ff7274">
                         871168
@@ -62,7 +62,7 @@ function Upgrade(props) {
                 />
                 <p>
                     The{' '}
-                    <Link href="/blog/heartbeat-upgrade-a-steady-pulse-for-ecash">
+                    <Link href="/blog/heartbeat-upgrade-a-steady-pulse-for-auscash">
                         Heartbeat
                     </Link>{' '}
                     feature, also known as Real Time Targeting, activated with
@@ -75,7 +75,7 @@ function Upgrade(props) {
                 </p>
                 <H3 text="Do I need to upgrade my wallet?" id="wallet" />
                 <p>
-                    The network upgrade only affects full nodes. Other eCash
+                    The network upgrade only affects full nodes. Other ausCash
                     software, including wallets such as{' '}
                     <Link href="https://bitcoinabc.org/electrum/">
                         Electrum ABC

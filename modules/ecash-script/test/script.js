@@ -335,13 +335,13 @@ describe('script.js', function () {
             getStackArray(outputScript);
         }, Error(`outputScript must be a string that starts with ${opReturn.OP_RETURN}`));
     });
-    it('getStackArray throws an error if called with a string that is too long to be a valid eCash OP_RETURN', function () {
+    it('getStackArray throws an error if called with a string that is too long to be a valid ausCash OP_RETURN', function () {
         const outputScript =
             '6a042e7865630003333333150076458db0ed96fe9863fc1ccec9fa2cfab884b0f6042e7865630003333333150076458db0ed96fe9863fc1ccec9fa2cfab884b0f6042e7865630003333333150076458db0ed96fe9863fc1ccec9fa2cfab884b0f6042e7865630003333333150076458db0ed96fe9863fc1ccec9fa2cfab884b0f6042e7865630003333333150076458db0ed96fe9863fc1ccec9fa2cfab884b0f6042e7865630003333333150076458db0ed96fe9863fc1ccec9fa2cfab884b0f6042e7865630003333333150076458db0ed96fe9863fc1ccec9fa2cfab884b0f6042e7865630003333333150076458db0ed96fe9863fc1ccec9fa2cfab884b0f6';
 
         assert.throws(() => {
             getStackArray(outputScript);
-        }, Error(`Invalid eCash OP_RETURN size: ${outputScript.length / 2} bytes. eCash OP_RETURN outputs cannot exceed ${opReturn.maxBytes} bytes.`));
+        }, Error(`Invalid ausCash OP_RETURN size: ${outputScript.length / 2} bytes. ausCash OP_RETURN outputs cannot exceed ${opReturn.maxBytes} bytes.`));
     });
     it('getStackArray throws an error if called with a string that has an odd number of characters', function () {
         const outputScript =

@@ -16,7 +16,7 @@ import {
     TxBuilder,
     TxBuilderInput,
     TxBuilderOutput,
-} from 'ecash-lib';
+} from 'auscash-lib';
 import { expect } from 'chai';
 
 import { AgoraPartial } from '../src/partial.js';

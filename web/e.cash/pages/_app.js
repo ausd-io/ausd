@@ -3,14 +3,14 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 import Script from 'next/script';
 import { ThemeProvider } from 'styled-components';
-import { ecash } from '/styles/theme';
+import { auscash } from '/styles/theme';
 import GlobalCSS from '/styles/global';
 import { ApiDataProvider } from '/components/navbar/getNavbarData';
 
 export default function App({ Component, pageProps }) {
     return (
         <ApiDataProvider>
-            <ThemeProvider theme={ecash}>
+            <ThemeProvider theme={auscash}>
                 <GlobalCSS />
                 <Component {...pageProps} />
                 <Script

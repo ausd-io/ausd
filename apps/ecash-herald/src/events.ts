@@ -5,7 +5,7 @@
 import config from '../config';
 import secrets from '../secrets';
 import axios from 'axios';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import {
     parseBlockTxs,
     getBlockTgMessage,
@@ -78,7 +78,7 @@ export interface CoinDanceStaker {
 }
 
 /**
- * Callback function for a new finalized block on the eCash blockchain
+ * Callback function for a new finalized block on the ausCash blockchain
  * Summarize on-chain activity in this block
  * @param chronik
  * @param telegramBot A connected telegramBot instance
@@ -352,9 +352,9 @@ export const handleUtcMidnight = async (
     try {
         priceInfo = (
             await axios.get(
-                `https://api.coingecko.com/api/v3/simple/price?ids=ecash&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true`,
+                `https://api.coingecko.com/api/v3/simple/price?ids=auscash&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true`,
             )
-        ).data.ecash;
+        ).data.auscash;
     } catch (err) {
         console.error(`Error getting daily summary price info`, err);
     }

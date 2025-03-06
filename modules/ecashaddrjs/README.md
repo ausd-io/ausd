@@ -1,8 +1,8 @@
-# eCashAddr.js: The eCash address format for Node.js and web browsers.
+# ausCashAddr.js: The ausCash address format for Node.js and web browsers.
 
-[![NPM](https://nodei.co/npm/ecashaddrjs.png?downloads=true)](https://nodei.co/npm/ecashaddrjs/)
+[![NPM](https://nodei.co/npm/auscashaddrjs.png?downloads=true)](https://nodei.co/npm/auscashaddrjs/)
 
-JavaScript implementation for CashAddr address format for eCash.
+JavaScript implementation for CashAddr address format for ausCash.
 
 Compliant with the original CashAddr [specification](https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/cashaddr.md) which improves upon [BIP 173](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki).
 
@@ -11,64 +11,64 @@ Compliant with the original CashAddr [specification](https://github.com/bitcoinc
 ### Using NPM
 
 ```bsh
-$ npm install --save ecashaddrjs
+$ npm install --save auscashaddrjs
 ```
 
 ### Manually
 
-You may also download the distribution file manually and place it within your third-party scripts directory: [dist/cashaddrjs.min.js](https://unpkg.com/ecashaddrjs/dist/cashaddrjs.min.js).
+You may also download the distribution file manually and place it within your third-party scripts directory: [dist/cashaddrjs.min.js](https://unpkg.com/auscashaddrjs/dist/cashaddrjs.min.js).
 
 ## Usage
 
-Convert a `bitcoincash:` prefixed address to an `ecash:` prefixed address
+Convert a `bitcoincash:` prefixed address to an `auscash:` prefixed address
 
 ### In Node.js
 
 ```javascript
-const ecashaddr = require('ecashaddrjs');
+const auscashaddr = require('auscashaddrjs');
 const bitcoincashAddress =
     'bitcoincash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuj6vnmhp6';
-const { prefix, type, hash } = ecashaddr.decode(bitcoincashAddress);
+const { prefix, type, hash } = auscashaddr.decode(bitcoincashAddress);
 console.log(prefix); // 'bitcoincash'
 console.log(type); // 'P2PKH'
 console.log(hash); // Uint8Array [ 118, 160, ..., 115 ]
-console.log(ecashaddr.encode('ecash', type, hash));
-// 'ecash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuthccqd8d'
-console.log(ecashaddr.isValidCashAddress(bitcoincashAddress)); // true
-console.log(ecashaddr.isValidCashAddress(bitcoincashAddress), 'bitcoincash'); // true
-console.log(ecashaddr.isValidCashAddress(bitcoincashAddress), 'ecash'); // false
+console.log(auscashaddr.encode('auscash', type, hash));
+// 'auscash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuthccqd8d'
+console.log(auscashaddr.isValidCashAddress(bitcoincashAddress)); // true
+console.log(auscashaddr.isValidCashAddress(bitcoincashAddress), 'bitcoincash'); // true
+console.log(auscashaddr.isValidCashAddress(bitcoincashAddress), 'auscash'); // false
 // getOutputScriptFromAddress
 // p2pkh
 console.log(
-    ecashaddr.getOutputScriptFromAddress(
-        'ecash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr',
+    auscashaddr.getOutputScriptFromAddress(
+        'auscash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr',
     ),
 ); // 76a9144e532257c01b310b3b5c1fd947c79a72addf852388ac
 // p2sh
 console.log(
-    ecashaddr.getOutputScriptFromAddress(
-        'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+    auscashaddr.getOutputScriptFromAddress(
+        'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
     ),
 ); // a914d37c4c809fe9840e7bfa77b86bd47163f6fb6c6087
 ```
 
 ### Working with chronik-client in Node.js
 
-[chronik](https://www.npmjs.com/package/chronik-client) is the reference indexer for eCash. It queries the blockchain using address hash160 and type parameters.
+[chronik](https://www.npmjs.com/package/chronik-client) is the reference indexer for ausCash. It queries the blockchain using address hash160 and type parameters.
 
 The `type` and `hash` parameters can be returned in a format ready for chronik by calling `cashaddr.decode(address, true)`
 
 ```javascript
-const ecashaddr = require('ecashaddrjs');
+const auscashaddr = require('auscashaddrjs');
 const { ChronikClient } = require('chronik-client');
 const chronik = new ChronikClient('https://chronik.be.cash/xec');
-const chronikQueryAddress = 'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035';
-const { prefix, type, hash } = ecashaddr.decode(chronikQueryAddress, true);
-console.log(prefix); // 'ecash'
+const chronikQueryAddress = 'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035';
+const { prefix, type, hash } = auscashaddr.decode(chronikQueryAddress, true);
+console.log(prefix); // 'auscash'
 console.log(type); // 'p2pkh' (instead of 'P2PKH', returned without the 'true' flag)
 console.log(hash); // '95e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d' (instead of Uint8Array [ 149, 241, ..., 29 ], returned without the 'true' flag)
-console.log(ecashaddr.encode('ecash', type, hash)); // encode supports chronik output inputs
-// 'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035'
+console.log(auscashaddr.encode('auscash', type, hash)); // encode supports chronik output inputs
+// 'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035'
 // use chronik client to get a page of address tx history
 const history = await chronik
     .script(type, hash)
@@ -78,16 +78,16 @@ const history = await chronik
 ### React
 
 ```javascript
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 
-function convertBitcoincashToEcash(bitcoincashAddress) {
+function convertBitcoincashToAuscash(bitcoincashAddress) {
     /* NOTE
   This function assumes input parameter 'bitcoincashAddress' is a valid bitcoincash: address
   cashaddr.decode() will throw an error if 'bitcoincashAddress' lacks a prefix
   */
     const { prefix, type, hash } = cashaddr.decode(bitcoincashAddress);
-    const ecashAddress = cashaddr.encode('ecash', type, hash);
-    return ecashAddress;
+    const auscashAddress = cashaddr.encode('auscash', type, hash);
+    return auscashAddress;
 }
 ```
 
@@ -96,25 +96,25 @@ function convertBitcoincashToEcash(bitcoincashAddress) {
 ```html
 <html>
     <head>
-        <script src="https://unpkg.com/ecashaddrjs/dist/cashaddrjs.min.js"></script>
+        <script src="https://unpkg.com/auscashaddrjs/dist/cashaddrjs.min.js"></script>
     </head>
     <body>
         <script>
-            function convertBitcoincashToEcash(bitcoincashAddress) {
+            function convertBitcoincashToAuscash(bitcoincashAddress) {
                 /* NOTE
     This function assumes input parameter 'bitcoincashAddress' is a valid bitcoincash: address
     cashaddr.decode() will throw an error if 'bitcoincashAddress' lacks a prefix
     */
                 const { prefix, type, hash } =
                     cashaddr.decode(bitcoincashAddress);
-                const ecashAddress = cashaddr.encode('ecash', type, hash);
-                return ecashAddress;
+                const auscashAddress = cashaddr.encode('auscash', type, hash);
+                return auscashAddress;
             }
-            const eCashAddr = convertBitcoincashToEcash(
+            const ausCashAddr = convertBitcoincashToAuscash(
                 'bitcoincash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuj6vnmhp6',
             );
-            console.log(eCashAddr);
-            // ecash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuthccqd8d
+            console.log(ausCashAddr);
+            // auscash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuthccqd8d
         </script>
     </body>
 </html>
@@ -122,13 +122,13 @@ function convertBitcoincashToEcash(bitcoincashAddress) {
 
 #### Script Tag
 
-You may include a script tag in your HTML and the `ecashaddr` module will be defined globally on subsequent scripts.
+You may include a script tag in your HTML and the `auscashaddr` module will be defined globally on subsequent scripts.
 
 ```html
 <html>
     <head>
         ...
-        <script src="https://unpkg.com/ecashaddrjs/dist/cashaddrjs.min.js"></script>
+        <script src="https://unpkg.com/auscashaddrjs/dist/cashaddrjs.min.js"></script>
     </head>
     ...
 </html>

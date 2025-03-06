@@ -3,10 +3,10 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 # Multi-stage
-# 1) rust image for ecash-lib
-# 2) Node image for prod deployment of ecash-lib
+# 1) rust image for auscash-lib
+# 2) Node image for prod deployment of auscash-lib
 
-# 1) rust image for ecash-lib
+# 1) rust image for auscash-lib
 FROM rust:1.76.0 AS wasmbuilder
 
 RUN apt-get update \
@@ -27,32 +27,32 @@ COPY chronik/ .
 WORKDIR /app/src/secp256k1
 COPY src/secp256k1/ .
 
-# Copy ecash-secp256k1, ecash-lib and ecash-lib-wasm files to same directory structure as monorepo
-WORKDIR /app/modules/ecash-secp256k1
-COPY modules/ecash-secp256k1 .
-WORKDIR /app/modules/ecash-lib
-COPY modules/ecash-lib .
-WORKDIR /app/modules/ecash-lib-wasm
-COPY modules/ecash-lib-wasm .
+# Copy auscash-secp256k1, auscash-lib and auscash-lib-wasm files to same directory structure as monorepo
+WORKDIR /app/modules/auscash-secp256k1
+COPY modules/auscash-secp256k1 .
+WORKDIR /app/modules/auscash-lib
+COPY modules/auscash-lib .
+WORKDIR /app/modules/auscash-lib-wasm
+COPY modules/auscash-lib-wasm .
 
-# Build web assembly for ecash-lib
+# Build web assembly for auscash-lib
 RUN CC=clang ./build-wasm.sh
 
 # 2) Node image for prod deployment of token-server
 
-# Node image for prod deployment of ecash-herald
+# Node image for prod deployment of auscash-herald
 
 FROM node:20-bookworm-slim
 
-# Copy static assets from WasmBuilder stage (ecash-lib-wasm and ecash-lib, with wasm built in place)
+# Copy static assets from WasmBuilder stage (auscash-lib-wasm and auscash-lib, with wasm built in place)
 WORKDIR /app/modules
 COPY --from=WasmBuilder /app/modules .
 
-# Build all local ecash-herald dependencies
+# Build all local auscash-herald dependencies
 
-# ecashaddrjs
-WORKDIR /app/modules/ecashaddrjs
-COPY modules/ecashaddrjs/ .
+# auscashaddrjs
+WORKDIR /app/modules/auscashaddrjs
+COPY modules/auscashaddrjs/ .
 RUN npm ci
 RUN npm run build
 
@@ -62,19 +62,19 @@ COPY modules/chronik-client/ .
 RUN npm ci
 RUN npm run build
 
-# ecash-script
-WORKDIR /app/modules/ecash-script
-COPY modules/ecash-script/ .
+# auscash-script
+WORKDIR /app/modules/auscash-script
+COPY modules/auscash-script/ .
 RUN npm ci
 
-# ecash-lib
-WORKDIR /app/modules/ecash-lib
+# auscash-lib
+WORKDIR /app/modules/auscash-lib
 RUN npm ci
 RUN npm run build
 
-# ecash-agora
-WORKDIR /app/modules/ecash-agora
-COPY modules/ecash-agora/ .
+# auscash-agora
+WORKDIR /app/modules/auscash-agora
+COPY modules/auscash-agora/ .
 RUN npm ci
 RUN npm run build
 
@@ -83,20 +83,20 @@ WORKDIR /app/modules/mock-chronik-client
 COPY modules/mock-chronik-client/ .
 RUN npm ci
 
-# Now that local dependencies are ready, build ecash-herald
-WORKDIR /app/apps/ecash-herald
+# Now that local dependencies are ready, build auscash-herald
+WORKDIR /app/apps/auscash-herald
 
 # Copy only the package files and install necessary dependencies.
 # This reduces cache busting when source files are changed.
-COPY apps/ecash-herald/package.json .
-COPY apps/ecash-herald/package-lock.json .
+COPY apps/auscash-herald/package.json .
+COPY apps/auscash-herald/package-lock.json .
 RUN npm ci
 
 # Copy the rest of the project files
-COPY apps/ecash-herald/ .
+COPY apps/auscash-herald/ .
 
 # Compile typescript. Outputs to dist/ dir
 RUN npm run build
 
-# ecash-herald runs with "node dist/index.js"
+# auscash-herald runs with "node dist/index.js"
 CMD [ "node", "dist/index.js" ]

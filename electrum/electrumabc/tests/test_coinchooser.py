@@ -9,8 +9,8 @@ from ..util import NotEnoughFunds
 
 DUMMY_OUTPOINT = OutPoint(UInt256(b"\x01" * 32), 0)
 
-ADDR1 = Address.from_string("ecash:qrh3ethkfms79tlcw7m736t38hp9kg5f7gycxeymme")
-ADDR2 = Address.from_string("ecash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4")
+ADDR1 = Address.from_string("auscash:qrh3ethkfms79tlcw7m736t38hp9kg5f7gycxeymme")
+ADDR2 = Address.from_string("auscash:qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4")
 
 
 def get_txinput(value=1000, height=1000, address=ADDR1) -> TxInput:

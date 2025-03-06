@@ -10,7 +10,7 @@ import { when } from 'jest-when';
 import aliasSettings from 'config/alias';
 import { explorer } from 'config/explorer';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
@@ -22,7 +22,7 @@ import {
     slp1FixedBear,
     slp1FixedCachet,
 } from 'components/Etokens/fixtures/mocks';
-import { Ecc, initWasm } from 'ecash-lib';
+import { Ecc, initWasm } from 'auscash-lib';
 import { MockAgora } from '../../../../../modules/mock-chronik-client';
 import { token as tokenConfig } from 'config/token';
 
@@ -39,7 +39,7 @@ const SEND_TOKEN_BALANCE =
 // updated tests properly on changing the app
 const SEND_ADDRESS_VALIDATION_ERRORS_TOKEN = [
     `Aliases must end with '.xec'`,
-    'eCash Alias does not exist or yet to receive 1 confirmation',
+    'ausCash Alias does not exist or yet to receive 1 confirmation',
     'Invalid address',
     'eToken sends do not support bip21 query strings',
 ];
@@ -59,7 +59,7 @@ describe('<Token />', () => {
     let user, mockedChronik;
     beforeEach(async () => {
         // Mock the app with context at the Send screen
-        mockedChronik = await initializeCashtabStateForTests(
+        mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -88,7 +88,7 @@ describe('<Token />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -228,7 +228,7 @@ describe('<Token />', () => {
             ),
         ).toBeInTheDocument();
     });
-    it('Accepts a valid ecash: prefixed address', async () => {
+    it('Accepts a valid auscash: prefixed address', async () => {
         render(
             <CashtabTestWrapper
                 chronik={mockedChronik}
@@ -252,7 +252,7 @@ describe('<Token />', () => {
         const addressInputEl = screen.getByPlaceholderText(/Address/);
 
         // The user enters a valid address
-        const addressInput = 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6';
+        const addressInput = 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6';
         await user.type(addressInputEl, addressInput);
 
         // The 'Send To' input field has this address as a value
@@ -332,7 +332,7 @@ describe('<Token />', () => {
 
         const alias = 'twelvechar12';
         const expectedResolvedAddress =
-            'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
+            'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
 
         // mock the fetch call to alias-server's '/alias' endpoint
         const fetchUrl = `${aliasSettings.aliasServerBaseUrl}/alias/${alias}`;
@@ -494,7 +494,7 @@ describe('<Token />', () => {
         // We get the expected error
         expect(
             screen.getByText(
-                `eCash Alias does not exist or yet to receive 1 confirmation`,
+                `ausCash Alias does not exist or yet to receive 1 confirmation`,
             ),
         ).toBeInTheDocument();
     });
@@ -571,7 +571,7 @@ describe('<Token />', () => {
 
         // The user enters an ivalid address
         const addressInput =
-            'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=5000';
+            'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=5000';
         await user.type(addressInputEl, addressInput);
 
         // The 'Send To' input field has this address as a value
@@ -615,7 +615,7 @@ describe('<Token />', () => {
 
         // The user enters a valid address and send amount
         const addressInputEl = screen.getByPlaceholderText(/Address/);
-        const addressInput = 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6';
+        const addressInput = 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6';
         const amountInputEl = screen.getByPlaceholderText('Amount');
         const amountInput = '1';
         await user.type(addressInputEl, addressInput);
@@ -779,7 +779,7 @@ describe('<Token />', () => {
             },
             path: 1899,
         };
-        const mintMockedChronik = await initializeCashtabStateForTests(
+        const mintMockedChronik = await initializausCashtabStateForTests(
             {
                 ...walletWithXecAndTokens,
                 state: {

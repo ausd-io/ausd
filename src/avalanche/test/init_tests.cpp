@@ -18,7 +18,7 @@
 BOOST_FIXTURE_TEST_SUITE(init_tests, BasicTestingSetup)
 
 BOOST_AUTO_TEST_CASE(avalanche_flag_tests) {
-    gArgs.ForceSetArg("-ecash", "1");
+    gArgs.ForceSetArg("-auscash", "1");
 
     {
         // Check the feature flags when avalanche is set
@@ -48,7 +48,7 @@ BOOST_AUTO_TEST_CASE(avalanche_flag_tests) {
         BOOST_CHECK_EQUAL(args.GetBoolArg("-automaticunparking", false), true);
     }
 
-    gArgs.ClearForcedArg("-ecash");
+    gArgs.ClearForcedArg("-auscash");
 }
 
 BOOST_AUTO_TEST_SUITE_END()

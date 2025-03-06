@@ -17,14 +17,14 @@ import {
     undecimalizeTokenAmount,
     DUMMY_KEYPAIR,
 } from 'wallet';
-import { Script, toHex, fromHex } from 'ecash-lib';
+import { Script, toHex, fromHex } from 'auscash-lib';
 import { Token, TokenType, OutPoint } from 'chronik-client';
-import { AgoraPartial } from 'ecash-agora';
+import { AgoraPartial } from 'auscash-agora';
 import { agoraPartialAlpTiberium } from './mocks';
 
 const MOCK_TOKEN_ID =
     '1111111111111111111111111111111111111111111111111111111111111111';
-const DUMMY_ADDRESS = 'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx';
+const DUMMY_ADDRESS = 'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx';
 const DUMMY_OUTPOINT: OutPoint = {
     txid: '0000000000000000000000000000000000000000000000000000000000000000',
     outIdx: 0,

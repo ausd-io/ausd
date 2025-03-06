@@ -33,7 +33,7 @@ import {
 } from 'components/Wallets/styles';
 import { getWalletNameError, validateMnemonic } from 'validation';
 import {
-    createCashtabWallet,
+    creatausCashtabWallet,
     generateMnemonic,
     getWalletsForNewActiveWallet,
 } from 'wallet';
@@ -45,7 +45,7 @@ import { PageHeader } from 'components/Common/Atoms';
 
 const Wallets = () => {
     const ContextValue = React.useContext(WalletContext);
-    const { cashtabState, updateCashtabState, ecc } = ContextValue;
+    const { cashtabState, updatausCashtabState, ecc } = ContextValue;
     const { wallets, contactList } = cashtabState;
 
     const userLocale = getUserLocale(navigator);
@@ -123,7 +123,7 @@ const Wallets = () => {
             walletToUpdate.name = formData.renamedWalletName;
 
             // Update localforage and state
-            await updateCashtabState('wallets', wallets);
+            await updatausCashtabState('wallets', wallets);
             toast.success(
                 `"${oldName}" renamed to "${formData.renamedWalletName}"`,
             );
@@ -147,7 +147,7 @@ const Wallets = () => {
         );
 
         // Update localforage and state
-        await updateCashtabState('wallets', updatedWallets);
+        await updatausCashtabState('wallets', updatedWallets);
         toast.success(`"${walletToBeDeleted.name}" deleted`);
 
         // Reset walletToBeDeleted to hide the modal
@@ -163,7 +163,7 @@ const Wallets = () => {
     const addNewWallet = async () => {
         // Generate a new wallet with a new mnemonic
         const mnemonic = generateMnemonic();
-        const newAddedWallet = await createCashtabWallet(ecc, mnemonic);
+        const newAddedWallet = await creatausCashtabWallet(ecc, mnemonic);
 
         // Note: technically possible though highly unlikley that a wallet already exists with this name
         // Also technically possible though ... er, almost impossibly improbable for wallet with same mnemonic to exist
@@ -187,7 +187,7 @@ const Wallets = () => {
         // Track number of times a different wallet is activated
         Event('Configure.js', 'Create Wallet', 'New');
         // Add it to the end of the wallets object
-        updateCashtabState('wallets', [...wallets, newAddedWallet]);
+        updatausCashtabState('wallets', [...wallets, newAddedWallet]);
 
         toast.success(`New wallet "${newAddedWallet.name}" added to wallets`);
     };
@@ -215,7 +215,7 @@ const Wallets = () => {
         }
 
         // Create a new wallet from mnemonic
-        const newImportedWallet = await createCashtabWallet(
+        const newImportedWallet = await creatausCashtabWallet(
             ecc,
             formData.mnemonic,
         );
@@ -241,7 +241,7 @@ const Wallets = () => {
         Event('Configure.js', 'Create Wallet', 'Imported');
 
         // Add it to the end of the wallets object
-        updateCashtabState('wallets', [...wallets, newImportedWallet]);
+        updatausCashtabState('wallets', [...wallets, newImportedWallet]);
 
         // Import success modal
         toast.success(
@@ -278,7 +278,7 @@ const Wallets = () => {
                 address: addressToAdd,
             });
             // update localforage and state
-            await updateCashtabState('contactList', contactList);
+            await updatausCashtabState('contactList', contactList);
             toast.success(
                 `${wallet.name} (${addressToAdd}) added to Contact List`,
             );
@@ -297,7 +297,7 @@ const Wallets = () => {
         Event('Configure.js', 'Activate', '');
 
         // Update wallets to activate this wallet
-        updateCashtabState('wallets', walletsAfterActivation);
+        updatausCashtabState('wallets', walletsAfterActivation);
     };
 
     return (

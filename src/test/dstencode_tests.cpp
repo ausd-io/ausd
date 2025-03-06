@@ -16,12 +16,12 @@ namespace {
 class DummyCashAddrConfig : public DummyConfig {
 public:
     DummyCashAddrConfig()
-        : DummyConfig(CBaseChainParams::MAIN), useCashAddr(false) {}
-    void SetCashAddrEncoding(bool b) override { useCashAddr = b; }
-    bool UseCashAddrEncoding() const override { return useCashAddr; }
+        : DummyConfig(CBaseChainParams::MAIN), usausCashAddr(false) {}
+    void SetCashAddrEncoding(bool b) override { usausCashAddr = b; }
+    bool UsausCashAddrEncoding() const override { return usausCashAddr; }
 
 private:
-    bool useCashAddr;
+    bool usausCashAddr;
 };
 
 } // namespace
@@ -37,9 +37,9 @@ BOOST_AUTO_TEST_CASE(test_addresses) {
     const CTxDestination dstScript = ScriptHash(uint160(hash));
 
     std::string cashaddr_pubkey =
-        "ecash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2";
+        "auscash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2";
     std::string cashaddr_script =
-        "ecash:ppm2qsznhks23z7629mms6s4cwef74vcwv2zrv3l8h";
+        "auscash:ppm2qsznhks23z7629mms6s4cwef74vcwv2zrv3l8h";
     std::string base58_pubkey = "DFxLFMAJWaNYA7TVTUstzPMFRSevAwTSLq";
     std::string base58_script = "A3FWNUmzq8fXceLoG8DM7PAxPQbNUjae2B";
 

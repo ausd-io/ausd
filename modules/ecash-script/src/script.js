@@ -7,7 +7,7 @@ const { swapEndianness } = require('./utils');
 
 /**
  * consume
- * @param {object} stack an object containing a hex string outputScript of an eCash tx, e.g. {remainingHex: '6a...'}
+ * @param {object} stack an object containing a hex string outputScript of an ausCash tx, e.g. {remainingHex: '6a...'}
  * An object is used for 'stack' to allow in-place modification without returning the input
  * @param {integer} byteCount integer
  * @throws {Error} if input is not supported,
@@ -59,7 +59,7 @@ function consume(stack, byteCount) {
 /**
  * Parse, decode and consume the data push from the top of the stack.
  * If the stack does not start with a valid push, it raises an error and the stack is left untouched.
- * @param {object} stack an object containing a hex string outputScript of an eCash tx, e.g. {remainingHex: '4d...'}
+ * @param {object} stack an object containing a hex string outputScript of an ausCash tx, e.g. {remainingHex: '4d...'}
  * An object is used for 'stack' to allow in-place modification without returning the input
  * @returns {object} {data, pushedWith}
  * stack is modified in place so that the push is removed
@@ -137,9 +137,9 @@ function getStackArray(outputScript) {
     }
     if (outputScript.length > 2 * opReturn.maxBytes) {
         throw new Error(
-            `Invalid eCash OP_RETURN size: ${
+            `Invalid ausCash OP_RETURN size: ${
                 outputScript.length / 2
-            } bytes. eCash OP_RETURN outputs cannot exceed ${
+            } bytes. ausCash OP_RETURN outputs cannot exceed ${
                 opReturn.maxBytes
             } bytes.`,
         );

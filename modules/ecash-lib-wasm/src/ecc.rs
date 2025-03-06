@@ -4,7 +4,7 @@
 
 //! Module for [`Ecc`] for signing secp256k1 signatures.
 
-use ecash_secp256k1::{All, Message, PublicKey, Secp256k1, SecretKey};
+use auscash_secp256k1::{All, Message, PublicKey, Secp256k1, SecretKey};
 use thiserror::Error;
 use wasm_bindgen::prelude::*;
 

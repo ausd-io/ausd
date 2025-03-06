@@ -9,7 +9,7 @@ Import the MockChronikClient module via relative path along with any desired moc
 ```
 const { MockChronikClient } = require('/index');
 // Import any mock responses from '/mocks/mockChronikResponses'
-const ecashaddr = require('ecashaddrjs');
+const auscashaddr = require('auscashaddrjs');
 const mockedChronik = new MockChronikClient();
 ```
 
@@ -53,8 +53,8 @@ Example: mocking the chronik.script(type, hash).utxos() call
 ```
 const { mockP2pkhUtxos } = require('/mocks/mockChronikResponses');
 // Initialize chronik mock with script and utxo info
-const P2PKH_ADDRESS = 'ecash:qzth8qvakhr6y8zcefdrvx30zrdmt2z2gvp7zc5vj8';
-const { type, hash } = ecashaddr.decode(P2PKH_ADDRESS, true);
+const P2PKH_ADDRESS = 'auscash:qzth8qvakhr6y8zcefdrvx30zrdmt2z2gvp7zc5vj8';
+const { type, hash } = auscashaddr.decode(P2PKH_ADDRESS, true);
 mockedChronik.setScript(type, hash);
 mockedChronik.setUtxos(type, hash, mockP2pkhUtxos);
 
@@ -88,7 +88,7 @@ await assert.rejects(
 
 ## Questions?
 
-If you have any implementation questions regarding this mock tool please check the test suite in `/test/index.test.js` or feel free to reach out to the development team via the [eCash Development Telegram](https://t.me/eCashDevelopment).
+If you have any implementation questions regarding this mock tool please check the test suite in `/test/index.test.js` or feel free to reach out to the development team via the [ausCash Development Telegram](https://t.me/ausCashDevelopment).
 
 ### Change Log
 
@@ -151,7 +151,7 @@ If you have any implementation questions regarding this mock tool please check t
 
 1.11.0
 
--   Add support for `MockAgora`, a simple set-and-return mock for some `ecash-agora` class methods [D16737](https://reviews.bitcoinabc.org/D16737)
+-   Add support for `MockAgora`, a simple set-and-return mock for some `auscash-agora` class methods [D16737](https://reviews.bitcoinabc.org/D16737)
 
 1.12.0
 

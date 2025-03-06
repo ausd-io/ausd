@@ -107,7 +107,7 @@ const config: HeraldConfig = {
     priceApi: {
         apiBase: 'https://api.coingecko.com/api/v3/simple/price',
         cryptos: [
-            { coingeckoSlug: 'ecash', ticker: 'XEC' },
+            { coingeckoSlug: 'auscash', ticker: 'XEC' },
             { coingeckoSlug: 'bitcoin', ticker: 'BTC' },
             { coingeckoSlug: 'ethereum', ticker: 'ETH' },
         ],
@@ -116,7 +116,7 @@ const config: HeraldConfig = {
     },
     fiatReference: { usd: '$', jpy: '¥', eur: '€', gbp: '£' },
     stakingRewardApiUrl: 'https://avalanche.cash/api/nextstakingreward',
-    ifpAddress: 'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+    ifpAddress: 'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
     tgMsgOptions: {
         parse_mode: 'HTML',
         disable_web_page_preview: true,

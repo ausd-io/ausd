@@ -6,11 +6,11 @@ import { BN } from 'slp-mdm';
 import * as bip39 from 'bip39';
 import randomBytes from 'randombytes';
 import * as utxolib from '@bitgo/utxo-lib';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import appConfig from 'config/app';
-import { fromHex, Script, P2PKHSignatory, ALL_BIP143, Ecc } from 'ecash-lib';
+import { fromHex, Script, P2PKHSignatory, ALL_BIP143, Ecc } from 'auscash-lib';
 import { Token, Tx, ScriptUtxo } from 'chronik-client';
-import { AgoraOffer } from 'ecash-agora';
+import { AgoraOffer } from 'auscash-agora';
 import { ParsedTx } from 'chronik';
 import {
     LegacyCashtabWallet_Pre_2_1_0,
@@ -222,7 +222,7 @@ export const hasEnoughToken = (
  * Default to 1899-only for all new wallets
  * Accept an array, in case we are migrating a wallet with legacy paths 145, 245, or both 145 and 245
  */
-export const createCashtabWallet = async (
+export const creatausCashtabWallet = async (
     ecc: Ecc,
     mnemonic: string,
     additionalPaths: number[] = [],
@@ -247,7 +247,7 @@ export const createCashtabWallet = async (
 
     const masterHDNode = utxolib.bip32.fromSeed(
         rootSeedBuffer,
-        utxolib.networks.ecash,
+        utxolib.networks.auscash,
     );
 
     // wallet.paths is an array

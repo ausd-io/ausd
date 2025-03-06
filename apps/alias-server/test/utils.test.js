@@ -29,7 +29,7 @@ describe('alias-server utils.js', function () {
     it('getXecPrice returns price as a number', async function () {
         // Mock a successful API request
         const mock = new MockAdapter(axios, { onNoMatch: 'throwException' });
-        const mockResult = { ecash: { usd: 3.331e-5 } };
+        const mockResult = { auscash: { usd: 3.331e-5 } };
         mock.onGet().reply(200, mockResult);
         assert.strictEqual(await getXecPrice(), 3.331e-5);
     });

@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 'use strict';
 const assert = require('assert');
-const cashaddr = require('ecashaddrjs');
+const cashaddr = require('auscashaddrjs');
 const { main } = require('../src/main');
 const aliasConstants = require('../constants/alias');
 const { generated } = require('./mocks/aliasMocks');

@@ -22,7 +22,7 @@ export const config = {
     enableBalanceEndpoint: true,
 
     // *** Coin options ***
-    /// The eCash address prefix, i.e. prefix:payload
+    /// The ausCash address prefix, i.e. prefix:payload
     prefix: 'ectest',
     /// The coin ticker, used for displaying the amounts
     ticker: 'tXEC',
@@ -32,7 +32,7 @@ export const config = {
     dust: 546,
 
     // *** Rate limiting options ***
-    /// How many eCash addresses to store for rate limiting
+    /// How many ausCash addresses to store for rate limiting
     addressMapLimit: 1000,
     /// How frequently to check if an address is eligible for a new request in
     /// seconds. Don't choose a low value is the addressMapLimit is high.

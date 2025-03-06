@@ -147,8 +147,8 @@ app = BUNDLE(
         'NSSupportsAutomaticGraphicsSwitching':'True',
         'CFBundleURLTypes':
             [{
-                'CFBundleURLName': 'ecash',
-                'CFBundleURLSchemes': ['ecash'],
+                'CFBundleURLName': 'auscash',
+                'CFBundleURLSchemes': ['auscash'],
             }],
         'NSCameraUsageDescription':
              "Electrum ABC would like to access the camera to scan for QR codes",

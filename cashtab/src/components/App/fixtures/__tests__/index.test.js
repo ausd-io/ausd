@@ -4,8 +4,8 @@
 
 import vectors from 'components/App/fixtures/vectors';
 import {
-    initializeCashtabStateForTests,
-    initializeCashtabStateAtLegacyWalletKeysForTests,
+    initializausCashtabStateForTests,
+    initializausCashtabStateAtLegacyWalletKeysForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import 'fake-indexeddb/auto';
@@ -19,9 +19,9 @@ describe('Correctly prepares Cashtab mocked chronik client and localforage envir
     afterEach(async () => {
         await clearLocalForage(localforage);
     });
-    it(`initializeCashtabStateAtLegacyWalletKeysForTests mocks a new Cashtab user or incognito visitor`, async () => {
+    it(`initializausCashtabStateAtLegacyWalletKeysForTests mocks a new Cashtab user or incognito visitor`, async () => {
         const mockedChronikClient =
-            await initializeCashtabStateAtLegacyWalletKeysForTests(
+            await initializausCashtabStateAtLegacyWalletKeysForTests(
                 false,
                 localforage,
             );
@@ -38,14 +38,14 @@ describe('Correctly prepares Cashtab mocked chronik client and localforage envir
     });
 
     const { expectedReturns } =
-        vectors.initializeCashtabStateAtLegacyWalletKeysForTests;
+        vectors.initializausCashtabStateAtLegacyWalletKeysForTests;
 
     expectedReturns.forEach(expectedReturn => {
         const { description, wallet } = expectedReturn;
-        it(`initializeCashtabStateAtLegacyWalletKeysForTests: ${description}`, async () => {
+        it(`initializausCashtabStateAtLegacyWalletKeysForTests: ${description}`, async () => {
             // First, initialize with no API error
             const mockChronikClient =
-                await initializeCashtabStateAtLegacyWalletKeysForTests(
+                await initializausCashtabStateAtLegacyWalletKeysForTests(
                     wallet,
                     localforage,
                 );
@@ -119,7 +119,7 @@ describe('Correctly prepares Cashtab mocked chronik client and localforage envir
             });
 
             // Next, initialize with API error
-            const apiErrorChronikClient = await initializeCashtabStateForTests(
+            const apiErrorChronikClient = await initializausCashtabStateForTests(
                 wallet,
                 localforage,
                 true,
@@ -183,8 +183,8 @@ describe('Correctly prepares Cashtab mocked chronik client and localforage envir
         await clearLocalForage(localforage);
     });
 
-    it(`initializeCashtabStateForTests mocks a new Cashtab user or incognito visitor`, async () => {
-        const mockedChronikClient = await initializeCashtabStateForTests(
+    it(`initializausCashtabStateForTests mocks a new Cashtab user or incognito visitor`, async () => {
+        const mockedChronikClient = await initializausCashtabStateForTests(
             false,
             localforage,
         );
@@ -200,13 +200,13 @@ describe('Correctly prepares Cashtab mocked chronik client and localforage envir
         expect(await localforage.getItem('wallets')).toBe(null);
     });
 
-    const { expectedReturns } = vectors.initializeCashtabStateForTests;
+    const { expectedReturns } = vectors.initializausCashtabStateForTests;
 
     expectedReturns.forEach(expectedReturn => {
         const { description, wallets } = expectedReturn;
-        it(`initializeCashtabStateForTests: ${description}`, async () => {
+        it(`initializausCashtabStateForTests: ${description}`, async () => {
             // First, initialize with no API error
-            const mockChronikClient = await initializeCashtabStateForTests(
+            const mockChronikClient = await initializausCashtabStateForTests(
                 wallets,
                 localforage,
             );
@@ -269,7 +269,7 @@ describe('Correctly prepares Cashtab mocked chronik client and localforage envir
 
                 // Next, initialize with API error
                 const apiErrorChronikClient =
-                    await initializeCashtabStateForTests(
+                    await initializausCashtabStateForTests(
                         wallets,
                         localforage,
                         true,

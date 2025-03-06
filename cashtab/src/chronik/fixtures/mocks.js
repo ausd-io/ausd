@@ -7156,19 +7156,19 @@ export const mockParseTxWalletEncryptedMsg = {
         {
             path: 1899,
             hash: 'ee6dc9d40f95d8e106a63385c6fa882991b9e84e',
-            address: 'ecash:qrhxmjw5p72a3cgx5cect3h63q5erw0gfcvjnyv7xt',
+            address: 'auscash:qrhxmjw5p72a3cgx5cect3h63q5erw0gfcvjnyv7xt',
             wif: 'Kwt39o7LZJ54nKyYU2Sz6dAZToXtFvYHtn6xKf2Nbi5E9kZfpHSH',
         },
         {
             path: 145,
             hash: 'dbff532189502b22ecf88e10bc78d42c3785240b',
-            address: 'ecash:qrdl75ep39gzkghvlz8pp0rc6skr0pfypv86lqsh33',
+            address: 'auscash:qrdl75ep39gzkghvlz8pp0rc6skr0pfypv86lqsh33',
             wif: 'L4TaWveyX8xEY7jLnS86JotV3tQkb1GqCaGxymES1i6Mkj5M77Cm',
         },
         {
             path: 245,
             hash: '278ac23f8ef6c40b98c23972cc60effdfe477326',
-            address: 'ecash:qqnc4s3l3mmvgzuccguh9nrqal7lu3mnyczktjj205',
+            address: 'auscash:qqnc4s3l3mmvgzuccguh9nrqal7lu3mnyczktjj205',
             wif: 'L3HmNCzg2fVd8q8JP8fU4mkKhFXo74Gskfp9UatMh7WJ9FTwQQix',
         },
     ],
@@ -7188,19 +7188,19 @@ export const mockSwapWallet = {
         {
             path: 1899,
             hash: 'a7d744e1246a20f26238e0510fb82d8df84cc82d',
-            address: 'ecash:qznaw38py34zpunz8rs9zrac9kxlsnxg95z8yz0zy4',
+            address: 'auscash:qznaw38py34zpunz8rs9zrac9kxlsnxg95z8yz0zy4',
             wif: '',
         },
         {
             path: 145,
             hash: '46d48362f35519ff656a3a5ca8cd43755efa74d1',
-            address: 'ecash:qprdfqmz7d23nlm9dga9e2xdgd64a7n56yg00sa75k',
+            address: 'auscash:qprdfqmz7d23nlm9dga9e2xdgd64a7n56yg00sa75k',
             wif: '',
         },
         {
             path: 245,
             hash: '056d6d7e88f008de89ee53fa8b6fe10ffe10271f',
-            address: 'ecash:qqzk6mt73rcq3h5faefl4zm0uy8luyp8ru2he6f2vx',
+            address: 'auscash:qqzk6mt73rcq3h5faefl4zm0uy8luyp8ru2he6f2vx',
             wif: '',
         },
     ],
@@ -7276,8 +7276,8 @@ export const stakingRwd = {
         stackArray: [],
         xecTxType: 'Staking Reward',
         recipients: [
-            'ecash:qr689ree3wukyetgqv6xld9vghthvpq69cg04xjp57',
-            'ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
+            'auscash:qr689ree3wukyetgqv6xld9vghthvpq69cg04xjp57',
+            'auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07',
         ],
     },
 };
@@ -7337,7 +7337,7 @@ export const incomingXec = {
         satoshisSent: 4200,
         stackArray: [],
         xecTxType: 'Received',
-        recipients: ['ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6'],
+        recipients: ['auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6'],
     },
 };
 
@@ -7396,7 +7396,7 @@ export const outgoingXec = {
         satoshisSent: 22200,
         stackArray: [],
         xecTxType: 'Sent',
-        recipients: ['ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6'],
+        recipients: ['auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6'],
     },
 };
 
@@ -7464,7 +7464,7 @@ export const aliasRegistration = {
             '00dc1147663948f0dcfb00cc407eda41b121713ad3',
         ],
         xecTxType: 'Sent',
-        recipients: ['ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07'],
+        recipients: ['auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07'],
     },
 };
 
@@ -7609,7 +7609,7 @@ export const incomingEtoken = {
             '00000000000000e4',
         ],
         xecTxType: 'Received',
-        recipients: ['ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6'],
+        recipients: ['auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6'],
     },
 };
 
@@ -7754,7 +7754,7 @@ export const outgoingEtoken = {
             '0000000000000034',
         ],
         xecTxType: 'Sent',
-        recipients: ['ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6'],
+        recipients: ['auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6'],
     },
 };
 
@@ -7982,7 +7982,7 @@ export const incomingEtokenNineDecimals = {
             '000000024554499f',
         ],
         xecTxType: 'Received',
-        recipients: ['ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6'],
+        recipients: ['auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6'],
     },
 };
 
@@ -8513,75 +8513,75 @@ export const legacyAirdropTx = {
         ],
         xecTxType: 'Received',
         recipients: [
-            'ecash:qqp49ckzgmar3ljh7egymnlk9z32hpwf4qf8m8l9gc',
-            'ecash:qp7j4nzkraqhhuext4r9l0tkk7tke566m5phzhkktx',
-            'ecash:qpu29ydpjdr3vxjn9ucu462afykv27t9aq4t0vgc3v',
-            'ecash:qpuvcexsnsk9tr3v0ud6733lfc4xy3j4nqq3chf5l9',
-            'ecash:qpc4xc6q5kknr8ey4epn6l92g36a6606as2zhlv5c3',
-            'ecash:qpjfhctcr7tzc485wfeatr33gw0mg54e9y4kuan3jl',
-            'ecash:qzlreeyeuv0taqx842lkwwkds4xgj6wacssxeqqpz4',
-            'ecash:qr5g7wfc83xjv3qs7vxjk2xd4em4cel23cmmek9thu',
-            'ecash:qp0me6v4nnnmwy3exyu2austqy7452qzuc2j22e0nt',
-            'ecash:qpg0xh3cv8tqj300e54statzalc562xmzqwuzjntyl',
-            'ecash:qzrxakyh8ezy68m9x043skx29p9dtzdury4xkq4azv',
-            'ecash:qqyy3mss5vmthgnu0m5sm39pcfq8z799kun7jjcf72',
-            'ecash:qzt4pnwah9mts3nxdznnkkxq5xhm6m6dhq77227t0f',
-            'ecash:qz8wz5dlputr0nwjux6pa5kdx2cd7z5ny5x4tw2zpk',
-            'ecash:qzl8jth497mtckku404cadsylwanm3rfxslzu6ufgg',
-            'ecash:qq4djmjx07f4f7rwpsg6el0r2yv55xpaequ4h6axa6',
-            'ecash:qzhay3c0yep99uf4n4acpyll7n7azgx9lykz945tm5',
-            'ecash:qz9gaysz88a4e3j8s4wp6c6tpwlycjm8qy0t5wv0r6',
-            'ecash:qqf0sn65lt2xj5ep7cwrz0fwx2s237qgvsntr84uqt',
-            'ecash:qzzzk9f2pw75v3a04m8wezn2l25sv688cuy23pmxch',
-            'ecash:qrlfw84jjcx7ln5n2q79vsw4f64d92m2q5z7v4d2da',
-            'ecash:qp59aqjevxm8g4h5gr92424sl9xtxd2twgl620v7ph',
-            'ecash:qpmtg3r6xct7jxxsxfsn20shnfvrlpwjccn0x53qp0',
-            'ecash:pqvtknma3zqur5290se6dtuwtyml0amk4q7apqmnwx',
-            'ecash:qzekdmmurl75aazj6uj4vc68yrxgws0pmsgztm4atw',
-            'ecash:qr67stwqz9cdnxskh7tppk588h68lq420gvwpush28',
-            'ecash:qqhddqwu2ssa6js99aymmf26ns69lvp9uqhgstr4vr',
-            'ecash:qzu863zm9ka6vhz6twmejkd5fsj9jdgclqcwvvhlkq',
-            'ecash:pp7erhrc87cutdljf0hajthderdtl29t0cckdef6dm',
-            'ecash:prmj9lywy0zuydnr4ge88az9k7ztyga2k5zqm3zchg',
-            'ecash:qz2qssp3rjlxqyl9ntlh98lurkgzl46dry8x8j7ftm',
-            'ecash:qrfef5yyvpaua9l6fenpkmev05hjxlyfac99kea3re',
-            'ecash:qpcwrv6v28x4xxw9ef2d49u2vs3xqhnt8c7qtax842',
-            'ecash:qpqwavpkm8ttcuwdvku3addmlfwcpzq9egtnc3rwvz',
-            'ecash:qpx4tamfec20638zkc6spk2sz6pc5hgnp5yhp72z28',
-            'ecash:qzsha6zk9m0f3hlfe5q007zdwnzvn3vwuuzel2lfzv',
-            'ecash:qzsnlsmy95089yltfw030mqmdakhaf92avqgmfwnsn',
-            'ecash:qp3wjpa3tjlj042z2wv7hahsldgwhwy0rquas9fmzn',
-            'ecash:qzr2jy0x2afmx7thg3yzxrn73aaw4w86tcv87dlc9m',
-            'ecash:qr5nvnzhwpu0zmhzkfljc4c2fezsm4fw0gxf008tgt',
-            'ecash:qrkez7h6j6pnc8l2v78zxd6v24lds0lkluen22kx9g',
-            'ecash:qzpv7j9wlnvqquh0y8j2v80w3skhp59ukvfejazgkn',
-            'ecash:qpzwswytm4jvraneq5neqehsg33c6rskdy0hunmn7m',
-            'ecash:qrtzu6z98d6e8pskkafsnsecr52dv89e5sqggy7w5p',
-            'ecash:qqjmr545vy9kmmkcu0f2cah57yfgsvfxus3qv9h336',
-            'ecash:qptyydu4msh6sharjvwdl8jc7nuxv8ptysp2d46z2p',
-            'ecash:qrsrm989nwespwt94s355f6trn6pc09d6uvu4zsdp8',
-            'ecash:qq0q665w7ty2pakw4n5x2czea2wmavgmmgz0n7r63a',
-            'ecash:qrmv6mh3h4ad6v20mxc3tsadph88s3ynpshjfcac55',
-            'ecash:qzy0k220s7c0qklkahwp66lau2ar4paum549mlx7vn',
-            'ecash:qzs4fuqzyarkajt5rfqka94kjemlmh6tr5sqsrh0tz',
-            'ecash:qqmz5dmn7459ez0yhqqwf38ejfwm9mqmtswnrhjrcl',
-            'ecash:qpnhp9v93qzf50ees28pmhzh70whwgn6zyzefhg5vl',
-            'ecash:qzcrzd696hmus5xfdqkzwydk598jmwf8dvcneehcza',
-            'ecash:qrl89x4yqaulsg4gcjvg7jdpzhy240qvcuwluwhshd',
-            'ecash:qrkw7qql8sfhezq0s2xcg0m4fgyzadfedv6jdz8zgs',
-            'ecash:qp370xkalsadx0gyecry4hsz60yv4j52l5dcy6vscq',
-            'ecash:qzy6dks7mpkgjelsx6g6mxhcmy7xykgnwvm2ka7y4n',
-            'ecash:qz06z7pkpj43wru5yv3r5kckv9cl2n2mcyvh00d7l3',
-            'ecash:qz7r06eys9aggs4j8t56qmxyqhy0mu08cspyq02pq4',
-            'ecash:qrnc6vzxxfyfhgjqk2vcdln2l5evw74pvv9ruy8fga',
-            'ecash:qzvnu6lw7a85a5xrleg6lz27gakwxlpk9v55jr2p46',
-            'ecash:qzugyr9xh88tpa2xu9pdmkzh5jt5fqm3ngjykg3vgy',
-            'ecash:qr9f38l560030ljdcm4nxz6xn0tdt4ypfcxrgleaav',
-            'ecash:qzkjnnwwygmlw854lmj4ruzyyhmskljvn52clpf7gl',
-            'ecash:qq840pewqms4ty7g52y0edmpky722uwh3qvx936rje',
-            'ecash:qq4fd9zdqecq3q4mmxz8v8vunepptukh3czav3gjyt',
-            'ecash:qq0rwc6wv6f7y2yqrsv5c3tsr4y6r5fw9squdmajds',
-            'ecash:qp36z7k8xt7k4l5xnxeypg5mfqeyvvyduu04m37fwd',
+            'auscash:qqp49ckzgmar3ljh7egymnlk9z32hpwf4qf8m8l9gc',
+            'auscash:qp7j4nzkraqhhuext4r9l0tkk7tke566m5phzhkktx',
+            'auscash:qpu29ydpjdr3vxjn9ucu462afykv27t9aq4t0vgc3v',
+            'auscash:qpuvcexsnsk9tr3v0ud6733lfc4xy3j4nqq3chf5l9',
+            'auscash:qpc4xc6q5kknr8ey4epn6l92g36a6606as2zhlv5c3',
+            'auscash:qpjfhctcr7tzc485wfeatr33gw0mg54e9y4kuan3jl',
+            'auscash:qzlreeyeuv0taqx842lkwwkds4xgj6wacssxeqqpz4',
+            'auscash:qr5g7wfc83xjv3qs7vxjk2xd4em4cel23cmmek9thu',
+            'auscash:qp0me6v4nnnmwy3exyu2austqy7452qzuc2j22e0nt',
+            'auscash:qpg0xh3cv8tqj300e54statzalc562xmzqwuzjntyl',
+            'auscash:qzrxakyh8ezy68m9x043skx29p9dtzdury4xkq4azv',
+            'auscash:qqyy3mss5vmthgnu0m5sm39pcfq8z799kun7jjcf72',
+            'auscash:qzt4pnwah9mts3nxdznnkkxq5xhm6m6dhq77227t0f',
+            'auscash:qz8wz5dlputr0nwjux6pa5kdx2cd7z5ny5x4tw2zpk',
+            'auscash:qzl8jth497mtckku404cadsylwanm3rfxslzu6ufgg',
+            'auscash:qq4djmjx07f4f7rwpsg6el0r2yv55xpaequ4h6axa6',
+            'auscash:qzhay3c0yep99uf4n4acpyll7n7azgx9lykz945tm5',
+            'auscash:qz9gaysz88a4e3j8s4wp6c6tpwlycjm8qy0t5wv0r6',
+            'auscash:qqf0sn65lt2xj5ep7cwrz0fwx2s237qgvsntr84uqt',
+            'auscash:qzzzk9f2pw75v3a04m8wezn2l25sv688cuy23pmxch',
+            'auscash:qrlfw84jjcx7ln5n2q79vsw4f64d92m2q5z7v4d2da',
+            'auscash:qp59aqjevxm8g4h5gr92424sl9xtxd2twgl620v7ph',
+            'auscash:qpmtg3r6xct7jxxsxfsn20shnfvrlpwjccn0x53qp0',
+            'auscash:pqvtknma3zqur5290se6dtuwtyml0amk4q7apqmnwx',
+            'auscash:qzekdmmurl75aazj6uj4vc68yrxgws0pmsgztm4atw',
+            'auscash:qr67stwqz9cdnxskh7tppk588h68lq420gvwpush28',
+            'auscash:qqhddqwu2ssa6js99aymmf26ns69lvp9uqhgstr4vr',
+            'auscash:qzu863zm9ka6vhz6twmejkd5fsj9jdgclqcwvvhlkq',
+            'auscash:pp7erhrc87cutdljf0hajthderdtl29t0cckdef6dm',
+            'auscash:prmj9lywy0zuydnr4ge88az9k7ztyga2k5zqm3zchg',
+            'auscash:qz2qssp3rjlxqyl9ntlh98lurkgzl46dry8x8j7ftm',
+            'auscash:qrfef5yyvpaua9l6fenpkmev05hjxlyfac99kea3re',
+            'auscash:qpcwrv6v28x4xxw9ef2d49u2vs3xqhnt8c7qtax842',
+            'auscash:qpqwavpkm8ttcuwdvku3addmlfwcpzq9egtnc3rwvz',
+            'auscash:qpx4tamfec20638zkc6spk2sz6pc5hgnp5yhp72z28',
+            'auscash:qzsha6zk9m0f3hlfe5q007zdwnzvn3vwuuzel2lfzv',
+            'auscash:qzsnlsmy95089yltfw030mqmdakhaf92avqgmfwnsn',
+            'auscash:qp3wjpa3tjlj042z2wv7hahsldgwhwy0rquas9fmzn',
+            'auscash:qzr2jy0x2afmx7thg3yzxrn73aaw4w86tcv87dlc9m',
+            'auscash:qr5nvnzhwpu0zmhzkfljc4c2fezsm4fw0gxf008tgt',
+            'auscash:qrkez7h6j6pnc8l2v78zxd6v24lds0lkluen22kx9g',
+            'auscash:qzpv7j9wlnvqquh0y8j2v80w3skhp59ukvfejazgkn',
+            'auscash:qpzwswytm4jvraneq5neqehsg33c6rskdy0hunmn7m',
+            'auscash:qrtzu6z98d6e8pskkafsnsecr52dv89e5sqggy7w5p',
+            'auscash:qqjmr545vy9kmmkcu0f2cah57yfgsvfxus3qv9h336',
+            'auscash:qptyydu4msh6sharjvwdl8jc7nuxv8ptysp2d46z2p',
+            'auscash:qrsrm989nwespwt94s355f6trn6pc09d6uvu4zsdp8',
+            'auscash:qq0q665w7ty2pakw4n5x2czea2wmavgmmgz0n7r63a',
+            'auscash:qrmv6mh3h4ad6v20mxc3tsadph88s3ynpshjfcac55',
+            'auscash:qzy0k220s7c0qklkahwp66lau2ar4paum549mlx7vn',
+            'auscash:qzs4fuqzyarkajt5rfqka94kjemlmh6tr5sqsrh0tz',
+            'auscash:qqmz5dmn7459ez0yhqqwf38ejfwm9mqmtswnrhjrcl',
+            'auscash:qpnhp9v93qzf50ees28pmhzh70whwgn6zyzefhg5vl',
+            'auscash:qzcrzd696hmus5xfdqkzwydk598jmwf8dvcneehcza',
+            'auscash:qrl89x4yqaulsg4gcjvg7jdpzhy240qvcuwluwhshd',
+            'auscash:qrkw7qql8sfhezq0s2xcg0m4fgyzadfedv6jdz8zgs',
+            'auscash:qp370xkalsadx0gyecry4hsz60yv4j52l5dcy6vscq',
+            'auscash:qzy6dks7mpkgjelsx6g6mxhcmy7xykgnwvm2ka7y4n',
+            'auscash:qz06z7pkpj43wru5yv3r5kckv9cl2n2mcyvh00d7l3',
+            'auscash:qz7r06eys9aggs4j8t56qmxyqhy0mu08cspyq02pq4',
+            'auscash:qrnc6vzxxfyfhgjqk2vcdln2l5evw74pvv9ruy8fga',
+            'auscash:qzvnu6lw7a85a5xrleg6lz27gakwxlpk9v55jr2p46',
+            'auscash:qzugyr9xh88tpa2xu9pdmkzh5jt5fqm3ngjykg3vgy',
+            'auscash:qr9f38l560030ljdcm4nxz6xn0tdt4ypfcxrgleaav',
+            'auscash:qzkjnnwwygmlw854lmj4ruzyyhmskljvn52clpf7gl',
+            'auscash:qq840pewqms4ty7g52y0edmpky722uwh3qvx936rje',
+            'auscash:qq4fd9zdqecq3q4mmxz8v8vunepptukh3czav3gjyt',
+            'auscash:qq0rwc6wv6f7y2yqrsv5c3tsr4y6r5fw9squdmajds',
+            'auscash:qp36z7k8xt7k4l5xnxeypg5mfqeyvvyduu04m37fwd',
         ],
     },
 };
@@ -9249,7 +9249,7 @@ export const outgoingEncryptedMsg = {
             '040f3cc3bc507126c239cde840befd974bdac054f9b9f2bfd4ff32b5f59ca554c4f3fb2d11d30eae3e5d3f61625ff7812ba14f8c901c30ee7e03dea57681a8f7ab8c64d42ce505921b4d67507452537cbe7525281714857c75d7a441b65030b7ea646b59ed0c34adc9f739661620cf7678963db3cac78afd7f49ad0d63aad404b07730255ded82ea3a939c63ee040ae9fac9336bb8d84d7b3380665ffa514a45f4',
         ],
         xecTxType: 'Sent',
-        recipients: ['ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6'],
+        recipients: ['auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6'],
     },
 };
 
@@ -9316,7 +9316,7 @@ export const incomingEncryptedMsg = {
             '04eaa5cbe6e13db7d91f35dca5d270c944a9a3e8c7738c56d12069312f589c7f193e67ea3d2f6d1f300f404c33c19e48dc3ac35145c8152624b7a8e22278e9133862425da2cc44f7297c8618ffa78dd09054a4a5490afd2b62139f19fa7b8516cbae692488fa50e79101d55e7582b3a662c3a5cc737044ef392f8c1fde63b8385886aed37d1b68e887284262f298fe74c0',
         ],
         xecTxType: 'Received',
-        recipients: ['ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6'],
+        recipients: ['auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6'],
     },
 };
 
@@ -9572,7 +9572,7 @@ export const tokenBurnDecimals = {
     },
 };
 
-export const eCashChatAuthenticationTx = {
+export const ausCashChatAuthenticationTx = {
     tx: {
         txid: '61838af28ae42e3b6a5fd037e112fe0df936dabf2a6417091abce6a3d830b078',
         version: 2,
@@ -9626,7 +9626,7 @@ export const eCashChatAuthenticationTx = {
                 '61757468',
                 '0644ad85a538657c033e36ce5a3c8cf26076591f',
             ],
-            recipients: ['ecash:qzeq9xxpkht2s2np7myv6uy04papecdf0g0zly33v5'],
+            recipients: ['auscash:qzeq9xxpkht2s2np7myv6uy04papecdf0g0zly33v5'],
         },
     },
 };
@@ -9747,7 +9747,7 @@ export const agoraAdSetupTxSlpNft = {
             '0000000000000001',
         ],
         xecTxType: 'Sent',
-        recipients: ['ecash:pp3mwvf32la36p2frymyeqma3tuj07jknyhljj09qd'],
+        recipients: ['auscash:pp3mwvf32la36p2frymyeqma3tuj07jknyhljj09qd'],
     },
     // 1 Nile Kinnick
     cache: [
@@ -9960,7 +9960,7 @@ export const agoraOneshotSaleTx = {
         tokenStatus: 'TOKEN_STATUS_NORMAL',
     },
     parsed: {
-        recipients: ['ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035'],
+        recipients: ['auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035'],
         satoshisSent: 72066878,
         stackArray: [
             '534c5000',
@@ -10273,8 +10273,8 @@ export const agoraPartialBuxBuyTx = {
     },
     parsed: {
         recipients: [
-            'ecash:qr0w2r6hvd3rwlwj7qc520qtkzgqnt90sypk26yd2u',
-            'ecash:ppgza5su5a9auq7hldnjakwfjm4tjtnjl54xmlf83s',
+            'auscash:qr0w2r6hvd3rwlwj7qc520qtkzgqnt90sypk26yd2u',
+            'auscash:ppgza5su5a9auq7hldnjakwfjm4tjtnjl54xmlf83s',
         ],
         satoshisSent: 43145125,
         stackArray: [
@@ -10492,8 +10492,8 @@ export const partialBuyBull = {
     },
     parsed: {
         recipients: [
-            'ecash:ppgavzvejaqqshcke7lw97ter44wdtr835rs9eedxc',
-            'ecash:qq4t5d7kxewnu4cv4he76e093tj26ag6xql82hcgru',
+            'auscash:ppgavzvejaqqshcke7lw97ter44wdtr835rs9eedxc',
+            'auscash:qq4t5d7kxewnu4cv4he76e093tj26ag6xql82hcgru',
         ],
         satoshisSent: 2812672,
         stackArray: [
@@ -10638,7 +10638,7 @@ export const agoraPartialCancelTwo = {
     },
     sendingHash: '95e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d',
     parsed: {
-        recipients: ['ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035'],
+        recipients: ['auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035'],
         satoshisSent: 0,
         stackArray: [
             '534c5000',
@@ -10776,7 +10776,7 @@ export const AgoraOneshotCancelTx = {
         tokenStatus: 'TOKEN_STATUS_NORMAL',
     },
     parsed: {
-        recipients: ['ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj'],
+        recipients: ['auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj'],
         satoshisSent: 0,
         stackArray: [
             '534c5000',
@@ -10940,7 +10940,7 @@ export const swapTx = {
             '37383035',
         ],
         xecTxType: 'Received',
-        recipients: ['ecash:qzf5wt2kh2g4s8k5wv395aja699zmdwemq05vg6h92'],
+        recipients: ['auscash:qzf5wt2kh2g4s8k5wv395aja699zmdwemq05vg6h92'],
     },
 };
 
@@ -10999,7 +10999,7 @@ export const PayButtonNoDataYesNonce = {
         satoshisSent: 1800,
         stackArray: ['50415900', '00', '00', 'd980190d13019567'],
         xecTxType: 'Received',
-        recipients: ['ecash:qqqmlnj07demzz9avk6d5zx7vgddapddk5k05jys53'],
+        recipients: ['auscash:qqqmlnj07demzz9avk6d5zx7vgddapddk5k05jys53'],
     },
 };
 
@@ -11064,8 +11064,8 @@ export const PayButtonYesDataYesNonce = {
         stackArray: ['50415900', '00', 'f09f9882f09f918d', '69860643e4dc4c88'],
         xecTxType: 'Sent',
         recipients: [
-            'ecash:qrjh8hvf5c0cmt44d06mt76a0nvxuvdt9cmj39zxwm',
-            'ecash:qp5h4eetqcj407nfl82dpyvz22w6x69tdyxpprn8zg',
+            'auscash:qrjh8hvf5c0cmt44d06mt76a0nvxuvdt9cmj39zxwm',
+            'auscash:qp5h4eetqcj407nfl82dpyvz22w6x69tdyxpprn8zg',
         ],
     },
 };
@@ -11083,8 +11083,8 @@ export const PayButtonEmpty = {
         stackArray: ['50415900', '00', '00', '00'],
         xecTxType: 'Sent',
         recipients: [
-            'ecash:qrjh8hvf5c0cmt44d06mt76a0nvxuvdt9cmj39zxwm',
-            'ecash:qp5h4eetqcj407nfl82dpyvz22w6x69tdyxpprn8zg',
+            'auscash:qrjh8hvf5c0cmt44d06mt76a0nvxuvdt9cmj39zxwm',
+            'auscash:qp5h4eetqcj407nfl82dpyvz22w6x69tdyxpprn8zg',
         ],
     },
 };
@@ -11102,8 +11102,8 @@ export const PayButtonYesDataNoNonce = {
         stackArray: ['50415900', '00', '6f6e6c7920646174612068657265', '00'],
         xecTxType: 'Sent',
         recipients: [
-            'ecash:qrjh8hvf5c0cmt44d06mt76a0nvxuvdt9cmj39zxwm',
-            'ecash:qp5h4eetqcj407nfl82dpyvz22w6x69tdyxpprn8zg',
+            'auscash:qrjh8hvf5c0cmt44d06mt76a0nvxuvdt9cmj39zxwm',
+            'auscash:qp5h4eetqcj407nfl82dpyvz22w6x69tdyxpprn8zg',
         ],
     },
 };
@@ -11121,8 +11121,8 @@ export const PayButtonOffSpec = {
         stackArray: ['50415900', '00', 'f09f9882f09f918d'],
         xecTxType: 'Sent',
         recipients: [
-            'ecash:qrjh8hvf5c0cmt44d06mt76a0nvxuvdt9cmj39zxwm',
-            'ecash:qp5h4eetqcj407nfl82dpyvz22w6x69tdyxpprn8zg',
+            'auscash:qrjh8hvf5c0cmt44d06mt76a0nvxuvdt9cmj39zxwm',
+            'auscash:qp5h4eetqcj407nfl82dpyvz22w6x69tdyxpprn8zg',
         ],
     },
 };
@@ -11141,13 +11141,13 @@ export const PayButtonBadVersion = {
         stackArray: ['50415900', '01', 'f09f9882f09f918d', '69860643e4dc4c88'],
         xecTxType: 'Sent',
         recipients: [
-            'ecash:qrjh8hvf5c0cmt44d06mt76a0nvxuvdt9cmj39zxwm',
-            'ecash:qp5h4eetqcj407nfl82dpyvz22w6x69tdyxpprn8zg',
+            'auscash:qrjh8hvf5c0cmt44d06mt76a0nvxuvdt9cmj39zxwm',
+            'auscash:qp5h4eetqcj407nfl82dpyvz22w6x69tdyxpprn8zg',
         ],
     },
 };
 
-export const MsgFromEcashChat = {
+export const MsgFromAuscashChat = {
     tx: {
         txid: 'a3b3e23eb564920c10b1b6278a1e00dcec0c8b1593fc0d7f2e514cf20416255c',
         version: 2,
@@ -11197,7 +11197,7 @@ export const MsgFromEcashChat = {
             '63686174',
             '68656c6c6f2066726f6d206543617368204368617420f09f918d',
         ],
-        recipients: ['ecash:qqznd7vug3avk24jdwgakaqewkmwp0vczu5u9man9y'],
+        recipients: ['auscash:qqznd7vug3avk24jdwgakaqewkmwp0vczu5u9man9y'],
     },
 };
 export const CashtabMsg = {
@@ -11448,7 +11448,7 @@ export const MsgFromElectrum = {
         satoshisSent: 600,
         stackArray: ['74657374696e672061206d736720666f72206572726f72'],
         xecTxType: 'Received',
-        recipients: ['ecash:qpe3l0v88vmq86x6l43fywu4f5u9w8sslsga0tcn4t'],
+        recipients: ['auscash:qpe3l0v88vmq86x6l43fywu4f5u9w8sslsga0tcn4t'],
     },
 };
 
@@ -11684,8 +11684,8 @@ export const AlpTx = {
         ],
         xecTxType: 'Received',
         recipients: [
-            'ecash:pzctlwr4prjjqwqrfyxz7wy36pq0wu46pud7n9ffz3',
-            'ecash:qpt4z9kg4h6czlyel3da4jxmrrgscfts859gzp2zuu',
+            'auscash:pzctlwr4prjjqwqrfyxz7wy36pq0wu46pud7n9ffz3',
+            'auscash:qpt4z9kg4h6czlyel3da4jxmrrgscfts859gzp2zuu',
         ],
     },
 };
@@ -18284,7 +18284,7 @@ export const chronikTokenMocks = {
             timefirstSeen: 0,
             genesisInfo: {
                 tokenTicker: 'TRIB',
-                tokenName: 'eCash Herald',
+                tokenName: 'ausCash Herald',
                 url: 'https://cashtab.com/',
                 decimals: 0,
                 hash: '',
@@ -19496,7 +19496,7 @@ export const mockTxHistoryWalletJson = {
         [
             1899,
             {
-                address: 'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                address: 'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                 hash: '95e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d',
                 wif: 'string',
             },
@@ -19504,7 +19504,7 @@ export const mockTxHistoryWalletJson = {
         [
             145,
             {
-                address: 'ecash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0',
+                address: 'auscash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0',
                 hash: '0d94ba179ec21c42417a71a77873b3619363d8ea',
                 wif: 'string',
             },
@@ -20554,7 +20554,7 @@ export const expectedParsedTxHistory = [
             timestamp: 1710799378,
         },
         parsed: {
-            recipients: ['ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj'],
+            recipients: ['auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj'],
             satoshisSent: 1100,
             stackArray: [],
             xecTxType: 'Sent',
@@ -20606,7 +20606,7 @@ export const expectedParsedTxHistory = [
             timestamp: 1710799378,
         },
         parsed: {
-            recipients: ['ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj'],
+            recipients: ['auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj'],
             satoshisSent: 3300,
             stackArray: [],
             xecTxType: 'Received',
@@ -20658,7 +20658,7 @@ export const expectedParsedTxHistory = [
             timestamp: 1710799378,
         },
         parsed: {
-            recipients: ['ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj'],
+            recipients: ['auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj'],
             satoshisSent: 1100,
             stackArray: [],
             xecTxType: 'Sent',
@@ -20710,7 +20710,7 @@ export const expectedParsedTxHistory = [
             timestamp: 1710799378,
         },
         parsed: {
-            recipients: ['ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj'],
+            recipients: ['auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj'],
             satoshisSent: 1100,
             stackArray: [],
             xecTxType: 'Received',
@@ -20853,7 +20853,7 @@ export const expectedParsedTxHistory = [
             timestamp: 1710799378,
         },
         parsed: {
-            recipients: ['ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj'],
+            recipients: ['auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj'],
             satoshisSent: 546,
             stackArray: [
                 '534c5000',
@@ -20987,7 +20987,7 @@ export const expectedParsedTxHistory = [
             timestamp: 1708821393,
         },
         parsed: {
-            recipients: ['ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y'],
+            recipients: ['auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y'],
             satoshisSent: 546,
             stackArray: [
                 '534c5000',
@@ -21046,7 +21046,7 @@ export const expectedParsedTxHistory = [
             timestamp: 1705492712,
         },
         parsed: {
-            recipients: ['ecash:qr6mxvfp2hlr0qg5phhqapqz8ajv7uaxk55z9332rl'],
+            recipients: ['auscash:qr6mxvfp2hlr0qg5phhqapqz8ajv7uaxk55z9332rl'],
             satoshisSent: 100383,
             stackArray: [],
             xecTxType: 'Sent',
@@ -21098,7 +21098,7 @@ export const expectedParsedTxHistory = [
             timestamp: 1705365441,
         },
         parsed: {
-            recipients: ['ecash:qpp6zklxvwrqynkhlp75qszgcw0mdu8uuu55gjkvax'],
+            recipients: ['auscash:qpp6zklxvwrqynkhlp75qszgcw0mdu8uuu55gjkvax'],
             satoshisSent: 101053,
             stackArray: [],
             xecTxType: 'Sent',
@@ -21150,7 +21150,7 @@ export const expectedParsedTxHistory = [
             timestamp: 1705365441,
         },
         parsed: {
-            recipients: ['ecash:qpp6zklxvwrqynkhlp75qszgcw0mdu8uuu55gjkvax'],
+            recipients: ['auscash:qpp6zklxvwrqynkhlp75qszgcw0mdu8uuu55gjkvax'],
             satoshisSent: 101132,
             stackArray: [],
             xecTxType: 'Sent',
@@ -21202,7 +21202,7 @@ export const expectedParsedTxHistory = [
             timestamp: 1705365441,
         },
         parsed: {
-            recipients: ['ecash:qpp6zklxvwrqynkhlp75qszgcw0mdu8uuu55gjkvax'],
+            recipients: ['auscash:qpp6zklxvwrqynkhlp75qszgcw0mdu8uuu55gjkvax'],
             satoshisSent: 101215,
             stackArray: [],
             xecTxType: 'Sent',
@@ -21411,7 +21411,7 @@ export const NftChildGenesisTx = {
         timestamp: 1713829166,
     },
 };
-export const eCashChatArticleReplyTx = {
+export const ausCashChatArticleReplyTx = {
     tx: {
         txid: '91288c4675dae4815ef263d840e427b60e7195ab8354aeb156d00f2f5c015cd4',
         version: 2,
@@ -21503,7 +21503,7 @@ export const eCashChatArticleReplyTx = {
         },
     },
 };
-export const eCashChatArticleTx = {
+export const ausCashChatArticleTx = {
     tx: {
         txid: 'ab32d18a8f52d57c31c0197a45a4f10ed9299df25d996ccd2b1792506d569836',
         version: 2,
@@ -22015,7 +22015,7 @@ export const alpAgoraListingTx = {
     },
     sendingHash: '95e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d',
     parsed: {
-        recipients: ['ecash:pqg9jcmymvendmrj8nn74g5kula8m0s8qce724yjtn'],
+        recipients: ['auscash:pqg9jcmymvendmrj8nn74g5kula8m0s8qce724yjtn'],
         satoshisSent: 546,
         stackArray: [
             '50',

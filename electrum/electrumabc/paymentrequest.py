@@ -1,5 +1,5 @@
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2020 The Electrum ABC developers
 # Copyright (C) 2014 Thomas Voegtlin
 # Copyright (C) 2019-2020 Calin Culianu <calin.culianu@gmail.com>
@@ -79,12 +79,12 @@ del _
 USER_AGENT = f"{PROJECT_NAME_NO_SPACES}/{PACKAGE_VERSION}"
 
 REQUEST_HEADERS = {
-    "Accept": "application/ecash-paymentrequest",
+    "Accept": "application/auscash-paymentrequest",
     "User-Agent": USER_AGENT,
 }
 ACK_HEADERS = {
-    "Content-Type": "application/ecash-payment",
-    "Accept": "application/ecash-paymentack",
+    "Content-Type": "application/auscash-payment",
+    "Accept": "application/auscash-paymentack",
     "User-Agent": USER_AGENT,
 }
 
@@ -128,14 +128,14 @@ def get_payment_request(url, max_size=MAX_PAYMENTREQUEST_SIZE):
                 data=None, error="fetching payment request data timed out"
             )
 
-    # Guard against `ecash:`-URIs with invalid payment request URLs
+    # Guard against `auscash:`-URIs with invalid payment request URLs
     if (
         "Content-Type" not in response.headers
-        or response.headers["Content-Type"] != "application/ecash-paymentrequest"
+        or response.headers["Content-Type"] != "application/auscash-paymentrequest"
     ):
         return PaymentRequest(
             data=None,
-            error="payment URL not pointing to a ecash payment request handling server",
+            error="payment URL not pointing to a auscash payment request handling server",
         )
 
     print_error("fetched payment request", url, len(data))

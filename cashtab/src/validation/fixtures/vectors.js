@@ -61,7 +61,7 @@ export default {
                 description:
                     'Disabled if address has been entered but no amount',
                 formData: {
-                    address: 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                    address: 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     amount: '',
                     multiAddressInput: '',
                 },
@@ -103,7 +103,7 @@ export default {
                 description:
                     'Enabled for valid address and amount in send to one mode',
                 formData: {
-                    address: 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                    address: 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     amount: '50',
                     multiAddressInput: '',
                 },
@@ -124,7 +124,7 @@ export default {
                 description:
                     'Disabled for valid address and amount entered in send to one mode, but app is in send to many mode and input is blank',
                 formData: {
-                    address: 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                    address: 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     amount: '50',
                     multiAddressInput: '',
                 },
@@ -144,7 +144,7 @@ export default {
             {
                 description: 'Disabled on zero balance for send to one',
                 formData: {
-                    address: 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                    address: 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     amount: '50',
                     multiAddressInput: '',
                 },
@@ -167,7 +167,7 @@ export default {
                     address: '',
                     amount: '',
                     multiAddressInput:
-                        'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22\necash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22',
+                        'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22\nauscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22',
                 },
                 balanceSats: 0,
                 apiError: false,
@@ -185,7 +185,7 @@ export default {
             {
                 description: 'Disabled for invalid address',
                 formData: {
-                    address: 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg',
+                    address: 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg',
                     amount: '50',
                     multiAddressInput: '',
                 },
@@ -205,7 +205,7 @@ export default {
             {
                 description: 'Disabled for invalid amount',
                 formData: {
-                    address: 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                    address: 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     amount: '5',
                     multiAddressInput: '',
                 },
@@ -226,7 +226,7 @@ export default {
                 description:
                     'Disabled for invalid cashtab msg send to one if user has cashtab msg enabled',
                 formData: {
-                    address: 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                    address: 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     amount: '5',
                     multiAddressInput: '',
                 },
@@ -247,7 +247,7 @@ export default {
                 description:
                     'Enabled for invalid cashtab msg send to one if user has cashtab msg disabled',
                 formData: {
-                    address: 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                    address: 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     amount: '5',
                     multiAddressInput: '',
                 },
@@ -268,7 +268,7 @@ export default {
                 description:
                     'Disabled for invalid op_return_raw send to one if user has op_return_raw enabled',
                 formData: {
-                    address: 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                    address: 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     amount: '5',
                     multiAddressInput: '',
                     opReturnRaw: 'something invalid', // note this function does not check this field
@@ -290,7 +290,7 @@ export default {
                 description:
                     'Enabled for invalid op_return_raw if user has op_return_raw disabled',
                 formData: {
-                    address: 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                    address: 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     amount: '5',
                     multiAddressInput: '',
                     opReturnRaw: 'something invalid', // note this function does not check this field
@@ -315,7 +315,7 @@ export default {
                     address: '',
                     amount: '',
                     multiAddressInput:
-                        'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22\necash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22',
+                        'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22\nauscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22',
                 },
                 balanceSats: 10000,
                 apiError: false,
@@ -333,7 +333,7 @@ export default {
             {
                 description: 'Disabled on priceApi error',
                 formData: {
-                    address: 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
+                    address: 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6',
                     amount: '5',
                     multiAddressInput: '',
                 },
@@ -357,7 +357,7 @@ export default {
                     address: '',
                     amount: '',
                     multiAddressInput:
-                        'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22\necash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22',
+                        'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22\nauscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22',
                 },
                 balanceSats: 10000,
                 apiError: false,
@@ -380,7 +380,7 @@ export default {
                     amount: '',
                     multiAddressInput:
                         // bad input
-                        'eash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22\necash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22',
+                        'eash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22\nauscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22',
                 },
                 balanceSats: 10000,
                 apiError: false,
@@ -487,17 +487,17 @@ export default {
             {
                 description: 'Valid alias missing prefix',
                 sendToAliasInput: 'chicken',
-                response: `Must include '.xec' suffix when sending to an eCash alias`,
+                response: `Must include '.xec' suffix when sending to an ausCash alias`,
             },
             {
                 description: 'Valid alias with double suffix',
                 sendToAliasInput: 'chicken.xec.xec',
-                response: `Must include '.xec' suffix when sending to an eCash alias`,
+                response: `Must include '.xec' suffix when sending to an ausCash alias`,
             },
             {
                 description: 'Valid alias with bad suffix',
                 sendToAliasInput: 'chicken.xe',
-                response: `Must include '.xec' suffix when sending to an eCash alias`,
+                response: `Must include '.xec' suffix when sending to an ausCash alias`,
             },
             {
                 description: 'Invalid alias (too long)',
@@ -531,12 +531,12 @@ export default {
             {
                 description: 'Address only and no querystring',
                 addressInput:
-                    'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
+                    'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
                 balanceSats: 10000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
+                        value: 'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
                         error: false,
                         isAlias: false,
                     },
@@ -587,12 +587,12 @@ export default {
                 description:
                     'Valid address with valid amount param equal to user balance, no decimals',
                 addressInput:
-                    'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?amount=500000',
+                    'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?amount=500000',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
+                        value: 'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
                         error: false,
                         isAlias: false,
                     },
@@ -604,12 +604,12 @@ export default {
                 description:
                     'Valid address with valid amount param exceeding user balance by one satoshi, no decimals',
                 addressInput:
-                    'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?amount=500001',
+                    'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?amount=500001',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
+                        value: 'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
                         error: false,
                         isAlias: false,
                     },
@@ -624,12 +624,12 @@ export default {
                 description:
                     'Valid address with valid amount param, with decimals',
                 addressInput:
-                    'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?amount=123.45',
+                    'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?amount=123.45',
                 balanceSats: 5000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
+                        value: 'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
                         error: false,
                         isAlias: false,
                     },
@@ -640,12 +640,12 @@ export default {
             {
                 description: 'Invalid address with valid amount param',
                 addressInput:
-                    'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfg?amount=500000',
+                    'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfg?amount=500000',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfg',
+                        value: 'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfg',
                         error: 'Invalid address',
                         isAlias: false,
                     },
@@ -673,12 +673,12 @@ export default {
                 description:
                     'Valid address with invalid amount param (too many decimal places)',
                 addressInput:
-                    'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?amount=123.456',
+                    'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?amount=123.456',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
+                        value: 'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
                         error: false,
                         isAlias: false,
                     },
@@ -724,12 +724,12 @@ export default {
                 description:
                     'Valid primary address & amount, valid secondary addr & amount',
                 addressInput:
-                    'ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv?amount=110&addr=ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&amount=5.50',
+                    'auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv?amount=110&addr=auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&amount=5.50',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv',
+                        value: 'auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv',
                         error: false,
                         isAlias: false,
                     },
@@ -738,13 +738,13 @@ export default {
                         error: false,
                         value: [
                             [
-                                'ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5',
+                                'auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5',
                                 '5.50',
                             ],
                         ],
                     },
                     queryString: {
-                        value: 'amount=110&addr=ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&amount=5.50',
+                        value: 'amount=110&addr=auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&amount=5.50',
                         error: false,
                     },
                 },
@@ -753,12 +753,12 @@ export default {
                 description:
                     'Valid primary address & amount, invalid secondary addr',
                 addressInput:
-                    'ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv?amount=110&addr=someinvalidaddress&amount=5.50',
+                    'auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv?amount=110&addr=someinvalidaddress&amount=5.50',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv',
+                        value: 'auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv',
                         error: false,
                         isAlias: false,
                     },
@@ -777,22 +777,22 @@ export default {
                 description:
                     'Valid primary address & amount, invalid secondary amount',
                 addressInput:
-                    'ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv?amount=110&addr=ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&amount=5.123',
+                    'auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv?amount=110&addr=auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&amount=5.123',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv',
+                        value: 'auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv',
                         error: false,
                         isAlias: false,
                     },
                     amount: { value: '110', error: false },
                     parsedAdditionalXecOutputs: {
-                        error: `Invalid amount 5.123 for address ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5: XEC transactions do not support more than 2 decimal places`,
+                        error: `Invalid amount 5.123 for address auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5: XEC transactions do not support more than 2 decimal places`,
                         value: null,
                     },
                     queryString: {
-                        value: 'amount=110&addr=ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&amount=5.123',
+                        value: 'amount=110&addr=auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&amount=5.123',
                         error: false,
                     },
                 },
@@ -801,22 +801,22 @@ export default {
                 description:
                     'Valid primary address & amount, valid secondary addr & amount, but the secondary amount param does not directly follow the secondary addr param',
                 addressInput:
-                    'ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv?amount=110&addr=ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&op_return_raw=0401020304&amount=5.50',
+                    'auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv?amount=110&addr=auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&op_return_raw=0401020304&amount=5.50',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv',
+                        value: 'auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv',
                         error: false,
                         isAlias: false,
                     },
                     amount: { value: '110', error: false },
                     parsedAdditionalXecOutputs: {
-                        error: `No amount key for addr ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5`,
+                        error: `No amount key for addr auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5`,
                         value: null,
                     },
                     queryString: {
-                        value: 'amount=110&addr=ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&op_return_raw=0401020304&amount=5.50',
+                        value: 'amount=110&addr=auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&op_return_raw=0401020304&amount=5.50',
                         error: false,
                     },
                 },
@@ -825,22 +825,22 @@ export default {
                 description:
                     'Valid primary address & amount, valid secondary addr, but no corresponding amount param',
                 addressInput:
-                    'ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv?amount=110&addr=ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5',
+                    'auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv?amount=110&addr=auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv',
+                        value: 'auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv',
                         error: false,
                         isAlias: false,
                     },
                     amount: { value: '110', error: false },
                     parsedAdditionalXecOutputs: {
-                        error: `No amount key for addr ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5`,
+                        error: `No amount key for addr auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5`,
                         value: null,
                     },
                     queryString: {
-                        value: 'amount=110&addr=ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5',
+                        value: 'amount=110&addr=auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5',
                         error: false,
                     },
                 },
@@ -850,12 +850,12 @@ export default {
             {
                 description: 'Valid address with valid op_return_raw param',
                 addressInput:
-                    'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?op_return_raw=042e786563000474657374150095e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d',
+                    'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?op_return_raw=042e786563000474657374150095e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
+                        value: 'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
                         error: false,
                         isAlias: false,
                     },
@@ -894,12 +894,12 @@ export default {
             {
                 description: 'Valid address with invalid op_return_raw param',
                 addressInput:
-                    'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?op_return_raw=notvalid042e786563000474657374150095e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d',
+                    'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?op_return_raw=notvalid042e786563000474657374150095e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
+                        value: 'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
                         error: false,
                         isAlias: false,
                     },
@@ -917,12 +917,12 @@ export default {
             {
                 description: 'Valid amount and op_return_raw params',
                 addressInput:
-                    'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?amount=500&op_return_raw=042e786563000474657374150095e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d',
+                    'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?amount=500&op_return_raw=042e786563000474657374150095e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
+                        value: 'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
                         error: false,
                         isAlias: false,
                     },
@@ -942,12 +942,12 @@ export default {
                 description:
                     'Valid amount and op_return_raw params and valid second output',
                 addressInput:
-                    'ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv?amount=110&op_return_raw=0470617977202562dd05deda1c101b10562527bcd6bec20268fb94eed01843ba049cd774bec1&addr=ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&amount=5.50',
+                    'auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv?amount=110&op_return_raw=0470617977202562dd05deda1c101b10562527bcd6bec20268fb94eed01843ba049cd774bec1&addr=auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&amount=5.50',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv',
+                        value: 'auscash:qr6lws9uwmjkkaau4w956lugs9nlg9hudqs26lyxkv',
                         error: false,
                         isAlias: false,
                     },
@@ -960,13 +960,13 @@ export default {
                         error: false,
                         value: [
                             [
-                                'ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5',
+                                'auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5',
                                 '5.50',
                             ],
                         ],
                     },
                     queryString: {
-                        value: 'amount=110&op_return_raw=0470617977202562dd05deda1c101b10562527bcd6bec20268fb94eed01843ba049cd774bec1&addr=ecash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&amount=5.50',
+                        value: 'amount=110&op_return_raw=0470617977202562dd05deda1c101b10562527bcd6bec20268fb94eed01843ba049cd774bec1&addr=auscash:qp4dxtmjlkc6upn29hh9pr2u8rlznwxeqqy0qkrjp5&amount=5.50',
                         error: false,
                     },
                 },
@@ -974,12 +974,12 @@ export default {
             {
                 description: 'invalid querystring (unsupported params)',
                 addressInput:
-                    'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?*&@^&%@amount=-500000',
+                    'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?*&@^&%@amount=-500000',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
+                        value: 'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
                         error: false,
                         isAlias: false,
                     },
@@ -994,12 +994,12 @@ export default {
                 description:
                     'Invalid queryString, repeated amount param without corresponding address',
                 addressInput:
-                    'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?amount=123.45&amount=678.9',
+                    'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?amount=123.45&amount=678.9',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
+                        value: 'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
                         error: false,
                         isAlias: false,
                     },
@@ -1016,12 +1016,12 @@ export default {
             {
                 description: 'Repeated op_return_raw param',
                 addressInput:
-                    'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?op_return_raw=042e786563000474657374150095e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d&op_return_raw=042e786563000474657374150095e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d',
+                    'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx?op_return_raw=042e786563000474657374150095e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d&op_return_raw=042e786563000474657374150095e79f51d4260bc0dc3ba7fb77c7be92d0fbdd1d',
                 balanceSats: 50000000,
                 userLocale: appConfig.defaultLocale,
                 parsedAddressInput: {
                     address: {
-                        value: 'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
+                        value: 'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
                         error: false,
                         isAlias: false,
                     },
@@ -1059,7 +1059,7 @@ export default {
                 contactList: [
                     {
                         address:
-                            'ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
+                            'auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
                         name: 'Alpha',
                     },
                 ],
@@ -1070,17 +1070,17 @@ export default {
                 contactList: [
                     {
                         address:
-                            'ecash:qpdkc5p7f25hwkxsr69m3evlj4h7wqq9xcgmjc8sxr',
+                            'auscash:qpdkc5p7f25hwkxsr69m3evlj4h7wqq9xcgmjc8sxr',
                         name: 'Alpha',
                     },
                     {
                         address:
-                            'ecash:qpq235n3l3u6ampc8slapapnatwfy446auuv64ylt2',
+                            'auscash:qpq235n3l3u6ampc8slapapnatwfy446auuv64ylt2',
                         name: 'Beta',
                     },
                     {
                         address:
-                            'ecash:qz50e58nkeg2ej2f34z6mhwylp6ven8emy8pp52r82',
+                            'auscash:qz50e58nkeg2ej2f34z6mhwylp6ven8emy8pp52r82',
                         name: 'Gamma',
                     },
                 ],
@@ -1092,17 +1092,17 @@ export default {
                     {},
                     {
                         address:
-                            'ecash:qpdkc5p7f25hwkxsr69m3evlj4h7wqq9xcgmjc8sxr',
+                            'auscash:qpdkc5p7f25hwkxsr69m3evlj4h7wqq9xcgmjc8sxr',
                         name: 'Alpha',
                     },
                     {
                         address:
-                            'ecash:qpq235n3l3u6ampc8slapapnatwfy446auuv64ylt2',
+                            'auscash:qpq235n3l3u6ampc8slapapnatwfy446auuv64ylt2',
                         name: 'Beta',
                     },
                     {
                         address:
-                            'ecash:qz50e58nkeg2ej2f34z6mhwylp6ven8emy8pp52r82',
+                            'auscash:qz50e58nkeg2ej2f34z6mhwylp6ven8emy8pp52r82',
                         name: 'Gamma',
                     },
                 ],
@@ -1774,7 +1774,7 @@ export default {
             {
                 description:
                     'Accepts correctly formed multisend output for amount exactly equal to wallet total balance',
-                userMultisendInput: `ecash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr, 22\necash:qqxrrls4u0znxx2q7e5m4en4z2yjrqgqeucckaerq3, 33\necash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 55`,
+                userMultisendInput: `auscash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr, 22\nauscash:qqxrrls4u0znxx2q7e5m4en4z2yjrqgqeucckaerq3, 33\nauscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 55`,
                 balanceSats: 11000,
                 userLocale: appConfig.defaultLocale,
                 returned: true,
@@ -1782,7 +1782,7 @@ export default {
             {
                 description:
                     'Rejects correctly formed multisend output for amount exceeding wallet total balance by 1 satoshi',
-                userMultisendInput: `ecash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr, 22\necash:qqxrrls4u0znxx2q7e5m4en4z2yjrqgqeucckaerq3, 33\necash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 55`,
+                userMultisendInput: `auscash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr, 22\nauscash:qqxrrls4u0znxx2q7e5m4en4z2yjrqgqeucckaerq3, 33\nauscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 55`,
                 balanceSats: 10999,
                 userLocale: appConfig.defaultLocale,
                 returned:
@@ -1791,7 +1791,7 @@ export default {
             {
                 description:
                     'Accepts correctly formed multisend output for amount exactly equal to wallet total balance if addresses are padded by extra spaces',
-                userMultisendInput: `   ecash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr   , 22\necash:qqxrrls4u0znxx2q7e5m4en4z2yjrqgqeucckaerq3, 33\necash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 55`,
+                userMultisendInput: `   auscash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr   , 22\nauscash:qqxrrls4u0znxx2q7e5m4en4z2yjrqgqeucckaerq3, 33\nauscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 55`,
                 balanceSats: 11000,
                 userLocale: appConfig.defaultLocale,
                 returned: true,
@@ -1799,15 +1799,15 @@ export default {
             {
                 description:
                     'Returns expected error msg and line number if string includes an invalid address',
-                userMultisendInput: `ecash:notValid, 22\necash:qqxrrls4u0znxx2q7e5m4en4z2yjrqgqeucckaerq3, 33\necash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 55`,
+                userMultisendInput: `auscash:notValid, 22\nauscash:qqxrrls4u0znxx2q7e5m4en4z2yjrqgqeucckaerq3, 33\nauscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 55`,
                 balanceSats: 11000,
                 userLocale: appConfig.defaultLocale,
-                returned: `Invalid address "ecash:notValid" at line 1`,
+                returned: `Invalid address "auscash:notValid" at line 1`,
             },
             {
                 description:
                     'Returns expected error msg for invalid value (dust)',
-                userMultisendInput: `ecash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr, 1\necash:qqxrrls4u0znxx2q7e5m4en4z2yjrqgqeucckaerq3, 33\necash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 55`,
+                userMultisendInput: `auscash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr, 1\nauscash:qqxrrls4u0znxx2q7e5m4en4z2yjrqgqeucckaerq3, 33\nauscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 55`,
                 balanceSats: 11000,
                 userLocale: appConfig.defaultLocale,
                 returned: `Send amount must be at least 5.46 XEC: check value "1" at line 1`,
@@ -1815,7 +1815,7 @@ export default {
             {
                 description:
                     'Returns expected error msg and line numberfor invalid value (too many decimal places)',
-                userMultisendInput: `ecash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr, 10.12\necash:qqxrrls4u0znxx2q7e5m4en4z2yjrqgqeucckaerq3, 10.123\necash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 55`,
+                userMultisendInput: `auscash:qplkmuz3rx480u6vc4xgc0qxnza42p0e7vll6p90wr, 10.12\nauscash:qqxrrls4u0znxx2q7e5m4en4z2yjrqgqeucckaerq3, 10.123\nauscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 55`,
                 balanceSats: 11000,
                 userLocale: appConfig.defaultLocale,
                 returned: `XEC transactions do not support more than 2 decimal places: check value "10.123" at line 2`,
@@ -1830,7 +1830,7 @@ export default {
             {
                 description:
                     'Returns expected error msg and line number for an empty row',
-                userMultisendInput: `\n,  ecash:qqxrrls4u0znxx2q7e5m4en4z2yjrqgqeucckaerq3, 33\necash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 55`,
+                userMultisendInput: `\n,  auscash:qqxrrls4u0znxx2q7e5m4en4z2yjrqgqeucckaerq3, 33\nauscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 55`,
                 balanceSats: 11000,
                 userLocale: appConfig.defaultLocale,
                 returned: `Remove empty row at line 1`,
@@ -1845,7 +1845,7 @@ export default {
             {
                 description:
                     'Returns expected error msg and line number if csv line does not include address and value',
-                userMultisendInput: `ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y`,
+                userMultisendInput: `auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y`,
                 balanceSats: 11000,
                 userLocale: appConfig.defaultLocale,
                 returned: `Line 1 must have address and value, separated by a comma`,
@@ -1853,7 +1853,7 @@ export default {
             {
                 description:
                     'Returns expected error msg and line number if a line has more than one comma',
-                userMultisendInput: `ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 170,23`,
+                userMultisendInput: `auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y, 170,23`,
                 balanceSats: 11000,
                 userLocale: appConfig.defaultLocale,
                 returned: `Line 1: Comma can only separate address and value.`,
@@ -2388,34 +2388,34 @@ export default {
         expectedReturns: [
             {
                 description:
-                    'No error from a valid ecash: prefixed address to an empty contact list',
-                address: 'ecash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
+                    'No error from a valid auscash: prefixed address to an empty contact list',
+                address: 'auscash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
                 contacts: [],
                 returned: false,
             },
             {
                 description:
-                    'Expected error from a valid ecash: prefixed address if exists in contact list',
-                address: 'ecash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
+                    'Expected error from a valid auscash: prefixed address if exists in contact list',
+                address: 'auscash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
                 contacts: [
                     {
                         name: 'name',
                         address:
-                            'ecash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
+                            'auscash:qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
                     },
                 ],
                 returned: 'qqa...70g already in Contacts',
             },
             {
                 description:
-                    'Expected error from a valid prefixless ecash: address',
+                    'Expected error from a valid prefixless auscash: address',
                 address: 'qqa9lv3kjd8vq7952p7rq0f6lkpqvlu0cydvxtd70g',
                 contacts: [],
-                returned: `Addresses in Contacts must start with "ecash:" prefix`,
+                returned: `Addresses in Contacts must start with "auscash:" prefix`,
             },
             {
                 description: 'Expected error from an invalid address',
-                address: 'ecash:notvalid',
+                address: 'auscash:notvalid',
                 contacts: [],
                 returned: `Invalid address`,
             },

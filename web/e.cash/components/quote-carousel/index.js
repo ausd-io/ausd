@@ -10,7 +10,7 @@ const quotes = [
         author: 'Friedrich Hayek',
     },
     {
-        quote: "I think that the internet is going to be one of the major forces for reducing the role of government. The one thing that's missing, but that will soon be developed, is a reliable eCash.",
+        quote: "I think that the internet is going to be one of the major forces for reducing the role of government. The one thing that's missing, but that will soon be developed, is a reliable ausCash.",
         author: 'Milton Friedman',
     },
     {

@@ -299,7 +299,7 @@ const appTxSamples: AppTxSamples = {
                 '43736f6e676f72206261627920686173206265656e20626f726e2e2054616b652074686973206c6974746c6520676966742066726f6d20612070726f75642066617468657221',
             ],
             airdropSendingAddress:
-                'ecash:qqft3ujdpn45h0phqkwdw0nnxfu8y7zm7qdwlh5yd0',
+                'auscash:qqft3ujdpn45h0phqkwdw0nnxfu8y7zm7qdwlh5yd0',
             airdropRecipientsKeyValueArray: [
                 [
                     '6a0464726f70207c06091e745037b46c5ea60def8ad526274c2caabb1fae6c4ac89fad02fedf9a04007461624643736f6e676f72206261627920686173206265656e20626f726e2e2054616b652074686973206c6974746c6520676966742066726f6d20612070726f75642066617468657221',
@@ -345,7 +345,7 @@ const appTxSamples: AppTxSamples = {
                 '00746162', // prefix for msg is there but no msg
             ],
             airdropSendingAddress:
-                'ecash:qrmz0egsqxj35x5jmzf8szrszdeu72fx0uxgwk3r48',
+                'auscash:qrmz0egsqxj35x5jmzf8szrszdeu72fx0uxgwk3r48',
             airdropRecipientsKeyValueArray: [
                 [
                     '6a0464726f70201c6c9c64d70b285befe733f175d0f384538576876bd280b10587df81279d3f5e0400746162',
@@ -383,7 +383,7 @@ const appTxSamples: AppTxSamples = {
                 '00746162', // prefix for msg is there but no msg
             ],
             airdropSendingAddress:
-                'ecash:qrmz0egsqxj35x5jmzf8szrszdeu72fx0uxgwk3r48',
+                'auscash:qrmz0egsqxj35x5jmzf8szrszdeu72fx0uxgwk3r48',
             airdropRecipientsKeyValueArray: [
                 [
                     '6a0464726f701f6c9c64d70b285befe733f175d0f384538576876bd280b10587df81279d3f5e0400746162',
@@ -409,7 +409,7 @@ const appTxSamples: AppTxSamples = {
             hex: '0464726f70',
             stackArray: ['64726f70'],
             airdropSendingAddress:
-                'ecash:qrmz0egsqxj35x5jmzf8szrszdeu72fx0uxgwk3r48',
+                'auscash:qrmz0egsqxj35x5jmzf8szrszdeu72fx0uxgwk3r48',
             airdropRecipientsKeyValueArray: [
                 ['6a0464726f70', 0],
                 ['76a9147ab07df481649eb27c7ad9afda52b2a93d2f722a88ac', 2000],
@@ -435,7 +435,7 @@ const appTxSamples: AppTxSamples = {
                 '00746162',
                 '65436173684461793a2058454346617563657420546f70757020666f722045617374657220456767206769766561776179',
             ],
-            msg: 'eCashDay: XECFaucet Topup for Easter Egg giveaway',
+            msg: 'ausCashDay: XECFaucet Topup for Easter Egg giveaway',
         },
         // no stackArray[1]
         {
@@ -449,7 +449,7 @@ const appTxSamples: AppTxSamples = {
         {
             txid: 'c9abffe59ef104408bf2fd4f602f76096a7ab78f2801ae320cadac53e1be4c5d',
             hex: '04657461624c810281d8b3db5585bf24903022d9c5f3b8cafed757f254840c0f7bc872fda070745cb6cef3d645fc7e4403e2bc212e616db6691ab415cd1f7e9abcebdd8738e775a05ebeb14fadbdbf5941e0e4804e0c075239d0906ca5d5c00a93ebae11df7770c4aeeaef5b804abca08c10520fa47a6dc3df018378334a15f7ea3075bc9b8840a8',
-            sendingAddress: 'ecash:qq4fd9zdqecq3q4mmxz8v8vunepptukh3czav3gjyt',
+            sendingAddress: 'auscash:qq4fd9zdqecq3q4mmxz8v8vunepptukh3czav3gjyt',
             xecReceivingOutputsKeyValueArray: [
                 [
                     '6a04657461624c810281d8b3db5585bf24903022d9c5f3b8cafed757f254840c0f7bc872fda070745cb6cef3d645fc7e4403e2bc212e616db6691ab415cd1f7e9abcebdd8738e775a05ebeb14fadbdbf5941e0e4804e0c075239d0906ca5d5c00a93ebae11df7770c4aeeaef5b804abca08c10520fa47a6dc3df018378334a15f7ea3075bc9b8840a8',
@@ -476,7 +476,7 @@ const appTxSamples: AppTxSamples = {
         {
             txid: 'c43c01feb0563ed7293e86bccbc695fdce88807c4bf6dfb0b48134eb16d076b7',
             hex: '04657461624cd1034e582d3789a6ff5119c9ef243b4e126eacc51a922504439b2edba9cbb313a170a34e9e763943a59af3345867aa364ba8f089f992d1072cefedf02ce0dbb9b56023aa115ab180cc521b25553735f5ae58fbd2ff6bb750c710792dcbb356cf816604deec3ee9767e7a76fd757f617d174b127cef0b3162dc888075e99147b25014ab61d86108abae51421efbc060f6eff7edffff9d54f17f64ced6b0f973a8f44164b58337470a5a60d9f8ecb43a82dd8c989f409285e97ec3417426ceaca6a919a7b3bb8cdcfa679c9af950972ee43160',
-            sendingAddress: 'ecash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
+            sendingAddress: 'auscash:qq9h6d0a5q65fgywv4ry64x04ep906mdku8f0gxfgx',
             xecReceivingOutputsKeyValueArray: [
                 [
                     '6a04657461624cd1026d3ebca7776500d72ee640e56509cefcedee044b25584f0cc32d15c54766bc8960b179d07838f6ffb221c49c7f74d9a9bf4101cdb4a78d5507620ca020eab052d24995bcca37e9dd5b1baa210045b2942438e31a43062ef35c019250cef35dff2fd4b6999b98a103344d05c70847aa5124ac76d8528f737f4a504e96b46dbbe05b8a80bdc4b98bb0bb0f12ad12a3271550e79524ebae01dece0a231bfd546dab7714167bc73989613b73d94a5b48fbeda4913dbf42daedd52a3239a1654e4d3ded120b714eecffc3f3b1a37aed9e2d3b',
@@ -711,21 +711,21 @@ const appTxSamples: AppTxSamples = {
                 '61757468',
                 '14b9b4971454d1a83c33119f3914a0b747f2f7a7',
             ],
-            msg: 'eCashChat authentication via dust tx',
+            msg: 'ausCashChat authentication via dust tx',
         },
         // on spec tx with an empty authentication identifier
         {
             txid: 'e7a67443354b4df14dcb779de6291ea89e7c0e4fce83d56e87b9694e8f4cb8a9',
             hex: '046175746800',
             stackArray: ['61757468', '00'],
-            msg: 'Invalid eCashChat authentication identifier',
+            msg: 'Invalid ausCashChat authentication identifier',
         },
         // off spec tx
         {
             txid: 'e7a67443354b4df14dcb779de6291ea89e7c0e4fce83d56e87b9694e8f4cb8a9',
             hex: '0461757468',
             stackArray: ['61757468'],
-            msg: '[off spec eCashChat authentication]',
+            msg: '[off spec ausCashChat authentication]',
         },
     ],
 };

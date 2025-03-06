@@ -11,7 +11,7 @@ import CopyToClipboard from 'components/Common/CopyToClipboard';
 import PrimaryButton, { SecondaryButton } from 'components/Common/Buttons';
 import xecMessage from 'bitcoinjs-message';
 import * as utxolib from '@bitgo/utxo-lib';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import { toast } from 'react-toastify';
 import { theme } from 'assets/styles/theme';
 import appConfig from 'config/app';
@@ -57,7 +57,7 @@ const SignVerifyMsg = () => {
     // Note that emojis etc could have larger impact than length
     // However, it is not that important, we do not need to get a bytecount for this component
     const CASHTAB_MESSAGE_MAX_LENGTH = 200;
-    const ECASH_SIGNED_MSG_LENGTH = 88;
+    const AUSCASH_SIGNED_MSG_LENGTH = 88;
     const emptyFormData = {
         msgToSign: '',
         msgToVerify: '',
@@ -84,7 +84,7 @@ const SignVerifyMsg = () => {
             // First, get required params
             const keyPair = utxolib.ECPair.fromWIF(
                 wallet.paths.get(1899).wif,
-                utxolib.networks.ecash,
+                utxolib.networks.auscash,
             );
 
             // Now you can get the local signature
@@ -93,7 +93,7 @@ const SignVerifyMsg = () => {
                     msgToSign,
                     keyPair.__D,
                     keyPair.compressed,
-                    utxolib.networks.ecash.messagePrefix,
+                    utxolib.networks.auscash.messagePrefix,
                 )
                 .toString('base64');
 
@@ -137,8 +137,8 @@ const SignVerifyMsg = () => {
             setFormDataError(previous => ({
                 ...previous,
                 [name]:
-                    value.length !== ECASH_SIGNED_MSG_LENGTH
-                        ? `Invalid eCash signature length`
+                    value.length !== AUSCASH_SIGNED_MSG_LENGTH
+                        ? `Invalid ausCash signature length`
                         : false,
             }));
         }
@@ -156,7 +156,7 @@ const SignVerifyMsg = () => {
                 formData.msgToVerify,
                 cashaddr.toLegacy(formData.addressToVerify),
                 formData.signatureToVerify,
-                utxolib.networks.ecash.messagePrefix,
+                utxolib.networks.auscash.messagePrefix,
             );
         } catch (err) {
             toast.error(`${err}`);

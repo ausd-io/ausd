@@ -54,9 +54,9 @@ const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
 const char *BIP70_MESSAGE_PAYMENTACK = "PaymentACK";
 const char *BIP70_MESSAGE_PAYMENTREQUEST = "PaymentRequest";
 // BIP71 payment protocol media types
-const char *BIP71_MIMETYPE_PAYMENT = "application/ecash-payment";
-const char *BIP71_MIMETYPE_PAYMENTACK = "application/ecash-paymentack";
-const char *BIP71_MIMETYPE_PAYMENTREQUEST = "application/ecash-paymentrequest";
+const char *BIP71_MIMETYPE_PAYMENT = "application/auscash-payment";
+const char *BIP71_MIMETYPE_PAYMENTACK = "application/auscash-paymentack";
+const char *BIP71_MIMETYPE_PAYMENTREQUEST = "application/auscash-paymentrequest";
 #endif
 
 //
@@ -83,7 +83,7 @@ static QString ipcServerName() {
 static QSet<QString> savedPaymentRequests;
 
 static std::string ipcParseURI(const QString &arg, const CChainParams &params,
-                               bool useCashAddr) {
+                               bool usausCashAddr) {
     const QString scheme = QString::fromStdString(params.CashAddrPrefix());
     if (!arg.startsWith(scheme + ":", Qt::CaseInsensitive)) {
         return {};
@@ -97,7 +97,7 @@ static std::string ipcParseURI(const QString &arg, const CChainParams &params,
     return r.address.toStdString();
 }
 
-static bool ipcCanParseCashAddrURI(const QString &arg,
+static bool ipcCanParsausCashAddrURI(const QString &arg,
                                    const std::string &network) {
     auto tempChainParams = CreateChainParams(ArgsManager{}, network);
     std::string addr = ipcParseURI(arg, *tempChainParams, true);
@@ -136,7 +136,7 @@ void PaymentServer::ipcParseCommandLine(int argc, char *argv[]) {
 
         // Try to parse as a URI
         for (auto net : networks) {
-            if (ipcCanParseCashAddrURI(arg, *net)) {
+            if (ipcCanParsausCashAddrURI(arg, *net)) {
                 itemNetwork = net;
                 break;
             }
@@ -651,7 +651,7 @@ bool PaymentServer::processPaymentRequest(const PaymentRequestPlus &request,
         if (ExtractDestination(sendingTo.first, dest)) {
             // Append destination address
             addresses.append(
-                QString::fromStdString(EncodeCashAddr(dest, Params())));
+                QString::fromStdString(EncodausCashAddr(dest, Params())));
         } else if (!recipient.authenticatedMerchant.isEmpty()) {
             // Unauthenticated payment requests to custom bitcoin addresses are
             // not supported (there is no good way to tell the user where they

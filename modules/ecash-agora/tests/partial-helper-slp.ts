@@ -13,7 +13,7 @@ import {
     slpSend,
     TxBuilder,
     TxBuilderInput,
-} from 'ecash-lib';
+} from 'auscash-lib';
 import { expect } from 'chai';
 
 import { AgoraPartial, AgoraPartialAdSignatory } from '../src/partial.js';

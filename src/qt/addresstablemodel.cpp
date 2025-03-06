@@ -83,7 +83,7 @@ public:
                 QString::fromStdString(address.purpose), address.is_mine);
             cachedAddressTable.append(AddressTableEntry(
                 addressType, QString::fromStdString(address.name),
-                QString::fromStdString(EncodeCashAddr(
+                QString::fromStdString(EncodausCashAddr(
                     address.dest, parent->walletModel->getChainParams()))));
         }
         // std::lower_bound() and std::upper_bound() require our
@@ -362,7 +362,7 @@ QString AddressTableModel::addRow(const QString &type, const QString &label,
                 return QString();
             }
         }
-        strAddress = EncodeCashAddr(dest, walletModel->getChainParams());
+        strAddress = EncodausCashAddr(dest, walletModel->getChainParams());
     } else {
         return QString();
     }

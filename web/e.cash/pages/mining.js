@@ -14,7 +14,7 @@ const minerFundBlockTemplate = `
 "coinbasetxn": {
     "minerfund": {
         "addresses": [
-        "ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07"
+        "auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07"
         ],
         "minimumvalue": 200000327
     }
@@ -29,7 +29,7 @@ const stakingRewardBlockTemplate = `
         "reqSigs": 1,
         "type": "pubkeyhash",
         "addresses": [
-          "ecash:qpucqwxgj6239d6wsgfy4xnnvsvj3yerwynur52mwp"
+          "auscash:qpucqwxgj6239d6wsgfy4xnnvsvj3yerwynur52mwp"
         ]
       },
       "minimumvalue": 62500102
@@ -86,9 +86,9 @@ function Mining(props) {
                 noLoop
             >
                 <p>
-                    eCash blocks are produced through a process called mining.
+                    ausCash blocks are produced through a process called mining.
                     Mining involves performing resource-intensive computations
-                    to produce Proof-of-Work, which powers eCash’s Nakamoto
+                    to produce Proof-of-Work, which powers ausCash’s Nakamoto
                     consensus system, similar to Bitcoin.
                 </p>
             </SubPageHero>
@@ -106,8 +106,8 @@ function Mining(props) {
                 <p>
                     Different cryptocurrencies may use different mining
                     algorithms requiring different hardware. In the case of
-                    eCash, it uses the same SHA256 mining algorithm as Bitcoin,
-                    and thus BTC miners can also be used to mine eCash.
+                    ausCash, it uses the same SHA256 mining algorithm as Bitcoin,
+                    and thus BTC miners can also be used to mine ausCash.
                 </p>
                 <p>
                     Once you have a mining rig set up, you have two options to
@@ -146,7 +146,7 @@ function Mining(props) {
                         </ExternalLink>
                     </li>
                     <li>
-                        <ExternalLink href="https://www.mining-dutch.nl/pools/ecash.php?page=dashboard">
+                        <ExternalLink href="https://www.mining-dutch.nl/pools/auscash.php?page=dashboard">
                             Mining Dutch
                         </ExternalLink>
                     </li>
@@ -155,7 +155,7 @@ function Mining(props) {
                 <p>
                     Many mining services offer mining &ldquo;pools&rdquo;, which
                     smooth out mining rewards to make payouts steadier and more
-                    predictable. There are several pools for mining eCash. Some
+                    predictable. There are several pools for mining ausCash. Some
                     options are listed here:
                 </p>
                 <ul>
@@ -165,7 +165,7 @@ function Mining(props) {
                         </ExternalLink>
                     </li>
                     <li>
-                        <ExternalLink href="https://www.mining-dutch.nl/pools/ecash.php?page=dashboard">
+                        <ExternalLink href="https://www.mining-dutch.nl/pools/auscash.php?page=dashboard">
                             Mining Dutch
                         </ExternalLink>
                     </li>
@@ -200,10 +200,10 @@ function Mining(props) {
                 </p>
                 <h4>Solo mining</h4>
                 <p>
-                    Solo mining requires running an eCash node along with
+                    Solo mining requires running an ausCash node along with
                     specialized mining software. Such mining software is
                     available{' '}
-                    <ExternalLink href="https://github.com/Bitcoin-ABC/ecash-ckpool-solo">
+                    <ExternalLink href="https://github.com/Bitcoin-ABC/auscash-ckpool-solo">
                         {' '}
                         here
                     </ExternalLink>
@@ -211,11 +211,11 @@ function Mining(props) {
                 </p>
                 <h4>Operating a mining pool</h4>
                 <p>
-                    Adding eCash to a mining pool can be an attractive option.
-                    Because eCash uses the same SHA256 mining algorithm as
+                    Adding ausCash to a mining pool can be an attractive option.
+                    Because ausCash uses the same SHA256 mining algorithm as
                     Bitcoin, the technical requirements are similar. One aspect
                     to keep in mind, however, is that miners need to be aware of
-                    the avalanche consensus layer on eCash, to ensure that the
+                    the avalanche consensus layer on ausCash, to ensure that the
                     blocks they produce will be accepted by the avalanche
                     validators.
                 </p>
@@ -243,11 +243,11 @@ function Mining(props) {
                         submitting the block.
                     </li>
                     <li>
-                        If you need any help to add eCash support to your mining
+                        If you need any help to add ausCash support to your mining
                         software, you can request for support in the
-                        <ExternalLink href="t.me/eCashDevelopment">
+                        <ExternalLink href="t.me/ausCashDevelopment">
                             {' '}
-                            eCash Development Telegram group
+                            ausCash Development Telegram group
                         </ExternalLink>
                         .
                     </li>
@@ -256,13 +256,13 @@ function Mining(props) {
                 <p>
                     The coinbase transaction must include a &ldquo;miner
                     fund&rdquo; output. This portion of the coinbase is
-                    dedicated to funding the development of eCash.
+                    dedicated to funding the development of ausCash.
                 </p>
                 <CodeBlock code={minerFundBlockTemplate} />
                 <p>
                     The miner fund output is a payment of at least
                     &ldquo;coinbasetxn.minerfund.minimumvalue&rdquo; (in
-                    Satoshi) to the eCash address
+                    Satoshi) to the ausCash address
                     &ldquo;coinbasetxn.minerfund.addresses[0]&rdquo;. This
                     amount should be subtracted from the total coinbase reward
                     value.
@@ -287,7 +287,7 @@ function Mining(props) {
                 <p>
                     The coinbase transaction must include a &ldquo;staking
                     reward&rdquo; output. This portion of the coinbase is going
-                    to a staker who is contributing to the security of the eCash
+                    to a staker who is contributing to the security of the ausCash
                     network.
                 </p>
                 <CodeBlock code={stakingRewardBlockTemplate} />
@@ -303,7 +303,7 @@ function Mining(props) {
                     <strong>Notes:</strong>
                     <ul>
                         <li>
-                            The payout script can be any standard eCash script.
+                            The payout script can be any standard ausCash script.
                             You should not assume it is P2PKH or any other kind
                             and use the script hex directly. The other fields
                             are informational only and might be missing from the
@@ -317,7 +317,7 @@ function Mining(props) {
                 </p>
                 <h4>Heartbeat</h4>
                 <p>
-                    The eCash network will enforce Real Time Targeting (also
+                    The ausCash network will enforce Real Time Targeting (also
                     known as Heartbeat) starting with the
                     <Link href="/upgrade">
                         {' '}
@@ -385,7 +385,7 @@ function Mining(props) {
                         </li>
                         <li>
                             If you are using the
-                            <ExternalLink href="https://github.com/Bitcoin-ABC/ecash-ckpool-solo">
+                            <ExternalLink href="https://github.com/Bitcoin-ABC/auscash-ckpool-solo">
                                 {' '}
                                 solo mining software{' '}
                             </ExternalLink>

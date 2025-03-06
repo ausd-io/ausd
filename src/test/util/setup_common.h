@@ -298,7 +298,7 @@ public:
     const CChainParams &GetChainParams() const override { return *chainParams; }
 
     void SetCashAddrEncoding(bool) override {}
-    bool UseCashAddrEncoding() const override { return false; }
+    bool UsausCashAddrEncoding() const override { return false; }
 
 private:
     std::unique_ptr<const CChainParams> chainParams;

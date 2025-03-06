@@ -11,7 +11,7 @@ import { ChronikClient, ScriptUtxo } from 'chronik-client';
 import BIP32Factory from 'bip32';
 import * as ecc from 'tiny-secp256k1';
 import * as bip39 from 'bip39';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 const bip32 = BIP32Factory(ecc);
 
 export interface ServerWallet {
@@ -34,11 +34,11 @@ export function getWalletFromSeed(mnemonic: string): ServerWallet {
 
     const seed = bip39.mnemonicToSeedSync(mnemonic);
 
-    const ECASH_DERIVATION_PATH_TOKENS = `m/44'/1899'/0'/0/0`;
+    const AUSCASH_DERIVATION_PATH_TOKENS = `m/44'/1899'/0'/0/0`;
 
     const root = bip32.fromSeed(seed);
 
-    const child = root.derivePath(ECASH_DERIVATION_PATH_TOKENS);
+    const child = root.derivePath(AUSCASH_DERIVATION_PATH_TOKENS);
 
     // Get private key and public key
     const { privateKey, identifier } = child;
@@ -47,7 +47,7 @@ export function getWalletFromSeed(mnemonic: string): ServerWallet {
     const skString = privateKey!.toString('hex');
     console.log(`sk as hex string: ${skString}`);
 
-    const address = cashaddr.encode('ecash', 'p2pkh', identifier);
+    const address = cashaddr.encode('auscash', 'p2pkh', identifier);
 
     return { address, sk: Uint8Array.from(Buffer.from(skString, 'hex')) };
 }

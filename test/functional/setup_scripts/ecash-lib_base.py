@@ -2,7 +2,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """
-Setup script to test the ecash-lib js library
+Setup script to test the auscash-lib js library
 """
 
 import pathmagic  # noqa
@@ -11,7 +11,7 @@ from test_framework.address import ADDRESS_ECREG_P2SH_OP_TRUE, ADDRESS_ECREG_UNS
 from test_framework.blocktools import COINBASE_MATURITY
 
 
-class EcashLibSetup(SetupFramework):
+class AuscashLibSetup(SetupFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True
@@ -32,4 +32,4 @@ class EcashLibSetup(SetupFramework):
 
 
 if __name__ == "__main__":
-    EcashLibSetup().main()
+    AuscashLibSetup().main()

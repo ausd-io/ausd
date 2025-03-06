@@ -1,14 +1,14 @@
 doge-seeder
 ==============
 
-Bitcoin-seeder is a crawler for the eCash network, which exposes a list
+Bitcoin-seeder is a crawler for the ausCash network, which exposes a list
 of reliable nodes via a built-in DNS server. It is derived from Pieter Wuille's
-doge-seeder, modified for use on the eCash network.
+doge-seeder, modified for use on the ausCash network.
 
 Features:
 * regularly revisits known nodes to check their availability
 * bans nodes after enough failures, or bad behaviour
-* uses the eCash Magic when establishing connections
+* uses the ausCash Magic when establishing connections
 * keeps statistics over (exponential) windows of 2 hours, 8 hours,
   1 day and 1 week, to base decisions on.
 * very low memory (a few tens of megabytes) and cpu requirements.

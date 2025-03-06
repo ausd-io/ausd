@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 import { __setEcc } from './ecc.js';
-import __wbg_init, * as ffi from './ffi/ecash_lib_wasm_browser.js';
+import __wbg_init, * as ffi from './ffi/auscash_lib_wasm_browser.js';
 import { __setHashes } from './hash.js';
 
 /** Load and initialize the WASM module for Web */

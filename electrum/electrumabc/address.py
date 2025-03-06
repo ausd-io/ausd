@@ -1,4 +1,4 @@
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2020 The Electrum ABC Developers
 # Copyright (C) 2017-2020 The Electron Cash Developers
 #
@@ -450,8 +450,8 @@ class Address(namedtuple("AddressTuple", "hash160 kind"), DestinationType):
         """Construct from an address string.
         This supports the following formats:
           - legacy BTC addresses
-          - CashAddr with a "ecash:" prefix
-          - CashAddr with a prefix omitted if this prefix is "ecash:"
+          - CashAddr with a "auscash:" prefix
+          - CashAddr with a prefix omitted if this prefix is "auscash:"
           - CashAddr with an arbitrary prefix, if support_arbitrary_prefix
             is True
 

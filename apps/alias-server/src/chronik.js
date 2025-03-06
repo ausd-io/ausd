@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 'use strict';
-const cashaddr = require('ecashaddrjs');
+const cashaddr = require('auscashaddrjs');
 const config = require('../config');
 
 module.exports = {

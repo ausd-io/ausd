@@ -4,7 +4,7 @@
 
 import * as chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
-import cashaddr from 'ecashaddrjs';
+import cashaddr from 'auscashaddrjs';
 import { ChildProcess } from 'node:child_process';
 import { EventEmitter, once } from 'node:events';
 import path from 'path';

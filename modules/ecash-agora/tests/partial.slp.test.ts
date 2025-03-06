@@ -18,8 +18,8 @@ import {
     shaRmd160,
     slpSend,
     toHex,
-} from 'ecash-lib';
-import { TestRunner } from 'ecash-lib/dist/test/testRunner.js';
+} from 'auscash-lib';
+import { TestRunner } from 'auscash-lib/dist/test/testRunner.js';
 
 import { AgoraPartial } from '../src/partial.js';
 import { makeSlpOffer, takeSlpOffer } from './partial-helper-slp.js';
@@ -75,7 +75,7 @@ describe('AgoraPartial SLP', () => {
 
     before(async () => {
         await initWasm();
-        runner = await TestRunner.setup('setup_scripts/ecash-agora_base');
+        runner = await TestRunner.setup('setup_scripts/auscash-agora_base');
         chronik = runner.chronik;
         ecc = runner.ecc;
         await runner.setupCoins(NUM_COINS, COIN_VALUE);
@@ -706,7 +706,7 @@ describe('AgoraPartial SLP', () => {
         );
     });
     it('Without manually setting an over-ride, we are unable to accept an agora partial if the remaining offer would be unacceptable due to a price less than dust', async () => {
-        // ecash-agora does not support creating an agora partial with min accept amount priced less than dust
+        // auscash-agora does not support creating an agora partial with min accept amount priced less than dust
         // from the approximateParams method
         // However we can still do this if we manually create a new AgoraPartial
         // I think it is okay to preserve this, as the protocol does technically allow it,

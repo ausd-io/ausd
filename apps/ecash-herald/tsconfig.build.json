@@ -1,4 +1,4 @@
-/** tsconfig for building ecash-herald */
+/** tsconfig for building auscash-herald */
 {
     "extends": "./tsconfig.json",
     "exclude": ["test", "**/*.test.ts"]

@@ -8,14 +8,14 @@ import PrimaryButton, { SecondaryButton } from 'components/Common/Buttons';
 import { Event } from 'components/Common/GoogleAnalytics';
 import { validateMnemonic } from 'validation';
 import appConfig from 'config/app';
-import { createCashtabWallet, generateMnemonic } from 'wallet';
+import { creatausCashtabWallet, generateMnemonic } from 'wallet';
 import { WelcomeCtn, WelcomeLink, WelcomeText } from './styles';
 import Modal from 'components/Common/Modal';
 import { ModalInput } from 'components/Common/Inputs';
 
 const OnBoarding = () => {
     const ContextValue = React.useContext(WalletContext);
-    const { ecc, updateCashtabState, cashtabState } = ContextValue;
+    const { ecc, updatausCashtabState, cashtabState } = ContextValue;
     const { wallets } = cashtabState;
 
     const [importedMnemonic, setImportedMnemonic] = useState('');
@@ -27,8 +27,8 @@ const OnBoarding = () => {
         // Event("Category", "Action", "Label")
         // Track number of created wallets from onboarding
         Event('Onboarding.js', 'Create Wallet', 'Imported');
-        const importedWallet = await createCashtabWallet(ecc, importedMnemonic);
-        updateCashtabState('wallets', [...wallets, importedWallet]);
+        const importedWallet = await creatausCashtabWallet(ecc, importedMnemonic);
+        updatausCashtabState('wallets', [...wallets, importedWallet]);
         // Close the modal
         setShowImportWalletModal(false);
     }
@@ -37,8 +37,8 @@ const OnBoarding = () => {
         // Event("Category", "Action", "Label")
         // Track number of created wallets from onboarding
         Event('Onboarding.js', 'Create Wallet', 'New');
-        const newWallet = await createCashtabWallet(ecc, generateMnemonic());
-        updateCashtabState('wallets', [...wallets, newWallet]);
+        const newWallet = await creatausCashtabWallet(ecc, generateMnemonic());
+        updatausCashtabState('wallets', [...wallets, newWallet]);
     }
 
     const handleInput = e => {

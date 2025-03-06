@@ -15,14 +15,14 @@ from ..address import Address, PublicKey
 LEGACY_ADDRESS = "1F6UYGAwkzZKqFwyiwc54b7SNvHsNgcZ6h"
 BCH_CASHADDR_NO_PREFIX = "qzdf44zy632zk4etztvmaqav0y2cest4evjvrwf70z"
 BCH_CASHADDR_WITH_PREFIX = "bitcoincash:" + BCH_CASHADDR_NO_PREFIX
-ECASHADDR_NO_PREFIX = "qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4"
-ECASHADDR_WITH_PREFIX = "ecash:" + ECASHADDR_NO_PREFIX
+AUSCASHADDR_NO_PREFIX = "qzdf44zy632zk4etztvmaqav0y2cest4evtph9jyf4"
+AUSCASHADDR_WITH_PREFIX = "auscash:" + AUSCASHADDR_NO_PREFIX
 
 LEGACY_ADDRESS_TESTNET = "mkHS9ne12qx9pS9VojpwU5xtRd4T7X7ZUt"
 BCH_CASHADDR_NO_PREFIX_TESTNET = "qq6y5r6geg2sas4eqwqhvc9ek6938fnsycnv83u3qt"
 BCH_CASHADDR_WITH_PREFIX_TESTNET = "bchtest:" + BCH_CASHADDR_NO_PREFIX_TESTNET
-ECASHADDR_NO_PREFIX_TESTNET = "qq6y5r6geg2sas4eqwqhvc9ek6938fnsycgcfaz3z3"
-ECASHADDR_WITH_PREFIX_TESTNET = "ectest:" + ECASHADDR_NO_PREFIX_TESTNET
+AUSCASHADDR_NO_PREFIX_TESTNET = "qq6y5r6geg2sas4eqwqhvc9ek6938fnsycgcfaz3z3"
+AUSCASHADDR_WITH_PREFIX_TESTNET = "ectest:" + AUSCASHADDR_NO_PREFIX_TESTNET
 
 
 class TestAddressFromString(unittest.TestCase):
@@ -32,10 +32,10 @@ class TestAddressFromString(unittest.TestCase):
         legacy_addr = (
             LEGACY_ADDRESS if net == networks.MainNet else LEGACY_ADDRESS_TESTNET
         )
-        ecashaddr = (
-            ECASHADDR_WITH_PREFIX
+        auscashaddr = (
+            AUSCASHADDR_WITH_PREFIX
             if net == networks.MainNet
-            else ECASHADDR_WITH_PREFIX_TESTNET
+            else AUSCASHADDR_WITH_PREFIX_TESTNET
         )
         bchaddr = (
             BCH_CASHADDR_WITH_PREFIX
@@ -49,7 +49,7 @@ class TestAddressFromString(unittest.TestCase):
             addr.to_full_string(fmt=Address.FMT_CASHADDR_BCH, net=net), bchaddr
         )
         self.assertEqual(
-            addr.to_full_string(fmt=Address.FMT_CASHADDR, net=net), ecashaddr
+            addr.to_full_string(fmt=Address.FMT_CASHADDR, net=net), auscashaddr
         )
 
     def test_from_legacy(self):
@@ -65,9 +65,9 @@ class TestAddressFromString(unittest.TestCase):
             )
         )
 
-    def test_from_ecashaddr(self):
-        self._test_addr(Address.from_string(ECASHADDR_WITH_PREFIX))
-        self._test_addr(Address.from_string(ECASHADDR_NO_PREFIX))
+    def test_from_auscashaddr(self):
+        self._test_addr(Address.from_string(AUSCASHADDR_WITH_PREFIX))
+        self._test_addr(Address.from_string(AUSCASHADDR_NO_PREFIX))
 
     def test_from_legacy_tesnet(self):
         self._test_addr(
@@ -85,13 +85,13 @@ class TestAddressFromString(unittest.TestCase):
             networks.TestNet,
         )
 
-    def test_from_ecashaddr_tesnet(self):
+    def test_from_auscashaddr_tesnet(self):
         self._test_addr(
-            Address.from_string(ECASHADDR_WITH_PREFIX_TESTNET, net=networks.TestNet),
+            Address.from_string(AUSCASHADDR_WITH_PREFIX_TESTNET, net=networks.TestNet),
             networks.TestNet,
         )
         self._test_addr(
-            Address.from_string(ECASHADDR_NO_PREFIX_TESTNET, net=networks.TestNet),
+            Address.from_string(AUSCASHADDR_NO_PREFIX_TESTNET, net=networks.TestNet),
             networks.TestNet,
         )
 

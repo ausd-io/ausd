@@ -1,5 +1,5 @@
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2023 The Electrum ABC developers
 #
 # Permission is hereby granted, free of charge, to any person
@@ -103,15 +103,15 @@ def resolve(k: str) -> Dict:
     ):
         # strip .xec suffix
         alias = k[:-4]
-        address = resolve_ecash_alias(alias)
+        address = resolve_auscash_alias(alias)
         if address is not None:
             return {
                 "address": address,
                 "name": alias,
-                "type": "ecash",
+                "type": "auscash",
                 "validated": True,
             }
-    raise RuntimeWarning(f"Invalid eCash address or alias {k}")
+    raise RuntimeWarning(f"Invalid ausCash address or alias {k}")
 
 
 def find_regex(haystack, needle):
@@ -142,7 +142,7 @@ def resolve_openalias(url):
             return Address.from_string(address), name, validated
 
 
-def resolve_ecash_alias(alias: str) -> Optional[Address]:
+def resolve_auscash_alias(alias: str) -> Optional[Address]:
     try:
         response: AliasResponse = fetch_alias_data(alias)
     except requests.exceptions.Timeout:

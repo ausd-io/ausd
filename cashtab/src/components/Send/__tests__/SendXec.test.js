@@ -18,12 +18,12 @@ import 'fake-indexeddb/auto';
 import localforage from 'localforage';
 import appConfig from 'config/app';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import CashtabTestWrapper from 'components/App/fixtures/CashtabTestWrapper';
 import CashtabSettings from 'config/CashtabSettings';
-import { Ecc, initWasm } from 'ecash-lib';
+import { Ecc, initWasm } from 'auscash-lib';
 
 describe('<SendXec />', () => {
     let ecc;
@@ -43,7 +43,7 @@ describe('<SendXec />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -60,7 +60,7 @@ describe('<SendXec />', () => {
     });
     it('Renders the SendXec screen with send address input', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -120,7 +120,7 @@ describe('<SendXec />', () => {
     });
     it('Pass valid address to Send To field', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -143,7 +143,7 @@ describe('<SendXec />', () => {
         const amountInputEl = screen.getByPlaceholderText('Amount');
 
         // The user enters a valid address
-        const addressInput = 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6';
+        const addressInput = 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6';
 
         await user.type(addressInputEl, addressInput);
 
@@ -178,7 +178,7 @@ describe('<SendXec />', () => {
     });
     it('Pass valid alias to Send To field', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -202,7 +202,7 @@ describe('<SendXec />', () => {
 
         const alias = 'twelvechar12';
         const expectedResolvedAddress =
-            'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
+            'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
 
         // mock the fetch call to alias-server's '/alias' endpoint
         const fetchUrl = `${aliasSettings.aliasServerBaseUrl}/alias/${alias}`;
@@ -265,7 +265,7 @@ describe('<SendXec />', () => {
     });
     it('Pass an invalid address to Send To field and get a validation error', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -288,7 +288,7 @@ describe('<SendXec />', () => {
         const amountInputEl = screen.getByPlaceholderText('Amount');
 
         // The user enters an invalid address
-        const addressInput = 'ecash:notValid';
+        const addressInput = 'auscash:notValid';
         await user.type(addressInputEl, addressInput);
 
         // The 'Send To' input field has this address as a value
@@ -316,7 +316,7 @@ describe('<SendXec />', () => {
     });
     it('Pass a possibly valid alias without .xec suffix to Send To field and get expected error', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -369,7 +369,7 @@ describe('<SendXec />', () => {
     });
     it('Pass a valid alias to Send To field that has not yet been registered and get expected error', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -431,7 +431,7 @@ describe('<SendXec />', () => {
         // We get expected addr validation error
         expect(
             screen.getByText(
-                `eCash Alias does not exist or yet to receive 1 confirmation`,
+                `ausCash Alias does not exist or yet to receive 1 confirmation`,
             ),
         ).toBeInTheDocument();
 
@@ -442,7 +442,7 @@ describe('<SendXec />', () => {
     });
     it('Get expected error msg and send disabled if bad response from alias server', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -508,7 +508,7 @@ describe('<SendXec />', () => {
     });
     it('Pass a valid address and bip21 query string with valid amount param to Send To field', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -532,7 +532,7 @@ describe('<SendXec />', () => {
 
         // The user enters a valid BIP21 query string with a valid amount param
         const addressInput =
-            'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=500';
+            'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=500';
         await user.type(addressInputEl, addressInput);
 
         // The 'Send To' input field has this address as a value
@@ -566,7 +566,7 @@ describe('<SendXec />', () => {
     });
     it('Pass a valid alias and bip21 query string with valid amount param to Send To field', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -591,7 +591,7 @@ describe('<SendXec />', () => {
         // Prepare alias input with mock success api call
         const alias = 'chicken';
         const expectedResolvedAddress =
-            'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
+            'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
 
         // mock the fetch call to alias-server's '/alias' endpoint
         const fetchUrl = `${aliasSettings.aliasServerBaseUrl}/alias/${alias}`;
@@ -653,7 +653,7 @@ describe('<SendXec />', () => {
     });
     it('Pass a valid address and bip21 query string with invalid amount param (dust) to Send To field', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -677,7 +677,7 @@ describe('<SendXec />', () => {
 
         // The user enters a valid BIP21 query string with a valid amount param
         const dustAmount = 5;
-        const addressInput = `ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=${dustAmount}`;
+        const addressInput = `auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=${dustAmount}`;
         await user.type(addressInputEl, addressInput);
 
         // The 'Send To' input field has this address as a value
@@ -707,7 +707,7 @@ describe('<SendXec />', () => {
     });
     it('Valid address with valid bip21 query string with valid amount param rejected if amount exceeds wallet balance', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -731,7 +731,7 @@ describe('<SendXec />', () => {
 
         // The user enters a valid BIP21 query string with a valid amount param
         const exceedBalanceAmount = 1000000; // 1 million X E C
-        const addressInput = `ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=${exceedBalanceAmount}`;
+        const addressInput = `auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=${exceedBalanceAmount}`;
         await user.type(addressInputEl, addressInput);
 
         // The 'Send To' input field has this address as a value
@@ -763,7 +763,7 @@ describe('<SendXec />', () => {
     });
     it('Pass a valid alias and bip21 query string with invalid amount param (too many decimals) to Send To field', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -788,7 +788,7 @@ describe('<SendXec />', () => {
         // Prepare alias input with mock success api call
         const alias = 'chicken';
         const expectedResolvedAddress =
-            'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
+            'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj';
 
         // mock the fetch call to alias-server's '/alias' endpoint
         const fetchUrl = `${aliasSettings.aliasServerBaseUrl}/alias/${alias}`;
@@ -850,7 +850,7 @@ describe('<SendXec />', () => {
     });
     it('Pass a valid address and an invalid bip21 query string', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -874,7 +874,7 @@ describe('<SendXec />', () => {
 
         // The user enters a badly formed query string
         const addressInput =
-            'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?notaparam=500';
+            'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?notaparam=500';
         await user.type(addressInputEl, addressInput);
 
         // The Send To input value matches user input
@@ -910,7 +910,7 @@ describe('<SendXec />', () => {
     });
     it('Pass a valid address and bip21 query string with op_return_raw param to Send To field', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -934,7 +934,7 @@ describe('<SendXec />', () => {
 
         // The user enters a valid BIP21 query string with a valid amount param
         const op_return_raw = '0401020304';
-        const addressInput = `ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?op_return_raw=${op_return_raw}`;
+        const addressInput = `auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?op_return_raw=${op_return_raw}`;
         await user.type(addressInputEl, addressInput);
 
         // The 'Send To' input field has this address as a value
@@ -984,7 +984,7 @@ describe('<SendXec />', () => {
     });
     it('Pass a valid address and bip21 query string with valid amount and op_return_raw params to Send To field', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -1008,7 +1008,7 @@ describe('<SendXec />', () => {
 
         // The user enters a valid BIP21 query string with a valid amount param
         const op_return_raw = '0401020304';
-        const addressInput = `ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=500&op_return_raw=${op_return_raw}`;
+        const addressInput = `auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=500&op_return_raw=${op_return_raw}`;
         await user.type(addressInputEl, addressInput);
 
         // The 'Send To' input field has this address as a value
@@ -1058,7 +1058,7 @@ describe('<SendXec />', () => {
     });
     it('Pass a valid address and bip21 query string with valid amount and invalid op_return_raw params to Send To field', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -1082,7 +1082,7 @@ describe('<SendXec />', () => {
 
         // The user enters a valid BIP21 query string with a valid amount param and invalid op_return_raw
         const op_return_raw = 'notahexstring';
-        const addressInput = `ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=500&op_return_raw=${op_return_raw}`;
+        const addressInput = `auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=500&op_return_raw=${op_return_raw}`;
         await user.type(addressInputEl, addressInput);
 
         // The 'Send To' input field has this address as a value
@@ -1128,7 +1128,7 @@ describe('<SendXec />', () => {
     });
     it('Clicking "Send" will send a valid tx with op_return_raw after entry of a valid address and bip21 query string with valid amount and op_return_raw params to Send To field', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -1163,7 +1163,7 @@ describe('<SendXec />', () => {
         // The user enters a valid BIP21 query string with a valid amount param
         const op_return_raw =
             '04007461622263617368746162206d6573736167652077697468206f705f72657475726e5f726177';
-        const addressInput = `ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=17&op_return_raw=${op_return_raw}`;
+        const addressInput = `auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=17&op_return_raw=${op_return_raw}`;
         await user.type(addressInputEl, addressInput);
 
         // The 'Send To' input field has this address as a value
@@ -1226,7 +1226,7 @@ describe('<SendXec />', () => {
         );
 
         // Notification is rendered with expected txid?;
-        const txSuccessNotification = await screen.findByText('eCash sent');
+        const txSuccessNotification = await screen.findByText('ausCash sent');
         await waitFor(() =>
             expect(txSuccessNotification).toHaveAttribute(
                 'href',
@@ -1267,7 +1267,7 @@ describe('<SendXec />', () => {
     });
     it('We can calculate max send amount with and without a cashtab msg, and send a max sat tx with a cashtab msg', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -1300,7 +1300,7 @@ describe('<SendXec />', () => {
         const addressInputEl = screen.getByPlaceholderText('Address');
         const amountInputEl = screen.getByPlaceholderText('Amount');
         // The user enters a valid BIP21 query string with a valid amount param
-        const addressInput = 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6';
+        const addressInput = 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6';
         await user.type(addressInputEl, addressInput);
 
         // We click "max" to populate the Amount field
@@ -1353,7 +1353,7 @@ describe('<SendXec />', () => {
         );
 
         // Notification is rendered with expected txid?;
-        const txSuccessNotification = await screen.findByText('eCash sent');
+        const txSuccessNotification = await screen.findByText('ausCash sent');
         await waitFor(() =>
             expect(txSuccessNotification).toHaveAttribute(
                 'href',
@@ -1363,7 +1363,7 @@ describe('<SendXec />', () => {
     });
     it('If the user has minFeeSends set to true but no longer has the right token amount, the feature is disabled', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -1411,7 +1411,7 @@ describe('<SendXec />', () => {
         // The user enters a valid BIP21 query string with a valid amount param
         const op_return_raw =
             '04007461622263617368746162206d6573736167652077697468206f705f72657475726e5f726177';
-        const addressInput = `ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=17&op_return_raw=${op_return_raw}`;
+        const addressInput = `auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=17&op_return_raw=${op_return_raw}`;
         await user.type(addressInputEl, addressInput);
 
         // The 'Send To' input field has this address as a value
@@ -1469,7 +1469,7 @@ describe('<SendXec />', () => {
         );
 
         // Notification is rendered with expected txid?;
-        const txSuccessNotification = await screen.findByText('eCash sent');
+        const txSuccessNotification = await screen.findByText('ausCash sent');
         await waitFor(() =>
             expect(txSuccessNotification).toHaveAttribute(
                 'href',
@@ -1510,7 +1510,7 @@ describe('<SendXec />', () => {
     });
     it('We can send a tx with amount denominated in fiat currency', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -1543,7 +1543,7 @@ describe('<SendXec />', () => {
         const addressInputEl = screen.getByPlaceholderText('Address');
         const amountInputEl = screen.getByPlaceholderText('Amount');
         // The user enters a valid address
-        const addressInput = 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6';
+        const addressInput = 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6';
         await user.type(addressInputEl, addressInput);
 
         // Select USD from currency select
@@ -1566,7 +1566,7 @@ describe('<SendXec />', () => {
         );
 
         // Notification is rendered with expected txid?;
-        const txSuccessNotification = await screen.findByText('eCash sent');
+        const txSuccessNotification = await screen.findByText('ausCash sent');
         await waitFor(() =>
             expect(txSuccessNotification).toHaveAttribute(
                 'href',
@@ -1576,7 +1576,7 @@ describe('<SendXec />', () => {
     });
     it('We can send an XEC tx to multiple users', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -1614,7 +1614,7 @@ describe('<SendXec />', () => {
         );
         // The user enters a send to many input
         const multiSendInput =
-            'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035, 20\necash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22';
+            'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035, 20\nauscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6, 22';
         await user.type(multiSendInputEl, multiSendInput);
 
         // The send to many input field has this value
@@ -1629,7 +1629,7 @@ describe('<SendXec />', () => {
         await user.click(screen.getByRole('button', { name: 'Send' }));
 
         // Notification is rendered with expected txid?;
-        const txSuccessNotification = await screen.findByText('eCash sent');
+        const txSuccessNotification = await screen.findByText('ausCash sent');
         await waitFor(() =>
             expect(txSuccessNotification).toHaveAttribute(
                 'href',
@@ -1639,7 +1639,7 @@ describe('<SendXec />', () => {
     });
     it('If we type a Cashtab msg, then disable the switch, we send a tx without our typed Cashtab message', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -1672,7 +1672,7 @@ describe('<SendXec />', () => {
         const addressInputEl = screen.getByPlaceholderText('Address');
         const amountInputEl = screen.getByPlaceholderText('Amount');
         // The user enters a valid BIP21 query string with a valid amount param
-        const addressInput = 'ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6';
+        const addressInput = 'auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6';
         await user.type(addressInputEl, addressInput);
 
         // We click "max" to populate the Amount field
@@ -1737,7 +1737,7 @@ describe('<SendXec />', () => {
         );
 
         // Notification is rendered with expected txid?;
-        const txSuccessNotification = await screen.findByText('eCash sent');
+        const txSuccessNotification = await screen.findByText('ausCash sent');
         await waitFor(() =>
             expect(txSuccessNotification).toHaveAttribute(
                 'href',
@@ -1747,7 +1747,7 @@ describe('<SendXec />', () => {
     });
     it('Entering a valid bip21 query string with multiple outputs and op_return_raw will correctly populate UI fields, and the tx can be sent', async () => {
         // Mock the app with context at the Send screen
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -1781,7 +1781,7 @@ describe('<SendXec />', () => {
         // The user enters a valid BIP21 query string with a valid amount param
         const op_return_raw =
             '04007461622263617368746162206d6573736167652077697468206f705f72657475726e5f726177';
-        const addressInput = `ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=17&op_return_raw=${op_return_raw}&addr=ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035&amount=1234.56`;
+        const addressInput = `auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6?amount=17&op_return_raw=${op_return_raw}&addr=auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035&amount=1234.56`;
         await user.type(addressInputEl, addressInput);
 
         // The 'Send To' input field has this bip21 query string as a value
@@ -1855,7 +1855,7 @@ describe('<SendXec />', () => {
         );
 
         // Notification is rendered with expected txid?;
-        const txSuccessNotification = await screen.findByText('eCash sent');
+        const txSuccessNotification = await screen.findByText('ausCash sent');
         await waitFor(() =>
             expect(txSuccessNotification).toHaveAttribute(
                 'href',

@@ -1,6 +1,6 @@
 ##!/usr/bin/env python3
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2020 The Electrum ABC developers
 # Copyright (C) 2015 Thomas Voegtlin
 #
@@ -89,7 +89,7 @@ class UpdateChecker(QtWidgets.QWidget, PrintError):
     VERSION_ANNOUNCEMENT_SIGNING_ADDRESSES = (
         # Pierre's keys
         address.Address.from_string(
-            "ecash:qz5j83ez703wvlwpqh94j6t45f8dn2afjgtgurgua0", net=MainNet
+            "auscash:qz5j83ez703wvlwpqh94j6t45f8dn2afjgtgurgua0", net=MainNet
         ),
     )
 

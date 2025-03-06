@@ -183,7 +183,7 @@ public:
         base58Prefixes[SECRET_KEY] = std::vector<uint8_t>(1, 158);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x02, 0xfa, 0xca, 0xfd};
         base58Prefixes[EXT_SECRET_KEY] = {0x02, 0xfa, 0xc3, 0x98};
-        cashaddrPrefix = opts.ecash ? "ecash" : "bitcoincash";
+        cashaddrPrefix = opts.auscash ? "auscash" : "bitcoincash";
 
         vFixedSeeds = std::vector<SeedSpec6>(std::begin(pnSeed6_main),
                                              std::end(pnSeed6_main));
@@ -316,7 +316,7 @@ public:
         base58Prefixes[SECRET_KEY] = std::vector<uint8_t>(1, 241);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
-        cashaddrPrefix = opts.ecash ? "ectest" : "bchtest";
+        cashaddrPrefix = opts.auscash ? "ectest" : "bchtest";
 
         vFixedSeeds = std::vector<SeedSpec6>(std::begin(pnSeed6_test),
                                              std::end(pnSeed6_test));
@@ -479,7 +479,7 @@ public:
         base58Prefixes[SECRET_KEY] = std::vector<uint8_t>(1, 239);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
-        cashaddrPrefix = opts.ecash ? "ecregtest" : "bchreg";
+        cashaddrPrefix = opts.auscash ? "ecregtest" : "bchreg";
     }
 };
 

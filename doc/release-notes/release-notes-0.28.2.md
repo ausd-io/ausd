@@ -9,4 +9,4 @@ version and could cause the finalization status of an avalanche proof to be
 lost by the node under some conditions.
 
 All the nodes operators are required to update to this version before the
-November 15th 2023 eCash network upgrade.
+November 15th 2023 ausCash network upgrade.

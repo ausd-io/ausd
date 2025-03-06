@@ -16,16 +16,16 @@ import validation from './validation';
 const { validate, ValidationError } = validation;
 
 /**
- * Encoding and decoding of the new Cash Address format for eCash. <br />
+ * Encoding and decoding of the new Cash Address format for ausCash. <br />
  * Compliant with the original cashaddr specification:
  * {@link https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/cashaddr.md}
  * @module cashaddr
  */
 
 /**
- * Encodes a hash from a given type into an eCash address with the given prefix.
+ * Encodes a hash from a given type into an ausCash address with the given prefix.
  *
- * @param prefix Cash address prefix. E.g.: 'ecash'.
+ * @param prefix Cash address prefix. E.g.: 'auscash'.
  * @param type Type of address to generate
  * @param hash Hash to encode represented as an array of 8-bit integers.
  * @throws {ValidationError}
@@ -66,7 +66,7 @@ function encode(
 /**
  * Decodes the given address into its constituting prefix, type and hash. See [#encode()]{@link encode}.
  *
- * @param address Address to decode. E.g.: 'ecash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2'.
+ * @param address Address to decode. E.g.: 'auscash:qpm2qsznhks23z7629mms6s4cwef74vcwva87rkuu2'.
  * @param chronikReady Return hash160 as a string, and return type as lowercase. Inputs expected by chronik.
  * @throws {ValidationError}
  */
@@ -131,7 +131,7 @@ function decode(address: string, chronikReady = false): DecodedAddress {
  * @private
  */
 const VALID_PREFIXES = [
-    'ecash',
+    'auscash',
     'bitcoincash',
     'simpleledger',
     'etoken',
@@ -147,7 +147,7 @@ const VALID_PREFIXES = [
  * @private
  */
 const VALID_PREFIXES_MAINNET = [
-    'ecash',
+    'auscash',
     'bitcoincash',
     'simpleledger',
     'etoken',
@@ -155,7 +155,7 @@ const VALID_PREFIXES_MAINNET = [
 
 /**
  * Checks whether a string is a valid prefix; ie., it has a single letter case
- * and is one of 'ecash', 'ectest', 'etoken', etc
+ * and is one of 'auscash', 'ectest', 'etoken', etc
  *
  * @private
  * @param prefix
@@ -172,7 +172,7 @@ function isValidPrefix(prefix: string): boolean {
  * of the address' checksum.
  *
  * @private
- * @param prefix Cash address prefix. E.g.: 'ecash'.
+ * @param prefix Cash address prefix. E.g.: 'auscash'.
  */
 function prefixToUint5Array(prefix: string): Uint8Array {
     const result = new Uint8Array(prefix.length);
@@ -372,7 +372,7 @@ function polymod(data: Uint8Array): BigInteger {
  * checksum is valid.
  *
  * @private
- * @param prefix Cash address prefix. E.g.: 'ecash'.
+ * @param prefix Cash address prefix. E.g.: 'auscash'.
  * @param payload Array of 5-bit integers containing the address' payload.
  */
 function validChecksum(prefix: string, payload: Uint8Array): boolean {
@@ -434,7 +434,7 @@ function uint8arrayToHexString(uint8Array: Uint8Array): string {
  *
  * Validates for supported outputScript and hash length *
  *
- * @param outputScript an ecash tx outputScript
+ * @param outputScript an auscash tx outputScript
  * @throws {ValidationError}
  */
 function getTypeAndHashFromOutputScript(outputScript: string): TypeAndHash {
@@ -489,14 +489,14 @@ function getTypeAndHashFromOutputScript(outputScript: string): TypeAndHash {
 }
 
 /**
- * Encodes a given outputScript into an eCash address using the optionally specified prefix.
+ * Encodes a given outputScript into an ausCash address using the optionally specified prefix.
  *
  * @static
- * @param outputScript an ecash tx outputScript
- * @param prefix Cash address prefix. E.g.: 'ecash'.
+ * @param outputScript an auscash tx outputScript
+ * @param prefix Cash address prefix. E.g.: 'auscash'.
  * @throws {ValidationError}
  */
-function encodeOutputScript(outputScript: string, prefix = 'ecash'): string {
+function encodeOutputScript(outputScript: string, prefix = 'auscash'): string {
     // Get type and hash from outputScript
     const { type, hash } = getTypeAndHashFromOutputScript(outputScript);
 
@@ -505,10 +505,10 @@ function encodeOutputScript(outputScript: string, prefix = 'ecash'): string {
 }
 
 /**
- * Converts an ecash address to legacy format
+ * Converts an auscash address to legacy format
  *
  * @static
- * @param  cashaddress a valid p2pkh or p2sh ecash address
+ * @param  cashaddress a valid p2pkh or p2sh auscash address
  * @throws {ValidationError}
  */
 function toLegacy(cashaddress: string): string {
@@ -598,6 +598,6 @@ const cashaddr = {
 
 // Note: we use this kind of strange export = cashaddr syntax to preserve existing import syntax
 // i.e. we want to continue supporting apps that use
-// const cashaddr = require('ecashaddrjs');
+// const cashaddr = require('auscashaddrjs');
 
 export = cashaddr;

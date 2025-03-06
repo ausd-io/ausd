@@ -151,14 +151,14 @@ export const NftTable = styled.div`
 
     &::-webkit-scrollbar-track {
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        background-color: ${props => props.theme.eCashBlue};
+        background-color: ${props => props.theme.ausCashBlue};
         border-radius: 10px;
         height: 80%;
     }
 
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
-        color: ${props => props.theme.eCashBlue};
+        color: ${props => props.theme.ausCashBlue};
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
     }
 `;
@@ -177,9 +177,9 @@ export const NftTokenIdAndCopyIcon = styled.div`
         height: 18px;
         :hover {
             g {
-                fill: ${props => props.theme.eCashPurple};
+                fill: ${props => props.theme.ausCashPurple};
             }
-            fill: ${props => props.theme.eCashPurple};
+            fill: ${props => props.theme.ausCashPurple};
         }
     }
 `;

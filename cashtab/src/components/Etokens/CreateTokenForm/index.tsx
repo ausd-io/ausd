@@ -74,7 +74,7 @@ import {
 import { sha256, Message } from 'js-sha256';
 import { getUserLocale } from 'helpers';
 import { decimalizedTokenQtyToLocaleFormat } from 'utils/formatting';
-import { toHex } from 'ecash-lib';
+import { toHex } from 'auscash-lib';
 
 interface CreateTokenFormProps {
     nftChildGenesisInput?: TokenUtxo[];

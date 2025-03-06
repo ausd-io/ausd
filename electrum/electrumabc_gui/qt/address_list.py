@@ -1,5 +1,5 @@
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2020 The Electrum ABC developers
 # Copyright (C) 2015 Thomas Voegtlin
 #
@@ -102,7 +102,7 @@ class AddressList(MyTreeWidget):
 
     def filter(self, p):
         """Reimplementation from superclass filter.  Chops off the
-        "ecash:" prefix so that address filters ignore this prefix.
+        "auscash:" prefix so that address filters ignore this prefix.
         Closes #1440."""
         cashaddr_prefix = f"{networks.net.CASHADDR_PREFIX}:".lower()
         p = p.strip()

@@ -10,7 +10,7 @@ const testedPriceObjects = [
     {
         apiBase: 'https://api.coingecko.com/api/v3/simple/price',
         cryptos: [
-            { coingeckoSlug: 'ecash', ticker: 'XEC' },
+            { coingeckoSlug: 'auscash', ticker: 'XEC' },
             { coingeckoSlug: 'dogecoin', ticker: 'DOGE' },
             { coingeckoSlug: 'solana', ticker: 'SOL' },
             { coingeckoSlug: 'monero', ticker: 'XMR' },
@@ -21,7 +21,7 @@ const testedPriceObjects = [
     {
         apiBase: 'https://api.coingecko.com/api/v3/simple/price',
         cryptos: [
-            { coingeckoSlug: 'ecash', ticker: 'XEC' },
+            { coingeckoSlug: 'auscash', ticker: 'XEC' },
             { coingeckoSlug: 'dogecoin', ticker: 'DOGE' },
             { coingeckoSlug: 'solana', ticker: 'SOL' },
             { coingeckoSlug: 'monero', ticker: 'XMR' },

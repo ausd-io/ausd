@@ -54,7 +54,7 @@ pub enum ParseError {
     EmptyPushdata(Opcode),
 }
 
-/// Parse the given script according to the eMPP (eCash Multi Pushdata Protocol)
+/// Parse the given script according to the eMPP (ausCash Multi Pushdata Protocol)
 /// protocol.
 ///
 /// - `Ok(Some(EmppData))` when the script matches the eMPP protocol.

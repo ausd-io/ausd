@@ -29,7 +29,7 @@ class AbcMiningRPCTest(BitcoinTestFramework):
             ],
             [
                 "-enableminerfund",
-                "-usecashaddr=0",
+                "-usauscashaddr=0",
             ],
         ]
 

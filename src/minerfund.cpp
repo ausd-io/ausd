@@ -37,13 +37,13 @@ static CTxDestination BuildDestination(const std::string &dest) {
 }
 
 static const CTxDestination &GetMinerFundDestination() {
-    static const std::string ecashMinerFund =
-        "ecash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07";
+    static const std::string auscashMinerFund =
+        "auscash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvqd0y8lz07";
     static const std::string bitcoinCashMinerFund =
         "bitcoincash:prfhcnyqnl5cgrnmlfmms675w93ld7mvvq5zsvycff";
     static CTxDestination dest =
-        BuildDestination(gArgs.GetBoolArg("-ecash", cashaddr::DEFAULT_ECASH)
-                             ? ecashMinerFund
+        BuildDestination(gArgs.GetBoolArg("-auscash", cashaddr::DEFAULT_AUSCASH)
+                             ? auscashMinerFund
                              : bitcoinCashMinerFund);
 
     return dest;

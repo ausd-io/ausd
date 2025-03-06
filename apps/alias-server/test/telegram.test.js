@@ -11,7 +11,7 @@ const { generated } = require('./mocks/aliasMocks');
 
 describe('alias-server telegram.js', function () {
     const aliasObj = {
-        address: 'ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
+        address: 'auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj',
         alias: '1',
         blockheight: 792417,
         txid: 'ec92610fc41df2387e7febbb358b138a802ac26023f30b2442aa01ca733fff7d',
@@ -20,14 +20,14 @@ describe('alias-server telegram.js', function () {
         const xecPrice = '0.000033';
         assert.strictEqual(
             buildAliasTgMsg(aliasObj, xecPrice),
-            'alias "1" <a href="https://explorer.e.cash/tx/ec92610fc41df2387e7febbb358b138a802ac26023f30b2442aa01ca733fff7d">registered</a> to <a href="https://explorer.e.cash/address/ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj">qpm...asj</a> for $0.0002',
+            'alias "1" <a href="https://explorer.e.cash/tx/ec92610fc41df2387e7febbb358b138a802ac26023f30b2442aa01ca733fff7d">registered</a> to <a href="https://explorer.e.cash/address/auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj">qpm...asj</a> for $0.0002',
         );
     });
     it('buildAliasTgMsg returns expected string for registered alias tx and failed fiat price fetch', function () {
         const xecPrice = false;
         assert.strictEqual(
             buildAliasTgMsg(aliasObj, xecPrice),
-            'alias "1" <a href="https://explorer.e.cash/tx/ec92610fc41df2387e7febbb358b138a802ac26023f30b2442aa01ca733fff7d">registered</a> to <a href="https://explorer.e.cash/address/ecash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj">qpm...asj</a> for 5.58 XEC',
+            'alias "1" <a href="https://explorer.e.cash/tx/ec92610fc41df2387e7febbb358b138a802ac26023f30b2442aa01ca733fff7d">registered</a> to <a href="https://explorer.e.cash/address/auscash:qpmytrdsakt0axrrlswvaj069nat3p9s7cjctmjasj">qpm...asj</a> for 5.58 XEC',
         );
     });
     // Assume you get these first three registrations in one run of handleBlockConnected
@@ -46,7 +46,7 @@ describe('alias-server telegram.js', function () {
         // Mock good API price
         // Mock a successful API request
         const mock = new MockAdapter(axios, { onNoMatch: 'throwException' });
-        const mockResult = { ecash: { usd: 3.331e-5 } };
+        const mockResult = { auscash: { usd: 3.331e-5 } };
         mock.onGet().reply(200, mockResult);
 
         // mock expected tg msgs
@@ -62,7 +62,7 @@ describe('alias-server telegram.js', function () {
         for (let i in newAliasRegistrations) {
             const msg = buildAliasTgMsg(
                 newAliasRegistrations[i],
-                mockResult.ecash.usd,
+                mockResult.auscash.usd,
             );
             expectedTgPromiseResults.push({
                 msg,
@@ -122,7 +122,7 @@ describe('alias-server telegram.js', function () {
         // Mock good API price
         // Mock a successful API request
         const mock = new MockAdapter(axios, { onNoMatch: 'throwException' });
-        const mockResult = { ecash: { usd: 3.331e-5 } };
+        const mockResult = { auscash: { usd: 3.331e-5 } };
         mock.onGet().reply(200, mockResult);
 
         // mock expected tg msgs

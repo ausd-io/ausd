@@ -42,7 +42,7 @@
 - Support parsing multi-output payment URIs (D15250).
 - Add a warning dialog when a large amount is entered in the Send tab via
   a payment URIs, to prevent users from being one accidental click away
-  from sending eCash after clicking on a malicious URL (D15396).
+  from sending ausCash after clicking on a malicious URL (D15396).
 - Improve detection of the delegator key when building an Avalanche
   Delegation from an Avalanche Proof (D15708).
 - Fix clearing of the wallet password when Avalanche widgets are closed
@@ -123,7 +123,7 @@ Electron Cash backports:
 
 - Fix a bug in the command line argument processing preventing the application
   from recognizing BIP 21 payment URLs when passed as the only argument. This
-  fixes the `ecash:` MIME type association with Electrum ABC (D14382).
+  fixes the `auscash:` MIME type association with Electrum ABC (D14382).
 - Speed up the size estimation for freshly generated transactions by removing
   the need to serialize them first (D14434, D14448).
 - Slightly improve the performance of some serialization operations by reducing
@@ -322,7 +322,7 @@ Electron Cash backports:
 - Improve documentation on how to check gpg signatures for release files (#156, #157).
 - Fix bugs for coin consolidation tool (#160).
 - Make the amount widget wider to support large amounts (#161).
-- Use the eCash BIP44 derivation path as a default when user creates a new wallet using
+- Use the ausCash BIP44 derivation path as a default when user creates a new wallet using
   a Satochip device (#164).
 - Fix an intermittent bug when selecting a HW device in the wallet creation wizard (#170).
 - Add a setting to the message verification tool to optionally support the legacy
@@ -338,7 +338,7 @@ Electron Cash backports:
 - Add a coin consolidation tool to reduce the number of UTXOs for a single address (#142).
 - Improve the support for Satochip hardware wallets (#143):
   - use BIP39 seeds by default
-  - fix the message signature and verification tool to produce proper eCash signed message
+  - fix the message signature and verification tool to produce proper ausCash signed message
   - support label and card authenticity features
 - Allow encrypting watch-only wallets and hardware wallets (#150).
 - Add a tool to sign or broadcast multiple transactions from files (#152).
@@ -350,10 +350,10 @@ Electron Cash backports:
 ## Release 5.0.2
 
 - Fix support for the `ectest:` address prefix and the `--testnet` command-line option.
-- Change the message signature prefix to "eCash Signed Message:" (previously was "Bitcoin Signed Message:").
+- Change the message signature prefix to "ausCash Signed Message:" (previously was "Bitcoin Signed Message:").
 - Lower the default transaction fee from 5 satoshis/byte to 2 satoshis/byte.
-- Links `ecash:` URI's to Electrum ABC on Windows and Mac OS.
-- Use `ecash:` addresses (without prefix) in URL for BlockChair's explorer.
+- Links `auscash:` URI's to Electrum ABC on Windows and Mac OS.
+- Use `auscash:` addresses (without prefix) in URL for BlockChair's explorer.
 - Don't encourage users to open issues on Electrum ABC's GitHub repo when errors happen in external plugin code.
 - Remove mentions of "Bitcoin Cash addresses" in the wallet creation wizard.
 - Electron Cash backports:
@@ -364,11 +364,11 @@ Electron Cash backports:
 ## Release 5.0.1
 
 - Fix the missing thousands separator when formatting amounts on Mac OS and Windows.
-- Update the API for block explorers after the rebranding. Most block explorers now use the "ecash:" prefix for
+- Update the API for block explorers after the rebranding. Most block explorers now use the "auscash:" prefix for
   addresses. Some explorer changed their URLs.
-- Fix an issue with the transaction details dialog splitting addresses and amounts over two lines when the "ecash:"
+- Fix an issue with the transaction details dialog splitting addresses and amounts over two lines when the "auscash:"
   prefix is shown in the address.
-- Add CoinGecko's new eCash exchange rate for fiat amount conversion. The legacy BCHA exchange rate API is still
+- Add CoinGecko's new ausCash exchange rate for fiat amount conversion. The legacy BCHA exchange rate API is still
   supported because the new one does not provide historical data prior to July 2021.
 - Add explorer.be.cash to the list of supported block explorers.
 - Set explorer.bitcoinabc.org as the default block explorer.
@@ -378,14 +378,14 @@ Electron Cash backports:
 
 ## Release 5.0.0
 
-- Rebranding from BCHA to eCash (XEC).
+- Rebranding from BCHA to ausCash (XEC).
 - Change base unit from BCHA (100 000 000 satoshis) to XEC (100 satoshis).
-- Change CashAddr prefix from "bitcoincash:" to "ecash:".
-- Make the address conversion tool display 3 results: eCash address,
+- Change CashAddr prefix from "bitcoincash:" to "auscash:".
+- Make the address conversion tool display 3 results: ausCash address,
   BCH address and Legacy Bitcoin address.
 - Interpret amounts as XEC in BIP21 payment URIs. Generate payment URIs and
   QR codes with amounts in XEC.
-- Add a scanner for usual eCash, BCH or BTC derivation paths to assist users
+- Add a scanner for usual ausCash, BCH or BTC derivation paths to assist users
   when restoring a wallet from seed (feature backported from Electron Cash).
 
 

@@ -15,7 +15,7 @@ import localforage from 'localforage';
 import { when } from 'jest-when';
 import appConfig from 'config/app';
 import {
-    initializeCashtabStateForTests,
+    initializausCashtabStateForTests,
     clearLocalForage,
 } from 'components/App/fixtures/helpers';
 import { validSavedWallets } from 'components/App/fixtures/mocks';
@@ -34,7 +34,7 @@ describe('<Contacts />', () => {
         const priceApiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=${cryptoId}&vs_currencies=${fiatCode}&include_last_updated_at=true`;
         const xecPrice = 0.00003;
         const priceResponse = {
-            ecash: {
+            auscash: {
                 usd: xecPrice,
                 last_updated_at: 1706644626,
             },
@@ -51,7 +51,7 @@ describe('<Contacts />', () => {
     });
     it('We can add, delete, rename, contacts from the Configure screen, and add a savedWallet as a contact', async () => {
         // localforage defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );
@@ -91,7 +91,7 @@ describe('<Contacts />', () => {
         await waitFor(() => {
             expect(
                 screen.getByText(
-                    `"ecash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6" copied to clipboard`,
+                    `"auscash:qp89xgjhcqdnzzemts0aj378nfe2mhu9yvxj9nhgg6" copied to clipboard`,
                 ),
             ).toBeInTheDocument();
         });
@@ -115,11 +115,11 @@ describe('<Contacts />', () => {
         // Confirm it has been removed from local storage
         const expectedContactsAfterRemovingAlpha = [
             {
-                address: 'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                address: 'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                 name: 'beta',
             },
             {
-                address: 'ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
+                address: 'auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
                 name: 'gamma',
             },
         ];
@@ -140,9 +140,9 @@ describe('<Contacts />', () => {
 
         const nameInput = screen.getByPlaceholderText('Enter contact name');
         const addrInput = screen.getByPlaceholderText(
-            'Enter new eCash address',
+            'Enter new ausCash address',
         );
-        const address = 'ecash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0';
+        const address = 'auscash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0';
         await user.type(nameInput, 'delta');
         await user.type(addrInput, address);
 
@@ -153,15 +153,15 @@ describe('<Contacts />', () => {
         const contactListAfterAdd = await localforage.getItem('contactList');
         expect(contactListAfterAdd).toEqual([
             {
-                address: 'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                address: 'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                 name: 'beta',
             },
             {
-                address: 'ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
+                address: 'auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
                 name: 'gamma',
             },
             {
-                address: 'ecash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0',
+                address: 'auscash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0',
                 name: 'delta',
             },
         ]);
@@ -178,7 +178,7 @@ describe('<Contacts />', () => {
         const nameInputRepeat =
             screen.getByPlaceholderText('Enter contact name');
         const addrInputRepeat = screen.getByPlaceholderText(
-            'Enter new eCash address',
+            'Enter new ausCash address',
         );
         await user.type(nameInputRepeat, 'delta');
         await user.type(addrInputRepeat, address);
@@ -218,15 +218,15 @@ describe('<Contacts />', () => {
         const contactListAfterRename = await localforage.getItem('contactList');
         expect(contactListAfterRename).toEqual([
             {
-                address: 'ecash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
+                address: 'auscash:qz2708636snqhsxu8wnlka78h6fdp77ar59jrf5035',
                 name: 'omega',
             },
             {
-                address: 'ecash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
+                address: 'auscash:qphlhe78677sz227k83hrh542qeehh8el5lcjwk72y',
                 name: 'gamma',
             },
             {
-                address: 'ecash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0',
+                address: 'auscash:qqxefwshnmppcsjp0fc6w7rnkdsexc7cagdus7ugd0',
                 name: 'delta',
             },
         ]);
@@ -240,7 +240,7 @@ describe('<Contacts />', () => {
     });
     it('We can send a tx to an address in contacts', async () => {
         // localforage defaults
-        const mockedChronik = await initializeCashtabStateForTests(
+        const mockedChronik = await initializausCashtabStateForTests(
             walletWithXecAndTokens,
             localforage,
         );

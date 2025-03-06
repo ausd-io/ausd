@@ -9,7 +9,7 @@ import {
 } from 'components/App/fixtures/mocks';
 
 export default {
-    initializeCashtabStateAtLegacyWalletKeysForTests: {
+    initializausCashtabStateAtLegacyWalletKeysForTests: {
         expectedReturns: [
             {
                 description: 'Wallet with xec and tokens',
@@ -17,7 +17,7 @@ export default {
             },
         ],
     },
-    initializeCashtabStateForTests: {
+    initializausCashtabStateForTests: {
         expectedReturns: [
             {
                 description: 'Wallet with xec and tokens',

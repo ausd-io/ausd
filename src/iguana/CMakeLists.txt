@@ -1,7 +1,7 @@
 # Copyright (c) 2024 The Bitcoin developers
 
 project(iguana
-	DESCRIPTION "Iguana is a Script debugger for eCash"
+	DESCRIPTION "Iguana is a Script debugger for ausCash"
 )
 
 add_executable(iguana
@@ -10,7 +10,7 @@ add_executable(iguana
 	iguana_interpreter.cpp
 )
 generate_windows_version_info(iguana
-	DESCRIPTION "eCash script debugger"
+	DESCRIPTION "ausCash script debugger"
 )
 target_include_directories(iguana
 	PUBLIC

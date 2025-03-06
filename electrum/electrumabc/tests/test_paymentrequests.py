@@ -31,7 +31,7 @@ class TestPaymentRequests(unittest.TestCase):
         self.assertTrue(pr.error is not None)
 
     # Verify that an error is received if the server does not respond with
-    # 'application/ecash-paymentrequest' as content type
+    # 'application/auscash-paymentrequest' as content type
     def test_get_paymentrequest_unsupported_contenttype(self):
         class RequestHandler(SimpleHTTPRequestHandler):
             def do_GET(self):
@@ -56,7 +56,7 @@ class TestPaymentRequests(unittest.TestCase):
             def do_GET(self):
                 self.send_response(200)
                 resp = b"1"
-                self.send_header("Content-type", "application/ecash-paymentrequest")
+                self.send_header("Content-type", "application/auscash-paymentrequest")
                 self.send_header("Content-length", len(resp))
                 self.end_headers()
                 self.wfile.write(resp)
@@ -74,7 +74,7 @@ class TestPaymentRequests(unittest.TestCase):
             def do_GET(self):
                 resp = b""
                 self.send_response(503)
-                self.send_header("Content-type", "application/ecash-paymentrequest")
+                self.send_header("Content-type", "application/auscash-paymentrequest")
                 self.send_header("Content-length", len(resp))
                 self.end_headers()
                 self.wfile.write(resp)
@@ -125,7 +125,7 @@ class TrivialRequestHandler(SimpleHTTPRequestHandler):
             resp = pr.SerializeToString()
 
         self.send_response(200)
-        self.send_header("Content-type", "application/ecash-paymentrequest")
+        self.send_header("Content-type", "application/auscash-paymentrequest")
         self.send_header("Content-length", len(resp))
         self.end_headers()
         self.wfile.write(resp)

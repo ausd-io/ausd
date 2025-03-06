@@ -100,9 +100,9 @@ export const SocialLink = styled.a`
     @media (hover: hover) {
         :hover {
             svg {
-                fill: ${props => props.theme.eCashPurple};
+                fill: ${props => props.theme.ausCashPurple};
                 path:not(#F) {
-                    fill: ${props => props.theme.eCashPurple};
+                    fill: ${props => props.theme.ausCashPurple};
                 }
             }
         }
@@ -133,7 +133,7 @@ export const LoadingBlock = styled.div`
     svg {
         width: 50px;
         height: 50px;
-        fill: ${props => props.theme.eCashBlue};
+        fill: ${props => props.theme.ausCashBlue};
     }
 `;
 
@@ -162,9 +162,9 @@ const PaywallPaymentIconWrapper = styled.div`
     svg,
     g,
     path {
-        fill: ${props => props.theme.eCashBlue};
+        fill: ${props => props.theme.ausCashBlue};
     }
-    fill: ${props => props.theme.eCashBlue};
+    fill: ${props => props.theme.ausCashBlue};
 `;
 export const PaywallPaymentIcon = () => (
     <PaywallPaymentIconWrapper>
@@ -176,8 +176,8 @@ export const MintIcon = () => <Mint title="tx-mint" />;
 export const CopyPasteIcon = () => <CopyPaste title="copy-paste" />;
 export const AddContactIcon = () => <AddContact title="add-contact" />;
 const TrashCanWrapper = styled.div`
-    stroke: ${props => props.theme.eCashBlue};
-    fill: ${props => props.theme.eCashBlue};
+    stroke: ${props => props.theme.ausCashBlue};
+    fill: ${props => props.theme.ausCashBlue};
     cursor: pointer;
 `;
 export const TrashcanIcon = () => (
@@ -186,8 +186,8 @@ export const TrashcanIcon = () => (
     </TrashCanWrapper>
 );
 const EditWrapper = styled.div`
-    stroke: ${props => props.theme.eCashBlue};
-    fill: ${props => props.theme.eCashBlue};
+    stroke: ${props => props.theme.ausCashBlue};
+    fill: ${props => props.theme.ausCashBlue};
     cursor: pointer;
 `;
 export const EditIcon = () => (

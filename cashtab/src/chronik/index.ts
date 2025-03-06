@@ -4,8 +4,8 @@
 
 import { opReturn as opreturnConfig } from 'config/opreturn';
 import { chronik as chronikConfig } from 'config/chronik';
-import { getStackArray } from 'ecash-script';
-import cashaddr from 'ecashaddrjs';
+import { getStackArray } from 'auscash-script';
+import cashaddr from 'auscashaddrjs';
 import {
     getHashes,
     decimalizeTokenAmount,
@@ -316,7 +316,7 @@ export const parseTx = (tx: Tx, hashes: string[]): ParsedTx => {
             }
         }
         if (!walletIncludesThisOutputScript) {
-            // See if this output script is a p2pkh or p2sh ecash address
+            // See if this output script is a p2pkh or p2sh auscash address
             try {
                 const destinationAddress =
                     cashaddr.encodeOutputScript(outputScript);

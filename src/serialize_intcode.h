@@ -30,7 +30,7 @@ const uint64_t VALID_RANGE[] = {
  * Similar to UTF-8, except data bytes don't have a 10xx'xxxx prefix
  *
  * Specification & rationale can be found here:
- * https://ecashbuilders.notion.site/eCash-Mitra-Integer-Encoding-Spec-2ff596494dcf4d12b75c763464df39de?pvs=4
+ * https://auscashbuilders.notion.site/ausCash-Mitra-Integer-Encoding-Spec-2ff596494dcf4d12b75c763464df39de?pvs=4
  *
  * Examples:
  * 0x0000'0000'0000'007f (7) -> "7f"
@@ -79,7 +79,7 @@ template <typename Stream> void WriteIntcode(Stream &os, uint64_t value) {
 /**
  * Read a 64-bit integer as intcode, see WriteIntcode.
  * Specification & rationale can be found here:
- * https://ecashbuilders.notion.site/eCash-Mitra-Integer-Encoding-Spec-2ff596494dcf4d12b75c763464df39de?pvs=4
+ * https://auscashbuilders.notion.site/ausCash-Mitra-Integer-Encoding-Spec-2ff596494dcf4d12b75c763464df39de?pvs=4
  */
 template <typename Stream> uint64_t ReadIntcode(Stream &is) {
     // Read the header byte

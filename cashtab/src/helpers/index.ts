@@ -117,7 +117,7 @@ export const cashtabWalletFromJSON = (
     ) {
         return storedCashtabWallet as LegacyCashtabWallet;
     }
-    const activeCashtabWalletPathInfos: [number, CashtabPathInfo][] = [];
+    const activausCashtabWalletPathInfos: [number, CashtabPathInfo][] = [];
     for (const [path, storedPathInfo] of (
         storedCashtabWallet as
             | LegacyCashtabWallet_Pre_2_55_0
@@ -125,7 +125,7 @@ export const cashtabWalletFromJSON = (
     ).paths) {
         if ('sk' in storedPathInfo && 'pk' in storedPathInfo) {
             // If the stored wallet is > 2.55.0, it will have sk and pk fields
-            activeCashtabWalletPathInfos.push([
+            activausCashtabWalletPathInfos.push([
                 path,
                 {
                     ...storedPathInfo,
@@ -134,7 +134,7 @@ export const cashtabWalletFromJSON = (
                 },
             ]);
         } else {
-            activeCashtabWalletPathInfos.push([
+            activausCashtabWalletPathInfos.push([
                 path,
                 // Note we know here that storedPathInfo is actually NOT of CashtabPathInfo type
                 // We expect this wallet to be revived as invalid for migration
@@ -144,7 +144,7 @@ export const cashtabWalletFromJSON = (
     }
     return {
         ...(storedCashtabWallet as StoredCashtabWallet),
-        paths: new Map(activeCashtabWalletPathInfos),
+        paths: new Map(activausCashtabWalletPathInfos),
         state: {
             ...storedCashtabWallet.state,
             tokens: new Map(

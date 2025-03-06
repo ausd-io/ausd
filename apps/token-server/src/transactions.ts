@@ -19,7 +19,7 @@ import {
     ALL_BIP143,
     TxOutput,
     TxBuilderOutput,
-} from 'ecash-lib';
+} from 'auscash-lib';
 
 const DUST_SATS = 546;
 const SATS_PER_KB = 1000;

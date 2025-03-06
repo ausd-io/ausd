@@ -32,7 +32,7 @@ import {
     PayButtonYesDataNoNonce,
     PayButtonOffSpec,
     PayButtonBadVersion,
-    MsgFromEcashChat,
+    MsgFromAuscashChat,
     SlpV1Mint,
     MsgFromElectrum,
     unknownAppTx,
@@ -48,9 +48,9 @@ import {
     SlpParentGenesisTxMock,
     oneOutputReceivedTx,
     paywallPaymentTx,
-    eCashChatArticleTx,
-    eCashChatArticleReplyTx,
-    eCashChatAuthenticationTx,
+    ausCashChatArticleTx,
+    ausCashChatArticleReplyTx,
+    ausCashChatAuthenticationTx,
     agoraAdSetupTxSlpNft,
     agoraOneshotSaleTx,
     AgoraOneshotCancelTx,
@@ -961,7 +961,7 @@ describe('<Tx />', () => {
         // We see the airdrop msg
         expect(
             screen.getByText(
-                'ATTENTION GRUMPY PEOPLE! 😾 You can now deposit $GRP to the eToken bot at t.me/eCashPlay to top up your Casino Credits! 1m $GRP = 1 Credit. Play Casino games and win XEC!',
+                'ATTENTION GRUMPY PEOPLE! 😾 You can now deposit $GRP to the eToken bot at t.me/ausCashPlay to top up your Casino Credits! 1m $GRP = 1 Credit. Play Casino games and win XEC!',
             ),
         ).toBeInTheDocument();
     });
@@ -1573,12 +1573,12 @@ describe('<Tx />', () => {
         // We see expected protocol label
         expect(screen.getByText('(Invalid)')).toBeInTheDocument();
     });
-    it('eCash chat tx', async () => {
+    it('ausCash chat tx', async () => {
         render(
             <MemoryRouter>
                 <ThemeProvider theme={theme}>
                     <Tx
-                        tx={MsgFromEcashChat.tx}
+                        tx={MsgFromAuscashChat.tx}
                         hashes={['0b7d35fda03544a08e65464d54cfae4257eb6db7']}
                         fiatPrice={0.00003}
                         fiatCurrency="usd"
@@ -1607,34 +1607,34 @@ describe('<Tx />', () => {
         // We see the formatted fiat amount
         expect(screen.getByText('$0.00')).toBeInTheDocument();
 
-        // eCash chat msg app action
-        // We see the eCash Chat logo
+        // ausCash chat msg app action
+        // We see the ausCash Chat logo
         expect(screen.getByTitle('tx-chat')).toBeInTheDocument();
 
         // We see expected protocol label
-        expect(screen.getByText('eCash Chat')).toBeInTheDocument();
+        expect(screen.getByText('ausCash Chat')).toBeInTheDocument();
 
         // We see expected chat msg
         expect(
-            screen.getByText('hello from eCash Chat 👍'),
+            screen.getByText('hello from ausCash Chat 👍'),
         ).toBeInTheDocument();
 
-        // We do not see a reply icon for a received eCash chat, as Cashtab does not have a utf8-decoding input for them
+        // We do not see a reply icon for a received ausCash chat, as Cashtab does not have a utf8-decoding input for them
         expect(screen.queryByTitle('reply')).not.toBeInTheDocument();
     });
-    it('off-spec eCash chat tx', async () => {
+    it('off-spec ausCash chat tx', async () => {
         render(
             <MemoryRouter>
                 <ThemeProvider theme={theme}>
                     <Tx
                         tx={{
-                            ...MsgFromEcashChat.tx,
+                            ...MsgFromAuscashChat.tx,
                             outputs: [
                                 {
-                                    ...MsgFromEcashChat.tx.outputs[0],
+                                    ...MsgFromAuscashChat.tx.outputs[0],
                                     outputScript: '6a0463686174',
                                 },
-                                ...MsgFromEcashChat.tx.outputs.slice(1),
+                                ...MsgFromAuscashChat.tx.outputs.slice(1),
                             ],
                         }}
                         hashes={['0b7d35fda03544a08e65464d54cfae4257eb6db7']}
@@ -1665,12 +1665,12 @@ describe('<Tx />', () => {
         // We see the formatted fiat amount
         expect(screen.getByText('$0.00')).toBeInTheDocument();
 
-        // eCash chat msg app action
-        // We see the eCash Chat logo
+        // ausCash chat msg app action
+        // We see the ausCash Chat logo
         expect(screen.getByTitle('tx-chat')).toBeInTheDocument();
 
         // We see expected protocol label
-        expect(screen.getByText('Invalid eCash Chat')).toBeInTheDocument();
+        expect(screen.getByText('Invalid ausCash Chat')).toBeInTheDocument();
     });
     it('slpv1 fungible token MINT', async () => {
         render(
@@ -2322,7 +2322,7 @@ describe('<Tx />', () => {
         // We see expected explorer link generated
         expect(screen.getByText('Paywall Article')).toHaveAttribute(
             'href',
-            'https://www.ecashchat.com/?sharedArticleTxid=4d7a62ebb7f06fd7a86f861280853e6fce3c117c73598fe284190260abd5ddc4',
+            'https://www.auscashchat.com/?sharedArticleTxid=4d7a62ebb7f06fd7a86f861280853e6fce3c117c73598fe284190260abd5ddc4',
         );
     });
     it('Invalid paywall payment tx', async () => {
@@ -2368,14 +2368,14 @@ describe('<Tx />', () => {
         // We see the invalid paywall tx description
         expect(screen.getByText('Invalid Paywall Payment')).toBeInTheDocument();
     });
-    it('Sent eCashChat article reply tx', async () => {
+    it('Sent ausCashChat article reply tx', async () => {
         render(
             <MemoryRouter>
                 <ThemeProvider theme={theme}>
                     <Tx
-                        tx={eCashChatArticleReplyTx.tx}
+                        tx={ausCashChatArticleReplyTx.tx}
                         hashes={[
-                            eCashChatArticleReplyTx.tx.outputs[2].outputScript,
+                            ausCashChatArticleReplyTx.tx.outputs[2].outputScript,
                         ]}
                         fiatPrice={0.00003}
                         fiatCurrency="usd"
@@ -2399,31 +2399,31 @@ describe('<Tx />', () => {
         expect(screen.getByText('-')).toBeInTheDocument();
 
         // We see the article reply description
-        expect(screen.getByText('eCash Chat - Reply to')).toBeInTheDocument();
+        expect(screen.getByText('ausCash Chat - Reply to')).toBeInTheDocument();
 
         // We see expected explorer link generated
         expect(screen.getByText('article')).toHaveAttribute(
             'href',
-            'https://www.ecashchat.com/?sharedArticleTxid=fc1bec473c0c8de408b8587ead6d31ad1d8854835c19947488fa7b30b7992267',
+            'https://www.auscashchat.com/?sharedArticleTxid=fc1bec473c0c8de408b8587ead6d31ad1d8854835c19947488fa7b30b7992267',
         );
     });
-    it('Invalid eCashChat article reply tx', async () => {
+    it('Invalid ausCashChat article reply tx', async () => {
         render(
             <MemoryRouter>
                 <ThemeProvider theme={theme}>
                     <Tx
                         tx={{
-                            ...eCashChatArticleReplyTx.tx,
+                            ...ausCashChatArticleReplyTx.tx,
                             outputs: [
                                 {
-                                    ...eCashChatArticleReplyTx.tx.outputs[0],
+                                    ...ausCashChatArticleReplyTx.tx.outputs[0],
                                     outputScript: '6a04626c6f6704726c6f67', // no data after the article reply lokad ID i.e. stackArray !== 4
                                 },
-                                ...eCashChatArticleReplyTx.tx.outputs.slice(1),
+                                ...ausCashChatArticleReplyTx.tx.outputs.slice(1),
                             ],
                         }}
                         hashes={[
-                            eCashChatArticleReplyTx.tx.outputs[2].outputScript,
+                            ausCashChatArticleReplyTx.tx.outputs[2].outputScript,
                         ]}
                         fiatPrice={0.00003}
                         fiatCurrency="usd"
@@ -2448,16 +2448,16 @@ describe('<Tx />', () => {
 
         // We see the invalid article tx description
         expect(
-            screen.getByText('Invalid eCashChat Article Reply'),
+            screen.getByText('Invalid ausCashChat Article Reply'),
         ).toBeInTheDocument();
     });
-    it('Sent eCashChat article tx', async () => {
+    it('Sent ausCashChat article tx', async () => {
         render(
             <MemoryRouter>
                 <ThemeProvider theme={theme}>
                     <Tx
-                        tx={eCashChatArticleTx.tx}
-                        hashes={[eCashChatArticleTx.tx.outputs[2].outputScript]}
+                        tx={ausCashChatArticleTx.tx}
+                        hashes={[ausCashChatArticleTx.tx.outputs[2].outputScript]}
                         fiatPrice={0.00003}
                         fiatCurrency="usd"
                         cashtabState={{
@@ -2481,25 +2481,25 @@ describe('<Tx />', () => {
 
         // We see the article tx description
         expect(
-            screen.getByText('eCash Chat article created'),
+            screen.getByText('ausCash Chat article created'),
         ).toBeInTheDocument();
     });
-    it('Invalid eCashChat article tx', async () => {
+    it('Invalid ausCashChat article tx', async () => {
         render(
             <MemoryRouter>
                 <ThemeProvider theme={theme}>
                     <Tx
                         tx={{
-                            ...eCashChatArticleTx.tx,
+                            ...ausCashChatArticleTx.tx,
                             outputs: [
                                 {
-                                    ...eCashChatArticleTx.tx.outputs[0],
+                                    ...ausCashChatArticleTx.tx.outputs[0],
                                     outputScript: '6a04626c6f67', // no data after the article lokad ID
                                 },
-                                ...eCashChatArticleTx.tx.outputs.slice(1),
+                                ...ausCashChatArticleTx.tx.outputs.slice(1),
                             ],
                         }}
-                        hashes={[eCashChatArticleTx.tx.outputs[2].outputScript]}
+                        hashes={[ausCashChatArticleTx.tx.outputs[2].outputScript]}
                         fiatPrice={0.00003}
                         fiatCurrency="usd"
                         cashtabState={{
@@ -2523,17 +2523,17 @@ describe('<Tx />', () => {
 
         // We see the invalid article tx description
         expect(
-            screen.getByText('Invalid eCashChat Article'),
+            screen.getByText('Invalid ausCashChat Article'),
         ).toBeInTheDocument();
     });
-    it('Sent eCashChat authentication tx', async () => {
+    it('Sent ausCashChat authentication tx', async () => {
         render(
             <MemoryRouter>
                 <ThemeProvider theme={theme}>
                     <Tx
-                        tx={eCashChatAuthenticationTx.tx}
+                        tx={ausCashChatAuthenticationTx.tx}
                         hashes={[
-                            eCashChatAuthenticationTx.tx.outputs[2]
+                            ausCashChatAuthenticationTx.tx.outputs[2]
                                 .outputScript,
                         ]}
                         fiatPrice={0.00003}
@@ -2565,7 +2565,7 @@ describe('<Tx />', () => {
 
         // We see the article tx description
         expect(
-            screen.getByText('eCash Chat Authentication'),
+            screen.getByText('ausCash Chat Authentication'),
         ).toBeInTheDocument();
     });
     it('Ad setup tx for an SLP1 NFT Agora offer (cached)', async () => {

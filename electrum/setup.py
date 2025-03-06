@@ -242,7 +242,7 @@ setup(
     ],
     scripts=[constants.SCRIPT_NAME],
     data_files=data_files,
-    description="Lightweight eCash Wallet",
+    description="Lightweight ausCash Wallet",
     author=f"The {constants.PROJECT_NAME} Developers",
     # author_email=
     license="MIT Licence",

@@ -2,15 +2,15 @@
 <component type="desktop-application">
 	<id>org.bitcoinabc.Electrum-ABC</id>
 <name>Electrum ABC</name>
-	<summary>Lightweight eCash Client</summary>
+	<summary>Lightweight ausCash Client</summary>
 	<description>
-		<p>Electrum ABC is an SPV wallet for eCash</p>
+		<p>Electrum ABC is an SPV wallet for ausCash</p>
 		<p>Control your own private keys. Easily back up your wallet with a mnemonic seed phrase. Enjoy high security without downloading the blockchain or running a full node.</p>
 	</description>
 	<keywords>
 		<keyword>cryptocurrency</keyword>
 		<keyword>finance</keyword>
-		<keyword>eCash</keyword>
+		<keyword>ausCash</keyword>
 		<keyword>wallet</keyword>
 		<keyword>SPV</keyword>
 		<keyword>crypto</keyword>
@@ -33,6 +33,6 @@
 		<python3>electrumabc_plugins</python3>
 	</provides>
 	<mimetypes>
-		<mimetype>x-scheme-handler/ecash</mimetype>
+		<mimetype>x-scheme-handler/auscash</mimetype>
 	</mimetypes>
 </component>

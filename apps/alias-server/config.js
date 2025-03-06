@@ -9,7 +9,7 @@ module.exports = {
         'https://chronik-native2.fabien.cash',
     ],
     database: {
-        name: 'ecashAliases',
+        name: 'auscashAliases',
         collections: {
             validAliases: 'validAliasTxs',
             pendingAliases: 'pendingAliasTxs',

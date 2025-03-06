@@ -7,7 +7,7 @@ from ..address import Address
 from ..transaction import COMPRESSED_PUBKEY_NBYTES
 
 TEST_ADDRESS: Address = Address.from_string(
-    "ecash:qr3l6uufcuwm9prgpa6cfxnez87fzstxesp7ugp0ez"
+    "auscash:qr3l6uufcuwm9prgpa6cfxnez87fzstxesp7ugp0ez"
 )
 
 FEERATE: int = 1

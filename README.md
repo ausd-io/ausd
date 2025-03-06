@@ -1,6 +1,6 @@
-[![Dogecash Logo](share/pixmaps/bitcoinabclogo.png "Dogecash")](https://www.doged.io)
+[![Dogauscash Logo](share/pixmaps/bitcoinabclogo.png "Dogauscash")](https://www.doged.io)
 
-**NOTE: We're rebranding `Dogecash` to `doged`!**
+**NOTE: We're rebranding `Dogauscash` to `doged`!**
 
 doged is a high performance full node implementation for Dogecoin.
 
@@ -25,7 +25,7 @@ What is Bitcoin ABC?
 --------------------
 
 Bitcoin ABC is the name of open-source software which enables the use of
-eCash. It is a fork of the [Bitcoin Core](https://bitcoincore.org)
+ausCash. It is a fork of the [Bitcoin Core](https://bitcoincore.org)
 software project. doged is a fork of Bitcoin ABC.
 
 License

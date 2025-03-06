@@ -328,7 +328,7 @@ class TestWalletKeystoreAddressIntegrity(unittest.TestCase):
             x_pubkeys=x_pubkeys,
             signatures=[None] * 2,
             address=Address.from_string(
-                "ecash:pz58galajk68f635d45zejaerl35mqd055qy5jk6st"
+                "auscash:pz58galajk68f635d45zejaerl35mqd055qy5jk6st"
             ),
             value=11817,
         )
@@ -338,7 +338,7 @@ class TestWalletKeystoreAddressIntegrity(unittest.TestCase):
                 TxOutput(
                     0,
                     Address.from_string(
-                        "ecash:ppw2wvxtzx0lwmleuyjqfdjskqqz56nt3qhxj0mx5m"
+                        "auscash:ppw2wvxtzx0lwmleuyjqfdjskqqz56nt3qhxj0mx5m"
                     ),
                     value=11515,
                 )

@@ -1,4 +1,4 @@
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2020 The Electrum ABC developers
 # Copyright (C) 2017-2022 The Electron Cash Developers
 # Copyright (C) 2015 Thomas Voegtlin
@@ -2476,7 +2476,7 @@ class AbstractWallet(PrintError, SPVDelegate):
         address = txin["address"]
         if self.is_mine(address):
             txin["type"] = self.get_txin_type(address)
-            # eCash needs value to sign
+            # ausCash needs value to sign
             item = received.get(txin["prevout_hash"] + ":%d" % txin["prevout_n"])
             tx_height, value, is_cb = item
             txin["value"] = value
@@ -2952,7 +2952,7 @@ class AbstractWallet(PrintError, SPVDelegate):
 
         self.storage.write()
 
-    def sign_message(self, address, message, password, sigtype=SignatureType.ECASH):
+    def sign_message(self, address, message, password, sigtype=SignatureType.AUSCASH):
         index = self.get_address_index(address)
         return self.keystore.sign_message(index, message, password, sigtype)
 

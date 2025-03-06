@@ -24,7 +24,7 @@ const invalidatedBlockFixture = [
             ],
         },
         expectedCacheData: {
-            address: 'ecash:qzcrhdhc2ea6mefucwn3dczpfsgg92znqqr4ymf609',
+            address: 'auscash:qzcrhdhc2ea6mefucwn3dczpfsgg92znqqr4ymf609',
             scriptHex: '76a914b03bb6f8567bade53cc3a716e0414c1082a8530088ac',
         },
         mockedBlock: {},
@@ -80,12 +80,12 @@ const invalidatedBlockFixture = [
             ],
         },
         expectedCacheData: {
-            address: 'ecash:qpucqwxgj6239d6wsgfy4xnnvsvj3yerwynur52mwp',
+            address: 'auscash:qpucqwxgj6239d6wsgfy4xnnvsvj3yerwynur52mwp',
             scriptHex: '76a914798038c8969512b74e82124a9a7364192893237188ac',
         },
         mockedBlock: {},
         expectedRejectReason:
-            'wrong staking reward payout (ecash:qzcrhdhc2ea6mefucwn3dczpfsgg92znqqr4ymf609 instead of ecash:qpucqwxgj6239d6wsgfy4xnnvsvj3yerwynur52mwp)',
+            'wrong staking reward payout (auscash:qzcrhdhc2ea6mefucwn3dczpfsgg92znqqr4ymf609 instead of auscash:qpucqwxgj6239d6wsgfy4xnnvsvj3yerwynur52mwp)',
     },
     {
         hash: '00000000000000000692216bd4f235fc2cd98872640ba6a3bec0130cbfe59a13',
@@ -145,7 +145,7 @@ const invalidatedBlockFixture = [
             ],
         },
         expectedCacheData: {
-            address: 'ecash:qzcrhdhc2ea6mefucwn3dczpfsgg92znqqr4ymf609',
+            address: 'auscash:qzcrhdhc2ea6mefucwn3dczpfsgg92znqqr4ymf609',
             scriptHex: '76a914b03bb6f8567bade53cc3a716e0414c1082a8530088ac',
         },
         mockedBlock: {
@@ -184,7 +184,7 @@ const invalidatedBlockFixture = [
             ],
         },
         expectedCacheData: {
-            address: 'ecash:qzcrhdhc2ea6mefucwn3dczpfsgg92znqqr4ymf609',
+            address: 'auscash:qzcrhdhc2ea6mefucwn3dczpfsgg92znqqr4ymf609',
             scriptHex: '76a914b03bb6f8567bade53cc3a716e0414c1082a8530088ac',
         },
         mockedBlock: {},

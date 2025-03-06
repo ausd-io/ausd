@@ -17,7 +17,7 @@ import {
     OP_HASH160,
 } from './opcode.js';
 import { Bytes } from './io/bytes.js';
-import * as cashaddr from 'ecashaddrjs';
+import * as cashaddr from 'auscashaddrjs';
 
 /** A Bitcoin Script locking/unlocking a UTXO */
 export class Script {
@@ -78,7 +78,7 @@ export class Script {
                     return Script.p2sh(decodedAddress.hash);
                 }
                 default: {
-                    // Note we should never get here, as ecashaddrjs decode method
+                    // Note we should never get here, as auscashaddrjs decode method
                     // only supports p2pkh and p2sh
                     throw new Error(
                         `Unsupported address type: ${decodedAddress.type}`,
@@ -86,7 +86,7 @@ export class Script {
                 }
             }
         }
-        // Note we should never get here, as ecashaddrjs decode method
+        // Note we should never get here, as auscashaddrjs decode method
         // always returns hash as a Uint8Array when called with (<addr>, false)
         throw new Error(`Error decoding address "${address}"`);
     }

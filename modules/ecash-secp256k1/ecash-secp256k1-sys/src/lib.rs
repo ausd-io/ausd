@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: CC0-1.0
 
-//! # ecash-secp256k1-sys FFI bindings
+//! # auscash-secp256k1-sys FFI bindings
 //! Direct bindings to the underlying C library functions. These should
 //! not be needed for most users.
 
@@ -904,7 +904,7 @@ extern "C" {
 /// The newly created secp256k1 raw context.
 #[cfg(feature = "alloc")]
 pub unsafe fn secp256k1_context_create(flags: c_uint) -> NonNull<Context> {
-    ecash_secp256k1_context_create(flags)
+    auscash_secp256k1_context_create(flags)
 }
 
 /// A reimplementation of the C function `secp256k1_context_create` in rust.
@@ -913,7 +913,7 @@ pub unsafe fn secp256k1_context_create(flags: c_uint) -> NonNull<Context> {
 #[no_mangle]
 #[allow(clippy::missing_safety_doc)] // Documented above.
 #[cfg(feature = "alloc")]
-pub unsafe extern "C" fn ecash_secp256k1_context_create(
+pub unsafe extern "C" fn auscash_secp256k1_context_create(
     flags: c_uint,
 ) -> NonNull<Context> {
     use core::mem;
@@ -953,13 +953,13 @@ pub unsafe extern "C" fn ecash_secp256k1_context_create(
 /// [`secp256k1_context_create`].
 #[cfg(feature = "alloc")]
 pub unsafe fn secp256k1_context_destroy(ctx: NonNull<Context>) {
-    ecash_secp256k1_context_destroy(ctx)
+    auscash_secp256k1_context_destroy(ctx)
 }
 
 #[no_mangle]
 #[allow(clippy::missing_safety_doc)] // Documented above.
 #[cfg(feature = "alloc")]
-pub unsafe extern "C" fn ecash_secp256k1_context_destroy(
+pub unsafe extern "C" fn auscash_secp256k1_context_destroy(
     mut ctx: NonNull<Context>,
 ) {
     use crate::alloc::alloc;
@@ -1150,14 +1150,14 @@ mod fuzz_dummy {
 
     extern "C" {
         #[link_name = "secp256k1_context_preallocated_size"]
-        fn ecash_secp256k1_context_preallocated_size(flags: c_uint) -> size_t;
+        fn auscash_secp256k1_context_preallocated_size(flags: c_uint) -> size_t;
         #[link_name = "secp256k1_context_preallocated_create"]
-        fn ecash_secp256k1_context_preallocated_create(
+        fn auscash_secp256k1_context_preallocated_create(
             prealloc: NonNull<c_void>,
             flags: c_uint,
         ) -> NonNull<Context>;
         #[link_name = "secp256k1_context_preallocated_clone"]
-        fn ecash_secp256k1_context_preallocated_clone(
+        fn auscash_secp256k1_context_preallocated_clone(
             cx: *const Context,
             prealloc: NonNull<c_void>,
         ) -> NonNull<Context>;
@@ -1170,7 +1170,7 @@ mod fuzz_dummy {
     // Contexts
     pub unsafe fn secp256k1_context_preallocated_size(flags: c_uint) -> size_t {
         assert!(
-            ecash_secp256k1_context_preallocated_size(flags)
+            auscash_secp256k1_context_preallocated_size(flags)
                 + std::mem::size_of::<c_uint>()
                 <= CTX_SIZE
         );
@@ -1200,13 +1200,13 @@ mod fuzz_dummy {
                     .swap(HAVE_CONTEXT_WORKING, Ordering::AcqRel);
                 if have_ctx == HAVE_CONTEXT_NONE {
                     assert!(
-                        ecash_secp256k1_context_preallocated_size(
+                        auscash_secp256k1_context_preallocated_size(
                             SECP256K1_START_SIGN | SECP256K1_START_VERIFY
                         ) + std::mem::size_of::<c_uint>()
                             <= CTX_SIZE
                     );
                     assert_eq!(
-                        ecash_secp256k1_context_preallocated_create(
+                        auscash_secp256k1_context_preallocated_create(
                             NonNull::new_unchecked(
                                 PREALLOCATED_CONTEXT[..].as_mut_ptr()
                                     as *mut c_void
@@ -1265,7 +1265,7 @@ mod fuzz_dummy {
             .sub(std::mem::size_of::<c_uint>());
         let flags = (orig_ptr as *mut c_uint).read();
         (new_ptr as *mut c_uint).write(flags);
-        ecash_secp256k1_context_preallocated_clone(cx, prealloc)
+        auscash_secp256k1_context_preallocated_clone(cx, prealloc)
     }
 
     pub unsafe fn secp256k1_context_randomize(

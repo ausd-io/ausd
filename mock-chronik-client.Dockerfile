@@ -8,9 +8,9 @@ FROM node:20-bookworm-slim
 
 # Build all local dependencies
 
-# ecashaddrjs
-WORKDIR /app/modules/ecashaddrjs
-COPY modules/ecashaddrjs/ .
+# auscashaddrjs
+WORKDIR /app/modules/auscashaddrjs
+COPY modules/auscashaddrjs/ .
 RUN npm ci
 RUN npm run build
 

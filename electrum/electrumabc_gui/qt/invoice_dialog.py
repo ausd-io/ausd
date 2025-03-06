@@ -1,5 +1,5 @@
 #
-# Electrum ABC - lightweight eCash client
+# Electrum ABC - lightweight ausCash client
 # Copyright (C) 2022 The Electrum ABC developers
 #
 # Permission is hereby granted, free of charge, to any person
@@ -125,10 +125,10 @@ class InvoiceDialog(QtWidgets.QDialog):
         default_filename = (invoice_id + "-") if invoice_id else ""
         default_filename += str(self.amount_currency_edit.get_amount())
         default_filename += self.amount_currency_edit.get_currency()
-        ecashaddr = self.get_payment_address()
-        if ecashaddr is not None:
+        auscashaddr = self.get_payment_address()
+        if auscashaddr is not None:
             # checksum
-            default_filename += "-" + ecashaddr.to_cashaddr()[-8:]
+            default_filename += "-" + auscashaddr.to_cashaddr()[-8:]
         default_filename += ".json"
 
         filename, _selected_filter = QtWidgets.QFileDialog.getSaveFileName(
