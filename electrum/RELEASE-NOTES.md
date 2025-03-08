@@ -37,7 +37,7 @@
   proof editor (D15040).
 - Support Trezor Safe 3 hardware wallets (D5197).
 - Drop support for the `bitcoincash:` cash-address prefix and fix support
-  for the `ectest:` prefix in testnet mode (D15245).
+  for the `actest:` prefix in testnet mode (D15245).
 - Drop support for python 3.8 (D15373).
 - Support parsing multi-output payment URIs (D15250).
 - Add a warning dialog when a large amount is entered in the Send tab via
@@ -349,7 +349,7 @@ Electron Cash backports:
 
 ## Release 5.0.2
 
-- Fix support for the `ectest:` address prefix and the `--testnet` command-line option.
+- Fix support for the `actest:` address prefix and the `--testnet` command-line option.
 - Change the message signature prefix to "ausCash Signed Message:" (previously was "Bitcoin Signed Message:").
 - Lower the default transaction fee from 5 satoshis/byte to 2 satoshis/byte.
 - Links `auscash:` URI's to Electrum ABC on Windows and Mac OS.

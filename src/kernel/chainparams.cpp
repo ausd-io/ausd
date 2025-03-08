@@ -57,9 +57,9 @@ static CBlock CreateGenesisBlock(const char *pszTimestamp,
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce,
                                  uint32_t nBits, int32_t nVersion,
                                  const Amount genesisReward) {
-    const char *pszTimestamp = "Nintondo";
+    const char *pszTimestamp = "Yahoo7 News 12 November 2018 How a police officer helped deliver baby on major highway";
     const CScript genesisOutputScript =
-        CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857f"
+        CScript() << ParseHex("040174720fa689ad5023690c80f3a49c8f13f8d45b8c857f"
                               "bcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216"
                               "fe1b51850b4acf21b179c45070ac7b03a9")
                   << OP_CHECKSIG;
@@ -74,26 +74,26 @@ class CMainParams : public CChainParams {
 public:
     explicit CMainParams(const ChainOptions &opts) {
         strNetworkID = CBaseChainParams::MAIN;
-        consensus.nSubsidyHalvingInterval = 100000;
+        consensus.nSubsidyHalvingInterval = 840000;
         // 00000000000000ce80a7e057163a4db1d5ad7b20fb6f598c9597b9665c8fb0d4 -
         // April 1, 2012
         consensus.BIP16Height = 0;
-        consensus.BIP34Height = 1034383;
+        consensus.BIP34Height = 1;
         consensus.BIP34Hash = BlockHash::fromHex(
-            "80d1364201e5df97e696c03bdd24dc885e8617b9de51e453c10a4f629b1e797a");
+            "0xaa43989047f144331fc6400859c691b11c0e111ead1977511d340860c1c5ad1f");
         // 34cd2cbba4ba366f47e5aa0db5f02c19eba2adf679ceb6653ac003bdc9a0ef1f -
         // first v4 block after the last v3 block
-        consensus.BIP65Height = 3464751;
+        consensus.BIP65Height = 0;
         // 80d1364201e5df97e696c03bdd24dc885e8617b9de51e453c10a4f629b1e797a -
         // this is the last block that could be v2, 1900 blocks past the last v2
         // block
-        consensus.BIP66Height = 1034383;
+        consensus.BIP66Height = 0;
         // TODO: CSV not activated yet
         consensus.CSVHeight = 0x7fffffff;
         consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffff"
                                       "ffffffffffffffffffffffffff");
         // two weeks
-        consensus.nPowTargetSpacing = 60; // one minute
+        consensus.nPowTargetSpacing = 2.5 * 60; // 2.5min
         consensus.fPowNoRetargeting = false;
 
         // two days
@@ -103,7 +103,7 @@ public:
         consensus.enableTestnetMinDifficulty = false;
 
         // Enforce strict chain ID on mainnet
-        consensus.enforceStrictAuxPowChainId = true;
+        consensus.enforceStrictAuxPowChainId = false;
 
         // The miner fund is disabled by default on Australiacash mainnet.
         consensus.enableMinerFund = false;
@@ -134,8 +134,8 @@ public:
         consensus.schumpeterActivationTime = 0x7ffffffe;
 
         // Australiacash: Digishield activation height
-        consensus.digishieldHeight = 145000;
-        consensus.initialCoinbaseMaturity = 30;
+        consensus.digishieldHeight = 680000;
+        consensus.initialCoinbaseMaturity = 100;
         // Australiacash: Enforce legacy script rules on mainnet
         consensus.enforceLegacyScriptRules = true;
 
@@ -144,15 +144,15 @@ public:
          * normal data. The characters are rarely used upper ASCII, not valid as
          * UTF-8, and produce a large 32-bit integer with any alignment.
          */
-        diskMagic[0] = 0xcb;
-        diskMagic[1] = 0x98;
-        diskMagic[2] = 0xa6;
-        diskMagic[3] = 0xb0;
+        diskMagic[0] = 0xf1;
+        diskMagic[1] = 0xc6;
+        diskMagic[2] = 0xf2;
+        diskMagic[3] = 0xcb;
         netMagic[0] = 0xc0;
         netMagic[1] = 0xc0;
         netMagic[2] = 0xc0;
         netMagic[3] = 0xc0;
-        nDefaultPort = 22556;
+        nDefaultPort = 1986;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size =
             ChainParamsConstants::MAINNET_ASSUMED_BLOCKCHAIN_SIZE;
@@ -160,14 +160,14 @@ public:
             ChainParamsConstants::MAINNET_ASSUMED_CHAINSTATE_SIZE;
 
         genesis =
-            CreateGenesisBlock(1386325540, 99943, 0x1e0ffff0, 1, 88 * COIN);
+            CreateGenesisBlock(1542015250, 2084598007, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock ==
-               uint256S("0x1a91e3dace36e2be3bf030a65679fe821aa1d6ef92e7c9902eb3"
-                        "18182c355691"));
+               uint256S("0xaa43989047f144331fc6400859c691b11c0e111ead1977511d34"
+                        "0860c1c5ad1f"));
         assert(genesis.hashMerkleRoot ==
-               uint256S("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36"
-                        "d42d0ed26a69"));
+               uint256S("0x273a20070d7cb57e4c77354d8bd5e01c1cf7d96ad32d91a7b7d1"
+                        "83e30da12ef5"));
 
         // Note that of those which support the service bits prefix, most only
         // support a subset of possible options. This is fine at runtime as
@@ -175,14 +175,18 @@ public:
         // the service bits we want, but we should get them updated to support
         // all service bits wanted by any release ASAP to avoid it where
         // possible.
-        vSeeds.emplace_back("seed.multiaus.org");
-        vSeeds.emplace_back("seed2.multiaus.org");
+        vSeeds.emplace_back("seed.australiacash.org");
+        vSeeds.emplace_back("seed2.australiacash.org");
+        vSeeds.emplace_back("seed3.australiacash.org");
+        vSeeds.emplace_back("seed4.australiacash.org");
+        vSeeds.emplace_back("seed5.australiacash.org");
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<uint8_t>(1, 30);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<uint8_t>(1, 22);
-        base58Prefixes[SECRET_KEY] = std::vector<uint8_t>(1, 158);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x02, 0xfa, 0xca, 0xfd};
-        base58Prefixes[EXT_SECRET_KEY] = {0x02, 0xfa, 0xc3, 0x98};
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<uint8_t>(1, 23);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<uint8_t>(1, 5);
+        // base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,63);
+        base58Prefixes[SECRET_KEY] = std::vector<uint8_t>(1, 23);
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x07, 0x77, 0xC3, 0x1D};
+        base58Prefixes[EXT_SECRET_KEY] = {0x05, 0x66, 0xAA, 0xF2};
         cashaddrPrefix = opts.auscash ? "auscash" : "bitcoincash";
 
         vFixedSeeds = std::vector<SeedSpec6>(std::begin(pnSeed6_main),
@@ -204,12 +208,12 @@ public:
         // (height 523992).
         chainTxData = ChainTxData{
             // UNIX timestamp of last known number of transactions.
-            1522608016,
+            1715123921,
             // Total number of transactions between genesis and that timestamp
             // (the tx=... number in the ChainStateFlushed debug.log lines)
-            248589038,
+            963324,
             // Estimated number of transactions per second after that timestamp.
-            3.2,
+            0.040207,
         };
     }
 };
@@ -316,7 +320,7 @@ public:
         base58Prefixes[SECRET_KEY] = std::vector<uint8_t>(1, 241);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
-        cashaddrPrefix = opts.auscash ? "ectest" : "bchtest";
+        cashaddrPrefix = opts.auscash ? "actest" : "bchtest";
 
         vFixedSeeds = std::vector<SeedSpec6>(std::begin(pnSeed6_test),
                                              std::end(pnSeed6_test));

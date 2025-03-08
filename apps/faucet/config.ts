@@ -23,7 +23,7 @@ export const config = {
 
     // *** Coin options ***
     /// The ausCash address prefix, i.e. prefix:payload
-    prefix: 'ectest',
+    prefix: 'actest',
     /// The coin ticker, used for displaying the amounts
     ticker: 'tXEC',
     /// The faucet transaction fees in satoshi/kB

@@ -15,7 +15,7 @@ import validation from '../src/validation';
 const { ValidationError } = validation;
 
 describe('cashaddr', () => {
-    const NETWORKS = ['auscash', 'ectest', 'etoken'];
+    const NETWORKS = ['auscash', 'actest', 'etoken'];
 
     const ADDRESS_TYPES: AddressType[] = ['P2PKH', 'P2SH'];
 
@@ -79,9 +79,9 @@ describe('cashaddr', () => {
     ];
 
     const EXPECTED_P2PKH_OUTPUTS_TESTNET = [
-        'ectest:qpm2qsznhks23z7629mms6s4cwef74vcwvmvqr33lm',
-        'ectest:qr95sy3j9xwd2ap32xkykttr4cvcu7as4ysxxjl7ez',
-        'ectest:qqq3728yw0y47sqn6l2na30mcw6zm78dzqul0yev09',
+        'actest:qpm2qsznhks23z7629mms6s4cwef74vcwvmvqr33lm',
+        'actest:qr95sy3j9xwd2ap32xkykttr4cvcu7as4ysxxjl7ez',
+        'actest:qqq3728yw0y47sqn6l2na30mcw6zm78dzqul0yev09',
     ];
 
     const EXPECTED_P2PKH_OUTPUTS_TESTNET_LEGACY = [
@@ -91,9 +91,9 @@ describe('cashaddr', () => {
     ];
 
     const EXPECTED_P2SH_OUTPUTS_TESTNET = [
-        'ectest:ppm2qsznhks23z7629mms6s4cwef74vcwvvfavkjyx',
-        'ectest:pr95sy3j9xwd2ap32xkykttr4cvcu7as4y8rmacazl',
-        'ectest:pqq3728yw0y47sqn6l2na30mcw6zm78dzqt6jt705c',
+        'actest:ppm2qsznhks23z7629mms6s4cwef74vcwvvfavkjyx',
+        'actest:pr95sy3j9xwd2ap32xkykttr4cvcu7as4y8rmacazl',
+        'actest:pqq3728yw0y47sqn6l2na30mcw6zm78dzqt6jt705c',
     ];
 
     const EXPECTED_P2SH_OUTPUTS_TESTNET_LEGACY = [
@@ -210,11 +210,11 @@ describe('cashaddr', () => {
         it('should encode test hashes on testnet correctly', () => {
             for (const index in TEST_HASHES) {
                 assert.equal(
-                    cashaddr.encode('ectest', 'P2PKH', TEST_HASHES[index]),
+                    cashaddr.encode('actest', 'P2PKH', TEST_HASHES[index]),
                     EXPECTED_P2PKH_OUTPUTS_TESTNET[index],
                 );
                 assert.equal(
-                    cashaddr.encode('ectest', 'P2SH', TEST_HASHES[index]),
+                    cashaddr.encode('actest', 'P2SH', TEST_HASHES[index]),
                     EXPECTED_P2SH_OUTPUTS_TESTNET[index],
                 );
             }
@@ -286,14 +286,14 @@ describe('cashaddr', () => {
                 assert.equal(
                     cashaddr.encodeOutputScript(
                         TEST_P2PKH_OUTPUTSCRIPTS[index],
-                        'ectest',
+                        'actest',
                     ),
                     EXPECTED_P2PKH_OUTPUTS_TESTNET[index],
                 );
                 assert.equal(
                     cashaddr.encodeOutputScript(
                         TEST_P2SH_OUTPUTSCRIPTS[index],
-                        'ectest',
+                        'actest',
                     ),
                     EXPECTED_P2SH_OUTPUTS_TESTNET[index],
                 );
@@ -646,7 +646,7 @@ describe('cashaddr', () => {
                 assert.equal(
                     cashaddr.isValidCashAddress(
                         ALL_VALID_TESTNET_ADDRESSES[index],
-                        'ectest',
+                        'actest',
                     ),
                     true,
                 );

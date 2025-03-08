@@ -44,7 +44,7 @@ const appConfig: AppConfig = {
     ticker: process.env.REACT_APP_TESTNET === 'true' ? 'tXEC' : 'XEC',
     derivationPath: 1899,
     logo: mainLogo,
-    prefix: process.env.REACT_APP_TESTNET === 'true' ? 'ectest' : 'auscash',
+    prefix: process.env.REACT_APP_TESTNET === 'true' ? 'actest' : 'auscash',
     coingeckoId: 'auscash',
     fiatUpdateIntervalMs: 90000,
     defaultFee: 2010, // satoshis per kb

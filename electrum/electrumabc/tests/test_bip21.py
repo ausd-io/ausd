@@ -31,10 +31,10 @@ class TestParseURI(unittest.TestCase):
 
         with self.assertRaises(BadURIParameter):
             # correct prefix with bad checksum
-            parse_URI("ectest:qrh3ethkfms79tlcw7m736t38hp9kg5f7gycxeymme", net=TestNet)
+            parse_URI("actest:qrh3ethkfms79tlcw7m736t38hp9kg5f7gycxeymme", net=TestNet)
 
         self.assertEqual(
-            parse_URI("ectest:qrh3ethkfms79tlcw7m736t38hp9kg5f7gzncerkcg", net=TestNet),
+            parse_URI("actest:qrh3ethkfms79tlcw7m736t38hp9kg5f7gzncerkcg", net=TestNet),
             {"addresses": ["qrh3ethkfms79tlcw7m736t38hp9kg5f7gzncerkcg"]},
         )
 
@@ -289,7 +289,7 @@ class TestParseableSchemes(unittest.TestCase):
         self.assertEqual(parseable_schemes(MainNet), ("auscash",))
 
     def test_testnet(self):
-        self.assertEqual(parseable_schemes(TestNet), ("ectest",))
+        self.assertEqual(parseable_schemes(TestNet), ("actest",))
 
     def test_regtest(self):
         self.assertEqual(parseable_schemes(RegtestNet), ("ecregtest",))

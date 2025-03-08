@@ -27,7 +27,7 @@ import unittest
 from .. import cashaddr
 
 ABC_PREFIX = "auscash"
-ABC_TESTNET_PREFIX = "ectest"
+ABC_TESTNET_PREFIX = "actest"
 
 VALID_PUBKEY_ADDRESSES = [
     "auscash:qzedhq7ktcsvqmgc2q58t97n3c28k762ky5ryvphuu",

@@ -21,7 +21,7 @@ static const uint64_t MIN_TX_SIZE = 100;
 /** The maximum allowed size for a block, before the UAHF */
 static const uint64_t LEGACY_MAX_BLOCK_SIZE = ONE_MEGABYTE;
 /** Default setting for maximum allowed size for a block, in bytes */
-static const uint64_t DEFAULT_MAX_BLOCK_SIZE = ONE_MEGABYTE;
+static const uint64_t DEFAULT_MAX_BLOCK_SIZE = ONE_MEGABYTE * 10;
 /** Allowed number of signature check operations per transaction. */
 static const uint64_t MAX_TX_SIGCHECKS = 3000;
 /**
@@ -34,7 +34,7 @@ static const int BLOCK_MAXBYTES_MAXSIGCHECKS_RATIO = 141;
  * blocks (network rule).
  */
 static const int REGTEST_COINBASE_MATURITY = 100;
-static const int DIGISHIELD_COINBASE_MATURITY = 240;
+static const int DIGISHIELD_COINBASE_MATURITY = 80;
 /** Coinbase scripts have their own script size limit. */
 static const int MAX_COINBASE_SCRIPTSIG_SIZE = 100;
 

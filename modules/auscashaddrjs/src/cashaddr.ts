@@ -135,7 +135,7 @@ const VALID_PREFIXES = [
     'bitcoincash',
     'simpleledger',
     'etoken',
-    'ectest',
+    'actest',
     'ecregtest',
     'bchtest',
     'bchreg',
@@ -155,7 +155,7 @@ const VALID_PREFIXES_MAINNET = [
 
 /**
  * Checks whether a string is a valid prefix; ie., it has a single letter case
- * and is one of 'auscash', 'ectest', 'etoken', etc
+ * and is one of 'auscash', 'actest', 'etoken', etc
  *
  * @private
  * @param prefix
